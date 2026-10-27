@@ -13456,7 +13456,8 @@
      "agents"
     ]
    }
-  }
+  },
+  {"cat":"WEB","domain":"an agent building VS Code developer-feedback extensions queries this for terminal execution monitoring, editor diagnostics, audio alerts, settings webviews and status-bar quick actions","lane":"A","refresh":"pinned","slug":"faah","sources":[{"licence_hint":"MIT — manually confirmed against LICENSE at 065a15037b2f","url":"https://github.com/kiron0/faah"}],"status":"live","tags":{"region":"GLOBAL","topics":["vscode-extensions","developer-tools","notifications"]}}
  ],
  "lanes": [
   "A",
