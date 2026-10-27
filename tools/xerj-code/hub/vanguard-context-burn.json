@@ -1,0 +1,23 @@
+{
+  "corpus": "vanguard-context-burn",
+  "repos": [
+    {
+      "repo": "vanguard-frontier-agentic",
+      "url": "https://github.com/VincentChuWaiChow/vanguard-frontier-agentic",
+      "licence": "Apache-2.0",
+      "sha": "e0759ae02bd132957d954691a0a83d3f5d0b22d6",
+      "files": 17,
+      "bytes": 35339,
+      "paths": [
+        "mods/context-burn"
+      ],
+      "review": {
+        "spdx": "Apache-2.0",
+        "use": "adapt-with-attribution",
+        "by": "VincentChuWaiChow",
+        "at": "2026-10-27",
+        "note": "Source LICENSE at pinned commit contains Apache-2.0; human contributor to confirm licence review before final approval."
+      }
+    }
+  ]
+}
