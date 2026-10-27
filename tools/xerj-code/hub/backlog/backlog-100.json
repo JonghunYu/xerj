@@ -13456,6 +13456,30 @@
      "agents"
     ]
    }
+  },
+  {
+   "cat": "API",
+   "domain": "an agent designing schema-evolution runtimes queries this for how pyverge models version graphs, migration paths, target policies, reflection, and registry-backed schema resolution",
+   "lane": "A",
+   "refresh": "pinned",
+   "slug": "pyverge",
+   "sources": [
+    {
+     "licence_hint": "Apache-2.0 \u2014 LICENSE verified at pin",
+     "url": "https://github.com/JoHa-HQ/pyverge"
+    }
+   ],
+   "status": "live",
+   "tags": {
+    "region": "GLOBAL",
+    "topics": [
+     "schema-evolution",
+     "migrations",
+     "versioning",
+     "python",
+     "data-contracts"
+    ]
+   }
   }
  ],
  "lanes": [
