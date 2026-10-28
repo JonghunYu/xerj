@@ -1,0 +1,23 @@
+{
+ "corpus": "alexruperez--arspeechactivity",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on Objective-C queries this for how alexruperez/ARSpeechActivity implements it: ARSpeechActivity is a UIActivity subclass that uses AVSpeechUtterance to read aloud the shared NSString",
+ "repos": [
+  {
+   "repo": "ARSpeechActivity",
+   "url": "https://github.com/alexruperez/ARSpeechActivity",
+   "sha": "91858316a6b370980faf96ace61a931654738103",
+   "licence": "MIT (LICENSE file at pin 91858316a6b3, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T18:13Z",
+    "consent_receipt": "161801837e53",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T18:13Z (receipt 161801837e53); pinned to the default-branch head. LICENSE file at pin 91858316a6b3 detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

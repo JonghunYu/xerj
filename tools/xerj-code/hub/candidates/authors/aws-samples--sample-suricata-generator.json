@@ -1,0 +1,23 @@
+{
+ "corpus": "aws-samples--sample-suricata-generator",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on Python queries this for how aws-samples/sample-suricata-generator implements it: aws-samples/sample-suricata-generator (Python) (selected work: src/analysis, src/gui, src/agent)",
+ "repos": [
+  {
+   "repo": "sample-suricata-generator",
+   "url": "https://github.com/aws-samples/sample-suricata-generator",
+   "sha": "5f17572206244709bece3f6a1c29994e76e16229",
+   "licence": "MIT-0 (LICENSE file at pin 5f1757220624, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT-0",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T14:56Z",
+    "consent_receipt": "49fb0eca308c",
+    "note": "Inclusion consented by the commit author by email at 2026-10-28T14:56Z (receipt 49fb0eca308c); selected commit 5f1757220624: \"added rule validator to main program editor\". LICENSE file at pin 5f1757220624 detected as MIT-0 by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

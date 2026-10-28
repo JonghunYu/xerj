@@ -1,0 +1,23 @@
+{
+ "corpus": "l3tchupkt--redmi9power-nethunter-kernel",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on kali, kali-nethunter, nethunter queries this for how l3tchupkt/redmi9power-nethunter-kernel implements it: A custom, bare-metal Kali NetHunter kernel engineered from the ground up for the Redmi 9 Power",
+ "repos": [
+  {
+   "repo": "redmi9power-nethunter-kernel",
+   "url": "https://github.com/l3tchupkt/redmi9power-nethunter-kernel",
+   "sha": "5b433291a3b51992d4bd69ae4d3a47da59127d2c",
+   "licence": "author's permission (LICENSE at pin 5b433291a3b5: NONE; repository: none)",
+   "review": {
+    "spdx": "NONE",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T18:12Z",
+    "consent_receipt": "5b18be0ae4aa",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T18:12Z (receipt 5b18be0ae4aa); pinned to the default-branch head. LICENSE at pin 5b433291a3b5: NONE (repository: none); used with the author's permission, with attribution."
+   }
+  }
+ ]
+}

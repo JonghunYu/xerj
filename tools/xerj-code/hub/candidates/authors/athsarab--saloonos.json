@@ -2,8 +2,8 @@
  "corpus": "athsarab--saloonos",
  "cloned_at": null,
  "status": "draft",
- "shelf": "API",
- "domain": "an agent working on TypeScript queries this for how athsarab/saloonOS implements it: athsarab/saloonOS (TypeScript) (selected work: apps/api, src/lib)",
+ "shelf": "WEB",
+ "domain": "an agent working on TypeScript queries this for how athsarab/saloonOS implements it: SalonOS \u2014 A modern, multi-tenant mobile POS and business management platform for salons and beauty businesses, featuring appointment schedul (selected work: apps/api, src/lib)",
  "repos": [
   {
    "repo": "saloonOS",

@@ -1,0 +1,23 @@
+{
+ "corpus": "alexruperez--arhomescreenshortcuts",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on Objective-C queries this for how alexruperez/ARHomeScreenShortcuts implements it: Installs home screen shortcuts to features of your app",
+ "repos": [
+  {
+   "repo": "ARHomeScreenShortcuts",
+   "url": "https://github.com/alexruperez/ARHomeScreenShortcuts",
+   "sha": "32f5a0373e4fd64ee4161255c92092ff24c63dc2",
+   "licence": "MIT (LICENSE file at pin 32f5a0373e4f, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T18:13Z",
+    "consent_receipt": "211e13e0cb41",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T18:13Z (receipt 211e13e0cb41); pinned to the default-branch head. LICENSE file at pin 32f5a0373e4f detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

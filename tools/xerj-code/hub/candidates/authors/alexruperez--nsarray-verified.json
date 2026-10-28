@@ -1,0 +1,23 @@
+{
+ "corpus": "alexruperez--nsarray-verified",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on Objective-C queries this for how alexruperez/NSArray-Verified implements it: NSArray+Verified checks NSNull (aka kCFNull) objects and it changes to nil",
+ "repos": [
+  {
+   "repo": "NSArray-Verified",
+   "url": "https://github.com/alexruperez/NSArray-Verified",
+   "sha": "137e87d2965ff1347b7453b64d3ce03828a9454b",
+   "licence": "MIT (LICENSE file at pin 137e87d2965f, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T18:13Z",
+    "consent_receipt": "2aa76f885f47",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T18:13Z (receipt 2aa76f885f47); pinned to the default-branch head. LICENSE file at pin 137e87d2965f detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

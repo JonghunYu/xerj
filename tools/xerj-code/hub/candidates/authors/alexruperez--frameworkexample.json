@@ -1,0 +1,23 @@
+{
+ "corpus": "alexruperez--frameworkexample",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "WEB",
+ "domain": "an agent working on Objective-C queries this for how alexruperez/FrameworkExample implements it: Simple Framework Example (Create an iOS Framework, document it and not die trying)",
+ "repos": [
+  {
+   "repo": "FrameworkExample",
+   "url": "https://github.com/alexruperez/FrameworkExample",
+   "sha": "8229494c7acaa194d024cc3f947f73af3a76d1df",
+   "licence": "author's permission (LICENSE at pin 8229494c7aca: NONE; repository: none)",
+   "review": {
+    "spdx": "NONE",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T18:13Z",
+    "consent_receipt": "a5236b7cd5e8",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T18:13Z (receipt a5236b7cd5e8); pinned to the default-branch head. LICENSE at pin 8229494c7aca: NONE (repository: none); used with the author's permission, with attribution."
+   }
+  }
+ ]
+}

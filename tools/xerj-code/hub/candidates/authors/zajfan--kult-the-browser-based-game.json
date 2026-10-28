@@ -1,0 +1,23 @@
+{
+ "corpus": "zajfan--kult-the-browser-based-game",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "WEB",
+ "domain": "an agent working on JavaScript queries this for how Zajfan/KULT-The-browser-based-game implements it: Reimagining of the classic tabletop game called KULT as a text based browser game",
+ "repos": [
+  {
+   "repo": "KULT-The-browser-based-game",
+   "url": "https://github.com/Zajfan/KULT-The-browser-based-game",
+   "sha": "73eee16859b1552a3b99df02d3512836475aa206",
+   "licence": "author's permission (LICENSE at pin 73eee16859b1: NONE; repository: none)",
+   "review": {
+    "spdx": "NONE",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T18:26Z",
+    "consent_receipt": "eb740b62f272",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T18:26Z (receipt eb740b62f272); pinned to the default-branch head. LICENSE at pin 73eee16859b1: NONE (repository: none); used with the author's permission, with attribution."
+   }
+  }
+ ]
+}

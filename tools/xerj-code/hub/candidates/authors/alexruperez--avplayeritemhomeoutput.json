@@ -1,0 +1,23 @@
+{
+ "corpus": "alexruperez--avplayeritemhomeoutput",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on output, homekit, lightbulbs queries this for how alexruperez/AVPlayerItemHomeOutput implements it: Coordinate the output of content associated with your HomeKit lightbulbs. #Ambilight",
+ "repos": [
+  {
+   "repo": "AVPlayerItemHomeOutput",
+   "url": "https://github.com/alexruperez/AVPlayerItemHomeOutput",
+   "sha": "a12fd6a83338caa0662fbbaf474d19efee083ca6",
+   "licence": "MIT (LICENSE file at pin a12fd6a83338, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T18:13Z",
+    "consent_receipt": "c2f430973b64",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T18:13Z (receipt c2f430973b64); pinned to the default-branch head. LICENSE file at pin a12fd6a83338 detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

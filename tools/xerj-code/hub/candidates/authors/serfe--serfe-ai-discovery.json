@@ -3,7 +3,7 @@
  "cloned_at": null,
  "status": "draft",
  "shelf": "AI",
- "domain": "an agent working on PHP queries this for how Serfe/serfe-ai-discovery implements it: Serfe/serfe-ai-discovery (PHP) (selected work: includes, tests, assets)",
+ "domain": "an agent working on ai-agents, ai-discovery, content-negotiation queries this for how Serfe/serfe-ai-discovery implements it: Open-source WordPress plugin for AI discovery: manage robots.txt and llms.txt, serve public content as Markdown, and validate discovery sign (selected work: includes, tests, assets)",
  "repos": [
   {
    "repo": "serfe-ai-discovery",

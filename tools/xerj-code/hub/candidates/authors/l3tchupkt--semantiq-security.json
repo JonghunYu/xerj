@@ -1,0 +1,23 @@
+{
+ "corpus": "l3tchupkt--semantiq-security",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "SEC",
+ "domain": "an agent working on Python queries this for how l3tchupkt/semantiq-security implements it: Python Security Research SDK, AI-Assisted Vulnerability Discovery Engine, and Codebase Threat Modeling Platform",
+ "repos": [
+  {
+   "repo": "semantiq-security",
+   "url": "https://github.com/l3tchupkt/semantiq-security",
+   "sha": "de1e68d3d8d5ba5837382dee283217567759795a",
+   "licence": "author's permission (LICENSE at pin de1e68d3d8d5: NOASSERTION; repository: NOASSERTION)",
+   "review": {
+    "spdx": "NOASSERTION",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T18:12Z",
+    "consent_receipt": "ff2cd30cf14c",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T18:12Z (receipt ff2cd30cf14c); pinned to the default-branch head. LICENSE at pin de1e68d3d8d5: NOASSERTION (repository: NOASSERTION); used with the author's permission, with attribution."
+   }
+  }
+ ]
+}

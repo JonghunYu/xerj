@@ -1,0 +1,23 @@
+{
+ "corpus": "dunorth595--xrpl-agent-id",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "AI",
+ "domain": "an agent working on ai-agents, decentralized-identity, did queries this for how DuNorth595/xrpl_agent_id implements it: Give AI agents a verifiable on-chain identity. W3C DID (did:xrpl) + XLS-70 Verifiable Credentials on the XRP Ledger - issue, accept and veri",
+ "repos": [
+  {
+   "repo": "xrpl_agent_id",
+   "url": "https://github.com/DuNorth595/xrpl_agent_id",
+   "sha": "e4a3f385370acedc35aced603b49e5097436810d",
+   "licence": "MIT (LICENSE file at pin e4a3f385370a, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T19:14Z",
+    "consent_receipt": "d584a9546477",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T19:14Z (receipt d584a9546477); pinned to the default-branch head. LICENSE file at pin e4a3f385370a detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

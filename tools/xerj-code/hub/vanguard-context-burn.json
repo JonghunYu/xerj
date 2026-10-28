@@ -16,7 +16,7 @@
         "use": "adapt-with-attribution",
         "by": "VincentChuWaiChow",
         "at": "2026-10-27",
-        "note": "Source LICENSE at pinned commit contains Apache-2.0; human contributor to confirm licence review before final approval."
+        "note": "LICENSE at the pinned commit is Apache-2.0. The source owner explicitly approves public inclusion and indexing in xerj-org/xerj#2503; the selected mods/context-burn subtree contains 17 files (35,339 bytes), independently checked against the pinned Git tree."
       }
     }
   ]

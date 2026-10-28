@@ -1,0 +1,23 @@
+{
+ "corpus": "l3tchupkt--bug-bounty-roadmap-2025",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on Python queries this for how l3tchupkt/Bug-Bounty-Roadmap-2025 implements it: l3tchupkt/Bug-Bounty-Roadmap-2025 (Python)",
+ "repos": [
+  {
+   "repo": "Bug-Bounty-Roadmap-2025",
+   "url": "https://github.com/l3tchupkt/Bug-Bounty-Roadmap-2025",
+   "sha": "29ba446691496cce1daec41c4f02db781c19c922",
+   "licence": "author's permission (LICENSE at pin 29ba44669149: NOASSERTION; repository: NOASSERTION)",
+   "review": {
+    "spdx": "NOASSERTION",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T18:29Z",
+    "consent_receipt": "ac4a6863da2a",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T18:29Z (receipt ac4a6863da2a); pinned to the default-branch head. LICENSE at pin 29ba44669149: NOASSERTION (repository: NOASSERTION); used with the author's permission, with attribution."
+   }
+  }
+ ]
+}

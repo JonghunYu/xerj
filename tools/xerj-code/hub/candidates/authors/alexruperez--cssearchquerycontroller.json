@@ -1,0 +1,23 @@
+{
+ "corpus": "alexruperez--cssearchquerycontroller",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "WEB",
+ "domain": "an agent working on Swift queries this for how alexruperez/CSSearchQueryController implements it: CSSearchQueryController POC - UISearchController using CSSearchQuery as data source",
+ "repos": [
+  {
+   "repo": "CSSearchQueryController",
+   "url": "https://github.com/alexruperez/CSSearchQueryController",
+   "sha": "7953ea111efcf24cce8443529a5f618e12b24827",
+   "licence": "author's permission (LICENSE at pin 7953ea111efc: NONE; repository: none)",
+   "review": {
+    "spdx": "NONE",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T18:13Z",
+    "consent_receipt": "fae0eb9a57e1",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T18:13Z (receipt fae0eb9a57e1); pinned to the default-branch head. LICENSE at pin 7953ea111efc: NONE (repository: none); used with the author's permission, with attribution."
+   }
+  }
+ ]
+}
