@@ -1,0 +1,23 @@
+{
+ "corpus": "amfakh--discord2plex",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on Python queries this for how amfakh/discord2plex implements it: Automation tool to scrape and download videos from a Discord channel directly to your local/server media directory for Plex, Jellyfin, or lo",
+ "repos": [
+  {
+   "repo": "discord2plex",
+   "url": "https://github.com/amfakh/discord2plex",
+   "sha": "4601af31d59fb114ed6a5190b544a982957294ac",
+   "licence": "author's permission (LICENSE at pin 4601af31d59f: NONE; repository: none)",
+   "review": {
+    "spdx": "NONE",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T17:47Z",
+    "consent_receipt": "ecd3943d6ccc",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T17:47Z (receipt ecd3943d6ccc); pinned to the default-branch head. LICENSE at pin 4601af31d59f: NONE (repository: none); used with the author's permission, with attribution."
+   }
+  }
+ ]
+}

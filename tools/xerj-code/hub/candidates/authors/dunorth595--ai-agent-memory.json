@@ -1,0 +1,23 @@
+{
+ "corpus": "dunorth595--ai-agent-memory",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "AI",
+ "domain": "an agent working on agent-memory, ai-agent, context-management queries this for how DuNorth595/ai_agent_memory implements it: Long-term memory for AI agents that survive between sessions. One index file, one pointer per topic, everything else plain Markdown. Portabl",
+ "repos": [
+  {
+   "repo": "ai_agent_memory",
+   "url": "https://github.com/DuNorth595/ai_agent_memory",
+   "sha": "97f38fd0d15dd67489975e49c42ed9edbe6b52cb",
+   "licence": "MIT (LICENSE file at pin 97f38fd0d15d, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T19:14Z",
+    "consent_receipt": "eac8d724ad4a",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T19:14Z (receipt eac8d724ad4a); pinned to the default-branch head. LICENSE file at pin 97f38fd0d15d detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

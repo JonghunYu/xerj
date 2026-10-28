@@ -3,7 +3,7 @@
  "cloned_at": null,
  "status": "draft",
  "shelf": "AI",
- "domain": "an agent working on agents-md, ai-agents, claude-code queries this for how gao-xh/multi-agent-protocol implements it: Governance and release protocol for multiple AI coding agents (Claude Code, Codex, others) working on one project for one owner (selected work: scripts, tests)",
+ "domain": "an agent working on agents-md, ai-agents, claude-code queries this for how gao-xh/multi-agent-protocol implements it: Lets AI coding agents (Claude Code, Codex and others) work on your project as a team: a lead plans and hands out work, agents build in paral (selected work: scripts, tests)",
  "repos": [
   {
    "repo": "multi-agent-protocol",

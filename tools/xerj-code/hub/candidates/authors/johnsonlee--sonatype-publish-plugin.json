@@ -1,0 +1,23 @@
+{
+ "corpus": "johnsonlee--sonatype-publish-plugin",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on maven, sonatype, publish queries this for how johnsonlee/sonatype-publish-plugin implements it: Gradle Plugin for publishing artifacts to Sonatype and Nexus",
+ "repos": [
+  {
+   "repo": "sonatype-publish-plugin",
+   "url": "https://github.com/johnsonlee/sonatype-publish-plugin",
+   "sha": "314884d0438baab4da4229739d85acde91628fc5",
+   "licence": "Apache-2.0 (LICENSE file at pin 314884d0438b, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "Apache-2.0",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T18:52Z",
+    "consent_receipt": "bb6c41dad1bf",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T18:52Z (receipt bb6c41dad1bf); pinned to the default-branch head. LICENSE file at pin 314884d0438b detected as Apache-2.0 by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

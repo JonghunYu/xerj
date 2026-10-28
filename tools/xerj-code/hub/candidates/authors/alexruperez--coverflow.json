@@ -1,0 +1,23 @@
+{
+ "corpus": "alexruperez--coverflow",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "WEB",
+ "domain": "an agent working on Objective-C queries this for how alexruperez/Coverflow implements it: Coverflow Implementation using PSTCollectionView (iOS5 supported UICollectionView)",
+ "repos": [
+  {
+   "repo": "Coverflow",
+   "url": "https://github.com/alexruperez/Coverflow",
+   "sha": "1390a639a78fd7425d1929e1f13d04b70966c27e",
+   "licence": "author's permission (LICENSE at pin 1390a639a78f: NONE; repository: none)",
+   "review": {
+    "spdx": "NONE",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T18:13Z",
+    "consent_receipt": "aa665d51b9c8",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T18:13Z (receipt aa665d51b9c8); pinned to the default-branch head. LICENSE at pin 1390a639a78f: NONE (repository: none); used with the author's permission, with attribution."
+   }
+  }
+ ]
+}

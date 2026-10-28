@@ -1,0 +1,23 @@
+{
+ "corpus": "alexruperez--aralertcontroller",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "WEB",
+ "domain": "an agent working on Objective-C queries this for how alexruperez/ARAlertController implements it: UIAlertController compatible iOS >= 5.0",
+ "repos": [
+  {
+   "repo": "ARAlertController",
+   "url": "https://github.com/alexruperez/ARAlertController",
+   "sha": "d2dfc8a0a58adcf7a10081474d21a14c32e5f024",
+   "licence": "MIT (LICENSE file at pin d2dfc8a0a58a, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T18:13Z",
+    "consent_receipt": "4a45e4fc8ad9",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T18:13Z (receipt 4a45e4fc8ad9); pinned to the default-branch head. LICENSE file at pin d2dfc8a0a58a detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}
