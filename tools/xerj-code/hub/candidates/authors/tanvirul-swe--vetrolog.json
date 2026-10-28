@@ -2,8 +2,8 @@
  "corpus": "tanvirul-swe--vetrolog",
  "cloned_at": null,
  "status": "draft",
- "shelf": "WEB",
- "domain": "an agent working on database-tools, debugging, golang queries this for how Tanvirul-swe/vetrolog implements it: VetroLog is an ultra-fast, open-source desktop tool built with Go (Wails) and React. It gives mobile developers real-time visibility into lo (selected work: frontend)",
+ "shelf": "DB",
+ "domain": "an agent working on database-tools, debugging, golang queries this for how Tanvirul-swe/vetrolog implements it: An ultra-fast, zero-SDK local database inspector for mobile developers. Live-stream SQLite, Hive, & SharedPreferences in real-time. Built wi (selected work: frontend)",
  "repos": [
   {
    "repo": "vetrolog",

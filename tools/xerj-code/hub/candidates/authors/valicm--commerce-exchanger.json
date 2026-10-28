@@ -1,0 +1,23 @@
+{
+ "corpus": "valicm--commerce-exchanger",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on drupal, drupal-commerce, drupal8-module queries this for how valicm/commerce_exchanger implements it: Currency exchange rates module for Drupal Commerce Core",
+ "repos": [
+  {
+   "repo": "commerce_exchanger",
+   "url": "https://github.com/valicm/commerce_exchanger",
+   "sha": "de03209e37b803526d024791785de08ffea6b8b0",
+   "licence": "author's permission (LICENSE at pin de03209e37b8: NONE; repository: none)",
+   "review": {
+    "spdx": "NONE",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T20:15Z",
+    "consent_receipt": "c9fa67d0a468",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T20:15Z (receipt c9fa67d0a468); pinned to the default-branch head. LICENSE at pin de03209e37b8: NONE (repository: none); used with the author's permission, with attribution."
+   }
+  }
+ ]
+}

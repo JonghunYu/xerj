@@ -1,0 +1,23 @@
+{
+ "corpus": "turkananation--panthalassa-parsers",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "HEALTH",
+ "domain": "an agent working on Dart queries this for how turkananation/panthalassa_parsers implements it: Pure\u2011Dart, zero\u2011FFI parsers that detect and extract metadata/text from FHIR/XML, EDIFACT, STEP, USMTF, DICOM, NITF/NSIF, STANAG, PDF, ODF, N",
+ "repos": [
+  {
+   "repo": "panthalassa_parsers",
+   "url": "https://github.com/turkananation/panthalassa_parsers",
+   "sha": "0fceb0653c2adb750df31ad4f5430629055f3740",
+   "licence": "MIT (LICENSE file at pin 0fceb0653c2a, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T21:04Z",
+    "consent_receipt": "8163f6587dc6",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T21:04Z (receipt 8163f6587dc6); pinned to the default-branch head. LICENSE file at pin 0fceb0653c2a detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

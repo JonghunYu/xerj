@@ -1,0 +1,23 @@
+{
+ "corpus": "afel6--section-team",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "AI",
+ "domain": "an agent working on ai-agents, anthropic, claude-code queries this for how afel6/section-team implements it: Claude Code plugin: a supervisor plus specialist AI agents, an Opus review gate on all code, saved reports and a Team Board",
+ "repos": [
+  {
+   "repo": "section-team",
+   "url": "https://github.com/afel6/section-team",
+   "sha": "b65ca584d93b082599614e1c0b11257acd280956",
+   "licence": "MIT (LICENSE file at pin b65ca584d93b, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T19:40Z",
+    "consent_receipt": "4f683d811b15",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T19:40Z (receipt 4f683d811b15); pinned to the default-branch head. LICENSE file at pin b65ca584d93b detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

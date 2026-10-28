@@ -3,7 +3,7 @@
  "cloned_at": null,
  "status": "draft",
  "shelf": "SEC",
- "domain": "an agent working on Go queries this for how inkwall-dev/inkwall implements it: Kubernetes-native WAF operator: one policy, every ingress and gateway. Go, OWASP Coraza + CRS, built for low latency (selected work: hack, the project root)",
+ "domain": "an agent working on api-security, appsec, cloud-native queries this for how inkwall-dev/inkwall implements it: Kubernetes-native WAF operator: one policy, every ingress and gateway. Go, OWASP Coraza + CRS, built for low latency (selected work: hack, the project root)",
  "repos": [
   {
    "repo": "inkwall",

@@ -1,0 +1,23 @@
+{
+ "corpus": "turkananation--swissarmyknife",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "NET",
+ "domain": "an agent working on dart, dart-package, extensions queries this for how turkananation/swissarmyknife implements it: Production-grade Dart utilities behind one import: extensions, functional types, async control, validation, HTTP, caching, and app infrastru",
+ "repos": [
+  {
+   "repo": "swissarmyknife",
+   "url": "https://github.com/turkananation/swissarmyknife",
+   "sha": "80d1d90fb031ecf786d59e7b1a51b80545a031eb",
+   "licence": "MIT (LICENSE file at pin 80d1d90fb031, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T21:04Z",
+    "consent_receipt": "3ce21fcde417",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T21:04Z (receipt 3ce21fcde417); pinned to the default-branch head. LICENSE file at pin 80d1d90fb031 detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}
