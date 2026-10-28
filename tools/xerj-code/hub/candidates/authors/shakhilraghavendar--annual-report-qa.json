@@ -1,0 +1,23 @@
+{
+ "corpus": "shakhilraghavendar--annual-report-qa",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "AI",
+ "domain": "an agent working on finance, india, llm queries this for how ShakhilRaghavendar/annual-report-qa implements it: Hybrid RAG over Indian listed-company annual reports: cited answers in \u20b9 crore, with an evaluation comparing BM25, vector and hybrid retriev (selected work: src/arqa, tests)",
+ "repos": [
+  {
+   "repo": "annual-report-qa",
+   "url": "https://github.com/ShakhilRaghavendar/annual-report-qa",
+   "sha": "1f8f000224fb394a6ac34838c5cee1973d66e726",
+   "licence": "MIT (LICENSE file at pin 1f8f000224fb, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T15:58Z",
+    "consent_receipt": "65b046586f7f",
+    "note": "Inclusion consented by the commit author by email at 2026-10-28T15:58Z (receipt 65b046586f7f); selected commit 1f8f000224fb: \"Parser v1: priority-ranked headings, closers, nav-band filter, merge \u2026\". LICENSE file at pin 1f8f000224fb detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution. Pinned to head 1f8f000224fb (contains the selected commit): the LICENSE at the selected commit was NONE."
+   }
+  }
+ ]
+}

@@ -3,7 +3,7 @@
  "cloned_at": null,
  "status": "draft",
  "shelf": "AI",
- "domain": "an agent working on ai-agents, autonomous-agents, devops queries this for how BeeverForge/openfactory-core implements it: An autonomous software factory: tickets in, reviewed pull requests out. Apache-2.0, runs on your machines, no vendor lock-in (selected work: tests, openfactory, tools)",
+ "domain": "an agent working on ai-agents, autonomous-agents, python queries this for how BeeverForge/openfactory-core implements it: OpenFactory is now BeeverForge. This is the legacy OpenFactory 0.7 line, which gets security fixes only until BeeverForge 1.0. New work, iss (selected work: tests, openfactory, tools)",
  "repos": [
   {
    "repo": "openfactory-core",
