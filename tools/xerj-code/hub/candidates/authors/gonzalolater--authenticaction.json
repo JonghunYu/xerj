@@ -1,0 +1,23 @@
+{
+ "corpus": "gonzalolater--authenticaction",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on Solidity queries this for how gonzalolater/Authenticaction implements it: gonzalolater/Authenticaction (Solidity)",
+ "repos": [
+  {
+   "repo": "Authenticaction",
+   "url": "https://github.com/gonzalolater/Authenticaction",
+   "sha": "79f85784c7704dc88659c9aa1c2315d74a5161bb",
+   "licence": "MIT (LICENSE file at pin 79f85784c770, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T21:51Z",
+    "consent_receipt": "f110c37d6a55",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T21:51Z (receipt f110c37d6a55); pinned to the default-branch head. LICENSE file at pin 79f85784c770 detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

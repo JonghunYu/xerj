@@ -1,0 +1,23 @@
+{
+ "corpus": "gonzalolater--defiexchange",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on JavaScript queries this for how gonzalolater/DeFiExchange implements it: DeFiExchange Auditory",
+ "repos": [
+  {
+   "repo": "DeFiExchange",
+   "url": "https://github.com/gonzalolater/DeFiExchange",
+   "sha": "f0a838518fada38078deb2b3a4109e63f4b59d9a",
+   "licence": "MIT (LICENSE file at pin f0a838518fad, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T21:51Z",
+    "consent_receipt": "ae5e7303634a",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T21:51Z (receipt ae5e7303634a); pinned to the default-branch head. LICENSE file at pin f0a838518fad detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

@@ -1,0 +1,23 @@
+{
+ "corpus": "djabbat--iron-bioavailability-factorial",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on Python queries this for how djabbat/iron-bioavailability-factorial implements it: Iron bioavailability from sprouted wheat: reproducible 2x4x2 factorial design, power analysis and ANOVA/ANCOVA pipeline (JFS). Planning code",
+ "repos": [
+  {
+   "repo": "iron-bioavailability-factorial",
+   "url": "https://github.com/djabbat/iron-bioavailability-factorial",
+   "sha": "dbf7adf84a042334e88b0941e3309b7f9cbdad1e",
+   "licence": "MIT (LICENSE file at pin dbf7adf84a04, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T20:46Z",
+    "consent_receipt": "b982e62c9f86",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T20:46Z (receipt b982e62c9f86); pinned to the default-branch head. LICENSE file at pin dbf7adf84a04 detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

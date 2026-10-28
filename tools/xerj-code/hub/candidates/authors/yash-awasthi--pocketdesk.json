@@ -1,0 +1,23 @@
+{
+ "corpus": "yash-awasthi--pocketdesk",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "AI",
+ "domain": "an agent working on ai-agents, android, claude-code queries this for how Yash-Awasthi/PocketDesk implements it: Your PC in your pocket: files, full desktop control and AI coding agents with phone approvals, from anywhere. Windows daemon + Android app, ",
+ "repos": [
+  {
+   "repo": "PocketDesk",
+   "url": "https://github.com/Yash-Awasthi/PocketDesk",
+   "sha": "4d7af791f38a30ea134162f3365a38c923f06914",
+   "licence": "MIT (LICENSE file at pin 4d7af791f38a, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T22:25Z",
+    "consent_receipt": "45d2edc11ef5",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T22:25Z (receipt 45d2edc11ef5); pinned to the default-branch head. LICENSE file at pin 4d7af791f38a detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

@@ -1,0 +1,23 @@
+{
+ "corpus": "nanaelie--dottify",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on json, modules, pytest queries this for how nanaelie/dottify implements it: Dottify is a lightweight Python library that transforms dictionaries into objects with attribute-style access. Instead of the traditional di",
+ "repos": [
+  {
+   "repo": "dottify",
+   "url": "https://github.com/nanaelie/dottify",
+   "sha": "4bbbf19001afd460c9a86e4a86fb806e3da9b531",
+   "licence": "MIT (LICENSE file at pin 4bbbf19001af, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T21:58Z",
+    "consent_receipt": "1333ca9fef2e",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T21:58Z (receipt 1333ca9fef2e); pinned to the default-branch head. LICENSE file at pin 4bbbf19001af detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

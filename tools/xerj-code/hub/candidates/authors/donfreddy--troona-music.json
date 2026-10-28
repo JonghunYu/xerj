@@ -1,0 +1,23 @@
+{
+ "corpus": "donfreddy--troona-music",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "WEB",
+ "domain": "an agent working on Dart queries this for how donfreddy/troona-music implements it: A high-performance, offline-first music player for Flutter. Features a refined glassmorphism UI inspired by Apple Music, built with Clean Ar (selected work: lib/features, lib/core, test)",
+ "repos": [
+  {
+   "repo": "troona-music",
+   "url": "https://github.com/donfreddy/troona-music",
+   "sha": "2acf8cc970c5f384e7167fe96bf20d649e409dab",
+   "licence": "MIT (LICENSE file at pin 2acf8cc970c5, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T22:42Z",
+    "consent_receipt": "73a6b932c519",
+    "note": "Inclusion consented by the commit author by email at 2026-10-28T22:42Z (receipt 73a6b932c519); selected commit 2acf8cc970c5: \"fix(audit): impl\u00e9mentation compl\u00e8te des correctifs de l'audit V0 (hor\u2026\". LICENSE file at pin 2acf8cc970c5 detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

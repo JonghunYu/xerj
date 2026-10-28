@@ -1,0 +1,23 @@
+{
+ "corpus": "d3vko--wardriving-platform",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "SEC",
+ "domain": "an agent working on ctf-platform, wardriving, wardriving-analytics queries this for how d3vko/wardriving_platform implements it: Simple personal app for wardriving (selected work: wardrive)",
+ "repos": [
+  {
+   "repo": "wardriving_platform",
+   "url": "https://github.com/d3vko/wardriving_platform",
+   "sha": "714070119e5e268789035b37b6e3e49b1918452e",
+   "licence": "GPL-3.0 (LICENSE file at pin 714070119e5e, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "GPL-3.0",
+    "use": "approach-only",
+    "by": "author-consent",
+    "at": "2026-10-28T19:36Z",
+    "consent_receipt": "d114a520ef67",
+    "note": "Inclusion consented by the commit author by email at 2026-10-28T19:36Z (receipt d114a520ef67); selected commit 714070119e5e: \"fix: Marauder mode scan\". LICENSE file at pin 714070119e5e detected as GPL-3.0 by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

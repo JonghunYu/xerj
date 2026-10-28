@@ -1,0 +1,23 @@
+{
+ "corpus": "turlafsb--logshield",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "SEC",
+ "domain": "an agent working on cve-2021-44228, golang, ics queries this for how TurlaFSB/logshield implements it: Log4Shell virtual-patch reverse proxy: a compensating control for hosts that cannot be patched",
+ "repos": [
+  {
+   "repo": "logshield",
+   "url": "https://github.com/TurlaFSB/logshield",
+   "sha": "0be16a3fcbd02455eee56ab62fb19457d9f42d72",
+   "licence": "MIT (LICENSE file at pin 0be16a3fcbd0, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T19:57Z",
+    "consent_receipt": "0c8fb3558268",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T19:57Z (receipt 0c8fb3558268); pinned to the default-branch head. LICENSE file at pin 0be16a3fcbd0 detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

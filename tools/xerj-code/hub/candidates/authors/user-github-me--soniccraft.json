@@ -1,0 +1,23 @@
+{
+ "corpus": "user-github-me--soniccraft",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "AI",
+ "domain": "an agent working on agent-skills, ai-agents, audio queries this for how user-github-me/soniccraft implements it: Declarative multi-track audio engine for AI agents: YAML timelines to TTS speech, music beds and SFX with sidechain ducking, EBU R128 master",
+ "repos": [
+  {
+   "repo": "soniccraft",
+   "url": "https://github.com/user-github-me/soniccraft",
+   "sha": "d659706768b5d9937bbde448bbe28b479d70b528",
+   "licence": "author's permission (LICENSE at pin d659706768b5: NOASSERTION; repository: Apache-2.0)",
+   "review": {
+    "spdx": "NOASSERTION",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T22:47Z",
+    "consent_receipt": "97df93a84ec1",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T22:47Z (receipt 97df93a84ec1); pinned to the default-branch head. LICENSE at pin d659706768b5: NOASSERTION (repository: Apache-2.0); used with the author's permission, with attribution."
+   }
+  }
+ ]
+}

@@ -1,0 +1,23 @@
+{
+ "corpus": "gonzalolater--portafolio",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "AI",
+ "domain": "an agent working on microsoft-developers-ai-learning-hackathon queries this for how gonzalolater/portafolio implements it: Portfolio Fullstack Web 2 & Web 3, Chat with IA",
+ "repos": [
+  {
+   "repo": "portafolio",
+   "url": "https://github.com/gonzalolater/portafolio",
+   "sha": "d4bf823366707db3873f758d0fe7be31efe352cf",
+   "licence": "MIT (LICENSE file at pin d4bf82336670, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T21:51Z",
+    "consent_receipt": "b58175e1c60e",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T21:51Z (receipt b58175e1c60e); pinned to the default-branch head. LICENSE file at pin d4bf82336670 detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

@@ -13604,6 +13604,30 @@
    }
   },
   {
+   "cat": "API",
+   "domain": "an agent designing schema-evolution runtimes queries this for how pyverge models version graphs, migration paths, target policies, reflection, and registry-backed schema resolution",
+   "lane": "A",
+   "refresh": "pinned",
+   "slug": "pyverge",
+   "sources": [
+    {
+     "licence_hint": "Apache-2.0 \u2014 LICENSE verified at pin",
+     "url": "https://github.com/JoHa-HQ/pyverge"
+    }
+   ],
+   "status": "live",
+   "tags": {
+    "region": "GLOBAL",
+    "topics": [
+     "schema-evolution",
+     "migrations",
+     "versioning",
+     "python",
+     "data-contracts"
+    ]
+   }
+  },
+  {
    "cat": "AI",
    "domain": "an agent implementing coding-agent context tracking queries this for cross-harness context-budget hooks, usage accounting and regression tests",
    "lane": "A",
@@ -13611,7 +13635,7 @@
    "slug": "vanguard-context-burn",
    "sources": [
     {
-     "licence_hint": "Apache-2.0 \u2014 LICENSE verified at e0759ae02bd132957d954691a0a83d3f5d0b22d6; owner approval in xerj-org/xerj#2503",
+     "licence_hint": "Apache-2.0 — LICENSE verified at e0759ae02bd132957d954691a0a83d3f5d0b22d6; owner approval in xerj-org/xerj#2503",
      "url": "https://github.com/VincentChuWaiChow/vanguard-frontier-agentic"
     }
    ],

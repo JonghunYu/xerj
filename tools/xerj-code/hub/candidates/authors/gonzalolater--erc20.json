@@ -1,0 +1,23 @@
+{
+ "corpus": "gonzalolater--erc20",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on Solidity queries this for how gonzalolater/ERC20 implements it: Owneable, Pausable y Minteable, Con Quema",
+ "repos": [
+  {
+   "repo": "ERC20",
+   "url": "https://github.com/gonzalolater/ERC20",
+   "sha": "64103fb1214ee1a67a9616a4ec7c5151802367a0",
+   "licence": "MIT (LICENSE file at pin 64103fb1214e, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T21:51Z",
+    "consent_receipt": "d6565a5f29f6",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T21:51Z (receipt d6565a5f29f6); pinned to the default-branch head. LICENSE file at pin 64103fb1214e detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

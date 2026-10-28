@@ -1,0 +1,23 @@
+{
+ "corpus": "igmarin--rails-agent-skills",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "AI",
+ "domain": "an agent working on agent-skills, ruby-on-rails-skills queries this for how igmarin/rails-agent-skills implements it: 28 Rails-specific skills + 9 workflow templates for agentic development",
+ "repos": [
+  {
+   "repo": "rails-agent-skills",
+   "url": "https://github.com/igmarin/rails-agent-skills",
+   "sha": "03195c52ee7760f1713df6c099181dd9764478ac",
+   "licence": "MIT (LICENSE file at pin 03195c52ee77, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T22:01Z",
+    "consent_receipt": "02d0a4d7111b",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T22:01Z (receipt 02d0a4d7111b); pinned to the default-branch head. LICENSE file at pin 03195c52ee77 detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

@@ -1,0 +1,23 @@
+{
+ "corpus": "jan-tdy--qrgenerator-adv",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on JavaScript queries this for how jan-tdy/QRGenerator-ADV implements it: An advanced, free, qr code generator",
+ "repos": [
+  {
+   "repo": "QRGenerator-ADV",
+   "url": "https://github.com/jan-tdy/QRGenerator-ADV",
+   "sha": "350ec8f47a711a54f42269d6a8ae40358b08326b",
+   "licence": "MIT (LICENSE file at pin 350ec8f47a71, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T19:53Z",
+    "consent_receipt": "b017ed6c9142",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T19:53Z (receipt b017ed6c9142); pinned to the default-branch head. LICENSE file at pin 350ec8f47a71 detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

@@ -2,7 +2,7 @@
  "corpus": "goktugcy--everyos",
  "cloned_at": null,
  "status": "draft",
- "shelf": "OPS",
+ "shelf": "WEB",
  "domain": "an agent working on cloud, cloud-os, linux queries this for how goktugcy/everyos implements it: A self-hosted web GUI for managing Linux servers, Docker containers, apps, files, services and backups (selected work: scripts, tests, apps/api)",
  "repos": [
   {

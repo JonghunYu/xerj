@@ -1,0 +1,23 @@
+{
+ "corpus": "gonzalolater--condicionales-rust",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on Makefile queries this for how gonzalolater/condicionales-rust implements it: gonzalolater/condicionales-rust (Makefile)",
+ "repos": [
+  {
+   "repo": "condicionales-rust",
+   "url": "https://github.com/gonzalolater/condicionales-rust",
+   "sha": "c31c7fcab58bb811f61a51d03e6fd5818acebbd0",
+   "licence": "MIT (LICENSE file at pin c31c7fcab58b, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T21:51Z",
+    "consent_receipt": "7a6a9d17b341",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T21:51Z (receipt 7a6a9d17b341); pinned to the default-branch head. LICENSE file at pin c31c7fcab58b detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

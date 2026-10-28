@@ -1,0 +1,23 @@
+{
+ "corpus": "turkananation--pqthreshold",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "CRYPTO",
+ "domain": "an agent working on Dart queries this for how turkananation/pqthreshold implements it: Pure-Dart high-assurance threshold cryptography and distributed key-management primitives. Provides verifiable secret sharing,distributed ke",
+ "repos": [
+  {
+   "repo": "pqthreshold",
+   "url": "https://github.com/turkananation/pqthreshold",
+   "sha": "45cc092f60df8400746f495642eb7c087ba094ef",
+   "licence": "MIT (LICENSE file at pin 45cc092f60df, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T21:04Z",
+    "consent_receipt": "f69151f4be9b",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T21:04Z (receipt f69151f4be9b); pinned to the default-branch head. LICENSE file at pin 45cc092f60df detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

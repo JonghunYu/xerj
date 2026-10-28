@@ -3,7 +3,7 @@
  "cloned_at": null,
  "status": "draft",
  "shelf": "AI",
- "domain": "an agent working on automation, canvas-lms, claude-code queries this for how arthurcuri/mcp-instructure-canvas implements it: MCP para Canvas LMS com leitura e escrita, lembretes no Telegram e agente local Codex/Claude. Setup guiado, automa\u00e7\u00e3o opcional e GitHub Acti (selected work: src/canvas_mcp, tests, the project root)",
+ "domain": "an agent working on automation, canvas-lms, claude-code queries this for how arthurcuri/mcp-instructure-canvas implements it: Canvas LMS MCP server with REST and GraphQL, file transfers, Telegram reminders, and optional local Codex/Claude agents. Guided setup and op (selected work: src/canvas_mcp, tests, the project root)",
  "repos": [
   {
    "repo": "mcp-instructure-canvas",

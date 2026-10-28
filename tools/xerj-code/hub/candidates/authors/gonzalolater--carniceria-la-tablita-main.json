@@ -1,0 +1,23 @@
+{
+ "corpus": "gonzalolater--carniceria-la-tablita-main",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on CSS queries this for how gonzalolater/carniceria-la-tablita-main implements it: gonzalolater/carniceria-la-tablita-main (CSS)",
+ "repos": [
+  {
+   "repo": "carniceria-la-tablita-main",
+   "url": "https://github.com/gonzalolater/carniceria-la-tablita-main",
+   "sha": "fc124cec6cdbdd05cacab8ac8bdbedf4ab567900",
+   "licence": "MIT (LICENSE file at pin fc124cec6cdb, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T21:51Z",
+    "consent_receipt": "40a45986cff4",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T21:51Z (receipt 40a45986cff4); pinned to the default-branch head. LICENSE file at pin fc124cec6cdb detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

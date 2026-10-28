@@ -1,0 +1,23 @@
+{
+ "corpus": "gonzalolater--dapps-en-rinkeby",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on Solidity queries this for how gonzalolater/Dapps-en-Rinkeby implements it: gonzalolater/Dapps-en-Rinkeby (Solidity)",
+ "repos": [
+  {
+   "repo": "Dapps-en-Rinkeby",
+   "url": "https://github.com/gonzalolater/Dapps-en-Rinkeby",
+   "sha": "58a6c653e1d53f9add0a464cf08d159b0224f312",
+   "licence": "author's permission (LICENSE at pin 58a6c653e1d5: NONE; repository: none)",
+   "review": {
+    "spdx": "NONE",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T21:51Z",
+    "consent_receipt": "de054c9001db",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T21:51Z (receipt de054c9001db); pinned to the default-branch head. LICENSE at pin 58a6c653e1d5: NONE (repository: none); used with the author's permission, with attribution."
+   }
+  }
+ ]
+}

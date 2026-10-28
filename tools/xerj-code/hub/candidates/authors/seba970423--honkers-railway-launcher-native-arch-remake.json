@@ -1,0 +1,23 @@
+{
+ "corpus": "seba970423--honkers-railway-launcher-native-arch-remake",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on Shell queries this for how seba970423/honkers-railway-launcher-native-arch-remake implements it: This is a modified launcher for honkers-railway client",
+ "repos": [
+  {
+   "repo": "honkers-railway-launcher-native-arch-remake",
+   "url": "https://github.com/seba970423/honkers-railway-launcher-native-arch-remake",
+   "sha": "6d855600846ca884747bb041c233cc41d8022fc7",
+   "licence": "GPL-3.0 (LICENSE file at pin 6d855600846c, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "GPL-3.0",
+    "use": "approach-only",
+    "by": "author-consent",
+    "at": "2026-10-28T22:04Z",
+    "consent_receipt": "6530dabe94ec",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T22:04Z (receipt 6530dabe94ec); pinned to the default-branch head. LICENSE file at pin 6d855600846c detected as GPL-3.0 by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

@@ -1,0 +1,23 @@
+{
+ "corpus": "almasumdev--awesome-kotlin-android-agent-skills",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "AI",
+ "domain": "an agent working on agent-skills, ai-agents, android queries this for how almasumdev/awesome-kotlin-android-agent-skills implements it: Curated agent skills, conventions, and workflows for building Kotlin Android apps with AI coding agents",
+ "repos": [
+  {
+   "repo": "awesome-kotlin-android-agent-skills",
+   "url": "https://github.com/almasumdev/awesome-kotlin-android-agent-skills",
+   "sha": "1c24ece6c276822f54f6f1d1ba82bc996d3ccd08",
+   "licence": "author's permission (LICENSE at pin 1c24ece6c276: NOASSERTION; repository: NOASSERTION)",
+   "review": {
+    "spdx": "NOASSERTION",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T21:30Z",
+    "consent_receipt": "810995cd5f93",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T21:30Z (receipt 810995cd5f93); pinned to the default-branch head. LICENSE at pin 1c24ece6c276: NOASSERTION (repository: NOASSERTION); used with the author's permission, with attribution."
+   }
+  }
+ ]
+}

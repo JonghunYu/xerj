@@ -1,0 +1,23 @@
+{
+ "corpus": "gonzalolater--challenge-test",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on TypeScript queries this for how gonzalolater/Challenge-Test implements it: gonzalolater/Challenge-Test (TypeScript)",
+ "repos": [
+  {
+   "repo": "Challenge-Test",
+   "url": "https://github.com/gonzalolater/Challenge-Test",
+   "sha": "d64d312b7113bc8c47c97c7840e7c8ea48cc9a21",
+   "licence": "MIT (LICENSE file at pin d64d312b7113, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T21:51Z",
+    "consent_receipt": "ecdf725240b5",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T21:51Z (receipt ecdf725240b5); pinned to the default-branch head. LICENSE file at pin d64d312b7113 detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

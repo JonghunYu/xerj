@@ -1,0 +1,23 @@
+{
+ "corpus": "turkananation--pqforge",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "CRYPTO",
+ "domain": "an agent working on aead, cli, cryptography queries this for how turkananation/pqforge implements it: Pure-Dart post-quantum & classical hybrid crypto for Dart, Flutter, and Serverpod. Practical workflows using ML-KEM, ML-DSA, and SLH-DSA lay",
+ "repos": [
+  {
+   "repo": "pqforge",
+   "url": "https://github.com/turkananation/pqforge",
+   "sha": "7e59082b95ff39bc2a10b460f399bc024458b342",
+   "licence": "MIT (LICENSE file at pin 7e59082b95ff, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T21:04Z",
+    "consent_receipt": "15155f7c2bf4",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T21:04Z (receipt 15155f7c2bf4); pinned to the default-branch head. LICENSE file at pin 7e59082b95ff detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

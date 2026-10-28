@@ -1,0 +1,23 @@
+{
+ "corpus": "seba970423--cachyos-bootloader-switcher",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on Shell queries this for how seba970423/cachyos-bootloader-switcher implements it: Safety-first UEFI bootloader switcher for CachyOS. Migrate and restore GRUB, Limine, systemd-boot, and rEFInd with source-preserving transac",
+ "repos": [
+  {
+   "repo": "cachyos-bootloader-switcher",
+   "url": "https://github.com/seba970423/cachyos-bootloader-switcher",
+   "sha": "b13c933c28ed4fd132f3cf17d222edd01569842b",
+   "licence": "GPL-3.0 (LICENSE file at pin b13c933c28ed, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "GPL-3.0",
+    "use": "approach-only",
+    "by": "author-consent",
+    "at": "2026-10-28T22:04Z",
+    "consent_receipt": "cc771539d53c",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T22:04Z (receipt cc771539d53c); pinned to the default-branch head. LICENSE file at pin b13c933c28ed detected as GPL-3.0 by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

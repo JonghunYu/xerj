@@ -1,0 +1,23 @@
+{
+ "corpus": "gonzalolater--rainbowkit-botton",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on TypeScript queries this for how gonzalolater/RainbowKit-Botton implements it: challenge",
+ "repos": [
+  {
+   "repo": "RainbowKit-Botton",
+   "url": "https://github.com/gonzalolater/RainbowKit-Botton",
+   "sha": "0a3240dd3eb5f332b3a0fa93bb7561f36e46c131",
+   "licence": "author's permission (LICENSE at pin 0a3240dd3eb5: NONE; repository: none)",
+   "review": {
+    "spdx": "NONE",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T21:51Z",
+    "consent_receipt": "468b04f170e6",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T21:51Z (receipt 468b04f170e6); pinned to the default-branch head. LICENSE at pin 0a3240dd3eb5: NONE (repository: none); used with the author's permission, with attribution."
+   }
+  }
+ ]
+}

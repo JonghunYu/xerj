@@ -1,0 +1,23 @@
+{
+ "corpus": "turkananation--zeroize",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "SEC",
+ "domain": "an agent working on constant-time, memory-zeroing, post-quantum queries this for how turkananation/zeroize implements it: Best-effort secret memory zeroing, constant-time operations, and secure containers for pure Dart",
+ "repos": [
+  {
+   "repo": "zeroize",
+   "url": "https://github.com/turkananation/zeroize",
+   "sha": "d9540db2abcd1abcc58641bb70adbb66954aa154",
+   "licence": "MIT (LICENSE file at pin d9540db2abcd, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T21:04Z",
+    "consent_receipt": "ebd8e3999a5c",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T21:04Z (receipt ebd8e3999a5c); pinned to the default-branch head. LICENSE file at pin d9540db2abcd detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

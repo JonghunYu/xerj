@@ -1,0 +1,23 @@
+{
+ "corpus": "jan-tdy--jadivcalc-template",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "WEB",
+ "domain": "an agent working on Python queries this for how jan-tdy/jadivcalc-template implements it: Simple Python GUI program that generates math examples based on json file",
+ "repos": [
+  {
+   "repo": "jadivcalc-template",
+   "url": "https://github.com/jan-tdy/jadivcalc-template",
+   "sha": "48ea594044d4eb92dd462838e38de095a1350e1f",
+   "licence": "MIT (LICENSE file at pin 48ea594044d4, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T19:53Z",
+    "consent_receipt": "c36171b6c6cc",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T19:53Z (receipt c36171b6c6cc); pinned to the default-branch head. LICENSE file at pin 48ea594044d4 detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

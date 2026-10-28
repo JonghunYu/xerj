@@ -1,0 +1,23 @@
+{
+ "corpus": "tugrulguner--intpot",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "AI",
+ "domain": "an agent working on cli, code-generation, converter queries this for how tugrulguner/intpot implements it: Define Python tools once and serve them as a Typer CLI, FastAPI app, or FastMCP server \u2014 or convert existing apps between all three",
+ "repos": [
+  {
+   "repo": "intpot",
+   "url": "https://github.com/tugrulguner/intpot",
+   "sha": "d863148d335294f14570ddf8100dae08b76fea77",
+   "licence": "MIT (LICENSE file at pin d863148d3352, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T22:45Z",
+    "consent_receipt": "f6ac8caf77aa",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T22:45Z (receipt f6ac8caf77aa); pinned to the default-branch head. LICENSE file at pin d863148d3352 detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

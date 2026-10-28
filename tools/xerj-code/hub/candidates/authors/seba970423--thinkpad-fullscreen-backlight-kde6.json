@@ -1,0 +1,23 @@
+{
+ "corpus": "seba970423--thinkpad-fullscreen-backlight-kde6",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on Shell queries this for how seba970423/thinkpad-fullscreen-backlight-kde6 implements it: Automatically disables the ThinkPad keyboard backlight in fullscreen mode with Wayland on KDE Plasma 6",
+ "repos": [
+  {
+   "repo": "thinkpad-fullscreen-backlight-kde6",
+   "url": "https://github.com/seba970423/thinkpad-fullscreen-backlight-kde6",
+   "sha": "1da62e59b0f7348cb5ec46ebefd32b1738d51a7b",
+   "licence": "MIT (LICENSE file at pin 1da62e59b0f7, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T22:04Z",
+    "consent_receipt": "1e466bbe5503",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T22:04Z (receipt 1e466bbe5503); pinned to the default-branch head. LICENSE file at pin 1da62e59b0f7 detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

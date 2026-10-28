@@ -1,0 +1,23 @@
+{
+ "corpus": "nightx-rebel--socksy",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "WEB",
+ "domain": "an agent working on baileys, whatsapp-bot, whatsapp-web queries this for how nightx-rebel/socksy implements it: WhatsApp multiple socket sessions use baileys (selected work: src, wa-bot)",
+ "repos": [
+  {
+   "repo": "socksy",
+   "url": "https://github.com/nightx-rebel/socksy",
+   "sha": "787e54eab31f68c0477fb9753ad596ed29a23d4f",
+   "licence": "MIT (LICENSE file at pin 787e54eab31f, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T19:58Z",
+    "consent_receipt": "0dbf357306d5",
+    "note": "Inclusion consented by the commit author by email at 2026-10-28T19:58Z (receipt 0dbf357306d5); selected commit 787e54eab31f: \"update code\". LICENSE file at pin 787e54eab31f detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

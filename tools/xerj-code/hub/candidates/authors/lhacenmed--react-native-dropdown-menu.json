@@ -1,0 +1,23 @@
+{
+ "corpus": "lhacenmed--react-native-dropdown-menu",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "WEB",
+ "domain": "an agent working on android, dropdown-menu, expo queries this for how LhacenMed/react-native-dropdown-menu implements it: Native dropdown menus for Expo React Native\u2014fast, smooth, and ready to use",
+ "repos": [
+  {
+   "repo": "react-native-dropdown-menu",
+   "url": "https://github.com/LhacenMed/react-native-dropdown-menu",
+   "sha": "dc50a6ba9729364109bbc0b4316d65d220b12066",
+   "licence": "author's permission (LICENSE at pin dc50a6ba9729: NONE; repository: none)",
+   "review": {
+    "spdx": "NONE",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T19:35Z",
+    "consent_receipt": "3a618a74dcd3",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T19:35Z (receipt 3a618a74dcd3); pinned to the default-branch head. LICENSE at pin dc50a6ba9729: NONE (repository: none); used with the author's permission, with attribution."
+   }
+  }
+ ]
+}

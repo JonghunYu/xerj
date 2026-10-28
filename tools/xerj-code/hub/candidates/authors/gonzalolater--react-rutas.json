@@ -1,0 +1,23 @@
+{
+ "corpus": "gonzalolater--react-rutas",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "WEB",
+ "domain": "an agent working on JavaScript queries this for how gonzalolater/React-Rutas implements it: Hooks, useEffects, dom, Como configurar las rutas de la aplicacion",
+ "repos": [
+  {
+   "repo": "React-Rutas",
+   "url": "https://github.com/gonzalolater/React-Rutas",
+   "sha": "95a950560e87488a4aedb4c5e0d01bb0adb7802a",
+   "licence": "author's permission (LICENSE at pin 95a950560e87: NONE; repository: none)",
+   "review": {
+    "spdx": "NONE",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T21:51Z",
+    "consent_receipt": "8368f0aff261",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T21:51Z (receipt 8368f0aff261); pinned to the default-branch head. LICENSE at pin 95a950560e87: NONE (repository: none); used with the author's permission, with attribution."
+   }
+  }
+ ]
+}

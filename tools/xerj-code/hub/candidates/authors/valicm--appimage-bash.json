@@ -1,0 +1,23 @@
+{
+ "corpus": "valicm--appimage-bash",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on appimage, appimage-builder, appimages queries this for how valicm/appimage-bash implements it: GitHub Action for creating AppImage from .tar.gz packages",
+ "repos": [
+  {
+   "repo": "appimage-bash",
+   "url": "https://github.com/valicm/appimage-bash",
+   "sha": "2f2aa4695733fcc48efe64d004d45e7173287a5d",
+   "licence": "MIT (LICENSE file at pin 2f2aa4695733, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T20:15Z",
+    "consent_receipt": "01c176f14c82",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T20:15Z (receipt 01c176f14c82); pinned to the default-branch head. LICENSE file at pin 2f2aa4695733 detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

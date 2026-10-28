@@ -1,0 +1,23 @@
+{
+ "corpus": "ferrismind--shadcn-rs",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "WEB",
+ "domain": "an agent working on gui, open-source, rust queries this for how FerrisMind/shadcn-rs implements it: shadcn/ui-inspired Rust GUI component system for iced/egui",
+ "repos": [
+  {
+   "repo": "shadcn-rs",
+   "url": "https://github.com/FerrisMind/shadcn-rs",
+   "sha": "46cb92a01617195074a4ac570e64737ee2d9749c",
+   "licence": "author's permission (LICENSE at pin 46cb92a01617: NOASSERTION; repository: Apache-2.0)",
+   "review": {
+    "spdx": "NOASSERTION",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T19:26Z",
+    "consent_receipt": "c7ae9e7e0a38",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T19:26Z (receipt c7ae9e7e0a38); pinned to the default-branch head. LICENSE at pin 46cb92a01617: NOASSERTION (repository: Apache-2.0); used with the author's permission, with attribution."
+   }
+  }
+ ]
+}

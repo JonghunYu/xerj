@@ -1,0 +1,23 @@
+{
+ "corpus": "ferrismind--omnivoice-rs",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "AI",
+ "domain": "an agent working on Rust queries this for how FerrisMind/omnivoice-rs implements it: Implementation of the OmniVoice inference model from k2-fsa on Rust",
+ "repos": [
+  {
+   "repo": "omnivoice-rs",
+   "url": "https://github.com/FerrisMind/omnivoice-rs",
+   "sha": "4c7b088294fd6f3a5fb9e3b1dfd3a77bc12f105b",
+   "licence": "author's permission (LICENSE at pin 4c7b088294fd: NOASSERTION; repository: Apache-2.0)",
+   "review": {
+    "spdx": "NOASSERTION",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T19:26Z",
+    "consent_receipt": "7bed0454b3df",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T19:26Z (receipt 7bed0454b3df); pinned to the default-branch head. LICENSE at pin 4c7b088294fd: NOASSERTION (repository: Apache-2.0); used with the author's permission, with attribution."
+   }
+  }
+ ]
+}

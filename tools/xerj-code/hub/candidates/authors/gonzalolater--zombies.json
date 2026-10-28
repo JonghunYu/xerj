@@ -1,0 +1,23 @@
+{
+ "corpus": "gonzalolater--zombies",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on Solidity queries this for how gonzalolater/Zombies implements it: gonzalolater/Zombies (Solidity)",
+ "repos": [
+  {
+   "repo": "Zombies",
+   "url": "https://github.com/gonzalolater/Zombies",
+   "sha": "f1169ea92949638433d80c3260231ddd1dcacc77",
+   "licence": "author's permission (LICENSE at pin f1169ea92949: NONE; repository: none)",
+   "review": {
+    "spdx": "NONE",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T21:51Z",
+    "consent_receipt": "d31e66b12f56",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T21:51Z (receipt d31e66b12f56); pinned to the default-branch head. LICENSE at pin f1169ea92949: NONE (repository: none); used with the author's permission, with attribution."
+   }
+  }
+ ]
+}

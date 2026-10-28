@@ -1,0 +1,23 @@
+{
+ "corpus": "gonzalolater--blockchain-sanluis",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "CRYPTO",
+ "domain": "an agent working on JavaScript queries this for how gonzalolater/BlockChain-SanLuis implements it: Testing in Jest",
+ "repos": [
+  {
+   "repo": "BlockChain-SanLuis",
+   "url": "https://github.com/gonzalolater/BlockChain-SanLuis",
+   "sha": "17e994a9cb0af98630e13a2114eafe0fef451f36",
+   "licence": "MIT (LICENSE file at pin 17e994a9cb0a, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T21:51Z",
+    "consent_receipt": "952bb9ef183c",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T21:51Z (receipt 952bb9ef183c); pinned to the default-branch head. LICENSE file at pin 17e994a9cb0a detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}
