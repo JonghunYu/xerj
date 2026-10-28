@@ -3,7 +3,7 @@
  "cloned_at": null,
  "status": "draft",
  "shelf": "AI",
- "domain": "an agent working on Go queries this for how komovaar/kolo implements it: Multiplayer AI coding agents. One machine runs them, everybody else opens a link (selected work: internal/hub, frontend, tests)",
+ "domain": "an agent working on agent, agent-orchestration, ai queries this for how komovaar/kolo implements it: share a live agent session with a link (selected work: internal/hub, frontend, tests)",
  "repos": [
   {
    "repo": "kolo",

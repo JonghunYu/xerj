@@ -1,0 +1,23 @@
+{
+ "corpus": "alexruperez--sateb-plugin",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "OPS",
+ "domain": "an agent working on docker-compose, la-liga, real-debrid-addon queries this for how alexruperez/sateb-plugin implements it: Self-hosted Stremio addon stack with Real-Debrid, deployed with Docker Compose on any VPS or dedicated server",
+ "repos": [
+  {
+   "repo": "sateb-plugin",
+   "url": "https://github.com/alexruperez/sateb-plugin",
+   "sha": "b2f6766637554733c43a87811cb3028a8ac2045e",
+   "licence": "author's permission (LICENSE at pin b2f676663755: NONE; repository: none)",
+   "review": {
+    "spdx": "NONE",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T18:13Z",
+    "consent_receipt": "a3a0fbdceb76",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T18:13Z (receipt a3a0fbdceb76); pinned to the default-branch head. LICENSE at pin b2f676663755: NONE (repository: none); used with the author's permission, with attribution."
+   }
+  }
+ ]
+}

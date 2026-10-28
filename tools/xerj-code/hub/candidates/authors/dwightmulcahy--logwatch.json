@@ -1,0 +1,23 @@
+{
+ "corpus": "dwightmulcahy--logwatch",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "OPS",
+ "domain": "an agent working on Python queries this for how dwightmulcahy/logwatch implements it: Logwatch is a nightly sidecar container that reads the Docker logs, checks errors, latency, uptime gaps and probes, sorts users from search, (selected work: the project root, tests)",
+ "repos": [
+  {
+   "repo": "logwatch",
+   "url": "https://github.com/dwightmulcahy/logwatch",
+   "sha": "cfde27e31ce6edea8fc54e2b696039e9738bee70",
+   "licence": "MIT (LICENSE file at pin cfde27e31ce6, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T15:41Z",
+    "consent_receipt": "bc60c5d7cb10",
+    "note": "Inclusion consented by the commit author by email at 2026-10-28T15:41Z (receipt bc60c5d7cb10); selected commit cfde27e31ce6: \"fix(claude): bound nightly analysis prompt size (#2)\". LICENSE file at pin cfde27e31ce6 detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution. Pinned to head cfde27e31ce6 (contains the selected commit): the LICENSE at the selected commit was NONE."
+   }
+  }
+ ]
+}

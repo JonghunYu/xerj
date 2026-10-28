@@ -1,0 +1,23 @@
+{
+ "corpus": "l3tchupkt--adaptq",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "AI",
+ "domain": "an agent working on attention, avx2, cpu-optimization queries this for how l3tchupkt/adaptq implements it: High-performance C++17 KV cache compression engine for LLM inference with Python bindings, SIMD acceleration, and multi-backend support",
+ "repos": [
+  {
+   "repo": "adaptq",
+   "url": "https://github.com/l3tchupkt/adaptq",
+   "sha": "fd9e7555cd94661d37b2168e4d09a05fb4e20c4c",
+   "licence": "author's permission (LICENSE at pin fd9e7555cd94: NONE; repository: none)",
+   "review": {
+    "spdx": "NONE",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T18:12Z",
+    "consent_receipt": "cdc667773f59",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T18:12Z (receipt cdc667773f59); pinned to the default-branch head. LICENSE at pin fd9e7555cd94: NONE (repository: none); used with the author's permission, with attribution."
+   }
+  }
+ ]
+}

@@ -1,0 +1,23 @@
+{
+ "corpus": "zajfan--vscode-project-launcher",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "WEB",
+ "domain": "an agent working on linux, linux-app, python queries this for how Zajfan/vscode-project-launcher implements it: A desktop application to easily manage and launch VS Code workspaces",
+ "repos": [
+  {
+   "repo": "vscode-project-launcher",
+   "url": "https://github.com/Zajfan/vscode-project-launcher",
+   "sha": "b57543775a86516d6b07b90d591f2ac0ca759492",
+   "licence": "MIT (LICENSE file at pin b57543775a86, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T18:26Z",
+    "consent_receipt": "2eaa76b72a4d",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T18:26Z (receipt 2eaa76b72a4d); pinned to the default-branch head. LICENSE file at pin b57543775a86 detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

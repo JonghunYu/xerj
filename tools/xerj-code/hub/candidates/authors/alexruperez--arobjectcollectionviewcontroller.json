@@ -1,0 +1,23 @@
+{
+ "corpus": "alexruperez--arobjectcollectionviewcontroller",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on Objective-C queries this for how alexruperez/ARObjectCollectionViewController implements it: UIViewController that can present a JSON NSString, JSON NSData, JSON URL, XML NSData, XML URL, RSS NSData, RSS URL, NSDictionary, NSArray, N",
+ "repos": [
+  {
+   "repo": "ARObjectCollectionViewController",
+   "url": "https://github.com/alexruperez/ARObjectCollectionViewController",
+   "sha": "aaf196e49869ba9a84f1d24051e75bbaaf575b16",
+   "licence": "MIT (LICENSE file at pin aaf196e49869, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T18:13Z",
+    "consent_receipt": "022864e51135",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T18:13Z (receipt 022864e51135); pinned to the default-branch head. LICENSE file at pin aaf196e49869 detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

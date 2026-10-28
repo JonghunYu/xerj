@@ -1,0 +1,23 @@
+{
+ "corpus": "alexruperez--ha-matter-u200",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on Python queries this for how alexruperez/ha-matter-u200 implements it: alexruperez/ha-matter-u200 (Python)",
+ "repos": [
+  {
+   "repo": "ha-matter-u200",
+   "url": "https://github.com/alexruperez/ha-matter-u200",
+   "sha": "aaa84f9bd2dd7631a29045dc68e2178e7ff2c063",
+   "licence": "author's permission (LICENSE at pin aaa84f9bd2dd: NONE; repository: none)",
+   "review": {
+    "spdx": "NONE",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T18:13Z",
+    "consent_receipt": "67912a03101a",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T18:13Z (receipt 67912a03101a); pinned to the default-branch head. LICENSE at pin aaa84f9bd2dd: NONE (repository: none); used with the author's permission, with attribution."
+   }
+  }
+ ]
+}

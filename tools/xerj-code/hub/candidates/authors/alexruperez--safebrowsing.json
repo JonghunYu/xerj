@@ -1,0 +1,23 @@
+{
+ "corpus": "alexruperez--safebrowsing",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "SEC",
+ "domain": "an agent working on google, google-safebrowsing, safebrowsing queries this for how alexruperez/SafeBrowsing implements it: Protect your users against malware and phishing threats using Google Safe Browsing",
+ "repos": [
+  {
+   "repo": "SafeBrowsing",
+   "url": "https://github.com/alexruperez/SafeBrowsing",
+   "sha": "ec66ca5fa4466b476a17847f1cc9fdd51ee6a4d8",
+   "licence": "MIT (LICENSE file at pin ec66ca5fa446, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T18:13Z",
+    "consent_receipt": "96ba41217284",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T18:13Z (receipt 96ba41217284); pinned to the default-branch head. LICENSE file at pin ec66ca5fa446 detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

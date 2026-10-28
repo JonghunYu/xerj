@@ -1,0 +1,23 @@
+{
+ "corpus": "alexruperez--swift-executable-template",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on template, swift-template, swiftcli queries this for how alexruperez/swift-executable-template implements it: Swift Executable Template, just run ./generate.sh",
+ "repos": [
+  {
+   "repo": "swift-executable-template",
+   "url": "https://github.com/alexruperez/swift-executable-template",
+   "sha": "2dbe23839063864aed241daa7a03e18c4bb93c9c",
+   "licence": "MIT (LICENSE file at pin 2dbe23839063, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T18:13Z",
+    "consent_receipt": "20335b7b396b",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T18:13Z (receipt 20335b7b396b); pinned to the default-branch head. LICENSE file at pin 2dbe23839063 detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

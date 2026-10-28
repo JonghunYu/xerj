@@ -1,0 +1,23 @@
+{
+ "corpus": "alexruperez--alexruperez-android-app",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "WEB",
+ "domain": "an agent working on Java queries this for how alexruperez/alexruperez-android-app implements it: This is a very simple app, that uses a webview to display http://alexruperez.com on your Android device",
+ "repos": [
+  {
+   "repo": "alexruperez-android-app",
+   "url": "https://github.com/alexruperez/alexruperez-android-app",
+   "sha": "f49810f0034bcd280b8faa4849b59f167e6d5e92",
+   "licence": "author's permission (LICENSE at pin f49810f0034b: NONE; repository: none)",
+   "review": {
+    "spdx": "NONE",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T18:13Z",
+    "consent_receipt": "bd39edc2fb4d",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T18:13Z (receipt bd39edc2fb4d); pinned to the default-branch head. LICENSE at pin f49810f0034b: NONE (repository: none); used with the author's permission, with attribution."
+   }
+  }
+ ]
+}

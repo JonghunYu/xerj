@@ -1,0 +1,23 @@
+{
+ "corpus": "asteroidcrib729--job-finder-app",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "DB",
+ "domain": "an agent working on automation, discord-bot, github-actions queries this for how asteroidcrib729/job-finder-app implements it: Automated job search engine that scrapes listings across platforms (LinkedIn, JobSpy, Rozee, RSS), evaluates job relevance against candidate (selected work: tests, src/job_finder, config)",
+ "repos": [
+  {
+   "repo": "job-finder-app",
+   "url": "https://github.com/asteroidcrib729/job-finder-app",
+   "sha": "9fd3c3f964b9354e09ca4f3ad669b1405ed662c8",
+   "licence": "Apache-2.0 (LICENSE file at pin 9fd3c3f964b9, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "Apache-2.0",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T00:03Z",
+    "consent_receipt": "b8ac16676407",
+    "note": "Inclusion consented by the commit author by email at 2026-10-28T00:03Z (receipt b8ac16676407); selected commit 9fd3c3f964b9: \"feat: activate SerpApi with durable credit limits\". LICENSE file at pin 9fd3c3f964b9 detected as Apache-2.0 by the GitHub licence API on 2026-10-28; used under that licence with attribution. Pinned to head 9fd3c3f964b9 (contains the selected commit): the LICENSE at the selected commit was NONE."
+   }
+  }
+ ]
+}
