@@ -1,0 +1,21 @@
+{
+ "corpus": "pyverge",
+ "cloned_at": "2026-10-27T21:04:08Z",
+ "repos": [
+  {
+   "repo": "pyverge",
+   "url": "https://github.com/JoHa-HQ/pyverge.git",
+   "licence": "Apache-2.0",
+   "sha": "42cb4096433524a980ed22b80ad23aba222bf34d",
+   "files": 349,
+   "bytes": 2656781,
+   "review": {
+    "spdx": "Apache-2.0",
+    "use": "adapt-with-attribution",
+    "by": "@TheLazzziest",
+    "at": "2026-10-27",
+    "note": "Opened LICENSE (Apache License 2.0); pyproject.toml declares Apache-2.0; only LICENSE is tracked; no vendored third-party licence files."
+   }
+  }
+ ]
+}
