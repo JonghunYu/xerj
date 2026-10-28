@@ -595,9 +595,13 @@ padding:var(--sp-2) 0;display:flex;flex-direction:column;z-index:60;box-shadow:0
 .mystars{width:100%;border-collapse:collapse;margin-top:var(--sp-6);background:#fff}
 .mystars th,.mystars td{border:1px solid var(--z-line);padding:var(--sp-2) var(--sp-3);text-align:left}
 button.cta{border:0;cursor:pointer}button.cta:disabled{opacity:.45;cursor:default}
-.addrepos td:first-child{width:28px;text-align:center}.addrepos .why{color:var(--z-mute);font-size:var(--fs-13)}
+.addrepos td:first-child{width:44px;text-align:center}.addrepos .why{color:var(--z-mute);font-size:var(--fs-13)}
+.addrepos input,.addagree input{width:22px;height:22px;margin:0;accent-color:var(--z-accent);cursor:pointer;flex:none}
+.addrepos tr.pick{cursor:pointer}.addrepos tr.pick:hover{background:var(--z-bg)}.addrepos tr.on{background:#fbf3e4}
 .addbar{display:flex;flex-wrap:wrap;gap:var(--sp-3);align-items:center;margin-top:var(--sp-5)}
-.addagree{display:flex;gap:var(--sp-3);align-items:flex-start;max-width:760px;margin-top:var(--sp-5)}
+.addagree{display:flex;gap:var(--sp-3);align-items:flex-start;max-width:760px;margin-top:var(--sp-5);cursor:pointer}
+.addgo{display:flex;flex-wrap:wrap;gap:var(--sp-3);align-items:center;margin-top:var(--sp-4)}.addgo .note{margin:0}
+@media (max-width:600px){.addrepos .opt{display:none}}
 .spark{width:160px;height:32px;display:block}.spark polyline{fill:none;stroke:var(--z-accent);stroke-width:1.5}
 .authnote{position:fixed;bottom:var(--sp-5);right:var(--sp-5);background:var(--z-ink);color:#fff;padding:var(--sp-3) var(--sp-5);
 font-family:var(--font-data);font-size:var(--fs-13);z-index:70}
@@ -1288,7 +1292,7 @@ ADD_JS = """<script>
       if(!repos.length){lead.textContent='Signed in as '+login+'. GitHub lists no public repositories owned by this account.';return}
       lead.textContent='Signed in as '+login+'. Tick the repositories you want on the Corpus Hub. Each becomes a corpus of the whole repository, credited to you on your contributor page.';
       var t=el('table',{'class':'mystars addrepos'}),hd=el('tr'),boxes=[];
-      ['','repository','language','stars','status'].forEach(function(x){hd.appendChild(el('th',{},x))});t.appendChild(hd);
+      [['add'],['repository'],['language','opt'],['stars','opt'],['status']].forEach(function(x){hd.appendChild(el('th',x[1]?{'class':x[1]}:{},x[0]))});t.appendChild(hd);
       repos.forEach(function(r){
         var k=r.full_name.toLowerCase(),q=req[k],tr=el('tr'),c=el('td'),why=null;
         if(hub[k])why='on the hub';
@@ -1296,12 +1300,14 @@ ADD_JS = """<script>
         else if(r.fork)why='fork: add the original instead';
         else if(r.archived)why='archived';
         else if(!r.size)why='empty';
-        if(!why){var cb=el('input',{type:'checkbox',value:r.full_name,'aria-label':'add '+r.full_name});c.appendChild(cb);boxes.push(cb)}
+        if(!why){ // the whole row toggles the box, not only the 22px square
+          var cb=el('input',{type:'checkbox',value:r.full_name,'aria-label':'add '+r.full_name});c.appendChild(cb);boxes.push(cb);tr.className='pick';
+          tr.onclick=function(e){if(e.target===cb||e.target.closest('a,button')||cb.disabled)return;cb.checked=!cb.checked;upd()}}
         tr.appendChild(c);
         var n=el('td');n.appendChild(el('a',{href:r.html_url,rel:'noopener'},r.full_name));
         if(r.description)n.appendChild(el('div',{'class':'why'},r.description.slice(0,140)));tr.appendChild(n);
-        tr.appendChild(el('td',{'class':'mono'},r.language||''));
-        tr.appendChild(el('td',{'class':'mono'},'\u2605 '+Number(r.stargazers_count||0).toLocaleString('en-US')));
+        tr.appendChild(el('td',{'class':'mono opt'},r.language||''));
+        tr.appendChild(el('td',{'class':'mono opt'},'\u2605 '+Number(r.stargazers_count||0).toLocaleString('en-US')));
         var s=el('td',{'class':'why'},why||'');
         if(hub[k])s.appendChild(document.createTextNode(' \u00b7 ')),s.appendChild(el('a',{href:'/contributors/'+login},'your page'));
         if(q&&!q.withdrawn||hub[k]){var w=el('button',{type:'button','class':'copy'},'withdraw');w.onclick=function(){
@@ -1312,24 +1318,33 @@ ADD_JS = """<script>
       var bar=el('div',{'class':'addbar'}),all=el('button',{type:'button','class':'copy'},'select all'),none=el('button',{type:'button','class':'copy'},'select none');
       all.onclick=function(){boxes.forEach(function(b){b.checked=true});upd()};none.onclick=function(){boxes.forEach(function(b){b.checked=false});upd()};
       bar.appendChild(all);bar.appendChild(none);
-      var ag=el('label',{'class':'addagree'}),agc=el('input',{type:'checkbox'});ag.appendChild(agc);ag.appendChild(el('span',{},st.consent.text));
-      var go=el('button',{type:'button','class':'cta'},'Add repositories'),msg=el('p',{'class':'note',role:'status'});
+      var ag=el('label',{'class':'addagree'}),agc=el('input',{type:'checkbox','aria-label':'I agree'});ag.appendChild(agc);ag.appendChild(el('span',{},st.consent.text));
+      // the controls sit above the list (it can run to hundreds of rows), with a second Add button under it;
+      // the buttons stay clickable and say what is missing instead of greying out
+      var gos=[],msg=el('p',{'class':'note',role:'status'}),busy=false;
+      function goRow(withMsg){var d=el('div',{'class':'addgo'}),g=el('button',{type:'button','class':'cta'},'Add repositories');g.onclick=add;gos.push(g);d.appendChild(g);if(withMsg)d.appendChild(msg);return d}
       function sel(){return boxes.filter(function(b){return b.checked&&!b.disabled}).map(function(b){return b.value})}
-      function upd(){var n=sel().length;go.textContent=n?'Add '+n+' repositor'+(n===1?'y':'ies'):'Add repositories';go.disabled=!n||!agc.checked}
-      boxes.forEach(function(b){b.onchange=upd});agc.onchange=upd;upd();
-      go.onclick=function(){
-        var list=sel(),done=0;if(!list.length||!agc.checked)return;go.disabled=true;msg.textContent='Adding\u2026';
+      function upd(){var n=sel().length;boxes.forEach(function(b){b.parentNode.parentNode.classList.toggle('on',b.checked)});
+        gos.forEach(function(g){g.textContent=n?'Add '+n+' repositor'+(n===1?'y':'ies'):'Add repositories';g.disabled=busy});
+        if(!busy&&n&&agc.checked)msg.textContent=''}
+      function say(x){msg.textContent=x;var r=msg.getBoundingClientRect();if(r.top<0||r.bottom>window.innerHeight)msg.scrollIntoView({block:'center'})}
+      function add(){
+        var list=sel(),done=0;if(busy)return;
+        if(!list.length){say(boxes.some(function(b){return !b.disabled})?'Tick at least one repository in the list first.':'Every repository listed is already added or cannot be added.');return}
+        if(!agc.checked){say('Tick the agreement box above the button first.');agc.focus();return}
+        busy=true;upd();say('Adding\u2026');
         (function next(){ // the API takes up to 100 per request
           var part=list.slice(done,done+100);if(!part.length){
-            msg.textContent='Added '+done+' repositor'+(done===1?'y':'ies')+'. Each goes through the same checks as every hub corpus and usually shows on your contributor page within a few hours.';upd();return}
+            busy=false;upd();say('Added '+done+' repositor'+(done===1?'y':'ies')+'. Each goes through the same checks as every hub corpus and usually shows on your contributor page within a few hours.');return}
           api({repos:part,agree:true,consent:st.consent.version}).then(function(x){
-            if(!x||!x.ok){msg.textContent=(x&&x.error)||'Could not add them right now.';go.disabled=false;return}
-            boxes.forEach(function(b){if(part.indexOf(b.value)>=0){b.checked=false;b.disabled=true;b.parentNode.parentNode.lastChild.textContent='added; goes live after the checks'}});
+            if(!x||!x.ok){busy=false;upd();say((x&&x.error)||'Could not add them right now.');return}
+            boxes.forEach(function(b){if(part.indexOf(b.value)>=0){b.checked=false;b.disabled=true;var tr=b.parentNode.parentNode;tr.className='';tr.lastChild.textContent='added; goes live after the checks'}});
             done+=part.length;next();
-          },function(){msg.textContent='Could not add them right now.';go.disabled=false});
+          },function(){busy=false;upd();say('Could not add them right now.')});
         })();
-      };
-      box.appendChild(t);box.appendChild(bar);box.appendChild(ag);box.appendChild(go);box.appendChild(msg);
+      }
+      boxes.forEach(function(b){b.onchange=upd});agc.onchange=upd;
+      box.appendChild(ag);box.appendChild(goRow(true));box.appendChild(bar);box.appendChild(t);box.appendChild(goRow(false));upd();
       box.appendChild(el('p',{'class':'note'},'Only repositories under your own account are listed. For organisation repositories, write to founders@xerj.org.'));
     }
   });
