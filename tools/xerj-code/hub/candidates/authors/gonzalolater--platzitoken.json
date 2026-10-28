@@ -1,0 +1,23 @@
+{
+ "corpus": "gonzalolater--platzitoken",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on JavaScript queries this for how gonzalolater/PlatziToken implements it: gonzalolater/PlatziToken (JavaScript)",
+ "repos": [
+  {
+   "repo": "PlatziToken",
+   "url": "https://github.com/gonzalolater/PlatziToken",
+   "sha": "fd63d13a0632613a2dc0bced60e4ca3d4a686237",
+   "licence": "author's permission (LICENSE at pin fd63d13a0632: NONE; repository: none)",
+   "review": {
+    "spdx": "NONE",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T21:51Z",
+    "consent_receipt": "bc2d7a529b53",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T21:51Z (receipt bc2d7a529b53); pinned to the default-branch head. LICENSE at pin fd63d13a0632: NONE (repository: none); used with the author's permission, with attribution."
+   }
+  }
+ ]
+}

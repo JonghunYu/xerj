@@ -1,0 +1,23 @@
+{
+ "corpus": "gonzalolater--8--advanced-security-calyptus",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "SEC",
+ "domain": "an agent working on Solidity queries this for how gonzalolater/8.-Advanced-Security-Calyptus implements it: Special Course provided by https://calyptus.co/, for Developers Seniors, where it teaches you, how to attack a defende advanced systems",
+ "repos": [
+  {
+   "repo": "8.-Advanced-Security-Calyptus",
+   "url": "https://github.com/gonzalolater/8.-Advanced-Security-Calyptus",
+   "sha": "5069e96e57b2f254a1211a8bb8a1c41fe1972c86",
+   "licence": "MIT (LICENSE file at pin 5069e96e57b2, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T21:51Z",
+    "consent_receipt": "f023cf2dbae4",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T21:51Z (receipt f023cf2dbae4); pinned to the default-branch head. LICENSE file at pin 5069e96e57b2 detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

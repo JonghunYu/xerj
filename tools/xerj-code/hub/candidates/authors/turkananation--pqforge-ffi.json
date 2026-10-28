@@ -1,0 +1,23 @@
+{
+ "corpus": "turkananation--pqforge-ffi",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "CRYPTO",
+ "domain": "an agent working on aead, aes-256-gcm, aws-lc queries this for how turkananation/pqforge_ffi implements it: Hardware-accelerated post-quantum cryptography for Dart & Flutter \u2014 ML-KEM (FIPS 203) and ML-DSA (FIPS 204) on AWS-LC via Rust FFI, with a b",
+ "repos": [
+  {
+   "repo": "pqforge_ffi",
+   "url": "https://github.com/turkananation/pqforge_ffi",
+   "sha": "5e5c0ad277e622979a3aab14dc2c37170f9f5af0",
+   "licence": "MIT (LICENSE file at pin 5e5c0ad277e6, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T21:04Z",
+    "consent_receipt": "c341de73a11b",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T21:04Z (receipt c341de73a11b); pinned to the default-branch head. LICENSE file at pin 5e5c0ad277e6 detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

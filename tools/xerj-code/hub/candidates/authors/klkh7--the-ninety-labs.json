@@ -1,0 +1,23 @@
+{
+ "corpus": "klkh7--the-ninety-labs",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "AI",
+ "domain": "an agent working on Python queries this for how KLKH7/the-ninety-labs implements it: AI that watches the match, logs every event, and describes it to every fan. Microsoft x Premier League Inside the Game hackathon (selected work: ninety, tests, infra)",
+ "repos": [
+  {
+   "repo": "the-ninety-labs",
+   "url": "https://github.com/KLKH7/the-ninety-labs",
+   "sha": "0f101db222717be3eafb0aef3910fdff4969a87a",
+   "licence": "MIT (LICENSE file at pin 0f101db22271, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T19:18Z",
+    "consent_receipt": "0828fcf5343c",
+    "note": "Inclusion consented by the commit author by email at 2026-10-28T19:18Z (receipt 0828fcf5343c); selected commit 0f101db22271: \"Live detection job: the live path on one clip, timed, as a CPU Contai\u2026\". LICENSE file at pin 0f101db22271 detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

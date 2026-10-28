@@ -1,0 +1,23 @@
+{
+ "corpus": "gonzalolater--speaking-roses",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on shopify, shopify-theme, shopify-theme-premium-free queries this for how gonzalolater/Speaking-Roses implements it: Premium Shopify Template FREE",
+ "repos": [
+  {
+   "repo": "Speaking-Roses",
+   "url": "https://github.com/gonzalolater/Speaking-Roses",
+   "sha": "41336a317b4d21636080176a4d2b9d0d468f782a",
+   "licence": "author's permission (LICENSE at pin 41336a317b4d: NONE; repository: none)",
+   "review": {
+    "spdx": "NONE",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T21:46Z",
+    "consent_receipt": "1063377aeeb1",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T21:46Z (receipt 1063377aeeb1); pinned to the default-branch head. LICENSE at pin 41336a317b4d: NONE (repository: none); used with the author's permission, with attribution."
+   }
+  }
+ ]
+}

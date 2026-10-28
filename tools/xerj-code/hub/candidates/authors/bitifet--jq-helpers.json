@@ -1,0 +1,23 @@
+{
+ "corpus": "bitifet--jq-helpers",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on Shell queries this for how bitifet/jq_helpers implements it: Collection of tools to assist with processing JSON logs using jq",
+ "repos": [
+  {
+   "repo": "jq_helpers",
+   "url": "https://github.com/bitifet/jq_helpers",
+   "sha": "09ad65933c17f9f06a8c8980532cbac789d48319",
+   "licence": "author's permission (LICENSE at pin 09ad65933c17: NONE; repository: none)",
+   "review": {
+    "spdx": "NONE",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T21:33Z",
+    "consent_receipt": "0b3d9dfd4044",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T21:33Z (receipt 0b3d9dfd4044); pinned to the default-branch head. LICENSE at pin 09ad65933c17: NONE (repository: none); used with the author's permission, with attribution."
+   }
+  }
+ ]
+}

@@ -1,0 +1,23 @@
+{
+ "corpus": "gonzalolater--chatgpt-prompt-engineering-for-developers",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "AI",
+ "domain": "an agent working on code queries this for how gonzalolater/ChatGPT-Prompt-Engineering-for-Developers implements it: Special Course provided by DeepLearning.ia, for Chat GPT Prompt Engineering for Developers, where it teaches you to interact with chat-gpt 3",
+ "repos": [
+  {
+   "repo": "ChatGPT-Prompt-Engineering-for-Developers",
+   "url": "https://github.com/gonzalolater/ChatGPT-Prompt-Engineering-for-Developers",
+   "sha": "31bf5e01e8eb9232849c6476c06cec29f02530e1",
+   "licence": "author's permission (LICENSE at pin 31bf5e01e8eb: NONE; repository: none)",
+   "review": {
+    "spdx": "NONE",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T21:51Z",
+    "consent_receipt": "aa5f934ead24",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T21:51Z (receipt aa5f934ead24); pinned to the default-branch head. LICENSE at pin 31bf5e01e8eb: NONE (repository: none); used with the author's permission, with attribution."
+   }
+  }
+ ]
+}

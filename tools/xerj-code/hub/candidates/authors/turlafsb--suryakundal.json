@@ -1,0 +1,23 @@
+{
+ "corpus": "turlafsb--suryakundal",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "SEC",
+ "domain": "an agent working on cowrie, honeypot, mitre-attack queries this for how TurlaFSB/SuryaKundal implements it: Cowrie-based SSH honeypot platform: hardened deception kit, ATT&CK mapping, campaign detection, threat-intel enrichment, IOC export and a li",
+ "repos": [
+  {
+   "repo": "SuryaKundal",
+   "url": "https://github.com/TurlaFSB/SuryaKundal",
+   "sha": "f103bacf1cfdaf612375bf976e69ce5e1b3cddf9",
+   "licence": "MIT (LICENSE file at pin f103bacf1cfd, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T19:57Z",
+    "consent_receipt": "9d58eb69ac44",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T19:57Z (receipt 9d58eb69ac44); pinned to the default-branch head. LICENSE file at pin f103bacf1cfd detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

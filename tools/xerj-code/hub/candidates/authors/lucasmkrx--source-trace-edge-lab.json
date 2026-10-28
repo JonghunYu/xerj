@@ -1,0 +1,23 @@
+{
+ "corpus": "lucasmkrx--source-trace-edge-lab",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "AI",
+ "domain": "an agent working on ai-assisted-development, cpp, ed25519 queries this for how lucasmkrx/source-trace-edge-lab implements it: Verified C++20 edge systems prototype with transparent AI co-working evidence",
+ "repos": [
+  {
+   "repo": "source-trace-edge-lab",
+   "url": "https://github.com/lucasmkrx/source-trace-edge-lab",
+   "sha": "52e94c0c265778a75fd5bfb5d6ff5761496649c0",
+   "licence": "author's permission (LICENSE at pin 52e94c0c2657: NOASSERTION; repository: Apache-2.0)",
+   "review": {
+    "spdx": "NOASSERTION",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T21:20Z",
+    "consent_receipt": "1a169afab174",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T21:20Z (receipt 1a169afab174); pinned to the default-branch head. LICENSE at pin 52e94c0c2657: NOASSERTION (repository: Apache-2.0); used with the author's permission, with attribution."
+   }
+  }
+ ]
+}

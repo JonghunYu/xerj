@@ -1,0 +1,23 @@
+{
+ "corpus": "gonzalolater--curso-de-dapps",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on JavaScript queries this for how gonzalolater/Curso-de-Dapps implements it: Mi Primer Dapp",
+ "repos": [
+  {
+   "repo": "Curso-de-Dapps",
+   "url": "https://github.com/gonzalolater/Curso-de-Dapps",
+   "sha": "b5d0155a68f576b3993d31a07fc0e21e998f2ffc",
+   "licence": "author's permission (LICENSE at pin b5d0155a68f5: NONE; repository: none)",
+   "review": {
+    "spdx": "NONE",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T21:51Z",
+    "consent_receipt": "5ea6a1feb771",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T21:51Z (receipt 5ea6a1feb771); pinned to the default-branch head. LICENSE at pin b5d0155a68f5: NONE (repository: none); used with the author's permission, with attribution."
+   }
+  }
+ ]
+}

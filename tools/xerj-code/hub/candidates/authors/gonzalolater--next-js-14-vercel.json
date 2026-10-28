@@ -1,0 +1,23 @@
+{
+ "corpus": "gonzalolater--next-js-14-vercel",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "WEB",
+ "domain": "an agent working on TypeScript queries this for how gonzalolater/next.js-14-vercel implements it: completo",
+ "repos": [
+  {
+   "repo": "next.js-14-vercel",
+   "url": "https://github.com/gonzalolater/next.js-14-vercel",
+   "sha": "d1d179678f87b1ca0171352b72c70d63511ac5c6",
+   "licence": "author's permission (LICENSE at pin d1d179678f87: NONE; repository: none)",
+   "review": {
+    "spdx": "NONE",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T21:51Z",
+    "consent_receipt": "4df0d1d8d2aa",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T21:51Z (receipt 4df0d1d8d2aa); pinned to the default-branch head. LICENSE at pin d1d179678f87: NONE (repository: none); used with the author's permission, with attribution."
+   }
+  }
+ ]
+}

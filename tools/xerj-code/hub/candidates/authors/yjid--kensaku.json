@@ -3,7 +3,7 @@
  "cloned_at": null,
  "status": "draft",
  "shelf": "AI",
- "domain": "an agent working on desktop, file-search, full-text-search queries this for how yjid/kensaku implements it: Fast, light, private search for your files, documents, images, and code. Built for you and your AI agents (selected work: src-tauri)",
+ "domain": "an agent working on desktop, file-search, full-text-search queries this for how yjid/kensaku implements it: Search inside documents, code, and even screenshots - instantly and locally. A free, open-source file launcher with OCR, semantic search, an (selected work: src-tauri)",
  "repos": [
   {
    "repo": "kensaku",

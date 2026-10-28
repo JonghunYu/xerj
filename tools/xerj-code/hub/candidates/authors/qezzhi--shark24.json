@@ -1,0 +1,23 @@
+{
+ "corpus": "qezzhi--shark24",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on C queries this for how QeZzhi/shark24 implements it: QeZzhi/shark24 (C)",
+ "repos": [
+  {
+   "repo": "shark24",
+   "url": "https://github.com/QeZzhi/shark24",
+   "sha": "17b9987730233da631042ca4413ffbe0bfda5238",
+   "licence": "MIT (LICENSE file at pin 17b998773023, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T20:06Z",
+    "consent_receipt": "2bc934733d03",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T20:06Z (receipt 2bc934733d03); pinned to the default-branch head. LICENSE file at pin 17b998773023 detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

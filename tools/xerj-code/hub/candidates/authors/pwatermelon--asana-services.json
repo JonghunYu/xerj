@@ -1,0 +1,23 @@
+{
+ "corpus": "pwatermelon--asana-services",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "OPS",
+ "domain": "an agent working on asana, ci-cd, computer-vision queries this for how Pwatermelon/asana-services implements it: Production microservices: yoga asana catalog with OWL ontology, expert moderation, AI isSameAs, React/FastAPI/Go, Docker, monitoring & CI/CD",
+ "repos": [
+  {
+   "repo": "asana-services",
+   "url": "https://github.com/Pwatermelon/asana-services",
+   "sha": "8d4b9ad64ced425b929531b77b9e2a22b737025b",
+   "licence": "author's permission (LICENSE at pin 8d4b9ad64ced: NONE; repository: none)",
+   "review": {
+    "spdx": "NONE",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T22:25Z",
+    "consent_receipt": "0ab76f4b6ccb",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T22:25Z (receipt 0ab76f4b6ccb); pinned to the default-branch head. LICENSE at pin 8d4b9ad64ced: NONE (repository: none); used with the author's permission, with attribution."
+   }
+  }
+ ]
+}

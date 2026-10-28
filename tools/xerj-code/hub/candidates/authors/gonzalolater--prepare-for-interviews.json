@@ -1,0 +1,23 @@
+{
+ "corpus": "gonzalolater--prepare-for-interviews",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "WEB",
+ "domain": "an agent working on code queries this for how gonzalolater/prepare-for-interviews implements it: FullStack Javascript Web 2 - FullStack Web 3 Solidity",
+ "repos": [
+  {
+   "repo": "prepare-for-interviews",
+   "url": "https://github.com/gonzalolater/prepare-for-interviews",
+   "sha": "ed2b26194a1dcd8aad240dbe048eb0c13d17430c",
+   "licence": "MIT (LICENSE file at pin ed2b26194a1d, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T21:51Z",
+    "consent_receipt": "e92a22b0d34f",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T21:51Z (receipt e92a22b0d34f); pinned to the default-branch head. LICENSE file at pin ed2b26194a1d detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

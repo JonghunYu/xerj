@@ -1,0 +1,23 @@
+{
+ "corpus": "turkananation--pqdga",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "AI",
+ "domain": "an agent working on dga, dga-detection, dga-domains queries this for how turkananation/pqdga implements it: A defensive research framework for studying deterministic namespace/rendezvous constructions under different cryptographic binding models, i",
+ "repos": [
+  {
+   "repo": "pqdga",
+   "url": "https://github.com/turkananation/pqdga",
+   "sha": "8e76cc9d4fd66efc632324c77c51d36147065ded",
+   "licence": "MIT (LICENSE file at pin 8e76cc9d4fd6, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T21:04Z",
+    "consent_receipt": "d8d8621750b6",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T21:04Z (receipt d8d8621750b6); pinned to the default-branch head. LICENSE file at pin 8e76cc9d4fd6 detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

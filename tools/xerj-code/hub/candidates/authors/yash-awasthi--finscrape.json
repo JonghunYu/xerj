@@ -1,0 +1,23 @@
+{
+ "corpus": "yash-awasthi--finscrape",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "DB",
+ "domain": "an agent working on fastapi, fintech, geopolitics queries this for how Yash-Awasthi/FinScrape implements it: FinScrape: see what moves markets before it's news. Geopolitics and world news mapped to the tickers they move, with judged first and second",
+ "repos": [
+  {
+   "repo": "FinScrape",
+   "url": "https://github.com/Yash-Awasthi/FinScrape",
+   "sha": "d9316727570e842e79f289d08cc42f9005dbf860",
+   "licence": "MIT (LICENSE file at pin d9316727570e, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T22:25Z",
+    "consent_receipt": "5fd00ff402a1",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T22:25Z (receipt 5fd00ff402a1); pinned to the default-branch head. LICENSE file at pin d9316727570e detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

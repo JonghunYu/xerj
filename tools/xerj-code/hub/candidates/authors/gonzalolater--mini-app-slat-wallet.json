@@ -1,0 +1,23 @@
+{
+ "corpus": "gonzalolater--mini-app-slat-wallet",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "CRYPTO",
+ "domain": "an agent working on TypeScript queries this for how gonzalolater/mini-app-SLAT-Wallet implements it: gonzalolater/mini-app-SLAT-Wallet (TypeScript)",
+ "repos": [
+  {
+   "repo": "mini-app-SLAT-Wallet",
+   "url": "https://github.com/gonzalolater/mini-app-SLAT-Wallet",
+   "sha": "791ef4a501ca2f83f6b739e72ad6dd42afb1af30",
+   "licence": "author's permission (LICENSE at pin 791ef4a501ca: NONE; repository: none)",
+   "review": {
+    "spdx": "NONE",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T21:51Z",
+    "consent_receipt": "524b19210f41",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T21:51Z (receipt 524b19210f41); pinned to the default-branch head. LICENSE at pin 791ef4a501ca: NONE (repository: none); used with the author's permission, with attribution."
+   }
+  }
+ ]
+}

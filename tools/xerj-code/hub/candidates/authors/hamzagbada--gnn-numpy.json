@@ -1,0 +1,23 @@
+{
+ "corpus": "hamzagbada--gnn-numpy",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "AI",
+ "domain": "an agent working on python, numpy, gnn-learning queries this for how HamzaGbada/GNN-Numpy implements it: An implementation from scratch of major Graph Neural Network (GNN) architectures using Numpy",
+ "repos": [
+  {
+   "repo": "GNN-Numpy",
+   "url": "https://github.com/HamzaGbada/GNN-Numpy",
+   "sha": "c5ef2eb4a683ee83802849c03bd98b975ab3139c",
+   "licence": "MIT (LICENSE file at pin c5ef2eb4a683, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T21:10Z",
+    "consent_receipt": "4625d1c86bb6",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T21:10Z (receipt 4625d1c86bb6); pinned to the default-branch head. LICENSE file at pin c5ef2eb4a683 detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

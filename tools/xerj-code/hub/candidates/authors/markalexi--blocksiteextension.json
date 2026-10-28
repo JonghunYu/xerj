@@ -3,7 +3,7 @@
  "cloned_at": null,
  "status": "draft",
  "shelf": "WEB",
- "domain": "an agent working on addon, blocker, chrome-extension queries this for how MarkAlexI/blockSiteExtension implements it: Google Chrome web-extension for block the sites (selected work: tests, scripts, the project root)",
+ "domain": "an agent working on addon, blocker, chrome-extension queries this for how MarkAlexI/blockSiteExtension implements it: BlockDistraction: a privacy-first website blocker for Chrome and Edge with URL rules, schedules, daily limits, and focus sessions (selected work: tests, scripts, the project root)",
  "repos": [
   {
    "repo": "blockSiteExtension",

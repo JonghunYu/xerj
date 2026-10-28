@@ -1,0 +1,23 @@
+{
+ "corpus": "drakestapleton--aien-dev",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "AI",
+ "domain": "an agent working on developer-profile, open-source, sovereign-ai queries this for how drakestapleton/aien-dev implements it: AIEN profile: sovereign agent and inference runtime, built in the open",
+ "repos": [
+  {
+   "repo": "aien-dev",
+   "url": "https://github.com/drakestapleton/aien-dev",
+   "sha": "8d22ab8c024b0ab9b5163658f8baed7e139c2ccd",
+   "licence": "AGPL-3.0 (LICENSE file at pin 8d22ab8c024b, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "AGPL-3.0",
+    "use": "approach-only",
+    "by": "author-consent",
+    "at": "2026-10-28T20:07Z",
+    "consent_receipt": "055096f544ba",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T20:07Z (receipt 055096f544ba); pinned to the default-branch head. LICENSE file at pin 8d22ab8c024b detected as AGPL-3.0 by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

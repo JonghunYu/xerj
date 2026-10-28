@@ -1,0 +1,23 @@
+{
+ "corpus": "pwatermelon--watermelon-messenger",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "WEB",
+ "domain": "an agent working on messenger, messenger-client, messenger-platform queries this for how Pwatermelon/watermelon-messenger implements it: it's realtime messenger works on React&Bun",
+ "repos": [
+  {
+   "repo": "watermelon-messenger",
+   "url": "https://github.com/Pwatermelon/watermelon-messenger",
+   "sha": "6988e425bbfe6e940b279bdcb0ebafc906f77bd0",
+   "licence": "author's permission (LICENSE at pin 6988e425bbfe: NONE; repository: none)",
+   "review": {
+    "spdx": "NONE",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T22:25Z",
+    "consent_receipt": "230d6a1fed85",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T22:25Z (receipt 230d6a1fed85); pinned to the default-branch head. LICENSE at pin 6988e425bbfe: NONE (repository: none); used with the author's permission, with attribution."
+   }
+  }
+ ]
+}

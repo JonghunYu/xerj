@@ -1,0 +1,23 @@
+{
+ "corpus": "dgesteves--onsystem",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "AI",
+ "domain": "an agent working on ai-agents, design-system, design-tokens queries this for how dgesteves/onsystem implements it: Keeps coding agents on your design system: catches palette colors, native elements and APIs your system lacks, at every edit and pull reques",
+ "repos": [
+  {
+   "repo": "onsystem",
+   "url": "https://github.com/dgesteves/onsystem",
+   "sha": "ca4c1abee9f5d9c98e83b3a846af4c7fb7327c20",
+   "licence": "MIT (LICENSE file at pin ca4c1abee9f5, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T20:38Z",
+    "consent_receipt": "bf7414664f40",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T20:38Z (receipt bf7414664f40); pinned to the default-branch head. LICENSE file at pin ca4c1abee9f5 detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

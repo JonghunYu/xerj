@@ -1,0 +1,23 @@
+{
+ "corpus": "almasumdev--my-browser-home",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "WEB",
+ "domain": "an agent working on browser-extension, chrome-extension, chrome-new-tab queries this for how almasumdev/my-browser-home implements it: Chrome new tab extension: a clean dashboard with a live clock, Google search, quick links to Gmail, Drive and Docs for every signed-in accou",
+ "repos": [
+  {
+   "repo": "my-browser-home",
+   "url": "https://github.com/almasumdev/my-browser-home",
+   "sha": "ce10df1c96d4c1b75cb7f3ec43d17fe62485a7fe",
+   "licence": "author's permission (LICENSE at pin ce10df1c96d4: NONE; repository: none)",
+   "review": {
+    "spdx": "NONE",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T21:30Z",
+    "consent_receipt": "2055ea413047",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T21:30Z (receipt 2055ea413047); pinned to the default-branch head. LICENSE at pin ce10df1c96d4: NONE (repository: none); used with the author's permission, with attribution."
+   }
+  }
+ ]
+}

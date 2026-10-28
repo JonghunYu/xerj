@@ -1,0 +1,23 @@
+{
+ "corpus": "gonzalolater--comida-artesanal-que-te-quema-la-jeta",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "WEB",
+ "domain": "an agent working on preventa queries this for how gonzalolater/Comida_Artesanal_Que_Te_Quema_La_Jeta implements it: Cat\u00e1logo web de preventa automatizado para emprendimiento de panader\u00eda familiar. Desarrollado con Vite, Vanilla JS y CSS nativo enfocado en ",
+ "repos": [
+  {
+   "repo": "Comida_Artesanal_Que_Te_Quema_La_Jeta",
+   "url": "https://github.com/gonzalolater/Comida_Artesanal_Que_Te_Quema_La_Jeta",
+   "sha": "2396393fd2954c9419a4523031b3245479d6cbc8",
+   "licence": "MIT (LICENSE file at pin 2396393fd295, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T21:51Z",
+    "consent_receipt": "396671c06325",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T21:51Z (receipt 396671c06325); pinned to the default-branch head. LICENSE file at pin 2396393fd295 detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

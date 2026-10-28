@@ -1,0 +1,23 @@
+{
+ "corpus": "gonzalolater--frontenddappsweb3js",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "WEB",
+ "domain": "an agent working on HTML queries this for how gonzalolater/FrontendDappsWeb3JS implements it: Curso de desarrollo Frontend de Aplicaciones Descentralizadas con web3.js",
+ "repos": [
+  {
+   "repo": "FrontendDappsWeb3JS",
+   "url": "https://github.com/gonzalolater/FrontendDappsWeb3JS",
+   "sha": "79f0e0942ae1539a32f1682cfffe825b5dbd173d",
+   "licence": "author's permission (LICENSE at pin 79f0e0942ae1: NONE; repository: MIT)",
+   "review": {
+    "spdx": "NONE",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T21:51Z",
+    "consent_receipt": "f6938a7ea634",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T21:51Z (receipt f6938a7ea634); pinned to the default-branch head. LICENSE at pin 79f0e0942ae1: NONE (repository: MIT); used with the author's permission, with attribution."
+   }
+  }
+ ]
+}

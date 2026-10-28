@@ -1,0 +1,23 @@
+{
+ "corpus": "gonzalolater--brute-force-protection-node-js",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on JavaScript queries this for how gonzalolater/Brute-force-protection-Node.js implements it: Example of How protect Brute Force with NodeJS",
+ "repos": [
+  {
+   "repo": "Brute-force-protection-Node.js",
+   "url": "https://github.com/gonzalolater/Brute-force-protection-Node.js",
+   "sha": "b6cf7589f1fd23e78ab3ae00bff79822d088d4f9",
+   "licence": "author's permission (LICENSE at pin b6cf7589f1fd: NONE; repository: none)",
+   "review": {
+    "spdx": "NONE",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T21:51Z",
+    "consent_receipt": "f2658b6aa2c3",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T21:51Z (receipt f2658b6aa2c3); pinned to the default-branch head. LICENSE at pin b6cf7589f1fd: NONE (repository: none); used with the author's permission, with attribution."
+   }
+  }
+ ]
+}

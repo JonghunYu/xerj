@@ -1,0 +1,23 @@
+{
+ "corpus": "demenigeco--dsapps",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on HTML queries this for how DeMENIGECO/dsapps implements it: Il sito di DomePrograms",
+ "repos": [
+  {
+   "repo": "dsapps",
+   "url": "https://github.com/DeMENIGECO/dsapps",
+   "sha": "fc8d3e927e0e9a935715a8662e30d0de49c3af06",
+   "licence": "author's permission (LICENSE at pin fc8d3e927e0e: NOASSERTION; repository: NOASSERTION)",
+   "review": {
+    "spdx": "NOASSERTION",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T19:16Z",
+    "consent_receipt": "84d81807a18c",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T19:16Z (receipt 84d81807a18c); pinned to the default-branch head. LICENSE at pin fc8d3e927e0e: NOASSERTION (repository: NOASSERTION); used with the author's permission, with attribution."
+   }
+  }
+ ]
+}

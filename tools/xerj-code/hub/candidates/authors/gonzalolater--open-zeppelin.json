@@ -1,0 +1,23 @@
+{
+ "corpus": "gonzalolater--open-zeppelin",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on Solidity queries this for how gonzalolater/Open-Zeppelin implements it: Curso Open Zeppelin",
+ "repos": [
+  {
+   "repo": "Open-Zeppelin",
+   "url": "https://github.com/gonzalolater/Open-Zeppelin",
+   "sha": "016e44b0fc20220cb3c6436ae133542cc06afc2d",
+   "licence": "MIT (LICENSE file at pin 016e44b0fc20, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T21:51Z",
+    "consent_receipt": "c02ec53b7ed7",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T21:51Z (receipt c02ec53b7ed7); pinned to the default-branch head. LICENSE file at pin 016e44b0fc20 detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

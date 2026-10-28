@@ -1,0 +1,23 @@
+{
+ "corpus": "gonzalolater--reto--nft-dinamicos-con-datos-off-chain",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "CRYPTO",
+ "domain": "an agent working on Solidity queries this for how gonzalolater/RETO--NFT-Dinamicos-con-datos-Off-Chain implements it: Reto Mensual Ethereum Developer Program",
+ "repos": [
+  {
+   "repo": "RETO--NFT-Dinamicos-con-datos-Off-Chain",
+   "url": "https://github.com/gonzalolater/RETO--NFT-Dinamicos-con-datos-Off-Chain",
+   "sha": "2f108b34c8530a4890b1a0be258a7f3530bd8547",
+   "licence": "author's permission (LICENSE at pin 2f108b34c853: NONE; repository: MIT)",
+   "review": {
+    "spdx": "NONE",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T21:51Z",
+    "consent_receipt": "62f5b9b61e71",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T21:51Z (receipt 62f5b9b61e71); pinned to the default-branch head. LICENSE at pin 2f108b34c853: NONE (repository: MIT); used with the author's permission, with attribution."
+   }
+  }
+ ]
+}

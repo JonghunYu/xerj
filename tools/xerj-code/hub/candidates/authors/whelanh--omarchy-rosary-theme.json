@@ -1,0 +1,23 @@
+{
+ "corpus": "whelanh--omarchy-rosary-theme",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on catholic, cursor-theme, hyprland queries this for how whelanh/omarchy-rosary-theme implements it: A Rosary theme for Omarchy: 20 public-domain paintings, daily mystery rotation, crucifix cursor, and terminal rice",
+ "repos": [
+  {
+   "repo": "omarchy-rosary-theme",
+   "url": "https://github.com/whelanh/omarchy-rosary-theme",
+   "sha": "3221094bacfb00ed1623bf0a935edf4806e753ab",
+   "licence": "MIT (LICENSE file at pin 3221094bacfb, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T20:49Z",
+    "consent_receipt": "4acb296aaea4",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T20:49Z (receipt 4acb296aaea4); pinned to the default-branch head. LICENSE file at pin 3221094bacfb detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

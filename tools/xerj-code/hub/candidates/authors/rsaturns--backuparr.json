@@ -2,7 +2,7 @@
  "corpus": "rsaturns--backuparr",
  "cloned_at": null,
  "status": "draft",
- "shelf": "OPS",
+ "shelf": "NET",
  "domain": "an agent working on backup, bazarr, docker queries this for how rsaturns/backuparr implements it: Scheduled config/database backups and web-UI restore for Radarr, Sonarr, Prowlarr, Profilarr, Bazarr, Tdarr, SABnzbd and Tautulli, sent to L (selected work: tests, webui, the project root)",
  "repos": [
   {

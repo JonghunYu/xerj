@@ -1,0 +1,23 @@
+{
+ "corpus": "jan-tdy--linux-print",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on cups, plotter, print queries this for how jan-tdy/linux-print implements it: An PyQt6 program for printing with printers and plotters!",
+ "repos": [
+  {
+   "repo": "linux-print",
+   "url": "https://github.com/jan-tdy/linux-print",
+   "sha": "fc714cc25f1d9ca90852cd2eed1acbb4825e7546",
+   "licence": "MIT (LICENSE file at pin fc714cc25f1d, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T19:53Z",
+    "consent_receipt": "d86ba15a57cf",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T19:53Z (receipt d86ba15a57cf); pinned to the default-branch head. LICENSE file at pin fc714cc25f1d detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

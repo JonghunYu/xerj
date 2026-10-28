@@ -1,0 +1,23 @@
+{
+ "corpus": "whelanh--omarchy-repo-watcher",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on QML queries this for how whelanh/omarchy-repo-watcher implements it: whelanh/omarchy-repo-watcher (QML)",
+ "repos": [
+  {
+   "repo": "omarchy-repo-watcher",
+   "url": "https://github.com/whelanh/omarchy-repo-watcher",
+   "sha": "c52523ae62e3c1edc490fc1584aa48a4b2dd1628",
+   "licence": "MIT (LICENSE file at pin c52523ae62e3, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T20:49Z",
+    "consent_receipt": "8d4c54b6ec9d",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T20:49Z (receipt 8d4c54b6ec9d); pinned to the default-branch head. LICENSE file at pin c52523ae62e3 detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

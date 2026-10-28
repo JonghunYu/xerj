@@ -1,0 +1,23 @@
+{
+ "corpus": "almasumdev--linux-network-speed-indicator",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "NET",
+ "domain": "an agent working on Python queries this for how almasumdev/linux-network-speed-indicator implements it: Simple network speed indicator for Ubuntu GNOME and Linux AppIndicator desktops",
+ "repos": [
+  {
+   "repo": "linux-network-speed-indicator",
+   "url": "https://github.com/almasumdev/linux-network-speed-indicator",
+   "sha": "236be23ad898cb166893c1e06f598f178dd5a77b",
+   "licence": "MIT (LICENSE file at pin 236be23ad898, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T21:30Z",
+    "consent_receipt": "68d4c0f3e73a",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T21:30Z (receipt 68d4c0f3e73a); pinned to the default-branch head. LICENSE file at pin 236be23ad898 detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

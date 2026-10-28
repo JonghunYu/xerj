@@ -1,0 +1,23 @@
+{
+ "corpus": "gonzalolater--compound-liquidation-bot",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on TypeScript queries this for how gonzalolater/Compound-Liquidation-Bot implements it: Compound-Liquidation-Bot",
+ "repos": [
+  {
+   "repo": "Compound-Liquidation-Bot",
+   "url": "https://github.com/gonzalolater/Compound-Liquidation-Bot",
+   "sha": "47e0b6b6acbe5368d232faded5acd7373151510d",
+   "licence": "MIT (LICENSE file at pin 47e0b6b6acbe, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T21:46Z",
+    "consent_receipt": "29b2e82fe696",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T21:46Z (receipt 29b2e82fe696); pinned to the default-branch head. LICENSE file at pin 47e0b6b6acbe detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

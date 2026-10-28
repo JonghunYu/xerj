@@ -1,0 +1,23 @@
+{
+ "corpus": "jan-tdy--epaperdash-adv",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on Python queries this for how jan-tdy/EpaperDash-ADV implements it: An Home Assistant integration that provides an dashbard image for old e-readers",
+ "repos": [
+  {
+   "repo": "EpaperDash-ADV",
+   "url": "https://github.com/jan-tdy/EpaperDash-ADV",
+   "sha": "39f171af05bf540a49701878e87ae1d7ade3b04f",
+   "licence": "MIT (LICENSE file at pin 39f171af05bf, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T19:53Z",
+    "consent_receipt": "2a6490dccab9",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T19:53Z (receipt 2a6490dccab9); pinned to the default-branch head. LICENSE file at pin 39f171af05bf detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

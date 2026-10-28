@@ -8,15 +8,15 @@
   {
    "repo": "stlgo",
    "url": "https://github.com/mohitjoshi-hey/stlgo",
-   "sha": "f2694bb4f2d4f8b4f77eb03c43d65d12e75a752c",
-   "licence": "MIT (LICENSE file at pin f2694bb4f2d4, GitHub licence API 2026-10-25)",
+   "sha": "ec60710ac1ffc18097c45837797e506691207e9e",
+   "licence": "MIT (LICENSE file at pin ec60710ac1ff, GitHub licence API 2026-10-28)",
    "review": {
     "spdx": "MIT",
     "use": "adapt-with-attribution",
     "by": "author-consent",
     "at": "2026-10-15T08:59Z",
     "consent_receipt": "bd87b06ef1e0",
-    "note": "Inclusion consented by the commit author by email at 2026-10-15T08:59Z (receipt bd87b06ef1e0); selected commit f2694bb4f2d4: \"Add Fuzz tests for algos & containers\". LICENSE file at pin f2694bb4f2d4 detected as MIT by the GitHub licence API on 2026-10-25; used under that licence with attribution. Pinned to head f2694bb4f2d4 (contains the selected commit): the LICENSE at the selected commit was NONE."
+    "note": "Inclusion consented by the commit author by email at 2026-10-15T08:59Z (receipt bd87b06ef1e0); selected commit ec60710ac1ff: \"Add Fuzz tests for algos & containers\". LICENSE file at pin ec60710ac1ff detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution. Pinned to head ec60710ac1ff (contains the selected commit): the LICENSE at the selected commit was NONE."
    }
   }
  ]

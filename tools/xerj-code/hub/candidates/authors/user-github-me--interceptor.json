@@ -1,0 +1,23 @@
+{
+ "corpus": "user-github-me--interceptor",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "WEB",
+ "domain": "an agent working on api-testing, browser-extension, chrome-extension queries this for how user-github-me/interceptor implements it: Burp-style intercept (edit / forward / drop), HTTP history and repeater for testing your own web apps",
+ "repos": [
+  {
+   "repo": "interceptor",
+   "url": "https://github.com/user-github-me/interceptor",
+   "sha": "ab70a810ad42056adb88abb0bf0b86c7a6dc6cfb",
+   "licence": "MIT (LICENSE file at pin ab70a810ad42, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T22:47Z",
+    "consent_receipt": "1c734938b5af",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T22:47Z (receipt 1c734938b5af); pinned to the default-branch head. LICENSE file at pin ab70a810ad42 detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

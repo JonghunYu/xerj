@@ -1,0 +1,23 @@
+{
+ "corpus": "gonzalolater--final-alchemy-university",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "CRYPTO",
+ "domain": "an agent working on JavaScript queries this for how gonzalolater/Final-Alchemy-University implements it: Final to Ethereum Developer Bootcamp",
+ "repos": [
+  {
+   "repo": "Final-Alchemy-University",
+   "url": "https://github.com/gonzalolater/Final-Alchemy-University",
+   "sha": "a4a47d9f8815c4a75be87deb7b757ef0fb6c8d97",
+   "licence": "author's permission (LICENSE at pin a4a47d9f8815: NONE; repository: MIT)",
+   "review": {
+    "spdx": "NONE",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T21:51Z",
+    "consent_receipt": "0b7511cc01d6",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T21:51Z (receipt 0b7511cc01d6); pinned to the default-branch head. LICENSE at pin a4a47d9f8815: NONE (repository: MIT); used with the author's permission, with attribution."
+   }
+  }
+ ]
+}

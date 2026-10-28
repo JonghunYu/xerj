@@ -1,0 +1,23 @@
+{
+ "corpus": "valicm--bunny-toolkit",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on bunny, bunny-cdn, bunny-net queries this for how valicm/bunny-toolkit implements it: bunny.net tooling for PHP: a full API client generated from Bunny's official OpenAPI specs, cache purging within Bunny's rate limits, CDN-Ta",
+ "repos": [
+  {
+   "repo": "bunny-toolkit",
+   "url": "https://github.com/valicm/bunny-toolkit",
+   "sha": "227c5b20399f330da2e14616206ad8ac1d6b6b39",
+   "licence": "MIT (LICENSE file at pin 227c5b20399f, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T20:15Z",
+    "consent_receipt": "3ba8d8e60d15",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T20:15Z (receipt 3ba8d8e60d15); pinned to the default-branch head. LICENSE file at pin 227c5b20399f detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

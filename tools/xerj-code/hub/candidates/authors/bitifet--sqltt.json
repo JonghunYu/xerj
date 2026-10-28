@@ -1,0 +1,23 @@
+{
+ "corpus": "bitifet--sqltt",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "DB",
+ "domain": "an agent working on sql, templates, database queries this for how bitifet/sqltt implements it: SQL Tagged Templates",
+ "repos": [
+  {
+   "repo": "sqltt",
+   "url": "https://github.com/bitifet/sqltt",
+   "sha": "2c929f80e1a65b8d2ca39c73adf96188affa5d55",
+   "licence": "GPL-3.0 (LICENSE file at pin 2c929f80e1a6, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "GPL-3.0",
+    "use": "approach-only",
+    "by": "author-consent",
+    "at": "2026-10-28T21:33Z",
+    "consent_receipt": "694b36cc631f",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T21:33Z (receipt 694b36cc631f); pinned to the default-branch head. LICENSE file at pin 2c929f80e1a6 detected as GPL-3.0 by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

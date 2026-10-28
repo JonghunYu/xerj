@@ -1,0 +1,23 @@
+{
+ "corpus": "inth3shadows--codeshot",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "WRITE",
+ "domain": "an agent working on call-graph, claude-code, cli queries this for how inth3shadows/codeshot implements it: Architecture diagrams that fail CI when they go stale. Generates call-graph and dependency diagrams from your code, embeds them in your docs",
+ "repos": [
+  {
+   "repo": "codeshot",
+   "url": "https://github.com/inth3shadows/codeshot",
+   "sha": "68b50536652c721bf90caaa24679c02f33376b7f",
+   "licence": "author's permission (LICENSE at pin 68b50536652c: NONE; repository: none)",
+   "review": {
+    "spdx": "NONE",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T22:01Z",
+    "consent_receipt": "727e11a59dc6",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T22:01Z (receipt 727e11a59dc6); pinned to the default-branch head. LICENSE at pin 68b50536652c: NONE (repository: none); used with the author's permission, with attribution."
+   }
+  }
+ ]
+}
