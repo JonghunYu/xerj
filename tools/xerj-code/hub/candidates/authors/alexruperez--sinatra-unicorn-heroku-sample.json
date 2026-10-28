@@ -1,0 +1,23 @@
+{
+ "corpus": "alexruperez--sinatra-unicorn-heroku-sample",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "OPS",
+ "domain": "an agent working on Ruby queries this for how alexruperez/sinatra-unicorn-heroku-sample implements it: \"Deploy to Heroku\" Sample using Sinatra and Unicorn",
+ "repos": [
+  {
+   "repo": "sinatra-unicorn-heroku-sample",
+   "url": "https://github.com/alexruperez/sinatra-unicorn-heroku-sample",
+   "sha": "315d3d310d6de84b7f8983005135f5240fb4a371",
+   "licence": "MIT (LICENSE file at pin 315d3d310d6d, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T18:13Z",
+    "consent_receipt": "62c2ef312386",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T18:13Z (receipt 62c2ef312386); pinned to the default-branch head. LICENSE file at pin 315d3d310d6d detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

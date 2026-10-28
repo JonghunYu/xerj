@@ -1,0 +1,23 @@
+{
+ "corpus": "alexruperez--arautocompletesearchbar",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on Objective-C queries this for how alexruperez/ARAutocompleteSearchBar implements it: ARAutocompleteSearchBar is a subclass of UISearchBar that automatically displays text suggestions in real-time",
+ "repos": [
+  {
+   "repo": "ARAutocompleteSearchBar",
+   "url": "https://github.com/alexruperez/ARAutocompleteSearchBar",
+   "sha": "d8206aea3666dc3a2fbcd7592ceb4aa3503cf4eb",
+   "licence": "author's permission (LICENSE at pin d8206aea3666: NONE; repository: none)",
+   "review": {
+    "spdx": "NONE",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T18:13Z",
+    "consent_receipt": "f74af102a60c",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T18:13Z (receipt f74af102a60c); pinned to the default-branch head. LICENSE at pin d8206aea3666: NONE (repository: none); used with the author's permission, with attribution."
+   }
+  }
+ ]
+}

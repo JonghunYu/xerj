@@ -1,0 +1,23 @@
+{
+ "corpus": "alexruperez--speechrecognizerbutton",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "WEB",
+ "domain": "an agent working on uibutton, uibutton-subclass, push-to-talk queries this for how alexruperez/SpeechRecognizerButton implements it: UIButton subclass with push to talk recording, speech recognition and Siri-style waveform view",
+ "repos": [
+  {
+   "repo": "SpeechRecognizerButton",
+   "url": "https://github.com/alexruperez/SpeechRecognizerButton",
+   "sha": "4c8cc80be37264feef98fa6b955b87fbbaaf1822",
+   "licence": "MIT (LICENSE file at pin 4c8cc80be372, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T18:13Z",
+    "consent_receipt": "a2601d8ae87b",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T18:13Z (receipt a2601d8ae87b); pinned to the default-branch head. LICENSE file at pin 4c8cc80be372 detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

@@ -1,0 +1,23 @@
+{
+ "corpus": "alexruperez--arformtextfield",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on Objective-C queries this for how alexruperez/ARFormTextField implements it: UITextField subclass with doneBlock and nextTextField helpers for easier forms creation",
+ "repos": [
+  {
+   "repo": "ARFormTextField",
+   "url": "https://github.com/alexruperez/ARFormTextField",
+   "sha": "cd35a5a1450c525d02cc915be294ab9b22d152a9",
+   "licence": "author's permission (LICENSE at pin cd35a5a1450c: NONE; repository: none)",
+   "review": {
+    "spdx": "NONE",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T18:13Z",
+    "consent_receipt": "6c3b1b339fba",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T18:13Z (receipt 6c3b1b339fba); pinned to the default-branch head. LICENSE at pin cd35a5a1450c: NONE (repository: none); used with the author's permission, with attribution."
+   }
+  }
+ ]
+}

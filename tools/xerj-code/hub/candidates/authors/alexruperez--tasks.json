@@ -1,0 +1,23 @@
+{
+ "corpus": "alexruperez--tasks",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "WEB",
+ "domain": "an agent working on siri, sirikit, swift queries this for how alexruperez/Tasks implements it: Very useful and complete tutorial explaining how to integrate SiriKit in your apps",
+ "repos": [
+  {
+   "repo": "Tasks",
+   "url": "https://github.com/alexruperez/Tasks",
+   "sha": "d5d6017ea04352f16d7224c9b7e5df660e811f06",
+   "licence": "MIT (LICENSE file at pin d5d6017ea043, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T18:13Z",
+    "consent_receipt": "6065ef3537ce",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T18:13Z (receipt 6065ef3537ce); pinned to the default-branch head. LICENSE file at pin d5d6017ea043 detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

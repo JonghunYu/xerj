@@ -465,6 +465,12 @@ class ContributorVolumeTest(unittest.TestCase):
         self.assertIn('href="../contributors/Ann"', html)
         self.assertEqual(contributors.corpus_section([], gen.esc, people), "")
 
+    def test_one_shared_badge_file_serves_every_readme_badge_url(self):
+        # Cloudflare Pages takes at most 20,000 files; a badge copy per login broke deploys at ~6,300 contributors
+        self.assertIn("/contributors/:login/badge.svg /contributors/badge.svg 200", gen.REDIRECTS)
+        import contributors
+        self.assertIn("contributors/{login}/badge.svg", open(contributors.__file__).read())   # README markdown URL unchanged
+
     def test_pinned_repo_stars_are_distinct_and_never_estimated(self):
         import contributors
         with tempfile.TemporaryDirectory() as d:
@@ -1201,7 +1207,7 @@ class BuiltSiteDiscoverabilityTest(SiteLinksTest):
         self.assertIn('href="../contributors/Yiming1997"', corpus)
         self.assertIn(pin, corpus)
         self.assertIn("The author agreed in a GitHub discussion on 2026-10-25.", corpus)
-        self.assertIn("in licence review", corpus)
+        self.assertIn("licence cleared", corpus); self.assertNotIn("in licence review", corpus)
         self.assertIn(f"https://hub.xerj.org/contributors/Yiming1997", (self.out / "sitemap-contributors.xml").read_text())
         self.assertIn(f"https://hub.xerj.org/corpus/{slug}", (self.out / "sitemap-repos.xml").read_text())
         llms = (self.out / "llms-contributors.txt").read_text()
@@ -1213,6 +1219,18 @@ class BuiltSiteDiscoverabilityTest(SiteLinksTest):
         self.assertTrue(any(r[0] == "Yiming1997" for r in search["p"]))
         # an email consent still says email; the discussion wording is only for a non-email channel
         self.assertIn("agreed by email", (self.out / "corpus" / "jacobjoergensen--laravel-paper.html").read_text())
+
+    def test_add_page_and_links(self):
+        """/add: owners sign in with GitHub and add their own repositories (functions/api/v1/me/repos.js).
+        Contributor pages and /contribute link to it."""
+        add = (self.out / "add.html").read_text()
+        self.assertIn("Add your repositories", add)
+        self.assertIn("/api/v1/me/repos", add)
+        self.assertIn("api.github.com/users/", add)
+        self.assertIn("/auth/github/login?return=%2Fadd", add)
+        self.assertIn('Own more repositories? <a href="/add">', (self.out / "contributors" / "Yiming1997.html").read_text())
+        self.assertIn('<a href="/add">Sign in with GitHub and add it</a>', (self.out / "contribute.html").read_text())
+        self.assertIn("Included with the author&#39;s permission (email,", (self.out / "contributors" / "JacobJoergensen.html").read_text())
 
     def test_2171_restores_are_indexed(self):
         """The #2171 rows marked restored=yes are back in the ledger, the pages, the search index, llms-contributors.txt and the sitemaps.

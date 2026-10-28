@@ -1,0 +1,23 @@
+{
+ "corpus": "alexruperez--swift-library-template",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on template, swift-template, swiftlibrary queries this for how alexruperez/swift-library-template implements it: Swift Library Template, just run ./generate.sh",
+ "repos": [
+  {
+   "repo": "swift-library-template",
+   "url": "https://github.com/alexruperez/swift-library-template",
+   "sha": "4ab4a4bf9f5fcbdd4389b0b371cde861d6eda9c3",
+   "licence": "MIT (LICENSE file at pin 4ab4a4bf9f5f, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T18:13Z",
+    "consent_receipt": "fbf41672f002",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T18:13Z (receipt fbf41672f002); pinned to the default-branch head. LICENSE file at pin 4ab4a4bf9f5f detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}
