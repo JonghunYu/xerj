@@ -1,0 +1,23 @@
+{
+ "corpus": "gonzalolater--algorand-developer-beginner-bootcamp-dapps-en-4-dias",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on code queries this for how gonzalolater/Algorand-Developer-Beginner-Bootcamp-DAPPs-en-4-dias implements it: gonzalolater/Algorand-Developer-Beginner-Bootcamp-DAPPs-en-4-dias (code)",
+ "repos": [
+  {
+   "repo": "Algorand-Developer-Beginner-Bootcamp-DAPPs-en-4-dias",
+   "url": "https://github.com/gonzalolater/Algorand-Developer-Beginner-Bootcamp-DAPPs-en-4-dias",
+   "sha": "c48669860ee4579014ee5293b44c1082c0aaaaac",
+   "licence": "MIT (LICENSE file at pin c48669860ee4, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T21:51Z",
+    "consent_receipt": "0b75cee03b33",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T21:51Z (receipt 0b75cee03b33); pinned to the default-branch head. LICENSE file at pin c48669860ee4 detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

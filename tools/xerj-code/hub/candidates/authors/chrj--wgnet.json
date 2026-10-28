@@ -1,0 +1,23 @@
+{
+ "corpus": "chrj--wgnet",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "NET",
+ "domain": "an agent working on go, vpn, wireguard queries this for how chrj/wgnet implements it: wgnet provides a thin frontend for user-space VPN connections using the Go WireGuard implementation running on the gVisor user-space network (selected work: the project root)",
+ "repos": [
+  {
+   "repo": "wgnet",
+   "url": "https://github.com/chrj/wgnet",
+   "sha": "95d9e9c1a0d225052113ab3010a646ec90d239ef",
+   "licence": "MIT (LICENSE file at pin 95d9e9c1a0d2, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T21:53Z",
+    "consent_receipt": "4b843e9554b5",
+    "note": "Inclusion consented by the commit author by email at 2026-10-28T21:53Z (receipt 4b843e9554b5); selected commit 95d9e9c1a0d2: \"feat: report peer handshake age and traffic counters (#26)\". LICENSE file at pin 95d9e9c1a0d2 detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

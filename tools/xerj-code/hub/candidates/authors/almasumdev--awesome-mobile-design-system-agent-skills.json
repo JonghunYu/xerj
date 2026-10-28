@@ -1,0 +1,23 @@
+{
+ "corpus": "almasumdev--awesome-mobile-design-system-agent-skills",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "WEB",
+ "domain": "an agent working on agent-skills, ai-agents, awesome queries this for how almasumdev/awesome-mobile-design-system-agent-skills implements it: Agent skills for building and maintaining mobile design systems, tokens, and component libraries",
+ "repos": [
+  {
+   "repo": "awesome-mobile-design-system-agent-skills",
+   "url": "https://github.com/almasumdev/awesome-mobile-design-system-agent-skills",
+   "sha": "17762503928870bdaeb1ac04687561b817c3a170",
+   "licence": "author's permission (LICENSE at pin 177625039288: NOASSERTION; repository: NOASSERTION)",
+   "review": {
+    "spdx": "NOASSERTION",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T21:30Z",
+    "consent_receipt": "aa4444405b32",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T21:30Z (receipt aa4444405b32); pinned to the default-branch head. LICENSE at pin 177625039288: NOASSERTION (repository: NOASSERTION); used with the author's permission, with attribution."
+   }
+  }
+ ]
+}

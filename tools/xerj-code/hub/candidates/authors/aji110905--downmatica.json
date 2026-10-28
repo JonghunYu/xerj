@@ -1,0 +1,23 @@
+{
+ "corpus": "aji110905--downmatica",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on Java queries this for how aji110905/Downmatica implements it: \u4e00\u4e2aMinecraft\u6a21\u7ec4\uff0c\u8ba9\u60a8\u65b9\u4fbf\u7684\u4ece\u7f51\u7edc\u4e2d\u4e0b\u8f7d\u539f\u7406\u56fe\u3002",
+ "repos": [
+  {
+   "repo": "Downmatica",
+   "url": "https://github.com/aji110905/Downmatica",
+   "sha": "4d5f8c984dffcb37f2be7f32e5488a9ccf228d29",
+   "licence": "MIT (LICENSE file at pin 4d5f8c984dff, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T21:27Z",
+    "consent_receipt": "a3bbd2a2c9fb",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T21:27Z (receipt a3bbd2a2c9fb); pinned to the default-branch head. LICENSE file at pin 4d5f8c984dff detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

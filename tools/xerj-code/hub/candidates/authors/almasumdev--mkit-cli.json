@@ -1,0 +1,23 @@
+{
+ "corpus": "almasumdev--mkit-cli",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "WEB",
+ "domain": "an agent working on ai-agents, android, aso queries this for how almasumdev/mkit-cli implements it: One command-line tool for Android release, Play Console and Firebase operations. Flutter and native Kotlin, built for humans and AI agents",
+ "repos": [
+  {
+   "repo": "mkit-cli",
+   "url": "https://github.com/almasumdev/mkit-cli",
+   "sha": "dda26234e8155c362a55402d2b802537881e4c1d",
+   "licence": "MIT (LICENSE file at pin dda26234e815, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T21:30Z",
+    "consent_receipt": "0c3863ff001b",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T21:30Z (receipt 0c3863ff001b); pinned to the default-branch head. LICENSE file at pin dda26234e815 detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

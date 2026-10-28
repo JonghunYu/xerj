@@ -1,0 +1,23 @@
+{
+ "corpus": "ppomes--tokenshield",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "NET",
+ "domain": "an agent working on golang, haproxy, icap queries this for how ppomes/TokenShield implements it: PCI-DSS proxy tokenizer POC",
+ "repos": [
+  {
+   "repo": "TokenShield",
+   "url": "https://github.com/ppomes/TokenShield",
+   "sha": "087566fc7261ec485e93f1014ca7afbffadcee22",
+   "licence": "MIT (LICENSE file at pin 087566fc7261, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T22:40Z",
+    "consent_receipt": "f0cc0d6e6712",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T22:40Z (receipt f0cc0d6e6712); pinned to the default-branch head. LICENSE file at pin 087566fc7261 detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

@@ -1,0 +1,23 @@
+{
+ "corpus": "lucasmkrx--scara-arm-calibration",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on Python queries this for how lucasmkrx/scara-arm-calibration implements it: A step-by-step calibration algorithm for a SCARA arm using a math solver in Python",
+ "repos": [
+  {
+   "repo": "scara-arm-calibration",
+   "url": "https://github.com/lucasmkrx/scara-arm-calibration",
+   "sha": "33a83dcba35074dcd7213004b265c2ead20fe12f",
+   "licence": "MIT (LICENSE file at pin 33a83dcba350, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T21:20Z",
+    "consent_receipt": "9f274b711e6b",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T21:20Z (receipt 9f274b711e6b); pinned to the default-branch head. LICENSE file at pin 33a83dcba350 detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

@@ -1,0 +1,23 @@
+{
+ "corpus": "gonzalolater--ecdsa-node-project",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on code queries this for how gonzalolater/ECDSA-Node-Project implements it: Proyecto for Alchemy Week 1",
+ "repos": [
+  {
+   "repo": "ECDSA-Node-Project",
+   "url": "https://github.com/gonzalolater/ECDSA-Node-Project",
+   "sha": "617d42bd9f4ba6b7e2af4fc68735d6f2499db118",
+   "licence": "MIT (LICENSE file at pin 617d42bd9f4b, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T21:51Z",
+    "consent_receipt": "2f9b52f85027",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T21:51Z (receipt 2f9b52f85027); pinned to the default-branch head. LICENSE file at pin 617d42bd9f4b detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

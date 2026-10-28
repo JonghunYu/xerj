@@ -1,0 +1,23 @@
+{
+ "corpus": "gonzalolater--halloween",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on VBScript queries this for how gonzalolater/Halloween implements it: gonzalolater/Halloween (VBScript)",
+ "repos": [
+  {
+   "repo": "Halloween",
+   "url": "https://github.com/gonzalolater/Halloween",
+   "sha": "e410895a30eb35fc08ea803d8047f4b71b214948",
+   "licence": "author's permission (LICENSE at pin e410895a30eb: NONE; repository: none)",
+   "review": {
+    "spdx": "NONE",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T21:51Z",
+    "consent_receipt": "80dd7812a8cb",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T21:51Z (receipt 80dd7812a8cb); pinned to the default-branch head. LICENSE at pin e410895a30eb: NONE (repository: none); used with the author's permission, with attribution."
+   }
+  }
+ ]
+}

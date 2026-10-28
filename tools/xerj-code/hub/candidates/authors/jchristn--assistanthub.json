@@ -1,0 +1,23 @@
+{
+ "corpus": "jchristn--assistanthub",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "DB",
+ "domain": "an agent working on C# queries this for how jchristn/AssistantHub implements it: AssistantHub is an end-to-end AI assistant management platform using RAG with vector, full-text, and metadata search",
+ "repos": [
+  {
+   "repo": "AssistantHub",
+   "url": "https://github.com/jchristn/AssistantHub",
+   "sha": "6f27ab8ff39a1fffa25eb47ece1a493df109af2b",
+   "licence": "MIT (LICENSE file at pin 6f27ab8ff39a, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T22:23Z",
+    "consent_receipt": "6b1d69811ece",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T22:23Z (receipt 6b1d69811ece); pinned to the default-branch head. LICENSE file at pin 6f27ab8ff39a detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

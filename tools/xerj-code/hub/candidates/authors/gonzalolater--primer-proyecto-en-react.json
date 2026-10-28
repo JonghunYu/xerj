@@ -1,0 +1,23 @@
+{
+ "corpus": "gonzalolater--primer-proyecto-en-react",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "WEB",
+ "domain": "an agent working on JavaScript queries this for how gonzalolater/Primer-Proyecto-En-React implements it: primer proyecto usando React",
+ "repos": [
+  {
+   "repo": "Primer-Proyecto-En-React",
+   "url": "https://github.com/gonzalolater/Primer-Proyecto-En-React",
+   "sha": "3f4d82dce7ae4ab96a2b0ce8ba602fb6fcc31a63",
+   "licence": "author's permission (LICENSE at pin 3f4d82dce7ae: NONE; repository: none)",
+   "review": {
+    "spdx": "NONE",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T21:51Z",
+    "consent_receipt": "6003c08895e8",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T21:51Z (receipt 6003c08895e8); pinned to the default-branch head. LICENSE at pin 3f4d82dce7ae: NONE (repository: none); used with the author's permission, with attribution."
+   }
+  }
+ ]
+}

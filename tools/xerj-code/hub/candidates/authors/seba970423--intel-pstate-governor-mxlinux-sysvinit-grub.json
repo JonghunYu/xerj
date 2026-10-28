@@ -1,0 +1,23 @@
+{
+ "corpus": "seba970423--intel-pstate-governor-mxlinux-sysvinit-grub",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on Shell queries this for how seba970423/intel-pstate-governor-mxlinux-sysvinit-grub implements it: Interactive Intel CPU governor configuration utility for Linux with persistent sysvinit support",
+ "repos": [
+  {
+   "repo": "intel-pstate-governor-mxlinux-sysvinit-grub",
+   "url": "https://github.com/seba970423/intel-pstate-governor-mxlinux-sysvinit-grub",
+   "sha": "be51f250b78f2bebad146bd9c983773ee68410d1",
+   "licence": "MIT (LICENSE file at pin be51f250b78f, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T22:38Z",
+    "consent_receipt": "548a2f625991",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T22:38Z (receipt 548a2f625991); pinned to the default-branch head. LICENSE file at pin be51f250b78f detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

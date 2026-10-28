@@ -1,0 +1,23 @@
+{
+ "corpus": "almasumdev--bid-pilot",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "AI",
+ "domain": "an agent working on ai-assistant, chrome-extension, claude queries this for how almasumdev/bid-pilot implements it: AI copilot for freelance proposals on Upwork & Freelancer, powered by your local Claude CLI (no API key)",
+ "repos": [
+  {
+   "repo": "bid-pilot",
+   "url": "https://github.com/almasumdev/bid-pilot",
+   "sha": "622fa86a78bc259f8f892ff522f9cca35f94b299",
+   "licence": "MIT (LICENSE file at pin 622fa86a78bc, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T21:30Z",
+    "consent_receipt": "4056e5c30983",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T21:30Z (receipt 4056e5c30983); pinned to the default-branch head. LICENSE file at pin 622fa86a78bc detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

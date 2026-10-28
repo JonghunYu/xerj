@@ -1,0 +1,23 @@
+{
+ "corpus": "user-github-me--mori-study",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "AI",
+ "domain": "an agent working on agent-skills, ai-agents, claude-code queries this for how user-github-me/mori-study implements it: Your sources. Your pace. Your study space. A personal Next.js study portal and portable skill for AI agents",
+ "repos": [
+  {
+   "repo": "mori-study",
+   "url": "https://github.com/user-github-me/mori-study",
+   "sha": "c70418f355c6f79233d3ad0b73adb78bc1e64ede",
+   "licence": "MIT (LICENSE file at pin c70418f355c6, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T22:47Z",
+    "consent_receipt": "7fb70225b9a2",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T22:47Z (receipt 7fb70225b9a2); pinned to the default-branch head. LICENSE file at pin c70418f355c6 detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

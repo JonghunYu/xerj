@@ -1,0 +1,23 @@
+{
+ "corpus": "gonzalolater--feliz-cumpleanios-a-mi",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "WEB",
+ "domain": "an agent working on code queries this for how gonzalolater/Feliz-Cumpleanios-a-mi implements it: Hoy no se trabaja !",
+ "repos": [
+  {
+   "repo": "Feliz-Cumpleanios-a-mi",
+   "url": "https://github.com/gonzalolater/Feliz-Cumpleanios-a-mi",
+   "sha": "d9ab0bbd985879946b699b952ca68c90c8713c57",
+   "licence": "MIT (LICENSE file at pin d9ab0bbd9858, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T21:51Z",
+    "consent_receipt": "1ff7ef07b08c",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T21:51Z (receipt 1ff7ef07b08c); pinned to the default-branch head. LICENSE file at pin d9ab0bbd9858 detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

@@ -1,0 +1,23 @@
+{
+ "corpus": "lucasmkrx--timer",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on TypeScript queries this for how lucasmkrx/timer implements it: lucasmkrx/timer (TypeScript)",
+ "repos": [
+  {
+   "repo": "timer",
+   "url": "https://github.com/lucasmkrx/timer",
+   "sha": "8b70d4624799b99b58961cb30b2553052e687c13",
+   "licence": "author's permission (LICENSE at pin 8b70d4624799: NONE; repository: none)",
+   "review": {
+    "spdx": "NONE",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T21:20Z",
+    "consent_receipt": "afd267e31453",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T21:20Z (receipt afd267e31453); pinned to the default-branch head. LICENSE at pin 8b70d4624799: NONE (repository: none); used with the author's permission, with attribution."
+   }
+  }
+ ]
+}

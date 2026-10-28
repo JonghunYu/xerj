@@ -1,0 +1,23 @@
+{
+ "corpus": "gonzalolater--las-lalis",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "WEB",
+ "domain": "an agent working on JavaScript queries this for how gonzalolater/las_lalis implements it: sitio web creado para la venta de articulos de ropa",
+ "repos": [
+  {
+   "repo": "las_lalis",
+   "url": "https://github.com/gonzalolater/las_lalis",
+   "sha": "1d6d0a8e9d6e1cf1501c2b82c0900043adf8afa5",
+   "licence": "author's permission (LICENSE at pin 1d6d0a8e9d6e: NONE; repository: none)",
+   "review": {
+    "spdx": "NONE",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T21:51Z",
+    "consent_receipt": "bb946217f791",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T21:51Z (receipt bb946217f791); pinned to the default-branch head. LICENSE at pin 1d6d0a8e9d6e: NONE (repository: none); used with the author's permission, with attribution."
+   }
+  }
+ ]
+}

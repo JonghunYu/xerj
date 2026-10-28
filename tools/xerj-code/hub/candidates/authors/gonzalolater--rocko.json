@@ -1,0 +1,23 @@
+{
+ "corpus": "gonzalolater--rocko",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on TypeScript queries this for how gonzalolater/Rocko_ implements it: gonzalolater/Rocko_ (TypeScript)",
+ "repos": [
+  {
+   "repo": "Rocko_",
+   "url": "https://github.com/gonzalolater/Rocko_",
+   "sha": "90a742ebd161bacefddddc98e5f47e3bbb7d1b49",
+   "licence": "MIT (LICENSE file at pin 90a742ebd161, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T21:51Z",
+    "consent_receipt": "e273f93b78a7",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T21:51Z (receipt e273f93b78a7); pinned to the default-branch head. LICENSE file at pin 90a742ebd161 detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

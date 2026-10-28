@@ -1,0 +1,23 @@
+{
+ "corpus": "gonzalolater--solidity",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "CRYPTO",
+ "domain": "an agent working on Solidity queries this for how gonzalolater/Solidity implements it: Studing Solidity",
+ "repos": [
+  {
+   "repo": "Solidity",
+   "url": "https://github.com/gonzalolater/Solidity",
+   "sha": "be56f6cfa97b3354528fa78b0241961da1926549",
+   "licence": "author's permission (LICENSE at pin be56f6cfa97b: NONE; repository: none)",
+   "review": {
+    "spdx": "NONE",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T21:51Z",
+    "consent_receipt": "ba030928b628",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T21:51Z (receipt ba030928b628); pinned to the default-branch head. LICENSE at pin be56f6cfa97b: NONE (repository: none); used with the author's permission, with attribution."
+   }
+  }
+ ]
+}

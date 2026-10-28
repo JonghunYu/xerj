@@ -1,0 +1,23 @@
+{
+ "corpus": "gonzalolater--kotlin",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on code queries this for how gonzalolater/Kotlin implements it: activities",
+ "repos": [
+  {
+   "repo": "Kotlin",
+   "url": "https://github.com/gonzalolater/Kotlin",
+   "sha": "c597c201f94c03f7c9fb4df137c9a04ffd719721",
+   "licence": "author's permission (LICENSE at pin c597c201f94c: NONE; repository: none)",
+   "review": {
+    "spdx": "NONE",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T21:51Z",
+    "consent_receipt": "f9b3e6491131",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T21:51Z (receipt f9b3e6491131); pinned to the default-branch head. LICENSE at pin c597c201f94c: NONE (repository: none); used with the author's permission, with attribution."
+   }
+  }
+ ]
+}

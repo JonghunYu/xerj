@@ -1,0 +1,23 @@
+{
+ "corpus": "igmarin--rust-core-skills",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "AI",
+ "domain": "an agent working on Shell queries this for how igmarin/rust-core-skills implements it: Agent skills for idiomatic Rust: FCIS, ownership, type-driven design, cargo TDD",
+ "repos": [
+  {
+   "repo": "rust-core-skills",
+   "url": "https://github.com/igmarin/rust-core-skills",
+   "sha": "3bf49acf360efed2af7861728baf6ed5a922ef20",
+   "licence": "MIT (LICENSE file at pin 3bf49acf360e, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T22:01Z",
+    "consent_receipt": "68cf3bd4404d",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T22:01Z (receipt 68cf3bd4404d); pinned to the default-branch head. LICENSE file at pin 3bf49acf360e detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

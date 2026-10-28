@@ -1,0 +1,23 @@
+{
+ "corpus": "lucasmkrx--raw",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "WEB",
+ "domain": "an agent working on brand-assets, branding, favicon queries this for how lucasmkrx/raw implements it: Brand resources for RAW Technologies LLC: complete logos, website icons, reproducible exports, and automated validation",
+ "repos": [
+  {
+   "repo": "raw",
+   "url": "https://github.com/lucasmkrx/raw",
+   "sha": "258bd1f7e5f6958ec24ca037cd126a4b5212ad88",
+   "licence": "author's permission (LICENSE at pin 258bd1f7e5f6: NOASSERTION; repository: NOASSERTION)",
+   "review": {
+    "spdx": "NOASSERTION",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T21:20Z",
+    "consent_receipt": "a91aaaf65159",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T21:20Z (receipt a91aaaf65159); pinned to the default-branch head. LICENSE at pin 258bd1f7e5f6: NOASSERTION (repository: NOASSERTION); used with the author's permission, with attribution."
+   }
+  }
+ ]
+}

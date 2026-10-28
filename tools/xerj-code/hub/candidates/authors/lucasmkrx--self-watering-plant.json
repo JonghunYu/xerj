@@ -1,0 +1,23 @@
+{
+ "corpus": "lucasmkrx--self-watering-plant",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on code queries this for how lucasmkrx/self-watering-plant implements it: A self-watering plant using a NodeMCU and ESP8266 module. The automatic watering cycle is based on the soil humidity, ambient light, air tem",
+ "repos": [
+  {
+   "repo": "self-watering-plant",
+   "url": "https://github.com/lucasmkrx/self-watering-plant",
+   "sha": "f8e07ee4307c86deac12b03f782999ee3e2afd73",
+   "licence": "MIT (LICENSE file at pin f8e07ee4307c, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T21:20Z",
+    "consent_receipt": "195d2d6c793e",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T21:20Z (receipt 195d2d6c793e); pinned to the default-branch head. LICENSE file at pin f8e07ee4307c detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

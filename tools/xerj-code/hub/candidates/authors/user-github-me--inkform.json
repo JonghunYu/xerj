@@ -1,0 +1,23 @@
+{
+ "corpus": "user-github-me--inkform",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "DB",
+ "domain": "an agent working on agent-skill, handwriting, npm queries this for how user-github-me/inkform implements it: Learn private handwriting profiles from reviewed samples and create printable vector PDFs. Local engine and open agent skill",
+ "repos": [
+  {
+   "repo": "inkform",
+   "url": "https://github.com/user-github-me/inkform",
+   "sha": "4f94e53e2eb186bc9e90db72e6970add0ef04d7f",
+   "licence": "MIT (LICENSE file at pin 4f94e53e2eb1, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T22:47Z",
+    "consent_receipt": "2089758f9432",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T22:47Z (receipt 2089758f9432); pinned to the default-branch head. LICENSE file at pin 4f94e53e2eb1 detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

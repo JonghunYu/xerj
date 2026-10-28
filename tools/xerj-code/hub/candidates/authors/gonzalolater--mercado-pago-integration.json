@@ -1,0 +1,23 @@
+{
+ "corpus": "gonzalolater--mercado-pago-integration",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "WEB",
+ "domain": "an agent working on mercadopago queries this for how gonzalolater/mercado-pago-integration implements it: Integracion de pago, Mercado Pago con React JS para la UI y Node JS para el backend",
+ "repos": [
+  {
+   "repo": "mercado-pago-integration",
+   "url": "https://github.com/gonzalolater/mercado-pago-integration",
+   "sha": "caaa1b15cb2e4943b2b9bd87b807cd80e938f9b1",
+   "licence": "MIT (LICENSE file at pin caaa1b15cb2e, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T21:51Z",
+    "consent_receipt": "052c392b69a0",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T21:51Z (receipt 052c392b69a0); pinned to the default-branch head. LICENSE file at pin caaa1b15cb2e detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

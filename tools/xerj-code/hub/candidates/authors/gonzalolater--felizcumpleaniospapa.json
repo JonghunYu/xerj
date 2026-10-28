@@ -1,0 +1,23 @@
+{
+ "corpus": "gonzalolater--felizcumpleaniospapa",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "WEB",
+ "domain": "an agent working on JavaScript queries this for how gonzalolater/FelizCumpleaniosPapa implements it: regalo de cumplea\u00f1os para mi papa",
+ "repos": [
+  {
+   "repo": "FelizCumpleaniosPapa",
+   "url": "https://github.com/gonzalolater/FelizCumpleaniosPapa",
+   "sha": "9cacba096f596e272ef13d4316819809df4d56a7",
+   "licence": "MIT (LICENSE file at pin 9cacba096f59, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T21:51Z",
+    "consent_receipt": "f5e391a871bc",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T21:51Z (receipt f5e391a871bc); pinned to the default-branch head. LICENSE file at pin 9cacba096f59 detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}
