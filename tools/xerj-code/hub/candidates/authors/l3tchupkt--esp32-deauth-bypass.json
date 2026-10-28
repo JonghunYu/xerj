@@ -1,0 +1,23 @@
+{
+ "corpus": "l3tchupkt--esp32-deauth-bypass",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "SEC",
+ "domain": "an agent working on deauth, deauth-attack, deauth-packets queries this for how l3tchupkt/esp32-deauth-bypass implements it: A guide and boilerplate for bypassing ieee80211_raw_frame_sanity_check in Arduino-ESP32 to enable deauthentication and disassociation frame ",
+ "repos": [
+  {
+   "repo": "esp32-deauth-bypass",
+   "url": "https://github.com/l3tchupkt/esp32-deauth-bypass",
+   "sha": "6026c47aa8e9ee2edb74c37e0d6d1dffeccbce5d",
+   "licence": "author's permission (LICENSE at pin 6026c47aa8e9: NONE; repository: none)",
+   "review": {
+    "spdx": "NONE",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T18:12Z",
+    "consent_receipt": "9186311c28e5",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T18:12Z (receipt 9186311c28e5); pinned to the default-branch head. LICENSE at pin 6026c47aa8e9: NONE (repository: none); used with the author's permission, with attribution."
+   }
+  }
+ ]
+}

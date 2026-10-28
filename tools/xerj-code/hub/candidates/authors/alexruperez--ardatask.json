@@ -1,0 +1,23 @@
+{
+ "corpus": "alexruperez--ardatask",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "WEB",
+ "domain": "an agent working on Objective-C queries this for how alexruperez/ARDatask implements it: ARDatask is a class that you can drop into any iPhone app (iOS 4.0 or later) that will help to ask some user data to tracking or analyze onc",
+ "repos": [
+  {
+   "repo": "ARDatask",
+   "url": "https://github.com/alexruperez/ARDatask",
+   "sha": "113a9cac0890955f03810a6828dfad04241a6d66",
+   "licence": "author's permission (LICENSE at pin 113a9cac0890: NONE; repository: none)",
+   "review": {
+    "spdx": "NONE",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T18:13Z",
+    "consent_receipt": "1cef979bca5b",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T18:13Z (receipt 1cef979bca5b); pinned to the default-branch head. LICENSE at pin 113a9cac0890: NONE (repository: none); used with the author's permission, with attribution."
+   }
+  }
+ ]
+}

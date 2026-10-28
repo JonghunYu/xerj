@@ -1,0 +1,23 @@
+{
+ "corpus": "dunorth595--xrpl-did-mcp",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "AI",
+ "domain": "an agent working on agent-identity, ai-agents, blockchain queries this for how DuNorth595/xrpl_did_mcp implements it: MCP server for did:xrpl -- W3C-compatible agent identity on the XRP Ledger",
+ "repos": [
+  {
+   "repo": "xrpl_did_mcp",
+   "url": "https://github.com/DuNorth595/xrpl_did_mcp",
+   "sha": "8f6304ff82697e6f13175796ed0f84df90d7f460",
+   "licence": "MIT (LICENSE file at pin 8f6304ff8269, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T19:14Z",
+    "consent_receipt": "2719f2a2bf16",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T19:14Z (receipt 2719f2a2bf16); pinned to the default-branch head. LICENSE file at pin 8f6304ff8269 detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

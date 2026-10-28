@@ -3,7 +3,7 @@
  "cloned_at": null,
  "status": "draft",
  "shelf": "DB",
- "domain": "an agent working on Go queries this for how foir-io/demesne implements it: An RLS-compiled ReBAC + topology authorization engine \u2014 one spec \u2192 Postgres RLS + an app PDP (selected work: the project root)",
+ "domain": "an agent working on Rust queries this for how foir-io/demesne implements it: An RLS-compiled ReBAC + topology authorization engine \u2014 one spec \u2192 Postgres RLS + an app PDP (selected work: the project root)",
  "repos": [
   {
    "repo": "demesne",

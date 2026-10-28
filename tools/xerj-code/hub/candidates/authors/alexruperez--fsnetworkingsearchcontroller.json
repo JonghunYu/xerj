@@ -1,0 +1,23 @@
+{
+ "corpus": "alexruperez--fsnetworkingsearchcontroller",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "NET",
+ "domain": "an agent working on Objective-C queries this for how alexruperez/FSNetworkingSearchController implements it: Search controller with suggest completion using Foursquare API following Instagram design",
+ "repos": [
+  {
+   "repo": "FSNetworkingSearchController",
+   "url": "https://github.com/alexruperez/FSNetworkingSearchController",
+   "sha": "8d63eabe4ca0417173fe345a6969a88ac00310db",
+   "licence": "MIT (LICENSE file at pin 8d63eabe4ca0, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T18:13Z",
+    "consent_receipt": "c37820ac0b8a",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T18:13Z (receipt c37820ac0b8a); pinned to the default-branch head. LICENSE file at pin 8d63eabe4ca0 detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

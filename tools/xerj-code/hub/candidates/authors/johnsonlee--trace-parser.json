@@ -1,0 +1,23 @@
+{
+ "corpus": "johnsonlee--trace-parser",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on Kotlin queries this for how johnsonlee/trace-parser implements it: A parser collection for Java/Native stack trace",
+ "repos": [
+  {
+   "repo": "trace-parser",
+   "url": "https://github.com/johnsonlee/trace-parser",
+   "sha": "421de9a4cc275bf2de523917f84a70a1c9ab2e8f",
+   "licence": "Apache-2.0 (LICENSE file at pin 421de9a4cc27, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "Apache-2.0",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T18:52Z",
+    "consent_receipt": "fcd3c91bd3d1",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T18:52Z (receipt fcd3c91bd3d1); pinned to the default-branch head. LICENSE file at pin 421de9a4cc27 detected as Apache-2.0 by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

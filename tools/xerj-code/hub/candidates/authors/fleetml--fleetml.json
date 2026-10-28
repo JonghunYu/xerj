@@ -1,0 +1,23 @@
+{
+ "corpus": "fleetml--fleetml",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "OPS",
+ "domain": "an agent working on ab-testing, android, canary-deployment queries this for how fleetml/fleetml implements it: Self-hosted rollouts for on-device ML models: canary and rolling deployments with health gates and automatic rollback, A/B tests, drift dete (selected work: internal/cli)",
+ "repos": [
+  {
+   "repo": "fleetml",
+   "url": "https://github.com/fleetml/fleetml",
+   "sha": "242a3afd51ae3f1d339c7017b25c893fa848d463",
+   "licence": "Apache-2.0 (LICENSE file at pin 242a3afd51ae, GitHub licence API 2026-10-28)",
+   "review": {
+    "spdx": "Apache-2.0",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T18:44Z",
+    "consent_receipt": "c3232fb7071b",
+    "note": "Inclusion consented by the commit author by email at 2026-10-28T18:44Z (receipt c3232fb7071b); selected commit 242a3afd51ae: \"fix(cli): push --promote errors, simulate key from env, events columns\". LICENSE file at pin 242a3afd51ae detected as Apache-2.0 by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+   }
+  }
+ ]
+}

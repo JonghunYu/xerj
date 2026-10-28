@@ -1,0 +1,23 @@
+{
+ "corpus": "johnsonlee--claude-context-inspector",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "AI",
+ "domain": "an agent working on TypeScript queries this for how johnsonlee/claude-context-inspector implements it: Claude Code Inspector",
+ "repos": [
+  {
+   "repo": "claude-context-inspector",
+   "url": "https://github.com/johnsonlee/claude-context-inspector",
+   "sha": "d3726311ecf94eb92484f9335a51981a273178b6",
+   "licence": "author's permission (LICENSE at pin d3726311ecf9: NONE; repository: none)",
+   "review": {
+    "spdx": "NONE",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T18:52Z",
+    "consent_receipt": "e881d6f48216",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T18:52Z (receipt e881d6f48216); pinned to the default-branch head. LICENSE at pin d3726311ecf9: NONE (repository: none); used with the author's permission, with attribution."
+   }
+  }
+ ]
+}
