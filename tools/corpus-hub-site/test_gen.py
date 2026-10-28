@@ -1277,7 +1277,9 @@ class BuiltSiteDiscoverabilityTest(SiteLinksTest):
             self.assertNotIn(r["login"], ledger, r["login"])
         for r in restored:
             login, pin = r["login"], r["pin"]
-            rows = ledger.get(login) or []
+            # the audited corpus, found by its pin: a restored person may since have added more repos
+            # (hub.xerj.org/add, e.g. QeZzhi/shark24 on 2026-10-28), which are not part of the audit
+            rows = [x for x in ledger.get(login) or [] if x["pin"]["sha"] == pin]
             self.assertEqual(len(rows), 1, login)
             row = rows[0]
             lic = row["licence"]
