@@ -1,0 +1,23 @@
+{
+ "corpus": "omid-io--antigravity-ui",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "WEB",
+ "domain": "an agent working on antigravity, antigravity-ide, antigravity-ui queries this for how omid-io/antigravity-ui implements it: The complete UI enhancement, RTL & Persian/Arabic \u0631\u0627\u0633\u062a \u0686\u06cc\u0646 studio, workspace ergonomics, and BiDi typography for Google Antigravity & Antigr",
+ "repos": [
+  {
+   "repo": "antigravity-ui",
+   "url": "https://github.com/omid-io/antigravity-ui",
+   "sha": "0f6db0c67995b5c5da8fca05bb5349b3b9547ffe",
+   "licence": "author's permission (LICENSE at pin 0f6db0c67995: NOASSERTION; repository: NOASSERTION)",
+   "review": {
+    "spdx": "NOASSERTION",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-29T03:06Z",
+    "consent_receipt": "49b8bc62a058",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-29T03:06Z (receipt 49b8bc62a058); pinned to the default-branch head. LICENSE at pin 0f6db0c67995: NOASSERTION (repository: NOASSERTION); used with the author's permission, with attribution."
+   }
+  }
+ ]
+}

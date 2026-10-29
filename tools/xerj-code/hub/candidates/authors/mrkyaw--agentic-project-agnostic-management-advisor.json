@@ -1,0 +1,23 @@
+{
+ "corpus": "mrkyaw--agentic-project-agnostic-management-advisor",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "AI",
+ "domain": "an agent working on agentic-ai, crewai, decision-support queries this for how MrKyaw/Agentic-Project-Agnostic-Management-Advisor implements it: Deterministic project-management decision engine: CPM, PERT, seeded Monte Carlo, risk heat map, capacity-aware sprint planning, executive re",
+ "repos": [
+  {
+   "repo": "Agentic-Project-Agnostic-Management-Advisor",
+   "url": "https://github.com/MrKyaw/Agentic-Project-Agnostic-Management-Advisor",
+   "sha": "f991e44bec842d43218d0d6f3a4f309bbdcb5bcd",
+   "licence": "MIT (LICENSE file at pin f991e44bec84, GitHub licence API 2026-10-29)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-29T01:15Z",
+    "consent_receipt": "00b6e689f2e7",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-29T01:15Z (receipt 00b6e689f2e7); pinned to the default-branch head. LICENSE file at pin f991e44bec84 detected as MIT by the GitHub licence API on 2026-10-29; used under that licence with attribution."
+   }
+  }
+ ]
+}

@@ -1,0 +1,23 @@
+{
+ "corpus": "mrkyaw--conversaflow-ai",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "AI",
+ "domain": "an agent working on bm25, chatbot, conversational-ai queries this for how MrKyaw/ConversaFlow-AI implements it: Self-contained conversational AI runtime for multi-turn support: local TF-IDF/softmax NLU, 8 validated dialogue flows, tenant-scoped BM25 re",
+ "repos": [
+  {
+   "repo": "ConversaFlow-AI",
+   "url": "https://github.com/MrKyaw/ConversaFlow-AI",
+   "sha": "ceefa447cfa53df2d14d6e816eed9ee76a978fec",
+   "licence": "MIT (LICENSE file at pin ceefa447cfa5, GitHub licence API 2026-10-29)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-29T01:15Z",
+    "consent_receipt": "ff9ca3f85389",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-29T01:15Z (receipt ff9ca3f85389); pinned to the default-branch head. LICENSE file at pin ceefa447cfa5 detected as MIT by the GitHub licence API on 2026-10-29; used under that licence with attribution."
+   }
+  }
+ ]
+}

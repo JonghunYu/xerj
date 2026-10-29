@@ -1,0 +1,23 @@
+{
+ "corpus": "fahadbinhussain--openwebui-huggingface-template",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "WEB",
+ "domain": "an agent working on ai-chat, docker, huggingface-spaces queries this for how FahadBinHussain/openwebui-huggingface-template implements it: Thin Hugging Face Space wrapper for the official Open WebUI Docker image",
+ "repos": [
+  {
+   "repo": "openwebui-huggingface-template",
+   "url": "https://github.com/FahadBinHussain/openwebui-huggingface-template",
+   "sha": "1c7360de826f0f75ab38675c83ae130b04590a2e",
+   "licence": "MIT (LICENSE file at pin 1c7360de826f, GitHub licence API 2026-10-29)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-29T02:34Z",
+    "consent_receipt": "bdf3ddc5c4d7",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-29T02:34Z (receipt bdf3ddc5c4d7); pinned to the default-branch head. LICENSE file at pin 1c7360de826f detected as MIT by the GitHub licence API on 2026-10-29; used under that licence with attribution."
+   }
+  }
+ ]
+}

@@ -1,0 +1,23 @@
+{
+ "corpus": "lion-1209--flashgate",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "AI",
+ "domain": "an agent working on agent-verification, claude-code, coding-agent queries this for how Lion-1209/flashgate implements it: The agent can't claim the firmware works \u2014 until the board says so. Hardware-in-the-loop verification gate: build \u2192 flash \u2192 boot banner \u2192 ex",
+ "repos": [
+  {
+   "repo": "flashgate",
+   "url": "https://github.com/Lion-1209/flashgate",
+   "sha": "6bec76fc88b00b845ae5d712e365522705c447d2",
+   "licence": "MIT (LICENSE file at pin 6bec76fc88b0, GitHub licence API 2026-10-29)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-29T03:12Z",
+    "consent_receipt": "562b9b3d4827",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-29T03:12Z (receipt 562b9b3d4827); pinned to the default-branch head. LICENSE file at pin 6bec76fc88b0 detected as MIT by the GitHub licence API on 2026-10-29; used under that licence with attribution."
+   }
+  }
+ ]
+}

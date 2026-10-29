@@ -1,0 +1,23 @@
+{
+ "corpus": "mrkyaw--vehicle-inspection-system-cross-platform-models",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "WEB",
+ "domain": "an agent working on computer-vision, cross-platform, fastapi queries this for how MrKyaw/Vehicle-Inspection-System-Cross-Platform-Models- implements it: Cross-platform vehicle inspection: PyTorch/ONNX/Rust-WASM research plus a tested decision layer for geometry, calibration, defect policy and",
+ "repos": [
+  {
+   "repo": "Vehicle-Inspection-System-Cross-Platform-Models-",
+   "url": "https://github.com/MrKyaw/Vehicle-Inspection-System-Cross-Platform-Models-",
+   "sha": "df33edfe47d4365d8cb3eb6040f026f88fac757e",
+   "licence": "MIT (LICENSE file at pin df33edfe47d4, GitHub licence API 2026-10-29)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-29T01:15Z",
+    "consent_receipt": "6a1ff5ce2ca4",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-29T01:15Z (receipt 6a1ff5ce2ca4); pinned to the default-branch head. LICENSE file at pin df33edfe47d4 detected as MIT by the GitHub licence API on 2026-10-29; used under that licence with attribution."
+   }
+  }
+ ]
+}

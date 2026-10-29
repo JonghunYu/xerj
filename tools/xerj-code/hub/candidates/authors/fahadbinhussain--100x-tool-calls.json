@@ -1,0 +1,23 @@
+{
+ "corpus": "fahadbinhussain--100x-tool-calls",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on agent-workflow, automation, cli queries this for how FahadBinHussain/100x-tool-calls implements it: Lightweight Python experiments for collecting user input in Codex workflows via stdin, PowerShell prompt windows, and file-based triggers",
+ "repos": [
+  {
+   "repo": "100x-tool-calls",
+   "url": "https://github.com/FahadBinHussain/100x-tool-calls",
+   "sha": "7b3c866964093b054395b526ad43e7d8c4e0960e",
+   "licence": "MIT (LICENSE file at pin 7b3c86696409, GitHub licence API 2026-10-29)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-29T02:34Z",
+    "consent_receipt": "05a2c0cbe3ee",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-29T02:34Z (receipt 05a2c0cbe3ee); pinned to the default-branch head. LICENSE file at pin 7b3c86696409 detected as MIT by the GitHub licence API on 2026-10-29; used under that licence with attribution."
+   }
+  }
+ ]
+}

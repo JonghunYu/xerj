@@ -1,0 +1,23 @@
+{
+ "corpus": "mrkyaw--agentforge-enterprise-ai-platform",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "AI",
+ "domain": "an agent working on ai-agents, ai-governance, audit queries this for how MrKyaw/AgentForge-Enterprise-AI-Platform implements it: Governed enterprise AI control plane: hybrid RAG, agent runtime, model gateway, approvals, hash-chained audit, FinOps, and evaluation. Runs ",
+ "repos": [
+  {
+   "repo": "AgentForge-Enterprise-AI-Platform",
+   "url": "https://github.com/MrKyaw/AgentForge-Enterprise-AI-Platform",
+   "sha": "6f09b1fc847693123769f2e207f06603343185da",
+   "licence": "MIT (LICENSE file at pin 6f09b1fc8476, GitHub licence API 2026-10-29)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-29T01:15Z",
+    "consent_receipt": "ed5d0c870748",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-29T01:15Z (receipt ed5d0c870748); pinned to the default-branch head. LICENSE file at pin 6f09b1fc8476 detected as MIT by the GitHub licence API on 2026-10-29; used under that licence with attribution."
+   }
+  }
+ ]
+}

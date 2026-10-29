@@ -1,0 +1,23 @@
+{
+ "corpus": "graffhyrum--crap4ts",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on TypeScript queries this for how graffhyrum/crap4ts implements it: CRAP (Change Risk Analysis and Predictions) score calculator for TypeScript and JavaScript codebases. Identifies high-risk functions by comb",
+ "repos": [
+  {
+   "repo": "crap4ts",
+   "url": "https://github.com/graffhyrum/crap4ts",
+   "sha": "149abaf411704f227d40e2b29e6909366bb18fc2",
+   "licence": "MIT (LICENSE file at pin 149abaf41170, GitHub licence API 2026-10-29)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-29T01:58Z",
+    "consent_receipt": "95d4360250f4",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-29T01:58Z (receipt 95d4360250f4); pinned to the default-branch head. LICENSE file at pin 149abaf41170 detected as MIT by the GitHub licence API on 2026-10-29; used under that licence with attribution."
+   }
+  }
+ ]
+}

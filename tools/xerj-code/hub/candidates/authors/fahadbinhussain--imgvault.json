@@ -1,0 +1,23 @@
+{
+ "corpus": "fahadbinhussain--imgvault",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "WEB",
+ "domain": "an agent working on bookmark-manager, chrome-extension, drizzle queries this for how FahadBinHussain/imgvault implements it: save images, videos and links with rich metadata, duplicate detection and a smart gallery \u2014 chrome extension + web app",
+ "repos": [
+  {
+   "repo": "imgvault",
+   "url": "https://github.com/FahadBinHussain/imgvault",
+   "sha": "16edb604ad8adf07e1eaa84d228040eece258d9c",
+   "licence": "MIT (LICENSE file at pin 16edb604ad8a, GitHub licence API 2026-10-29)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-29T02:34Z",
+    "consent_receipt": "b75e3e757097",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-29T02:34Z (receipt b75e3e757097); pinned to the default-branch head. LICENSE file at pin 16edb604ad8a detected as MIT by the GitHub licence API on 2026-10-29; used under that licence with attribution."
+   }
+  }
+ ]
+}

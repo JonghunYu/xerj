@@ -1,0 +1,23 @@
+{
+ "corpus": "fahadbinhussain--notion-ls-tree",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on cli, json, markdown queries this for how FahadBinHussain/Notion-ls-tree implements it: CLI tool to generate and export a tree view of Notion pages and databases (console, Markdown, ASCII, and JSON)",
+ "repos": [
+  {
+   "repo": "Notion-ls-tree",
+   "url": "https://github.com/FahadBinHussain/Notion-ls-tree",
+   "sha": "438430ce8b03dc6a2c8d59dd58cd9482031d383c",
+   "licence": "MIT (LICENSE file at pin 438430ce8b03, GitHub licence API 2026-10-29)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-29T02:34Z",
+    "consent_receipt": "d5e8c94ec705",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-29T02:34Z (receipt d5e8c94ec705); pinned to the default-branch head. LICENSE file at pin 438430ce8b03 detected as MIT by the GitHub licence API on 2026-10-29; used under that licence with attribution."
+   }
+  }
+ ]
+}

@@ -1,0 +1,23 @@
+{
+ "corpus": "zhuyuyangyy--tcm-sd42-public-reproducibility",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on Python queries this for how Zhuyuyangyy/TCM-SD42-Public-Reproducibility implements it: Public reproducibility materials for controlled model comparison on TCM-SD42 syndrome differentiation",
+ "repos": [
+  {
+   "repo": "TCM-SD42-Public-Reproducibility",
+   "url": "https://github.com/Zhuyuyangyy/TCM-SD42-Public-Reproducibility",
+   "sha": "05540e88f47a08f0acc61b0d8f60b34e7e9d8c1a",
+   "licence": "author's permission (LICENSE at pin 05540e88f47a: NOASSERTION; repository: MIT)",
+   "review": {
+    "spdx": "NOASSERTION",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-29T01:35Z",
+    "consent_receipt": "1832bbdf73b6",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-29T01:35Z (receipt 1832bbdf73b6); pinned to the default-branch head. LICENSE at pin 05540e88f47a: NOASSERTION (repository: MIT); used with the author's permission, with attribution."
+   }
+  }
+ ]
+}

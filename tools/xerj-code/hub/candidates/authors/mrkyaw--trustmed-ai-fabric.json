@@ -1,0 +1,23 @@
+{
+ "corpus": "mrkyaw--trustmed-ai-fabric",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "AI",
+ "domain": "an agent working on ai-governance, audit-ledger, evaluation queries this for how MrKyaw/TrustMed-AI-Fabric implements it: Governed, traceable AI fabric for regulated life-sciences content, experiences and measurement. Synthetic reference implementation with hash",
+ "repos": [
+  {
+   "repo": "TrustMed-AI-Fabric",
+   "url": "https://github.com/MrKyaw/TrustMed-AI-Fabric",
+   "sha": "f44233a71aa7b4edd4eb6b8ab807af84acb7c1c3",
+   "licence": "MIT (LICENSE file at pin f44233a71aa7, GitHub licence API 2026-10-29)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-29T01:15Z",
+    "consent_receipt": "a0c46d3e9b11",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-29T01:15Z (receipt a0c46d3e9b11); pinned to the default-branch head. LICENSE file at pin f44233a71aa7 detected as MIT by the GitHub licence API on 2026-10-29; used under that licence with attribution."
+   }
+  }
+ ]
+}

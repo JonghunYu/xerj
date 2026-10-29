@@ -1,0 +1,23 @@
+{
+ "corpus": "fahadbinhussain--ui",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "WEB",
+ "domain": "an agent working on component-library, design-system, framer-motion queries this for how FahadBinHussain/ui implements it: Modern Next.js 16 + React 19 design system and component showcase with animations and 3D-ready UI blocks",
+ "repos": [
+  {
+   "repo": "ui",
+   "url": "https://github.com/FahadBinHussain/ui",
+   "sha": "92130fb2902f6f37719542d25036e871204e2d63",
+   "licence": "MIT (LICENSE file at pin 92130fb2902f, GitHub licence API 2026-10-29)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-29T02:34Z",
+    "consent_receipt": "f58e3d2868e7",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-29T02:34Z (receipt f58e3d2868e7); pinned to the default-branch head. LICENSE file at pin 92130fb2902f detected as MIT by the GitHub licence API on 2026-10-29; used under that licence with attribution."
+   }
+  }
+ ]
+}
