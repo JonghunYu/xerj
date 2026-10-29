@@ -49,7 +49,7 @@ faq:
     a: "2 MB per file, with at most 5,000 symbols per file. A symbol name longer than 200 characters is truncated."
 ---
 
-**TL;DR** — XERJ gives you 2 code queries on the same index: a `match` on `body` for raw text, and a `match` on `defs` for declared symbols. The definition query returns a `symbols` array with a kind, a name and a line. Extraction is definitions only.
+**TL;DR**: XERJ gives you 2 code queries on the same index: a `match` on `body` for raw text, and a `match` on `defs` for declared symbols. The definition query returns a `symbols` array with a kind, a name and a line. Extraction is definitions only.
 
 ## Two queries over one index
 

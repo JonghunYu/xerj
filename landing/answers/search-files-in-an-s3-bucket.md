@@ -12,7 +12,7 @@ source: "content/answers/search-files-in-an-s3-bucket.md"
 
 **Key number:** Measured against MinIO: an unchanged re-run over 4 keys cost 1 LIST and 0 GET requests, 0 bytes. (as of 2026-10-19; source: [engine/crates/xerj-autoindex/src/objsource_minio_tests.rs](https://github.com/xerj-org/xerj/blob/main/engine/crates/xerj-autoindex/src/objsource_minio_tests.rs))
 
-**TL;DR** — Run `xerj autoindex s3://bucket/prefix` against a running node. XERJ lists the prefix, streams in only the objects whose ETag or size changed, and indexes them with the same extractors it uses for a folder. Credentials come from the environment. The index stays on local disk.
+**TL;DR**: Run `xerj autoindex s3://bucket/prefix` against a running node. XERJ lists the prefix, streams in only the objects whose ETag or size changed, and indexes them with the same extractors it uses for a folder. Credentials come from the environment. The index stays on local disk.
 
 ## Agent prompt
 
@@ -90,7 +90,7 @@ xerj autoindex r2://mybucket/docs --endpoint-url https://accountid.r2.cloudflare
 
 `--endpoint-url` falls back to `AWS_ENDPOINT_URL_S3`, then `AWS_ENDPOINT_URL`, which is the precedence the AWS CLI uses.
 
-Credentials come from the environment — `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, and `AWS_SESSION_TOKEN` for temporary credentials — and from nowhere else. Profile files, instance metadata (IMDS) and SSO are not read; if your keys live in a profile, export them for the run. A URL of the form `s3://key:secret@bucket/p` is refused by name, because that shape puts a credential in every request line and in every log that records one.
+Credentials come from the environment (`AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, and `AWS_SESSION_TOKEN` for temporary credentials) and from nowhere else. Profile files, instance metadata (IMDS) and SSO are not read; if your keys live in a profile, export them for the run. A URL of the form `s3://key:secret@bucket/p` is refused by name, because that shape puts a credential in every request line and in every log that records one.
 
 One surprise removed on purpose: a non-empty prefix is treated as a **folder**. `s3://b/docs` lists `docs/` and not also `docs-old/`, even though plain S3 prefix matching is a string prefix. The effective prefix is printed at the start of the run.
 
@@ -120,7 +120,7 @@ Object stores bill per request. On Cloudflare R2's free tier that is 1,000,000 c
 | 10,000 | 10 | 300 | 7,200 | 86,400 |
 | 100,000 | 100 | 3,000 | 72,000 | 864,000 |
 
-Those are requests per month against a 1,000,000 free allowance, for that prefix alone. A daily or hourly re-index of a normal corpus is a rounding error. A minute-interval watcher over a six-figure bucket is not — and nothing in XERJ creates one: `xerj autoindex` is a single command with no polling loop and no watch mode. If you put it in cron, the interval is the cost.
+Those are requests per month against a 1,000,000 free allowance, for that prefix alone. A daily or hourly re-index of a normal corpus is a rounding error. A minute-interval watcher over a six-figure bucket is not, and nothing in XERJ creates one: `xerj autoindex` is a single command with no polling loop and no watch mode. If you put it in cron, the interval is the cost.
 
 You do not have to derive any of this. Every object-store run prints it:
 
@@ -138,7 +138,7 @@ Those lines survive `--quiet`, and the same counts land in the run document unde
 
 Objects are streamed into a local mirror under the state directory, and the ordinary walk runs over that mirror.
 
-The reason is not laziness. Several extractors are not sequential readers: a PDF is read from its trailer backwards, a DOCX is a ZIP whose central directory sits at the end of the file, SQLite seeks by page, and the content-identity contract reads each file twice before verifying it a third time. Over a network stream each of those becomes either another GET — more requests, more money — or a copy of the whole object in memory, which is the one thing that must not happen.
+The reason is not laziness. Several extractors are not sequential readers: a PDF is read from its trailer backwards, a DOCX is a ZIP whose central directory sits at the end of the file, SQLite seeks by page, and the content-identity contract reads each file twice before verifying it a third time. Over a network stream each of those becomes either another GET (more requests, more money) or a copy of the whole object in memory, which is the one thing that must not happen.
 
 So the trade is explicit:
 
@@ -146,7 +146,7 @@ So the trade is explicit:
 - nothing is held in memory: transfer is a bounded 256 KiB copy into a temporary file that is then renamed, at most 16 objects at a time. A 1 GiB object moved against MinIO on loopback with RSS growing from 22 MB to 26 MB. It took 281-318 ms over four runs, which is a same-host transfer and not a throughput benchmark;
 - extraction sees byte-for-byte what it sees for a folder.
 
-The index itself is on the XERJ node's local disk. Nothing writes to the bucket, and keeping the index in object storage is a different, unimplemented thing — see [what XERJ does not do with S3 yet](/answers/does-xerj-support-s3-alerting-plugins).
+The index itself is on the XERJ node's local disk. Nothing writes to the bucket, and keeping the index in object storage is a different, unimplemented thing: see [what XERJ does not do with S3 yet](/answers/does-xerj-support-s3-alerting-plugins).
 
 ## What is skipped, and why you should be glad
 
@@ -162,7 +162,7 @@ An object key is an arbitrary string, not a path. Keys that cannot become a safe
 
 `.gitignore` and `.xerjignore` are the two exceptions to the dotfile rule: they are fetched so the bucket's own ignore rules still apply, and then not indexed.
 
-A skipped key is also money not spent — the filter runs on the listing, so `node_modules/` never costs a GET.
+A skipped key is also money not spent: the filter runs on the listing, so `node_modules/` never costs a GET.
 
 ## Deletions
 
@@ -226,11 +226,11 @@ Yes. A multipart ETag is a digest of digests with a `-N` suffix, so it is not an
 
 ## Evidence
 
-- xerj autoindex accepts s3:// and r2:// wherever it accepts a folder; the prefix is listed with ListObjectsV2 at 1,000 keys per page and each admitted object is streamed in. — `engine/crates/xerj-autoindex/src/objsource.rs`
-- Change identity is the object's ETag plus its size, treated as an opaque token: a multipart ETag's -N suffix is used verbatim and nothing is compared to a locally computed MD5. — `engine/crates/xerj-autoindex/src/objsource.rs`
-- Measured against MinIO: first run over 4 keys = 1 LIST + 3 GET; unchanged re-run = 1 LIST + 0 GET, 0 bytes; 1,200 keys = 2 LIST pages; a 1 GiB object moved with RSS growing from 22 MB to 26 MB, in 281-318 ms over four loopback runs. — `engine/crates/xerj-autoindex/src/objsource_minio_tests.rs`
-- The index still lives on the XERJ node's local disk. Setting storage.backend to s3 refuses to start, and no segment or WAL file is ever written to a bucket. — `docs/OBJECT_STORAGE.md:255`
-- Keys whose components are hidden, unsafe or unportable are skipped by name and reported: a bucket's .env and .git/ never reach the index. — `engine/crates/xerj-autoindex/src/source.rs`
+- xerj autoindex accepts s3:// and r2:// wherever it accepts a folder; the prefix is listed with ListObjectsV2 at 1,000 keys per page and each admitted object is streamed in. Source: `engine/crates/xerj-autoindex/src/objsource.rs`
+- Change identity is the object's ETag plus its size, treated as an opaque token: a multipart ETag's -N suffix is used verbatim and nothing is compared to a locally computed MD5. Source: `engine/crates/xerj-autoindex/src/objsource.rs`
+- Measured against MinIO: first run over 4 keys = 1 LIST + 3 GET; unchanged re-run = 1 LIST + 0 GET, 0 bytes; 1,200 keys = 2 LIST pages; a 1 GiB object moved with RSS growing from 22 MB to 26 MB, in 281-318 ms over four loopback runs. Source: `engine/crates/xerj-autoindex/src/objsource_minio_tests.rs`
+- The index still lives on the XERJ node's local disk. Setting storage.backend to s3 refuses to start, and no segment or WAL file is ever written to a bucket. Source: `docs/OBJECT_STORAGE.md:255`
+- Keys whose components are hidden, unsafe or unportable are skipped by name and reported: a bucket's .env and .git/ never reach the index. Source: `engine/crates/xerj-autoindex/src/source.rs`
 
 ## Related
 

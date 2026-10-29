@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="How does XERJ combine BM25 and kNN?">
@@ -230,9 +230,9 @@
     <p>How does XERJ combine BM25 and kNN? One hybrid request carries a BM25 sub-query and a kNN sub-query against a single index, and Reciprocal Rank Fusion merges the two ranked lists. Fusion reads rank positions, not scores, so the BM25 and cosine scales never need to be normalized against each other.</p>
     <p class="key-fact"><strong>Key number:</strong> XERJ's RRF uses a default k of 60, so a document ranked first in both lists scores 1/61 + 1/61 = 0.032787. <span class="mute">(as of 2026-08-23 · source: <a href="/answers/reciprocal-rank-fusion-when-to-use">/answers/reciprocal-rank-fusion-when-to-use</a>)</span></p>
   </div>
-  <p><strong>TL;DR</strong> — One <code class="inline">hybrid</code> request carries a BM25 sub-query and a kNN sub-query against a single index, and Reciprocal Rank Fusion merges their two ranked lists into one. Fusion reads rank position rather than score, so the BM25 and cosine scales never have to be normalized.</p>
+  <p><strong>TL;DR</strong>: One <code class="inline">hybrid</code> request carries a BM25 sub-query and a kNN sub-query against a single index, and Reciprocal Rank Fusion merges their two ranked lists into one. Fusion reads rank position rather than score, so the BM25 and cosine scales never have to be normalized.</p>
   <div class="prompt-card">
-    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT — IT DOES THE REST</span>
+    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT. IT DOES THE REST</span>
     <code>Act as a coding agent. Read https://xerj.org/llms.txt, GET /_mapping on the target index to find the companion vector field, GET /v1/embedding/identity to learn which embedder the node loaded, then POST one hybrid request whose queries array holds a match sub-query and a knn sub-query with fusion rrf, and report the fused ranking beside the ranking each sub-query returns on its own.</code>
     <button type="button" class="prompt-copy" data-copy="Act as a coding agent. Read https://xerj.org/llms.txt, GET /_mapping on the target index to find the companion vector field, GET /v1/embedding/identity to learn which embedder the node loaded, then POST one hybrid request whose queries array holds a match sub-query and a knn sub-query with fusion rrf, and report the fused ranking beside the ranking each sub-query returns on its own.">COPY THE PROMPT</button>
   </div>

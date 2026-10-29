@@ -14,7 +14,7 @@
 <!-- ga4:end -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>XERJ.ai — XERJ audits its own Rust</title>
+<title>XERJ.ai · XERJ audits its own Rust</title>
 <meta name="description" content="XERJ indexed its own Rust engine as a call graph and found a real unauthenticated stack-overflow DoS for 10,533 tokens instead of 1.8 million. Fix shipped.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,16 +35,16 @@
 <link rel="canonical" href="https://xerj.org/case-studies/xerj-self-audit">
 <meta property="og:site_name" content="XERJ.ai">
 <meta property="og:type" content="article">
-<meta property="og:title" content="XERJ.ai — XERJ audits its own Rust">
+<meta property="og:title" content="XERJ.ai · XERJ audits its own Rust">
 <meta property="og:description" content="XERJ indexed its own Rust engine as a call graph and found a real unauthenticated stack-overflow DoS for 10,533 tokens instead of 1.8 million. Fix shipped.">
 <meta property="og:url" content="https://xerj.org/case-studies/xerj-self-audit">
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="XERJ.ai — XERJ audits its own Rust">
+<meta name="twitter:title" content="XERJ.ai · XERJ audits its own Rust">
 <meta name="twitter:description" content="XERJ indexed its own Rust engine as a call graph and found a real unauthenticated stack-overflow DoS for 10,533 tokens instead of 1.8 million. Fix shipped.">
 <meta name="twitter:image" content="https://xerj.org/og/xerj-card.png">
 <script type="application/ld+json">
@@ -80,7 +80,7 @@
 {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "XERJ.ai — XERJ audits its own Rust",
+  "headline": "XERJ.ai · XERJ audits its own Rust",
   "description": "XERJ indexed its own Rust engine as a call graph and found a real unauthenticated stack-overflow DoS for 10,533 tokens instead of 1.8 million. Fix shipped.",
   "url": "https://xerj.org/case-studies/xerj-self-audit",
   "image": "https://xerj.org/og/xerj-card.png",
@@ -166,7 +166,7 @@
 <div class="uc-hero">
   <div class="uc-eyebrow">CASE STUDY · RUST SELF-AUDIT</div>
   <h1>XERJ AUDITED ITS OWN RUST.<br><span class="accent">IT FOUND A REAL 0-DAY.</span></h1>
-  <p class="uc-lead">XERJ indexed its own engine — 197 Rust files, ~201k lines — as a queryable AST and call graph, then hunted for security bugs on top of it. A call-graph query that grep cannot express surfaced an <strong>unauthenticated <code class="inline">POST /_sql</code> stack-overflow that aborts the whole process</strong>. Reaching it cost <strong>10,533 tokens</strong> instead of the <strong>1,805,277</strong> it takes to read the source once. The bug is fixed and the fix is proven by crashing — then not crashing — a live server.</p>
+  <p class="uc-lead">XERJ indexed its own engine (197 Rust files, ~201k lines) as a queryable AST and call graph, then hunted for security bugs on top of it. A call-graph query that grep cannot express surfaced an <strong>unauthenticated <code class="inline">POST /_sql</code> stack-overflow that aborts the whole process</strong>. Reaching it cost <strong>10,533 tokens</strong> instead of the <strong>1,805,277</strong> it takes to read the source once. The bug is fixed and the fix is proven by crashing (then not crashing) a live server.</p>
   <div class="kicker"><span>FOR</span><span class="dash">·</span><span>SECURITY ENGINEERS</span><span class="dash">·</span><span>AI-AGENT BUILDERS</span><span class="dash">·</span><span>RUST TEAMS</span></div>
 </div>
 
@@ -199,11 +199,11 @@
 <div class="pain-solve">
   <div class="pain">
     <h3>THE CONTEXT-WINDOW WALL</h3>
-    <ul><li><strong>The code does not fit.</strong> ~201k lines is ~9× a 200k-token window — "read everything to audit it" is not an option.</li><li><strong>Chunking kills the reach.</strong> A stack-overflow in a parser is a recursion <em>cycle</em> across several functions; split them across chunks and the cycle vanishes.</li><li><strong>grep cannot say the shape.</strong> "Mutually recursive functions with no depth guard anywhere in the cycle" is not a literal string.</li></ul>
+    <ul><li><strong>The code does not fit.</strong> ~201k lines is ~9× a 200k-token window: "read everything to audit it" is not an option.</li><li><strong>Chunking kills the reach.</strong> A stack-overflow in a parser is a recursion <em>cycle</em> across several functions; split them across chunks and the cycle vanishes.</li><li><strong>grep cannot say the shape.</strong> "Mutually recursive functions with no depth guard anywhere in the cycle" is not a literal string.</li></ul>
   </div>
   <div class="solve">
     <h3>THE XERJ ANSWER</h3>
-    <ul><li><strong>Index once as facts.</strong> 5,095 functions, 87,137 call edges, 477 routes, a full unsafe inventory — extracted in ~3.2 s, ingested in ~1.9 s.</li><li><strong>Query the bug shape.</strong> Strongly-connected components of the call graph, filtered to cycles with no depth guard.</li><li><strong>Prove it, then fix it.</strong> Trace the cycle to its route, crash a live server, ship a bounded-depth fix, watch the same payload return HTTP 400.</li></ul>
+    <ul><li><strong>Index once as facts.</strong> 5,095 functions, 87,137 call edges, 477 routes, a full unsafe inventory: extracted in ~3.2 s, ingested in ~1.9 s.</li><li><strong>Query the bug shape.</strong> Strongly-connected components of the call graph, filtered to cycles with no depth guard.</li><li><strong>Prove it, then fix it.</strong> Trace the cycle to its route, crash a live server, ship a bounded-depth fix, watch the same payload return HTTP 400.</li></ul>
   </div>
 </div>
 
@@ -228,7 +228,7 @@
 <!-- Detection quality -->
 <section class="scene-section">
   <h2 class="scene" style="font-size:var(--fs-56);">DETECTION QUALITY, <span class="accent">MEASURED.</span></h2>
-  <p class="wide">Before trusting a substrate on unknown bugs, test it on known ones. The day before, a PR fixed six real network-reachable vulnerabilities in this exact engine — a labelled test set. We indexed the <em>pre-fix</em> commit and, for each bug, ran the query an auditor would write for that bug <em>class</em> (never its name or line), against the baseline they would otherwise use: grep.</p>
+  <p class="wide">Before trusting a substrate on unknown bugs, test it on known ones. The day before, a PR fixed six real network-reachable vulnerabilities in this exact engine: a labelled test set. We indexed the <em>pre-fix</em> commit and, for each bug, ran the query an auditor would write for that bug <em>class</em> (never its name or line), against the baseline they would otherwise use: grep.</p>
 
   <div class="viz-block" style="margin-top:var(--sp-6);">
     <div class="kicker"><span>MEASURED · 6 KNOWN BUGS · PRE-FIX TREE</span></div>
@@ -261,21 +261,21 @@
         </span>
       </div>
     </div>
-    <p style="margin-top:14px; font-size:12px; letter-spacing:.04em; color:var(--z-mute); font-family:var(--font-data);">A GREP HIT IS A FILE; AN AST HIT IS A FUNCTION · RECALL 6/6 IS IN-SAMPLE — SEE THE CAVEAT BELOW · FULL PER-BUG TABLE IN <a href="https://github.com/xerj-org/xerj/blob/main/docs/case-studies/xerj-self-audit/DETECTION-QUALITY.md" rel="external">DETECTION-QUALITY.md &rarr;</a></p>
+    <p style="margin-top:14px; font-size:12px; letter-spacing:.04em; color:var(--z-mute); font-family:var(--font-data);">A GREP HIT IS A FILE; AN AST HIT IS A FUNCTION · RECALL 6/6 IS IN-SAMPLE: SEE THE CAVEAT BELOW · FULL PER-BUG TABLE IN <a href="https://github.com/xerj-org/xerj/blob/main/docs/case-studies/xerj-self-audit/DETECTION-QUALITY.md" rel="external">DETECTION-QUALITY.md &rarr;</a></p>
   </div>
 
   <div class="laws" style="margin-top:var(--sp-6);">
-    <div class="n">01</div><div class="law"><div class="t">GREP CANNOT FIND <span class="accent">MISSING CODE.</span></div><div class="b">Two of the six bugs are an <em>absent</em> limit check and an <em>absent</em> action cap. You cannot grep for code that is not there — <code class="inline">grep max_actions_per_bulk</code> on the pre-fix tree returns 0 lines. "Ingest function that never consults a configured limit" is an AST property, not a string.</div></div>
-    <div class="n">02</div><div class="law"><div class="t">THE FIRST RUN SCORED <span class="accent">3/6 — WORSE THAN GREP.</span></div><div class="b">Publishing only the tuned number would misrepresent the method. The test set exposed three real extractor defects: argument parsing truncated <code class="inline">a.len() * b.len()</code> at the first paren, losing the multiplication; taint provenance did not follow one hop into locals; validator detection was presence-only, scoring decorative validation that runs <em>after</em> the delete as "guarded". Fixing those reached 6/6 — so 6/6 is in-sample.</div></div>
+    <div class="n">01</div><div class="law"><div class="t">GREP CANNOT FIND <span class="accent">MISSING CODE.</span></div><div class="b">Two of the six bugs are an <em>absent</em> limit check and an <em>absent</em> action cap. You cannot grep for code that is not there: <code class="inline">grep max_actions_per_bulk</code> on the pre-fix tree returns 0 lines. "Ingest function that never consults a configured limit" is an AST property, not a string.</div></div>
+    <div class="n">02</div><div class="law"><div class="t">THE FIRST RUN SCORED <span class="accent">3/6: WORSE THAN GREP.</span></div><div class="b">Publishing only the tuned number would misrepresent the method. The test set exposed three real extractor defects: argument parsing truncated <code class="inline">a.len() * b.len()</code> at the first paren, losing the multiplication; taint provenance did not follow one hop into locals; validator detection was presence-only, scoring decorative validation that runs <em>after</em> the delete as "guarded". Fixing those reached 6/6, so 6/6 is in-sample.</div></div>
     <div class="n">03</div><div class="law"><div class="t">THE SIGNALS <span class="accent">GO QUIET WHEN FIXED.</span></div><div class="b">Each signal was checked to discriminate, not merely match: the query-parser cycle reads UNGUARDED pre-fix and GUARDED after; <code class="inline">guard_after_destructive_op</code> is true for pre-fix <code class="inline">restore_snapshot</code> and false after. A detector that fires on patched code is noise.</div></div>
-    <div class="n">04</div><div class="law"><div class="t">PRECISION IS THE <span class="accent">WEAK AXIS.</span></div><div class="b">The true positive lands at rank 6 of 186, 12 of 13, 18 of 27, 19 of 21. This is a strong <em>filter</em> and a mediocre <em>ranker</em>. It narrows 207k lines to a few dozen functions you can read in full — it does not point at the bug.</div></div>
+    <div class="n">04</div><div class="law"><div class="t">PRECISION IS THE <span class="accent">WEAK AXIS.</span></div><div class="b">The true positive lands at rank 6 of 186, 12 of 13, 18 of 27, 19 of 21. This is a strong <em>filter</em> and a mediocre <em>ranker</em>. It narrows 207k lines to a few dozen functions you can read in full. It does not point at the bug.</div></div>
   </div>
   <p class="wide" style="margin-top:var(--sp-5);">The genuinely out-of-sample result is the finding below: not in the test set, found on current <code class="inline">main</code>, and proven by aborting a live server.</p>
 </section>
 
 <section class="scene-section">
   <h2 class="scene" style="font-size:var(--fs-56);">THE QUERY GREP <span class="accent">CANNOT WRITE.</span></h2>
-  <p class="wide">A stack overflow in a recursive-descent parser is rarely direct self-recursion — it is a cycle: <code class="inline">parse_or_expr → parse_and_expr → parse_condition → parse_or_expr</code>, one turn per <code class="inline">(</code>. No single file, function, or regex shows it. The free-function call graph does.</p>
+  <p class="wide">A stack overflow in a recursive-descent parser is rarely direct self-recursion. It is a cycle: <code class="inline">parse_or_expr → parse_and_expr → parse_condition → parse_or_expr</code>, one turn per <code class="inline">(</code>. No single file, function, or regex shows it. The free-function call graph does.</p>
 
   <div class="kicker" style="margin-top:var(--sp-6);"><span>INDEX ONCE · ~5 S · 100% FUNCTION COVERAGE</span></div>
   <pre class="code">$ python3 rust_ast_index.py ./engine --out ./ast-out   <span class="comment"># 5,095 fns, 87,137 edges, 477 routes</span>
@@ -295,7 +295,7 @@ $ python3 ingest.py ./ast-out --url $XERJ              <span class="comment"># s
 
 <section class="scene-section">
   <h2 class="scene" style="font-size:var(--fs-56);">PROVEN BY <span class="accent">CRASHING IT.</span></h2>
-  <p class="wide">A finding is a claim until you trigger it. One <code class="inline">POST /_sql</code> with ~50k nested parens in the WHERE clause aborts the entire server — every tenant, every index — with a stack overflow that no <code class="inline">catch_unwind</code> can save.</p>
+  <p class="wide">A finding is a claim until you trigger it. One <code class="inline">POST /_sql</code> with ~50k nested parens in the WHERE clause aborts the entire server (every tenant, every index) with a stack overflow that no <code class="inline">catch_unwind</code> can save.</p>
   <pre class="code">$ curl -s $XERJ/_sql -d '{"query":"SELECT * FROM t WHERE ((((...50k...))))"}'
 <span class="comment"># thread 'xerj-rt' has overflowed its stack</span>
 <span class="comment"># fatal runtime error: stack overflow, aborting</span>
@@ -308,22 +308,22 @@ $ python3 ingest.py ./ast-out --url $XERJ              <span class="comment"># s
 
 <section class="scene-section">
   <h2 class="scene" style="font-size:var(--fs-56);">SECOND PASS: ONE <span class="accent">PRINCIPLE.</span></h2>
-  <p class="wide">A deeper pass (24 verified agents) replaced the category checklist with a single test — <strong>a function is dangerous when instruction and data share one channel with no separator, and a filter is only real if it strips the instruction power from the data channel</strong>. Five stages: flag the dangerous sinks, trace each to user input, map the privilege model, validate every filter for bypasses, and check the state machines for races. Full playbook: <a href="https://github.com/xerj-org/xerj/blob/main/docs/case-studies/xerj-self-audit/METHODOLOGY.md" rel="external">METHODOLOGY.md</a>.</p>
+  <p class="wide">A deeper pass (24 verified agents) replaced the category checklist with a single test: <strong>a function is dangerous when instruction and data share one channel with no separator, and a filter is only real if it strips the instruction power from the data channel</strong>. Five stages: flag the dangerous sinks, trace each to user input, map the privilege model, validate every filter for bypasses, and check the state machines for races. Full playbook: <a href="https://github.com/xerj-org/xerj/blob/main/docs/case-studies/xerj-self-audit/METHODOLOGY.md" rel="external">METHODOLOGY.md</a>.</p>
   <div class="proof-row" style="margin-top:var(--sp-6);">
-    <div class="stat"><div class="num">8 / 8</div><div class="label">CONFIRMED / REFUTED</div><div class="ctx">a 50% cull at the adversarial-verify stage — the refuted half is the point</div></div>
+    <div class="stat"><div class="num">8 / 8</div><div class="label">CONFIRMED / REFUTED</div><div class="ctx">a 50% cull at the adversarial-verify stage: the refuted half is the point</div></div>
     <div class="stat"><div class="num">4 High</div><div class="label">CONFIRMED SEVERITY</div><div class="ctx">+ 2 Medium, 1 Low, 1 Info · the 3 app-layer Highs are fixed on the branch, live-proven</div></div>
-    <div class="stat"><div class="num">19.6×</div><div class="label">FEWER TOKENS (FLOOR)</div><div class="ctx">the five grep sweeps touch 153 of 197 files — grepping the stages is reading the codebase</div></div>
+    <div class="stat"><div class="num">19.6×</div><div class="label">FEWER TOKENS (FLOOR)</div><div class="ctx">the five grep sweeps touch 153 of 197 files: grepping the stages is reading the codebase</div></div>
   </div>
-  <p class="wide" style="margin-top:var(--sp-5);">The two sharpest findings are corollary failures, not missing filters. <strong>INJ-01</strong>: a search-template param was spliced into the query JSON unescaped and re-parsed, so a value could drop the template's own ACL filter — live-proven leaking a private document, now fixed. <strong>F-PATH-02</strong>: the three filters guarding a snapshot's <em>name</em> are all real and tested; the hole is the un-validated sibling field, the repo <em>location</em> — a snapshot wrote index data outside <code class="inline">data_dir</code>, now bounded by a <code class="inline">path.repo</code>-style allowlist. Both, plus a session-revocation lost-update, ship fixed with regression tests. Every finding, severity-ranked with its instruction/data analysis: <a href="https://github.com/xerj-org/xerj/blob/main/docs/case-studies/xerj-self-audit/FINDINGS-V2.md" rel="external">FINDINGS-V2.md</a>.</p>
+  <p class="wide" style="margin-top:var(--sp-5);">The two sharpest findings are corollary failures, not missing filters. <strong>INJ-01</strong>: a search-template param was spliced into the query JSON unescaped and re-parsed, so a value could drop the template's own ACL filter, live-proven leaking a private document, now fixed. <strong>F-PATH-02</strong>: the three filters guarding a snapshot's <em>name</em> are all real and tested; the hole is the un-validated sibling field, the repo <em>location</em>: a snapshot wrote index data outside <code class="inline">data_dir</code>, now bounded by a <code class="inline">path.repo</code>-style allowlist. Both, plus a session-revocation lost-update, ship fixed with regression tests. Every finding, severity-ranked with its instruction/data analysis: <a href="https://github.com/xerj-org/xerj/blob/main/docs/case-studies/xerj-self-audit/FINDINGS-V2.md" rel="external">FINDINGS-V2.md</a>.</p>
 </section>
 
 <section class="scene-section">
   <h2 class="scene" style="font-size:var(--fs-56);">WHAT THIS <span class="accent">DOES NOT SHOW.</span></h2>
   <div class="laws">
     <div class="n">01</div><div class="law"><div class="t">XERJ DOES NOT <span class="accent">FIND BUGS.</span></div><div class="b">The tree-sitter extractor and the call-graph analysis produce the candidates; XERJ stores and queries them at scale. The substrate narrows the search; a human or agent still reads the survivors.</div></div>
-    <div class="n">02</div><div class="law"><div class="t">THE GRAPH IS <span class="accent">NAME-BASED.</span></div><div class="b">Method-call edges are excluded on purpose — resolving <code class="inline">.len()</code> by name collapses the graph into one false component. Cycles through trait dispatch or macros are out of reach; the recursion result covers free functions.</div></div>
-    <div class="n">03</div><div class="law"><div class="t">EVERY CANDIDATE STILL <span class="accent">NEEDS A READ.</span></div><div class="b">Blunt category filters over-return (87 for one alloc query); argument-provenance signals sharpen them, and every published finding was read and, where possible, executed. A promising highlight-tag allocation blowup was <strong>refuted by testing</strong> — the highlighter truncates to a fragment, so the product is bounded — and two unproven traversal leads were <em>not</em> published.</div></div>
-    <div class="n">04</div><div class="law"><div class="t">ONE PASS, HIGHEST-VALUE <span class="accent">LENSES.</span></div><div class="b">This publishes what was proven or fully enumerated — the DoS and the unsafe inventory. The broader auth-flow and business-logic lenses are scoped in the walkthrough, not exhausted here.</div></div>
+    <div class="n">02</div><div class="law"><div class="t">THE GRAPH IS <span class="accent">NAME-BASED.</span></div><div class="b">Method-call edges are excluded on purpose: resolving <code class="inline">.len()</code> by name collapses the graph into one false component. Cycles through trait dispatch or macros are out of reach; the recursion result covers free functions.</div></div>
+    <div class="n">03</div><div class="law"><div class="t">EVERY CANDIDATE STILL <span class="accent">NEEDS A READ.</span></div><div class="b">Blunt category filters over-return (87 for one alloc query); argument-provenance signals sharpen them, and every published finding was read and, where possible, executed. A promising highlight-tag allocation blowup was <strong>refuted by testing</strong> (the highlighter truncates to a fragment, so the product is bounded) and two unproven traversal leads were <em>not</em> published.</div></div>
+    <div class="n">04</div><div class="law"><div class="t">ONE PASS, HIGHEST-VALUE <span class="accent">LENSES.</span></div><div class="b">This publishes what was proven or fully enumerated: the DoS and the unsafe inventory. The broader auth-flow and business-logic lenses are scoped in the walkthrough, not exhausted here.</div></div>
   </div>
 </section>
 
@@ -345,7 +345,7 @@ $ python3 ingest.py ./ast-out --url $XERJ              <span class="comment"># s
 <section class="lead-capture" id="demo">
   <div class="kicker"><span>READY?</span><span class="dash">·</span><span>REQUEST ACCESS</span></div>
   <h3>AUDIT YOUR<br><span class="accent">OWN RUST.</span></h3>
-  <p>The same extractor + queries index your crate into XERJ and hunt the same bug shapes — recursion cycles, unbounded allocation, unsafe soundness, path traversal. Want a walkthrough with your team? Leave an email.</p>
+  <p>The same extractor + queries index your crate into XERJ and hunt the same bug shapes: recursion cycles, unbounded allocation, unsafe soundness, path traversal. Want a walkthrough with your team? Leave an email.</p>
   <form class="lead-form" id="leadForm" action="#" method="post" novalidate>
     <div class="lead-form-input">
       <input type="email" name="email" placeholder="you@company.com" required aria-label="Work email" autocomplete="email" />

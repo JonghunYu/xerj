@@ -12,7 +12,7 @@ source: "content/answers/why-autoindex-skipped-files.md"
 
 **Key number:** The captured run reconciled 26 files on disk as 1 indexed, 2 refused and 23 excluded. (as of 2026-10-05; source: the captured run documented on this page)
 
-**TL;DR** — XERJ prints one line per ignore rule with an exact file count, and stores a refusal reason for every file it opened. A capture over 26 files on disk indexed 1, refused 2 with named reasons, and excluded 23 through ignore rules. The run exited 3 with `reason=completed-with-junk`.
+**TL;DR**: XERJ prints one line per ignore rule with an exact file count, and stores a refusal reason for every file it opened. A capture over 26 files on disk indexed 1, refused 2 with named reasons, and excluded 23 through ignore rules. The run exited 3 with `reason=completed-with-junk`.
 
 ## Agent prompt
 

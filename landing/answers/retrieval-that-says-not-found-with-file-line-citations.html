@@ -217,7 +217,7 @@
   <div class="kicker"><span>ANSWERS · ANSWERS FOR CODING AGENTS</span></div>
   <h1>Retrieval that says not found, and cites file and line when it does answer</h1>
   <div class="source-note">AUTHOR · XERJ documentation team · REVIEWED BY · XERJ engineering team · PUBLISHED · 2026-10-19 · UPDATED · 2026-10-20</div>
-  <p><strong>TL;DR</strong> — For retrieval that says not found and cites file and line, <code class="inline">xerj ask</code> answers with file:line, the pinned commit and the licence, and exits 1 when a symbol or corpus is missing. It does not yet abstain on weak free-text matches: calibrated confidence is issue #1786. Measured 2026-10-19 on v1.0.0-rc.97.</p>
+  <p><strong>TL;DR</strong>: For retrieval that says not found and cites file and line, <code class="inline">xerj ask</code> answers with file:line, the pinned commit and the licence, and exits 1 when a symbol or corpus is missing. It does not yet abstain on weak free-text matches: calibrated confidence is issue #1786. Measured 2026-10-19 on v1.0.0-rc.97.</p>
   <div class="prompt-card">
     <span class="prompt-label">RUN THIS XERJ COMMAND</span>
     <code>xerj ask --corpus lz4 --def LZ4_compress_default</code>
@@ -318,11 +318,11 @@ lz4  pin 2026-10-02 (18 days old)  mixed: BSD-2 (lib) / GPL-2.0+ (rest)  lz4/lib
   <p>Yes, by exit code: 0 answered, 1 no match, 2 unknown corpus, 3 a pack failed verification, 4 more than one corpus matches. The MCP tools return the same answers as text.</p>
   <h2>Evidence</h2>
   <ul>
-    <li>Missing symbol: no match, exit 1 — <code>benchmarks/agent-intents-2026-10-19/06-nodef.txt</code></li>
-    <li>No corpus matches: exit 1 — <code>benchmarks/agent-intents-2026-10-19/06-noc.txt</code></li>
-    <li>Off-topic question: four lz4 passages, exit 0 — <code>benchmarks/agent-intents-2026-10-19/06-offtopic.txt</code></li>
-    <li>LZ4_compress_default at lz4.c:1481 and lz4.h:191 — <code>benchmarks/agent-intents-2026-10-19/06-def.txt</code></li>
-    <li>Calibrated confidence is open as issue #1786 — <a href="https://github.com/xerj-org/xerj/issues/1786">https://github.com/xerj-org/xerj/issues/1786</a></li>
+    <li>Missing symbol: no match, exit 1. Source: <code>benchmarks/agent-intents-2026-10-19/06-nodef.txt</code></li>
+    <li>No corpus matches: exit 1. Source: <code>benchmarks/agent-intents-2026-10-19/06-noc.txt</code></li>
+    <li>Off-topic question: four lz4 passages, exit 0. Source: <code>benchmarks/agent-intents-2026-10-19/06-offtopic.txt</code></li>
+    <li>LZ4_compress_default at lz4.c:1481 and lz4.h:191. Source: <code>benchmarks/agent-intents-2026-10-19/06-def.txt</code></li>
+    <li>Calibrated confidence is open as issue #1786. Source: <a href="https://github.com/xerj-org/xerj/issues/1786">https://github.com/xerj-org/xerj/issues/1786</a></li>
   </ul>
   <h2>Related</h2>
   <ul>

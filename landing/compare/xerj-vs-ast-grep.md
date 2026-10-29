@@ -180,13 +180,13 @@ No. No head-to-head was run. Every ast-grep fact here comes from its own documen
 
 ## Evidence
 
-- ast-grep is a command-line tool for code structural search, lint and rewriting, and it matches abstract syntax tree nodes rather than text. — [https://github.com/ast-grep/ast-grep](https://github.com/ast-grep/ast-grep)
-- ast-grep rewrites either with the --rewrite flag on a run, or with a fix key inside a YAML rule applied by ast-grep scan. — [https://ast-grep.github.io/guide/rewrite-code.html](https://ast-grep.github.io/guide/rewrite-code.html)
-- The ast-grep reference lists 26 built-in languages backed by tree-sitter grammars, and custom grammars can be loaded dynamically. — [https://ast-grep.github.io/reference/languages.html](https://ast-grep.github.io/reference/languages.html)
-- The ast-grep project states that it builds an abstract syntax tree in memory for each query and does not support offline indexing. — [https://ast-grep.github.io/blog/code-search-design-space.html](https://ast-grep.github.io/blog/code-search-design-space.html)
-- The ast-grep tool comparison states that it has no deep semantic information and operates only on the syntactic level, with no type information, control flow, data flow or taint analysis. — [https://ast-grep.github.io/advanced/tool-comparison.html](https://ast-grep.github.io/advanced/tool-comparison.html)
-- The ast-grep organization publishes an experimental Model Context Protocol server exposing four tools for structural code search. — [https://github.com/ast-grep/ast-grep-mcp](https://github.com/ast-grep/ast-grep-mcp)
-- GNU grep prints lines that contain a match for one or more patterns, which makes it a line-oriented tool rather than a syntax-aware one. — [https://www.gnu.org/software/grep/manual/grep.html](https://www.gnu.org/software/grep/manual/grep.html)
+- ast-grep is a command-line tool for code structural search, lint and rewriting, and it matches abstract syntax tree nodes rather than text. Source: [https://github.com/ast-grep/ast-grep](https://github.com/ast-grep/ast-grep)
+- ast-grep rewrites either with the --rewrite flag on a run, or with a fix key inside a YAML rule applied by ast-grep scan. Source: [https://ast-grep.github.io/guide/rewrite-code.html](https://ast-grep.github.io/guide/rewrite-code.html)
+- The ast-grep reference lists 26 built-in languages backed by tree-sitter grammars, and custom grammars can be loaded dynamically. Source: [https://ast-grep.github.io/reference/languages.html](https://ast-grep.github.io/reference/languages.html)
+- The ast-grep project states that it builds an abstract syntax tree in memory for each query and does not support offline indexing. Source: [https://ast-grep.github.io/blog/code-search-design-space.html](https://ast-grep.github.io/blog/code-search-design-space.html)
+- The ast-grep tool comparison states that it has no deep semantic information and operates only on the syntactic level, with no type information, control flow, data flow or taint analysis. Source: [https://ast-grep.github.io/advanced/tool-comparison.html](https://ast-grep.github.io/advanced/tool-comparison.html)
+- The ast-grep organization publishes an experimental Model Context Protocol server exposing four tools for structural code search. Source: [https://github.com/ast-grep/ast-grep-mcp](https://github.com/ast-grep/ast-grep-mcp)
+- GNU grep prints lines that contain a match for one or more patterns, which makes it a line-oriented tool rather than a syntax-aware one. Source: [https://www.gnu.org/software/grep/manual/grep.html](https://www.gnu.org/software/grep/manual/grep.html)
 
 ## Related
 

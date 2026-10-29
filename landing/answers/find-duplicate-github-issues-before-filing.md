@@ -12,7 +12,7 @@ source: "content/answers/find-duplicate-github-issues-before-filing.md"
 
 **Key number:** A search over 1,532 indexed records ranked issue 960 first and took 7 ms. (as of 2026-10-20; source: [benchmarks/agent-queries-2026-10-20/01-duplicate-search.json](https://github.com/xerj-org/xerj/blob/main/benchmarks/agent-queries-2026-10-20/01-duplicate-search.json))
 
-**TL;DR** — Find duplicate GitHub issues before you file. Export the issues to JSONL, index the folder with `xerj autoindex`, and search the draft title. On 2026-10-20 that search over 1,532 records ranked issue 960 first and took 7 ms. A paraphrase of the same bug did not rank it first.
+**TL;DR**: Find duplicate GitHub issues before you file. Export the issues to JSONL, index the folder with `xerj autoindex`, and search the draft title. On 2026-10-20 that search over 1,532 records ranked issue 960 first and took 7 ms. A paraphrase of the same bug did not rank it first.
 
 ## Agent prompt
 
@@ -119,10 +119,10 @@ No. This is a local check you run before you file. One-off lookups can stay on G
 
 ## Evidence
 
-- autoindex committed 1,532 records in 7.2 s, exit 0. — `benchmarks/agent-queries-2026-10-20/01-autoindex-issues.txt`
-- The title-and-body query took 7 ms and ranked issue 960 first. — `benchmarks/agent-queries-2026-10-20/01-duplicate-search.json`
-- The paraphrase query took 7 ms and ranked an unrelated pull request first. — `benchmarks/agent-queries-2026-10-20/01-paraphrase-search.json`
-- more_like_this took 4 ms and still returned 1,501 hits. — `benchmarks/agent-queries-2026-10-20/01-more-like-this.json`
+- autoindex committed 1,532 records in 7.2 s, exit 0. Source: `benchmarks/agent-queries-2026-10-20/01-autoindex-issues.txt`
+- The title-and-body query took 7 ms and ranked issue 960 first. Source: `benchmarks/agent-queries-2026-10-20/01-duplicate-search.json`
+- The paraphrase query took 7 ms and ranked an unrelated pull request first. Source: `benchmarks/agent-queries-2026-10-20/01-paraphrase-search.json`
+- more_like_this took 4 ms and still returned 1,501 hits. Source: `benchmarks/agent-queries-2026-10-20/01-more-like-this.json`
 
 ## Related
 

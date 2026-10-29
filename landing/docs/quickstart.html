@@ -15,7 +15,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>XERJ.ai · Docs · Quickstart</title>
-<meta name="description" content="Operator quickstart for XERJ&#x27;s native REST API on port 8080 — create indices with explicit field mappings and bulk-ingest through the turbo-ingest path.">
+<meta name="description" content="Operator quickstart for XERJ&#x27;s native REST API on port 8080: create indices with explicit field mappings and bulk-ingest through the turbo-ingest path.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;700;800;900&family=Inter:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -27,16 +27,16 @@
 <meta property="og:site_name" content="XERJ.ai">
 <meta property="og:type" content="article">
 <meta property="og:title" content="XERJ.ai · Docs · Quickstart">
-<meta property="og:description" content="Operator quickstart for XERJ&#x27;s native REST API on port 8080 — create indices with explicit field mappings and bulk-ingest through the turbo-ingest path.">
+<meta property="og:description" content="Operator quickstart for XERJ&#x27;s native REST API on port 8080: create indices with explicit field mappings and bulk-ingest through the turbo-ingest path.">
 <meta property="og:url" content="https://xerj.org/docs/quickstart">
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="XERJ.ai · Docs · Quickstart">
-<meta name="twitter:description" content="Operator quickstart for XERJ&#x27;s native REST API on port 8080 — create indices with explicit field mappings and bulk-ingest through the turbo-ingest path.">
+<meta name="twitter:description" content="Operator quickstart for XERJ&#x27;s native REST API on port 8080: create indices with explicit field mappings and bulk-ingest through the turbo-ingest path.">
 <meta name="twitter:image" content="https://xerj.org/og/xerj-card.png">
 <script type="application/ld+json">
 {
@@ -72,7 +72,7 @@
   "@context": "https://schema.org",
   "@type": "TechArticle",
   "headline": "XERJ.ai · Docs · Quickstart",
-  "description": "Operator quickstart for XERJ's native REST API on port 8080 — create indices with explicit field mappings and bulk-ingest through the turbo-ingest path.",
+  "description": "Operator quickstart for XERJ's native REST API on port 8080: create indices with explicit field mappings and bulk-ingest through the turbo-ingest path.",
   "url": "https://xerj.org/docs/quickstart",
   "image": "https://xerj.org/og/xerj-card.png",
   "inLanguage": "en",
@@ -231,19 +231,19 @@
   <div class="kicker"><span>01 · START</span></div>
   <h1>Quickstart</h1>
 
-  <p><strong>Audience: operators driving XERJ's native REST API on port <code class="inline">8080</code>.</strong> This page creates indices with explicit field mappings and ingests through <code class="inline">turbo-ingest</code> — the low-level path. It is <em>not</em> the agent onramp, and it deliberately does not cover <code class="inline">xerj autoindex</code>.</p>
+  <p><strong>Audience: operators driving XERJ's native REST API on port <code class="inline">8080</code>.</strong> This page creates indices with explicit field mappings and ingests through <code class="inline">turbo-ingest</code>: the low-level path. It is <em>not</em> the agent onramp, and it deliberately does not cover <code class="inline">xerj autoindex</code>.</p>
   <ul>
-    <li><strong>AI agents start here instead:</strong> <a href="/llms.txt"><code class="inline">/llms.txt</code></a> (install → run → index → query, written for a machine) or the <a href="/docs/agents/quickstart">agent quickstart</a> — both use the Elasticsearch-compatible surface on <code class="inline">9200</code>.</li>
-    <li><strong>Just want a folder to become searchable?</strong> <code class="inline">xerj autoindex &lt;folder&gt;</code> writes the mappings for you — the <a href="/docs/recipes/zero-config-autoindex">zero-config indexing recipe</a>.</li>
+    <li><strong>AI agents start here instead:</strong> <a href="/llms.txt"><code class="inline">/llms.txt</code></a> (install → run → index → query, written for a machine) or the <a href="/docs/agents/quickstart">agent quickstart</a>, both use the Elasticsearch-compatible surface on <code class="inline">9200</code>.</li>
+    <li><strong>Just want a folder to become searchable?</strong> <code class="inline">xerj autoindex &lt;folder&gt;</code> writes the mappings for you: the <a href="/docs/recipes/zero-config-autoindex">zero-config indexing recipe</a>.</li>
   </ul>
 
   <p>Start the server, create an index, ingest some data, run a query. Sixty seconds if you already have a binary.</p>
 
   <h2>1 · Start the server</h2>
-  <p>XERJ is a single static binary and needs no config file to start. Run it in dev mode — <code class="inline">--insecure</code> turns off TLS <strong>and</strong> API-key auth, which is what lets the bare <code class="inline">curl</code>s in the rest of this page work:</p>
+  <p>XERJ is a single static binary and needs no config file to start. Run it in dev mode, <code class="inline">--insecure</code> turns off TLS <strong>and</strong> API-key auth, which is what lets the bare <code class="inline">curl</code>s in the rest of this page work:</p>
 <pre class="code">$ xerj --insecure --data-dir ./data</pre>
-  <p>That flag is a trust boundary, not a convenience: with auth off, every caller that can reach the port is a superuser who can read and delete every index — including every <code class="inline">/_memory</code> namespace. It is meant for one user on a dev machine, and it is safe there because a fresh node binds <code class="inline">127.0.0.1</code> only; a cleartext bind on any other interface refuses to start unless you set <code class="inline">server.allow_insecure_network_bind</code>. Anything shared or exposed wants the auth-on start below, plus TLS — see <a href="/docs/security">Auth &amp; TLS</a>.</p>
-  <p>Auth is <strong>on by default</strong>. Any node started <em>without</em> <code class="inline">--insecure</code> — including one started from a config file, and including the config in the <a href="/docs/install">install guide</a> — mints an admin key on first boot and writes it to <code class="inline">&lt;data_dir&gt;/admin.key</code>. The startup banner names that file and does not print the key. Every client then has to send it, the CLI included:</p>
+  <p>That flag is a trust boundary, not a convenience: with auth off, every caller that can reach the port is a superuser who can read and delete every index, including every <code class="inline">/_memory</code> namespace. It is meant for one user on a dev machine, and it is safe there because a fresh node binds <code class="inline">127.0.0.1</code> only; a cleartext bind on any other interface refuses to start unless you set <code class="inline">server.allow_insecure_network_bind</code>. Anything shared or exposed wants the auth-on start below, plus TLS: see <a href="/docs/security">Auth &amp; TLS</a>.</p>
+  <p>Auth is <strong>on by default</strong>. Any node started <em>without</em> <code class="inline">--insecure</code>, including one started from a config file, and including the config in the <a href="/docs/install">install guide</a>: mints an admin key on first boot and writes it to <code class="inline">&lt;data_dir&gt;/admin.key</code>. The startup banner names that file and does not print the key. Every client then has to send it, the CLI included:</p>
 <pre class="code">$ xerj --config xerj.toml            # see /docs/config for the keys
 $ export XERJ_API_KEY="$(cat ./data/admin.key)"    # data_dir defaults to ./data
 $ curl -s -H "Authorization: ApiKey $XERJ_API_KEY" http://localhost:8080/v1/health
@@ -270,7 +270,7 @@ $ xerj autoindex ~/my-project        # picks up XERJ_API_KEY, or take --api-key<
      --data-binary @nginx.jsonl</pre>
 
   <h2>4 · Query</h2>
-  <p>Unified search endpoint — full-text, term, range, KNN, hybrid. Everything shares one planner.</p>
+  <p>Unified search endpoint: full-text, term, range, KNN, hybrid. Everything shares one planner.</p>
 <pre class="code">$ curl -sX POST http://localhost:8080/v1/indices/logs/search \
      -H 'Content-Type: application/json' \
      -d '{

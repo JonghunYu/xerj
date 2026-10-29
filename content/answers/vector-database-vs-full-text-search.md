@@ -52,7 +52,7 @@ faq:
     a: "Only when seven conditions hold, including cosine similarity, no filter and at least 1,024 vectors. Everything else runs exact brute force."
 ---
 
-**TL;DR** — Full-text search matches tokens and ranks with BM25, while a kNN query compares one embedding against stored dense vectors. XERJ holds both in one index, so the decision is which clause to send. On our 8 judged queries the three modes disagreed on the top hit once.
+**TL;DR**: Full-text search matches tokens and ranks with BM25, while a kNN query compares one embedding against stored dense vectors. XERJ holds both in one index, so the decision is which clause to send. On our 8 judged queries the three modes disagreed on the top hit once.
 
 ## The mechanical difference
 

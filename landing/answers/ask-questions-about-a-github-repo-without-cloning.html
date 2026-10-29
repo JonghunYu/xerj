@@ -219,7 +219,7 @@
   <div class="source-note">AUTHOR · XERJ documentation team · REVIEWED BY · XERJ engineering team · PUBLISHED · 2026-10-19 · UPDATED · 2026-10-20</div>
   <p><strong>TL;DR</strong> — To ask questions about a GitHub repo without cloning it, run <code class="inline">xerj ask "your question"</code>. If the repo is in the Corpus Hub catalogue, xerj pulls a signed, pre-indexed pack and answers with file:line, the pinned commit and the licence. Measured 2026-10-19: first answer 2,356 ms including the download, later answers 30 to 40 ms.</p>
   <div class="prompt-card">
-    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT — IT DOES THE REST</span>
+    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT. IT DOES THE REST</span>
     <code>Read https://xerj.org/llms.txt. Install xerj, then answer my question about the library with xerj ask (add --corpus and --def for an exact symbol). Quote the corpus, the pinned commit, the file:line and the licence line it prints, and say so when it exits 1 with no match.</code>
     <button type="button" class="prompt-copy" data-copy="Read https://xerj.org/llms.txt. Install xerj, then answer my question about the library with xerj ask (add --corpus and --def for an exact symbol). Quote the corpus, the pinned commit, the file:line and the licence line it prints, and say so when it exits 1 with no match.">COPY THE PROMPT</button>
   </div>
@@ -349,11 +349,11 @@ catalogue: 2 days old
   <p>Check the licence line. Each answer prints the SPDX licence and a class. zstd and lz4 are approach-only, and the output says read, do not copy.</p>
   <h2>Evidence</h2>
   <ul>
-    <li>Cold ask: node on 9300, 10.8 MB snappy pack, snappy.cc:1643 — <code>benchmarks/agent-intents-2026-10-19/04-ask-snappy-cold.txt</code></li>
-    <li>zstd --def: 20.1 MB pack, 7874 definitions, zstd.h:134 — <code>benchmarks/agent-intents-2026-10-19/04-ask-zstd-def.txt</code></li>
-    <li>JSON answer with pin_sha, licence_class and score 17.13 — <code>benchmarks/agent-intents-2026-10-19/04-ask-zstd-def.json</code></li>
-    <li>Timings 2,356 ms cold, 341 ms, then 30 to 40 ms; 962 ms and 20 ms for --def — <code>benchmarks/agent-intents-2026-10-19/README.md</code></li>
-    <li>Zero-setup xerj ask for any source is open as issue #1800 — <a href="https://github.com/xerj-org/xerj/issues/1800">https://github.com/xerj-org/xerj/issues/1800</a></li>
+    <li>Cold ask: node on 9300, 10.8 MB snappy pack, snappy.cc:1643. Source: <code>benchmarks/agent-intents-2026-10-19/04-ask-snappy-cold.txt</code></li>
+    <li>zstd --def: 20.1 MB pack, 7874 definitions, zstd.h:134. Source: <code>benchmarks/agent-intents-2026-10-19/04-ask-zstd-def.txt</code></li>
+    <li>JSON answer with pin_sha, licence_class and score 17.13. Source: <code>benchmarks/agent-intents-2026-10-19/04-ask-zstd-def.json</code></li>
+    <li>Timings 2,356 ms cold, 341 ms, then 30 to 40 ms; 962 ms and 20 ms for --def. Source: <code>benchmarks/agent-intents-2026-10-19/README.md</code></li>
+    <li>Zero-setup xerj ask for any source is open as issue #1800. Source: <a href="https://github.com/xerj-org/xerj/issues/1800">https://github.com/xerj-org/xerj/issues/1800</a></li>
   </ul>
   <h2>Related</h2>
   <ul>

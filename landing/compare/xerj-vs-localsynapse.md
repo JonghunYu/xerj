@@ -160,12 +160,12 @@ Give it a local MCP server over an index of those files. Both sides here run on 
 
 ## Evidence
 
-- LocalSynapse is a local search product for files and mail on Windows that combines full-text BM25 with a local embedder, and the same binary is both a desktop search window and an MCP server. — [https://github.com/LocalSynapse/LocalSynapse](https://github.com/LocalSynapse/LocalSynapse)
-- LocalSynapse runs on Windows and macOS, indexes whole drives automatically and skips cloud placeholder files from OneDrive and Dropbox. — [https://localsynapse.com/en](https://localsynapse.com/en)
-- The LocalSynapse embedder is BGE-M3 running through ONNX Runtime on the CPU, and its search index is stored in a local SQLite database. — [https://localsynapse.com/en/blog/mcp-local-file-search](https://localsynapse.com/en/blog/mcp-local-file-search)
-- The LocalSynapse MCP server communicates over stdio, opens no network port, and exposes search_files, get_file_content, list_indexed_files and get_pipeline_status. — [https://localsynapse.com/en/mcp](https://localsynapse.com/en/mcp)
-- LocalSynapse reads PDF, Word, PowerPoint, Hangul, CSV, Markdown and plain text, plus .eml, .msg and .mbox mail, and reads Excel workbooks with cell coordinates and merged ranges up to 25 MB. — [https://github.com/LocalSynapse/LocalSynapse](https://github.com/LocalSynapse/LocalSynapse)
-- LocalSynapse is licensed Apache-2.0, but its repository states that it hosts release artifacts only and that the source tree is no longer published from version 2.15.0 onward. — [https://github.com/LocalSynapse/LocalSynapse](https://github.com/LocalSynapse/LocalSynapse)
+- LocalSynapse is a local search product for files and mail on Windows that combines full-text BM25 with a local embedder, and the same binary is both a desktop search window and an MCP server. Source: [https://github.com/LocalSynapse/LocalSynapse](https://github.com/LocalSynapse/LocalSynapse)
+- LocalSynapse runs on Windows and macOS, indexes whole drives automatically and skips cloud placeholder files from OneDrive and Dropbox. Source: [https://localsynapse.com/en](https://localsynapse.com/en)
+- The LocalSynapse embedder is BGE-M3 running through ONNX Runtime on the CPU, and its search index is stored in a local SQLite database. Source: [https://localsynapse.com/en/blog/mcp-local-file-search](https://localsynapse.com/en/blog/mcp-local-file-search)
+- The LocalSynapse MCP server communicates over stdio, opens no network port, and exposes search_files, get_file_content, list_indexed_files and get_pipeline_status. Source: [https://localsynapse.com/en/mcp](https://localsynapse.com/en/mcp)
+- LocalSynapse reads PDF, Word, PowerPoint, Hangul, CSV, Markdown and plain text, plus .eml, .msg and .mbox mail, and reads Excel workbooks with cell coordinates and merged ranges up to 25 MB. Source: [https://github.com/LocalSynapse/LocalSynapse](https://github.com/LocalSynapse/LocalSynapse)
+- LocalSynapse is licensed Apache-2.0, but its repository states that it hosts release artifacts only and that the source tree is no longer published from version 2.15.0 onward. Source: [https://github.com/LocalSynapse/LocalSynapse](https://github.com/LocalSynapse/LocalSynapse)
 
 ## Related
 

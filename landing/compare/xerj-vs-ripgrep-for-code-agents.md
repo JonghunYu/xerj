@@ -12,7 +12,7 @@ source: "content/compare/xerj-vs-ripgrep-for-code-agents.md"
 
 **Key number:** ripgrep has 69,257 GitHub stars and its latest release is 15.2.0 (2026-07-15); the 30-task run used 14.1.1. (as of 2026-10-19; source: [github.com/BurntSushi/ripgrep](https://github.com/BurntSushi/ripgrep))
 
-**TL;DR** — Keep ripgrep for one-off questions and reach for the index when an agent asks one tree many questions. On one 331-file code tree the two named the same files on 18 of 30 disclosed tasks. Five of the 30 went to ripgrep 14.1.1 outright. On a substring inside an identifier it found 7 files and the index found 0.
+**TL;DR**: Keep ripgrep for one-off questions and reach for the index when an agent asks one tree many questions. On one 331-file code tree the two named the same files on 18 of 30 disclosed tasks. Five of the 30 went to ripgrep 14.1.1 outright. On a substring inside an identifier it found 7 files and the index found 0.
 
 ## Agent prompt
 
@@ -221,7 +221,7 @@ Order of magnitude, several hundred on this tree. The derived figure was about 7
 
 ## Evidence
 
-- ripgrep is a line-oriented recursive search tool that respects .gitignore and skips hidden and binary files by default, which is why its file sets and the index file sets can differ on the same tree. — [https://github.com/BurntSushi/ripgrep](https://github.com/BurntSushi/ripgrep)
+- ripgrep is a line-oriented recursive search tool that respects .gitignore and skips hidden and binary files by default, which is why its file sets and the index file sets can differ on the same tree. Source: [https://github.com/BurntSushi/ripgrep](https://github.com/BurntSushi/ripgrep)
 
 ## Related
 

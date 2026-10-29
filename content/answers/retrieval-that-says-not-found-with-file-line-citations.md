@@ -57,7 +57,7 @@ faq:
     a: "Yes, by exit code: 0 answered, 1 no match, 2 unknown corpus, 3 a pack failed verification, 4 more than one corpus matches. The MCP tools return the same answers as text."
 ---
 
-**TL;DR** — For retrieval that says not found and cites file and line, `xerj ask` answers with file:line, the pinned commit and the licence, and exits 1 when a symbol or corpus is missing. It does not yet abstain on weak free-text matches: calibrated confidence is issue #1786. Measured 2026-10-19 on v1.0.0-rc.97.
+**TL;DR**: For retrieval that says not found and cites file and line, `xerj ask` answers with file:line, the pinned commit and the licence, and exits 1 when a symbol or corpus is missing. It does not yet abstain on weak free-text matches: calibrated confidence is issue #1786. Measured 2026-10-19 on v1.0.0-rc.97.
 
 ## Run it
 

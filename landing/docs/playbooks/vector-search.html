@@ -15,7 +15,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>XERJ.ai · Docs · Playbook · Vector &amp; RAG</title>
-<meta name="description" content="Vector and RAG retrieval on one box — the dense_vector schema, hybrid BM25 plus kNN fusion, and dashboards for recall, latency and cache hit rate.">
+<meta name="description" content="Vector and RAG retrieval on one box: the dense_vector schema, hybrid BM25 plus kNN fusion, and dashboards for recall, latency and cache hit rate.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;700;800;900&family=Inter:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -27,16 +27,16 @@
 <meta property="og:site_name" content="XERJ.ai">
 <meta property="og:type" content="article">
 <meta property="og:title" content="XERJ.ai · Docs · Playbook · Vector &amp; RAG">
-<meta property="og:description" content="Vector and RAG retrieval on one box — the dense_vector schema, hybrid BM25 plus kNN fusion, and dashboards for recall, latency and cache hit rate.">
+<meta property="og:description" content="Vector and RAG retrieval on one box: the dense_vector schema, hybrid BM25 plus kNN fusion, and dashboards for recall, latency and cache hit rate.">
 <meta property="og:url" content="https://xerj.org/docs/playbooks/vector-search">
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="XERJ.ai · Docs · Playbook · Vector &amp; RAG">
-<meta name="twitter:description" content="Vector and RAG retrieval on one box — the dense_vector schema, hybrid BM25 plus kNN fusion, and dashboards for recall, latency and cache hit rate.">
+<meta name="twitter:description" content="Vector and RAG retrieval on one box: the dense_vector schema, hybrid BM25 plus kNN fusion, and dashboards for recall, latency and cache hit rate.">
 <meta name="twitter:image" content="https://xerj.org/og/xerj-card.png">
 <script type="application/ld+json">
 {
@@ -72,7 +72,7 @@
   "@context": "https://schema.org",
   "@type": "TechArticle",
   "headline": "XERJ.ai · Docs · Playbook · Vector & RAG",
-  "description": "Vector and RAG retrieval on one box — the dense_vector schema, hybrid BM25 plus kNN fusion, and dashboards for recall, latency and cache hit rate.",
+  "description": "Vector and RAG retrieval on one box: the dense_vector schema, hybrid BM25 plus kNN fusion, and dashboards for recall, latency and cache hit rate.",
   "url": "https://xerj.org/docs/playbooks/vector-search",
   "image": "https://xerj.org/og/xerj-card.png",
   "inLanguage": "en",
@@ -285,7 +285,7 @@ timeout_ms       = 5000</pre>
 }</pre>
 
   <h2>Semantic search · embed at query time</h2>
-  <p>Skip the client-side embedding step. Map a field as <code class="inline">semantic_text</code> and XERJ embeds both the document at ingest and the query at search time — with the built-in lexical feature-hashing embedder by default, or with the endpoint configured in <code class="inline">[embedding]</code> above. The clause is <code class="inline">semantic</code>; it takes <code class="inline">field</code> and <code class="inline">query</code>, and <code class="inline">k</code> defaults to 10.</p>
+  <p>Skip the client-side embedding step. Map a field as <code class="inline">semantic_text</code> and XERJ embeds both the document at ingest and the query at search time, with the built-in lexical feature-hashing embedder by default, or with the endpoint configured in <code class="inline">[embedding]</code> above. The clause is <code class="inline">semantic</code>; it takes <code class="inline">field</code> and <code class="inline">query</code>, and <code class="inline">k</code> defaults to 10.</p>
 <pre class="code">$ curl -sX PUT http://localhost:9200/docs/_mapping \
     -H 'Content-Type: application/json' \
     -d '{ "properties": { "summary": { "type": "semantic_text" } } }'</pre>
@@ -302,8 +302,8 @@ timeout_ms       = 5000</pre>
   <h2>Dashboards</h2>
   <p>The playground has two RAG-specific views:</p>
   <ul>
-    <li><a href="/playground">VECTOR · INDEX</a> — resident set size, vector-index stats, recall at k. (scalar8 does not reduce the resident set today — <a href="https://github.com/xerj-org/xerj/issues/392">#392</a>.) (Unfiltered kNN is HNSW-served with exact rescoring — measured recall@10 1.00 on the official bench query; filtered kNN and SQ8 fields run the exact scan, where recall reflects quantization only.)</li>
-    <li><a href="/playground">RAG · QUALITY</a> — hit rate by intent, cache hit, top retrieved documents.</li>
+    <li><a href="/playground">VECTOR · INDEX</a>: resident set size, vector-index stats, recall at k. (scalar8 does not reduce the resident set today, <a href="https://github.com/xerj-org/xerj/issues/392">#392</a>.) (Unfiltered kNN is HNSW-served with exact rescoring: measured recall@10 1.00 on the official bench query; filtered kNN and SQ8 fields run the exact scan, where recall reflects quantization only.)</li>
+    <li><a href="/playground">RAG · QUALITY</a>: hit rate by intent, cache hit, top retrieved documents.</li>
   </ul>
 
   <p class="source-note">Source · engine/crates/xerj-engine/src/index.rs (run_knn_hnsw + exact fallback)</p>

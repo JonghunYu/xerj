@@ -50,7 +50,7 @@ faq:
     a: "All results come from run RUN-B, captured on 2026-08-21 on a 16-core AMD EPYC 9645 host."
 ---
 
-**TL;DR** — Unzip the Confluence space export to local disk, then run `xerj autoindex` on the folder. In a captured run, body text on a nested page returned 1 hit at `Recovery-procedure_262146.html`. The title came back as Confluence writes it: `PLAT : Recovery procedure`.
+**TL;DR**: Unzip the Confluence space export to local disk, then run `xerj autoindex` on the folder. In a captured run, body text on a nested page returned 1 hit at `Recovery-procedure_262146.html`. The title came back as Confluence writes it: `PLAT : Recovery procedure`.
 
 ## Index the unzipped export
 

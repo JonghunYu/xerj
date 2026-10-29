@@ -12,7 +12,7 @@ source: "content/answers/search-sql-dump-file.md"
 
 **Key number:** The captured dump produced 2 indices holding 301 and 20 documents, 321 in total. (as of 2026-08-21; source: the captured run documented on this page)
 
-**TL;DR** — `xerj autoindex` parses a MySQL-style `.sql` file directly, with no database server involved. In a captured run one file produced 2 indices, `dump-articles` with 301 documents and `dump-authors` with 20. A `match_phrase` query then found a phrase inside an `INSERT` value.
+**TL;DR**: `xerj autoindex` parses a MySQL-style `.sql` file directly, with no database server involved. In a captured run one file produced 2 indices, `dump-articles` with 301 documents and `dump-authors` with 20. A `match_phrase` query then found a phrase inside an `INSERT` value.
 
 ## Agent prompt
 
@@ -158,7 +158,7 @@ Read `ax_locator` and `ax_path`. In the captured run `ax_locator` held `tarticle
 
 ## Evidence
 
-- GNU grep is line-oriented. It selects and prints the input lines that match a pattern, so a multi-row INSERT that sits on one physical line is returned whole. — [https://www.gnu.org/software/grep/manual/grep.html](https://www.gnu.org/software/grep/manual/grep.html)
+- GNU grep is line-oriented. It selects and prints the input lines that match a pattern, so a multi-row INSERT that sits on one physical line is returned whole. Source: [https://www.gnu.org/software/grep/manual/grep.html](https://www.gnu.org/software/grep/manual/grep.html)
 
 ## Related
 

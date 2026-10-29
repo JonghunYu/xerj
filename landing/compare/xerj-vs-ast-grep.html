@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="XERJ vs ast-grep — syntax search and an index">
@@ -240,7 +240,7 @@
   </div>
   <p><strong>TL;DR</strong> — ast-grep changes code by syntax pattern, and XERJ does no rewriting at all. XERJ answers where a symbol is defined and what its contract says, across a tree it has already indexed. Install both. No head-to-head was run, and none is needed to split these jobs.</p>
   <div class="prompt-card">
-    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT — IT DOES THE REST</span>
+    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT. IT DOES THE REST</span>
     <code>Act as a coding agent. Read https://xerj.org/llms.txt, run `xerj autoindex ./repo --prefix code --state-dir ./state-code`, POST a match on defs for the function you are about to change to /code-*/_search and read its declaration site from the returned ax_path, apply the structural rewrite with ast-grep, then re-run the identical autoindex command and confirm the same defs query returns the new shape.</code>
     <button type="button" class="prompt-copy" data-copy="Act as a coding agent. Read https://xerj.org/llms.txt, run `xerj autoindex ./repo --prefix code --state-dir ./state-code`, POST a match on defs for the function you are about to change to /code-*/_search and read its declaration site from the returned ax_path, apply the structural rewrite with ast-grep, then re-run the identical autoindex command and confirm the same defs query returns the new shape.">COPY THE PROMPT</button>
   </div>
@@ -330,13 +330,13 @@
   <p>No. No head-to-head was run. Every ast-grep fact here comes from its own documentation and repository.</p>
   <h2>Evidence</h2>
   <ul>
-    <li>ast-grep is a command-line tool for code structural search, lint and rewriting, and it matches abstract syntax tree nodes rather than text. — <a href="https://github.com/ast-grep/ast-grep">https://github.com/ast-grep/ast-grep</a></li>
-    <li>ast-grep rewrites either with the --rewrite flag on a run, or with a fix key inside a YAML rule applied by ast-grep scan. — <a href="https://ast-grep.github.io/guide/rewrite-code.html">https://ast-grep.github.io/guide/rewrite-code.html</a></li>
-    <li>The ast-grep reference lists 26 built-in languages backed by tree-sitter grammars, and custom grammars can be loaded dynamically. — <a href="https://ast-grep.github.io/reference/languages.html">https://ast-grep.github.io/reference/languages.html</a></li>
-    <li>The ast-grep project states that it builds an abstract syntax tree in memory for each query and does not support offline indexing. — <a href="https://ast-grep.github.io/blog/code-search-design-space.html">https://ast-grep.github.io/blog/code-search-design-space.html</a></li>
-    <li>The ast-grep tool comparison states that it has no deep semantic information and operates only on the syntactic level, with no type information, control flow, data flow or taint analysis. — <a href="https://ast-grep.github.io/advanced/tool-comparison.html">https://ast-grep.github.io/advanced/tool-comparison.html</a></li>
-    <li>The ast-grep organization publishes an experimental Model Context Protocol server exposing four tools for structural code search. — <a href="https://github.com/ast-grep/ast-grep-mcp">https://github.com/ast-grep/ast-grep-mcp</a></li>
-    <li>GNU grep prints lines that contain a match for one or more patterns, which makes it a line-oriented tool rather than a syntax-aware one. — <a href="https://www.gnu.org/software/grep/manual/grep.html">https://www.gnu.org/software/grep/manual/grep.html</a></li>
+    <li>ast-grep is a command-line tool for code structural search, lint and rewriting, and it matches abstract syntax tree nodes rather than text. Source: <a href="https://github.com/ast-grep/ast-grep">https://github.com/ast-grep/ast-grep</a></li>
+    <li>ast-grep rewrites either with the --rewrite flag on a run, or with a fix key inside a YAML rule applied by ast-grep scan. Source: <a href="https://ast-grep.github.io/guide/rewrite-code.html">https://ast-grep.github.io/guide/rewrite-code.html</a></li>
+    <li>The ast-grep reference lists 26 built-in languages backed by tree-sitter grammars, and custom grammars can be loaded dynamically. Source: <a href="https://ast-grep.github.io/reference/languages.html">https://ast-grep.github.io/reference/languages.html</a></li>
+    <li>The ast-grep project states that it builds an abstract syntax tree in memory for each query and does not support offline indexing. Source: <a href="https://ast-grep.github.io/blog/code-search-design-space.html">https://ast-grep.github.io/blog/code-search-design-space.html</a></li>
+    <li>The ast-grep tool comparison states that it has no deep semantic information and operates only on the syntactic level, with no type information, control flow, data flow or taint analysis. Source: <a href="https://ast-grep.github.io/advanced/tool-comparison.html">https://ast-grep.github.io/advanced/tool-comparison.html</a></li>
+    <li>The ast-grep organization publishes an experimental Model Context Protocol server exposing four tools for structural code search. Source: <a href="https://github.com/ast-grep/ast-grep-mcp">https://github.com/ast-grep/ast-grep-mcp</a></li>
+    <li>GNU grep prints lines that contain a match for one or more patterns, which makes it a line-oriented tool rather than a syntax-aware one. Source: <a href="https://www.gnu.org/software/grep/manual/grep.html">https://www.gnu.org/software/grep/manual/grep.html</a></li>
   </ul>
   <h2>Related</h2>
   <ul>

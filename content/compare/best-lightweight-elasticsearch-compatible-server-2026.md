@@ -95,7 +95,7 @@ faq:
     a: "No. Manticore, Quickwit and OpenObserve publish their own speed and cost comparisons against Elasticsearch. This page quotes none of them as fact and ran no cross-vendor benchmark."
 ---
 
-**TL;DR** — "Elasticsearch-compatible" means a different slice of the API for each server. OpenSearch keeps the whole API and the cluster. ZincSearch and XERJ are small single nodes. Quickwit and OpenObserve are built for logs on object storage. Manticore is SQL-first with Elasticsearch-compatible writes.
+**TL;DR**: "Elasticsearch-compatible" means a different slice of the API for each server. OpenSearch keeps the whole API and the cluster. ZincSearch and XERJ are small single nodes. Quickwit and OpenObserve are built for logs on object storage. Manticore is SQL-first with Elasticsearch-compatible writes.
 
 ## Pick one in ten seconds
 

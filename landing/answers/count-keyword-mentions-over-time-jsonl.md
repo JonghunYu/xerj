@@ -12,7 +12,7 @@ source: "content/answers/count-keyword-mentions-over-time-jsonl.md"
 
 **Key number:** A date histogram for the phrase autoindex returned 88 hits and took 123 ms. (as of 2026-10-20; source: [benchmarks/agent-queries-2026-10-20/08-histogram-phrase.json](https://github.com/xerj-org/xerj/blob/main/benchmarks/agent-queries-2026-10-20/08-histogram-phrase.json))
 
-**TL;DR** — Count mentions of a word over time in a posts dataset. Index the JSONL, check the date field, and send one date histogram. On 2026-10-20 the phrase autoindex in issue titles returned 88 hits and took 123 ms: 1 in July, 50 in August, 11 in September, 26 in October. A fractional epoch field returned no months.
+**TL;DR**: Count mentions of a word over time in a posts dataset. Index the JSONL, check the date field, and send one date histogram. On 2026-10-20 the phrase autoindex in issue titles returned 88 hits and took 123 ms: 1 in July, 50 in August, 11 in September, 26 in October. A fractional epoch field returned no months.
 
 ## Agent prompt
 
@@ -129,12 +129,12 @@ No. The posts file was a GitHub issue export whose `createdAt` values are ISO st
 
 ## Evidence
 
-- The issue export autoindex finished in 7.2 s with 1,532 records. — `benchmarks/agent-queries-2026-10-20/01-autoindex-issues.txt`
-- The match_phrase date histogram took 123 ms and returned 88 hits. — `benchmarks/agent-queries-2026-10-20/08-histogram-phrase.json`
-- The match date histogram took 630 ms and returned the same four months. — `benchmarks/agent-queries-2026-10-20/08-histogram.json`
-- A string field becomes date when at least 95% of sampled values parse. — `engine/crates/xerj-autoindex/src/infer/mod.rs:470`
-- The fractional-epoch fixture indexed 40 records in 0.6 s and the histogram returned no buckets. — `benchmarks/agent-queries-2026-10-20/06-autoindex-epoch.txt`
-- date_histogram on the double field ts returned buckets empty and took 0. — `benchmarks/agent-queries-2026-10-20/08-epoch-histogram-all.json`
+- The issue export autoindex finished in 7.2 s with 1,532 records. Source: `benchmarks/agent-queries-2026-10-20/01-autoindex-issues.txt`
+- The match_phrase date histogram took 123 ms and returned 88 hits. Source: `benchmarks/agent-queries-2026-10-20/08-histogram-phrase.json`
+- The match date histogram took 630 ms and returned the same four months. Source: `benchmarks/agent-queries-2026-10-20/08-histogram.json`
+- A string field becomes date when at least 95% of sampled values parse. Source: `engine/crates/xerj-autoindex/src/infer/mod.rs:470`
+- The fractional-epoch fixture indexed 40 records in 0.6 s and the histogram returned no buckets. Source: `benchmarks/agent-queries-2026-10-20/06-autoindex-epoch.txt`
+- date_histogram on the double field ts returned buckets empty and took 0. Source: `benchmarks/agent-queries-2026-10-20/08-epoch-histogram-all.json`
 
 ## Related
 

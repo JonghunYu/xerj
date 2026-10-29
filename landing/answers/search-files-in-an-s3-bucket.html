@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="How do I search files that live in an S3 bucket?">
@@ -238,9 +238,9 @@
     <p>How do I search files that live in an S3 bucket? Run xerj autoindex s3://bucket/prefix against a running node. XERJ lists the prefix, streams in only the objects whose ETag or size changed, and indexes them with the same extractors it uses for a folder. Credentials come from the environment; the index stays local.</p>
     <p class="key-fact"><strong>Key number:</strong> Measured against MinIO: an unchanged re-run over 4 keys cost 1 LIST and 0 GET requests, 0 bytes. <span class="mute">(as of 2026-10-19 · source: <a href="https://github.com/xerj-org/xerj/blob/main/engine/crates/xerj-autoindex/src/objsource_minio_tests.rs">engine/crates/xerj-autoindex/src/objsource_minio_tests.rs</a>)</span></p>
   </div>
-  <p><strong>TL;DR</strong> — Run <code class="inline">xerj autoindex s3://bucket/prefix</code> against a running node. XERJ lists the prefix, streams in only the objects whose ETag or size changed, and indexes them with the same extractors it uses for a folder. Credentials come from the environment. The index stays on local disk.</p>
+  <p><strong>TL;DR</strong>: Run <code class="inline">xerj autoindex s3://bucket/prefix</code> against a running node. XERJ lists the prefix, streams in only the objects whose ETag or size changed, and indexes them with the same extractors it uses for a folder. Credentials come from the environment. The index stays on local disk.</p>
   <div class="prompt-card">
-    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT — IT DOES THE REST</span>
+    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT. IT DOES THE REST</span>
     <code>Act as a coding agent. Read https://xerj.org/llms.txt, then index the bucket with xerj autoindex s3://bucket/prefix, taking credentials from the environment and adding --endpoint-url for any store that is not Amazon S3. Re-run the same command to pick up changes: objects whose ETag and size are unchanged are not downloaded again. Report the LIST and GET counts the run prints before you put the command in a schedule, and remember the index itself is on the node's local disk, not in the bucket.</code>
     <button type="button" class="prompt-copy" data-copy="Act as a coding agent. Read https://xerj.org/llms.txt, then index the bucket with xerj autoindex s3://bucket/prefix, taking credentials from the environment and adding --endpoint-url for any store that is not Amazon S3. Re-run the same command to pick up changes: objects whose ETag and size are unchanged are not downloaded again. Report the LIST and GET counts the run prints before you put the command in a schedule, and remember the index itself is on the node&#x27;s local disk, not in the bucket.">COPY THE PROMPT</button>
   </div>
@@ -292,7 +292,7 @@ xerj autoindex s3://mybucket/docs --endpoint-url http://127.0.0.1:9000
 xerj autoindex r2://mybucket/docs --endpoint-url https://accountid.r2.cloudflarestorage.com
 </code></pre>
   <p><code class="inline">--endpoint-url</code> falls back to <code class="inline">AWS_ENDPOINT_URL_S3</code>, then <code class="inline">AWS_ENDPOINT_URL</code>, which is the precedence the AWS CLI uses.</p>
-  <p>Credentials come from the environment — <code class="inline">AWS_ACCESS_KEY_ID</code>, <code class="inline">AWS_SECRET_ACCESS_KEY</code>, and <code class="inline">AWS_SESSION_TOKEN</code> for temporary credentials — and from nowhere else. Profile files, instance metadata (IMDS) and SSO are not read; if your keys live in a profile, export them for the run. A URL of the form <code class="inline">s3://key:secret@bucket/p</code> is refused by name, because that shape puts a credential in every request line and in every log that records one.</p>
+  <p>Credentials come from the environment (<code class="inline">AWS_ACCESS_KEY_ID</code>, <code class="inline">AWS_SECRET_ACCESS_KEY</code>, and <code class="inline">AWS_SESSION_TOKEN</code> for temporary credentials) and from nowhere else. Profile files, instance metadata (IMDS) and SSO are not read; if your keys live in a profile, export them for the run. A URL of the form <code class="inline">s3://key:secret@bucket/p</code> is refused by name, because that shape puts a credential in every request line and in every log that records one.</p>
   <p>One surprise removed on purpose: a non-empty prefix is treated as a <strong>folder</strong>. <code class="inline">s3://b/docs</code> lists <code class="inline">docs/</code> and not also <code class="inline">docs-old/</code>, even though plain S3 prefix matching is a string prefix. The effective prefix is printed at the start of the run.</p>
   <h2>What makes the second run cheap</h2>
   <p>The ETag plus the size, recorded per object in <code class="inline">&lt;state-dir&gt;/object-source.json</code>.</p>
@@ -315,7 +315,7 @@ xerj autoindex r2://mybucket/docs --endpoint-url https://accountid.r2.cloudflare
       <tr><td>100,000</td><td>100</td><td>3,000</td><td>72,000</td><td>864,000</td></tr>
     </tbody>
   </table>
-  <p>Those are requests per month against a 1,000,000 free allowance, for that prefix alone. A daily or hourly re-index of a normal corpus is a rounding error. A minute-interval watcher over a six-figure bucket is not — and nothing in XERJ creates one: <code class="inline">xerj autoindex</code> is a single command with no polling loop and no watch mode. If you put it in cron, the interval is the cost.</p>
+  <p>Those are requests per month against a 1,000,000 free allowance, for that prefix alone. A daily or hourly re-index of a normal corpus is a rounding error. A minute-interval watcher over a six-figure bucket is not, and nothing in XERJ creates one: <code class="inline">xerj autoindex</code> is a single command with no polling loop and no watch mode. If you put it in cron, the interval is the cost.</p>
   <p>You do not have to derive any of this. Every object-store run prints it:</p>
   <pre class="code"><code class="language-text">autoindex: object store requests this run: 2 LIST (class A) + 1200 GET (class B), 0 MB transferred
 autoindex: re-running this at the same size costs 2 class-A request(s) each time:
@@ -325,14 +325,14 @@ autoindex: re-running this at the same size costs 2 class-A request(s) each time
   <p><code class="inline">--dry-run</code> lists and prices the transfer without downloading anything. Once the mirror is current there is nothing left to transfer, so a dry run then gives the full plan projection for the cost of one listing.</p>
   <h2>Where the bytes go, and what that costs you</h2>
   <p>Objects are streamed into a local mirror under the state directory, and the ordinary walk runs over that mirror.</p>
-  <p>The reason is not laziness. Several extractors are not sequential readers: a PDF is read from its trailer backwards, a DOCX is a ZIP whose central directory sits at the end of the file, SQLite seeks by page, and the content-identity contract reads each file twice before verifying it a third time. Over a network stream each of those becomes either another GET — more requests, more money — or a copy of the whole object in memory, which is the one thing that must not happen.</p>
+  <p>The reason is not laziness. Several extractors are not sequential readers: a PDF is read from its trailer backwards, a DOCX is a ZIP whose central directory sits at the end of the file, SQLite seeks by page, and the content-identity contract reads each file twice before verifying it a third time. Over a network stream each of those becomes either another GET (more requests, more money) or a copy of the whole object in memory, which is the one thing that must not happen.</p>
   <p>So the trade is explicit:</p>
   <ul>
     <li>you need local disk for the prefix you index, and <code class="inline">--state-dir</code> is how you choose which disk;</li>
     <li>nothing is held in memory: transfer is a bounded 256 KiB copy into a temporary file that is then renamed, at most 16 objects at a time. A 1 GiB object moved against MinIO on loopback with RSS growing from 22 MB to 26 MB. It took 281-318 ms over four runs, which is a same-host transfer and not a throughput benchmark;</li>
     <li>extraction sees byte-for-byte what it sees for a folder.</li>
   </ul>
-  <p>The index itself is on the XERJ node's local disk. Nothing writes to the bucket, and keeping the index in object storage is a different, unimplemented thing — see <a href="/answers/does-xerj-support-s3-alerting-plugins">what XERJ does not do with S3 yet</a>.</p>
+  <p>The index itself is on the XERJ node's local disk. Nothing writes to the bucket, and keeping the index in object storage is a different, unimplemented thing: see <a href="/answers/does-xerj-support-s3-alerting-plugins">what XERJ does not do with S3 yet</a>.</p>
   <h2>What is skipped, and why you should be glad</h2>
   <p>An object key is an arbitrary string, not a path. Keys that cannot become a safe, portable relative path are refused by name, and each rule is reported with a count:</p>
   <table>
@@ -346,7 +346,7 @@ autoindex: re-running this at the same size costs 2 class-A request(s) each time
     </tbody>
   </table>
   <p><code class="inline">.gitignore</code> and <code class="inline">.xerjignore</code> are the two exceptions to the dotfile rule: they are fetched so the bucket's own ignore rules still apply, and then not indexed.</p>
-  <p>A skipped key is also money not spent — the filter runs on the listing, so <code class="inline">node_modules/</code> never costs a GET.</p>
+  <p>A skipped key is also money not spent: the filter runs on the listing, so <code class="inline">node_modules/</code> never costs a GET.</p>
   <h2>Deletions</h2>
   <p>An object that disappears from the bucket stops appearing in search results on the next run, through the reconcile machinery that already handles a deleted file. That machinery is the generated <code class="inline">--no-graph</code> journal. Index a bucket whose objects get deleted with <code class="inline">xerj autoindex s3://bucket/prefix --no-graph</code>. On the default graph-enabled journal the run refuses and writes nothing. It names the content groups that vanished and the ways to rebuild. That is the same limit a deleted <em>file</em> hits there, not an object-store restriction.</p>
   <p>After listing, the mirror is walked and everything the store no longer lists is deleted from it. The walk then sees a smaller corpus and the incremental reconcile removes those documents. The mirror is walked rather than the recorded manifest diffed, on purpose. A lost manifest must not be able to leave a deleted object searchable forever.</p>
@@ -386,11 +386,11 @@ autoindex: re-running this at the same size costs 2 class-A request(s) each time
   <p>40 LIST requests, plus one GET per changed object, plus disk for the bytes. Hourly that is 28,800 class-A requests a month, under 3% of a 1,000,000 free allowance for that prefix.</p>
   <h2>Evidence</h2>
   <ul>
-    <li>xerj autoindex accepts s3:// and r2:// wherever it accepts a folder; the prefix is listed with ListObjectsV2 at 1,000 keys per page and each admitted object is streamed in. — <code>engine/crates/xerj-autoindex/src/objsource.rs</code></li>
-    <li>Change identity is the object's ETag plus its size, treated as an opaque token: a multipart ETag's -N suffix is used verbatim and nothing is compared to a locally computed MD5. — <code>engine/crates/xerj-autoindex/src/objsource.rs</code></li>
-    <li>Measured against MinIO: first run over 4 keys = 1 LIST + 3 GET; unchanged re-run = 1 LIST + 0 GET, 0 bytes; 1,200 keys = 2 LIST pages; a 1 GiB object moved with RSS growing from 22 MB to 26 MB, in 281-318 ms over four loopback runs. — <code>engine/crates/xerj-autoindex/src/objsource_minio_tests.rs</code></li>
-    <li>The index still lives on the XERJ node's local disk. Setting storage.backend to s3 refuses to start, and no segment or WAL file is ever written to a bucket. — <code>docs/OBJECT_STORAGE.md:255</code></li>
-    <li>Keys whose components are hidden, unsafe or unportable are skipped by name and reported: a bucket's .env and .git/ never reach the index. — <code>engine/crates/xerj-autoindex/src/source.rs</code></li>
+    <li>xerj autoindex accepts s3:// and r2:// wherever it accepts a folder; the prefix is listed with ListObjectsV2 at 1,000 keys per page and each admitted object is streamed in. Source: <code>engine/crates/xerj-autoindex/src/objsource.rs</code></li>
+    <li>Change identity is the object's ETag plus its size, treated as an opaque token: a multipart ETag's -N suffix is used verbatim and nothing is compared to a locally computed MD5. Source: <code>engine/crates/xerj-autoindex/src/objsource.rs</code></li>
+    <li>Measured against MinIO: first run over 4 keys = 1 LIST + 3 GET; unchanged re-run = 1 LIST + 0 GET, 0 bytes; 1,200 keys = 2 LIST pages; a 1 GiB object moved with RSS growing from 22 MB to 26 MB, in 281-318 ms over four loopback runs. Source: <code>engine/crates/xerj-autoindex/src/objsource_minio_tests.rs</code></li>
+    <li>The index still lives on the XERJ node's local disk. Setting storage.backend to s3 refuses to start, and no segment or WAL file is ever written to a bucket. Source: <code>docs/OBJECT_STORAGE.md:255</code></li>
+    <li>Keys whose components are hidden, unsafe or unportable are skipped by name and reported: a bucket's .env and .git/ never reach the index. Source: <code>engine/crates/xerj-autoindex/src/source.rs</code></li>
   </ul>
   <h2>Related</h2>
   <ul>

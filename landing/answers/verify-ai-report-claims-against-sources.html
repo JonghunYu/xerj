@@ -214,9 +214,9 @@
     <p>Verify claims in a report against the saved sources. Index those files, then run one <code class="inline">match_phrase</code> per claim. A claim with no hit is unverified. On 2026-10-20, 3 of 5 phrases were in the docs index and 2 were not. The first check took 490 ms.</p>
     <p class="key-fact"><strong>Key number:</strong> 3 of 5 body phrases were found in the docs index; the first check took 490 ms. <span class="mute">(as of 2026-10-20 · source: <a href="https://github.com/xerj-org/xerj/blob/main/benchmarks/agent-queries-2026-10-20/08-claims.jsonl">benchmarks/agent-queries-2026-10-20/08-claims.jsonl</a>)</span></p>
   </div>
-  <p><strong>TL;DR</strong> — Verify claims in a report against the saved sources. Index those files, then run one <code class="inline">match_phrase</code> per claim. A claim with no hit is unverified. On 2026-10-20, 3 of 5 phrases were in the docs index and 2 were not. The first check took 490 ms.</p>
+  <p><strong>TL;DR</strong>: Verify claims in a report against the saved sources. Index those files, then run one <code class="inline">match_phrase</code> per claim. A claim with no hit is unverified. On 2026-10-20, 3 of 5 phrases were in the docs index and 2 were not. The first check took 490 ms.</p>
   <div class="prompt-card">
-    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT — IT DOES THE REST</span>
+    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT. IT DOES THE REST</span>
     <code>Read https://xerj.org/llms.txt. Start one local node, index the saved source files, and run one match_phrase query per claim on the prose field from xerj autoindex map. Mark a claim found only when a hit comes back, and name ax_path. A miss means the words were not in that field.</code>
     <button type="button" class="prompt-copy" data-copy="Read https://xerj.org/llms.txt. Start one local node, index the saved source files, and run one match_phrase query per claim on the prose field from xerj autoindex map. Mark a claim found only when a hit comes back, and name ax_path. A miss means the words were not in that field.">COPY THE PROMPT</button>
   </div>
@@ -279,9 +279,9 @@
   <p>No. There is no score for how well a report follows its sources. You get found or not found, plus the path.</p>
   <h2>Evidence</h2>
   <ul>
-    <li>The first body phrase took 490 ms and the second took 485 ms. — <code>benchmarks/agent-queries-2026-10-20/08-claims.jsonl</code></li>
-    <li>Three later body phrases took 1 ms each. — <code>benchmarks/agent-queries-2026-10-20/08-claims.jsonl</code></li>
-    <li>The docs folder index finished in 14.3 s. — <code>benchmarks/agent-queries-2026-10-20/02-autoindex-docs.txt</code></li>
+    <li>The first body phrase took 490 ms and the second took 485 ms. Source: <code>benchmarks/agent-queries-2026-10-20/08-claims.jsonl</code></li>
+    <li>Three later body phrases took 1 ms each. Source: <code>benchmarks/agent-queries-2026-10-20/08-claims.jsonl</code></li>
+    <li>The docs folder index finished in 14.3 s. Source: <code>benchmarks/agent-queries-2026-10-20/02-autoindex-docs.txt</code></li>
   </ul>
   <h2>Related</h2>
   <ul>

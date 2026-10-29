@@ -163,7 +163,7 @@ No. The stored `text` is the text you sent. There is no model in the write path 
 
 ## Evidence
 
-- The memory store call accepts dedup and dedup_threshold, dedup_threshold defaults to a cosine similarity of 0.95, and _recall accepts recency_weight. — `engine/crates/xerj-api/src/memory_api.rs`
+- The memory store call accepts dedup and dedup_threshold, dedup_threshold defaults to a cosine similarity of 0.95, and _recall accepts recency_weight. Source: `engine/crates/xerj-api/src/memory_api.rs`
 
 ## Related
 

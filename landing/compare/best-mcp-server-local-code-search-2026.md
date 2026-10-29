@@ -108,16 +108,16 @@ From the GitHub REST API on 2026-10-19: stargazers_count from the repository end
 
 ## Evidence
 
-- Serena provides semantic code retrieval, editing and refactoring tools through language servers, supports over 40 programming languages with its language-server backend, and installs with uv tool install -p 3.13 serena-agent. — [https://github.com/oraios/serena](https://github.com/oraios/serena)
-- Claude Context needs a vector database (Milvus or Zilliz Cloud) and, in its documented configuration, an OpenAI API key for the embedding model; the MCP server runs with npx @zilliz/claude-context-mcp@latest. — [https://github.com/zilliztech/claude-context](https://github.com/zilliztech/claude-context)
-- Semble runs on CPU with no API keys, GPU or external services, downloads its embedding model from Hugging Face on first use, chunks files with tree-sitter, and exposes a search MCP tool. — [https://github.com/MinishLab/semble](https://github.com/MinishLab/semble)
-- cocoindex-code's full install pulls in sentence-transformers for local embeddings with no API key; the slim install requires a cloud embedding provider and an API key. — [https://github.com/cocoindex-io/cocoindex-code](https://github.com/cocoindex-io/cocoindex-code)
-- codedb is alpha; structural search runs locally, and its default hybrid retrieval uses hosted embeddings unless semantic=local is chosen. — [https://github.com/justrach/codedb](https://github.com/justrach/codedb)
-- ast-grep MCP is an experimental server exposing four tools and requires ast-grep and uv to be installed. — [https://github.com/ast-grep/ast-grep-mcp](https://github.com/ast-grep/ast-grep-mcp)
-- ripgrep searches files directly with no index; on one 331-file tree it won 5 of 30 disclosed tasks outright against the XERJ index. — [https://github.com/BurntSushi/ripgrep](https://github.com/BurntSushi/ripgrep)
-- XERJ's tree-sitter registry covers 36 languages and extracts definitions; xerj mcp served 17 tools in a live tools/list. — `engine/crates/xerj-autoindex/src/extract/code.rs`
-- In the JSONL benchmark of 2026-10-19 the XERJ node peaked at 9,578,548 kB (about 9.1 GiB) resident while indexing one 9.7 MB file of 50,000 records. — `benchmarks/best-of-jsonl-search-2026/README.md`
-- Semble's README claims about 99 % fewer tokens than grep plus read, measured by the vendor on about 1,250 queries over 63 repositories. — [https://github.com/MinishLab/semble](https://github.com/MinishLab/semble)
+- Serena provides semantic code retrieval, editing and refactoring tools through language servers, supports over 40 programming languages with its language-server backend, and installs with uv tool install -p 3.13 serena-agent. Source: [https://github.com/oraios/serena](https://github.com/oraios/serena)
+- Claude Context needs a vector database (Milvus or Zilliz Cloud) and, in its documented configuration, an OpenAI API key for the embedding model; the MCP server runs with npx @zilliz/claude-context-mcp@latest. Source: [https://github.com/zilliztech/claude-context](https://github.com/zilliztech/claude-context)
+- Semble runs on CPU with no API keys, GPU or external services, downloads its embedding model from Hugging Face on first use, chunks files with tree-sitter, and exposes a search MCP tool. Source: [https://github.com/MinishLab/semble](https://github.com/MinishLab/semble)
+- cocoindex-code's full install pulls in sentence-transformers for local embeddings with no API key; the slim install requires a cloud embedding provider and an API key. Source: [https://github.com/cocoindex-io/cocoindex-code](https://github.com/cocoindex-io/cocoindex-code)
+- codedb is alpha; structural search runs locally, and its default hybrid retrieval uses hosted embeddings unless semantic=local is chosen. Source: [https://github.com/justrach/codedb](https://github.com/justrach/codedb)
+- ast-grep MCP is an experimental server exposing four tools and requires ast-grep and uv to be installed. Source: [https://github.com/ast-grep/ast-grep-mcp](https://github.com/ast-grep/ast-grep-mcp)
+- ripgrep searches files directly with no index; on one 331-file tree it won 5 of 30 disclosed tasks outright against the XERJ index. Source: [https://github.com/BurntSushi/ripgrep](https://github.com/BurntSushi/ripgrep)
+- XERJ's tree-sitter registry covers 36 languages and extracts definitions; xerj mcp served 17 tools in a live tools/list. Source: `engine/crates/xerj-autoindex/src/extract/code.rs`
+- In the JSONL benchmark of 2026-10-19 the XERJ node peaked at 9,578,548 kB (about 9.1 GiB) resident while indexing one 9.7 MB file of 50,000 records. Source: `benchmarks/best-of-jsonl-search-2026/README.md`
+- Semble's README claims about 99 % fewer tokens than grep plus read, measured by the vendor on about 1,250 queries over 63 repositories. Source: [https://github.com/MinishLab/semble](https://github.com/MinishLab/semble)
 
 ## Related
 

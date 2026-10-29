@@ -56,7 +56,7 @@ faq:
     a: "No. `xerj ask` answers hub corpora. A folder you autoindexed is `xerj search`, `xerj def`, or a `_search` body."
 ---
 
-**TL;DR** — Answer questions about a docs folder by indexing it with `xerj autoindex`, then running a phrase query. Each hit carries `ax_path`, so the agent can cite the file. On 2026-10-20 a phrase query for "what is in here" returned `WHY_XERJ.md` and took 1 ms. `xerj search` on the same words did not.
+**TL;DR**: Answer questions about a docs folder by indexing it with `xerj autoindex`, then running a phrase query. Each hit carries `ax_path`, so the agent can cite the file. On 2026-10-20 a phrase query for "what is in here" returned `WHY_XERJ.md` and took 1 ms. `xerj search` on the same words did not.
 
 XERJ is a new way for AI to search for data.
 

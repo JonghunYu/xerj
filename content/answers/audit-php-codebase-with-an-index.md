@@ -12,7 +12,7 @@ author: "XERJ documentation team"
 reviewer: "XERJ engineering team"
 schema_type: "TechArticle"
 structured_data: [faq]
-agent_prompt: "Act as a security-reviewing coding agent on a large PHP repository. Read https://xerj.org/llms.txt, compile the invariant you care about into indexed facts with an AST extractor, index those facts into XERJ, query for the violating shape, and read only the survivors — then report the clean surfaces as findings rather than dropping them."
+agent_prompt: "Act as a security-reviewing coding agent on a large PHP repository. Read https://xerj.org/llms.txt, compile the invariant you care about into indexed facts with an AST extractor, index those facts into XERJ, query for the violating shape, and read only the survivors, then report the clean surfaces as findings rather than dropping them."
 answer: "How do you search a large PHP repo for dangerous sinks without reading every file? Index it as queryable facts, ask for the bug shape, and read only what comes back. The published WordPress core audit spent about 26,000 tokens against an estimated 5,200,000 to read the code once, and found core hardened."
 key_fact: "The WordPress core audit covered 1,492 PHP files and about 619k lines, indexed as 11,990 functions."
 key_fact_source: "docs/case-studies/wordpress-security-audit/README.md"
@@ -72,13 +72,13 @@ faq:
     a: "On recall. Grep's literal recall is perfect and the model's is not: a source at file scope, or laundered through `$GLOBALS`, is invisible to the extracted facts. The trade is recall for precision and tokens, and the counter-examples are published."
 ---
 
-**TL;DR** — Index the codebase as queryable facts, ask for the bug shape, and read only what comes back. The published WordPress core audit spent about 26,000 tokens. Reading the code once is estimated at about 5,200,000. The headline finding is that core is hardened.
+**TL;DR**: Index the codebase as queryable facts, ask for the bug shape, and read only what comes back. The published WordPress core audit spent about 26,000 tokens. Reading the code once is estimated at about 5,200,000. The headline finding is that core is hardened.
 
 ## The published run, and what it is
 
 Everything on this page comes from the [WordPress security audit case study](/case-studies/wordpress-security-audit) and the artifacts under `docs/case-studies/wordpress-security-audit/`. Nothing here is a new finding, and no vulnerability is named on this page that is not already published there.
 
-The corpus was real WordPress core: 1,492 PHP files, about 619k lines. That is about 26 times a 200k-token context window. "Read everything" is not an available strategy, and chunking it destroys the reach that matters — security bugs live across files.
+The corpus was real WordPress core: 1,492 PHP files, about 619k lines. That is about 26 times a 200k-token context window. "Read everything" is not an available strategy, and chunking it destroys the reach that matters: security bugs live across files.
 
 ## The negative result is the result
 
@@ -89,18 +89,18 @@ Core came back hardened.
 | authenticated AJAX handlers | 95 | object-scoped, 0 IDOR |
 | REST permission checks | 90 | object-scoped, 0 IDOR |
 | file-scope `wp-admin` handlers | 41 | object-scoped |
-| auto-triggered deserialization gadgets | — | 0 |
+| auto-triggered deserialization gadgets | n/a | 0 |
 
 226 handlers swept, zero missing-capability IDOR. That is the finding, and an audit that only reports positives is an audit you cannot trust.
 
-The one real weakness found was `wp_http_validate_url` failing to block `169.254.169.254`, the cloud-metadata address, reachable unauthenticated through `pingback_ping`. The write-up states it as a known-class limitation that core punts to a filter — **not a novel 0-day**. It was found by reading the IP-range coverage, because a literal pattern match cannot see an *incomplete* allow-list. It was then verified by executing the algorithm, and traced to reachability.
+The one real weakness found was `wp_http_validate_url` failing to block `169.254.169.254`, the cloud-metadata address, reachable unauthenticated through `pingback_ping`. The write-up states it as a known-class limitation that core punts to a filter: **not a novel 0-day**. It was found by reading the IP-range coverage, because a literal pattern match cannot see an *incomplete* allow-list. It was then verified by executing the algorithm, and traced to reachability.
 
 ## The method: compile the invariant, then query it
 
 The pattern generalises past PHP and past WordPress.
 
-1. **Read once** to discover the invariant — escaper last, block `169.254`, re-verify the object relationship.
-2. **Compile it into indexed facts** — sanitizer sequences, IP-range coverage, capability object-scoping, and the edges between the functions involved.
+1. **Read once** to discover the invariant: escaper last, block `169.254`, re-verify the object relationship.
+2. **Compile it into indexed facts**: sanitizer sequences, IP-range coverage, capability object-scoping, and the edges between the functions involved.
 3. **Query the facts** and get back only the violators, with no code transfer.
 4. **Read the survivors** to confirm.
 
@@ -135,7 +135,7 @@ It returned 2 of 1,343 hooks: the whole unauthenticated entry surface, in one re
 
 Grep's literal recall is perfect. The indexed approach's is not.
 
-The published counter-examples are the honest half of this page. A source at file scope is invisible to the extracted facts. A source laundered through `$GLOBALS` is invisible. The precision detectors have known false-positive drivers — receiver-typed sinks, self-scoped writes, polymorphic capabilities — so every candidate still needs a human or an agent to read it.
+The published counter-examples are the honest half of this page. A source at file scope is invisible to the extracted facts. A source laundered through `$GLOBALS` is invisible. The precision detectors have known false-positive drivers (receiver-typed sinks, self-scoped writes, polymorphic capabilities) so every candidate still needs a human or an agent to read it.
 
 The comparison is also not like for like. The SQL triage returns 4 **functions**; grep returns 51 **whole files**. Those are different units, and the value of the smaller number is that a person can actually read all of them.
 
@@ -143,7 +143,7 @@ What grep cannot do is express the shape. "Request source and SQL sink in the sa
 
 ## The token accounting, and its caveat
 
-The published figure is about 26,000 tokens for the entire audit against about 5,200,000 to load the code once — about 199x.
+The published figure is about 26,000 tokens for the entire audit against about 5,200,000 to load the code once: about 199x.
 
 Read the caveat with the number. The 26,000 is summed from per-phase measured costs. The 5,200,000 read-everything baseline is a **model, an estimate**, not an executed run. The whole comparison is token accounting rather than a latency benchmark.
 
@@ -153,12 +153,12 @@ XERJ does not find bugs. The AST taint and authorization model produces the cand
 
 `xerj autoindex` on the source tree is the *other* half of the setup: it extracts symbol definitions with tree-sitter, and that extraction is definitions only. The relationship edges the audit queried were derived by the detector scripts, not by autoindex.
 
-The audit also audited XERJ. Two engine defects surfaced mid-run — `term` over keyword arrays, and boolean term matching — and the sound conclusions were recomputed over pulled `_source` rather than the buggy path, so they hold. Both are published, and the keyword-array fix landed as a pull request.
+The audit also audited XERJ. Two engine defects surfaced mid-run (`term` over keyword arrays, and boolean term matching) and the sound conclusions were recomputed over pulled `_source` rather than the buggy path, so they hold. Both are published, and the keyword-array fix landed as a pull request.
 
 ## Running it on your own repository
 
 Start a node and index the tree. Then run your own detector over the same source to produce the facts you want to query. XERJ is single-node, so this is one process on one machine.
 
-For the retrieval half of the workflow — a cited passage back instead of a whole file — see [citing a file rather than pasting the tree](/answers/code-search-mcp-for-claude-code). For structural search during a refactor rather than an audit, see [syntax-aware code search](/answers/syntax-aware-code-search-refactoring).
+For the retrieval half of the workflow (a cited passage back instead of a whole file) see [citing a file rather than pasting the tree](/answers/code-search-mcp-for-claude-code). For structural search during a refactor rather than an audit, see [syntax-aware code search](/answers/syntax-aware-code-search-refactoring).
 
 The full prompts, the reproduction scripts and the verification harness are published in the case study. The method ships as a copyable skill, because the taint model is data rather than code.

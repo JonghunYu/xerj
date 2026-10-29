@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="How do I read email and PDFs after indexing a folder?">
@@ -232,7 +232,7 @@
   </div>
   <p><strong>TL;DR</strong> — Run <code class="inline">xerj brain &lt;folder&gt;</code>, then open the console it prints. The Corpus page lists what was indexed, and the Reader opens any record: an email with its headers, body and attachments, or one PDF page, beside the files it links to. The Reader shows extracted text only. It renders no email HTML and no PDF pages.</p>
   <div class="prompt-card">
-    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT — IT DOES THE REST</span>
+    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT. IT DOES THE REST</span>
     <code>Act as a coding agent. Read https://xerj.org/llms.txt, run `xerj brain ./casefile --no-open` on a folder of .eml and .pdf files, search the index it reports for a word from one email subject, then give the person the console link `/_xerj-console/#/reader?index=INDEX&amp;id=ID` for the best hit instead of pasting the whole document into the chat.</code>
     <button type="button" class="prompt-copy" data-copy="Act as a coding agent. Read https://xerj.org/llms.txt, run `xerj brain ./casefile --no-open` on a folder of .eml and .pdf files, search the index it reports for a word from one email subject, then give the person the console link `/_xerj-console/#/reader?index=INDEX&amp;id=ID` for the best hit instead of pasting the whole document into the chat.">COPY THE PROMPT</button>
   </div>
@@ -316,12 +316,12 @@
   <p>The console has a read-only guest mode driven by a share record that names one key, the shared indices, an optional brain and an expiry. It can only search and read those indices, and it logs out on expiry.</p>
   <h2>Evidence</h2>
   <ul>
-    <li>In the recorded run xerj brain turned 10 files into 81 records in one dataset, ax-docs, and wrote 33 links into the brain casefile. — <code>docs/usecases/console-reader/live-e2e.json</code></li>
-    <li>The shared index held 6 emails and 43 attachment records; the guest key got 200 on its own index and on the brain, 403 on another index, on autoindex-catalog and on a write, and 401 from the console API; the guest tab made 0 console API requests. — <code>docs/usecases/console-reader/live-e2e.json</code></li>
-    <li>The graph panel of the hostile email showed 2 linked records, both same_dir links of the file the email came from; the signed-in operator's graph panel was refused with HTTP 401 on the auth-enabled node. — <code>docs/usecases/console-reader/live-e2e.json</code></li>
-    <li>On an index where autoindex typed email_subject as keyword, match on email_subject for Lunch returned 0 hits with the subject Lunch on Friday? indexed, and the case-insensitive wildcard <em>lunch</em> returned 1. — <code>docs/usecases/console-reader/review-repro/review-repro.json</code></li>
-    <li>The console page is served with a Content-Security-Policy whose script-src and connect-src are 'self'. — <code>engine/crates/xerj-console-api/src/spa.rs</code></li>
-    <li>A guest session can build only _search, _count, _mapping and ego requests, and fails closed on a malformed or expired record. — <code>xerj-ux/src/data/guest.js</code></li>
+    <li>In the recorded run xerj brain turned 10 files into 81 records in one dataset, ax-docs, and wrote 33 links into the brain casefile. Source: <code>docs/usecases/console-reader/live-e2e.json</code></li>
+    <li>The shared index held 6 emails and 43 attachment records; the guest key got 200 on its own index and on the brain, 403 on another index, on autoindex-catalog and on a write, and 401 from the console API; the guest tab made 0 console API requests. Source: <code>docs/usecases/console-reader/live-e2e.json</code></li>
+    <li>The graph panel of the hostile email showed 2 linked records, both same_dir links of the file the email came from; the signed-in operator's graph panel was refused with HTTP 401 on the auth-enabled node. Source: <code>docs/usecases/console-reader/live-e2e.json</code></li>
+    <li>On an index where autoindex typed email_subject as keyword, match on email_subject for Lunch returned 0 hits with the subject Lunch on Friday? indexed, and the case-insensitive wildcard <em>lunch</em> returned 1. Source: <code>docs/usecases/console-reader/review-repro/review-repro.json</code></li>
+    <li>The console page is served with a Content-Security-Policy whose script-src and connect-src are 'self'. Source: <code>engine/crates/xerj-console-api/src/spa.rs</code></li>
+    <li>A guest session can build only _search, _count, _mapping and ego requests, and fails closed on a malformed or expired record. Source: <code>xerj-ux/src/data/guest.js</code></li>
   </ul>
   <h2>Related</h2>
   <ul>

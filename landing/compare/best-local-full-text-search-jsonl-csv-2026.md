@@ -14,7 +14,7 @@ source: "content/compare/best-local-full-text-search-jsonl-csv-2026.md"
 
 Last checked: 2026-10-19. Every third-party fact on this page was re-read from the tool's own docs or repository on that date.
 
-**TL;DR** — For one JSONL or CSV file, an embedded index wins: SQLite FTS5 indexed 50,000 records in 0.29 s and answered in hundredths of a millisecond. ripgrep needs no index at all. XERJ returned the same counts but took 70.57 s to index, peaked at about 9.1 GiB, and was killed for running out of memory at 300,000 records.
+**TL;DR**: For one JSONL or CSV file, an embedded index wins: SQLite FTS5 indexed 50,000 records in 0.29 s and answered in hundredths of a millisecond. ripgrep needs no index at all. XERJ returned the same counts but took 70.57 s to index, peaked at about 9.1 GiB, and was killed for running out of memory at 300,000 records.
 
 ## Agent prompt
 
@@ -111,16 +111,16 @@ When an agent asks many questions across a folder of mixed files, such as JSONL 
 
 ## Evidence
 
-- On 50,000 synthetic JSONL records (9,724,646 bytes), ripgrep 14.1.1, SQLite FTS5 3.46.1, DuckDB FTS 1.5.6 and xerj v1.0.0-rc.97 returned identical counts of 51, 2,485 and 253 for a rare term, a common term and a phrase. — `benchmarks/best-of-jsonl-search-2026/results-50k-2026-10-19.json`
-- SQLite FTS5 indexed the 50,000 records in 0.29 s into 13.8 MB, DuckDB FTS in 0.61 s into 3.7 MB, and XERJ in 70.57 s into a 112.3 MB data directory. — `benchmarks/best-of-jsonl-search-2026/README.md`
-- At 300,000 records (58.3 MB) the kernel OOM-killed the XERJ node at 9,972,316 kB anonymous RSS about 13 minutes into indexing. — `benchmarks/best-of-jsonl-search-2026/oom-300k-dmesg.txt`
-- DuckDB's full-text index does not update automatically when the table changes, and its BM25 scoring defaults to k=1.2 and b=0.75. — [https://duckdb.org/docs/current/core_extensions/full_text_search](https://duckdb.org/docs/current/core_extensions/full_text_search)
-- tantivy-cli is the command-line interface for the tantivy engine, indexes one JSON document per line, and describes itself as suitable for smaller projects. — [https://github.com/quickwit-oss/tantivy-cli](https://github.com/quickwit-oss/tantivy-cli)
-- qsv's search command runs a regex over selected CSV fields; its index command builds a row-offset index for random access, not a full-text index. — [https://github.com/dathere/qsv](https://github.com/dathere/qsv)
-- Meilisearch installs with curl -L https://install.meilisearch.com | sh; the Community Edition is MIT and the Enterprise Edition is under a commercial licence or BUSL-1.1. — [https://github.com/meilisearch/meilisearch](https://github.com/meilisearch/meilisearch)
-- Meilisearch accepts documents as JSON, NDJSON (application/x-ndjson) or CSV (text/csv). — [https://www.meilisearch.com/docs/capabilities/indexing/getting_started](https://www.meilisearch.com/docs/capabilities/indexing/getting_started)
-- In the JSONL benchmark of 2026-10-19 the XERJ node peaked at 9,578,548 kB (about 9.1 GiB) resident while indexing one 9.7 MB file of 50,000 records. — `benchmarks/best-of-jsonl-search-2026/README.md`
-- At 300,000 records SQLite FTS5 indexed in 1.84 s into 74.4 MB and DuckDB FTS in 2.24 s into 15.5 MB; both, and ripgrep, returned 338, 15,061 and 1,484. — `benchmarks/best-of-jsonl-search-2026/README.md`
+- On 50,000 synthetic JSONL records (9,724,646 bytes), ripgrep 14.1.1, SQLite FTS5 3.46.1, DuckDB FTS 1.5.6 and xerj v1.0.0-rc.97 returned identical counts of 51, 2,485 and 253 for a rare term, a common term and a phrase. Source: `benchmarks/best-of-jsonl-search-2026/results-50k-2026-10-19.json`
+- SQLite FTS5 indexed the 50,000 records in 0.29 s into 13.8 MB, DuckDB FTS in 0.61 s into 3.7 MB, and XERJ in 70.57 s into a 112.3 MB data directory. Source: `benchmarks/best-of-jsonl-search-2026/README.md`
+- At 300,000 records (58.3 MB) the kernel OOM-killed the XERJ node at 9,972,316 kB anonymous RSS about 13 minutes into indexing. Source: `benchmarks/best-of-jsonl-search-2026/oom-300k-dmesg.txt`
+- DuckDB's full-text index does not update automatically when the table changes, and its BM25 scoring defaults to k=1.2 and b=0.75. Source: [https://duckdb.org/docs/current/core_extensions/full_text_search](https://duckdb.org/docs/current/core_extensions/full_text_search)
+- tantivy-cli is the command-line interface for the tantivy engine, indexes one JSON document per line, and describes itself as suitable for smaller projects. Source: [https://github.com/quickwit-oss/tantivy-cli](https://github.com/quickwit-oss/tantivy-cli)
+- qsv's search command runs a regex over selected CSV fields; its index command builds a row-offset index for random access, not a full-text index. Source: [https://github.com/dathere/qsv](https://github.com/dathere/qsv)
+- Meilisearch installs with curl -L https://install.meilisearch.com | sh; the Community Edition is MIT and the Enterprise Edition is under a commercial licence or BUSL-1.1. Source: [https://github.com/meilisearch/meilisearch](https://github.com/meilisearch/meilisearch)
+- Meilisearch accepts documents as JSON, NDJSON (application/x-ndjson) or CSV (text/csv). Source: [https://www.meilisearch.com/docs/capabilities/indexing/getting_started](https://www.meilisearch.com/docs/capabilities/indexing/getting_started)
+- In the JSONL benchmark of 2026-10-19 the XERJ node peaked at 9,578,548 kB (about 9.1 GiB) resident while indexing one 9.7 MB file of 50,000 records. Source: `benchmarks/best-of-jsonl-search-2026/README.md`
+- At 300,000 records SQLite FTS5 indexed in 1.84 s into 74.4 MB and DuckDB FTS in 2.24 s into 15.5 MB; both, and ripgrep, returned 338, 15,061 and 1,484. Source: `benchmarks/best-of-jsonl-search-2026/README.md`
 
 ## Related
 

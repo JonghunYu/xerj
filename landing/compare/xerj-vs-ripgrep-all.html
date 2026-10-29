@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="ripgrep-all compared with XERJ for PDFs and docs">
@@ -224,7 +224,7 @@
   </div>
   <p><strong>TL;DR</strong> — ripgrep-all is the better choice for one question, today. It converts PDFs and Office files as it goes, walks into archives, and wants no daemon and no index. XERJ indexes the same folder once for an agent to query many times. No head-to-head benchmark was run.</p>
   <div class="prompt-card">
-    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT — IT DOES THE REST</span>
+    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT. IT DOES THE REST</span>
     <code>Act as a coding agent with a folder of PDFs and Word documents. Read https://xerj.org/llms.txt, decide between a one-shot rga search and an index, then start a local XERJ node, run xerj autoindex on the folder and answer with a match_phrase query that cites the ax_path of every hit.</code>
     <button type="button" class="prompt-copy" data-copy="Act as a coding agent with a folder of PDFs and Word documents. Read https://xerj.org/llms.txt, decide between a one-shot rga search and an index, then start a local XERJ node, run xerj autoindex on the folder and answer with a match_phrase query that cites the ax_path of every hit.">COPY THE PROMPT</button>
   </div>
@@ -345,15 +345,15 @@
   <p>Not with the shipped adapters. Its config file accepts custom subprocess adapters, so an OCR program can be added by hand. XERJ has no OCR at all.</p>
   <h2>Evidence</h2>
   <ul>
-    <li>ripgrep-all wraps ripgrep and adds adapters for PDF (poppler), Office and e-book formats (pandoc), zip, tar, compressed files, media metadata (ffmpeg) and SQLite databases. — <a href="https://github.com/phiresky/ripgrep-all">https://github.com/phiresky/ripgrep-all</a></li>
-    <li>ripgrep-all recursively descends into archives and matches text in every file type it knows, with a default maximum archive recursion depth. — <a href="https://github.com/phiresky/ripgrep-all">https://github.com/phiresky/ripgrep-all</a></li>
-    <li>The ripgrep-all mail adapter for mbox, mbx and eml files is disabled by default and is turned on with --rga-adapters=+mail. — <a href="https://github.com/phiresky/ripgrep-all">https://github.com/phiresky/ripgrep-all</a></li>
-    <li>ripgrep-all caches the extracted text of each file in a database under the user cache directory, and --rga-no-cache turns that off. — <a href="https://github.com/phiresky/ripgrep-all">https://github.com/phiresky/ripgrep-all</a></li>
-    <li>ripgrep-all 0.10.3 added a config file with custom subprocess-spawning adapters, which is how a user adds a converter such as an OCR program. — <a href="https://github.com/phiresky/ripgrep-all/blob/master/CHANGELOG.md">https://github.com/phiresky/ripgrep-all/blob/master/CHANGELOG.md</a></li>
-    <li>ripgrep is a line-oriented search tool that respects .gitignore and skips hidden and binary files by default. — <a href="https://github.com/BurntSushi/ripgrep">https://github.com/BurntSushi/ripgrep</a></li>
-    <li>grep is a line matcher over text files and has no document adapters of any kind. — <a href="https://www.gnu.org/software/grep/manual/grep.html">https://www.gnu.org/software/grep/manual/grep.html</a></li>
-    <li>Recoll indexes email and can run OCR on image-only PDF documents through tesseract or ABBYY FineReader. — <a href="https://www.recoll.org/usermanual/usermanual.html">https://www.recoll.org/usermanual/usermanual.html</a></li>
-    <li>Elasticsearch is a distributed engine with cross-node replication and failover, which a single-node engine does not provide. — <a href="https://www.elastic.co/docs/deploy-manage/distributed-architecture">https://www.elastic.co/docs/deploy-manage/distributed-architecture</a></li>
+    <li>ripgrep-all wraps ripgrep and adds adapters for PDF (poppler), Office and e-book formats (pandoc), zip, tar, compressed files, media metadata (ffmpeg) and SQLite databases. Source: <a href="https://github.com/phiresky/ripgrep-all">https://github.com/phiresky/ripgrep-all</a></li>
+    <li>ripgrep-all recursively descends into archives and matches text in every file type it knows, with a default maximum archive recursion depth. Source: <a href="https://github.com/phiresky/ripgrep-all">https://github.com/phiresky/ripgrep-all</a></li>
+    <li>The ripgrep-all mail adapter for mbox, mbx and eml files is disabled by default and is turned on with --rga-adapters=+mail. Source: <a href="https://github.com/phiresky/ripgrep-all">https://github.com/phiresky/ripgrep-all</a></li>
+    <li>ripgrep-all caches the extracted text of each file in a database under the user cache directory, and --rga-no-cache turns that off. Source: <a href="https://github.com/phiresky/ripgrep-all">https://github.com/phiresky/ripgrep-all</a></li>
+    <li>ripgrep-all 0.10.3 added a config file with custom subprocess-spawning adapters, which is how a user adds a converter such as an OCR program. Source: <a href="https://github.com/phiresky/ripgrep-all/blob/master/CHANGELOG.md">https://github.com/phiresky/ripgrep-all/blob/master/CHANGELOG.md</a></li>
+    <li>ripgrep is a line-oriented search tool that respects .gitignore and skips hidden and binary files by default. Source: <a href="https://github.com/BurntSushi/ripgrep">https://github.com/BurntSushi/ripgrep</a></li>
+    <li>grep is a line matcher over text files and has no document adapters of any kind. Source: <a href="https://www.gnu.org/software/grep/manual/grep.html">https://www.gnu.org/software/grep/manual/grep.html</a></li>
+    <li>Recoll indexes email and can run OCR on image-only PDF documents through tesseract or ABBYY FineReader. Source: <a href="https://www.recoll.org/usermanual/usermanual.html">https://www.recoll.org/usermanual/usermanual.html</a></li>
+    <li>Elasticsearch is a distributed engine with cross-node replication and failover, which a single-node engine does not provide. Source: <a href="https://www.elastic.co/docs/deploy-manage/distributed-architecture">https://www.elastic.co/docs/deploy-manage/distributed-architecture</a></li>
   </ul>
   <h2>Related</h2>
   <ul>

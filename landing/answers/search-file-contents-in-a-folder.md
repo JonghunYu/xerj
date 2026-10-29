@@ -12,7 +12,7 @@ source: "content/answers/search-file-contents-in-a-folder.md"
 
 **Key number:** The README's sample run indexed 25,329 files into 593 datasets and 83,103 records in 158.1 s. (as of 2026-10-19; source: [README.md](https://github.com/xerj-org/xerj/blob/main/README.md))
 
-**TL;DR** — `xerj autoindex` makes the contents of a folder searchable in one command. In a captured run over a folder of 6 formats, XERJ indexed 51 documents into 2 indices with 0 junk files. One `match_phrase` query then returned 3 hits from an HTML file, a JSON file and a Markdown file.
+**TL;DR**: `xerj autoindex` makes the contents of a folder searchable in one command. In a captured run over a folder of 6 formats, XERJ indexed 51 documents into 2 indices with 0 junk files. One `match_phrase` query then returned 3 hits from an HTML file, a JSON file and a Markdown file.
 
 ## Agent prompt
 

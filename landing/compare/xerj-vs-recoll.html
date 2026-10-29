@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Recoll compared with XERJ for document search">
@@ -224,7 +224,7 @@
   </div>
   <p><strong>TL;DR</strong> — Recoll is the better choice for a person at a desk. It has a GUI, email handled in the application — mail folders, attachments, nesting — OCR hooks and open-at-page. XERJ is a search engine that an agent calls over HTTP or MCP. No head-to-head benchmark was run, so this page compares documented capabilities.</p>
   <div class="prompt-card">
-    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT — IT DOES THE REST</span>
+    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT. IT DOES THE REST</span>
     <code>Act as a coding agent with a folder of PDFs and Word documents. Read https://xerj.org/llms.txt, start a local XERJ node, run xerj autoindex on the folder, read the data map, then answer the user question with a match_phrase query and cite the ax_path of every file you used.</code>
     <button type="button" class="prompt-copy" data-copy="Act as a coding agent with a folder of PDFs and Word documents. Read https://xerj.org/llms.txt, start a local XERJ node, run xerj autoindex on the folder, read the data map, then answer the user question with a match_phrase query and cite the ax_path of every file you used.">COPY THE PROMPT</button>
   </div>
@@ -332,15 +332,15 @@
   <p>No. XERJ has no OCR, so a PDF with no text layer produces no text. Recoll has OCR hooks for tesseract and ABBYY, and that is the correct tool for that folder.</p>
   <h2>Evidence</h2>
   <ul>
-    <li>Recoll uses the Xapian retrieval library, with per-language stemming and a query language that carries dir:, mime:, ext: and date: clauses. — <a href="https://www.recoll.org/usermanual/usermanual.html">https://www.recoll.org/usermanual/usermanual.html</a></li>
-    <li>Recoll processes documents embedded inside other documents to an arbitrary depth, for example a LibreOffice document attached to an email message inside an email folder archived in a zip file. — <a href="https://www.recoll.org/usermanual/usermanual.html">https://www.recoll.org/usermanual/usermanual.html</a></li>
-    <li>Recoll runs OCR on image-only PDF and image documents through tesseract or ABBYY FineReader once the feature is turned on in the PDF or image handler. — <a href="https://www.recoll.org/usermanual/usermanual.html">https://www.recoll.org/usermanual/usermanual.html</a></li>
-    <li>The Recoll result window lists extracts around each search term with the page number, as links that start the native viewer on that page. — <a href="https://www.recoll.org/usermanual/usermanual.html">https://www.recoll.org/usermanual/usermanual.html</a></li>
-    <li>Recoll can index in real time: recollindex runs as a daemon and uses a file system alteration monitor such as inotify to index new and updated files at once. — <a href="https://www.recoll.org/usermanual/usermanual.html">https://www.recoll.org/usermanual/usermanual.html</a></li>
-    <li>Recoll can be queried outside the GUI through the recollq command, through recoll -t, and through the Recoll Python API. — <a href="https://www.recoll.org/usermanual/usermanual.html">https://www.recoll.org/usermanual/usermanual.html</a></li>
-    <li>ripgrep-all wraps ripgrep with adapters for PDF, Office documents, zip, tar, compressed files and SQLite, and needs no index. — <a href="https://github.com/phiresky/ripgrep-all">https://github.com/phiresky/ripgrep-all</a></li>
-    <li>DocFetcher is an open-source desktop search application under the Eclipse Public License, with portable versions that keep the index in the application folder. — <a href="https://docfetcher.sourceforge.io/">https://docfetcher.sourceforge.io/</a></li>
-    <li>Elasticsearch is a distributed engine with cross-node replication and failover, which a single-node engine does not provide. — <a href="https://www.elastic.co/docs/deploy-manage/distributed-architecture">https://www.elastic.co/docs/deploy-manage/distributed-architecture</a></li>
+    <li>Recoll uses the Xapian retrieval library, with per-language stemming and a query language that carries dir:, mime:, ext: and date: clauses. Source: <a href="https://www.recoll.org/usermanual/usermanual.html">https://www.recoll.org/usermanual/usermanual.html</a></li>
+    <li>Recoll processes documents embedded inside other documents to an arbitrary depth, for example a LibreOffice document attached to an email message inside an email folder archived in a zip file. Source: <a href="https://www.recoll.org/usermanual/usermanual.html">https://www.recoll.org/usermanual/usermanual.html</a></li>
+    <li>Recoll runs OCR on image-only PDF and image documents through tesseract or ABBYY FineReader once the feature is turned on in the PDF or image handler. Source: <a href="https://www.recoll.org/usermanual/usermanual.html">https://www.recoll.org/usermanual/usermanual.html</a></li>
+    <li>The Recoll result window lists extracts around each search term with the page number, as links that start the native viewer on that page. Source: <a href="https://www.recoll.org/usermanual/usermanual.html">https://www.recoll.org/usermanual/usermanual.html</a></li>
+    <li>Recoll can index in real time: recollindex runs as a daemon and uses a file system alteration monitor such as inotify to index new and updated files at once. Source: <a href="https://www.recoll.org/usermanual/usermanual.html">https://www.recoll.org/usermanual/usermanual.html</a></li>
+    <li>Recoll can be queried outside the GUI through the recollq command, through recoll -t, and through the Recoll Python API. Source: <a href="https://www.recoll.org/usermanual/usermanual.html">https://www.recoll.org/usermanual/usermanual.html</a></li>
+    <li>ripgrep-all wraps ripgrep with adapters for PDF, Office documents, zip, tar, compressed files and SQLite, and needs no index. Source: <a href="https://github.com/phiresky/ripgrep-all">https://github.com/phiresky/ripgrep-all</a></li>
+    <li>DocFetcher is an open-source desktop search application under the Eclipse Public License, with portable versions that keep the index in the application folder. Source: <a href="https://docfetcher.sourceforge.io/">https://docfetcher.sourceforge.io/</a></li>
+    <li>Elasticsearch is a distributed engine with cross-node replication and failover, which a single-node engine does not provide. Source: <a href="https://www.elastic.co/docs/deploy-manage/distributed-architecture">https://www.elastic.co/docs/deploy-manage/distributed-architecture</a></li>
   </ul>
   <h2>Related</h2>
   <ul>

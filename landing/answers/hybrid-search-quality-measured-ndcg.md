@@ -143,11 +143,11 @@ About 3 to 7 documents per second on CPU in this run. SciFact's 5,183 short abst
 
 ## Evidence
 
-- On BEIR SciFact (300 test queries, 5,183 documents) nDCG@10 was 0.6572 for BM25, 0.6764 for MiniLM vectors only, 0.6855 for a BM25 top-30 shortlist reordered by MiniLM, and 0.6993 for hybrid RRF. — `benchmarks/beir-hybrid/results/scifact.txt`
-- On BEIR NFCorpus (323 test queries, 3,633 documents) nDCG@10 was 0.3016 for BM25, 0.3291 for MiniLM vectors only, 0.3323 for the reorder arm, and 0.3448 for hybrid RRF. BM25 returned zero hits for 25 of the 323 queries. — `benchmarks/beir-hybrid/results/nfcorpus.txt`
-- Exactly 25 of the 323 NFCorpus test queries share no token with any document title or text, which accounts for every empty BM25 result list; the same check reports 0 for SciFact. — `benchmarks/beir-hybrid/results/nfcorpus-lexical-gap.txt`
-- The run was made on 2026-09-18 with xerj v1.0.0-rc.74 and --embed-mode neural, using the built-in all-MiniLM-L6-v2 model at 384 dimensions on CPU, one node and one shard with default settings. Neural indexing ran at about 3 to 7 documents per second, SciFact took about 25 minutes, and hybrid queries cost about 220 to 370 ms at p50 against about 18 ms for BM25. — `benchmarks/beir-hybrid/README.md`
-- The nDCG@10 figures for Jev (0.768 SciFact, 0.358 NFCorpus), Voyage rerank-3 (0.755, 0.357) and Cohere rerank-v3.5 (0.745, 0.340) are published in the hev/jev-rerank README. XERJ did not run them. — [https://github.com/hev/jev-rerank](https://github.com/hev/jev-rerank)
+- On BEIR SciFact (300 test queries, 5,183 documents) nDCG@10 was 0.6572 for BM25, 0.6764 for MiniLM vectors only, 0.6855 for a BM25 top-30 shortlist reordered by MiniLM, and 0.6993 for hybrid RRF. Source: `benchmarks/beir-hybrid/results/scifact.txt`
+- On BEIR NFCorpus (323 test queries, 3,633 documents) nDCG@10 was 0.3016 for BM25, 0.3291 for MiniLM vectors only, 0.3323 for the reorder arm, and 0.3448 for hybrid RRF. BM25 returned zero hits for 25 of the 323 queries. Source: `benchmarks/beir-hybrid/results/nfcorpus.txt`
+- Exactly 25 of the 323 NFCorpus test queries share no token with any document title or text, which accounts for every empty BM25 result list; the same check reports 0 for SciFact. Source: `benchmarks/beir-hybrid/results/nfcorpus-lexical-gap.txt`
+- The run was made on 2026-09-18 with xerj v1.0.0-rc.74 and --embed-mode neural, using the built-in all-MiniLM-L6-v2 model at 384 dimensions on CPU, one node and one shard with default settings. Neural indexing ran at about 3 to 7 documents per second, SciFact took about 25 minutes, and hybrid queries cost about 220 to 370 ms at p50 against about 18 ms for BM25. Source: `benchmarks/beir-hybrid/README.md`
+- The nDCG@10 figures for Jev (0.768 SciFact, 0.358 NFCorpus), Voyage rerank-3 (0.755, 0.357) and Cohere rerank-v3.5 (0.745, 0.340) are published in the hev/jev-rerank README. XERJ did not run them. Source: [https://github.com/hev/jev-rerank](https://github.com/hev/jev-rerank)
 
 ## Related
 

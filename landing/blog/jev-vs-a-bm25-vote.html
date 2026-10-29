@@ -199,7 +199,7 @@
   <table class="vt">
     <thead><tr><th>SMS Spam, n=500</th><th>Accuracy</th><th>95% CI</th><th>p50</th><th>$/1k</th></tr></thead>
     <tbody>
-      <tr><td>majority floor</td><td class="n">0.8440</td><td class="t">.812–.876</td><td class="t">—</td><td class="n">0</td></tr>
+      <tr><td>majority floor</td><td class="n">0.8440</td><td class="t">.812–.876</td><td class="t">n/a</td><td class="n">0</td></tr>
       <tr><td>BM25 vote, no model</td><td class="n">0.9800</td><td class="t">.968–.992</td><td class="n">7.8 ms</td><td class="n w">0</td></tr>
       <tr><td>hybrid vote</td><td class="n w">0.9840</td><td class="t">.972–.994</td><td class="n">26.5 ms</td><td class="n w">0</td></tr>
       <tr><td>Jev, rich criteria</td><td class="n w">0.9880</td><td class="t">.978–.996</td><td class="n l">922 ms</td><td class="n l">$0.0145</td></tr>
@@ -240,7 +240,7 @@
           <span>hybrid<span class="sub">MiniLM, local</span></span>
           <span>semantic + RR<span class="sub">best arm</span></span>
         </div>
-        <div class="vc-title"><b>Banking77 accuracy, 500 held-out utterances</b> — run 2026-09-21</div>
+        <div class="vc-title"><b>Banking77 accuracy, 500 held-out utterances</b>: run 2026-09-21</div>
       </div>
     </div>
   </div>
@@ -293,7 +293,7 @@
   </div>
 
   <p>We nearly published a much better-looking number here. Our first DBpedia run dumped the class labels
-  as bare integers, so Jev was scoring at chance and the result looked like a rout — until we read our
+  as bare integers, so Jev was scoring at chance and the result looked like a rout, until we read our
   own harness and found the bug. With real class names the comparison flipped completely, and the
   honest version is the one above.</p>
 
@@ -373,7 +373,7 @@
     first, and keep the model for what the archive cannot see.
   </div>
 
-  <p>Every number above traces to the runs in sections 02&ndash;06 &mdash; the spam tie at
+  <p>Every number above traces to the runs in sections 02&ndash;06: the spam tie at
   p&nbsp;=&nbsp;0.75, the Banking77 win at p&nbsp;&lt;&nbsp;0.0001, the DBpedia loss, and the two
   defects now filed as
   <a href="https://github.com/xerj-org/xerj/issues/1000" rel="external">#1000</a> and

@@ -156,11 +156,11 @@ Yes, and that is the usual answer. Omnisearch serves you inside the editor, and 
 
 ## Evidence
 
-- Omnisearch is a search plugin inside Obsidian whose stated first goal is to locate files instantly, and it scores documents with the BM25 algorithm through the MiniSearch library. — [https://github.com/scambier/obsidian-omnisearch](https://github.com/scambier/obsidian-omnisearch)
-- Omnisearch indexes PDFs, images and some Microsoft Office documents with the help of the Text Extractor plugin, and its own documentation warns that extraction is not guaranteed and that many PDFs do not work with Text Extractor. — [https://publish.obsidian.md/omnisearch/Images,+PDFs,+and+non-text+documents](https://publish.obsidian.md/omnisearch/Images,+PDFs,+and+non-text+documents)
-- The Omnisearch HTTP server must be activated in settings, is not accessible outside localhost, is unavailable on mobile, and stops automatically when Obsidian closes. — [https://publish.obsidian.md/omnisearch/Public+API+%26+URL+Scheme](https://publish.obsidian.md/omnisearch/Public+API+%26+URL+Scheme)
-- The Omnisearch README points at a third-party MCP server that detects Omnisearch and exposes it as a BM25-ranked search mode for agents reading a vault. — [https://github.com/scambier/obsidian-omnisearch](https://github.com/scambier/obsidian-omnisearch)
-- Omnisearch is licensed under GPL-3. — [https://github.com/scambier/obsidian-omnisearch](https://github.com/scambier/obsidian-omnisearch)
+- Omnisearch is a search plugin inside Obsidian whose stated first goal is to locate files instantly, and it scores documents with the BM25 algorithm through the MiniSearch library. Source: [https://github.com/scambier/obsidian-omnisearch](https://github.com/scambier/obsidian-omnisearch)
+- Omnisearch indexes PDFs, images and some Microsoft Office documents with the help of the Text Extractor plugin, and its own documentation warns that extraction is not guaranteed and that many PDFs do not work with Text Extractor. Source: [https://publish.obsidian.md/omnisearch/Images,+PDFs,+and+non-text+documents](https://publish.obsidian.md/omnisearch/Images,+PDFs,+and+non-text+documents)
+- The Omnisearch HTTP server must be activated in settings, is not accessible outside localhost, is unavailable on mobile, and stops automatically when Obsidian closes. Source: [https://publish.obsidian.md/omnisearch/Public+API+%26+URL+Scheme](https://publish.obsidian.md/omnisearch/Public+API+%26+URL+Scheme)
+- The Omnisearch README points at a third-party MCP server that detects Omnisearch and exposes it as a BM25-ranked search mode for agents reading a vault. Source: [https://github.com/scambier/obsidian-omnisearch](https://github.com/scambier/obsidian-omnisearch)
+- Omnisearch is licensed under GPL-3. Source: [https://github.com/scambier/obsidian-omnisearch](https://github.com/scambier/obsidian-omnisearch)
 
 ## Related
 

@@ -180,11 +180,11 @@ Check the licence line. Each answer prints the SPDX licence and a class. zstd an
 
 ## Evidence
 
-- Cold ask: node on 9300, 10.8 MB snappy pack, snappy.cc:1643 — `benchmarks/agent-intents-2026-10-19/04-ask-snappy-cold.txt`
-- zstd --def: 20.1 MB pack, 7874 definitions, zstd.h:134 — `benchmarks/agent-intents-2026-10-19/04-ask-zstd-def.txt`
-- JSON answer with pin_sha, licence_class and score 17.13 — `benchmarks/agent-intents-2026-10-19/04-ask-zstd-def.json`
-- Timings 2,356 ms cold, 341 ms, then 30 to 40 ms; 962 ms and 20 ms for --def — `benchmarks/agent-intents-2026-10-19/README.md`
-- Zero-setup xerj ask for any source is open as issue #1800 — [https://github.com/xerj-org/xerj/issues/1800](https://github.com/xerj-org/xerj/issues/1800)
+- Cold ask: node on 9300, 10.8 MB snappy pack, snappy.cc:1643. Source: `benchmarks/agent-intents-2026-10-19/04-ask-snappy-cold.txt`
+- zstd --def: 20.1 MB pack, 7874 definitions, zstd.h:134. Source: `benchmarks/agent-intents-2026-10-19/04-ask-zstd-def.txt`
+- JSON answer with pin_sha, licence_class and score 17.13. Source: `benchmarks/agent-intents-2026-10-19/04-ask-zstd-def.json`
+- Timings 2,356 ms cold, 341 ms, then 30 to 40 ms; 962 ms and 20 ms for --def. Source: `benchmarks/agent-intents-2026-10-19/README.md`
+- Zero-setup xerj ask for any source is open as issue #1800. Source: [https://github.com/xerj-org/xerj/issues/1800](https://github.com/xerj-org/xerj/issues/1800)
 
 ## Related
 

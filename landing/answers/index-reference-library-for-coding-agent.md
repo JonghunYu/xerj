@@ -12,7 +12,7 @@ source: "content/answers/index-reference-library-for-coding-agent.md"
 
 **Key number:** Across 16 runs in four languages, the xerj arm solved 16/16 with 9,982 output tokens at $1.58. (as of 2026-10-19; source: [docs/case-studies/reference-coding/data/results-multilang-final.json](https://github.com/xerj-org/xerj/blob/main/docs/case-studies/reference-coding/data/results-multilang-final.json))
 
-**TL;DR** — Clone the library you are about to write against. Index it with `xerj autoindex`. Let the agent retrieve the passage before it writes code. A published study measured a gain on code the model cannot recall, and a loss on code it knows.
+**TL;DR**: Clone the library you are about to write against. Index it with `xerj autoindex`. Let the agent retrieve the passage before it writes code. A published study measured a gain on code the model cannot recall, and a loss on code it knows.
 
 ## Agent prompt
 
@@ -173,12 +173,12 @@ No. The 13 reference libraries were written for the study so they could not be i
 
 ## Evidence
 
-- Across four languages (Python, JavaScript, C and Java), 16 runs: the xerj arm solved 16/16 with 9,982 output tokens at $1.58, the native arm solved 16/16 with 26,477 output tokens at $3.27, and the bare arm solved 11/16 at $11.18. — `docs/case-studies/reference-coding/data/results-multilang-final.json`
-- On the seven domains with an unrecallable runtime contract, 21 runs: the bare arm solved 1/21 at $21.90, the native arm 21/21 at $4.26, and the xerj arm 21/21 at $3.38. — `docs/case-studies/reference-coding/CASE_STUDY.md:569`
-- On memorized logic, 6 runs: the bare arm solved 6/6 at $1.49, the native arm 6/6 at $9.14, and the xerj arm 5/6 at $4.40. Retrieval lost that track. — `docs/case-studies/reference-coding/data/results-realism.json`
-- On memorized bulk data, 3 runs: every arm solved 3/3, the native arm at $0.60 and the xerj arm at $1.43. Retrieval was overhead. — `docs/case-studies/reference-coding/data/results-search.json`
-- The 13 reference libraries were written for the study, so they cannot be in any training set, and a real private codebase is the untested end state. — `docs/case-studies/reference-coding/SUMMARY.md`
-- A follow-up experiment on richer symbols and identifier tokenization measured no improvement on realistic queries on the same corpus. — `docs/case-studies/reference-coding/SERVER_UPLIFT_SCORECARD.md`
+- Across four languages (Python, JavaScript, C and Java), 16 runs: the xerj arm solved 16/16 with 9,982 output tokens at $1.58, the native arm solved 16/16 with 26,477 output tokens at $3.27, and the bare arm solved 11/16 at $11.18. Source: `docs/case-studies/reference-coding/data/results-multilang-final.json`
+- On the seven domains with an unrecallable runtime contract, 21 runs: the bare arm solved 1/21 at $21.90, the native arm 21/21 at $4.26, and the xerj arm 21/21 at $3.38. Source: `docs/case-studies/reference-coding/CASE_STUDY.md:569`
+- On memorized logic, 6 runs: the bare arm solved 6/6 at $1.49, the native arm 6/6 at $9.14, and the xerj arm 5/6 at $4.40. Retrieval lost that track. Source: `docs/case-studies/reference-coding/data/results-realism.json`
+- On memorized bulk data, 3 runs: every arm solved 3/3, the native arm at $0.60 and the xerj arm at $1.43. Retrieval was overhead. Source: `docs/case-studies/reference-coding/data/results-search.json`
+- The 13 reference libraries were written for the study, so they cannot be in any training set, and a real private codebase is the untested end state. Source: `docs/case-studies/reference-coding/SUMMARY.md`
+- A follow-up experiment on richer symbols and identifier tokenization measured no improvement on realistic queries on the same corpus. Source: `docs/case-studies/reference-coding/SERVER_UPLIFT_SCORECARD.md`
 
 ## Related
 

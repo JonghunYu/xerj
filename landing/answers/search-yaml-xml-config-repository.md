@@ -12,7 +12,7 @@ source: "content/answers/search-yaml-xml-config-repository.md"
 
 **Key number:** The captured run mapped 9 fields, including body and title, across 4 documents from 2 config files. (as of 2026-08-21; source: the captured run documented on this page)
 
-**TL;DR** — XERJ `autoindex` indexes a folder of YAML and XML config files with no schema file. In our capture 1 `cluster.yaml` and 1 `service.xml` became 4 documents in one `cfg-docs` index. One bool query returned 2 hits, one from each format.
+**TL;DR**: XERJ `autoindex` indexes a folder of YAML and XML config files with no schema file. In our capture 1 `cluster.yaml` and 1 `service.xml` became 4 documents in one `cfg-docs` index. One bool query returned 2 hits, one from each format.
 
 ## Agent prompt
 

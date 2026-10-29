@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Find out what is in a messy data folder before searching">
@@ -230,9 +230,9 @@
     <p>How should an agent figure out what is inside a messy data folder before searching? Run xerj autoindex on the folder, then read xerj autoindex map. The map lists every dataset it inferred, each field with type, cardinality and null share, the time range, a ready query, and every file it refused.</p>
     <p class="key-fact"><strong>Key number:</strong> Type inference keeps at most 512 fields per dataset (<code class="inline">MAX_FIELDS_PER_DATASET</code>), so a map never lists more than that for one dataset. <span class="mute">(as of 2026-10-19 · source: <a href="https://github.com/xerj-org/xerj/blob/main/engine/crates/xerj-autoindex/src/infer/mod.rs">engine/crates/xerj-autoindex/src/infer/mod.rs</a>)</span></p>
   </div>
-  <p><strong>TL;DR</strong> — <code class="inline">xerj autoindex map</code> prints the catalog that the last run inferred. In our capture the map described 2 datasets from a 6-file folder. Each dataset carried every field with its type, its cardinality, its null share and a ready-to-send query.</p>
+  <p><strong>TL;DR</strong>: <code class="inline">xerj autoindex map</code> prints the catalog that the last run inferred. In our capture the map described 2 datasets from a 6-file folder. Each dataset carried every field with its type, its cardinality, its null share and a ready-to-send query.</p>
   <div class="prompt-card">
-    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT — IT DOES THE REST</span>
+    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT. IT DOES THE REST</span>
     <code>Act as a coding agent. Read https://xerj.org/llms.txt, start a XERJ node with --insecure, run xerj autoindex on the messy folder you were handed, then run xerj autoindex map --json and report every dataset, its index name, its formats, its field names with types, its time field and time range, and finally query autoindex-catalog for doc_kind file to list every file the run refused and the reason it gave.</code>
     <button type="button" class="prompt-copy" data-copy="Act as a coding agent. Read https://xerj.org/llms.txt, start a XERJ node with --insecure, run xerj autoindex on the messy folder you were handed, then run xerj autoindex map --json and report every dataset, its index name, its formats, its field names with types, its time field and time range, and finally query autoindex-catalog for doc_kind file to list every file the run refused and the reason it gave.">COPY THE PROMPT</button>
   </div>
@@ -265,8 +265,8 @@
   <table>
     <thead><tr><th>index</th><th>documents</th><th>files</th><th>formats</th><th>time field</th><th>time range</th></tr></thead>
     <tbody>
-      <tr><td><code class="inline">mx-data</code></td><td>41</td><td>1</td><td><code class="inline">["csv"]</code></td><td>—</td><td>—</td></tr>
-      <tr><td><code class="inline">mx-docs</code></td><td>10</td><td>5</td><td><code class="inline">["code","html","json","txt-prose","yaml"]</code></td><td>—</td><td>—</td></tr>
+      <tr><td><code class="inline">mx-data</code></td><td>41</td><td>1</td><td><code class="inline">["csv"]</code></td><td>n/a</td><td>n/a</td></tr>
+      <tr><td><code class="inline">mx-docs</code></td><td>10</td><td>5</td><td><code class="inline">["code","html","json","txt-prose","yaml"]</code></td><td>n/a</td><td>n/a</td></tr>
     </tbody>
   </table>
   <p>The document counts in that table come from a capture taken before XERJ began writing one document per code declaration. A source file now contributes one document for every declaration it holds on top of its whole-file document, so the dataset carrying the <code class="inline">code</code> file produces more documents than the row shows. The CSV row is unaffected. Read the count from your own map.</p>

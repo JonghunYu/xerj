@@ -15,7 +15,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>XERJ · Agentic search demo</title>
-<meta name="description" content="Type a question and watch XERJ&#x27;s actual built-in embedder rank a sample corpus by meaning — entirely in your browser, no server, no API key.">
+<meta name="description" content="Type a question and watch XERJ&#x27;s actual built-in embedder rank a sample corpus by meaning: entirely in your browser, no server, no API key.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;700;800;900&family=Inter:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -126,16 +126,16 @@
 <meta property="og:site_name" content="XERJ.ai">
 <meta property="og:type" content="website">
 <meta property="og:title" content="XERJ · Agentic search demo">
-<meta property="og:description" content="Type a question and watch XERJ&#x27;s actual built-in embedder rank a sample corpus by meaning — entirely in your browser, no server, no API key.">
+<meta property="og:description" content="Type a question and watch XERJ&#x27;s actual built-in embedder rank a sample corpus by meaning: entirely in your browser, no server, no API key.">
 <meta property="og:url" content="https://xerj.org/agent-search/">
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="XERJ · Agentic search demo">
-<meta name="twitter:description" content="Type a question and watch XERJ&#x27;s actual built-in embedder rank a sample corpus by meaning — entirely in your browser, no server, no API key.">
+<meta name="twitter:description" content="Type a question and watch XERJ&#x27;s actual built-in embedder rank a sample corpus by meaning: entirely in your browser, no server, no API key.">
 <meta name="twitter:image" content="https://xerj.org/og/xerj-card.png">
 <script type="application/ld+json">
 {
@@ -176,7 +176,7 @@
   "applicationSubCategory": "Search engine",
   "operatingSystem": "Linux, macOS, Windows",
   "url": "https://xerj.org/agent-search/",
-  "description": "Type a question and watch XERJ's actual built-in embedder rank a sample corpus by meaning — entirely in your browser, no server, no API key.",
+  "description": "Type a question and watch XERJ's actual built-in embedder rank a sample corpus by meaning: entirely in your browser, no server, no API key.",
   "image": "https://xerj.org/og/xerj-card.png",
   "license": "https://www.apache.org/licenses/LICENSE-2.0",
   "isAccessibleForFree": true,
@@ -240,7 +240,7 @@
   <header class="asx-hero">
     <div class="kicker">Runs in your browser · no server, no API key</div>
     <h1>Agentic search<br>you can feel.</h1>
-    <p class="lede">Type a question. This page embeds it with <b>XERJ's actual built-in embedder</b> — the same feature-hashing vectorizer that powers the <code class="mono">semantic_text</code> field — then ranks a small corpus by cosine similarity. Everything below runs client-side; the embedder was ported line-for-line from the Rust engine and reproduces its vectors <b>bit-for-bit</b>.</p>
+    <p class="lede">Type a question. This page embeds it with <b>XERJ's actual built-in embedder</b>: the same feature-hashing vectorizer that powers the <code class="mono">semantic_text</code> field, then ranks a small corpus by cosine similarity. Everything below runs client-side; the embedder was ported line-for-line from the Rust engine and reproduces its vectors <b>bit-for-bit</b>.</p>
   </header>
 
   <section class="asx">
@@ -248,7 +248,7 @@
       <div class="asx-search">
         <svg class="mag" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
         <input id="asxQ" type="text" autocomplete="off" spellcheck="false"
-          placeholder="Ask the corpus something — e.g. how does my agent remember things?">
+          placeholder="Ask the corpus something, e.g. how does my agent remember things?">
         <button class="run" id="asxRun" type="button">Search</button>
       </div>
 
@@ -268,7 +268,7 @@
   </section>
 
   <p class="asx-note">
-    <b>Honest by design.</b> XERJ's built-in embedder is a <b>lexical / sub-word</b> vectorizer, not a neural model — it scores on shared words and word-stems, so paraphrases that reuse vocabulary rank high, while pure synonyms with no shared characters do not. That is exactly what ships zero-config with <code class="mono">semantic_text</code>. When you configure a neural <code class="mono">[embedding]</code> endpoint, XERJ swaps the model in at ingest and query time through the <em>same</em> wire path and the <em>same</em> <code class="mono">semantic</code> query shown below — nothing else in your code changes.
+    <b>Honest by design.</b> XERJ's built-in embedder is a <b>lexical / sub-word</b> vectorizer, not a neural model. It scores on shared words and word-stems, so paraphrases that reuse vocabulary rank high, while pure synonyms with no shared characters do not. That is exactly what ships zero-config with <code class="mono">semantic_text</code>. When you configure a neural <code class="mono">[embedding]</code> endpoint, XERJ swaps the model in at ingest and query time through the <em>same</em> wire path and the <em>same</em> <code class="mono">semantic</code> query shown below. Nothing else in your code changes.
   </p>
 
   <h2 class="asx-h2">What XERJ just did</h2>
@@ -276,14 +276,14 @@
   <ol class="asx-steps">
     <li><b>Tokenize.</b> Lowercase the text and split on every non-alphanumeric character into word tokens.</li>
     <li><b>Hash unigrams.</b> Each whole word is hashed with 64-bit <b>FNV-1a</b> into one of 384 buckets; a high bit of the hash picks the sign, and the bucket gets <code>±1.0</code>.</li>
-    <li><b>Hash sub-word trigrams.</b> Each word is <code>#</code>-padded and its character trigrams are hashed the same way at weight <code>0.35</code> — so <code>run</code>, <code>running</code>, and <code>runs</code> share buckets and partially match.</li>
+    <li><b>Hash sub-word trigrams.</b> Each word is <code>#</code>-padded and its character trigrams are hashed the same way at weight <code>0.35</code>, so <code>run</code>, <code>running</code>, and <code>runs</code> share buckets and partially match.</li>
     <li><b>L2-normalize.</b> The 384-dim accumulator is scaled to unit length, so cosine similarity is comparable across texts of any length.</li>
     <li><b>Rank by cosine.</b> The query vector is compared against every document vector; the <code>_score</code> XERJ returns for a cosine field is <code>(1 + cosine) / 2</code>.</li>
   </ol>
 
   <div class="asx-grid" style="margin-top:22px">
-    <div class="asx-stat"><div class="n">384</div><div class="l">default dimensions — mirrors <code class="mono">all-MiniLM-L6-v2</code> so a neural swap needs no remapping</div></div>
-    <div class="asx-stat"><div class="n">0</div><div class="l">external dependencies — deterministic, offline, no API key, identical across restarts</div></div>
+    <div class="asx-stat"><div class="n">384</div><div class="l">default dimensions: mirrors <code class="mono">all-MiniLM-L6-v2</code> so a neural swap needs no remapping</div></div>
+    <div class="asx-stat"><div class="n">0</div><div class="l">external dependencies: deterministic, offline, no API key, identical across restarts</div></div>
     <div class="asx-stat"><div class="n" id="asxCorpusN">16</div><div class="l">documents embedded on this page, exactly as XERJ embeds a <code class="mono">semantic_text</code> field on ingest</div></div>
   </div>
 
@@ -314,7 +314,7 @@ curl -X POST localhost:9200/kb/_search -H 'Content-Type: application/json' -d '{
 }'</div>
 
   <p class="asx-note">
-    <b>Reproducibility.</b> The embedder here was ported from <code class="mono">engine/crates/xerj-ai/src/local.rs</code> and validated <b>bit-for-bit</b> against the Rust engine: across 9 texts at 64/128/384 dims, all <b>2,880 / 2,880</b> f32 vector elements matched (worst ULP difference: 0). The engine's own unit-test property — a paraphrase ranking above unrelated text — reproduces to the bit: <code class="mono">sim_relevant = 0.62630904</code> &gt; <code class="mono">sim_unrelated = 0.05279395</code>. All example queries above rank their intended document first.
+    <b>Reproducibility.</b> The embedder here was ported from <code class="mono">engine/crates/xerj-ai/src/local.rs</code> and validated <b>bit-for-bit</b> against the Rust engine: across 9 texts at 64/128/384 dims, all <b>2,880 / 2,880</b> f32 vector elements matched (worst ULP difference: 0). The engine's own unit-test property (a paraphrase ranking above unrelated text) reproduces to the bit: <code class="mono">sim_relevant = 0.62630904</code> &gt; <code class="mono">sim_unrelated = 0.05279395</code>. All example queries above rank their intended document first.
   </p>
 
   <div class="asx-spacer"></div>

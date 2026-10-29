@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Audit a PHP codebase with an index, not grep">
@@ -238,11 +238,11 @@
     <p>How do you search a large PHP repo for dangerous sinks without reading every file? Index it as queryable facts, ask for the bug shape, and read only what comes back. The published WordPress core audit spent about 26,000 tokens against an estimated 5,200,000 to read the code once, and found core hardened.</p>
     <p class="key-fact"><strong>Key number:</strong> The WordPress core audit covered 1,492 PHP files and about 619k lines, indexed as 11,990 functions. <span class="mute">(as of 2026-10-19 · source: <a href="https://github.com/xerj-org/xerj/blob/main/docs/case-studies/wordpress-security-audit/README.md">docs/case-studies/wordpress-security-audit/README.md</a>)</span></p>
   </div>
-  <p><strong>TL;DR</strong> — Index the codebase as queryable facts, ask for the bug shape, and read only what comes back. The published WordPress core audit spent about 26,000 tokens. Reading the code once is estimated at about 5,200,000. The headline finding is that core is hardened.</p>
+  <p><strong>TL;DR</strong>: Index the codebase as queryable facts, ask for the bug shape, and read only what comes back. The published WordPress core audit spent about 26,000 tokens. Reading the code once is estimated at about 5,200,000. The headline finding is that core is hardened.</p>
   <div class="prompt-card">
-    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT — IT DOES THE REST</span>
-    <code>Act as a security-reviewing coding agent on a large PHP repository. Read https://xerj.org/llms.txt, compile the invariant you care about into indexed facts with an AST extractor, index those facts into XERJ, query for the violating shape, and read only the survivors — then report the clean surfaces as findings rather than dropping them.</code>
-    <button type="button" class="prompt-copy" data-copy="Act as a security-reviewing coding agent on a large PHP repository. Read https://xerj.org/llms.txt, compile the invariant you care about into indexed facts with an AST extractor, index those facts into XERJ, query for the violating shape, and read only the survivors — then report the clean surfaces as findings rather than dropping them.">COPY THE PROMPT</button>
+    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT. IT DOES THE REST</span>
+    <code>Act as a security-reviewing coding agent on a large PHP repository. Read https://xerj.org/llms.txt, compile the invariant you care about into indexed facts with an AST extractor, index those facts into XERJ, query for the violating shape, and read only the survivors, then report the clean surfaces as findings rather than dropping them.</code>
+    <button type="button" class="prompt-copy" data-copy="Act as a security-reviewing coding agent on a large PHP repository. Read https://xerj.org/llms.txt, compile the invariant you care about into indexed facts with an AST extractor, index those facts into XERJ, query for the violating shape, and read only the survivors, then report the clean surfaces as findings rather than dropping them.">COPY THE PROMPT</button>
   </div>
   <div class="prompt-card">
     <span class="prompt-label">RUN THIS XERJ COMMAND</span>
@@ -270,17 +270,17 @@
   </div>
   <h2>The published run, and what it is</h2>
   <p>Everything on this page comes from the <a href="/case-studies/wordpress-security-audit">WordPress security audit case study</a> and the artifacts under <code class="inline">docs/case-studies/wordpress-security-audit/</code>. Nothing here is a new finding, and no vulnerability is named on this page that is not already published there.</p>
-  <p>The corpus was real WordPress core: 1,492 PHP files, about 619k lines. That is about 26 times a 200k-token context window. "Read everything" is not an available strategy, and chunking it destroys the reach that matters — security bugs live across files.</p>
+  <p>The corpus was real WordPress core: 1,492 PHP files, about 619k lines. That is about 26 times a 200k-token context window. "Read everything" is not an available strategy, and chunking it destroys the reach that matters: security bugs live across files.</p>
   <h2>The negative result is the result</h2>
   <p>Core came back hardened.</p>
-  <p>| surface | checked | result | | --- | --: | --- | | authenticated AJAX handlers | 95 | object-scoped, 0 IDOR | | REST permission checks | 90 | object-scoped, 0 IDOR | | file-scope <code class="inline">wp-admin</code> handlers | 41 | object-scoped | | auto-triggered deserialization gadgets | — | 0 |</p>
+  <p>| surface | checked | result | | --- | --: | --- | | authenticated AJAX handlers | 95 | object-scoped, 0 IDOR | | REST permission checks | 90 | object-scoped, 0 IDOR | | file-scope <code class="inline">wp-admin</code> handlers | 41 | object-scoped | | auto-triggered deserialization gadgets | n/a | 0 |</p>
   <p>226 handlers swept, zero missing-capability IDOR. That is the finding, and an audit that only reports positives is an audit you cannot trust.</p>
-  <p>The one real weakness found was <code class="inline">wp_http_validate_url</code> failing to block <code class="inline">169.254.169.254</code>, the cloud-metadata address, reachable unauthenticated through <code class="inline">pingback_ping</code>. The write-up states it as a known-class limitation that core punts to a filter — <strong>not a novel 0-day</strong>. It was found by reading the IP-range coverage, because a literal pattern match cannot see an <em>incomplete</em> allow-list. It was then verified by executing the algorithm, and traced to reachability.</p>
+  <p>The one real weakness found was <code class="inline">wp_http_validate_url</code> failing to block <code class="inline">169.254.169.254</code>, the cloud-metadata address, reachable unauthenticated through <code class="inline">pingback_ping</code>. The write-up states it as a known-class limitation that core punts to a filter: <strong>not a novel 0-day</strong>. It was found by reading the IP-range coverage, because a literal pattern match cannot see an <em>incomplete</em> allow-list. It was then verified by executing the algorithm, and traced to reachability.</p>
   <h2>The method: compile the invariant, then query it</h2>
   <p>The pattern generalises past PHP and past WordPress.</p>
   <ol>
-    <li><strong>Read once</strong> to discover the invariant — escaper last, block <code class="inline">169.254</code>, re-verify the object relationship.</li>
-    <li><strong>Compile it into indexed facts</strong> — sanitizer sequences, IP-range coverage, capability object-scoping, and the edges between the functions involved.</li>
+    <li><strong>Read once</strong> to discover the invariant: escaper last, block <code class="inline">169.254</code>, re-verify the object relationship.</li>
+    <li><strong>Compile it into indexed facts</strong>: sanitizer sequences, IP-range coverage, capability object-scoping, and the edges between the functions involved.</li>
     <li><strong>Query the facts</strong> and get back only the violators, with no code transfer.</li>
     <li><strong>Read the survivors</strong> to confirm.</li>
   </ol>
@@ -303,19 +303,19 @@
   <p>It returned 2 of 1,343 hooks: the whole unauthenticated entry surface, in one request.</p>
   <h2>What grep does better, stated plainly</h2>
   <p>Grep's literal recall is perfect. The indexed approach's is not.</p>
-  <p>The published counter-examples are the honest half of this page. A source at file scope is invisible to the extracted facts. A source laundered through <code class="inline">$GLOBALS</code> is invisible. The precision detectors have known false-positive drivers — receiver-typed sinks, self-scoped writes, polymorphic capabilities — so every candidate still needs a human or an agent to read it.</p>
+  <p>The published counter-examples are the honest half of this page. A source at file scope is invisible to the extracted facts. A source laundered through <code class="inline">$GLOBALS</code> is invisible. The precision detectors have known false-positive drivers (receiver-typed sinks, self-scoped writes, polymorphic capabilities) so every candidate still needs a human or an agent to read it.</p>
   <p>The comparison is also not like for like. The SQL triage returns 4 <strong>functions</strong>; grep returns 51 <strong>whole files</strong>. Those are different units, and the value of the smaller number is that a person can actually read all of them.</p>
   <p>What grep cannot do is express the shape. "Request source and SQL sink in the same function with no sanitizer" is not a literal string, and neither is "unauthenticated hook reaches a sink".</p>
   <h2>The token accounting, and its caveat</h2>
-  <p>The published figure is about 26,000 tokens for the entire audit against about 5,200,000 to load the code once — about 199x.</p>
+  <p>The published figure is about 26,000 tokens for the entire audit against about 5,200,000 to load the code once: about 199x.</p>
   <p>Read the caveat with the number. The 26,000 is summed from per-phase measured costs. The 5,200,000 read-everything baseline is a <strong>model, an estimate</strong>, not an executed run. The whole comparison is token accounting rather than a latency benchmark.</p>
   <h2>What XERJ is doing here, and what it is not</h2>
   <p>XERJ does not find bugs. The AST taint and authorization model produces the candidates; XERJ stores them and answers queries over them. Pointed at raw file chunks instead of compiled facts, the security value largely evaporates.</p>
   <p><code class="inline">xerj autoindex</code> on the source tree is the <em>other</em> half of the setup: it extracts symbol definitions with tree-sitter, and that extraction is definitions only. The relationship edges the audit queried were derived by the detector scripts, not by autoindex.</p>
-  <p>The audit also audited XERJ. Two engine defects surfaced mid-run — <code class="inline">term</code> over keyword arrays, and boolean term matching — and the sound conclusions were recomputed over pulled <code class="inline">_source</code> rather than the buggy path, so they hold. Both are published, and the keyword-array fix landed as a pull request.</p>
+  <p>The audit also audited XERJ. Two engine defects surfaced mid-run (<code class="inline">term</code> over keyword arrays, and boolean term matching) and the sound conclusions were recomputed over pulled <code class="inline">_source</code> rather than the buggy path, so they hold. Both are published, and the keyword-array fix landed as a pull request.</p>
   <h2>Running it on your own repository</h2>
   <p>Start a node and index the tree. Then run your own detector over the same source to produce the facts you want to query. XERJ is single-node, so this is one process on one machine.</p>
-  <p>For the retrieval half of the workflow — a cited passage back instead of a whole file — see <a href="/answers/code-search-mcp-for-claude-code">citing a file rather than pasting the tree</a>. For structural search during a refactor rather than an audit, see <a href="/answers/syntax-aware-code-search-refactoring">syntax-aware code search</a>.</p>
+  <p>For the retrieval half of the workflow (a cited passage back instead of a whole file) see <a href="/answers/code-search-mcp-for-claude-code">citing a file rather than pasting the tree</a>. For structural search during a refactor rather than an audit, see <a href="/answers/syntax-aware-code-search-refactoring">syntax-aware code search</a>.</p>
   <p>The full prompts, the reproduction scripts and the verification harness are published in the case study. The method ships as a copyable skill, because the taint model is data rather than code.</p>
   <h2>FAQ</h2>
   <h3>How do I search a large PHP repo for dangerous sinks without reading every file?</h3>
@@ -336,14 +336,14 @@
   <p>On recall. Grep's literal recall is perfect and the model's is not: a source at file scope, or laundered through <code class="inline">$GLOBALS</code>, is invisible to the extracted facts. The trade is recall for precision and tokens, and the counter-examples are published.</p>
   <h2>Evidence</h2>
   <ul>
-    <li>The published audit covered real WordPress core: 1,492 PHP files and about 619k lines, indexed as 11,990 functions and 1,343 hooks in about 3.6 s at a 100% tree-sitter-php parse rate. — <code>docs/case-studies/wordpress-security-audit/README.md</code></li>
-    <li>Token accounting: about 26,000 tokens for the entire audit against a read-everything baseline of about 5,200,000 tokens, summed from per-phase measured costs; the baseline is a model, not an executed run. — <code>landing/case-studies/wordpress-security-audit.html</code></li>
-    <li>The SQL-injection triage narrowed 11,990 functions to 4 candidates worth reading, where grep hands back 51 whole files; the units differ and grep's literal recall is perfect. — <code>docs/case-studies/wordpress-security-audit/REPRODUCE.md</code></li>
-    <li>226 handlers were swept - 95 authenticated AJAX, 90 REST and 41 file-scope wp-admin - with 0 missing-capability IDOR, and the deserialization hunt found 0 auto-triggered gadgets. — <code>docs/case-studies/wordpress-security-audit/FINDINGS.md</code></li>
-    <li>One query returned the entire unauthenticated entry surface: 2 of 1,343 hooks. — <code>docs/case-studies/wordpress-security-audit/AUTHENTICATION.md</code></li>
-    <li>The one real weakness found was that wp_http_validate_url does not block 169.254.169.254, reachable unauthenticated through pingback_ping - a known-class limitation core punts to a filter, not a novel 0-day. — <code>docs/case-studies/wordpress-security-audit/FINDINGS.md</code></li>
-    <li>XERJ does not find bugs: the AST taint and authorization model produces the candidates and XERJ stores and queries them; pointed at raw file chunks instead of facts, the security value largely evaporates. — <code>docs/case-studies/wordpress-security-audit/README.md</code></li>
-    <li>tree-sitter extraction in autoindex is definitions only - no imports, no call graph, no cross-file references. — <code>docs/examples/ast-vuln-graph</code></li>
+    <li>The published audit covered real WordPress core: 1,492 PHP files and about 619k lines, indexed as 11,990 functions and 1,343 hooks in about 3.6 s at a 100% tree-sitter-php parse rate. Source: <code>docs/case-studies/wordpress-security-audit/README.md</code></li>
+    <li>Token accounting: about 26,000 tokens for the entire audit against a read-everything baseline of about 5,200,000 tokens, summed from per-phase measured costs; the baseline is a model, not an executed run. Source: <code>landing/case-studies/wordpress-security-audit.html</code></li>
+    <li>The SQL-injection triage narrowed 11,990 functions to 4 candidates worth reading, where grep hands back 51 whole files; the units differ and grep's literal recall is perfect. Source: <code>docs/case-studies/wordpress-security-audit/REPRODUCE.md</code></li>
+    <li>226 handlers were swept - 95 authenticated AJAX, 90 REST and 41 file-scope wp-admin - with 0 missing-capability IDOR, and the deserialization hunt found 0 auto-triggered gadgets. Source: <code>docs/case-studies/wordpress-security-audit/FINDINGS.md</code></li>
+    <li>One query returned the entire unauthenticated entry surface: 2 of 1,343 hooks. Source: <code>docs/case-studies/wordpress-security-audit/AUTHENTICATION.md</code></li>
+    <li>The one real weakness found was that wp_http_validate_url does not block 169.254.169.254, reachable unauthenticated through pingback_ping - a known-class limitation core punts to a filter, not a novel 0-day. Source: <code>docs/case-studies/wordpress-security-audit/FINDINGS.md</code></li>
+    <li>XERJ does not find bugs: the AST taint and authorization model produces the candidates and XERJ stores and queries them; pointed at raw file chunks instead of facts, the security value largely evaporates. Source: <code>docs/case-studies/wordpress-security-audit/README.md</code></li>
+    <li>tree-sitter extraction in autoindex is definitions only - no imports, no call graph, no cross-file references. Source: <code>docs/examples/ast-vuln-graph</code></li>
   </ul>
   <h2>Related</h2>
   <ul>

@@ -164,12 +164,12 @@ No. Typesense says it should not hold the only copy of your data, and XERJ is si
 
 ## Evidence
 
-- Typesense documents faceted navigation and browsing as a headline use case and states that it should not hold the only copy of your data. — [https://typesense.org/docs/overview/use-cases.html](https://typesense.org/docs/overview/use-cases.html)
-- Typesense faceting uses facet_by, including labelled numeric range facets, and filtering uses filter_by. — [https://typesense.org/docs/30.2/api/search.html](https://typesense.org/docs/30.2/api/search.html)
-- Typesense is primarily a JSON store, bulk import needs newline-delimited JSON, and PDF, PPT and XLS files must be extracted with an external library such as Apache Tika before they can be indexed. — [https://typesense.org/docs/30.2/api/documents.html](https://typesense.org/docs/30.2/api/documents.html)
-- Typesense typo tolerance defaults to two typos, with one-typo correction from word length four and two-typo correction from word length seven. — [https://typesense.org/docs/30.2/api/search.html](https://typesense.org/docs/30.2/api/search.html)
-- Typesense combines its two result rankings with the documented formula rank_fusion_score = 0.7 * K + 0.3 * S, tunable through the alpha parameter. — [https://typesense.org/docs/30.2/api/vector-search.html](https://typesense.org/docs/30.2/api/vector-search.html)
-- The Typesense server is licensed GPL-3.0, and Typesense Cloud sells a dedicated cluster at a fixed hourly cost rather than charging per document or per search. — [https://github.com/typesense/typesense](https://github.com/typesense/typesense)
+- Typesense documents faceted navigation and browsing as a headline use case and states that it should not hold the only copy of your data. Source: [https://typesense.org/docs/overview/use-cases.html](https://typesense.org/docs/overview/use-cases.html)
+- Typesense faceting uses facet_by, including labelled numeric range facets, and filtering uses filter_by. Source: [https://typesense.org/docs/30.2/api/search.html](https://typesense.org/docs/30.2/api/search.html)
+- Typesense is primarily a JSON store, bulk import needs newline-delimited JSON, and PDF, PPT and XLS files must be extracted with an external library such as Apache Tika before they can be indexed. Source: [https://typesense.org/docs/30.2/api/documents.html](https://typesense.org/docs/30.2/api/documents.html)
+- Typesense typo tolerance defaults to two typos, with one-typo correction from word length four and two-typo correction from word length seven. Source: [https://typesense.org/docs/30.2/api/search.html](https://typesense.org/docs/30.2/api/search.html)
+- Typesense combines its two result rankings with the documented formula rank_fusion_score = 0.7 * K + 0.3 * S, tunable through the alpha parameter. Source: [https://typesense.org/docs/30.2/api/vector-search.html](https://typesense.org/docs/30.2/api/vector-search.html)
+- The Typesense server is licensed GPL-3.0, and Typesense Cloud sells a dedicated cluster at a fixed hourly cost rather than charging per document or per search. Source: [https://github.com/typesense/typesense](https://github.com/typesense/typesense)
 
 ## Related
 

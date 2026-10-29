@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Search a JSON export of support tickets">
@@ -230,9 +230,9 @@
     <p>I have a JSON export of support tickets; how do I search it like a real help-center search? Index the exported JSON on local disk with one xerj autoindex run. In a captured run a description phrase returned 36 hits with per-ticket locators such as tickets:e4, and a status aggregation returned 6 buckets of exactly 30.</p>
     <p class="key-fact"><strong>Key number:</strong> A <code class="inline">status</code> terms aggregation returned 6 buckets of exactly 30 tickets each. <span class="mute">(as of 2026-08-21 · source: the captured run documented on this page)</span></p>
   </div>
-  <p><strong>TL;DR</strong> — XERJ answers a Zendesk ticket search from the exported JSON on local disk, with 1 <code class="inline">xerj autoindex</code> run. In a captured run, a phrase from a ticket description returned 36 hits with per-ticket locators such as <code class="inline">tickets:e4</code>. A <code class="inline">status</code> aggregation returned 6 buckets of exactly 30.</p>
+  <p><strong>TL;DR</strong>: XERJ answers a Zendesk ticket search from the exported JSON on local disk, with 1 <code class="inline">xerj autoindex</code> run. In a captured run, a phrase from a ticket description returned 36 hits with per-ticket locators such as <code class="inline">tickets:e4</code>. A <code class="inline">status</code> aggregation returned 6 buckets of exactly 30.</p>
   <div class="prompt-card">
-    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT — IT DOES THE REST</span>
+    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT. IT DOES THE REST</span>
     <code>Act as a coding agent. Read https://xerj.org/llms.txt, save a Zendesk incremental ticket export to a local folder as tickets.json, ticket_comments.json and users.json, start a local XERJ node, run `xerj autoindex ./zendesk-export --url http://127.0.0.1:9200 --prefix zd --progress plain`, POST a match_phrase on description, POST a terms aggregation on status with size 0, and report the hit locators, the bucket counts and the difference between the bucket total and track_total_hits.</code>
     <button type="button" class="prompt-copy" data-copy="Act as a coding agent. Read https://xerj.org/llms.txt, save a Zendesk incremental ticket export to a local folder as tickets.json, ticket_comments.json and users.json, start a local XERJ node, run `xerj autoindex ./zendesk-export --url http://127.0.0.1:9200 --prefix zd --progress plain`, POST a match_phrase on description, POST a terms aggregation on status with size 0, and report the hit locators, the bucket counts and the difference between the bucket total and track_total_hits.">COPY THE PROMPT</button>
   </div>
@@ -330,7 +330,7 @@
   <p>Yes. The captured run put <code class="inline">ticket_comments.json</code> into its own index, <code class="inline">zd-json-ticket-comments</code>, with 61 documents.</p>
   <h2>Evidence</h2>
   <ul>
-    <li>JSONL line cap is 16 MB (MAX_LINE = 16 &lt;&lt; 20). A line at or above that length is skipped; the rest of the file still indexes. — <code>engine/crates/xerj-autoindex/src/extract/mod.rs</code></li>
+    <li>JSONL line cap is 16 MB (MAX_LINE = 16 &lt;&lt; 20). A line at or above that length is skipped; the rest of the file still indexes. Source: <code>engine/crates/xerj-autoindex/src/extract/mod.rs</code></li>
   </ul>
   <h2>Related</h2>
   <ul>

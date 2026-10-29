@@ -12,7 +12,7 @@ source: "content/answers/what-a-share-link-guest-can-reach.md"
 
 **Key number:** The live share-link test ran 237 checks on 2026-09-19 with 0 failures. (as of 2026-09-19; source: [docs/usecases/share-links/VERIFICATION.md](https://github.com/xerj-org/xerj/blob/main/docs/usecases/share-links/VERIFICATION.md))
 
-**TL;DR** — A share-link guest gets a key with `read` on the shared index and nothing else. A route allow-list, used for guests only, closes `_cat`, `_cluster`, every other index, all writes, and scroll and point-in-time contexts. Each refusal is a check in a live test that ran 237 checks on 2026-09-19, with 0 failures.
+**TL;DR**: A share-link guest gets a key with `read` on the shared index and nothing else. A route allow-list, used for guests only, closes `_cat`, `_cluster`, every other index, all writes, and scroll and point-in-time contexts. Each refusal is a check in a live test that ran 237 checks on 2026-09-19, with 0 failures.
 
 ## Agent prompt
 
@@ -136,11 +136,11 @@ Read every document in the shared index and copy what they read. A share grants 
 
 ## Evidence
 
-- The guest route allow-list: _search, _count, _msearch, _mget, _mapping, _field_caps, GET _doc, and the graph ego and overview routes. — `engine/crates/xerj-api/src/authz.rs`
-- The live test makes 237 checks against a node with authentication on and the access log on (225 without the native-listener section); all passed on 2026-09-19. — `docs/usecases/share-links/VERIFICATION.md`
-- A share id is 128 bits and is stored as a SHA-256 digest; the passcode is stored as an Argon2id hash in a file with mode 0600. — `engine/crates/xerj-api/src/share.rs`
-- Unknown share ids are limited to 10 a minute and 100 an hour per source address; a known share to 10 a minute and 30 an hour. — `engine/crates/xerj-api/src/share.rs`
-- The guest page is served with default-src 'none' and frame-ancestors 'none'. — `engine/crates/xerj-console-api/src/spa.rs`
+- The guest route allow-list: _search, _count, _msearch, _mget, _mapping, _field_caps, GET _doc, and the graph ego and overview routes. Source: `engine/crates/xerj-api/src/authz.rs`
+- The live test makes 237 checks against a node with authentication on and the access log on (225 without the native-listener section); all passed on 2026-09-19. Source: `docs/usecases/share-links/VERIFICATION.md`
+- A share id is 128 bits and is stored as a SHA-256 digest; the passcode is stored as an Argon2id hash in a file with mode 0600. Source: `engine/crates/xerj-api/src/share.rs`
+- Unknown share ids are limited to 10 a minute and 100 an hour per source address; a known share to 10 a minute and 30 an hour. Source: `engine/crates/xerj-api/src/share.rs`
+- The guest page is served with default-src 'none' and frame-ancestors 'none'. Source: `engine/crates/xerj-console-api/src/spa.rs`
 
 ## Related
 

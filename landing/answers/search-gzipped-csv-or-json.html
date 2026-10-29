@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Search a .csv.gz or .json.gz without unzipping it">
@@ -238,9 +238,9 @@
     <p>How do I search gzipped CSV exports without unzipping them? Point xerj autoindex at the folder. Gzip is a wrapper, not a family: autoindex strips it during the run and sniffs the bytes underneath, so a .csv.gz becomes typed columns and a .json.gz becomes documents with fields. No query re-reads the archive.</p>
     <p class="key-fact"><strong>Key number:</strong> The sniffer classifies the decompressed stream from its first 8,192 bytes (<code class="inline">PREFIX</code>), the same window it uses for a plain file. <span class="mute">(as of 2026-10-19 · source: <a href="https://github.com/xerj-org/xerj/blob/main/engine/crates/xerj-autoindex/src/sniff.rs">engine/crates/xerj-autoindex/src/sniff.rs</a>)</span></p>
   </div>
-  <p><strong>TL;DR</strong> — Gzip is a wrapper, not a family. <code class="inline">xerj autoindex</code> strips it during the run and sniffs the bytes underneath. A <code class="inline">.csv.gz</code> becomes typed columns, and a <code class="inline">.json.gz</code> becomes documents with fields. You never decompress anything yourself, and no query re-reads the archive.</p>
+  <p><strong>TL;DR</strong>: Gzip is a wrapper, not a family. <code class="inline">xerj autoindex</code> strips it during the run and sniffs the bytes underneath. A <code class="inline">.csv.gz</code> becomes typed columns, and a <code class="inline">.json.gz</code> becomes documents with fields. You never decompress anything yourself, and no query re-reads the archive.</p>
   <div class="prompt-card">
-    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT — IT DOES THE REST</span>
+    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT. IT DOES THE REST</span>
     <code>Act as a coding agent with a folder holding .csv.gz and .json.gz exports. Read https://xerj.org/llms.txt, run xerj autoindex on the folder, then run xerj autoindex map --json and confirm from the map that the compressed files produced typed columns before you write a query against them.</code>
     <button type="button" class="prompt-copy" data-copy="Act as a coding agent with a folder holding .csv.gz and .json.gz exports. Read https://xerj.org/llms.txt, run xerj autoindex on the folder, then run xerj autoindex map --json and confirm from the map that the compressed files produced typed columns before you write a query against them.">COPY THE PROMPT</button>
   </div>
@@ -273,7 +273,7 @@
   <p><strong>No <code class="inline">.csv.gz</code> or <code class="inline">.json.gz</code> capture was run for this page.</strong> The wrapper-plus-inner-dialect behaviour below is a documented capability of the extractors, not a measurement. This page publishes no counts, no field lists and no timings for those two shapes.</p>
   <p>If your export matters, run the dry run on your own folder first and read the plan. That takes one command and it answers the question for your files rather than for someone else's.</p>
   <h2>Gzip is a wrapper, not a family</h2>
-  <p>XERJ detects file families by content, not by file extension. Gzip sits one layer above that. The streaming extractors cover JSON and JSONL, CSV with dialect sniffing, structured logs, <code class="inline">sqldump</code> files, SQLite, PDF, DOCX, HTML, XML, YAML and plain text — <strong>and gzip variants of them</strong>.</p>
+  <p>XERJ detects file families by content, not by file extension. Gzip sits one layer above that. The streaming extractors cover JSON and JSONL, CSV with dialect sniffing, structured logs, <code class="inline">sqldump</code> files, SQLite, PDF, DOCX, HTML, XML, YAML and plain text: <strong>and gzip variants of them</strong>.</p>
   <p>So the question "which family is this file?" is answered after the wrapper comes off, not before. A <code class="inline">sales.csv.gz</code> is a CSV. An <code class="inline">events.json.gz</code> is JSON.</p>
   <p>The practical consequence is that the inner dialect still gets sniffed. CSV detection covers semicolon delimiters, decimal commas, a byte-order mark and quoted multiline fields, and none of that is skipped because the bytes arrived compressed.</p>
   <h2>Why this is different from grepping the archive</h2>
@@ -295,7 +295,7 @@
   <p>Provenance still names the compressed source. <code class="inline">ax_path</code> keeps the <code class="inline">.gz</code> file name, and <code class="inline">ax_format</code> names the wrapper alongside the family. A hit from a compressed export is therefore never mistaken for a hit from a plain one.</p>
   <h2>When to choose ripgrep-all instead</h2>
   <p>Choose <code class="inline">ripgrep-all</code> when the archive is <strong>nested</strong>. It wraps ripgrep with adapters for PDF, Office documents, zip, tar, compressed files and SQLite. It walks into them without building an index.</p>
-  <p>XERJ has no archive handler. A <code class="inline">.tar.gz</code> and a <code class="inline">.zip</code> are not unpacked, so their contents are not searchable in XERJ at all. That is a real rga win and it is not worked around on this page. A mail archive is the exception, because it needs no unpacking: since v1.0.0-rc.75 an <code class="inline">mbox</code> file is detected by content — a From-separator plus RFC 5322 headers, the extension is irrelevant — and streamed one message at a time (<a href="https://github.com/xerj-org/xerj/pull/949">#949</a>), so its messages are searchable. PST, OST and Maildir are still unhandled.</p>
+  <p>XERJ has no archive handler. A <code class="inline">.tar.gz</code> and a <code class="inline">.zip</code> are not unpacked, so their contents are not searchable in XERJ at all. That is a real rga win and it is not worked around on this page. A mail archive is the exception, because it needs no unpacking: since v1.0.0-rc.75 an <code class="inline">mbox</code> file is detected by content (a From-separator plus RFC 5322 headers, the extension is irrelevant) and streamed one message at a time (<a href="https://github.com/xerj-org/xerj/pull/949">#949</a>), so its messages are searchable. PST, OST and Maildir are still unhandled.</p>
   <p>Choose <code class="inline">ripgrep-all</code> for one question asked once, too. There is no node to start and no index to build. For a single regex over a single compressed file, that is less work by every measure.</p>
   <p>Choose XERJ when the folder will be asked more than one question. Choose it when the answer needs typed columns rather than matching lines. Choose it when the caller is an agent that wants HTTP or MCP. The <a href="/compare/xerj-vs-ripgrep-all">ripgrep-all comparison</a> covers that trade in full.</p>
   <h2>Related shapes</h2>
@@ -320,9 +320,9 @@
   <p>No. The measured gzip capture on this site is the log family. The CSV and JSON wrapper behaviour here is documented capability, and it is written as such.</p>
   <h2>Evidence</h2>
   <ul>
-    <li>Streaming extractors cover JSON/JSONL, CSV (dialect-sniffed: semicolon, decimal comma, BOM, quoted multiline), structured logs, SQL dumps, SQLite, PDF, DOCX, HTML, XML, YAML, plain text, and gzip variants. — <code>landing/llms.txt:231</code></li>
-    <li>In the captured gzip-log run the plain copy and the gzip copy of one log both returned 5001 from _count and both returned 1250 hits for level=ERROR, and the gzip index recorded ax_format as logs(gzip). — <code>content/answers/search-gzip-logs-without-zgrep.md</code></li>
-    <li>ripgrep-all wraps ripgrep with adapters for PDF, Office documents, zip, tar, compressed files and SQLite, and needs no index. — <a href="https://github.com/phiresky/ripgrep-all">https://github.com/phiresky/ripgrep-all</a></li>
+    <li>Streaming extractors cover JSON/JSONL, CSV (dialect-sniffed: semicolon, decimal comma, BOM, quoted multiline), structured logs, SQL dumps, SQLite, PDF, DOCX, HTML, XML, YAML, plain text, and gzip variants. Source: <code>landing/llms.txt:231</code></li>
+    <li>In the captured gzip-log run the plain copy and the gzip copy of one log both returned 5001 from _count and both returned 1250 hits for level=ERROR, and the gzip index recorded ax_format as logs(gzip). Source: <code>content/answers/search-gzip-logs-without-zgrep.md</code></li>
+    <li>ripgrep-all wraps ripgrep with adapters for PDF, Office documents, zip, tar, compressed files and SQLite, and needs no index. Source: <a href="https://github.com/phiresky/ripgrep-all">https://github.com/phiresky/ripgrep-all</a></li>
   </ul>
   <h2>Related</h2>
   <ul>

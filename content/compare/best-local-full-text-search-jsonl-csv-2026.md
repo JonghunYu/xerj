@@ -97,7 +97,7 @@ faq:
     a: "When an agent asks many questions across a folder of mixed files, such as JSONL next to CSV, logs and code, through one MCP server and one Elasticsearch-compatible API. For a single large JSONL file on a small machine, pick SQLite FTS5 or DuckDB."
 ---
 
-**TL;DR** — For one JSONL or CSV file, an embedded index wins: SQLite FTS5 indexed 50,000 records in 0.29 s and answered in hundredths of a millisecond. ripgrep needs no index at all. XERJ returned the same counts but took 70.57 s to index, peaked at about 9.1 GiB, and was killed for running out of memory at 300,000 records.
+**TL;DR**: For one JSONL or CSV file, an embedded index wins: SQLite FTS5 indexed 50,000 records in 0.29 s and answered in hundredths of a millisecond. ripgrep needs no index at all. XERJ returned the same counts but took 70.57 s to index, peaked at about 9.1 GiB, and was killed for running out of memory at 300,000 records.
 
 ## Pick one in ten seconds
 

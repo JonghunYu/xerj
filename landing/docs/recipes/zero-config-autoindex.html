@@ -15,7 +15,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>XERJ · Docs · Recipe · Zero-config autoindex</title>
-<meta name="description" content="One command — xerj autoindex &lt;folder&gt; — turns JSONL, CSV, SQLite, PDF, DOCX, HTML and log files into typed, queryable indices with zero configuration.">
+<meta name="description" content="One command (xerj autoindex &lt;folder&gt;) turns JSONL, CSV, SQLite, PDF, DOCX, HTML and log files into typed, queryable indices with zero configuration.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;700;800;900&family=Inter:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -27,16 +27,16 @@
 <meta property="og:site_name" content="XERJ.ai">
 <meta property="og:type" content="article">
 <meta property="og:title" content="XERJ · Docs · Recipe · Zero-config autoindex">
-<meta property="og:description" content="One command — xerj autoindex &lt;folder&gt; — turns JSONL, CSV, SQLite, PDF, DOCX, HTML and log files into typed, queryable indices with zero configuration.">
+<meta property="og:description" content="One command (xerj autoindex &lt;folder&gt;) turns JSONL, CSV, SQLite, PDF, DOCX, HTML and log files into typed, queryable indices with zero configuration.">
 <meta property="og:url" content="https://xerj.org/docs/recipes/zero-config-autoindex">
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="XERJ · Docs · Recipe · Zero-config autoindex">
-<meta name="twitter:description" content="One command — xerj autoindex &lt;folder&gt; — turns JSONL, CSV, SQLite, PDF, DOCX, HTML and log files into typed, queryable indices with zero configuration.">
+<meta name="twitter:description" content="One command (xerj autoindex &lt;folder&gt;) turns JSONL, CSV, SQLite, PDF, DOCX, HTML and log files into typed, queryable indices with zero configuration.">
 <meta name="twitter:image" content="https://xerj.org/og/xerj-card.png">
 <script type="application/ld+json">
 {
@@ -72,7 +72,7 @@
   "@context": "https://schema.org",
   "@type": "TechArticle",
   "headline": "XERJ · Docs · Recipe · Zero-config autoindex",
-  "description": "One command — xerj autoindex <folder> — turns JSONL, CSV, SQLite, PDF, DOCX, HTML and log files into typed, queryable indices with zero configuration.",
+  "description": "One command (xerj autoindex <folder>) turns JSONL, CSV, SQLite, PDF, DOCX, HTML and log files into typed, queryable indices with zero configuration.",
   "url": "https://xerj.org/docs/recipes/zero-config-autoindex",
   "image": "https://xerj.org/og/xerj-card.png",
   "inLanguage": "en",
@@ -235,21 +235,21 @@
   <div class="kicker"><span>RECIPE · 12 · FLAGSHIP</span></div>
   <h1>Zero-config indexing: make any folder AI-searchable with <code class="inline">xerj autoindex</code></h1>
 
-  <p><strong>Goal:</strong> you (or your AI agent) have been handed a folder. Inside: a JSONL application log, a sensor export some tool wrote as a semicolon-separated CSV with decimal commas and German headers, an HTML postmortem, and a binary file nobody can identify. You need to answer real questions — <em>which service has the most errors? what's the max temperature in the export? which sources mention user u-0042?</em> — <strong>without writing a single mapping, extraction script, or per-format parser</strong>. This recipe indexes the whole folder with one command and answers all three questions with plain Elasticsearch queries.</p>
+  <p><strong>Goal:</strong> you (or your AI agent) have been handed a folder. Inside: a JSONL application log, a sensor export some tool wrote as a semicolon-separated CSV with decimal commas and German headers, an HTML postmortem, and a binary file nobody can identify. You need to answer real questions: <em>which service has the most errors? what's the max temperature in the export? which sources mention user u-0042?</em>: <strong>without writing a single mapping, extraction script, or per-format parser</strong>. This recipe indexes the whole folder with one command and answers all three questions with plain Elasticsearch queries.</p>
 
   <blockquote>
-    <p><strong>Everything on this page was run end-to-end against a live XERJ</strong> (2026-07-09, on a throwaway server; the port in the captured output is <code class="inline">9280</code> because the demo box already had something on 9200 — the default is <code class="inline">http://localhost:9200</code> and no <code class="inline">--url</code> is needed then). The console output and JSON are the real captured results. The evaluation artifacts live in <a href="https://github.com/xerj-org/xerj/tree/main/demo/usecases/autoindex"><code class="inline">demo/usecases/autoindex</code></a>.</p>
+    <p><strong>Everything on this page was run end-to-end against a live XERJ</strong> (2026-07-09, on a throwaway server; the port in the captured output is <code class="inline">9280</code> because the demo box already had something on 9200: the default is <code class="inline">http://localhost:9200</code> and no <code class="inline">--url</code> is needed then). The console output and JSON are the real captured results. The evaluation artifacts live in <a href="https://github.com/xerj-org/xerj/tree/main/demo/usecases/autoindex"><code class="inline">demo/usecases/autoindex</code></a>.</p>
   </blockquote>
 
   <hr>
 
   <h2>Why XERJ for this</h2>
-  <p><code class="inline">autoindex</code> is a <strong>subcommand of the <code class="inline">xerj</code> binary you already have</strong> — not a sidecar tool, not a Python pipeline. It walks the folder, detects each file's format by <strong>content sniffing</strong> (magic bytes and structure — extensions are never trusted) across 13 format families (JSONL, JSON, CSV incl. dialect-sniffed separators, logs, SQL dumps, SQLite, PDF, DOCX, HTML, XML, YAML, plain text, gzip), samples a bounded number of records per file, infers field types, date encodings, and keyword-vs-text semantics from the data itself, PUTs explicit mappings, and streams the full files into the engine with parallel workers and idempotent <code class="inline">_id</code>s. Junk is skipped and recorded with a reason, never fatal.</p>
-  <p>It also writes everything it learned to a catalog index (<code class="inline">autoindex-catalog</code>), so the first question — "what is even in this folder?" — is answered by the engine, not by you reading files.</p>
+  <p><code class="inline">autoindex</code> is a <strong>subcommand of the <code class="inline">xerj</code> binary you already have</strong>, not a sidecar tool, not a Python pipeline. It walks the folder, detects each file's format by <strong>content sniffing</strong> (magic bytes and structure: extensions are never trusted) across 13 format families (JSONL, JSON, CSV incl. dialect-sniffed separators, logs, SQL dumps, SQLite, PDF, DOCX, HTML, XML, YAML, plain text, gzip), samples a bounded number of records per file, infers field types, date encodings, and keyword-vs-text semantics from the data itself, PUTs explicit mappings, and streams the full files into the engine with parallel workers and idempotent <code class="inline">_id</code>s. Junk is skipped and recorded with a reason, never fatal.</p>
+  <p>It also writes everything it learned to a catalog index (<code class="inline">autoindex-catalog</code>), so the first question ("what is even in this folder?") is answered by the engine, not by you reading files.</p>
 
-  <h2>1. Index the folder — one command</h2>
+  <h2>1. Index the folder: one command</h2>
 <pre class="code">xerj autoindex ./sample</pre>
-  <p>Real output (4 files: a JSONL app log with 5,000 events, a sensor export CSV with 800 semicolon/decimal-comma rows and German headers, an HTML postmortem, and <code class="inline">docs/opaque.bin</code> — 4&nbsp;KB of random bytes):</p>
+  <p>Real output (4 files: a JSONL app log with 5,000 events, a sensor export CSV with 800 semicolon/decimal-comma rows and German headers, an HTML postmortem, and <code class="inline">docs/opaque.bin</code>, 4&nbsp;KB of random bytes):</p>
 <pre class="code">autoindex: 4 files (0 MB) under /tmp/xerj-pubpass/sample
 phase A: sniffing + sampling 4 files…
 phase A: 3 datasets inferred, 1 junk/skipped files
@@ -261,7 +261,7 @@ done in 0.2s — 3 datasets, 5801 records live, 0 junk records, 1 junk/skipped f
   ax-docs                                           1 docs
 
 next: `xerj autoindex map --url http://localhost:9280` for the data map; search via GET /ax-*/_search</pre>
-  <p>The exit code is <code class="inline">3</code> — "completed with junk": the run finished, and the binary blob was recorded rather than crashing anything. <code class="inline">0</code> means a fully clean run; junk is <em>never</em> fatal.</p>
+  <p>The exit code is <code class="inline">3</code>, "completed with junk": the run finished, and the binary blob was recorded rather than crashing anything. <code class="inline">0</code> means a fully clean run; junk is <em>never</em> fatal.</p>
 
   <h2>2. Ask the engine what it found</h2>
 <pre class="code">xerj autoindex map</pre>
@@ -282,10 +282,10 @@ next: `xerj autoindex map --url http://localhost:9280` for the data map; search 
 <pre class="code">## Junk / skipped (1 files recorded, never fatal)
 
 - `docs/opaque.bin` — junk (binary content (unknown))</pre>
-  <p>Look at what required zero configuration: <code class="inline">temperatur_c</code> held strings like <code class="inline">"71,5"</code> — decimal-comma values in a semicolon CSV — and was inferred <code class="inline">double</code> with the commas coerced at index time. <code class="inline">zeitpunkt</code>'s date-only strings became a typed <code class="inline">date</code> field (mapped <code class="inline">strict_date_optional_time||epoch_millis</code>), so <code class="inline">date_histogram</code> and range queries just work. Low-cardinality string columns (<code class="inline">level</code>, <code class="inline">service</code>, <code class="inline">geraet</code>) became top-level <code class="inline">keyword</code> fields for exact filtering; the HTML page became a <code class="inline">title</code>/<code class="inline">headings</code>/<code class="inline">body</code> document with <code class="inline">body</code> as a <code class="inline">semantic_text</code> field.</p>
-  <p>Each dataset section ends with ready-to-send example queries, and the map closes with a <strong>Gotchas</strong> section listing engine behaviors verified on the running build — including the honesty note that XERJ's built-in embedder is <em>lexical</em> (see limits below). <code class="inline">--json</code> gives the raw catalog documents; agents can also query the <code class="inline">autoindex-catalog</code> index directly.</p>
+  <p>Look at what required zero configuration: <code class="inline">temperatur_c</code> held strings like <code class="inline">"71,5"</code> (decimal-comma values in a semicolon CSV) and was inferred <code class="inline">double</code> with the commas coerced at index time. <code class="inline">zeitpunkt</code>'s date-only strings became a typed <code class="inline">date</code> field (mapped <code class="inline">strict_date_optional_time||epoch_millis</code>), so <code class="inline">date_histogram</code> and range queries just work. Low-cardinality string columns (<code class="inline">level</code>, <code class="inline">service</code>, <code class="inline">geraet</code>) became top-level <code class="inline">keyword</code> fields for exact filtering; the HTML page became a <code class="inline">title</code>/<code class="inline">headings</code>/<code class="inline">body</code> document with <code class="inline">body</code> as a <code class="inline">semantic_text</code> field.</p>
+  <p>Each dataset section ends with ready-to-send example queries, and the map closes with a <strong>Gotchas</strong> section listing engine behaviors verified on the running build, including the honesty note that XERJ's built-in embedder is <em>lexical</em> (see limits below). <code class="inline">--json</code> gives the raw catalog documents; agents can also query the <code class="inline">autoindex-catalog</code> index directly.</p>
 
-  <h2>3. Q1 — max temperature in the hostile CSV</h2>
+  <h2>3. Q1: max temperature in the hostile CSV</h2>
   <p><code class="inline">stats</code> over the coerced decimal-comma column:</p>
 <pre class="code">curl -s localhost:9280/ax-exports/_search -H 'Content-Type: application/json' -d '{
   "size": 0, "aggs": { "temp": { "stats": { "field": "temperatur_c" } } }
@@ -300,7 +300,7 @@ next: `xerj autoindex map --url http://localhost:9280` for the data map; search 
 }</pre>
   <p>Max 99.0&nbsp;°C over all 800 rows, in 2&nbsp;ms, without anyone ever knowing the file was semicolon-separated with decimal commas.</p>
 
-  <h2>4. Q2 — which service throws the most errors?</h2>
+  <h2>4. Q2, which service throws the most errors?</h2>
   <p><code class="inline">level</code> and <code class="inline">service</code> were inferred <code class="inline">keyword</code>, so terms/filters are exact:</p>
 <pre class="code">curl -s localhost:9280/ax-logs/_search -H 'Content-Type: application/json' -d '{
   "size": 0,
@@ -319,7 +319,7 @@ next: `xerj autoindex map --url http://localhost:9280` for the data map; search 
 }</pre>
   <p>159 errors total; <code class="inline">checkout</code> owns the most.</p>
 
-  <h2>5. Q3 — trace one user across structured logs <em>and</em> prose</h2>
+  <h2>5. Q3: trace one user across structured logs <em>and</em> prose</h2>
   <p>Exact filter plus a breakdown on the structured side, full-text on the document side:</p>
 <pre class="code">curl -s localhost:9280/ax-logs/_search -H 'Content-Type: application/json' -d '{
   "size": 0,
@@ -330,7 +330,7 @@ next: `xerj autoindex map --url http://localhost:9280` for the data map; search 
 curl -s localhost:9280/ax-docs/_search -H 'Content-Type: application/json' -d '{
   "query": { "match": { "body": "u-0042" } }, "size": 1, "_source": ["title"]
 }'</pre>
-  <p>Real responses: the log query returns <code class="inline">total: 28</code> — 28 events for that user (<code class="inline">auth</code> 11, <code class="inline">billing</code> 6, <code class="inline">checkout</code> 6, <code class="inline">search</code> 5) — and the document search returns the postmortem:</p>
+  <p>Real responses: the log query returns <code class="inline">total: 28</code>, 28 events for that user (<code class="inline">auth</code> 11, <code class="inline">billing</code> 6, <code class="inline">checkout</code> 6, <code class="inline">search</code> 5), and the document search returns the postmortem:</p>
 <pre class="code">{
   "hits": { "total": { "value": 1, "relation": "eq" },
     "hits": [ { "_index": "ax-docs", "_score": 0.3646431863307953,
@@ -338,7 +338,7 @@ curl -s localhost:9280/ax-docs/_search -H 'Content-Type: application/json' -d '{
 }</pre>
   <p>One entity, two very different sources (a JSONL log and an HTML page), one uniform API. On larger corpora <code class="inline">autoindex</code> also records cross-dataset key correlations (which columns in different files share values) in the catalog, so an agent knows <em>which</em> indices to join before it queries.</p>
 
-  <h2>6. Re-run any time — it resumes, it never duplicates</h2>
+  <h2>6. Re-run any time: it resumes, it never duplicates</h2>
   <p><code class="inline">autoindex</code> journals progress per file (<code class="inline">--state-dir</code>, default <code class="inline">~/.xerj/autoindex/&lt;hash&gt;/</code>) and derives deterministic <code class="inline">_id</code>s, so re-running is safe and cheap. Real output of running the exact same command again:</p>
 <pre class="code">autoindex: 4 files (0 MB) under /tmp/xerj-pubpass/sample
 resuming from journal /tmp/xerj-pubpass/state/journal.ndjson (3 files already done)
@@ -346,7 +346,7 @@ phase B: indexing 0 files with 8 workers → http://localhost:9280
 (resumed run: key-overlap correlations kept from the original run's catalog)
 
 done in 0.0s — 3 datasets, 5801 records live, 0 junk records, 1 junk/skipped files</pre>
-  <p><code class="inline">GET /ax-*/_count</code> still says exactly <code class="inline">5801</code>. This holds under violence, not just polite re-runs: in the robustness evaluation, a <code class="inline">kill -9</code> mid-ingest followed by a re-run resumed from the journal and converged to identical final counts — no duplicates. <code class="inline">xerj autoindex status</code> shows the journal and live index counts (real output):</p>
+  <p><code class="inline">GET /ax-*/_count</code> still says exactly <code class="inline">5801</code>. This holds under a hard kill as well as a clean re-run: in the robustness evaluation, a <code class="inline">kill -9</code> mid-ingest followed by a re-run resumed from the journal and converged to identical final counts, no duplicates. <code class="inline">xerj autoindex status</code> shows the journal and live index counts (real output):</p>
 <pre class="code">journal /tmp/xerj-pubpass/state/journal.ndjson — root /tmp/xerj-pubpass/sample — 3 files done, 5801 records, FINISHED
 
 live indices at http://localhost:9280:
@@ -354,18 +354,18 @@ live indices at http://localhost:9280:
   ax-docs                                           1 docs
   ax-exports                                      800 docs
   autoindex-catalog                                 9 docs</pre>
-  <p><code class="inline">--fresh</code> ignores the resume journal and restarts (ids stay idempotent for unchanged bytes), which on a graph-enabled or pre-generation state directory is how a rerun picks up files added since the last one. A file that is still present and whose content key changed is republished, and the documents previously published for that path are removed. It does not remove documents for a file that disappeared, and it is refused once the state directory holds a durable corpus generation — re-run without it and the generated <code class="inline">--no-graph</code> path reconciles additions, changes, deletions, renames and no-op reruns incrementally.</p>
-  <p>On a graph-enabled or pre-generation journal, a rerun that resumes an existing plan indexes changed files and reports added ones as skipped. Deleting a file is refused there: nothing on that path removes the documents it already published, so the rerun stops before touching the destination and names what is gone — the first ten, then an <code class="inline">… and N more</code> tail, with <code class="inline">--json</code> carrying every entry. Restore the file and rerun, or rebuild — in place by deleting the named indices and the state directory, or isolated under a new <code class="inline">--state-dir</code>, <code class="inline">--prefix</code> and <code class="inline">--brain</code> (or <code class="inline">--no-graph</code>), validated before you switch readers. The shared <code class="inline">autoindex-catalog</code> and the old target require explicit cleanup. A <code class="inline">--no-graph</code> state directory written before the generation format cannot be adopted in place and must be rebuilt the same way.</p>
+  <p><code class="inline">--fresh</code> ignores the resume journal and restarts (ids stay idempotent for unchanged bytes), which on a graph-enabled or pre-generation state directory is how a rerun picks up files added since the last one. A file that is still present and whose content key changed is republished, and the documents previously published for that path are removed. It does not remove documents for a file that disappeared, and it is refused once the state directory holds a durable corpus generation: re-run without it and the generated <code class="inline">--no-graph</code> path reconciles additions, changes, deletions, renames and no-op reruns incrementally.</p>
+  <p>On a graph-enabled or pre-generation journal, a rerun that resumes an existing plan indexes changed files and reports added ones as skipped. Deleting a file is refused there: nothing on that path removes the documents it already published, so the rerun stops before touching the destination and names what is gone, the first ten, then an <code class="inline">… and N more</code> tail, with <code class="inline">--json</code> carrying every entry. Restore the file and rerun, or rebuild, in place by deleting the named indices and the state directory, or isolated under a new <code class="inline">--state-dir</code>, <code class="inline">--prefix</code> and <code class="inline">--brain</code> (or <code class="inline">--no-graph</code>), validated before you switch readers. The shared <code class="inline">autoindex-catalog</code> and the old target require explicit cleanup. A <code class="inline">--no-graph</code> state directory written before the generation format cannot be adopted in place and must be rebuilt the same way.</p>
 
   <hr>
 
-  <h2>Verified at corpus scale — every number traces to a run</h2>
+  <h2>Verified at corpus scale, every number traces to a run</h2>
   <ul>
     <li><strong>80/81 ground-truth checks</strong> on a 1,995-file / 518&nbsp;MB / 25-format corpus with a secret manifest the tool never saw. The one miss: a planted Shift-JIS file indexed as mojibake.</li>
-    <li><strong>518&nbsp;MB → 31 datasets / 2,018,398 records live in 38.1&nbsp;s</strong> on the evaluation run (~38–51&nbsp;s across runs); whole-pipeline throughput <strong>33.7k records/s</strong> end-to-end on a 923&nbsp;MB corpus — server-bound, not extractor-bound.</li>
-    <li><strong>Client memory stays flat</strong> (~250&nbsp;MB peak) at 5× input growth — the extractors stream; nothing is slurped.</li>
+    <li><strong>518&nbsp;MB → 31 datasets / 2,018,398 records live in 38.1&nbsp;s</strong> on the evaluation run (~38–51&nbsp;s across runs); whole-pipeline throughput <strong>33.7k records/s</strong> end-to-end on a 923&nbsp;MB corpus: server-bound, not extractor-bound.</li>
+    <li><strong>Client memory stays flat</strong> (~250&nbsp;MB peak) at 5× input growth: the extractors stream; nothing is slurped.</li>
     <li><strong><code class="inline">kill -9</code> mid-run, then re-run</strong> → resumed from the journal, converged to identical final counts across all datasets.</li>
-    <li><strong>Agent evaluation (honest):</strong> the same model (headless Claude Code) answered 10 pre-recorded ground-truth questions twice — once with only the XERJ API over an autoindexed copy, once with raw files + grep/python. Result: <strong>XERJ-backed 9 correct + 1 partial vs the fair baseline's 10/10 — a tie on accuracy</strong>, not a rout. Where XERJ won is structural: full-corpus orientation in 4 API calls, sub-second aggregations over millions of rows, and uniform access to SQLite / DOCX / gzip / decimal-comma CSV through one API. Grep was fine for narrative lookups and better at byte-level forensics. Full scorecard: <a href="https://github.com/xerj-org/xerj/blob/main/demo/usecases/autoindex/AGENT_SIM_SCORECARD.md"><code class="inline">AGENT_SIM_SCORECARD.md</code></a>.</li>
+    <li><strong>Agent evaluation (honest):</strong> the same model (headless Claude Code) answered 10 pre-recorded ground-truth questions twice, once with only the XERJ API over an autoindexed copy, once with raw files + grep/python. Result: <strong>XERJ-backed 9 correct + 1 partial vs the fair baseline's 10/10, a tie on accuracy</strong>, not a rout. Where XERJ won is structural: full-corpus orientation in 4 API calls, sub-second aggregations over millions of rows, and uniform access to SQLite / DOCX / gzip / decimal-comma CSV through one API. Grep was fine for narrative lookups and better at byte-level forensics. Full scorecard: <a href="https://github.com/xerj-org/xerj/blob/main/demo/usecases/autoindex/AGENT_SIM_SCORECARD.md"><code class="inline">AGENT_SIM_SCORECARD.md</code></a>.</li>
   </ul>
 
   <hr>
@@ -381,23 +381,23 @@ xerj autoindex ~/some-folder
 xerj autoindex map
 curl localhost:9200/ax-*/_search -H 'Content-Type: application/json' \
      -d '{"query":{"match_all":{}},"size":3}'</pre>
-  <p>Useful knobs (all optional): <code class="inline">--url</code> for a non-default endpoint, <code class="inline">--workers N</code> (default: every core, reduced when the memory safe zone cannot pay for that many in-flight bulk buffers; bounds both the scan and the indexing phase), <code class="inline">--prefix</code> to namespace the indices (default <code class="inline">ax</code>), <code class="inline">--no-semantic</code> for pure BM25+keyword without vector fields, <code class="inline">--dry-run</code> to print the inferred plan without indexing anything, <code class="inline">--follow-symlinks</code> (loop-safe &mdash; and a followed link is judged by what it resolves to: a target outside the indexed folder is refused, and one inside a hidden directory is skipped like any dotfile, however visible the link’s own name; <code class="inline">--follow-symlinks-outside-root</code> waives the folder boundary and nothing else), <code class="inline">--sample N</code> records per file for inference (default 500).</p>
-  <p>Build output never reaches the index in the first place. The walk honours <code class="inline">.xerjignore</code>, <code class="inline">.gitignore</code> (nested files and <code class="inline">!negation</code> included) and <code class="inline">.git/info/exclude</code>, plus a built-in list — <code class="inline">node_modules/ vendor/ target/ dist/ build/ .venv/ __pycache__/</code> — in that order of precedence; an excluded directory is never descended, so nothing inside it is stat-ed, hashed or sent. The two git-owned kinds stop at a repository boundary the way git does: a <code class="inline">.gitignore</code> above a nested checkout has no authority over the files inside it, so a vendored or submoduled tree keeps its own rules. <code class="inline">.xerjignore</code> and the built-in list are XERJ&rsquo;s rather than git&rsquo;s and apply throughout the folder you named. Hidden files (<code class="inline">.env</code>, <code class="inline">.git/</code>) are skipped by a separate, non-optional rule. Every run prints what was dropped and by which rule (<code class="inline">ignore rules: &hellip;</code> on stderr), and <code class="inline">--dry-run</code> also counts the non-hidden files inside each pruned directory, so &ldquo;where did my file go?&rdquo; always has an answer. <code class="inline">--no-ignore</code> turns the rules off; <code class="inline">--no-default-ignores</code> keeps your ignore files and drops only the built-in list. Both apply to an indexing run only &mdash; <code class="inline">autoindex map</code> and <code class="inline">autoindex status</code> never walk a folder and refuse them rather than accepting a flag that would do nothing. The folder you point at is never excluded: if it is itself ignored &mdash; say you run this on <code class="inline">~/proj/target</code> &mdash; it is indexed anyway and the run says which rule it would have matched.</p>
+  <p>Useful knobs (all optional): <code class="inline">--url</code> for a non-default endpoint, <code class="inline">--workers N</code> (default: every core, reduced when the memory safe zone cannot pay for that many in-flight bulk buffers; bounds both the scan and the indexing phase), <code class="inline">--prefix</code> to namespace the indices (default <code class="inline">ax</code>), <code class="inline">--no-semantic</code> for pure BM25+keyword without vector fields, <code class="inline">--dry-run</code> to print the inferred plan without indexing anything, <code class="inline">--follow-symlinks</code> (loop-safe, and a followed link is judged by what it resolves to: a target outside the indexed folder is refused, and one inside a hidden directory is skipped like any dotfile, however visible the link’s own name; <code class="inline">--follow-symlinks-outside-root</code> waives the folder boundary and nothing else), <code class="inline">--sample N</code> records per file for inference (default 500).</p>
+  <p>Build output never reaches the index in the first place. The walk honours <code class="inline">.xerjignore</code>, <code class="inline">.gitignore</code> (nested files and <code class="inline">!negation</code> included) and <code class="inline">.git/info/exclude</code>, plus a built-in list: <code class="inline">node_modules/ vendor/ target/ dist/ build/ .venv/ __pycache__/</code>, in that order of precedence; an excluded directory is never descended, so nothing inside it is stat-ed, hashed or sent. The two git-owned kinds stop at a repository boundary the way git does: a <code class="inline">.gitignore</code> above a nested checkout has no authority over the files inside it, so a vendored or submoduled tree keeps its own rules. <code class="inline">.xerjignore</code> and the built-in list are XERJ&rsquo;s rather than git&rsquo;s and apply throughout the folder you named. Hidden files (<code class="inline">.env</code>, <code class="inline">.git/</code>) are skipped by a separate, non-optional rule. Every run prints what was dropped and by which rule (<code class="inline">ignore rules: &hellip;</code> on stderr), and <code class="inline">--dry-run</code> also counts the non-hidden files inside each pruned directory, so &ldquo;where did my file go?&rdquo; always has an answer. <code class="inline">--no-ignore</code> turns the rules off; <code class="inline">--no-default-ignores</code> keeps your ignore files and drops only the built-in list. Both apply to an indexing run only: <code class="inline">autoindex map</code> and <code class="inline">autoindex status</code> never walk a folder and refuse them rather than accepting a flag that would do nothing. The folder you point at is never excluded: if it is itself ignored, say you run this on <code class="inline">~/proj/target</code>. It is indexed anyway and the run says which rule it would have matched.</p>
   <p><code class="inline">--workers</code> is a ceiling, not a promise: when the server answers <code class="inline">429 Too Many Requests</code> the run halves its own bulk concurrency on the spot and probes back up one worker at a time only after a clean streak, so a busy server is not handed the same load six times over. The run's summary records where it ended up (<code class="inline">bulk_concurrency_final</code>, <code class="inline">bulk_congestion_events</code>).</p>
-  <p>Your dataset names, field types, and counts will reflect <em>your</em> folder — that is the point. The behaviors shown here (decimal-comma → <code class="inline">double</code>, date strings → typed <code class="inline">date</code>, keyword inference, junk recording, resume-to-identical-counts) are the invariants.</p>
+  <p>Your dataset names, field types, and counts will reflect <em>your</em> folder. That is the point. The behaviors shown here (decimal-comma → <code class="inline">double</code>, date strings → typed <code class="inline">date</code>, keyword inference, junk recording, resume-to-identical-counts) are the invariants.</p>
 
   <hr>
 
   <h2>Honest caveats</h2>
   <p>This repo has a standing honesty bar. Read these before you rely on any of the above.</p>
   <ul>
-    <li><strong>The built-in embedder is lexical, not neural.</strong> Prose fields get <code class="inline">semantic_text</code> (hash-bucket 384-dim vectors) unless <code class="inline">--no-semantic</code>. That buys <strong>hybrid lexical+vector</strong> retrieval — useful ranking, not semantic <em>understanding</em>. Don't expect synonym-level recall; for that, configure an external embedding model. The <code class="inline">map</code> output repeats this warning so agents see it too.</li>
-    <li><strong>Inference is sampled</strong> (default 500 records/file). A type that only appears past the sample horizon can be missed; raise <code class="inline">--sample</code> for pathological files. Values that fail coercion at index time are dropped from the record and counted; the record itself still indexes — never fatal.</li>
-    <li><strong>Legacy encodings:</strong> UTF-8 and Latin-1 text decode correctly (verified); a planted Shift-JIS file was indexed as mojibake — the one miss in the 81-check ground-truth verification.</li>
+    <li><strong>The built-in embedder is lexical, not neural.</strong> Prose fields get <code class="inline">semantic_text</code> (hash-bucket 384-dim vectors) unless <code class="inline">--no-semantic</code>. That buys <strong>hybrid lexical+vector</strong> retrieval: useful ranking, not semantic <em>understanding</em>. Don't expect synonym-level recall; for that, configure an external embedding model. The <code class="inline">map</code> output repeats this warning so agents see it too.</li>
+    <li><strong>Inference is sampled</strong> (default 500 records/file). A type that only appears past the sample horizon can be missed; raise <code class="inline">--sample</code> for pathological files. Values that fail coercion at index time are dropped from the record and counted; the record itself still indexes, never fatal.</li>
+    <li><strong>Legacy encodings:</strong> UTF-8 and Latin-1 text decode correctly (verified); a planted Shift-JIS file was indexed as mojibake: the one miss in the 81-check ground-truth verification.</li>
     <li><strong>Archives are recorded, not extracted:</strong> a <code class="inline">tar.gz</code> shows up in the junk report with a reason instead of being unpacked.</li>
     <li><strong>Exotic CSV headers</strong> (BOM + Japanese + emoji) are handled but may become positional field names (<code class="inline">field</code>, <code class="inline">field_2</code>, …) while the <em>values</em> still type correctly.</li>
-    <li><strong>Big-ingest server caveat:</strong> the client streams with flat memory and the pipeline is resumable — multi-GB corpora are verified — but the current <em>server</em> retains heap per indexed doc, so multi-GB / &gt;5M-doc ingests can OOM the server until the ticketed cache-budget fix lands (<a href="https://github.com/xerj-org/xerj/blob/main/demo/usecases/autoindex/scale/TICKET_server-unbounded-ingest-heap.md">ticket</a>). Do not point it at TB-scale folders yet.</li>
-    <li><strong>At small local scale, grep is a worthy rival.</strong> In the controlled exam on a 518&nbsp;MB folder, an agent with raw file access and grep/python matched the XERJ-backed agent on accuracy (10/10 vs 9 + 1 partial of 10). <code class="inline">autoindex</code> earns its keep on orientation speed, sub-second aggregations over millions of rows, format-hostile sources, and remote/API-only access — not on beating grep at reading one file.</li>
+    <li><strong>Big-ingest server caveat:</strong> the client streams with flat memory and the pipeline is resumable (multi-GB corpora are verified) but the current <em>server</em> retains heap per indexed doc, so multi-GB / &gt;5M-doc ingests can OOM the server until the ticketed cache-budget fix lands (<a href="https://github.com/xerj-org/xerj/blob/main/demo/usecases/autoindex/scale/TICKET_server-unbounded-ingest-heap.md">ticket</a>). Do not point it at TB-scale folders yet.</li>
+    <li><strong>At small local scale, grep is a worthy rival.</strong> In the controlled exam on a 518&nbsp;MB folder, an agent with raw file access and grep/python matched the XERJ-backed agent on accuracy (10/10 vs 9 + 1 partial of 10). <code class="inline">autoindex</code> earns its keep on orientation speed, sub-second aggregations over millions of rows, format-hostile sources, and remote/API-only access, not on beating grep at reading one file.</li>
   </ul>
 
   <!-- Print-only branded footer (hidden on screen, visible in PDF) -->

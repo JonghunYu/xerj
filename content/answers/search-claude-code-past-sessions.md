@@ -65,7 +65,7 @@ faq:
     a: "No. This machine had no `~/.claude` directory. The three files are a fixture in the Claude Code JSONL shape, committed under the benchmark folder."
 ---
 
-**TL;DR** — Search Claude Code past sessions by indexing the session JSONL and querying the message field. On 2026-10-20 a three-file fixture, not a live chat folder, indexed 8 records in 0.6 s. Searching zstd on message_content returned 2 hits. xerj search on the same words returned no match.
+**TL;DR**: Search Claude Code past sessions by indexing the session JSONL and querying the message field. On 2026-10-20 a three-file fixture, not a live chat folder, indexed 8 records in 0.6 s. Searching zstd on message_content returned 2 hits. xerj search on the same words returned no match.
 
 XERJ is a new way for AI to search for data.
 

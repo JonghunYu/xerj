@@ -50,7 +50,7 @@ faq:
     a: "No. Extraction is definitions only, with no call graph and no cross-file reference resolution. A `defs` hit names the declaration site."
 ---
 
-**TL;DR** — Run `xerj autoindex --dry-run` on the repository first. In our capture the dry run reported `files=3`, `ignored_files=2` and `ignored_dirs=3`, with 60 non-hidden files inside the pruned directories. The indexed tree then gave an agent 3 languages and 11 symbols to query.
+**TL;DR**: Run `xerj autoindex --dry-run` on the repository first. In our capture the dry run reported `files=3`, `ignored_files=2` and `ignored_dirs=3`, with 60 non-hidden files inside the pruned directories. The indexed tree then gave an agent 3 languages and 11 symbols to query.
 
 ## Ask for the plan before you index
 

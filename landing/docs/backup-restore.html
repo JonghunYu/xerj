@@ -15,7 +15,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>XERJ.ai · Docs · Backup &amp; restore</title>
-<meta name="description" content="Segments are immutable and the WAL append-only, so a XERJ backup is a filesystem copy — hot backup with rsync, the restore procedure, and the caveats.">
+<meta name="description" content="Segments are immutable and the WAL append-only, so a XERJ backup is a filesystem copy: hot backup with rsync, the restore procedure, and the caveats.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;700;800;900&family=Inter:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -27,16 +27,16 @@
 <meta property="og:site_name" content="XERJ.ai">
 <meta property="og:type" content="article">
 <meta property="og:title" content="XERJ.ai · Docs · Backup &amp; restore">
-<meta property="og:description" content="Segments are immutable and the WAL append-only, so a XERJ backup is a filesystem copy — hot backup with rsync, the restore procedure, and the caveats.">
+<meta property="og:description" content="Segments are immutable and the WAL append-only, so a XERJ backup is a filesystem copy: hot backup with rsync, the restore procedure, and the caveats.">
 <meta property="og:url" content="https://xerj.org/docs/backup-restore">
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="XERJ.ai · Docs · Backup &amp; restore">
-<meta name="twitter:description" content="Segments are immutable and the WAL append-only, so a XERJ backup is a filesystem copy — hot backup with rsync, the restore procedure, and the caveats.">
+<meta name="twitter:description" content="Segments are immutable and the WAL append-only, so a XERJ backup is a filesystem copy: hot backup with rsync, the restore procedure, and the caveats.">
 <meta name="twitter:image" content="https://xerj.org/og/xerj-card.png">
 <script type="application/ld+json">
 {
@@ -72,7 +72,7 @@
   "@context": "https://schema.org",
   "@type": "TechArticle",
   "headline": "XERJ.ai · Docs · Backup & restore",
-  "description": "Segments are immutable and the WAL append-only, so a XERJ backup is a filesystem copy — hot backup with rsync, the restore procedure, and the caveats.",
+  "description": "Segments are immutable and the WAL append-only, so a XERJ backup is a filesystem copy: hot backup with rsync, the restore procedure, and the caveats.",
   "url": "https://xerj.org/docs/backup-restore",
   "image": "https://xerj.org/og/xerj-card.png",
   "inLanguage": "en",
@@ -232,7 +232,7 @@
   <h1>Backup & restore</h1>
 
 
-  <p>Segments are immutable once written and the WAL is append-only, so backups are a plain filesystem-level operation. No snapshot API, no coordination dance — you copy the data directory while the server is running and restore it by copying it back.</p>
+  <p>Segments are immutable once written and the WAL is append-only, so backups are a plain filesystem-level operation. No snapshot API, no coordination dance. You copy the data directory while the server is running and restore it by copying it back.</p>
 
   <h2>Hot backup</h2>
   <p>Segments never change after they land on disk, so a running <code class="inline">rsync</code> of the data directory is consistent per-segment. The only moving pieces are:</p>
@@ -245,7 +245,7 @@
     http://127.0.0.1:8080/v1/admin/flush
 {"flushed_indices": 4, "segments_written": 4, "wal_checkpoint": 12847}</pre>
 
-  <p>Then rsync the data dir to your backup target. Repeat rsync at the snapshot window you want — because segments are content-addressed, subsequent rsyncs only transfer new segments.</p>
+  <p>Then rsync the data dir to your backup target. Repeat rsync at the snapshot window you want, because segments are content-addressed, subsequent rsyncs only transfer new segments.</p>
 <pre class="code">$ rsync -aH --delete \
     /var/lib/xerj/ \
     backup.internal:/srv/backups/xerj/$(date +%F)/</pre>
@@ -268,10 +268,10 @@
     }'
 {"backup_id":"bk-2026-04-15T03-00-00Z","bytes":142857600,"duration_ms":8421}</pre>
 
-  <p>Backups are incremental by default — only segments the destination doesn't already hold are uploaded.</p>
+  <p>Backups are incremental by default, only segments the destination doesn't already hold are uploaded.</p>
 
   <h2>Restore</h2>
-  <p>Stop the server, replace the data directory, start the server. No import step — the WAL replay on startup reconstructs memtable state from whatever files are on disk.</p>
+  <p>Stop the server, replace the data directory, start the server. No import step: the WAL replay on startup reconstructs memtable state from whatever files are on disk.</p>
 <pre class="code">$ sudo systemctl stop xerj
 $ sudo rm -rf /var/lib/xerj/*
 $ sudo rsync -aH backup.internal:/srv/backups/xerj/2026-04-15/ /var/lib/xerj/
@@ -286,7 +286,7 @@ $ curl -sf http://127.0.0.1:8080/v1/health/ready</pre>
 $ sudo tar czf events-$(date +%F).tar.gz -C /var/lib/xerj events</pre>
 
   <h2>Clustered backup</h2>
-  <p>Index data is node-local today, so a cluster backup is simply the single-node procedure run on every node — each one holds its own complete copies of the indices it serves, and there is no shard subset or drain API to sequence around:</p>
+  <p>Index data is node-local today, so a cluster backup is simply the single-node procedure run on every node. Each one holds its own complete copies of the indices it serves, and there is no shard subset or drain API to sequence around:</p>
 <pre class="code">$ curl -sXPOST -H "Authorization: ApiKey $XERJ_API_KEY" \
     http://node-b:8080/v1/admin/flush
 $ rsync -aH /var/lib/xerj/ backup.internal:/srv/backups/xerj/b/</pre>

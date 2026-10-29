@@ -14,7 +14,7 @@
 <!-- ga4:end -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>XERJ.ai — Use case: operational intelligence</title>
+<title>XERJ.ai · Use case: operational intelligence</title>
 <meta name="description" content="Replace Beats, Logstash, Elasticsearch and cold storage with one ingest endpoint, one storage engine and one retention number. Measured against ES 8.13.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,16 +26,16 @@
 <link rel="canonical" href="https://xerj.org/use-cases/operational-intelligence">
 <meta property="og:site_name" content="XERJ.ai">
 <meta property="og:type" content="website">
-<meta property="og:title" content="XERJ.ai — Use case: operational intelligence">
+<meta property="og:title" content="XERJ.ai · Use case: operational intelligence">
 <meta property="og:description" content="Replace Beats, Logstash, Elasticsearch and cold storage with one ingest endpoint, one storage engine and one retention number. Measured against ES 8.13.">
 <meta property="og:url" content="https://xerj.org/use-cases/operational-intelligence">
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="XERJ.ai — Use case: operational intelligence">
+<meta name="twitter:title" content="XERJ.ai · Use case: operational intelligence">
 <meta name="twitter:description" content="Replace Beats, Logstash, Elasticsearch and cold storage with one ingest endpoint, one storage engine and one retention number. Measured against ES 8.13.">
 <meta name="twitter:image" content="https://xerj.org/og/xerj-card.png">
 <script type="application/ld+json">
@@ -71,7 +71,7 @@
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": "XERJ.ai — Use case: operational intelligence",
+  "name": "XERJ.ai · Use case: operational intelligence",
   "description": "Replace Beats, Logstash, Elasticsearch and cold storage with one ingest endpoint, one storage engine and one retention number. Measured against ES 8.13.",
   "url": "https://xerj.org/use-cases/operational-intelligence",
   "image": "https://xerj.org/og/xerj-card.png",
@@ -188,7 +188,7 @@
   </div>
   <div class="solve">
     <h3>THE XERJ ANSWER</h3>
-    <ul><li><strong>One binary, four ingest paths.</strong> turbo-ingest, structured logs, syslog, and OTLP — all in-process. No Logstash, no Beats.</li><li><strong>Retention is one number.</strong> <code>[logs] retention_days = 30</code>. Time-partitioned internally so pruning is O(partitions), not O(documents).</li><li><strong>No JVM warm-up.</strong> The static binary serves queries the moment it starts — no cold-start stall after a restart. WAL replay is append-only and simple.</li><li><strong>No shard tuning.</strong> XERJ manages segments internally — you never configure shard count, replica count, or allocation rules for log data.</li></ul>
+    <ul><li><strong>One binary, four ingest paths.</strong> turbo-ingest, structured logs, syslog, and OTLP, all in-process. No Logstash, no Beats.</li><li><strong>Retention is one number.</strong> <code>[logs] retention_days = 30</code>. Time-partitioned internally so pruning is O(partitions), not O(documents).</li><li><strong>No JVM warm-up.</strong> The static binary serves queries the moment it starts, no cold-start stall after a restart. WAL replay is append-only and simple.</li><li><strong>No shard tuning.</strong> XERJ manages segments internally. You never configure shard count, replica count, or allocation rules for log data.</li></ul>
   </div>
 </div>
 
@@ -305,7 +305,7 @@
 
 <section class="scene-section">
   <h2 class="scene" style="font-size:var(--fs-56);">SEE IT <span class="accent">LIVE.</span></h2>
-  <p class="wide">The playbook walks the full recipe — schema, ingest command, queries, and the dashboard. The playground runs on seeded data; benchmarks were measured against Elasticsearch 8.13 on 2026-04-14.</p>
+  <p class="wide">The playbook walks the full recipe: schema, ingest command, queries, and the dashboard. The playground runs on seeded data; benchmarks were measured against Elasticsearch 8.13 on 2026-04-14.</p>
   <div style="display:flex; gap:var(--sp-6); margin-top:var(--sp-6); flex-wrap:wrap;">
     <a href="/docs/playbooks/log-analytics" class="cta" style="font-size:var(--fs-20); padding:var(--sp-4) 0; border-bottom:0; flex:1; min-width:280px;">
       <span>OPEN THE PLAYBOOK</span>
@@ -321,7 +321,7 @@
 <section class="lead-capture" id="demo">
   <div class="kicker"><span>READY?</span><span class="dash">·</span><span>REQUEST ACCESS</span></div>
   <h3>RUN IT ON<br><span class="accent">YOUR DATA.</span></h3>
-  <p>Send us a 1 GB sample of your production logs (any format — JSON, syslog, OTLP). We'll benchmark ingest throughput and query latency head-to-head and share the scripts.</p>
+  <p>Send us a 1 GB sample of your production logs (any format: JSON, syslog, OTLP). We'll benchmark ingest throughput and query latency head-to-head and share the scripts.</p>
   <form class="lead-form" id="leadForm" action="#" method="post" novalidate>
     <input type="email" name="email" placeholder="you@company.com" required aria-label="Work email" autocomplete="email" />
     <button type="submit" class="demo">SEE THE DEMO <span class="arrow">→</span></button>

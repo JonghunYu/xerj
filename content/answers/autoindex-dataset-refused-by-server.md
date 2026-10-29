@@ -60,7 +60,7 @@ faq:
     a: "The create-index call can succeed before the mapping update is refused. `xerj autoindex` does not delete an index it cannot prove it created, so an empty one may remain. It holds no documents."
 ---
 
-**TL;DR** — No. When the server refuses one dataset's mapping, `xerj autoindex` records that dataset's files as junk, indexes every other dataset, and exits 3. The terminal line carries `datasets_refused` and `files_refused`. Only HTTP 400 counts as a refusal. Re-running does not fix it; rebuild under a new prefix after you fix the cause.
+**TL;DR**: No. When the server refuses one dataset's mapping, `xerj autoindex` records that dataset's files as junk, indexes every other dataset, and exits 3. The terminal line carries `datasets_refused` and `files_refused`. Only HTTP 400 counts as a refusal. Re-running does not fix it; rebuild under a new prefix after you fix the cause.
 
 ## What a refusal is
 
@@ -97,7 +97,7 @@ xerj-done ok=true exit=3 reason=completed-with-junk wall=0.7s files=1 records=1 
 | Standard output | One `REFUSED dataset` line per dataset, with the server's response |
 | The catalog's run document | `datasets_refused`, `files_refused` and `refused_datasets_json` |
 | The catalog's file documents | `status` `junk` and a `reason` that names the dataset and quotes the server |
-| `xerj autoindex map` | A **Refused datasets — NOT indexed** section above the dataset table |
+| `xerj autoindex map` | A **Refused datasets, NOT indexed** section above the dataset table |
 
 The `map` section comes before the dataset table on purpose. A reader who stops at the table would otherwise take it for the whole corpus.
 
@@ -111,7 +111,7 @@ To pick the dataset up, fix the cause on the server, then rebuild under a new `-
 
 ## Three limits
 
-**A file is dropped whole.** If one file feeds several datasets, such as a SQL dump with many tables, and one of those datasets is refused, the whole file is recorded as refused. Not just that table's rows.
+**A file is dropped whole.** If one file feeds several datasets, such as a SQL dump with many tables, and one of those datasets is refused, the whole file is recorded as refused, with the rows of every table in it.
 
 **An empty index may remain.** The create-index call can succeed before the mapping update is refused. `xerj autoindex` does not delete an index it cannot prove it created. The leftover holds no documents and does not change search results or counts.
 

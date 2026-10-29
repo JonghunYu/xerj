@@ -130,7 +130,7 @@ All results come from run RUN-B, captured on 2026-08-21 on a 16-core AMD EPYC 96
 
 ## Evidence
 
-- JSONL line cap is 16 MB (MAX_LINE = 16 << 20). A line at or above that length is skipped; the rest of the file still indexes. — `engine/crates/xerj-autoindex/src/extract/mod.rs`
+- JSONL line cap is 16 MB (MAX_LINE = 16 << 20). A line at or above that length is skipped; the rest of the file still indexes. Source: `engine/crates/xerj-autoindex/src/extract/mod.rs`
 
 ## Related
 

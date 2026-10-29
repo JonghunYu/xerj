@@ -57,7 +57,7 @@ faq:
     a: "Yes, but check the label. Our 1,385-record file was detected as format `json` rather than `jsonl`; the records still indexed one per document."
 ---
 
-**TL;DR** — For full-text search over JSONL files from the CLI, run `xerj autoindex` on the folder and query it with BM25. No schema or mapping is needed; CSV works the same way. On 2026-10-19 a folder of 2,902 JSONL and CSV rows indexed in 12.4 s, and the field queries returned ranked hits in 1 ms.
+**TL;DR**: For full-text search over JSONL files from the CLI, run `xerj autoindex` on the folder and query it with BM25. No schema or mapping is needed; CSV works the same way. On 2026-10-19 a folder of 2,902 JSONL and CSV rows indexed in 12.4 s, and the field queries returned ranked hits in 1 ms.
 
 ## Run it
 

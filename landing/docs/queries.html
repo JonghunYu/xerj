@@ -15,7 +15,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>XERJ.ai · Docs · Query types</title>
-<meta name="description" content="Every query type XERJ&#x27;s parser dispatches, generated from the engine source — match, term, range, bool, knn, semantic, hybrid and the rest of the set.">
+<meta name="description" content="Every query type XERJ&#x27;s parser dispatches, generated from the engine source: match, term, range, bool, knn, semantic, hybrid and the rest of the set.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;700;800;900&family=Inter:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -27,16 +27,16 @@
 <meta property="og:site_name" content="XERJ.ai">
 <meta property="og:type" content="article">
 <meta property="og:title" content="XERJ.ai · Docs · Query types">
-<meta property="og:description" content="Every query type XERJ&#x27;s parser dispatches, generated from the engine source — match, term, range, bool, knn, semantic, hybrid and the rest of the set.">
+<meta property="og:description" content="Every query type XERJ&#x27;s parser dispatches, generated from the engine source: match, term, range, bool, knn, semantic, hybrid and the rest of the set.">
 <meta property="og:url" content="https://xerj.org/docs/queries">
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="XERJ.ai · Docs · Query types">
-<meta name="twitter:description" content="Every query type XERJ&#x27;s parser dispatches, generated from the engine source — match, term, range, bool, knn, semantic, hybrid and the rest of the set.">
+<meta name="twitter:description" content="Every query type XERJ&#x27;s parser dispatches, generated from the engine source: match, term, range, bool, knn, semantic, hybrid and the rest of the set.">
 <meta name="twitter:image" content="https://xerj.org/og/xerj-card.png">
 <script type="application/ld+json">
 {
@@ -72,7 +72,7 @@
   "@context": "https://schema.org",
   "@type": "TechArticle",
   "headline": "XERJ.ai · Docs · Query types",
-  "description": "Every query type XERJ's parser dispatches, generated from the engine source — match, term, range, bool, knn, semantic, hybrid and the rest of the set.",
+  "description": "Every query type XERJ's parser dispatches, generated from the engine source: match, term, range, bool, knn, semantic, hybrid and the rest of the set.",
   "url": "https://xerj.org/docs/queries",
   "image": "https://xerj.org/og/xerj-card.png",
   "inLanguage": "en",
@@ -232,9 +232,9 @@
   <h1>Query types</h1>
 
 
-  <p>Every supported query is a variant of a single <code class="inline">QueryNode</code> enum. They all compile to the same execution plan, so mixing and matching them under a <code class="inline">bool</code> wrapper is free — there's no orchestrator round trip.</p>
+  <p>Every supported query is a variant of a single <code class="inline">QueryNode</code> enum. They all compile to the same execution plan, so mixing and matching them under a <code class="inline">bool</code> wrapper is free: there's no orchestrator round trip.</p>
 
-  <p>The list below is the <em>complete</em> set of keys the parser dispatches, generated from <code class="inline">xerj_query::parser::SUPPORTED_QUERY_TYPES</code> and held to it by a test. Being listed means the query parses, plans and runs — it is not a promise that every ES parameter is honoured; per-type gaps live in <a href="https://github.com/xerj-org/xerj/blob/main/ROADMAP.md">ROADMAP.md</a>.</p>
+  <p>The list below is the <em>complete</em> set of keys the parser dispatches, generated from <code class="inline">xerj_query::parser::SUPPORTED_QUERY_TYPES</code> and held to it by a test. Being listed means the query parses, plans and runs. It is not a promise that every ES parameter is honoured; per-type gaps live in <a href="https://github.com/xerj-org/xerj/blob/main/ROADMAP.md">ROADMAP.md</a>.</p>
 
   <!-- generated:query-types -->
   <h2>Structural</h2>
@@ -269,7 +269,7 @@
     <div class="item">match_phrase_prefix<span class="dsc">Phrase + prefix on last term.</span></div>
     <div class="item">match_bool_prefix<span class="dsc">Last token becomes a prefix query, the rest terms, under a bool should.</span></div>
     <div class="item">multi_match<span class="dsc">Match across multiple fields.</span></div>
-    <div class="item">combined_fields<span class="dsc">Approximated by multi_match cross_fields — no ES term-statistic pooling.</span></div>
+    <div class="item">combined_fields<span class="dsc">Approximated by multi_match cross_fields, no ES term-statistic pooling.</span></div>
     <div class="item">query_string<span class="dsc">Lucene-style mini-DSL.</span></div>
     <div class="item">simple_query_string<span class="dsc">Safe subset for end-user input.</span></div>
     <div class="item">intervals<span class="dsc">Rule tree (match / prefix / wildcard / all_of / any_of) lowered onto the standard queries; gap bounds are not modelled.</span></div>
@@ -288,7 +288,7 @@
 
   <h2>AI-native</h2>
   <div class="enum-list">
-    <div class="item" id="knn">knn<span class="dsc">Vector kNN — HNSW-served when unfiltered (exact-rescored); filtered runs the exact scan.</span></div>
+    <div class="item" id="knn">knn<span class="dsc">Vector kNN. HNSW-served when unfiltered (exact-rescored); filtered runs the exact scan.</span></div>
     <div class="item" id="semantic">semantic<span class="dsc">Embed the query text at query time and search the vector field.</span></div>
     <div class="item" id="hybrid">hybrid<span class="dsc">RRF / linear fusion of queries.</span></div>
   </div>
@@ -321,7 +321,7 @@
   <!-- /generated:query-types -->
 
   <h2>Recognised and rejected</h2>
-  <p>These two keys are recognised so that sending them fails with a specific 400 instead of the generic unknown-query-type error. XERJ never materialises a parent/child join, so a query that ran would return unfiltered hits — denormalize the relationship instead.</p>
+  <p>These two keys are recognised so that sending them fails with a specific 400 instead of the generic unknown-query-type error. XERJ never materialises a parent/child join, so a query that ran would return unfiltered hits: denormalize the relationship instead.</p>
   <!-- generated:rejected-query-types -->
   <div class="enum-list">
     <div class="item">has_child<span class="dsc">400 at parse time. No parent/child join exists.</span></div>

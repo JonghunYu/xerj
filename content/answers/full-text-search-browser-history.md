@@ -50,7 +50,7 @@ faq:
     a: "XERJ typed `url` as `keyword`, so it matches whole values only. An exact `term` on the full URL returned 1 hit; a `match` on a substring returned 0."
 ---
 
-**TL;DR** — Copy the Chrome `History` SQLite file, then run `xerj autoindex` on the folder. A captured run returned 60 hits for a title phrase and 1 hit for an exact URL. All 3 source checksums were unchanged, and `body` returned 0 documents because Chrome stores no page text.
+**TL;DR**: Copy the Chrome `History` SQLite file, then run `xerj autoindex` on the folder. A captured run returned 60 hits for a title phrase and 1 hit for an exact URL. All 3 source checksums were unchanged, and `body` returned 0 documents because Chrome stores no page text.
 
 ## Copy the file, then index the folder
 

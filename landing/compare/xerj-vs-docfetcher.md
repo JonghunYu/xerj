@@ -185,15 +185,15 @@ Not the free desktop application, which has a GUI and no API. A multi-user web i
 
 ## Evidence
 
-- DocFetcher is an open-source desktop search application under the Eclipse Public License, and it runs on Windows, Linux and macOS. — [https://docfetcher.sourceforge.io/](https://docfetcher.sourceforge.io/)
-- DocFetcher portable versions keep the index in the application folder, which makes a fully indexed document repository that can travel on a USB drive or a cloud drive. — [https://docfetcher.sourceforge.io/](https://docfetcher.sourceforge.io/)
-- DocFetcher indexes Microsoft Office, Outlook PST, OpenOffice, PDF, EPUB, HTML, RTF, CHM, AbiWord, Visio, SVG and customizable plain-text formats, plus zip, 7z, rar and tar archives with unlimited nesting. — [https://docfetcher.sourceforge.io/](https://docfetcher.sourceforge.io/)
-- The DocFetcher query syntax supports OR, AND and NOT with wildcards, phrase search, fuzzy search, proximity search and boosting, and the preview pane highlights every match. — [https://docfetcher.sourceforge.io/](https://docfetcher.sourceforge.io/)
-- DocFetcher 1.1.27 requires Windows 7 SP1 or later, Linux with GTK3, or macOS 11 or later, and since 1.1.26 no separate Java runtime install is needed. — [https://docfetcher.sourceforge.io/download/](https://docfetcher.sourceforge.io/download/)
-- A multi-user web interface is sold separately as DocFetcher Server; the free desktop application has no such interface. — [https://docfetcher.sourceforge.io/](https://docfetcher.sourceforge.io/)
-- ripgrep-all wraps ripgrep with adapters for PDF, Office documents, archives and SQLite, and needs no index. — [https://github.com/phiresky/ripgrep-all](https://github.com/phiresky/ripgrep-all)
-- Recoll indexes email and can run OCR on image-only PDF documents through tesseract or ABBYY FineReader. — [https://www.recoll.org/usermanual/usermanual.html](https://www.recoll.org/usermanual/usermanual.html)
-- Elasticsearch is a distributed engine with cross-node replication and failover, which a single-node engine does not provide. — [https://www.elastic.co/docs/deploy-manage/distributed-architecture](https://www.elastic.co/docs/deploy-manage/distributed-architecture)
+- DocFetcher is an open-source desktop search application under the Eclipse Public License, and it runs on Windows, Linux and macOS. Source: [https://docfetcher.sourceforge.io/](https://docfetcher.sourceforge.io/)
+- DocFetcher portable versions keep the index in the application folder, which makes a fully indexed document repository that can travel on a USB drive or a cloud drive. Source: [https://docfetcher.sourceforge.io/](https://docfetcher.sourceforge.io/)
+- DocFetcher indexes Microsoft Office, Outlook PST, OpenOffice, PDF, EPUB, HTML, RTF, CHM, AbiWord, Visio, SVG and customizable plain-text formats, plus zip, 7z, rar and tar archives with unlimited nesting. Source: [https://docfetcher.sourceforge.io/](https://docfetcher.sourceforge.io/)
+- The DocFetcher query syntax supports OR, AND and NOT with wildcards, phrase search, fuzzy search, proximity search and boosting, and the preview pane highlights every match. Source: [https://docfetcher.sourceforge.io/](https://docfetcher.sourceforge.io/)
+- DocFetcher 1.1.27 requires Windows 7 SP1 or later, Linux with GTK3, or macOS 11 or later, and since 1.1.26 no separate Java runtime install is needed. Source: [https://docfetcher.sourceforge.io/download/](https://docfetcher.sourceforge.io/download/)
+- A multi-user web interface is sold separately as DocFetcher Server; the free desktop application has no such interface. Source: [https://docfetcher.sourceforge.io/](https://docfetcher.sourceforge.io/)
+- ripgrep-all wraps ripgrep with adapters for PDF, Office documents, archives and SQLite, and needs no index. Source: [https://github.com/phiresky/ripgrep-all](https://github.com/phiresky/ripgrep-all)
+- Recoll indexes email and can run OCR on image-only PDF documents through tesseract or ABBYY FineReader. Source: [https://www.recoll.org/usermanual/usermanual.html](https://www.recoll.org/usermanual/usermanual.html)
+- Elasticsearch is a distributed engine with cross-node replication and failover, which a single-node engine does not provide. Source: [https://www.elastic.co/docs/deploy-manage/distributed-architecture](https://www.elastic.co/docs/deploy-manage/distributed-architecture)
 
 ## Related
 

@@ -45,7 +45,7 @@ faq:
     a: "No. The capture is a sampler at a 0.05 second interval, so a connection opening and closing inside one gap would be missed. The capture states that limit."
 ---
 
-**TL;DR** — XERJ `autoindex` indexes a static HTML export straight from local disk. In our 3-page capture XERJ extracted a `title` and a `headings` array from each page, and one `match` query on `body` returned 3 hits. A network watch observed 0 non-loopback peers during the run.
+**TL;DR**: XERJ `autoindex` indexes a static HTML export straight from local disk. In our 3-page capture XERJ extracted a `title` and a `headings` array from each page, and one `match` query on `body` returned 3 hits. A network watch observed 0 non-loopback peers during the run.
 
 ## Index the export from disk
 

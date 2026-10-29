@@ -51,7 +51,7 @@ faq:
     a: "Read `ax_locator` and `ax_path`. In the captured run `ax_locator` held `tarticles:s0:t41`, which names the table and the position of the row inside the file."
 ---
 
-**TL;DR** — `xerj autoindex` parses a MySQL-style `.sql` file directly, with no database server involved. In a captured run one file produced 2 indices, `dump-articles` with 301 documents and `dump-authors` with 20. A `match_phrase` query then found a phrase inside an `INSERT` value.
+**TL;DR**: `xerj autoindex` parses a MySQL-style `.sql` file directly, with no database server involved. In a captured run one file produced 2 indices, `dump-articles` with 301 documents and `dump-authors` with 20. A `match_phrase` query then found a phrase inside an `INSERT` value.
 
 ## One command, no database server
 

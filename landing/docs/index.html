@@ -15,7 +15,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>XERJ.ai · Docs · Read the source.</title>
-<meta name="description" content="XERJ documentation — install, configure and operate the engine. Every key, flag and default here comes out of the Rust crates under engine/crates/.">
+<meta name="description" content="XERJ documentation: install, configure and operate the engine. Every key, flag and default here comes out of the Rust crates under engine/crates/.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;700;800;900&family=Inter:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -27,16 +27,16 @@
 <meta property="og:site_name" content="XERJ.ai">
 <meta property="og:type" content="website">
 <meta property="og:title" content="XERJ.ai · Docs · Read the source.">
-<meta property="og:description" content="XERJ documentation — install, configure and operate the engine. Every key, flag and default here comes out of the Rust crates under engine/crates/.">
+<meta property="og:description" content="XERJ documentation: install, configure and operate the engine. Every key, flag and default here comes out of the Rust crates under engine/crates/.">
 <meta property="og:url" content="https://xerj.org/docs/">
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="XERJ.ai · Docs · Read the source.">
-<meta name="twitter:description" content="XERJ documentation — install, configure and operate the engine. Every key, flag and default here comes out of the Rust crates under engine/crates/.">
+<meta name="twitter:description" content="XERJ documentation: install, configure and operate the engine. Every key, flag and default here comes out of the Rust crates under engine/crates/.">
 <meta name="twitter:image" content="https://xerj.org/og/xerj-card.png">
 <script type="application/ld+json">
 {
@@ -72,7 +72,7 @@
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "name": "XERJ.ai · Docs · Read the source.",
-  "description": "XERJ documentation — install, configure and operate the engine. Every key, flag and default here comes out of the Rust crates under engine/crates/.",
+  "description": "XERJ documentation: install, configure and operate the engine. Every key, flag and default here comes out of the Rust crates under engine/crates/.",
   "url": "https://xerj.org/docs/",
   "image": "https://xerj.org/og/xerj-card.png",
   "inLanguage": "en",
@@ -234,13 +234,13 @@
     <a class="recipe" href="/docs/playbooks/log-analytics">
       <span class="num">02</span>
       <span class="title">Log Analytics</span>
-      <p class="lead">Nginx, JSON, syslog, OTLP — ingest at line rate, query hot logs, drop cold to cheap storage.</p>
+      <p class="lead">Nginx, JSON, syslog, OTLP: ingest at line rate, query hot logs, drop cold to cheap storage.</p>
       <span class="meta">LINE RATE · <span class="accent">NO LOGSTASH</span> · ZSTD</span>
     </a>
     <a class="recipe" href="/docs/playbooks/vector-search">
       <span class="num">03</span>
       <span class="title">Vector · RAG</span>
-      <p class="lead">Embed, index, retrieve with hybrid BM25 + kNN — all on one box.</p>
+      <p class="lead">Embed, index, retrieve with hybrid BM25 + kNN, all on one box.</p>
       <span class="meta">HNSW + EXACT kNN · SQ8 · <span class="accent">HYBRID FUSION</span></span>
     </a>
     <a class="recipe" href="/docs/playbooks/full-text">
@@ -258,19 +258,19 @@
   </div>
 
   <h2>AI &amp; search recipes</h2>
-  <p>Task-oriented guides for building real things — every one verified end-to-end against a live XERJ, stdlib-only, reproducible. <a href="/docs/recipes/">Browse all recipes →</a></p>
+  <p>Task-oriented guides for building real things, every one verified end-to-end against a live XERJ, stdlib-only, reproducible. <a href="/docs/recipes/">Browse all recipes →</a></p>
 
   <div class="recipes">
     <a class="recipe" href="/docs/recipes/semantic-search-rag">
       <span class="num">01</span>
       <span class="title">Semantic search &amp; RAG</span>
-      <p class="lead">Retrieval by meaning with <code class="inline">semantic_text</code> — auto-embed on ingest, no separate vector DB.</p>
+      <p class="lead">Retrieval by meaning with <code class="inline">semantic_text</code>: auto-embed on ingest, no separate vector DB.</p>
       <span class="meta">SEMANTIC_TEXT · <span class="accent">AUTO-EMBED</span> · RAG</span>
     </a>
     <a class="recipe" href="/docs/recipes/agentic-memory">
       <span class="num">02</span>
       <span class="title">Agent memory</span>
-      <p class="lead">Long-term memory for agents via the <code class="inline">/_memory</code> API — store, recall, forget, per-agent isolation.</p>
+      <p class="lead">Long-term memory for agents via the <code class="inline">/_memory</code> API: store, recall, forget, per-agent isolation.</p>
       <span class="meta">/_MEMORY · <span class="accent">RECALL + FORGET</span> · PER-AGENT</span>
     </a>
     <a class="recipe" href="/docs/recipes/passage-retrieval">
@@ -288,19 +288,19 @@
     <a class="recipe" href="/docs/recipes/vector-quantization">
       <span class="num">05</span>
       <span class="title">Vector quantization</span>
-      <p class="lead">Opt a <code class="inline">dense_vector</code> into scalar8 (ES <code class="inline">int8_hnsw</code> alias) — int8 scoring precision, recall measured in the recipe. Not a memory saving.</p>
+      <p class="lead">Opt a <code class="inline">dense_vector</code> into scalar8 (ES <code class="inline">int8_hnsw</code> alias): int8 scoring precision, recall measured in the recipe. Not a memory saving.</p>
       <span class="meta">SCALAR8 · <span class="accent">INT8 PRECISION</span> · MEASURED RECALL</span>
     </a>
     <a class="recipe" href="/docs/recipes/hybrid-search">
       <span class="num">06</span>
       <span class="title">Hybrid search</span>
-      <p class="lead">Keyword + vector in one query — results neither BM25 nor kNN ranks first alone.</p>
+      <p class="lead">Keyword + vector in one query: results neither BM25 nor kNN ranks first alone.</p>
       <span class="meta">BM25 + kNN · <span class="accent">RRF FUSION</span></span>
     </a>
     <a class="recipe" href="/docs/recipes/log-analytics">
       <span class="num">07</span>
       <span class="title">Log analytics</span>
-      <p class="lead">From raw logs to dashboards — error rates, p95 latency, top services via aggregations.</p>
+      <p class="lead">From raw logs to dashboards: error rates, p95 latency, top services via aggregations.</p>
       <span class="meta">DATE_HISTOGRAM · P95 · <span class="accent">TOP SERVICES</span></span>
     </a>
     <a class="recipe" href="/docs/recipes/anomaly-detection">
@@ -318,7 +318,7 @@
     <a class="recipe" href="/docs/recipes/migrate-from-elasticsearch">
       <span class="num">10</span>
       <span class="title">Migrate from Elasticsearch</span>
-      <p class="lead">Point your existing ES client at XERJ — same wire, change the URL.</p>
+      <p class="lead">Point your existing ES client at XERJ: same wire, change the URL.</p>
       <span class="meta">SAME WIRE · <span class="accent">CHANGE THE URL</span></span>
     </a>
   </div>
@@ -350,7 +350,7 @@
     </div>
     <div class="group">
       <span class="label">ENGINE</span>
-      <a href="/docs/ingest">Ingest pipelines<span class="d">Turbo, logs, syslog, OTLP — in-process</span></a>
+      <a href="/docs/ingest">Ingest pipelines<span class="d">Turbo, logs, syslog, OTLP: in-process</span></a>
       <a href="/docs/storage">Storage & WAL<span class="d">WAL + immutable segments · three files per segment</span></a>
       <a href="/docs/compression">Compression<span class="d">Zstd L1 · L3 · L6 · 9 encodings</span></a>
       <a href="/docs/clustering">Clustering<span class="d">Embedded Raft ring · leader election · replication is roadmap</span></a>

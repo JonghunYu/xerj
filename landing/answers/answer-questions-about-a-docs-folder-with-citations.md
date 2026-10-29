@@ -12,7 +12,7 @@ source: "content/answers/answer-questions-about-a-docs-folder-with-citations.md"
 
 **Key number:** A phrase query for "what is in here" returned WHY_XERJ.md and took 1 ms. (as of 2026-10-20; source: [benchmarks/agent-queries-2026-10-20/08-docs-phrase.json](https://github.com/xerj-org/xerj/blob/main/benchmarks/agent-queries-2026-10-20/08-docs-phrase.json))
 
-**TL;DR** — Answer questions about a docs folder by indexing it with `xerj autoindex`, then running a phrase query. Each hit carries `ax_path`, so the agent can cite the file. On 2026-10-20 a phrase query for "what is in here" returned `WHY_XERJ.md` and took 1 ms. `xerj search` on the same words did not.
+**TL;DR**: Answer questions about a docs folder by indexing it with `xerj autoindex`, then running a phrase query. Each hit carries `ax_path`, so the agent can cite the file. On 2026-10-20 a phrase query for "what is in here" returned `WHY_XERJ.md` and took 1 ms. `xerj search` on the same words did not.
 
 ## Agent prompt
 
@@ -119,9 +119,9 @@ No. `xerj ask` answers hub corpora. A folder you autoindexed is `xerj search`, `
 
 ## Evidence
 
-- autoindex of docs/ exited 3, wall 14.3 s, 9,940 records, 3 junk files. — `benchmarks/agent-queries-2026-10-20/02-autoindex-docs.txt`
-- xerj search wrote 689 bytes and rg wrote 270 bytes for the same words. — `benchmarks/agent-queries-2026-10-20/02-byte-compare.txt`
-- match_phrase on body took 1 ms and returned WHY_XERJ.md. — `benchmarks/agent-queries-2026-10-20/08-docs-phrase.json`
+- autoindex of docs/ exited 3, wall 14.3 s, 9,940 records, 3 junk files. Source: `benchmarks/agent-queries-2026-10-20/02-autoindex-docs.txt`
+- xerj search wrote 689 bytes and rg wrote 270 bytes for the same words. Source: `benchmarks/agent-queries-2026-10-20/02-byte-compare.txt`
+- match_phrase on body took 1 ms and returned WHY_XERJ.md. Source: `benchmarks/agent-queries-2026-10-20/08-docs-phrase.json`
 
 ## Related
 

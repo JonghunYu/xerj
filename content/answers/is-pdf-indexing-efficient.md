@@ -50,7 +50,7 @@ faq:
     a: "Yes. The decision gate measures an extraction floor first. On 2,500 PDFs with `--max-minutes 1` it exited 4 and wrote a decision request."
 ---
 
-**TL;DR** — Yes, when the alternative is opening every file by hand, and PDF is still the slowest family XERJ parses. XERJ isolates extraction in a worker process, caps it 5 ways, and parses each file once. In our capture 3 born-digital PDFs produced 9 documents, and the 4th file failed with a reason string.
+**TL;DR**: Yes, when the alternative is opening every file by hand, and PDF is still the slowest family XERJ parses. XERJ isolates extraction in a worker process, caps it 5 ways, and parses each file once. In our capture 3 born-digital PDFs produced 9 documents, and the 4th file failed with a reason string.
 
 ## What one PDF run recorded
 

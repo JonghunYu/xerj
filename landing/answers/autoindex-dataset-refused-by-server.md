@@ -12,7 +12,7 @@ source: "content/answers/autoindex-dataset-refused-by-server.md"
 
 **Key number:** A forced refusal on a 3-file corpus recorded the CSV dataset's 2 files as junk and still indexed the other dataset. (as of 2026-10-19; source: [benchmarks/autoindex-resilience/refusal-e2e.run1.stderr.txt](https://github.com/xerj-org/xerj/blob/main/benchmarks/autoindex-resilience/refusal-e2e.run1.stderr.txt))
 
-**TL;DR** — No. When the server refuses one dataset's mapping, `xerj autoindex` records that dataset's files as junk, indexes every other dataset, and exits 3. The terminal line carries `datasets_refused` and `files_refused`. Only HTTP 400 counts as a refusal. Re-running does not fix it; rebuild under a new prefix after you fix the cause.
+**TL;DR**: No. When the server refuses one dataset's mapping, `xerj autoindex` records that dataset's files as junk, indexes every other dataset, and exits 3. The terminal line carries `datasets_refused` and `files_refused`. Only HTTP 400 counts as a refusal. Re-running does not fix it; rebuild under a new prefix after you fix the cause.
 
 ## Agent prompt
 
@@ -89,7 +89,7 @@ xerj-done ok=true exit=3 reason=completed-with-junk wall=0.7s files=1 records=1 
 | Standard output | One `REFUSED dataset` line per dataset, with the server's response |
 | The catalog's run document | `datasets_refused`, `files_refused` and `refused_datasets_json` |
 | The catalog's file documents | `status` `junk` and a `reason` that names the dataset and quotes the server |
-| `xerj autoindex map` | A **Refused datasets — NOT indexed** section above the dataset table |
+| `xerj autoindex map` | A **Refused datasets, NOT indexed** section above the dataset table |
 
 The `map` section comes before the dataset table on purpose. A reader who stops at the table would otherwise take it for the whole corpus.
 
@@ -103,7 +103,7 @@ To pick the dataset up, fix the cause on the server, then rebuild under a new `-
 
 ## Three limits
 
-**A file is dropped whole.** If one file feeds several datasets, such as a SQL dump with many tables, and one of those datasets is refused, the whole file is recorded as refused. Not just that table's rows.
+**A file is dropped whole.** If one file feeds several datasets, such as a SQL dump with many tables, and one of those datasets is refused, the whole file is recorded as refused, with the rows of every table in it.
 
 **An empty index may remain.** The create-index call can succeed before the mapping update is refused. `xerj autoindex` does not delete an index it cannot prove it created. The leftover holds no documents and does not change search results or counts.
 
@@ -155,11 +155,11 @@ The create-index call can succeed before the mapping update is refused. `xerj au
 
 ## Evidence
 
-- A forced refusal on a 3-file corpus: the csv dataset's 2 files were recorded as junk, the other dataset was indexed, and the run ended xerj-done ok=true exit=3 reason=completed-with-junk wall=0.7s files=1 records=1 generation=1 datasets_refused=1 files_refused=2. — `benchmarks/autoindex-resilience/refusal-e2e.run1.stderr.txt`
-- The same run printed generation 1 committed with 1 datasets and 1 records live, then one REFUSED dataset line carrying the server's 400 response. — `benchmarks/autoindex-resilience/refusal-e2e.run1.stdout.txt`
-- A no-op re-run of the same command exits 3 again and still reports datasets_refused=1 files_refused=2 at generation 1. — `benchmarks/autoindex-resilience/refusal-e2e.run2-noop.stderr.txt`
-- Only HTTP 400 on create-index or put-mapping is classified as a refusal; 401, 403, 404, 408, 429 and 5xx still abort the run. — `engine/crates/xerj-autoindex/src/esclient.rs`
-- Before this change, on v1.0.0-rc.74, one refused mapping ended a 48,533-file run with xerj-done ok=false exit=1 reason=aborted wall=270.0s and nothing indexed. — `benchmarks/autoindex-resilience/before-rc74.stderr.txt`
+- A forced refusal on a 3-file corpus: the csv dataset's 2 files were recorded as junk, the other dataset was indexed, and the run ended xerj-done ok=true exit=3 reason=completed-with-junk wall=0.7s files=1 records=1 generation=1 datasets_refused=1 files_refused=2. Source: `benchmarks/autoindex-resilience/refusal-e2e.run1.stderr.txt`
+- The same run printed generation 1 committed with 1 datasets and 1 records live, then one REFUSED dataset line carrying the server's 400 response. Source: `benchmarks/autoindex-resilience/refusal-e2e.run1.stdout.txt`
+- A no-op re-run of the same command exits 3 again and still reports datasets_refused=1 files_refused=2 at generation 1. Source: `benchmarks/autoindex-resilience/refusal-e2e.run2-noop.stderr.txt`
+- Only HTTP 400 on create-index or put-mapping is classified as a refusal; 401, 403, 404, 408, 429 and 5xx still abort the run. Source: `engine/crates/xerj-autoindex/src/esclient.rs`
+- Before this change, on v1.0.0-rc.74, one refused mapping ended a 48,533-file run with xerj-done ok=false exit=1 reason=aborted wall=270.0s and nothing indexed. Source: `benchmarks/autoindex-resilience/before-rc74.stderr.txt`
 
 ## Related
 

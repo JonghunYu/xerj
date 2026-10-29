@@ -54,7 +54,7 @@ faq:
     a: "Guessing `gh-issues` returned 404. The real names were `gh-jsonl` and `gh-json`. Read `xerj autoindex map`."
 ---
 
-**TL;DR** — Look up 1,000 IDs against a local index with one `terms` query, then mark each ID found or not found. On 2026-10-20 the query sent 1,000 numbers over 532 issues. The response `took` was 0. 532 IDs were in the index and 468 were not.
+**TL;DR**: Look up 1,000 IDs against a local index with one `terms` query, then mark each ID found or not found. On 2026-10-20 the query sent 1,000 numbers over 532 issues. The response `took` was 0. 532 IDs were in the index and 468 were not.
 
 XERJ is a new way for AI to search for data.
 

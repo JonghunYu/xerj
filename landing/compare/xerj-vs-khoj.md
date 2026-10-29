@@ -163,12 +163,12 @@ Khoj is AGPL-3.0, which obliges you to publish your source if you offer a modifi
 
 ## Evidence
 
-- Khoj is an open-source personal application whose documented surface includes chat with local or online models, custom agents, scheduled research delivered by email, voice chat, image generation and clients for browser, Obsidian, Emacs, desktop, phone and WhatsApp. — [https://docs.khoj.dev/features/all-features](https://docs.khoj.dev/features/all-features)
-- Khoj states that it understands Word, PDF, org-mode, markdown and plaintext files as well as Notion pages. — [https://docs.khoj.dev/features/all-features](https://docs.khoj.dev/features/all-features)
-- Khoj search uses a bi-encoder to create meaning vectors and a slower cross-encoder to re-rank the candidates, and the models are configurable. — [https://docs.khoj.dev/features/search](https://docs.khoj.dev/features/search)
-- Self-hosting Khoj is documented through Docker or pip, and the project stores its embeddings in Postgres using the pgvector extension. — [https://docs.khoj.dev/get-started/setup](https://docs.khoj.dev/get-started/setup)
-- Khoj image generation runs through third-party providers such as Replicate rather than on the local node. — [https://docs.khoj.dev/features/image_generation](https://docs.khoj.dev/features/image_generation)
-- Khoj is licensed under the GNU Affero General Public License version 3. — [https://github.com/khoj-ai/khoj/blob/master/LICENSE](https://github.com/khoj-ai/khoj/blob/master/LICENSE)
+- Khoj is an open-source personal application whose documented surface includes chat with local or online models, custom agents, scheduled research delivered by email, voice chat, image generation and clients for browser, Obsidian, Emacs, desktop, phone and WhatsApp. Source: [https://docs.khoj.dev/features/all-features](https://docs.khoj.dev/features/all-features)
+- Khoj states that it understands Word, PDF, org-mode, markdown and plaintext files as well as Notion pages. Source: [https://docs.khoj.dev/features/all-features](https://docs.khoj.dev/features/all-features)
+- Khoj search uses a bi-encoder to create meaning vectors and a slower cross-encoder to re-rank the candidates, and the models are configurable. Source: [https://docs.khoj.dev/features/search](https://docs.khoj.dev/features/search)
+- Self-hosting Khoj is documented through Docker or pip, and the project stores its embeddings in Postgres using the pgvector extension. Source: [https://docs.khoj.dev/get-started/setup](https://docs.khoj.dev/get-started/setup)
+- Khoj image generation runs through third-party providers such as Replicate rather than on the local node. Source: [https://docs.khoj.dev/features/image_generation](https://docs.khoj.dev/features/image_generation)
+- Khoj is licensed under the GNU Affero General Public License version 3. Source: [https://github.com/khoj-ai/khoj/blob/master/LICENSE](https://github.com/khoj-ai/khoj/blob/master/LICENSE)
 
 ## Related
 

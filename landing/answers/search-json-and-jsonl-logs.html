@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Search JSON and JSONL logs plus gzip logs in one folder">
@@ -230,9 +230,9 @@
     <p>What's the easiest way to search JSON logs plus some old gzip text logs in the same folder? Run xerj autoindex on it. It detects JSON-array and JSONL files by content and gives each its own index. In a captured 2-file run it inferred timestamp and ts as date fields, and level=ERROR returned exactly 386 hits.</p>
     <p class="key-fact"><strong>Key number:</strong> One JSONL file yields at most 4,096 records per extraction window (<code class="inline">MAX_RECORDS_PER_FILE</code>). <span class="mute">(as of 2026-10-19 · source: <a href="https://github.com/xerj-org/xerj/blob/main/engine/crates/xerj-autoindex/src/extract/mod.rs">engine/crates/xerj-autoindex/src/extract/mod.rs</a>)</span></p>
   </div>
-  <p><strong>TL;DR</strong> — <code class="inline">xerj autoindex</code> detects JSON-array and JSONL log files from their content and gives each its own index. In a captured run over 2 files, XERJ inferred <code class="inline">timestamp</code> and <code class="inline">ts</code> as date fields with no configuration. A filter for <code class="inline">level=ERROR</code> returned exactly 386 hits.</p>
+  <p><strong>TL;DR</strong>: <code class="inline">xerj autoindex</code> detects JSON-array and JSONL log files from their content and gives each its own index. In a captured run over 2 files, XERJ inferred <code class="inline">timestamp</code> and <code class="inline">ts</code> as date fields with no configuration. A filter for <code class="inline">level=ERROR</code> returned exactly 386 hits.</p>
   <div class="prompt-card">
-    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT — IT DOES THE REST</span>
+    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT. IT DOES THE REST</span>
     <code>Act as a coding agent. Read https://xerj.org/llms.txt, start a local XERJ node, run `xerj autoindex ./json-logs --url http://127.0.0.1:9200 --prefix jlog --progress plain`, GET /jlog-*/_mapping to find which field XERJ inferred as a date, then POST a filtered search for level=ERROR and a terms aggregation on service, and report the hit total and the bucket counts.</code>
     <button type="button" class="prompt-copy" data-copy="Act as a coding agent. Read https://xerj.org/llms.txt, start a local XERJ node, run `xerj autoindex ./json-logs --url http://127.0.0.1:9200 --prefix jlog --progress plain`, GET /jlog-*/_mapping to find which field XERJ inferred as a date, then POST a filtered search for level=ERROR and a terms aggregation on service, and report the hit total and the bucket counts.">COPY THE PROMPT</button>
   </div>

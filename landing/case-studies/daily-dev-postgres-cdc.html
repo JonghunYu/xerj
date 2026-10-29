@@ -14,7 +14,7 @@
 <!-- ga4:end -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>XERJ.ai — Case study: Postgres CDC + hybrid search</title>
+<title>XERJ.ai · Case study: Postgres CDC + hybrid search</title>
 <meta name="description" content="Logical-replication CDC keeps XERJ in sync with Postgres, and one hybrid RRF query replaces the tsvector plus pgvector two-query merge in your app.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,16 +39,16 @@
 <link rel="canonical" href="https://xerj.org/case-studies/daily-dev-postgres-cdc">
 <meta property="og:site_name" content="XERJ.ai">
 <meta property="og:type" content="article">
-<meta property="og:title" content="XERJ.ai — Case study: Postgres CDC + hybrid search">
+<meta property="og:title" content="XERJ.ai · Case study: Postgres CDC + hybrid search">
 <meta property="og:description" content="Logical-replication CDC keeps XERJ in sync with Postgres, and one hybrid RRF query replaces the tsvector plus pgvector two-query merge in your app.">
 <meta property="og:url" content="https://xerj.org/case-studies/daily-dev-postgres-cdc">
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="XERJ.ai — Case study: Postgres CDC + hybrid search">
+<meta name="twitter:title" content="XERJ.ai · Case study: Postgres CDC + hybrid search">
 <meta name="twitter:description" content="Logical-replication CDC keeps XERJ in sync with Postgres, and one hybrid RRF query replaces the tsvector plus pgvector two-query merge in your app.">
 <meta name="twitter:image" content="https://xerj.org/og/xerj-card.png">
 <script type="application/ld+json">
@@ -84,7 +84,7 @@
 {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "XERJ.ai — Case study: Postgres CDC + hybrid search",
+  "headline": "XERJ.ai · Case study: Postgres CDC + hybrid search",
   "description": "Logical-replication CDC keeps XERJ in sync with Postgres, and one hybrid RRF query replaces the tsvector plus pgvector two-query merge in your app.",
   "url": "https://xerj.org/case-studies/daily-dev-postgres-cdc",
   "image": "https://xerj.org/og/xerj-card.png",
@@ -171,7 +171,7 @@
 <div class="uc-hero">
   <div class="uc-eyebrow">CASE STUDY · POSTGRES CDC + HYBRID SEARCH</div>
   <h1>POINT IT AT POSTGRES.<br><span class="accent">SEARCH SYNCS ITSELF.</span></h1>
-  <p class="uc-lead">The founder of daily.dev asked a public question: can XERJ replicate automatically from Postgres? Yes. A small CDC consumer reads the WAL through a logical-replication slot, and every INSERT, UPDATE, and DELETE flows into XERJ by itself — no reindex jobs. One hybrid query then fuses BM25 and vector rankings server-side.</p>
+  <p class="uc-lead">The founder of daily.dev asked a public question: can XERJ replicate automatically from Postgres? Yes. A small CDC consumer reads the WAL through a logical-replication slot, and every INSERT, UPDATE, and DELETE flows into XERJ by itself, no reindex jobs. One hybrid query then fuses BM25 and vector rankings server-side.</p>
   <div class="kicker"><span>FOR</span><span class="dash">·</span><span>POSTGRES TEAMS</span><span class="dash">·</span><span>SEARCH ENGINEERS</span><span class="dash">·</span><span>PLATFORM TEAMS</span></div>
 </div>
 
@@ -219,7 +219,7 @@
   </div>
   <div class="solve">
     <h3>THE XERJ ANSWER</h3>
-    <ul><li><strong>Replication is the pipeline.</strong> a logical-replication slot streams every INSERT/UPDATE/DELETE into XERJ.</li><li><strong>One fused query.</strong> first-class hybrid search — BM25 + kNN merged server-side by reciprocal-rank fusion.</li><li><strong>Crash-safe by LSN.</strong> a restarted consumer resumes from the confirmed LSN, replaying only what it missed.</li><li><strong>Zero manual reindexes.</strong> upsert and delete-by-id converge XERJ to Postgres state.</li></ul>
+    <ul><li><strong>Replication is the pipeline.</strong> a logical-replication slot streams every INSERT/UPDATE/DELETE into XERJ.</li><li><strong>One fused query.</strong> first-class hybrid search: BM25 + kNN merged server-side by reciprocal-rank fusion.</li><li><strong>Crash-safe by LSN.</strong> a restarted consumer resumes from the confirmed LSN, replaying only what it missed.</li><li><strong>Zero manual reindexes.</strong> upsert and delete-by-id converge XERJ to Postgres state.</li></ul>
   </div>
 </div>
 
@@ -253,9 +253,9 @@
 
 <section class="scene-section">
   <h2 class="scene" style="font-size:var(--fs-56);">HOW IT <span class="accent">WORKS.</span></h2>
-  <p class="wide">A ~20-line SQL bootstrap turns on logical replication; a small Python consumer drains the slot, re-embeds changed rows (EmbeddingGemma via Ollama, 768-dim cosine), and bulk-writes XERJ. Search is one request: XERJ's hybrid query fuses the BM25 ranking and the kNN ranking with reciprocal-rank fusion — no score normalization, no merge code.</p>
+  <p class="wide">A ~20-line SQL bootstrap turns on logical replication; a small Python consumer drains the slot, re-embeds changed rows (EmbeddingGemma via Ollama, 768-dim cosine), and bulk-writes XERJ. Search is one request: XERJ's hybrid query fuses the BM25 ranking and the kNN ranking with reciprocal-rank fusion, no score normalization, no merge code.</p>
 
-  <p style="font-size:12px; letter-spacing:.04em; color:var(--z-mute); font-family:var(--font-data); margin-bottom:0;">THE ONE REQUEST — BM25 + VECTOR, FUSED SERVER-SIDE</p>
+  <p style="font-size:12px; letter-spacing:.04em; color:var(--z-mute); font-family:var(--font-data); margin-bottom:0;">THE ONE REQUEST: BM25 + VECTOR, FUSED SERVER-SIDE</p>
   <pre class="code"><span class="prompt">$</span> curl -s localhost:9200/posts/_search -H <span class="s">'Content-Type: application/json'</span> -d <span class="s">'{
   "query": { "<span class="k">hybrid</span>": {
     "queries": [
@@ -266,14 +266,14 @@
   } }
 }'</span></pre>
 
-  <p class="wide">Recorded top-3 for that query — RRF rank-fusion scores, shown as the fused order:</p>
+  <p class="wide">Recorded top-3 for that query, RRF rank-fusion scores, shown as the fused order:</p>
   <ol style="margin:0 0 var(--sp-6); padding-left:var(--sp-6); font-size:var(--fs-16); line-height:1.8;">
     <li>Why we moved off Elasticsearch <span style="font-family:var(--font-mono); font-size:var(--fs-13); color:var(--z-mute);">RRF 0.03279</span></li>
     <li>The cost of microservices <span style="font-family:var(--font-mono); font-size:var(--fs-13); color:var(--z-mute);">RRF 0.03175</span></li>
     <li>Building a vector search engine from scratch <span style="font-family:var(--font-mono); font-size:var(--fs-13); color:var(--z-mute);">RRF 0.03151</span></li>
   </ol>
 
-  <p style="font-size:12px; letter-spacing:.04em; color:var(--z-mute); font-family:var(--font-data); margin-bottom:0;">CHANGE POSTGRES, WATCH XERJ FOLLOW — THEN A CRASH-RECOVERY REPLAY</p>
+  <p style="font-size:12px; letter-spacing:.04em; color:var(--z-mute); font-family:var(--font-data); margin-bottom:0;">CHANGE POSTGRES, WATCH XERJ FOLLOW, THEN A CRASH-RECOVERY REPLAY</p>
   <pre class="code"><span class="comment">-- in Postgres:  UPDATE p7 · INSERT p9 · DELETE p5</span>
 <span class="prompt">$</span> python3 cdc_sync.py
 <span class="k">[cdc]</span> synced 2 upserts, 1 deletes to XERJ  <span class="s">[('p7','UPDATE'),('p9','INSERT'),('p5','DELETE')]</span>
@@ -288,16 +288,16 @@
 <section class="scene-section">
   <h2 class="scene" style="font-size:var(--fs-56);">WHAT THIS <span class="accent">DOES NOT SHOW.</span></h2>
   <div class="laws">
-    <div class="n">01</div><div class="law"><div class="t">TINY <span class="accent">SYNTHETIC CORPUS.</span></div><div class="b">Eight seed posts (~11 after live changes), modeled on the open-source daily-api Post schema — not daily.dev's data. A functional proof: no latency, throughput, or cost numbers exist, and "within seconds" is qualitative.</div></div>
+    <div class="n">01</div><div class="law"><div class="t">TINY <span class="accent">SYNTHETIC CORPUS.</span></div><div class="b">Eight seed posts (~11 after live changes), modeled on the open-source daily-api Post schema, not daily.dev's data. A functional proof: no latency, throughput, or cost numbers exist, and "within seconds" is qualitative.</div></div>
     <div class="n">02</div><div class="law"><div class="t">DEMO SLOT, NOT <span class="accent">PRODUCTION SHAPE.</span></div><div class="b">The consumer reads Postgres' built-in test_decoding slot. The production shape is a pgoutput slot, wal2json, or Debezium in front of the same upsert/delete path.</div></div>
-    <div class="n">03</div><div class="law"><div class="t">AT-LEAST-ONCE, <span class="accent">CONVERGENT.</span></div><div class="b">Delivery is at-least-once, converging to Postgres state through idempotent upsert/delete-by-id plus LSN checkpointing — exactly-once-convergent, not bare exactly-once.</div></div>
-    <div class="n">04</div><div class="law"><div class="t">BRING YOUR OWN <span class="accent">EMBEDDINGS.</span></div><div class="b">XERJ stores and searches vectors; it does not embed. Quality is your model's job (EmbeddingGemma via Ollama here). RRF k and weights need per-corpus tuning; fusion:'learned' does not exist — only rrf and linear.</div></div>
+    <div class="n">03</div><div class="law"><div class="t">AT-LEAST-ONCE, <span class="accent">CONVERGENT.</span></div><div class="b">Delivery is at-least-once, converging to Postgres state through idempotent upsert/delete-by-id plus LSN checkpointing: exactly-once-convergent, not bare exactly-once.</div></div>
+    <div class="n">04</div><div class="law"><div class="t">BRING YOUR OWN <span class="accent">EMBEDDINGS.</span></div><div class="b">XERJ stores and searches vectors; it does not embed. Quality is your model's job (EmbeddingGemma via Ollama here). RRF k and weights need per-corpus tuning; fusion:'learned' does not exist, only rrf and linear.</div></div>
   </div>
 </section>
 
 <section class="scene-section">
   <h2 class="scene" style="font-size:var(--fs-56);">READ THE <span class="accent">WALKTHROUGH.</span></h2>
-  <p class="wide">daily.dev is a motivating party, not a customer. Every output above is recorded from the scripts in the walkthrough — setup.sql, cdc_sync.py, cdc_stream.py — against Postgres 16 + pgvector 0.8.2 in Docker. Four commands reproduce it end to end.</p>
+  <p class="wide">daily.dev is a motivating party, not a customer. Every output above is recorded from the scripts in the walkthrough (setup.sql, cdc_sync.py, cdc_stream.py) against Postgres 16 + pgvector 0.8.2 in Docker. Four commands reproduce it end to end.</p>
   <div style="display:flex; gap:var(--sp-6); margin-top:var(--sp-6); flex-wrap:wrap;">
     <a href="https://github.com/xerj-org/xerj/tree/main/docs/case-studies/daily-dev-postgres-cdc" rel="external" class="cta" style="font-size:var(--fs-20); padding:var(--sp-4) 0; border-bottom:0; flex:1; min-width:280px;">
       <span>OPEN THE WALKTHROUGH</span>

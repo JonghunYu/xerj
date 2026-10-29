@@ -56,7 +56,7 @@ faq:
     a: "Order of magnitude, several hundred on this tree. The derived figure was about 713 queries, and it ignores index memory, disk and staleness."
 ---
 
-**TL;DR** — Keep ripgrep for one-off questions and reach for the index when an agent asks one tree many questions. On one 331-file code tree the two named the same files on 18 of 30 disclosed tasks. Five of the 30 went to ripgrep 14.1.1 outright. On a substring inside an identifier it found 7 files and the index found 0.
+**TL;DR**: Keep ripgrep for one-off questions and reach for the index when an agent asks one tree many questions. On one 331-file code tree the two named the same files on 18 of 30 disclosed tasks. Five of the 30 went to ripgrep 14.1.1 outright. On a substring inside an identifier it found 7 files and the index found 0.
 
 ## What we compared, and on what
 

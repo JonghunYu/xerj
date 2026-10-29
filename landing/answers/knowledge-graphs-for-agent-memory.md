@@ -12,7 +12,7 @@ source: "content/answers/knowledge-graphs-for-agent-memory.md"
 
 **Key number:** The shared-term detector links a document to at most 5 others (`MAX_EDGES_PER_DOC`). (as of 2026-10-19; source: [engine/crates/xerj-autoindex/src/detect/sharedterm.rs](https://github.com/xerj-org/xerj/blob/main/engine/crates/xerj-autoindex/src/detect/sharedterm.rs))
 
-**TL;DR** — Links help, and XERJ is not a graph database. XERJ builds a bounded, graph-shaped link index over the documents it already indexed. Our capture produced 7 edges over 6 documents, answered 1 hop with 3 edges and 2 hops with 6, and refused 3 hops.
+**TL;DR**: Links help, and XERJ is not a graph database. XERJ builds a bounded, graph-shaped link index over the documents it already indexed. Our capture produced 7 edges over 6 documents, answered 1 hop with 3 edges and 2 hops with 6, and refused 3 hops.
 
 ## Agent prompt
 

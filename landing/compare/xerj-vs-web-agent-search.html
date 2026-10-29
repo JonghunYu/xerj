@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Local folder search vs a web agent search API">
@@ -240,7 +240,7 @@
   </div>
   <p><strong>TL;DR</strong> — Exa, Tavily and Firecrawl answer questions about the public web. Their documented input is a query string or a URL. XERJ answers questions about files that are already on your disk, and it opens no network connection to a website. This page is a category boundary, not a bakeoff.</p>
   <div class="prompt-card">
-    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT — IT DOES THE REST</span>
+    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT. IT DOES THE REST</span>
     <code>Act as a coding agent. Read https://xerj.org/llms.txt, start a node with `xerj --insecure --data-dir ./xerj-data`, run `xerj autoindex ./private-folder --prefix priv --state-dir ./state-priv`, attach it with `xerj mcp --url http://127.0.0.1:9200`, then answer the user question from the indexed files with one xerj_search call, cite the ax_path of every hit, and send no file content to a web search API.</code>
     <button type="button" class="prompt-copy" data-copy="Act as a coding agent. Read https://xerj.org/llms.txt, start a node with `xerj --insecure --data-dir ./xerj-data`, run `xerj autoindex ./private-folder --prefix priv --state-dir ./state-priv`, attach it with `xerj mcp --url http://127.0.0.1:9200`, then answer the user question from the indexed files with one xerj_search call, cite the ax_path of every hit, and send no file content to a web search API.">COPY THE PROMPT</button>
   </div>
@@ -323,12 +323,12 @@
   <p>Not by XERJ. A single-node XERJ process reads local files and answers on localhost.</p>
   <h2>Evidence</h2>
   <ul>
-    <li>Exa describes itself as a search engine built for AI systems and says it builds its own index of pages on the web, refreshed every hour. — <a href="https://exa.ai/docs/reference/faqs">https://exa.ai/docs/reference/faqs</a></li>
-    <li>The Exa contents endpoint takes a list of URLs as its input and returns page text, summaries and metadata. — <a href="https://exa.ai/docs/reference/get-contents">https://exa.ai/docs/reference/get-contents</a></li>
-    <li>Tavily describes its REST API as a search engine for LLM agents plus an extraction product, and its extract endpoint takes a list of URLs. — <a href="https://docs.tavily.com/documentation/api-reference/endpoint/extract">https://docs.tavily.com/documentation/api-reference/endpoint/extract</a></li>
-    <li>The Tavily free plan includes 1,000 API credits every month with no credit card. — <a href="https://docs.tavily.com/documentation/api-credits">https://docs.tavily.com/documentation/api-credits</a></li>
-    <li>The Firecrawl scrape endpoint requires a url body parameter documented as 'The URL to scrape', and the site-traversal endpoint requires a base URL. — <a href="https://docs.firecrawl.dev/api-reference/endpoint/scrape">https://docs.firecrawl.dev/api-reference/endpoint/scrape</a></li>
-    <li>Mastra is a TypeScript framework for agents that provides a common interface over third-party vector databases rather than its own index, and its web search tools wrap the Tavily API. — <a href="https://mastra.ai/docs/rag/vector-databases">https://mastra.ai/docs/rag/vector-databases</a></li>
+    <li>Exa describes itself as a search engine built for AI systems and says it builds its own index of pages on the web, refreshed every hour. Source: <a href="https://exa.ai/docs/reference/faqs">https://exa.ai/docs/reference/faqs</a></li>
+    <li>The Exa contents endpoint takes a list of URLs as its input and returns page text, summaries and metadata. Source: <a href="https://exa.ai/docs/reference/get-contents">https://exa.ai/docs/reference/get-contents</a></li>
+    <li>Tavily describes its REST API as a search engine for LLM agents plus an extraction product, and its extract endpoint takes a list of URLs. Source: <a href="https://docs.tavily.com/documentation/api-reference/endpoint/extract">https://docs.tavily.com/documentation/api-reference/endpoint/extract</a></li>
+    <li>The Tavily free plan includes 1,000 API credits every month with no credit card. Source: <a href="https://docs.tavily.com/documentation/api-credits">https://docs.tavily.com/documentation/api-credits</a></li>
+    <li>The Firecrawl scrape endpoint requires a url body parameter documented as 'The URL to scrape', and the site-traversal endpoint requires a base URL. Source: <a href="https://docs.firecrawl.dev/api-reference/endpoint/scrape">https://docs.firecrawl.dev/api-reference/endpoint/scrape</a></li>
+    <li>Mastra is a TypeScript framework for agents that provides a common interface over third-party vector databases rather than its own index, and its web search tools wrap the Tavily API. Source: <a href="https://mastra.ai/docs/rag/vector-databases">https://mastra.ai/docs/rag/vector-databases</a></li>
   </ul>
   <h2>Related</h2>
   <ul>

@@ -15,7 +15,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>XERJ.ai · Docs · ES-compatible API</title>
-<meta name="description" content="The Elasticsearch-compatible API on port 9200 — supported index, document, bulk and search operations, and the structured error for anything unsupported.">
+<meta name="description" content="The Elasticsearch-compatible API on port 9200: supported index, document, bulk and search operations, and the structured error for anything unsupported.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;700;800;900&family=Inter:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -27,16 +27,16 @@
 <meta property="og:site_name" content="XERJ.ai">
 <meta property="og:type" content="article">
 <meta property="og:title" content="XERJ.ai · Docs · ES-compatible API">
-<meta property="og:description" content="The Elasticsearch-compatible API on port 9200 — supported index, document, bulk and search operations, and the structured error for anything unsupported.">
+<meta property="og:description" content="The Elasticsearch-compatible API on port 9200: supported index, document, bulk and search operations, and the structured error for anything unsupported.">
 <meta property="og:url" content="https://xerj.org/docs/api-es-compat">
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="XERJ.ai · Docs · ES-compatible API">
-<meta name="twitter:description" content="The Elasticsearch-compatible API on port 9200 — supported index, document, bulk and search operations, and the structured error for anything unsupported.">
+<meta name="twitter:description" content="The Elasticsearch-compatible API on port 9200: supported index, document, bulk and search operations, and the structured error for anything unsupported.">
 <meta name="twitter:image" content="https://xerj.org/og/xerj-card.png">
 <script type="application/ld+json">
 {
@@ -72,7 +72,7 @@
   "@context": "https://schema.org",
   "@type": "TechArticle",
   "headline": "XERJ.ai · Docs · ES-compatible API",
-  "description": "The Elasticsearch-compatible API on port 9200 — supported index, document, bulk and search operations, and the structured error for anything unsupported.",
+  "description": "The Elasticsearch-compatible API on port 9200: supported index, document, bulk and search operations, and the structured error for anything unsupported.",
   "url": "https://xerj.org/docs/api-es-compat",
   "image": "https://xerj.org/og/xerj-card.png",
   "inLanguage": "en",
@@ -232,7 +232,7 @@
   <h1>ES-compatible API</h1>
 
 
-  <p>Port <code class="inline">9200</code>. The compat layer exists so you can point an existing Elasticsearch client at XERJ and keep shipping. It handles the most-used operations. Unsupported calls return a structured <code class="inline">not_supported_yet</code> error rather than a 500. What the compatibility promise is tested against — ES version, conformance suite, clients — and the known semantic differences below it are stated in one place: <a href="/docs/migration-from-es#what-we-test-against">the compatibility boundary</a> on Migrate from ES.</p>
+  <p>Port <code class="inline">9200</code>. The compat layer exists so you can point an existing Elasticsearch client at XERJ and keep shipping. It handles the most-used operations. Unsupported calls return a structured <code class="inline">not_supported_yet</code> error rather than a 500. What the compatibility promise is tested against (ES version, conformance suite, clients) and the known semantic differences below it are stated in one place: <a href="/docs/migration-from-es#what-we-test-against">the compatibility boundary</a> on Migrate from ES.</p>
 
   <div class="api">
     <div class="head">METHOD</div>
@@ -277,7 +277,7 @@
 
     <div class="cell m">POST</div>
     <div class="cell p">/:index/_search?scroll=</div>
-    <div class="cell dsc">Open a scroll. Bounded snapshot — see <a href="#scroll-cap">the cap</a>.</div>
+    <div class="cell dsc">Open a scroll. Bounded snapshot: see <a href="#scroll-cap">the cap</a>.</div>
 
     <div class="cell m">POST</div>
     <div class="cell p">/_search/scroll</div>
@@ -302,11 +302,11 @@
 
   <h2 id="scroll-cap">Scroll is a bounded snapshot, not a cursor</h2>
 
-  <p>Elasticsearch's scroll walks segments as it goes. XERJ's does not: the opening <code class="inline">_search?scroll=</code> materialises the whole result set into the scroll context up front and later pages read that snapshot. So the context has a ceiling, and it is the one thing to know before pointing export tooling at it — <!-- generated:scroll-snapshot-cap -->10,000<!-- /generated:scroll-snapshot-cap --> documents. A query whose <em>exact</em> total exceeds it is refused with a <code class="inline">400 illegal_argument_exception</code> instead of being paged and silently truncated. Read a result set of any size with <code class="inline">search_after</code> on a unique sort key — that path is unbounded.</p>
+  <p>Elasticsearch's scroll walks segments as it goes. XERJ's does not: the opening <code class="inline">_search?scroll=</code> materialises the whole result set into the scroll context up front and later pages read that snapshot. So the context has a ceiling, and it is the one thing to know before pointing export tooling at it: <!-- generated:scroll-snapshot-cap -->10,000<!-- /generated:scroll-snapshot-cap --> documents. A query whose <em>exact</em> total exceeds it is refused with a <code class="inline">400 illegal_argument_exception</code> instead of being paged and silently truncated. Read a result set of any size with <code class="inline">search_after</code> on a unique sort key. That path is unbounded.</p>
 
   <p>This is the common case, not the corner case: <code class="inline">helpers.scan()</code> in <code class="inline">elasticsearch-py</code>, reindex internals, and most export and backup tooling all scroll a whole index, and whole indices are usually bigger than the cap.</p>
 
-  <p>The ceiling above is the one <code class="inline">_search?scroll=</code> enforces, on the request's total across every index it resolves. One route is looser: the <code class="inline">POST /:index/_search_scroll</code> alias applies the ceiling <em>per index</em>, so a comma-separated multi-index scroll sent there can snapshot the full ceiling from each. That direction is permissive rather than truncating: the documents are in the snapshot and page out (measured: 2&times;6,000 docs over that route returned 12,000 hits across 120 pages). Note that per-hit <code class="inline">_index</code> is <strong>not</strong> reliable on that route &mdash; continuation pages return the raw comma-separated index spec rather than the resolving index, so <code class="inline">(_index, _id)</code> is not a distinct key there. Export and reindex tooling should not depend on it. Tracked in <a href="https://github.com/xerj-org/xerj/issues/405">#405</a>.</p>
+  <p>The ceiling above is the one <code class="inline">_search?scroll=</code> enforces, on the request's total across every index it resolves. One route is looser: the <code class="inline">POST /:index/_search_scroll</code> alias applies the ceiling <em>per index</em>, so a comma-separated multi-index scroll sent there can snapshot the full ceiling from each. That direction is permissive rather than truncating: the documents are in the snapshot and page out (measured: 2&times;6,000 docs over that route returned 12,000 hits across 120 pages). Note that per-hit <code class="inline">_index</code> is <strong>not</strong> reliable on that route: continuation pages return the raw comma-separated index spec rather than the resolving index, so <code class="inline">(_index, _id)</code> is not a distinct key there. Export and reindex tooling should not depend on it. Tracked in <a href="https://github.com/xerj-org/xerj/issues/405">#405</a>.</p>
 
 <pre class="code"># 11,450 documents in `logs` — over the cap, so the scroll never opens
 $ curl -sX POST 'http://localhost:9200/logs/_search?scroll=1m' \
@@ -338,7 +338,7 @@ $ curl -sX POST http://localhost:9200/logs/_search \
     -d '{"size":1000,"sort":[{"_id":"asc"}],"search_after":["10897"],"query":{"match_all":{}}}'
 # → 12 pages, all 11,450 documents, no ceiling</pre>
 
-  <h2 id="rerank">The <code class="inline">rerank</code> stage — a XERJ extension</h2>
+  <h2 id="rerank">The <code class="inline">rerank</code> stage: a XERJ extension</h2>
   <p><strong>This feature sends your data off the machine.</strong> <code class="inline">rerank</code> is a top-level <code class="inline">_search</code> key that Elasticsearch does not have, and the only search-time feature that sends document text off the node (proxy embeddings and the WAL tap also send text off the node when an operator configures them; both are off by default, and <a href="https://github.com/xerj-org/xerj/blob/main/docs/RERANK.md#every-way-data-leaves-a-xerj-node" rel="external">docs/RERANK.md</a> lists every outbound connection a node can open). It POSTs the question and the text of the top <code class="inline">window</code> hits (default 30, maximum 300) to a third-party relevance judge, and reorders the hits by the 0–1 probability that comes back. That probability replaces <code class="inline">_score</code>, so <code class="inline">rerank.min_score</code> is an absolute cut-off. It does nothing until the node's operator sets a provider key under <a href="/docs/config#rerank-section"><code class="inline">[rerank]</code></a>, a request only triggers it by carrying the block, and only fields the response returns are sent.</p>
 <pre class="code">$ curl -sX POST http://localhost:9200/kb/_search \
     -H 'Content-Type: application/json' \

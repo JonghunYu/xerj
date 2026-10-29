@@ -27,6 +27,7 @@ SCRIPT_DIR = pathlib.Path(__file__).resolve().parent
 sys.path.insert(0, str(SCRIPT_DIR))
 
 import article_data  # noqa: E402
+import copy_dashes  # noqa: E402
 import fix_links  # noqa: E402
 import set_nav  # noqa: E402
 import pagedata  # noqa: E402
@@ -47,6 +48,20 @@ HEADING_RE = re.compile(r"^ {0,3}(#{1,6})\s+(.+?)\s*$")
 UL_RE = re.compile(r"^ {0,3}([-+*])\s+(.+?)\s*$")
 OL_RE = re.compile(r"^ {0,3}(\d+)[.)]\s+(.+?)\s*$")
 LANG_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9+_.-]*$")
+
+
+def _claim_lead(claim: str) -> str:
+    """Evidence claim followed by the separator before its source.
+
+    Site copy carries no em dashes (see ste_check STE140), so an evidence
+    line reads "Claim. Source: link" rather than "Claim — link".
+    """
+    claim = claim.strip()
+    if not claim:
+        return ""
+    return claim + (" " if claim[-1] in ".?!:" else ". ")
+
+
 TLDR_RE = re.compile(r"^\s*\*\*TL[;:]?DR\*\*\s*[—–:.-]?\s*", re.I)
 
 
@@ -607,7 +622,7 @@ def render_agent_prompt(article: article_data.Article) -> str:
         return ""
     prompt = article.agent_prompt
     return ("  <div class=\"prompt-card\">\n"
-            "    <span class=\"prompt-label\">PASTE THIS TO YOUR AI AGENT — IT DOES THE REST</span>\n"
+            "    <span class=\"prompt-label\">PASTE THIS TO YOUR AI AGENT. IT DOES THE REST</span>\n"
             f"    <code>{esc_text(prompt)}</code>\n"
             f"    <button type=\"button\" class=\"prompt-copy\" data-copy=\"{esc_attr(prompt)}\">"
             "COPY THE PROMPT</button>\n"
@@ -702,7 +717,7 @@ def render_markdown_twin(article: article_data.Article, context: BuildContext) -
             source = item["source"].strip()
             rendered_source = (f"[{source}]({href})" if href is not None
                                else f"`{source}`")
-            out.append(f"- {item['claim'].strip()} — {rendered_source}")
+            out.append(f"- {_claim_lead(item['claim'])}Source: {rendered_source}")
 
     out += ["", "## Related", ""]
     siblings = intent_siblings(article, context)
@@ -754,10 +769,10 @@ def render_article_sections(article: article_data.Article, context: BuildContext
                 source_html = f"<code>{esc_text(source)}</code>"
             else:
                 source_html = f'<a href="{esc_attr(href)}">{esc_text(source)}</a>'
-            out.append("    <li>" + _inline(item["claim"].strip(), article,
-                                              article.body_start_line,
-                                              context.markdown_href)
-                       + " — " + source_html + "</li>")
+            out.append("    <li>" + _claim_lead(_inline(item["claim"].strip(), article,
+                                                          article.body_start_line,
+                                                          context.markdown_href))
+                       + "Source: " + source_html + "</li>")
         out.append("  </ul>")
 
     out.append("  <h2>Related</h2>")
@@ -937,7 +952,7 @@ def render_hub(category: str, articles: list[article_data.Article],
             content.append("  <ul>")
             for article in sorted(groups[cluster], key=lambda a: a.h1.lower()):
                 content.append(f'    <li><a href="{urlmap.deployed_path(article.output_rel)}">'
-                               f"{esc_text(article.h1)}</a> — {esc_text(article.description)}</li>")
+                               f"{esc_text(article.h1)}</a>{' ' if article.h1.rstrip()[-1:] in '.?!' else '. '}{esc_text(article.description)}</li>")
             content.append("  </ul>")
     else:
         content.append("  <h2>Articles</h2>")
@@ -1036,7 +1051,7 @@ def render_llms_section(articles: list[article_data.Article], context: BuildCont
         "1,000-query study of what agents actually type into search, so find the group that "
         "matches your task first. Each line is the link, a tag (`answer` or `compare`), then the "
         "question that page answers. "
-        "**Every link below is the page's Markdown twin — the canonical HTML page is the same "
+        "**Every link below is the page's Markdown twin. The canonical HTML page is the same "
         "URL without the `.md`.** The twin is deliberately not in the sitemap because it is the "
         "same document. Titles, questions, short answers, target queries, intents and "
         "last-modified dates for every page, as JSON: "
@@ -1185,6 +1200,7 @@ def build_expected(repo: pathlib.Path, landing: pathlib.Path, all_articles: list
     context = BuildContext(repo, landing, all_articles, dates)
     categories = {a.category for a in selected} if only else {"answers", "compare"}
     assert_reachability(context, categories)
+    assert_no_copy_dashes(selected)
     expected: dict[str, str] = {}
     for article in selected:
         expected[article.output_rel] = render_article(article, context)
@@ -1199,6 +1215,21 @@ def build_expected(repo: pathlib.Path, landing: pathlib.Path, all_articles: list
         expected["llms.txt"] = splice_llms(current, render_llms_section(all_articles, context))
     assert_generated_contract(expected, landing, selected, only)
     return expected, {"dates": dates, "context": context}
+
+
+def assert_no_copy_dashes(selected: list[article_data.Article]) -> None:
+    """Refuse an article source whose copy carries an em dash.
+
+    Unlike the ASD-STE100 report below, this one is a gate: a dash is
+    mechanical, never a judgement call about a quoted user question.  The rules
+    and exemptions (code, blockquotes, verbatim frontmatter fields) live in
+    copy_dashes.py.
+    """
+    problems, notes = copy_dashes.check([a.path for a in selected])
+    for note in notes:
+        print("note: " + note, file=sys.stderr)
+    if problems:
+        raise BuildError("\n".join(problems))
 
 
 def assert_generated_contract(expected: dict[str, str], landing: pathlib.Path,

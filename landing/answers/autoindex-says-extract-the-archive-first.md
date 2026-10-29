@@ -12,12 +12,12 @@ source: "content/answers/autoindex-says-extract-the-archive-first.md"
 
 **Key number:** autoindex classifies a file from its first 8,192 bytes (`PREFIX` in the sniffer), which is how an archive is recognised by magic bytes rather than by its extension. (as of 2026-10-19; source: [engine/crates/xerj-autoindex/src/sniff.rs](https://github.com/xerj-org/xerj/blob/main/engine/crates/xerj-autoindex/src/sniff.rs))
 
-**TL;DR** — autoindex does not open archives. When it meets a `.zip`, `.tgz`, `.7z`, `.rar` or `.xz`, it marks the file as junk with a reason that quotes the extraction command, and prints that under the run's summary. The run finishes with exit code 3 and the rest of the folder is indexed. Extract the archive and run the same command on the extracted folder.
+**TL;DR**: autoindex does not open archives. When it meets a `.zip`, `.tgz`, `.7z`, `.rar` or `.xz`, it marks the file as junk with a reason that quotes the extraction command, and prints that under the run's summary. The run finishes with exit code 3 and the rest of the folder is indexed. Extract the archive and run the same command on the extracted folder.
 
 ## Agent prompt
 
 ```text
-Act as a coding agent. Read https://xerj.org/llms.txt. If a run prints 'not indexed — archives are never opened' under its summary (or its --json summary has a non-empty unextracted_archives list), run the command each line names (unzip, tar -xzf, 7z x, unrar x, xz -dk) on that file, then run xerj autoindex again on the extracted folder. Exit code 3 with those lines is a completed run, not a failure, but if the archive was the only thing in the folder nothing was indexed: tell the user.
+Act as a coding agent. Read https://xerj.org/llms.txt. If a run prints 'not indexed: archives are never opened' under its summary (or its --json summary has a non-empty unextracted_archives list), run the command each line names (unzip, tar -xzf, 7z x, unrar x, xz -dk) on that file, then run xerj autoindex again on the extracted folder. Exit code 3 with those lines is a completed run, not a failure, but if the archive was the only thing in the folder nothing was indexed: tell the user.
 ```
 
 ## Commands
@@ -76,7 +76,7 @@ For a Google Takeout export, the extracted folder holds the mailbox. It is detec
 
 ### Why does xerj autoindex say to extract a zip first?
 
-Because it never opens archives. Extracting is one command it quotes in the reason, and it keeps the index from holding the same files twice — once inside the archive and once beside it.
+Because it never opens archives. Extracting is one command it quotes in the reason, and it keeps the index from holding the same files twice, once inside the archive and once beside it.
 
 ### Is the run a failure?
 
@@ -92,10 +92,10 @@ A plain gzip-compressed file is streamed through decompression and sniffed like 
 
 ## Evidence
 
-- The junk reason for an archive reads 'unextracted <kind>: autoindex does not open archives — extract it first (<command>), then run autoindex on the extracted folder', with the command chosen per kind: unzip, tar -xf, tar -xzf, 7z x, unrar x, xz -dk. — `engine/crates/xerj-autoindex/src/sniff.rs`
-- Archives are detected by magic bytes — a tar by its ustar header checksum, not by text that happens to say ustar — so a renamed archive gets the same reason. — `engine/crates/xerj-autoindex/src/sniff.rs`
-- The run prints every unextracted archive under its summary, after 'not indexed — archives are never opened', with the archive's path and its reason (at most ten lines, then a count and a pointer to xerj autoindex map), and puts the same lines in its --json summary as unextracted_archives. — `engine/crates/xerj-autoindex/src/lib.rs`
-- Exit code 3 is completed-with-junk; junk is recorded, never fatal. — `engine/crates/xerj-autoindex/src/cli.rs`
+- The junk reason for an archive reads 'unextracted <kind>: autoindex does not open archives, extract it first (<command>), then run autoindex on the extracted folder', with the command chosen per kind: unzip, tar -xf, tar -xzf, 7z x, unrar x, xz -dk. Source: `engine/crates/xerj-autoindex/src/sniff.rs`
+- Archives are detected by magic bytes: a tar by its ustar header checksum, not by text that happens to say ustar, so a renamed archive gets the same reason. Source: `engine/crates/xerj-autoindex/src/sniff.rs`
+- The run prints every unextracted archive under its summary, after 'not indexed: archives are never opened', with the archive's path and its reason (at most ten lines, then a count and a pointer to xerj autoindex map), and puts the same lines in its --json summary as unextracted_archives. Source: `engine/crates/xerj-autoindex/src/lib.rs`
+- Exit code 3 is completed-with-junk; junk is recorded, never fatal. Source: `engine/crates/xerj-autoindex/src/cli.rs`
 
 ## Related
 

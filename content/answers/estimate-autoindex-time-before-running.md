@@ -44,7 +44,7 @@ faq:
     a: "Because the measured extraction floor for 6 small files rounds to zero. The gate did not trigger, and the real run still took 1.5 s including server time."
 ---
 
-**TL;DR** — `xerj autoindex --dry-run` prints a measured extraction floor for your own machine, and it writes nothing. Add `--max-minutes` and `--quiet`, and the decision gate exits 4 with a JSON decision request. On 2,500 PDFs the floor was 2.2 min and the finished run took 157.7 s.
+**TL;DR**: `xerj autoindex --dry-run` prints a measured extraction floor for your own machine, and it writes nothing. Add `--max-minutes` and `--quiet`, and the decision gate exits 4 with a JSON decision request. On 2,500 PDFs the floor was 2.2 min and the finished run took 157.7 s.
 
 ## The estimate is a floor, not a forecast
 

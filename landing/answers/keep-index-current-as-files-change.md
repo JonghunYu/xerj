@@ -12,7 +12,7 @@ source: "content/answers/keep-index-current-as-files-change.md"
 
 **Key number:** The --debounce quiet period accepts at most 60,000 ms (`MAX_DEBOUNCE_MS`); longer than a minute is a timer, not a debounce. (as of 2026-10-19; source: [engine/crates/xerj-autoindex/src/cli.rs](https://github.com/xerj-org/xerj/blob/main/engine/crates/xerj-autoindex/src/cli.rs))
 
-**TL;DR** — `xerj autoindex ./folder --watch --no-graph` indexes once, then
+**TL;DR**: `xerj autoindex ./folder --watch --no-graph` indexes once, then
 reindexes what changed. At idle it costs nothing; a re-run on a timer costs a
 full walk and a full re-hash of the corpus on every tick.
 
@@ -66,7 +66,7 @@ large gaps and not the small ones. Commands and captured output:
 | Index the folder again from scratch | 293.8 s | 127.9 s | 167.5 s |
 | Re-run the same command, nothing changed | 1.7 s | 2.1 s | 0.01 s |
 | Re-run it, one file modified | 44.3 s | 7.6 s | 27.9 s |
-| `--watch`, idle | — | 0.00 s per minute | 0.07 s per minute |
+| `--watch`, idle | n/a | 0.00 s per minute | 0.07 s per minute |
 | `--watch`, one file modified | 47.6 s | 6.6 s | 34.5 s |
 
 The table says three things. Read all three.
@@ -88,7 +88,7 @@ server, at ~27 s of server CPU. Both terms are O(corpus), both are shared with a
 plain re-run, and both are filed as the next lever.
 
 **Against re-indexing the folder from scratch, incremental wins by an order of
-magnitude** — 44-48 s against 294 s, and 7 CPU-seconds against 128.
+magnitude**: 44-48 s against 294 s, and 7 CPU-seconds against 128.
 
 ## Start it
 

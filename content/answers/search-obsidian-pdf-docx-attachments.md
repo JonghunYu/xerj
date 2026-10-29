@@ -47,12 +47,12 @@ faq:
   - q: "Does this replace Omnisearch inside Obsidian?"
     a: "No. Omnisearch is a plugin for a person working inside the app, and it keeps that job. XERJ indexes the vault folder from outside so an agent can query it without the app open."
   - q: "Why did one of my notes return no results?"
-    a: "A note whose non-blank lines mostly read as YAML — `key: value` lines or `- ` bullets — can be classified as `yaml` and refused with 0 documents. Front matter on its own no longer does it. Read the `autoindex-catalog` for the reason string."
+    a: "A note whose non-blank lines mostly read as YAML (`key: value` lines or `- ` bullets) can be classified as `yaml` and refused with 0 documents. Front matter on its own no longer does it. Read the `autoindex-catalog` for the reason string."
   - q: "Does XERJ connect to Obsidian itself?"
     a: "No. XERJ reads the vault folder from local disk. The captured node opened 0 non-loopback connections over its whole life, so no application or service was contacted."
 ---
 
-**TL;DR** — XERJ `autoindex` reads a vault folder from local disk and extracts text from its attachments. In a captured run, a phrase that exists only inside `pangolin-escalation-matrix.pdf` returned 1 hit, and a phrase only inside `capybara-change-window.docx` returned 1 hit. Wikilinks between the notes became `wikilink` edges, each carrying the line that created it.
+**TL;DR**: XERJ `autoindex` reads a vault folder from local disk and extracts text from its attachments. In a captured run, a phrase that exists only inside `pangolin-escalation-matrix.pdf` returned 1 hit, and a phrase only inside `capybara-change-window.docx` returned 1 hit. Wikilinks between the notes became `wikilink` edges, each carrying the line that created it.
 
 ## What the captured run actually indexed
 

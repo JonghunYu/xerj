@@ -158,9 +158,9 @@
   <section class="verdict-panel" id="verdict">
     <div class="vh"><span class="wn">THE VERDICT</span>
       <span class="wm">split, measured, with the losses left in</span></div>
-    <p>Not outright — and not behind, either: a split verdict, measured over <strong>1,271 judged BEIR queries</strong> (3 shuffled repeats each). Where reading beats word-overlap, Jev's hosted judge wins rerank: our BM25 top-30 reordered by Jev scores <strong>0.7410 nDCG@10 on SciFact</strong> (versus 0.6993 for our best zero-API-token arm, hybrid RRF) and <strong>0.3638 on FiQA</strong> (versus 0.2382 BM25 — a +0.126 lift, the biggest we measured and the clearest case where hosted Jev still wins); our local hybrid keeps NFCorpus, 0.3448 to the rerank path's 0.3312, and that losing row stays in the table rather than being hidden.</p>
-    <p>On the bill XERJ wins outright: the FiQA rerank run cost <strong>15,178,758 judge input tokens — $0.6375</strong> at $0.042/Mtok, input only, p50 1.23 s per call — while XERJ answers the same wire (<code class="inline">/v1/systemone</code> and <code class="inline">/_decide</code>) locally with zero tokens, no model, and p50 42.7 ms on <code class="inline">/v1/systemone</code> (<code class="inline">/_decide</code>: 34.8 ms), and the unmodified pip-installed <code class="inline">jev-reranker</code> ran against a XERJ node and passed its own strict validation through both of its entry points (spam 0.9447 versus ham 0.0905, client 0.1.2, re-run 2026-09-21). AG News reaches 0.9182 accuracy on all 7,600 test items with no model and no tokens — no Jev row exists for AG News and none is claimed.</p>
-    <p>Hold the caveats: hosted Jev's published SciFact 0.768 and NFCorpus 0.358 are not run by us and are not a race with our rows (different experiments sharing a metric); provider non-determinism makes any gap within ±0.01 nDCG@10 noise; and Jev's FiQA probabilities are badly calibrated (ECE 0.3109 — documents rated 0.93 confidence were relevant 34% of the time; order by them, never threshold them with <code class="inline">min_score</code>). Verdict: use Jev where the judge wins, FiQA-style rerank; use XERJ where tokens, latency, and data locality decide.</p>
+    <p>Not outright, and not behind, either: a split verdict, measured over <strong>1,271 judged BEIR queries</strong> (3 shuffled repeats each). Where reading beats word-overlap, Jev's hosted judge wins rerank: our BM25 top-30 reordered by Jev scores <strong>0.7410 nDCG@10 on SciFact</strong> (versus 0.6993 for our best zero-API-token arm, hybrid RRF) and <strong>0.3638 on FiQA</strong> (versus 0.2382 BM25: a +0.126 lift, the biggest we measured and the clearest case where hosted Jev still wins); our local hybrid keeps NFCorpus, 0.3448 to the rerank path's 0.3312, and that losing row stays in the table rather than being hidden.</p>
+    <p>On the bill XERJ wins outright: the FiQA rerank run cost <strong>15,178,758 judge input tokens, $0.6375</strong> at $0.042/Mtok, input only, p50 1.23 s per call, while XERJ answers the same wire (<code class="inline">/v1/systemone</code> and <code class="inline">/_decide</code>) locally with zero tokens, no model, and p50 42.7 ms on <code class="inline">/v1/systemone</code> (<code class="inline">/_decide</code>: 34.8 ms), and the unmodified pip-installed <code class="inline">jev-reranker</code> ran against a XERJ node and passed its own strict validation through both of its entry points (spam 0.9447 versus ham 0.0905, client 0.1.2, re-run 2026-09-21). AG News reaches 0.9182 accuracy on all 7,600 test items with no model and no tokens, no Jev row exists for AG News and none is claimed.</p>
+    <p>Hold the caveats: hosted Jev's published SciFact 0.768 and NFCorpus 0.358 are not run by us and are not a race with our rows (different experiments sharing a metric); provider non-determinism makes any gap within ±0.01 nDCG@10 noise; and Jev's FiQA probabilities are badly calibrated (ECE 0.3109, documents rated 0.93 confidence were relevant 34% of the time; order by them, never threshold them with <code class="inline">min_score</code>). Verdict: use Jev where the judge wins, FiQA-style rerank; use XERJ where tokens, latency, and data locality decide.</p>
   </section>
 
   <p class="uc-lead">Two experiments, in that order. First we measured what TypeSafe AI's Jev judge model really does to our ranking. We include the day our own code scored <strong>0.3822 nDCG@10</strong> while plain BM25 scored 0.7750. That bug was ours. We found it, fixed it, and ran 1,271 judged queries on three public datasets. Then we flipped the question. A XERJ node now <em>answers</em> the System One wire itself. The pip-installed <code class="inline">jev-reranker</code> runs against it with no code changes. No request leaves your machine. Every number below comes from a run you can find in the repo. The losses sit next to the wins.</p>
@@ -225,7 +225,7 @@
           <span>fixed<span class="sub">this commit</span></span>
           <span>raw API<span class="sub">no stage</span></span>
         </div>
-        <div class="vc-title"><b>SciFact, first 40 judged queries</b> — pilot, 2026-09-20</div>
+        <div class="vc-title"><b>SciFact, first 40 judged queries</b>: pilot, 2026-09-20</div>
       </div>
     </div>
     <p class="vc-note">The pilot was for diagnosis. Forty queries were enough to see a 2× gap. The fix came from reading the installed <code class="inline">jev-reranker</code> wheel (MIT licence), not from memory: listwise mode, the document named by backtick path inside its own question.</p>
@@ -293,7 +293,7 @@
           <span>BM25<span class="sub">no judge</span></span>
           <span>+ Jev<span class="sub win">82 W · 30 L · 188 T</span></span>
         </div>
-        <div class="vc-title"><b>SciFact · 300 queries</b> — median of 3 repeats</div>
+        <div class="vc-title"><b>SciFact · 300 queries</b>: median of 3 repeats</div>
       </div>
       <div class="vc-group">
         <div class="vc-plot">
@@ -304,7 +304,7 @@
           <span>BM25<span class="sub">no judge</span></span>
           <span>+ Jev<span class="sub">118 W · 74 L · 131 T</span></span>
         </div>
-        <div class="vc-title"><b>NFCorpus · 323 queries</b> — median of 3 repeats</div>
+        <div class="vc-title"><b>NFCorpus · 323 queries</b>: median of 3 repeats</div>
       </div>
       <div class="vc-group">
         <div class="vc-plot">
@@ -315,7 +315,7 @@
           <span>BM25<span class="sub">no judge</span></span>
           <span>+ Jev<span class="sub win">249 W · 57 L · 342 T</span></span>
         </div>
-        <div class="vc-title"><b>FiQA · 648 queries</b> — median of 3 repeats, the biggest lift</div>
+        <div class="vc-title"><b>FiQA · 648 queries</b>: median of 3 repeats, the biggest lift</div>
       </div>
     </div>
     <p class="vc-note">W / L / T counted per query against the same run's BM25 arm. All three datasets net positive. NFCorpus is the weakest, and its per-query losses are in the table above, not hidden.</p>
@@ -373,7 +373,7 @@
           <span>bin 9<span class="sub">said / was</span></span>
           <span></span>
         </div>
-        <div class="vc-title"><b>FiQA, top three confidence bins</b> — mean confidence vs share actually relevant</div>
+        <div class="vc-title"><b>FiQA, top three confidence bins</b>: mean confidence vs share actually relevant</div>
       </div>
     </div>
     <p class="vc-note">19,440 (probability, relevance) pairs, 10 equal-width bins; the three highest are shown. The full curve, bin by bin, is in <code class="inline">fiqa-full-run.json</code>. The gap between the red bar and the gold bar is the whole finding: at the top of the scale the judge says "certain" and means "one in three".</p>
@@ -420,7 +420,7 @@
   </div>
 
   <h3 class="scene" style="font-size:var(--fs-20); margin-top:var(--sp-8);">The gate: the pip client, unmodified, on a local node</h3>
-  <p class="wide">No SDK of ours, no patches, no subclassing. <code class="inline">pip install jev-reranker</code> (0.1.2, MIT), its own listwise template, its own splitting, its own strict response validation, pointed at a XERJ node holding 4,000 labelled SMS messages. The gate ranks through both of the client's entry points — the constructor default, and the documented relevance preset, which since 0.1.2 ships its rubric as an <em>object</em> the vote must acknowledge without reading it as retrieval text. Two environment variables, and one of them is a trap:</p>
+  <p class="wide">No SDK of ours, no patches, no subclassing. <code class="inline">pip install jev-reranker</code> (0.1.2, MIT), its own listwise template, its own splitting, its own strict response validation, pointed at a XERJ node holding 4,000 labelled SMS messages. The gate ranks through both of the client's entry points: the constructor default, and the documented relevance preset, which since 0.1.2 ships its rubric as an <em>object</em> the vote must acknowledge without reading it as retrieval text. Two environment variables, and one of them is a trap:</p>
 
   <pre class="code"><span class="prompt">$</span> pip install jev-reranker
 <span class="prompt">$</span> <span class="cmt"># TYPESAFE_ENDPOINT carries the FULL path. TYPESAFE_BASE_URL is silently ignored</span>
@@ -442,7 +442,7 @@ GATE PASSED: unmodified jev-reranker ranked from the XERJ node</span></pre>
   <p class="wide">The client's own validation <em>is</em> the wire gate. Answers keyed by the sent ids. Every noul numeric in 0..1. Model a non-empty string. Usage non-negative integers. Surviving it unmodified is the compatibility claim. The spam/ham separation is the semantic one. <strong>Zero requests left the machine.</strong> The vote is an ordinary search of an ordinary index, and the module adds no outbound client.</p>
 
   <div class="loss">
-    <strong>The first gate attempt failed. It is the most useful thing on this page.</strong> The wire puts the query in <code class="inline">state</code>, and the vote text joined it, so query vocabulary took part in retrieval. With a spam-bearing query like "winner claim prize", <em>every</em> document's vote retrieved spam neighbours. The vote measured the query, not the documents: spam 1.000 against ham 0.785. No separation. We first called that "inherent to a retrieval vote". <strong>It was not. It was two defects, and we fixed them.</strong> The vote text used to concatenate the instruction's prose into the retrieval query — wording alone moved accuracy 32 points (0.9867 with an empty instruction, 0.6700 with a criteria-rich one, same 300 held-out messages) — and an object state contributed only its <code class="inline">query</code> field, so <code class="inline">{"message": …}</code> voted on prose at the spam base rate (0.1733 against 0.9667 for the same message as a string). The vote text is now exactly what the question points at: its backtick references, or the state's own string content — never instruction prose, never state the question never named. After the fix, all eight wording/shape arms of the same 300 messages score identically (0.9767). One part <em>is</em> by design, and it is the client's choice, not ours: since 0.1.2 the client's own question references the query in backticks, so the query is named payload — the question being asked is "does this document answer this query". <strong>Pick the query for the history you have</strong> still holds: under the deliberately spammy query the gap narrows from 0.8542 to 0.6087, and the gate asserts both.
+    <strong>The first gate attempt failed. It is the most useful thing on this page.</strong> The wire puts the query in <code class="inline">state</code>, and the vote text joined it, so query vocabulary took part in retrieval. With a spam-bearing query like "winner claim prize", <em>every</em> document's vote retrieved spam neighbours. The vote measured the query, not the documents: spam 1.000 against ham 0.785. No separation. We first called that "inherent to a retrieval vote". <strong>It was not. It was two defects, and we fixed them.</strong> The vote text used to concatenate the instruction's prose into the retrieval query: wording alone moved accuracy 32 points (0.9867 with an empty instruction, 0.6700 with a criteria-rich one, same 300 held-out messages), and an object state contributed only its <code class="inline">query</code> field, so <code class="inline">{"message": …}</code> voted on prose at the spam base rate (0.1733 against 0.9667 for the same message as a string). The vote text is now exactly what the question points at: its backtick references, or the state's own string content, never instruction prose, never state the question never named. After the fix, all eight wording/shape arms of the same 300 messages score identically (0.9767). One part <em>is</em> by design, and it is the client's choice, not ours: since 0.1.2 the client's own question references the query in backticks, so the query is named payload, the question being asked is "does this document answer this query". <strong>Pick the query for the history you have</strong> still holds: under the deliberately spammy query the gap narrows from 0.8542 to 0.6087, and the gate asserts both.
   </div>
 
   <h3 class="scene" style="font-size:var(--fs-20); margin-top:var(--sp-8);">Speed: the Rust side of the same wire</h3>
@@ -452,14 +452,14 @@ GATE PASSED: unmodified jev-reranker ranked from the XERJ node</span></pre>
   <table class="vt">
     <thead><tr><th>AG News vote · 120,000 history docs · all 7,600 test items · identical inputs</th><th>ms / item</th><th>Accuracy</th><th>Decisions changed</th></tr></thead>
     <tbody>
-      <tr><td>Engine before the change</td><td class="n">68.7</td><td class="n">0.9182</td><td class="t">—</td></tr>
+      <tr><td>Engine before the change</td><td class="n">68.7</td><td class="n">0.9182</td><td class="t">n/a</td></tr>
       <tr><td>WAND first cut</td><td class="n">51.2</td><td class="n">0.9182</td><td class="n w">none</td></tr>
       <tr><td>WAND, allocation-free inner loop (shipped)</td><td class="n w">34.2</td><td class="n">0.9182</td><td class="n w">none</td></tr>
     </tbody>
   </table>
   </div>
 
-  <p class="wide"><strong>2.0× faster end to end, and the 7,600 decisions are bit-identical</strong>: same labels, same confidence bands. 83.1% of items decided at confidence 0.8 or higher, and 96.7% of those right. Zero items had no neighbour. Ranking quality did not move because scores are computed in the same order and to the same values. We proved that three ways. The three BEIR runs reproduce to four decimals on the new engine, 0.6572, 0.3016, 0.2382. A 648-query A/B over a byte-identical copy of the FiQA index found zero order changes and zero score-bit changes. The full ES wire-conformance suite on that branch stayed at <!-- snapshot:2026-09-20 -->1371 passed, 0 failed — a dated capture from the wire-compat branch these runs measured; the site-wide canonical figure on every commit is on the benchmarks board.</p>
+  <p class="wide"><strong>2.0× faster end to end, and the 7,600 decisions are bit-identical</strong>: same labels, same confidence bands. 83.1% of items decided at confidence 0.8 or higher, and 96.7% of those right. Zero items had no neighbour. Ranking quality did not move because scores are computed in the same order and to the same values. We proved that three ways. The three BEIR runs reproduce to four decimals on the new engine, 0.6572, 0.3016, 0.2382. A 648-query A/B over a byte-identical copy of the FiQA index found zero order changes and zero score-bit changes. The full ES wire-conformance suite on that branch stayed at <!-- snapshot:2026-09-20 -->1371 passed, 0 failed: a dated capture from the wire-compat branch these runs measured; the site-wide canonical figure on every commit is on the benchmarks board.</p>
 
   <div class="vchart">
     <div class="vc-legend">
@@ -478,7 +478,7 @@ GATE PASSED: unmodified jev-reranker ranked from the XERJ node</span></pre>
           <span>/v1/systemone<span class="sub win">local, free</span></span>
           <span>/_decide<span class="sub">local, evidence</span></span>
         </div>
-        <div class="vc-title"><b>Same wire, p50 per call</b> — hosted: FiQA run · local: 300 distinct items, one box</div>
+        <div class="vc-title"><b>Same wire, p50 per call</b>, hosted: FiQA run · local: 300 distinct items, one box</div>
       </div>
     </div>
     <p class="vc-note">The hosted bar is the Jev API's measured p50 on the FiQA rerank run in §02, 1.23 s per query. Its fastest of the three datasets, so the bar is generous to the hosted side; SciFact and NFCorpus measured 1.49 s and 1.48 s. The local bars are the same wire answered by the vote over 120k AG News history on this engine. Different tools: the hosted judge needs no history, the vote needs this index. This is a speed, cost and egress comparison, not a quality race. No Jev number exists for AG News and we claim none.</p>
@@ -492,13 +492,13 @@ GATE PASSED: unmodified jev-reranker ranked from the XERJ node</span></pre>
   <table class="vt">
     <thead><tr><th>Decisions from labelled history · k = 10 · held-out items</th><th>Accuracy</th><th>Calibration error</th><th>Decided at confidence ≥ 0.8</th><th>ms / item</th></tr></thead>
     <tbody>
-      <tr><td>Banking77, 77-way intent routing · 1,000 items — BM25, no model of any kind</td>
+      <tr><td>Banking77, 77-way intent routing · 1,000 items: BM25, no model of any kind</td>
         <td class="n">0.819</td><td class="n">0.089</td><td class="n">50.6% at 0.996</td><td class="n">2.2</td></tr>
-      <tr><td>Banking77 — MiniLM neighbours (<code class="inline">--embed-mode neural</code>)</td>
+      <tr><td>Banking77: MiniLM neighbours (<code class="inline">--embed-mode neural</code>)</td>
         <td class="n w">0.933</td><td class="n w">0.012</td><td class="n w">86.9% at 0.979</td><td class="n">8.6</td></tr>
-      <tr><td>SMS spam, yes / no · 1,000 items — BM25, no model of any kind</td>
+      <tr><td>SMS spam, yes / no · 1,000 items: BM25, no model of any kind</td>
         <td class="n w">0.983</td><td class="n">0.017</td><td class="n">95.4% at 0.992</td><td class="n w">0.9</td></tr>
-      <tr><td>AG News, 4-way topic · 7,600 items — BM25, no model of any kind</td>
+      <tr><td>AG News, 4-way topic · 7,600 items: BM25, no model of any kind</td>
         <td class="n w">0.9182</td><td class="n">0.019</td><td class="n">83.1% at 0.9669</td><td class="n">34.2</td></tr>
     </tbody>
   </table>
@@ -595,19 +595,19 @@ GATE PASSED: unmodified jev-reranker ranked from the XERJ node</span></pre>
 
   <p class="wide">Read in order, the four sections are one argument, and the title's question was never
   going to have a single winner. Measured over <strong>1,271 judged queries</strong> the scoreboard is a
-  split: the hosted judge takes SciFact and FiQA &mdash; <strong>+0.126</strong> on FiQA, the biggest lift
-  we measured &mdash; and the local hybrid keeps NFCorpus, <strong>0.3448 to 0.3312</strong>. On the bill
+  split: the hosted judge takes SciFact and FiQA (<strong>+0.126</strong> on FiQA, the biggest lift
+  we measured) and the local hybrid keeps NFCorpus, <strong>0.3448 to 0.3312</strong>. On the bill
   XERJ wins outright: the FiQA rerank run cost <strong>15,178,758 judge input tokens</strong> and
   <strong>$0.6375</strong>, while the vote over your own history spends no tokens and sends no text off
   the node. What turns that split into something an operator can act on is §03: both ends now speak the
-  same wire, so the same client &mdash; unmodified, as the gate proved &mdash; can take either answer.</p>
+  same wire, so the same client (unmodified, as the gate proved) can take either answer.</p>
 
   <p class="wide">Three lessons outlast the tables. First, <strong>measure the integration, not the
   model</strong>: our stage scored 0.3822 where plain BM25 scored 0.7750, the defect was our request
   shape, and a judge answers the question you actually sent. Second, <strong>know your noise
   floor</strong>: the provider is not deterministic, any gap within &plusmn;0.01 nDCG@10 is noise, and a
   single-shot benchmark of a hosted judge is a coin. Third, <strong>a judge probability is an ordering,
-  not a probability</strong> &mdash; ECE 0.3109 on FiQA, where documents rated 0.93 confidence were
+  not a probability</strong>: ECE 0.3109 on FiQA, where documents rated 0.93 confidence were
   relevant 34% of the time.</p>
 
   <div class="loss">
@@ -620,11 +620,11 @@ GATE PASSED: unmodified jev-reranker ranked from the XERJ node</span></pre>
 
   <p class="wide">If you would rather check the claim than read about it: the gate recipe directly above
   is the whole verification path, and the engine behind it is <a href="/docs/install">one binary</a> with
-  a <a href="/docs/quickstart">quickstart</a> &mdash; or start in the <a href="/playground">playground</a>
+  a <a href="/docs/quickstart">quickstart</a>, or start in the <a href="/playground">playground</a>
   before installing anything. The benchmark that matters is the one this post keeps pointing at:
   <strong>your own labelled history</strong>. Index it, ask <code class="inline">/_decide</code>, and read
   the neighbours that ride along with every answer. And if a System One client is already in your stack,
-  the switch is one environment variable &mdash; point <code class="inline">TYPESAFE_ENDPOINT</code> at
+  the switch is one environment variable: point <code class="inline">TYPESAFE_ENDPOINT</code> at
   your node, exactly as the gate does, and keep the hosted API for the questions with no history behind
   them.</p>
 

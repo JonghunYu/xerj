@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Index a monorepo so your agent stops reading the whole repo">
@@ -230,9 +230,9 @@
     <p>How do I stop my agent from reading the whole repo into context? Index the tree once with xerj autoindex and let the agent query the defs and symbols fields instead of opening files. Run --dry-run first: in our capture it reported files=3, ignored_files=2 and ignored_dirs=3, naming every ignore rule.</p>
     <p class="key-fact"><strong>Key number:</strong> A reference-coding study measured 9,982 output tokens for the indexed agent against 26,477 for grep-driven Claude Code, 2.7 times fewer, both solving 16/16. <span class="mute">(as of 2026-10-19 · source: <a href="https://github.com/xerj-org/xerj/blob/main/docs/case-studies/reference-coding/data/results-multilang-final.json">docs/case-studies/reference-coding/data/results-multilang-final.json</a>)</span></p>
   </div>
-  <p><strong>TL;DR</strong> — Run <code class="inline">xerj autoindex --dry-run</code> on the repository first. In our capture the dry run reported <code class="inline">files=3</code>, <code class="inline">ignored_files=2</code> and <code class="inline">ignored_dirs=3</code>, with 60 non-hidden files inside the pruned directories. The indexed tree then gave an agent 3 languages and 11 symbols to query.</p>
+  <p><strong>TL;DR</strong>: Run <code class="inline">xerj autoindex --dry-run</code> on the repository first. In our capture the dry run reported <code class="inline">files=3</code>, <code class="inline">ignored_files=2</code> and <code class="inline">ignored_dirs=3</code>, with 60 non-hidden files inside the pruned directories. The indexed tree then gave an agent 3 languages and 11 symbols to query.</p>
   <div class="prompt-card">
-    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT — IT DOES THE REST</span>
+    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT. IT DOES THE REST</span>
     <code>Act as a coding agent. Read https://xerj.org/llms.txt, start a XERJ node with --insecure, run xerj autoindex ./code --prefix code --dry-run and record files, ignored_files and ignored_dirs from the xerj-done line, run it again without --dry-run, then aggregate language and symbol_count over code-*/_search and answer with a defs query instead of opening any source file.</code>
     <button type="button" class="prompt-copy" data-copy="Act as a coding agent. Read https://xerj.org/llms.txt, start a XERJ node with --insecure, run xerj autoindex ./code --prefix code --dry-run and record files, ignored_files and ignored_dirs from the xerj-done line, run it again without --dry-run, then aggregate language and symbol_count over code-*/_search and answer with a defs query instead of opening any source file.">COPY THE PROMPT</button>
   </div>

@@ -12,7 +12,7 @@ source: "content/answers/index-monorepo-for-agent.md"
 
 **Key number:** A reference-coding study measured 9,982 output tokens for the indexed agent against 26,477 for grep-driven Claude Code, 2.7 times fewer, both solving 16/16. (as of 2026-10-19; source: [docs/case-studies/reference-coding/data/results-multilang-final.json](https://github.com/xerj-org/xerj/blob/main/docs/case-studies/reference-coding/data/results-multilang-final.json))
 
-**TL;DR** — Run `xerj autoindex --dry-run` on the repository first. In our capture the dry run reported `files=3`, `ignored_files=2` and `ignored_dirs=3`, with 60 non-hidden files inside the pruned directories. The indexed tree then gave an agent 3 languages and 11 symbols to query.
+**TL;DR**: Run `xerj autoindex --dry-run` on the repository first. In our capture the dry run reported `files=3`, `ignored_files=2` and `ignored_dirs=3`, with 60 non-hidden files inside the pruned directories. The indexed tree then gave an agent 3 languages and 11 symbols to query.
 
 ## Agent prompt
 

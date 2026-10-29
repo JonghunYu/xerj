@@ -57,7 +57,7 @@ faq:
     a: "No. There is no score for how well a report follows its sources. You get found or not found, plus the path."
 ---
 
-**TL;DR** — Verify claims in a report against the saved sources. Index those files, then run one `match_phrase` per claim. A claim with no hit is unverified. On 2026-10-20, 3 of 5 phrases were in the docs index and 2 were not. The first check took 490 ms.
+**TL;DR**: Verify claims in a report against the saved sources. Index those files, then run one `match_phrase` per claim. A claim with no hit is unverified. On 2026-10-20, 3 of 5 phrases were in the docs index and 2 were not. The first check took 490 ms.
 
 XERJ is a new way for AI to search for data.
 

@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="How do I run syntax-aware code search?">
@@ -230,9 +230,9 @@
     <p>Is there a syntax-aware code search tool for refactoring? XERJ gives you two code queries on one index: match on body for raw text, and match on defs for declared symbols, which returns a symbols array with kind, name and line. It extracts definitions only and rewrites nothing; for structural rewrites use ast-grep.</p>
     <p class="key-fact"><strong>Key number:</strong> XERJ's tree-sitter registry covers 36 languages, pinned by a unit test. <span class="mute">(as of 2026-10-19 · source: <a href="https://github.com/xerj-org/xerj/blob/main/engine/crates/xerj-autoindex/src/extract/code.rs">engine/crates/xerj-autoindex/src/extract/code.rs</a>)</span></p>
   </div>
-  <p><strong>TL;DR</strong> — XERJ gives you 2 code queries on the same index: a <code class="inline">match</code> on <code class="inline">body</code> for raw text, and a <code class="inline">match</code> on <code class="inline">defs</code> for declared symbols. The definition query returns a <code class="inline">symbols</code> array with a kind, a name and a line. Extraction is definitions only.</p>
+  <p><strong>TL;DR</strong>: XERJ gives you 2 code queries on the same index: a <code class="inline">match</code> on <code class="inline">body</code> for raw text, and a <code class="inline">match</code> on <code class="inline">defs</code> for declared symbols. The definition query returns a <code class="inline">symbols</code> array with a kind, a name and a line. Extraction is definitions only.</p>
   <div class="prompt-card">
-    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT — IT DOES THE REST</span>
+    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT. IT DOES THE REST</span>
     <code>Act as a coding agent. Read https://xerj.org/llms.txt, start a XERJ node with --insecure, run xerj autoindex ./code --prefix code, then send two queries to code-*/_search: a match on body for a symbol name and a match on defs for the same name, and report ax_path, language and the symbols array with kind, name and line for each declaration hit.</code>
     <button type="button" class="prompt-copy" data-copy="Act as a coding agent. Read https://xerj.org/llms.txt, start a XERJ node with --insecure, run xerj autoindex ./code --prefix code, then send two queries to code-*/_search: a match on body for a symbol name and a match on defs for the same name, and report ax_path, language and the symbols array with kind, name and line for each declaration hit.">COPY THE PROMPT</button>
   </div>

@@ -15,7 +15,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>XERJ · Docs · Recipes</title>
-<meta name="description" content="Task-oriented XERJ recipes, each verified end to end against a live node — zero-config indexing, retrieval by meaning, agent memory, hybrid ranking.">
+<meta name="description" content="Task-oriented XERJ recipes, each verified end to end against a live node: zero-config indexing, retrieval by meaning, agent memory, hybrid ranking.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;700;800;900&family=Inter:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -27,16 +27,16 @@
 <meta property="og:site_name" content="XERJ.ai">
 <meta property="og:type" content="website">
 <meta property="og:title" content="XERJ · Docs · Recipes">
-<meta property="og:description" content="Task-oriented XERJ recipes, each verified end to end against a live node — zero-config indexing, retrieval by meaning, agent memory, hybrid ranking.">
+<meta property="og:description" content="Task-oriented XERJ recipes, each verified end to end against a live node: zero-config indexing, retrieval by meaning, agent memory, hybrid ranking.">
 <meta property="og:url" content="https://xerj.org/docs/recipes/">
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="XERJ · Docs · Recipes">
-<meta name="twitter:description" content="Task-oriented XERJ recipes, each verified end to end against a live node — zero-config indexing, retrieval by meaning, agent memory, hybrid ranking.">
+<meta name="twitter:description" content="Task-oriented XERJ recipes, each verified end to end against a live node: zero-config indexing, retrieval by meaning, agent memory, hybrid ranking.">
 <meta name="twitter:image" content="https://xerj.org/og/xerj-card.png">
 <script type="application/ld+json">
 {
@@ -72,7 +72,7 @@
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "name": "XERJ · Docs · Recipes",
-  "description": "Task-oriented XERJ recipes, each verified end to end against a live node — zero-config indexing, retrieval by meaning, agent memory, hybrid ranking.",
+  "description": "Task-oriented XERJ recipes, each verified end to end against a live node: zero-config indexing, retrieval by meaning, agent memory, hybrid ranking.",
   "url": "https://xerj.org/docs/recipes/",
   "image": "https://xerj.org/og/xerj-card.png",
   "inLanguage": "en",
@@ -224,28 +224,28 @@
   <h1>Recipes</h1>
 
 
-  <p>Task-oriented AI &amp; search recipes for building real things with XERJ — zero-config folder indexing, retrieval by meaning, agent memory, hybrid ranking, log analytics, and anomaly detection. Each recipe was verified end-to-end against a live XERJ before it was written, and ships with a runnable, dependency-free example. These are first-class documentation: every number traces to a recorded run.</p>
+  <p>Task-oriented AI &amp; search recipes for building real things with XERJ: zero-config folder indexing, retrieval by meaning, agent memory, hybrid ranking, log analytics, and anomaly detection. Each recipe was verified end-to-end against a live XERJ before it was written, and ships with a runnable, dependency-free example. These are first-class documentation: every number traces to a recorded run.</p>
 
   <div class="recipes">
     <a class="recipe" href="/docs/recipes/zero-config-autoindex">
       <span class="num">12 · FLAGSHIP</span>
-      <span class="title">Zero-config indexing — <code class="inline">xerj autoindex</code></span>
-      <p class="lead">Point one command at a folder of hostile mixed-format files (JSONL, dialect CSV, SQLite, PDF, DOCX, logs, SQL dumps, gzip — 13 sniffed families) and get typed, queryable, self-describing indices plus a data map for agents. Verified 80/81 ground-truth checks on a 1,995-file / 518&nbsp;MB corpus; 2,018,398 records live in 38.1&nbsp;s; <code class="inline">kill -9</code> resume to identical counts.</p>
+      <span class="title">Zero-config indexing: <code class="inline">xerj autoindex</code></span>
+      <p class="lead">Point one command at a folder of hostile mixed-format files (JSONL, dialect CSV, SQLite, PDF, DOCX, logs, SQL dumps, gzip: 13 sniffed families) and get typed, queryable, self-describing indices plus a data map for agents. Verified 80/81 ground-truth checks on a 1,995-file / 518&nbsp;MB corpus; 2,018,398 records live in 38.1&nbsp;s; <code class="inline">kill -9</code> resume to identical counts.</p>
     </a>
     <a class="recipe" href="/docs/recipes/semantic-search-rag">
       <span class="num">01</span>
       <span class="title">Semantic search &amp; RAG</span>
-      <p class="lead">Retrieval by meaning with <code class="inline">semantic_text</code> — auto-embed on ingest, no separate vector DB.</p>
+      <p class="lead">Retrieval by meaning with <code class="inline">semantic_text</code>: auto-embed on ingest, no separate vector DB.</p>
     </a>
     <a class="recipe" href="/docs/recipes/agentic-memory">
       <span class="num">02</span>
       <span class="title">Give an AI agent long-term memory</span>
-      <p class="lead">A memory-backed agent on the <code class="inline">/_memory</code> API — store, semantic + keyword recall, metadata filters, forgetting, per-agent isolation.</p>
+      <p class="lead">A memory-backed agent on the <code class="inline">/_memory</code> API: store, semantic + keyword recall, metadata filters, forgetting, per-agent isolation.</p>
     </a>
     <a class="recipe" href="/docs/recipes/passage-retrieval">
       <span class="num">03</span>
       <span class="title">Passage retrieval on long docs</span>
-      <p class="lead"><code class="inline">semantic_text</code> auto-embeds every overlapping passage; a long doc competes on any one of its sections via best-passage (max-sim) scoring — 98% top-3 vs 32% pooled.</p>
+      <p class="lead"><code class="inline">semantic_text</code> auto-embeds every overlapping passage; a long doc competes on any one of its sections via best-passage (max-sim) scoring: 98% top-3 vs 32% pooled.</p>
     </a>
     <a class="recipe" href="/docs/recipes/vector-search-knn">
       <span class="num">04</span>
@@ -255,17 +255,17 @@
     <a class="recipe" href="/docs/recipes/vector-quantization">
       <span class="num">05</span>
       <span class="title">Vector quantization</span>
-      <p class="lead">Opt a <code class="inline">dense_vector</code> field into scalar8 (accepts ES <code class="inline">int8_hnsw</code>) — kNN scored from 1-byte-per-dim codes at recall@10 = 0.998. Precision, not memory.</p>
+      <p class="lead">Opt a <code class="inline">dense_vector</code> field into scalar8 (accepts ES <code class="inline">int8_hnsw</code>): kNN scored from 1-byte-per-dim codes at recall@10 = 0.998. Precision, not memory.</p>
     </a>
     <a class="recipe" href="/docs/recipes/hybrid-search">
       <span class="num">06</span>
       <span class="title">Hybrid search</span>
-      <p class="lead">Keyword + vector in one query — results neither BM25 nor kNN finds alone.</p>
+      <p class="lead">Keyword + vector in one query: results neither BM25 nor kNN finds alone.</p>
     </a>
     <a class="recipe" href="/docs/recipes/log-analytics">
       <span class="num">07</span>
       <span class="title">Log analytics</span>
-      <p class="lead">From raw logs to dashboards — error rates, p95 latency, top services via aggregations.</p>
+      <p class="lead">From raw logs to dashboards: error rates, p95 latency, top services via aggregations.</p>
     </a>
     <a class="recipe" href="/docs/recipes/anomaly-detection">
       <span class="num">08</span>
@@ -280,16 +280,16 @@
     <a class="recipe" href="/docs/recipes/migrate-from-elasticsearch">
       <span class="num">10</span>
       <span class="title">Migrate from Elasticsearch</span>
-      <p class="lead">Point your existing ES client at XERJ — same wire, change the URL.</p>
+      <p class="lead">Point your existing ES client at XERJ: same wire, change the URL.</p>
     </a>
     <a class="recipe" href="/docs/recipes/document-folder-index">
       <span class="num">11</span>
       <span class="title">Index a folder of PDFs, Word docs &amp; web pages</span>
-      <p class="lead">One <code class="inline">xerj-index</code> pass walks a recursive folder of PDF/DOCX/HTML/MD/TXT, extracts + chunks + auto-embeds every file, then lexical, semantic &amp; hybrid search return ranked, cited passages — measured 21/22 vs a fair grep baseline's 14/22, with the decisive win on binary_only (6/7 vs 0/7) because grep can't read a PDF/DOCX.</p>
+      <p class="lead">One <code class="inline">xerj-index</code> pass walks a recursive folder of PDF/DOCX/HTML/MD/TXT, extracts + chunks + auto-embeds every file, then lexical, semantic &amp; hybrid search return ranked, cited passages: measured 21/22 vs a fair grep baseline's 14/22, with the decisive win on binary_only (6/7 vs 0/7) because grep can't read a PDF/DOCX.</p>
     </a>
     <a class="recipe" href="/docs/recipes/air-gapped-deployment">
       <span class="num">13 · OPERATIONS</span>
-      <span class="title">Run XERJ fully offline — air-gapped deployment</span>
+      <span class="title">Run XERJ fully offline: air-gapped deployment</span>
       <p class="lead">Stage the release archive, checksum, and optional three-file neural model bundle on a connected machine, then run the standard binary without runtime internet access. Covers lexical defaults, local neural assets, proxy/ONNX boundaries, loopback/auth posture, WAL overlays, and the Console's system-font fallback.</p>
     </a>
   </div>

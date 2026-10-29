@@ -12,7 +12,7 @@ source: "content/answers/rebuild-reference-corpus-index.md"
 
 **Key number:** On v1.0.0-rc.74, xerj autoindex --fresh over a committed generation aborted with exit 1; --fresh now swaps instead of discarding. (as of 2026-10-19; source: [benchmarks/autoindex-resilience/fresh-before-rc74.committed-generation.txt](https://github.com/xerj-org/xerj/blob/main/benchmarks/autoindex-resilience/fresh-before-rc74.committed-generation.txt))
 
-**TL;DR** — Run `xerj corpus index <corpus> --fresh`. It builds a replacement beside the existing index, checks that it holds records, switches the state file, and only then deletes the old indices by exact name. A build that fails costs you nothing. Older releases' wrapper scripts failed on every corpus that had been indexed before.
+**TL;DR**: Run `xerj corpus index <corpus> --fresh`. It builds a replacement beside the existing index, checks that it holds records, switches the state file, and only then deletes the old indices by exact name. A build that fails costs you nothing. Older releases' wrapper scripts failed on every corpus that had been indexed before.
 
 ## Agent prompt
 
@@ -153,7 +153,7 @@ The old state directory of a corpus indexed before builds existed lives under `~
 
 The two error messages are captures from v1.0.0-rc.74, committed under `benchmarks/autoindex-resilience/`. Local paths in them were shortened; nothing else was changed.
 
-The state-ledger contracts the warning section rests on — the salvaged warning on every query, exit 3 not reported as incomplete, `index_prefix` preferred over the bare namespace glob, the staleness refusal — are pinned by the tests in `engine/crates/xerj-common/src/xccode/state.rs`.
+The state-ledger contracts the warning section rests on: the salvaged warning on every query, exit 3 not reported as incomplete, `index_prefix` preferred over the bare namespace glob, the staleness refusal, are pinned by the tests in `engine/crates/xerj-common/src/xccode/state.rs`.
 
 The full `--fresh` swap contract was pinned by 81 offline checks in the retired script suite (`tools/xerj-code/tests/test_xc_index_fresh.py`, deleted with the scripts): nothing deleted before the replacement's count was read, deletes by exact name, a failed or empty build leaving the old index untouched, sibling corpora never touched, an interrupted first build kept and resumable, unknown counts never read as zero. Those contracts are re-pinned as ten Rust tests in `engine/crates/xerj-autoindex/src/xc.rs` ([issue #1004](https://github.com/xerj-org/xerj/issues/1004)): the build/verify/swap flow runs unchanged against a fake node and a fake autoindex runner behind two injected seams, so every delete and every state-file switch is asserted on an audit trail rather than on stdout prose. What the old suite shelled out to a PATH-shimmed fake binary, the tests now inject; what it checked over HTTP against a fake node, they check against the same four operations the real node client implements.
 
@@ -191,11 +191,11 @@ Room for the corpus twice. Both builds exist on the node from the start of the r
 
 ## Evidence
 
-- On v1.0.0-rc.74 a state directory written before the generation-v1 format aborted with exit 1: this state directory contains a legacy nonempty plan that cannot become generation authority. — `benchmarks/autoindex-resilience/fresh-before-rc74.legacy-state.txt`
-- On v1.0.0-rc.74 xerj autoindex --fresh over a committed generation aborted with exit 1: --fresh cannot discard committed corpus generation 1 under the same destination. — `benchmarks/autoindex-resilience/fresh-before-rc74.committed-generation.txt`
-- When the ledger records a salvaged build or an autoindex exit other than 0 or 3, xerj code prints a coverage-may-be-INCOMPLETE warning on stderr on every query, keeps --json stdout parseable, and xerj corpus list marks the corpus INCOMPLETE. Exit 3 is not reported as incomplete. Pinned by the state-ledger tests in xccode/state.rs. — `engine/crates/xerj-common/src/xccode/state.rs`
-- xerj code queries index_prefix, the one verified build, and never the bare namespace glob once a corpus has been rebuilt. Pinned by the prefix-fallback tests in xccode/state.rs. — `engine/crates/xerj-common/src/xccode/state.rs`
-- The full --fresh swap contract (nothing deleted before the replacement's count was read, deletes by exact name, sibling corpora never touched, unknown counts never read as zero) was pinned by 81 offline checks against a fake node in the retired script suite; re-pinning those contracts as Rust tests around xerj corpus index is open. — [https://github.com/xerj-org/xerj/issues/1004](https://github.com/xerj-org/xerj/issues/1004)
+- On v1.0.0-rc.74 a state directory written before the generation-v1 format aborted with exit 1: this state directory contains a legacy nonempty plan that cannot become generation authority. Source: `benchmarks/autoindex-resilience/fresh-before-rc74.legacy-state.txt`
+- On v1.0.0-rc.74 xerj autoindex --fresh over a committed generation aborted with exit 1: --fresh cannot discard committed corpus generation 1 under the same destination. Source: `benchmarks/autoindex-resilience/fresh-before-rc74.committed-generation.txt`
+- When the ledger records a salvaged build or an autoindex exit other than 0 or 3, xerj code prints a coverage-may-be-INCOMPLETE warning on stderr on every query, keeps --json stdout parseable, and xerj corpus list marks the corpus INCOMPLETE. Exit 3 is not reported as incomplete. Pinned by the state-ledger tests in xccode/state.rs. Source: `engine/crates/xerj-common/src/xccode/state.rs`
+- xerj code queries index_prefix, the one verified build, and never the bare namespace glob once a corpus has been rebuilt. Pinned by the prefix-fallback tests in xccode/state.rs. Source: `engine/crates/xerj-common/src/xccode/state.rs`
+- The full --fresh swap contract (nothing deleted before the replacement's count was read, deletes by exact name, sibling corpora never touched, unknown counts never read as zero) was pinned by 81 offline checks against a fake node in the retired script suite; re-pinning those contracts as Rust tests around xerj corpus index is open. Source: [https://github.com/xerj-org/xerj/issues/1004](https://github.com/xerj-org/xerj/issues/1004)
 
 ## Related
 

@@ -115,10 +115,10 @@ In this capture `xerj search` labeled two different passages `issues.jsonl:1`. R
 
 ## Evidence
 
-- The issue export indexed in 7.2 s, 1,532 records, exit 0. — `benchmarks/agent-queries-2026-10-20/01-autoindex-issues.txt`
-- xerj search's capture file was 1,865 bytes and the gh capture file was 36,550 bytes. — `benchmarks/agent-queries-2026-10-20/01-byte-compare.txt`
-- The narrowed _search response reported _savings of 19,444 bytes, sampled. — `benchmarks/agent-queries-2026-10-20/01-duplicate-search.json`
-- tools/list returned 17 tools. — `benchmarks/agent-queries-2026-10-20/05-tool-names.txt`
+- The issue export indexed in 7.2 s, 1,532 records, exit 0. Source: `benchmarks/agent-queries-2026-10-20/01-autoindex-issues.txt`
+- xerj search's capture file was 1,865 bytes and the gh capture file was 36,550 bytes. Source: `benchmarks/agent-queries-2026-10-20/01-byte-compare.txt`
+- The narrowed _search response reported _savings of 19,444 bytes, sampled. Source: `benchmarks/agent-queries-2026-10-20/01-duplicate-search.json`
+- tools/list returned 17 tools. Source: `benchmarks/agent-queries-2026-10-20/05-tool-names.txt`
 
 ## Related
 

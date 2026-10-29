@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Search a folder of CSV files with BM25, without a database">
@@ -232,7 +232,7 @@
   </div>
   <p><strong>TL;DR</strong> — Give <code class="inline">xerj autoindex</code> the folder rather than each file. In a captured run, 3 CSV files across 2 different headers became 2 indices holding 402 and 151 documents. One <code class="inline">query_string</code> request across <code class="inline">multi-*</code> then returned 171 hits and split them by dataset.</p>
   <div class="prompt-card">
-    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT — IT DOES THE REST</span>
+    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT. IT DOES THE REST</span>
     <code>Act as a coding agent. Read https://xerj.org/llms.txt, start a local XERJ node, run `xerj autoindex ./csv-exports --url http://127.0.0.1:9200 --prefix multi --progress plain`, GET /_cat/indices/multi-*?format=json to see how many indices the different headers produced, then POST one query_string search across multi-* with a terms aggregation on ax_dataset and report the per-dataset counts.</code>
     <button type="button" class="prompt-copy" data-copy="Act as a coding agent. Read https://xerj.org/llms.txt, start a local XERJ node, run `xerj autoindex ./csv-exports --url http://127.0.0.1:9200 --prefix multi --progress plain`, GET /_cat/indices/multi-*?format=json to see how many indices the different headers produced, then POST one query_string search across multi-* with a terms aggregation on ax_dataset and report the per-dataset counts.">COPY THE PROMPT</button>
   </div>

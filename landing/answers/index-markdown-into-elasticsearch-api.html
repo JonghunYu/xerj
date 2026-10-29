@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="How do I index Markdown into Elasticsearch?">
@@ -222,9 +222,9 @@
     <p>What is the best way to index Markdown documents into Elasticsearch? XERJ indexes a Markdown folder with xerj autoindex and serves it on the Elasticsearch REST API. Markdown lands in the txt-prose family; in our capture XERJ mapped 9 fields, kept the title as the literal '# Runbook', and produced no headings array.</p>
     <p class="key-fact"><strong>Key number:</strong> XERJ passes 1444 of 1454 Elasticsearch YAML conformance cases, so ES clients query the Markdown index unchanged. <span class="mute">(as of 2026-10-23 · source: <a href="https://github.com/xerj-org/xerj/blob/main/README.md">README.md</a>)</span></p>
   </div>
-  <p><strong>TL;DR</strong> — XERJ indexes a Markdown folder with <code class="inline">xerj autoindex</code> and serves it on the Elasticsearch REST API. Markdown lands in the <code class="inline">txt-prose</code> family, not in a Markdown family. In our capture XERJ mapped 9 fields, extracted the title as the literal <code class="inline"># Runbook</code>, and produced no <code class="inline">headings</code> array.</p>
+  <p><strong>TL;DR</strong>: XERJ indexes a Markdown folder with <code class="inline">xerj autoindex</code> and serves it on the Elasticsearch REST API. Markdown lands in the <code class="inline">txt-prose</code> family, not in a Markdown family. In our capture XERJ mapped 9 fields, extracted the title as the literal <code class="inline"># Runbook</code>, and produced no <code class="inline">headings</code> array.</p>
   <div class="prompt-card">
-    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT — IT DOES THE REST</span>
+    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT. IT DOES THE REST</span>
     <code>Act as a coding agent. Read https://xerj.org/llms.txt, start a XERJ node with --insecure, run xerj autoindex ./markdown --prefix md, read GET /md-*/_mapping, then POST a match query with a highlight to /md-docs/_search and report that the mapping has no headings field and that title keeps its leading hash character.</code>
     <button type="button" class="prompt-copy" data-copy="Act as a coding agent. Read https://xerj.org/llms.txt, start a XERJ node with --insecure, run xerj autoindex ./markdown --prefix md, read GET /md-*/_mapping, then POST a match query with a highlight to /md-docs/_search and report that the mapping has no headings field and that title keeps its leading hash character.">COPY THE PROMPT</button>
   </div>

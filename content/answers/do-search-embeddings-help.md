@@ -52,7 +52,7 @@ faq:
     a: "BM25 alone scored 0.375 precision at 3 and 0.6875 recall on our set. It found every literal token and missed every synonym."
 ---
 
-**TL;DR** — Embeddings help only when you opt into XERJ's neural embedder. The default embedder is lexical feature hashing, and on 8 judged queries it scored 0.4167 precision at 3 against BM25's 0.375. The opt-in flag `--embed-mode neural` moved the same measurement to 0.6667 and recall to 1.0.
+**TL;DR**: Embeddings help only when you opt into XERJ's neural embedder. The default embedder is lexical feature hashing, and on 8 judged queries it scored 0.4167 precision at 3 against BM25's 0.375. The opt-in flag `--embed-mode neural` moved the same measurement to 0.6667 and recall to 1.0.
 
 ## The honest answer
 

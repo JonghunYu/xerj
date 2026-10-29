@@ -14,7 +14,7 @@
 <!-- ga4:end -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>XERJ.ai — Use case: a second brain from a folder</title>
+<title>XERJ.ai · Use case: a second brain from a folder</title>
 <meta name="description" content="xerj brain &lt;folder&gt; turns notes into a bi-temporal, evidence-carrying knowledge graph. Every link shows the text that taught it; 121 files to 364 links.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,16 +26,16 @@
 <link rel="canonical" href="https://xerj.org/use-cases/second-brain">
 <meta property="og:site_name" content="XERJ.ai">
 <meta property="og:type" content="website">
-<meta property="og:title" content="XERJ.ai — Use case: a second brain from a folder">
+<meta property="og:title" content="XERJ.ai · Use case: a second brain from a folder">
 <meta property="og:description" content="xerj brain &lt;folder&gt; turns notes into a bi-temporal, evidence-carrying knowledge graph. Every link shows the text that taught it; 121 files to 364 links.">
 <meta property="og:url" content="https://xerj.org/use-cases/second-brain">
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="XERJ.ai — Use case: a second brain from a folder">
+<meta name="twitter:title" content="XERJ.ai · Use case: a second brain from a folder">
 <meta name="twitter:description" content="xerj brain &lt;folder&gt; turns notes into a bi-temporal, evidence-carrying knowledge graph. Every link shows the text that taught it; 121 files to 364 links.">
 <meta name="twitter:image" content="https://xerj.org/og/xerj-card.png">
 <script type="application/ld+json">
@@ -71,7 +71,7 @@
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": "XERJ.ai — Use case: a second brain from a folder",
+  "name": "XERJ.ai · Use case: a second brain from a folder",
   "description": "xerj brain <folder> turns notes into a bi-temporal, evidence-carrying knowledge graph. Every link shows the text that taught it; 121 files to 364 links.",
   "url": "https://xerj.org/use-cases/second-brain",
   "image": "https://xerj.org/og/xerj-card.png",
@@ -155,7 +155,7 @@
 <div class="uc-hero">
   <h1 class="uc-eyebrow">Use case: a second brain from a folder</h1>
   <p class="uc-display">POINT IT AT A FOLDER.<br>EVERY LINK SHOWS ITS EVIDENCE.<br><span class="accent">REPLAY ANY MOMENT.</span></p>
-  <p class="uc-lead">One command — <code class="inline">xerj brain ~/notes</code> — and a folder of notes becomes a queryable, timestamped, evidence-carrying knowledge graph. No graph database, no ETL, no LLM, no embedding service, no config file. Two questions no note tool answers become one HTTP call each: <em>why does this link exist</em> — every link carries the exact text that taught it, verified byte-for-byte against the file on disk — and <em>what did my notes believe last Tuesday</em> — retired links are kept, never deleted, and any past moment is replayable. Be clear about what this is: XERJ does not understand your notes. It makes the structure you already wrote queryable, timestamped, and evidence-backed — deterministically. Same folder in, byte-identical brain out, which is exactly why an agent can cite it. The proof run below is real and unstaged: this repository's own docs folder — 121 files, 5.7&nbsp;MB, images and config junk included — to 364 links in 0.7&nbsp;s.</p>
+  <p class="uc-lead">One command: <code class="inline">xerj brain ~/notes</code>, and a folder of notes becomes a queryable, timestamped, evidence-carrying knowledge graph. No graph database, no ETL, no LLM, no embedding service, no config file. Two questions no note tool answers become one HTTP call each: <em>why does this link exist</em>, every link carries the exact text that taught it, verified byte-for-byte against the file on disk (and <em>what did my notes believe last Tuesday</em>) retired links are kept, never deleted, and any past moment is replayable. Be clear about what this is: XERJ does not understand your notes. It makes the structure you already wrote queryable, timestamped, and evidence-backed: deterministically. Same folder in, byte-identical brain out, which is exactly why an agent can cite it. The proof run below is real and unstaged: this repository's own docs folder (121 files, 5.7&nbsp;MB, images and config junk included) to 364 links in 0.7&nbsp;s.</p>
   <div class="kicker"><span>FOR</span><span class="dash">·</span><span>AI AGENTS</span><span class="dash">·</span><span>NOTE-TAKERS</span><span class="dash">·</span><span>LOCAL-FIRST BUILDERS</span></div>
 </div>
 
@@ -189,7 +189,7 @@
 
 <section class="scene-section">
   <h2 class="scene" style="font-size:var(--fs-56);">ONE COMMAND. <span class="accent">CAPTURED, NOT STAGED.</span></h2>
-  <p class="wide">The terminal output below is from the verification run, verbatim — the corpus is the XERJ repository's own docs folder, junk included. Fourteen files (images, binaries, one frontmatter file the sniffer misread — documented in the sources) were skipped and <em>said so</em>: exit code 3 is the documented "ready with junk" state, never a silent success.</p>
+  <p class="wide">The terminal output below is from the verification run, verbatim: the corpus is the XERJ repository's own docs folder, junk included. Fourteen files (images, binaries, one frontmatter file the sniffer misread, documented in the sources) were skipped and <em>said so</em>: exit code 3 is the documented "ready with junk" state, never a silent success.</p>
   <pre class="code">$ xerj brain /home/claude/ai/xerj/docs
 brain 'docs': 121 files (5 MB) under /home/claude/ai/xerj/docs
 booted xerj server (pid 339338) — data: …/brain/data
@@ -205,18 +205,18 @@ phase B: indexing 106 files with 8 workers → http://localhost:9340
 <div class="pain-solve">
   <div class="pain">
     <h3>THE NOTE-GRAVEYARD PROBLEM</h3>
-    <ul><li><strong>Your links are assertions, not evidence.</strong> A graph view shows that two notes connect; it cannot show you the sentence that connected them, so you re-read both notes to remember why.</li><li><strong>Deleting a link destroys history.</strong> Every note tool treats the graph as "now" — there is no way to ask what your notes believed before last month's reorganization.</li><li><strong>The tools that can answer these questions cost a stack.</strong> Temporal knowledge graphs for agents ship as a graph database plus an LLM extraction pipeline plus an embedding service.</li><li><strong>LLM-extracted graphs are non-reproducible.</strong> Run the extraction twice, get two different graphs — an agent cannot cite what it cannot re-derive.</li><li><strong>Hairball graph views don't answer questions.</strong> A global force-directed layout of a thousand notes is decoration, not an interface.</li></ul>
+    <ul><li><strong>Your links are assertions, not evidence.</strong> A graph view shows that two notes connect; it cannot show you the sentence that connected them, so you re-read both notes to remember why.</li><li><strong>Deleting a link destroys history.</strong> Every note tool treats the graph as "now". There is no way to ask what your notes believed before last month's reorganization.</li><li><strong>The tools that can answer these questions cost a stack.</strong> Temporal knowledge graphs for agents ship as a graph database plus an LLM extraction pipeline plus an embedding service.</li><li><strong>LLM-extracted graphs are non-reproducible.</strong> Run the extraction twice, get two different graphs: an agent cannot cite what it cannot re-derive.</li><li><strong>Hairball graph views don't answer questions.</strong> A global force-directed layout of a thousand notes is decoration, not an interface.</li></ul>
   </div>
   <div class="solve">
     <h3>THE XERJ ANSWER</h3>
-    <ul><li><strong>Links are evidence.</strong> Six deterministic detectors (wiki-links, markdown links, hrefs, directory adjacency, section sequence, end-to-end) record what taught each link — authored links carry the verbatim quote and byte offset from your note.</li><li><strong>Retired, never deleted.</strong> Every link is bi-temporal — believed-since, and retired-at if retired. Ask about any past moment and the retired link comes back, retirement visible.</li><li><strong>One static binary.</strong> Discovery, indexing, link detection, HTTP API, dashboard, and MCP surface — <code class="inline">xerj brain &lt;folder&gt;</code>, nothing else to install or configure.</li><li><strong>Deterministic, so citable.</strong> Same folder in, byte-identical brain out; re-runs converge instead of accreting. An agent can quote the brain and the quote traces to a file and an offset.</li><li><strong>A ledger, not a hairball.</strong> One note in the center, inbound links left, outbound right, grouped by what taught them, with a belief-time scrubber — every answer is a bounded list with honest "not shown" accounting.</li></ul>
+    <ul><li><strong>Links are evidence.</strong> Six deterministic detectors (wiki-links, markdown links, hrefs, directory adjacency, section sequence, end-to-end) record what taught each link: authored links carry the verbatim quote and byte offset from your note.</li><li><strong>Retired, never deleted.</strong> Every link is bi-temporal: believed-since, and retired-at if retired. Ask about any past moment and the retired link comes back, retirement visible.</li><li><strong>One static binary.</strong> Discovery, indexing, link detection, HTTP API, dashboard, and MCP surface: <code class="inline">xerj brain &lt;folder&gt;</code>, nothing else to install or configure.</li><li><strong>Deterministic, so citable.</strong> Same folder in, byte-identical brain out; re-runs converge instead of accreting. An agent can quote the brain and the quote traces to a file and an offset.</li><li><strong>A ledger, not a hairball.</strong> One note in the center, inbound links left, outbound right, grouped by what taught them, with a belief-time scrubber, every answer is a bounded list with honest "not shown" accounting.</li></ul>
   </div>
 </div>
 
 
 <section class="scene-section">
   <h2 class="scene" style="font-size:var(--fs-56);">WHY DOES THIS LINK EXIST? <span class="accent">HERE IS THE SENTENCE.</span></h2>
-  <p class="wide">A live link from the proof run, as the API returns it. The quote was checked byte-for-byte against the source file on disk — that exact text exists at that place in that note. This JSON is the paper trail, and it is the one surface where the raw schema shows; everywhere a human reads, the words are <em>link, believed since, retired, what taught this</em>.</p>
+  <p class="wide">A live link from the proof run, as the API returns it. The quote was checked byte-for-byte against the source file on disk. That exact text exists at that place in that note. This JSON is the paper trail, and it is the one surface where the raw schema shows; everywhere a human reads, the words are <em>link, believed since, retired, what taught this</em>.</p>
   <pre class="code">$ curl "localhost:9340/_graph/docs/ego?node=$NODE&amp;include_nodes=true"
 {
   "type": "mdlink",
@@ -231,13 +231,13 @@ phase B: indexing 106 files with 8 workers → http://localhost:9340
     "offset": 1568               <span class="comment"># byte offset in the section — verified verbatim on disk</span>
   }
 }</pre>
-  <p class="wide">The honest fine print, which the dashboard also carries: structural links — files that sit together, sections in sequence — carry a generated <em>rationale</em> ("these files sit together in notes/"), labeled as one and never presented as text from your note. A manually asserted link may carry no evidence at all, and then the row says <em>no evidence recorded — asserted, not detected</em>. The claim is "every link shows its evidence" — not "every link has a quote".</p>
+  <p class="wide">The honest fine print, which the dashboard also carries: structural links (files that sit together, sections in sequence) carry a generated <em>rationale</em> ("these files sit together in notes/"), labeled as one and never presented as text from your note. A manually asserted link may carry no evidence at all, and then the row says <em>no evidence recorded: asserted, not detected</em>. The claim is "every link shows its evidence", not "every link has a quote".</p>
 </section>
 
 
 <section class="scene-section">
   <h2 class="scene" style="font-size:var(--fs-56);">WHAT DID MY NOTES BELIEVE <span class="accent">LAST TUESDAY?</span></h2>
-  <p class="wide">The full loop, run live during verification — assert, retire, replay. Note the third call: when links are excluded from an answer, the response counts them instead of silently narrowing the world.</p>
+  <p class="wide">The full loop, run live during verification: assert, retire, replay. Note the third call: when links are excluded from an answer, the response counts them instead of silently narrowing the world.</p>
   <pre class="code"><span class="comment"># assert a link</span>
 $ curl -X POST localhost:9340/_graph/docs/link -d '{"src":"…","dst":"…","type":"manual"}'
 → 201 · edge_id 51a2a80c…
@@ -253,13 +253,13 @@ $ curl "…/ego?node=…"
 <span class="comment"># replay the moment before the retirement: the link is BACK,
 # with its quote, and its later retirement visible</span>
 $ curl "…/ego?node=…&amp;as_of=$T_BEFORE_RETIRE"</pre>
-  <p class="wide">The dashboard makes the same loop physical: a belief-time scrubber that narrates what changed — "2 appeared · 1 retired between then and this moment" — with retired links drawn struck-through, and a URL that pins a brain, a note, and a moment, so a link you share is a <em>belief state</em>, not just a page. Through the whole verification session the ledger stayed exact: 364 detected + 2 asserted belief intervals, 364 live / 2 retired — and the CLI, the HTTP API, and the MCP surface all reported the same numbers.</p>
+  <p class="wide">The dashboard makes the same loop physical: a belief-time scrubber that narrates what changed ("2 appeared · 1 retired between then and this moment") with retired links drawn struck-through, and a URL that pins a brain, a note, and a moment, so a link you share is a <em>belief state</em>, more than a page. Through the whole verification session the ledger stayed exact: 364 detected + 2 asserted belief intervals, 364 live / 2 retired, and the CLI, the HTTP API, and the MCP surface all reported the same numbers.</p>
 </section>
 
 
 <section class="scene-section">
   <h2 class="scene" style="font-size:var(--fs-56);">THE BUYER WHO CARES MOST <span class="accent">IS AN AGENT.</span></h2>
-  <p class="wide">Neighborhood-plus-moment-plus-evidence is what temporal-knowledge-graph stacks for agents charge a graph-database-plus-LLM pipeline for. XERJ ships it in one static binary, over MCP: four verbs — <code class="inline">xerj_brain_ego</code>, <code class="inline">xerj_brain_link</code>, <code class="inline">xerj_brain_unlink</code>, <code class="inline">xerj_brain_overview</code> — proven live in the verification run, round-tripping real counts under <code class="inline">contract: xerj-second-brain/1</code>. And because detection is deterministic, the agent's citations are re-derivable: the quote in the answer traces to a file and a byte offset that will be there tomorrow.</p>
+  <p class="wide">Neighborhood-plus-moment-plus-evidence is what temporal-knowledge-graph stacks for agents charge a graph-database-plus-LLM pipeline for. XERJ ships it in one static binary, over MCP: four verbs, <code class="inline">xerj_brain_ego</code>, <code class="inline">xerj_brain_link</code>, <code class="inline">xerj_brain_unlink</code>, <code class="inline">xerj_brain_overview</code>, proven live in the verification run, round-tripping real counts under <code class="inline">contract: xerj-second-brain/1</code>. And because detection is deterministic, the agent's citations are re-derivable: the quote in the answer traces to a file and a byte offset that will be there tomorrow.</p>
   <pre class="code">$ XERJ_URL=http://localhost:9340 xerj-mcp
 <span class="comment"># tools/list → …, xerj_brain_ego, xerj_brain_link, xerj_brain_unlink, xerj_brain_overview
 # every brain answer carries not_shown accounting — the agent knows what it wasn't shown</span></pre>
@@ -274,12 +274,12 @@ $ curl "…/ego?node=…&amp;as_of=$T_BEFORE_RETIRE"</pre>
     <div class="law">
       <div class="t">IT DOES NOT <span class="accent">UNDERSTAND YOUR NOTES.</span></div>
       <div class="b">
-        The detectors are structural and lexical — wiki-links, markdown links, hrefs,
+        The detectors are structural and lexical: wiki-links, markdown links, hrefs,
         directory adjacency, section sequence. No semantic similarity, no entity
         extraction, no LLM anywhere in the loop, and the node store's recall is
         lexical feature hashing, which the API declares verbatim
         (<code class="inline">"embedder": "lexical-feature-hash"</code>). What you get is
-        the structure you already wrote, made queryable — nothing more is claimed.
+        the structure you already wrote, made queryable. Nothing more is claimed.
       </div>
     </div>
 
@@ -287,7 +287,7 @@ $ curl "…/ego?node=…&amp;as_of=$T_BEFORE_RETIRE"</pre>
     <div class="law">
       <div class="t">IT IS NOT A <span class="accent">GRAPH DATABASE.</span></div>
       <div class="b">
-        No Cypher, no shortest-path, no PageRank, no unbounded traversal — by design.
+        No Cypher, no shortest-path, no PageRank, no unbounded traversal, by design.
         Links are ordinary documents in a search engine; expansion is a bounded,
         batched read capped at 2 hops per call, and asking for more returns a 400
         that says exactly this. You iterate from the response's reachable set.
@@ -299,7 +299,7 @@ $ curl "…/ego?node=…&amp;as_of=$T_BEFORE_RETIRE"</pre>
       <div class="t">WITHOUT AUTHORED LINKS, THE BRAIN IS <span class="accent">MOSTLY SORT ORDER.</span></div>
       <div class="b">
         On a folder with no wiki-links or markdown links, directory-adjacency and
-        sequence links dominate — structure XERJ inferred from file layout, not
+        sequence links dominate: structure XERJ inferred from file layout, not
         structure you wrote. The dashboard splits AUTHORED from STRUCTURAL counts
         so this is visible instead of flattering: "0 authored · 214 structural" is
         an honest description of such a corpus, and the dashboard will say it.
@@ -341,11 +341,11 @@ $ curl "…/ego?node=…&amp;as_of=$T_BEFORE_RETIRE"</pre>
 <section class="lead-capture" id="demo">
   <div class="kicker"><span>READY?</span><span class="dash">·</span><span>REQUEST ACCESS</span></div>
   <h3>RUN IT ON<br><span class="accent">YOUR NOTES.</span></h3>
-  <p>Tell us what your notes look like — the folder shape, the link styles you actually use, the moment you wish you could replay. We'll come back with what the detectors will and won't find there, honestly.</p>
+  <p>Tell us what your notes look like: the folder shape, the link styles you actually use, the moment you wish you could replay. We'll come back with what the detectors will and won't find there, honestly.</p>
   <form class="lead-form" id="leadForm" action="#" method="post" novalidate>
     <input type="email" name="email" placeholder="you@company.com" required aria-label="Work email" autocomplete="email" />
     <button type="submit" class="demo">SEE THE DEMO <span class="arrow">→</span></button>
-    <span class="note">We only use this email to follow up about XERJ — nothing else. No spam, no reselling.</span>
+    <span class="note">We only use this email to follow up about XERJ: nothing else. No spam, no reselling.</span>
     <span class="ok">✓ THANKS. WE'LL FOLLOW UP WITHIN ONE BUSINESS DAY.</span>
   </form>
 </section>

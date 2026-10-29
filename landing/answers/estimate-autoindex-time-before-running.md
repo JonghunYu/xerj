@@ -12,7 +12,7 @@ source: "content/answers/estimate-autoindex-time-before-running.md"
 
 **Key number:** Without --max-minutes, the gate asks before any run estimated at more than 10 minutes (`DEFAULT_MAX_MINUTES`). (as of 2026-10-19; source: [engine/crates/xerj-autoindex/src/gate.rs](https://github.com/xerj-org/xerj/blob/main/engine/crates/xerj-autoindex/src/gate.rs))
 
-**TL;DR** — `xerj autoindex --dry-run` prints a measured extraction floor for your own machine, and it writes nothing. Add `--max-minutes` and `--quiet`, and the decision gate exits 4 with a JSON decision request. On 2,500 PDFs the floor was 2.2 min and the finished run took 157.7 s.
+**TL;DR**: `xerj autoindex --dry-run` prints a measured extraction floor for your own machine, and it writes nothing. Add `--max-minutes` and `--quiet`, and the decision gate exits 4 with a JSON decision request. On 2,500 PDFs the floor was 2.2 min and the finished run took 157.7 s.
 
 ## Agent prompt
 

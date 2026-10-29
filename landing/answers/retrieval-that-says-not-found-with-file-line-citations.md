@@ -8,7 +8,7 @@ source: "content/answers/retrieval-that-says-not-found-with-file-line-citations.
 
 # Retrieval that says not found, and cites file and line when it does answer
 
-**TL;DR** — For retrieval that says not found and cites file and line, `xerj ask` answers with file:line, the pinned commit and the licence, and exits 1 when a symbol or corpus is missing. It does not yet abstain on weak free-text matches: calibrated confidence is issue #1786. Measured 2026-10-19 on v1.0.0-rc.97.
+**TL;DR**: For retrieval that says not found and cites file and line, `xerj ask` answers with file:line, the pinned commit and the licence, and exits 1 when a symbol or corpus is missing. It does not yet abstain on weak free-text matches: calibrated confidence is issue #1786. Measured 2026-10-19 on v1.0.0-rc.97.
 
 ## Commands
 
@@ -153,11 +153,11 @@ Yes, by exit code: 0 answered, 1 no match, 2 unknown corpus, 3 a pack failed ver
 
 ## Evidence
 
-- Missing symbol: no match, exit 1 — `benchmarks/agent-intents-2026-10-19/06-nodef.txt`
-- No corpus matches: exit 1 — `benchmarks/agent-intents-2026-10-19/06-noc.txt`
-- Off-topic question: four lz4 passages, exit 0 — `benchmarks/agent-intents-2026-10-19/06-offtopic.txt`
-- LZ4_compress_default at lz4.c:1481 and lz4.h:191 — `benchmarks/agent-intents-2026-10-19/06-def.txt`
-- Calibrated confidence is open as issue #1786 — [https://github.com/xerj-org/xerj/issues/1786](https://github.com/xerj-org/xerj/issues/1786)
+- Missing symbol: no match, exit 1. Source: `benchmarks/agent-intents-2026-10-19/06-nodef.txt`
+- No corpus matches: exit 1. Source: `benchmarks/agent-intents-2026-10-19/06-noc.txt`
+- Off-topic question: four lz4 passages, exit 0. Source: `benchmarks/agent-intents-2026-10-19/06-offtopic.txt`
+- LZ4_compress_default at lz4.c:1481 and lz4.h:191. Source: `benchmarks/agent-intents-2026-10-19/06-def.txt`
+- Calibrated confidence is open as issue #1786. Source: [https://github.com/xerj-org/xerj/issues/1786](https://github.com/xerj-org/xerj/issues/1786)
 
 ## Related
 

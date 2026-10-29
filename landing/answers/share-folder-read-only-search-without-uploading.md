@@ -146,11 +146,11 @@ No. It is search and reading only: no text is generated and no model is called. 
 
 ## Evidence
 
-- A share defaults to 24h and 1 claim; the longest lifetime is 30 days and the most claims is 50. — `engine/crates/xerj-api/src/share.rs`
-- A generated passcode is 8 symbols from a 31-symbol alphabet; a share id is 128 bits. — `engine/crates/xerj-api/src/share.rs`
-- Claims against one share are limited to 10 a minute and 30 an hour. — `engine/crates/xerj-api/src/share.rs`
-- xerj share refuses a node running with authentication off and exits 1. — `engine/crates/xerj-server/src/share.rs`
-- The folder path was run end to end on 2026-09-18: 3 files indexed, shared by folder, claimed, searched. — `docs/usecases/share-links/VERIFICATION.md`
+- A share defaults to 24h and 1 claim; the longest lifetime is 30 days and the most claims is 50. Source: `engine/crates/xerj-api/src/share.rs`
+- A generated passcode is 8 symbols from a 31-symbol alphabet; a share id is 128 bits. Source: `engine/crates/xerj-api/src/share.rs`
+- Claims against one share are limited to 10 a minute and 30 an hour. Source: `engine/crates/xerj-api/src/share.rs`
+- xerj share refuses a node running with authentication off and exits 1. Source: `engine/crates/xerj-server/src/share.rs`
+- The folder path was run end to end on 2026-09-18: 3 files indexed, shared by folder, claimed, searched. Source: `docs/usecases/share-links/VERIFICATION.md`
 
 ## Related
 

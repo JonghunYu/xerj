@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="What a XERJ share-link guest can and cannot reach">
@@ -222,9 +222,9 @@
     <p>If I give someone a read-only share link to one search index, can they see my other indices? No. A share-link guest key carries read on the shared index only, and a guest route allow-list closes _cat, _cluster, every other index, all writes, and scroll and point-in-time contexts. A live test checked each refusal.</p>
     <p class="key-fact"><strong>Key number:</strong> The live share-link test ran 237 checks on 2026-09-19 with 0 failures. <span class="mute">(as of 2026-09-19 · source: <a href="https://github.com/xerj-org/xerj/blob/main/docs/usecases/share-links/VERIFICATION.md">docs/usecases/share-links/VERIFICATION.md</a>)</span></p>
   </div>
-  <p><strong>TL;DR</strong> — A share-link guest gets a key with <code class="inline">read</code> on the shared index and nothing else. A route allow-list, used for guests only, closes <code class="inline">_cat</code>, <code class="inline">_cluster</code>, every other index, all writes, and scroll and point-in-time contexts. Each refusal is a check in a live test that ran 237 checks on 2026-09-19, with 0 failures.</p>
+  <p><strong>TL;DR</strong>: A share-link guest gets a key with <code class="inline">read</code> on the shared index and nothing else. A route allow-list, used for guests only, closes <code class="inline">_cat</code>, <code class="inline">_cluster</code>, every other index, all writes, and scroll and point-in-time contexts. Each refusal is a check in a live test that ran 237 checks on 2026-09-19, with 0 failures.</p>
   <div class="prompt-card">
-    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT — IT DOES THE REST</span>
+    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT. IT DOES THE REST</span>
     <code>Act as a coding agent. Read https://xerj.org/llms.txt. On a throwaway XERJ node with authentication on, create a share with POST /_share, claim it with POST /_share/claim and a JSON body of {id, passcode}, then use the returned api_key to call /_cat/indices, /_cluster/health, a search on another index, a write to the shared index and a search with ?scroll=1m, and report the status code of each call.</code>
     <button type="button" class="prompt-copy" data-copy="Act as a coding agent. Read https://xerj.org/llms.txt. On a throwaway XERJ node with authentication on, create a share with POST /_share, claim it with POST /_share/claim and a JSON body of {id, passcode}, then use the returned api_key to call /_cat/indices, /_cluster/health, a search on another index, a write to the shared index and a search with ?scroll=1m, and report the status code of each call.">COPY THE PROMPT</button>
   </div>
@@ -307,11 +307,11 @@
   <p>Read every document in the shared index and copy what they read. A share grants whole indices. There is no per-document or per-field restriction to apply.</p>
   <h2>Evidence</h2>
   <ul>
-    <li>The guest route allow-list: _search, _count, _msearch, _mget, _mapping, _field_caps, GET _doc, and the graph ego and overview routes. — <code>engine/crates/xerj-api/src/authz.rs</code></li>
-    <li>The live test makes 237 checks against a node with authentication on and the access log on (225 without the native-listener section); all passed on 2026-09-19. — <code>docs/usecases/share-links/VERIFICATION.md</code></li>
-    <li>A share id is 128 bits and is stored as a SHA-256 digest; the passcode is stored as an Argon2id hash in a file with mode 0600. — <code>engine/crates/xerj-api/src/share.rs</code></li>
-    <li>Unknown share ids are limited to 10 a minute and 100 an hour per source address; a known share to 10 a minute and 30 an hour. — <code>engine/crates/xerj-api/src/share.rs</code></li>
-    <li>The guest page is served with default-src 'none' and frame-ancestors 'none'. — <code>engine/crates/xerj-console-api/src/spa.rs</code></li>
+    <li>The guest route allow-list: _search, _count, _msearch, _mget, _mapping, _field_caps, GET _doc, and the graph ego and overview routes. Source: <code>engine/crates/xerj-api/src/authz.rs</code></li>
+    <li>The live test makes 237 checks against a node with authentication on and the access log on (225 without the native-listener section); all passed on 2026-09-19. Source: <code>docs/usecases/share-links/VERIFICATION.md</code></li>
+    <li>A share id is 128 bits and is stored as a SHA-256 digest; the passcode is stored as an Argon2id hash in a file with mode 0600. Source: <code>engine/crates/xerj-api/src/share.rs</code></li>
+    <li>Unknown share ids are limited to 10 a minute and 100 an hour per source address; a known share to 10 a minute and 30 an hour. Source: <code>engine/crates/xerj-api/src/share.rs</code></li>
+    <li>The guest page is served with default-src 'none' and frame-ancestors 'none'. Source: <code>engine/crates/xerj-console-api/src/spa.rs</code></li>
   </ul>
   <h2>Related</h2>
   <ul>

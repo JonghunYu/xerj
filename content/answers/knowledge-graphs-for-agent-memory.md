@@ -49,7 +49,7 @@ faq:
     a: "In an index named `.xerj-memory-{brain}-edges`. `autoindex` creates one per indexed folder by default, named after the folder."
 ---
 
-**TL;DR** — Links help, and XERJ is not a graph database. XERJ builds a bounded, graph-shaped link index over the documents it already indexed. Our capture produced 7 edges over 6 documents, answered 1 hop with 3 edges and 2 hops with 6, and refused 3 hops.
+**TL;DR**: Links help, and XERJ is not a graph database. XERJ builds a bounded, graph-shaped link index over the documents it already indexed. Our capture produced 7 edges over 6 documents, answered 1 hop with 3 edges and 2 hops with 6, and refused 3 hops.
 
 ## What XERJ actually builds
 

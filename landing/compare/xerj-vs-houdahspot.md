@@ -185,12 +185,12 @@ Yes. HoudahSpot for a person refining a search by hand, XERJ for the folder a pr
 
 ## Evidence
 
-- HoudahSpot builds upon macOS Spotlight to deliver advanced file search for macOS and requires Spotlight indexing to be enabled. — [https://www.houdah.com/houdahSpot/](https://www.houdah.com/houdahSpot/)
-- HoudahSpot searches by file name, text content and file extension, and by attributes including tags, date created, file size, image resolution and author, with boolean operators, regular expressions, multiple search folders and excluded folders. — [https://www.houdah.com/houdahSpot/features.html](https://www.houdah.com/houdahSpot/features.html)
-- HoudahSpot lets you add and sort by any of hundreds of available columns, preview results with Quick Look and highlighted text, and save recurring searches as templates. — [https://www.houdah.com/houdahSpot/features.html](https://www.houdah.com/houdahSpot/features.html)
-- HoudahSpot automates searches with AppleScript and integrates with launchers such as Alfred and LaunchBar. — [https://www.houdah.com/houdahSpot/](https://www.houdah.com/houdahSpot/)
-- mdfind queries the central macOS metadata store that HoudahSpot builds on, with -onlyin, -name, -count, -literal, -interpret and -live. — [https://keith.github.io/xcode-man-pages/mdfind.1.html](https://keith.github.io/xcode-man-pages/mdfind.1.html)
-- XERJ streaming extractors cover JSON/JSONL, dialect-sniffed CSV, structured logs, SQL dumps, SQLite, PDF, DOCX, HTML, XML, YAML, plain text and gzip variants, with no configuration file and no mapping. — `landing/llms.txt:231`
+- HoudahSpot builds upon macOS Spotlight to deliver advanced file search for macOS and requires Spotlight indexing to be enabled. Source: [https://www.houdah.com/houdahSpot/](https://www.houdah.com/houdahSpot/)
+- HoudahSpot searches by file name, text content and file extension, and by attributes including tags, date created, file size, image resolution and author, with boolean operators, regular expressions, multiple search folders and excluded folders. Source: [https://www.houdah.com/houdahSpot/features.html](https://www.houdah.com/houdahSpot/features.html)
+- HoudahSpot lets you add and sort by any of hundreds of available columns, preview results with Quick Look and highlighted text, and save recurring searches as templates. Source: [https://www.houdah.com/houdahSpot/features.html](https://www.houdah.com/houdahSpot/features.html)
+- HoudahSpot automates searches with AppleScript and integrates with launchers such as Alfred and LaunchBar. Source: [https://www.houdah.com/houdahSpot/](https://www.houdah.com/houdahSpot/)
+- mdfind queries the central macOS metadata store that HoudahSpot builds on, with -onlyin, -name, -count, -literal, -interpret and -live. Source: [https://keith.github.io/xcode-man-pages/mdfind.1.html](https://keith.github.io/xcode-man-pages/mdfind.1.html)
+- XERJ streaming extractors cover JSON/JSONL, dialect-sniffed CSV, structured logs, SQL dumps, SQLite, PDF, DOCX, HTML, XML, YAML, plain text and gzip variants, with no configuration file and no mapping. Source: `landing/llms.txt:231`
 
 ## Related
 

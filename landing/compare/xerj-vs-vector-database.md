@@ -196,9 +196,9 @@ No. XERJ is single-node with no data-plane replication, and filtered kNN falls b
 
 ## Evidence
 
-- Qdrant's built-in embedding inference is available on Qdrant Cloud only; self-hosted deployments run an external service or a client-side embedder. — [https://qdrant.tech/cloud-inference/](https://qdrant.tech/cloud-inference/)
-- Pinecone's Standard plan carries a 50 dollar per month minimum, and self-hosting is not offered below Enterprise BYOC. — [https://www.pinecone.io/pricing/](https://www.pinecone.io/pricing/)
-- Manticore Search ships local ONNX embedders with no API key and native RRF through OPTION fusion_method='rrf' in one query. — [https://manual.manticoresearch.com/Searching/Hybrid_search](https://manual.manticoresearch.com/Searching/Hybrid_search)
+- Qdrant's built-in embedding inference is available on Qdrant Cloud only; self-hosted deployments run an external service or a client-side embedder. Source: [https://qdrant.tech/cloud-inference/](https://qdrant.tech/cloud-inference/)
+- Pinecone's Standard plan carries a 50 dollar per month minimum, and self-hosting is not offered below Enterprise BYOC. Source: [https://www.pinecone.io/pricing/](https://www.pinecone.io/pricing/)
+- Manticore Search ships local ONNX embedders with no API key and native RRF through OPTION fusion_method='rrf' in one query. Source: [https://manual.manticoresearch.com/Searching/Hybrid_search](https://manual.manticoresearch.com/Searching/Hybrid_search)
 
 ## Related
 

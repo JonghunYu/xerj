@@ -12,7 +12,7 @@ source: "content/answers/share-local-search-index-through-a-tunnel.md"
 
 **Key number:** A known share accepts at most 30 passcode attempts an hour, from any address. (as of 2026-10-19; source: [engine/crates/xerj-api/src/share.rs](https://github.com/xerj-org/xerj/blob/main/engine/crates/xerj-api/src/share.rs))
 
-**TL;DR** — `xerj share` with `--tunnel` starts your own `cloudflared`, prints a public HTTPS guest link, and runs until you press Ctrl-C. Stopping it closes the tunnel and revokes the share. No port is opened on your router. The trade: the guest's traffic passes through Cloudflare, which terminates the TLS connection.
+**TL;DR**: `xerj share` with `--tunnel` starts your own `cloudflared`, prints a public HTTPS guest link, and runs until you press Ctrl-C. Stopping it closes the tunnel and revokes the share. No port is opened on your router. The trade: the guest's traffic passes through Cloudflare, which terminates the TLS connection.
 
 ## Agent prompt
 
@@ -134,10 +134,10 @@ No. The lockout is charged to the share, not to the address: 30 attempts an hour
 
 ## Evidence
 
-- xerj share --tunnel runs cloudflared tunnel --url against 127.0.0.1 and reads the trycloudflare.com hostname from its output. — `engine/crates/xerj-server/src/share.rs`
-- A real quick tunnel was exercised on 2026-09-18: page 200, wrong passcode 401, claim 200, guest _cat 403, and after SIGINT the guest key answered 401 with 1 key invalidated. — `docs/usecases/share-links/VERIFICATION.md`
-- A known share is limited to 30 passcode attempts an hour from anywhere, so the lockout does not depend on the source address. — `engine/crates/xerj-api/src/share.rs`
-- Forwarded headers are read only when the peer is listed in server.trusted_proxies. — `engine/crates/xerj-console-api/src/client_ip.rs`
+- xerj share --tunnel runs cloudflared tunnel --url against 127.0.0.1 and reads the trycloudflare.com hostname from its output. Source: `engine/crates/xerj-server/src/share.rs`
+- A real quick tunnel was exercised on 2026-09-18: page 200, wrong passcode 401, claim 200, guest _cat 403, and after SIGINT the guest key answered 401 with 1 key invalidated. Source: `docs/usecases/share-links/VERIFICATION.md`
+- A known share is limited to 30 passcode attempts an hour from anywhere, so the lockout does not depend on the source address. Source: `engine/crates/xerj-api/src/share.rs`
+- Forwarded headers are read only when the peer is listed in server.trusted_proxies. Source: `engine/crates/xerj-console-api/src/client_ip.rs`
 
 ## Related
 

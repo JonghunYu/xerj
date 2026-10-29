@@ -69,7 +69,7 @@ faq:
     a: "No. --quiet means no progress output, so the decision-JSON recipe and the progress-parsing recipe are separate invocations of autoindex."
 ---
 
-**TL;DR** — Pass `--progress plain`, then read the `xerj-progress` lines on stderr. A captured 22.2 s XERJ run emitted 12 phases in order and ended with `xerj-done ok=true exit=0 reason=completed`. On a single 16 MB file the percentage stayed at `0.0%`, so read `since_progress_s` and `waiting_on` instead.
+**TL;DR**: Pass `--progress plain`, then read the `xerj-progress` lines on stderr. A captured 22.2 s XERJ run emitted 12 phases in order and ended with `xerj-done ok=true exit=0 reason=completed`. On a single 16 MB file the percentage stayed at `0.0%`, so read `since_progress_s` and `waiting_on` instead.
 
 ## Three kinds of line, one contract
 
@@ -107,10 +107,10 @@ Split a large corpus into several files if you want the percentage to move.
 
 A run passes through fixed phases, and the capture recorded all of them in this order.
 
-1. `walk`, `hash`, `scan` — find and fingerprint the files.
-2. `prepare`, `graph` — infer datasets and prepare relationship detection.
-3. `index`, `graph-corpus` — write documents and edges to the node.
-4. `finalize-refresh`, `finalize-count`, `finalize-correlate`, `finalize-histogram`, `finalize-catalog` — settle and catalog the result.
+1. `walk`, `hash`, `scan`: find and fingerprint the files.
+2. `prepare`, `graph`: infer datasets and prepare relationship detection.
+3. `index`, `graph-corpus`: write documents and edges to the node.
+4. `finalize-refresh`, `finalize-count`, `finalize-correlate`, `finalize-histogram`, `finalize-catalog`: settle and catalog the result.
 
 A run that sits in `finalize-count` waits on the node, not on the disk. The captured line names the index it waits for, as `waiting_on=log16-logs`.
 

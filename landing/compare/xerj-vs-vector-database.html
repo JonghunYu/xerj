@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Search API or a vector database for agent memory?">
@@ -240,7 +240,7 @@
   </div>
   <p><strong>TL;DR</strong> — Call the search API you already run. XERJ serves agent memory at <code class="inline">_memory/{namespace}</code> from the same single-node process that serves <code class="inline">_search</code>, so no second data service starts. On 20 labeled documents and 8 judged queries, hybrid linear fusion scored the best precision@3 at 0.4583. Choose Qdrant instead for filtered vector search at scale.</p>
   <div class="prompt-card">
-    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT — IT DOES THE REST</span>
+    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT. IT DOES THE REST</span>
     <code>Act as a coding agent. Read https://xerj.org/llms.txt, start one local XERJ node, store a fact with POST /_memory/{namespace} and read it back with _recall, then index a labeled corpus into the same node and run the same judged queries as BM25, kNN and hybrid RRF. Report every miss, and report whether any second data service had to start.</code>
     <button type="button" class="prompt-copy" data-copy="Act as a coding agent. Read https://xerj.org/llms.txt, start one local XERJ node, store a fact with POST /_memory/{namespace} and read it back with _recall, then index a labeled corpus into the same node and run the same judged queries as BM25, kNN and hybrid RRF. Report every miss, and report whether any second data service had to start.">COPY THE PROMPT</button>
   </div>
@@ -353,9 +353,9 @@
   <p>No. XERJ is single-node with no data-plane replication, and filtered kNN falls back to an exact scan rather than the graph index.</p>
   <h2>Evidence</h2>
   <ul>
-    <li>Qdrant's built-in embedding inference is available on Qdrant Cloud only; self-hosted deployments run an external service or a client-side embedder. — <a href="https://qdrant.tech/cloud-inference/">https://qdrant.tech/cloud-inference/</a></li>
-    <li>Pinecone's Standard plan carries a 50 dollar per month minimum, and self-hosting is not offered below Enterprise BYOC. — <a href="https://www.pinecone.io/pricing/">https://www.pinecone.io/pricing/</a></li>
-    <li>Manticore Search ships local ONNX embedders with no API key and native RRF through OPTION fusion_method='rrf' in one query. — <a href="https://manual.manticoresearch.com/Searching/Hybrid_search">https://manual.manticoresearch.com/Searching/Hybrid_search</a></li>
+    <li>Qdrant's built-in embedding inference is available on Qdrant Cloud only; self-hosted deployments run an external service or a client-side embedder. Source: <a href="https://qdrant.tech/cloud-inference/">https://qdrant.tech/cloud-inference/</a></li>
+    <li>Pinecone's Standard plan carries a 50 dollar per month minimum, and self-hosting is not offered below Enterprise BYOC. Source: <a href="https://www.pinecone.io/pricing/">https://www.pinecone.io/pricing/</a></li>
+    <li>Manticore Search ships local ONNX embedders with no API key and native RRF through OPTION fusion_method='rrf' in one query. Source: <a href="https://manual.manticoresearch.com/Searching/Hybrid_search">https://manual.manticoresearch.com/Searching/Hybrid_search</a></li>
   </ul>
   <h2>Related</h2>
   <ul>

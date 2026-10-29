@@ -50,7 +50,7 @@ faq:
     a: "All results come from run RUN-B, captured on 2026-08-21 on a 16-core AMD EPYC 9645 host."
 ---
 
-**TL;DR** — The duplicate titles come from the export layout and from the 2 documents XERJ writes per Markdown file. Re-indexing is not the cause. A captured run indexed the same export twice and returned 8 documents both times, with byte-identical ids.
+**TL;DR**: The duplicate titles come from the export layout and from the 2 documents XERJ writes per Markdown file. Re-indexing is not the cause. A captured run indexed the same export twice and returned 8 documents both times, with byte-identical ids.
 
 ## The export layout repeats the title
 
@@ -89,7 +89,7 @@ xerj autoindex ./notion-export --url http://127.0.0.1:9200 --prefix nt --progres
 
 ## Watch for database pages refused as YAML
 
-If most of an exported page's non-blank lines read as YAML — a `key: value` line, or a line opening with `- ` — the family sniffer classifies the page as `yaml`. Notion writes a database row page as a title over `Status:`, `Owner:` and `Decided:` lines, which is exactly that shape. YAML parsing then fails and XERJ drops the file with 0 documents. There is no fallback to prose, and the only terminal signal is a junk file count. A `---` front-matter block at the top of a Markdown file does not trigger this on its own: a file that opens with front matter is classified by the body under it.
+If most of an exported page's non-blank lines read as YAML (a `key: value` line, or a line opening with `- `) the family sniffer classifies the page as `yaml`. Notion writes a database row page as a title over `Status:`, `Owner:` and `Decided:` lines, which is exactly that shape. YAML parsing then fails and XERJ drops the file with 0 documents. There is no fallback to prose, and the only terminal signal is a junk file count. A `---` front-matter block at the top of a Markdown file does not trigger this on its own: a file that opens with front matter is classified by the body under it.
 
 All 3 database row pages under `Decisions 0f1e2d3c4b5a69788796a5b4c3d2e1f0/` were refused this way, with the reason `no records extracted (yaml candidate family, 1 junk lines)`. The run reported `junk_files=3`.
 

@@ -12,7 +12,7 @@ source: "content/answers/full-text-search-sqlite-database.md"
 
 **Key number:** XERJ maps each existing SQLite table without an FTS5 virtual table, keeping up to 512 fields per record (`MAX_FIELDS_PER_RECORD`). (as of 2026-10-19; source: [engine/crates/xerj-autoindex/src/extract/mod.rs](https://github.com/xerj-org/xerj/blob/main/engine/crates/xerj-autoindex/src/extract/mod.rs))
 
-**TL;DR** — `xerj autoindex` reads a SQLite file read-only and turns each table into an index. In a captured WAL-mode run, XERJ created `sq-tickets` with 400 documents and `sq-agents` with 13, and left all 3 source files byte-identical. Rows still resident in the write-ahead log were absent.
+**TL;DR**: `xerj autoindex` reads a SQLite file read-only and turns each table into an index. In a captured WAL-mode run, XERJ created `sq-tickets` with 400 documents and `sq-agents` with 13, and left all 3 source files byte-identical. Rows still resident in the write-ahead log were absent.
 
 ## Agent prompt
 

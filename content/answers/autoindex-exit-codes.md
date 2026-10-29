@@ -71,7 +71,7 @@ faq:
     a: "Do not blindly retry 0 or 3. Exit 3 with stale-resume-plan requires a --fresh rebuild to include the new files. Re-run with `--approve` on 4. Fix the command line on 2. Investigate the endpoint and the journal on 1, because a blind retry repeats the same refusal. The one exit 1 to rerun unchanged is `reason=server-backpressure`, once the node accepts writes again: it resumes with the operations that remain."
 ---
 
-**TL;DR** — Read the terminal reason as well as the exit code. Exit 3 with `completed-with-junk` is success. With `stale-resume-plan`, `ok=false` means new files were not indexed.
+**TL;DR**: Read the terminal reason as well as the exit code. Exit 3 with `completed-with-junk` is success. With `stale-resume-plan`, `ok=false` means new files were not indexed.
 
 Rebuild with `--fresh` to include new files after `stale-resume-plan`. Exit 0 means the run completed; exit 3 means it completed with a reported limitation or junk. Exit 4 means the estimate exceeded `--max-minutes` and nothing was indexed.
 
@@ -136,7 +136,7 @@ If the upper end is longer and no `--approve` or `--yes` was given, **nothing is
 
 You answer it by re-running the same command with `--approve proceed`, `--approve fast` or `--approve cancel`. `fast` also applies `--no-semantic --no-graph`.
 
-A person at a terminal is prompted instead, but only when the question can actually be seen: stdin a terminal, stderr a terminal, and the progress surface on. A piped or agent-driven run is never prompted, and `--quiet` silences the prompt as well. Every un-prompted run behaves identically — the JSON request goes to stdout, which `--quiet` does not silence, and the process exits 4. The payload's `prompt_not_offered_because` names which of the three conditions was missing.
+A person at a terminal is prompted instead, but only when the question can actually be seen: stdin a terminal, stderr a terminal, and the progress surface on. A piped or agent-driven run is never prompted, and `--quiet` silences the prompt as well. Every un-prompted run behaves identically: the JSON request goes to stdout, which `--quiet` does not silence, and the process exits 4. The payload's `prompt_not_offered_because` names which of the three conditions was missing.
 
 `xerj autoindex` never waits on stdin for a question it did not print.
 
@@ -186,7 +186,7 @@ xerj-done ok=true exit=3 reason=completed-with-junk wall=0.6s files=4 records=1 
 
 That line carries the reason string, the wall time and the code-coverage counters `code_files`, `code_files_indexed` and `code_files_junked`. A corpus whose source files were all dropped therefore cannot print the same line as a healthy one.
 
-Two cases print no terminal line at all. `--quiet` and `--progress none` print none by design, so poll `xerj autoindex status --state-dir <dir>` or read the exit code instead of waiting for output that never comes. A run killed by a signal cannot print one either — a missing terminal line after the process is gone means it died, not that it finished.
+Two cases print no terminal line at all. `--quiet` and `--progress none` print none by design, so poll `xerj autoindex status --state-dir <dir>` or read the exit code instead of waiting for output that never comes. A run killed by a signal cannot print one either: a missing terminal line after the process is gone means it died, not that it finished.
 
 ## What an agent should do with each code
 

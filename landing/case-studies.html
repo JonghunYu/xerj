@@ -14,7 +14,7 @@
 <!-- ga4:end -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>XERJ.ai — Case studies</title>
+<title>XERJ.ai · Case studies</title>
 <meta name="description" content="Three engineering questions answered end to end: a measured WordPress-core security audit, semantic analytics in one request, and Postgres CDC search.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,16 +43,16 @@
 <link rel="canonical" href="https://xerj.org/case-studies">
 <meta property="og:site_name" content="XERJ.ai">
 <meta property="og:type" content="website">
-<meta property="og:title" content="XERJ.ai — Case studies">
+<meta property="og:title" content="XERJ.ai · Case studies">
 <meta property="og:description" content="Three engineering questions answered end to end: a measured WordPress-core security audit, semantic analytics in one request, and Postgres CDC search.">
 <meta property="og:url" content="https://xerj.org/case-studies">
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="XERJ.ai — Case studies">
+<meta name="twitter:title" content="XERJ.ai · Case studies">
 <meta name="twitter:description" content="Three engineering questions answered end to end: a measured WordPress-core security audit, semantic analytics in one request, and Postgres CDC search.">
 <meta name="twitter:image" content="https://xerj.org/og/xerj-card.png">
 <script type="application/ld+json">
@@ -88,7 +88,7 @@
 {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "XERJ.ai — Case studies",
+  "name": "XERJ.ai · Case studies",
   "description": "Three engineering questions answered end to end: a measured WordPress-core security audit, semantic analytics in one request, and Postgres CDC search.",
   "url": "https://xerj.org/case-studies",
   "image": "https://xerj.org/og/xerj-card.png",
@@ -163,10 +163,10 @@
   <h1 class="hero">REAL QUESTIONS.<br><span class="accent">RUNNABLE ANSWERS.</span></h1>
   <p class="lead" style="max-width:720px;">
     XERJ audited its own Rust engine and found a real unauthenticated
-    process-abort DoS — reached for 10,533 tokens instead of the 1.8M it takes to
-    read the source once. WordPress core — ~619k lines — was security-audited for
+    process-abort DoS: reached for 10,533 tokens instead of the 1.8M it takes to
+    read the source once. WordPress core (~619k lines) was security-audited for
     ~26,000 tokens. Those two are measured on real code; the other two are
-    functional proofs on small synthetic corpora — they show the shape works,
+    functional proofs on small synthetic corpora. They show the shape works,
     not how fast. Every number traces to a walkthrough in the repo.
   </p>
 </section>
@@ -176,7 +176,7 @@
   <div class="uc-copy">
     <span class="uc-num">01</span>
     <div class="uc-title">XERJ AUDITS<br>ITS OWN<br><span class="accent">RUST.</span></div>
-    <p class="uc-pitch">XERJ indexed its own engine — 197 files, ~201k lines — as a queryable AST and call graph, then found an unauthenticated <code class="inline">POST /_sql</code> stack-overflow that aborts the process. A call-graph recursion-cycle query grep cannot express. Yellow is the tokens to reach the finding; blue is what it costs to read the source once.</p>
+    <p class="uc-pitch">XERJ indexed its own engine (197 files, ~201k lines) as a queryable AST and call graph, then found an unauthenticated <code class="inline">POST /_sql</code> stack-overflow that aborts the process. A call-graph recursion-cycle query grep cannot express. Yellow is the tokens to reach the finding; blue is what it costs to read the source once.</p>
     <div class="uc-metric">10,533 TOKENS INSTEAD OF 1.8M · BUG FIXED</div>
     <div class="uc-persona">SECURITY ENGINEERS · AI-AGENT BUILDERS · RUST TEAMS</div>
     <a href="/case-studies/xerj-self-audit" class="uc-cta">FULL CASE STUDY →</a>
@@ -210,7 +210,7 @@
   <div class="uc-copy">
     <span class="uc-num">02</span>
     <div class="uc-title">WORDPRESS<br>SECURITY<br><span class="accent">AUDIT.</span></div>
-    <p class="uc-pitch">WordPress core is ~619k lines — ~26× a 200k-token context window. An agent indexed it as a queryable code graph and read only what queries surfaced. Yellow is the whole audit's token bill; blue is what it costs just to load the code once.</p>
+    <p class="uc-pitch">WordPress core is ~619k lines: ~26× a 200k-token context window. An agent indexed it as a queryable code graph and read only what queries surfaced. Yellow is the whole audit's token bill; blue is what it costs just to load the code once.</p>
     <div class="uc-metric">~26K TOKENS INSTEAD OF ~5.2M</div>
     <div class="uc-persona">SECURITY ENGINEERS · AI-AGENT BUILDERS · PLATFORM TEAMS</div>
     <a href="/case-studies/wordpress-security-audit" class="uc-cta">FULL CASE STUDY →</a>
@@ -244,8 +244,8 @@
   <div class="uc-copy">
     <span class="uc-num">03</span>
     <div class="uc-title">SEMANTIC<br>ANALYTICS IN<br><span class="accent">ONE REQUEST.</span></div>
-    <p class="uc-pitch">"Of calls about wifi issues, how many are 2.4GHz vs 5GHz, and what are the key issues?" — asked by calltree.ai. Half retrieval, half analytics: normally two stores and an ETL. One XERJ <code class="inline">POST /_search</code> returns the slice, the breakdown, the metrics, and the evidence.</p>
-    <div class="uc-metric">1 REQUEST · 1 STORE — WAS 2 + ETL</div>
+    <p class="uc-pitch">"Of calls about wifi issues, how many are 2.4GHz vs 5GHz, and what are the key issues?": asked by calltree.ai. Half retrieval, half analytics: normally two stores and an ETL. One XERJ <code class="inline">POST /_search</code> returns the slice, the breakdown, the metrics, and the evidence.</p>
+    <div class="uc-metric">1 REQUEST · 1 STORE: WAS 2 + ETL</div>
     <div class="uc-persona">AI-OVER-SUPPORT TEAMS · DATA PLATFORM ENGINEERS</div>
     <a href="/case-studies/calltree-analytics" class="uc-cta">FULL CASE STUDY →</a>
   </div>
@@ -296,7 +296,7 @@
   <div class="uc-copy">
     <span class="uc-num">04</span>
     <div class="uc-title">POSTGRES CDC +<br><span class="accent">HYBRID SEARCH.</span></div>
-    <p class="uc-pitch">daily.dev's founder asked: can XERJ replicate automatically from Postgres? A logical-replication slot streams every INSERT, UPDATE, and DELETE into XERJ — no reindex jobs — and one hybrid query fuses BM25 + vector rankings server-side, replacing the tsvector + pgvector two-query app merge.</p>
+    <p class="uc-pitch">daily.dev's founder asked: can XERJ replicate automatically from Postgres? A logical-replication slot streams every INSERT, UPDATE, and DELETE into XERJ (no reindex jobs) and one hybrid query fuses BM25 + vector rankings server-side, replacing the tsvector + pgvector two-query app merge.</p>
     <div class="uc-metric">3/3 MUTATION TYPES REPLICATED · 0 CHANGES LOST</div>
     <div class="uc-persona">POSTGRES TEAMS · SEARCH ENGINEERS · PLATFORM TEAMS</div>
     <a href="/case-studies/daily-dev-postgres-cdc" class="uc-cta">FULL CASE STUDY →</a>
@@ -341,7 +341,7 @@
   <div class="uc-copy">
     <span class="uc-num">05</span>
     <div class="uc-title">SAME MODEL.<br>FEWER<br><span class="accent">TOKENS.</span></div>
-    <p class="uc-pitch">On code the model has not memorised, handing the <em>same</em> Claude Code a XERJ-retrieved reference makes it correct where memory fails — <strong>21/21 vs 1/21</strong> — at 1.5–2.7× fewer output tokens than native Claude Code grepping the source, across five languages. Red is answering from memory; yellow is XERJ-assisted. On memorised code, retrieval is honest overhead — and we say so.</p>
+    <p class="uc-pitch">On code the model has not memorised, handing the <em>same</em> Claude Code a XERJ-retrieved reference makes it correct where memory fails (<strong>21/21 vs 1/21</strong>) at 1.5–2.7× fewer output tokens than native Claude Code grepping the source, across five languages. Red is answering from memory; yellow is XERJ-assisted. On memorised code, retrieval is honest overhead, and we say so.</p>
     <div class="uc-metric">21/21 vs 1/21 SOLVED · 6.5× CHEAPER THAN MEMORY</div>
     <div class="uc-persona">AI-AGENT BUILDERS · PLATFORM &amp; DX TEAMS · SYNTHETIC CORPUS</div>
     <a href="/case-studies/reference-coding" class="uc-cta">FULL CASE STUDY →</a>

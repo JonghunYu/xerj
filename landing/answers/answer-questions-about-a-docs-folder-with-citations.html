@@ -214,9 +214,9 @@
     <p>Answer questions about a docs folder by indexing it with <code class="inline">xerj autoindex</code>, then running a phrase query. Each hit carries <code class="inline">ax_path</code>, so the agent can cite the file. On 2026-10-20 a phrase query for "what is in here" returned <code class="inline">WHY_XERJ.md</code> and took 1 ms. <code class="inline">xerj search</code> on the same words did not.</p>
     <p class="key-fact"><strong>Key number:</strong> A phrase query for "what is in here" returned WHY_XERJ.md and took 1 ms. <span class="mute">(as of 2026-10-20 · source: <a href="https://github.com/xerj-org/xerj/blob/main/benchmarks/agent-queries-2026-10-20/08-docs-phrase.json">benchmarks/agent-queries-2026-10-20/08-docs-phrase.json</a>)</span></p>
   </div>
-  <p><strong>TL;DR</strong> — Answer questions about a docs folder by indexing it with <code class="inline">xerj autoindex</code>, then running a phrase query. Each hit carries <code class="inline">ax_path</code>, so the agent can cite the file. On 2026-10-20 a phrase query for "what is in here" returned <code class="inline">WHY_XERJ.md</code> and took 1 ms. <code class="inline">xerj search</code> on the same words did not.</p>
+  <p><strong>TL;DR</strong>: Answer questions about a docs folder by indexing it with <code class="inline">xerj autoindex</code>, then running a phrase query. Each hit carries <code class="inline">ax_path</code>, so the agent can cite the file. On 2026-10-20 a phrase query for "what is in here" returned <code class="inline">WHY_XERJ.md</code> and took 1 ms. <code class="inline">xerj search</code> on the same words did not.</p>
   <div class="prompt-card">
-    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT — IT DOES THE REST</span>
+    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT. IT DOES THE REST</span>
     <code>Read https://xerj.org/llms.txt. Start one local node, run xerj autoindex on the docs folder, then run xerj autoindex map and query the prose field it names. Cite ax_path for every passage you use. If xerj search returns code identifiers, say so and run a match_phrase on the prose field.</code>
     <button type="button" class="prompt-copy" data-copy="Read https://xerj.org/llms.txt. Start one local node, run xerj autoindex on the docs folder, then run xerj autoindex map and query the prose field it names. Cite ax_path for every passage you use. If xerj search returns code identifiers, say so and run a match_phrase on the prose field.">COPY THE PROMPT</button>
   </div>
@@ -281,9 +281,9 @@
   <p>No. <code class="inline">xerj ask</code> answers hub corpora. A folder you autoindexed is <code class="inline">xerj search</code>, <code class="inline">xerj def</code>, or a <code class="inline">_search</code> body.</p>
   <h2>Evidence</h2>
   <ul>
-    <li>autoindex of docs/ exited 3, wall 14.3 s, 9,940 records, 3 junk files. — <code>benchmarks/agent-queries-2026-10-20/02-autoindex-docs.txt</code></li>
-    <li>xerj search wrote 689 bytes and rg wrote 270 bytes for the same words. — <code>benchmarks/agent-queries-2026-10-20/02-byte-compare.txt</code></li>
-    <li>match_phrase on body took 1 ms and returned WHY_XERJ.md. — <code>benchmarks/agent-queries-2026-10-20/08-docs-phrase.json</code></li>
+    <li>autoindex of docs/ exited 3, wall 14.3 s, 9,940 records, 3 junk files. Source: <code>benchmarks/agent-queries-2026-10-20/02-autoindex-docs.txt</code></li>
+    <li>xerj search wrote 689 bytes and rg wrote 270 bytes for the same words. Source: <code>benchmarks/agent-queries-2026-10-20/02-byte-compare.txt</code></li>
+    <li>match_phrase on body took 1 ms and returned WHY_XERJ.md. Source: <code>benchmarks/agent-queries-2026-10-20/08-docs-phrase.json</code></li>
   </ul>
   <h2>Related</h2>
   <ul>

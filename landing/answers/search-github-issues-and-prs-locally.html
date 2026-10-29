@@ -216,7 +216,7 @@
   </div>
   <p><strong>TL;DR</strong> — Search a repo's issues and pull requests locally. Export them to JSONL, index the folder, and query that index instead of reading <code class="inline">gh</code> JSON. On 2026-10-20 the <code class="inline">gh</code> capture file was 36,550 bytes and the <code class="inline">xerj search</code> capture file was 1,865 bytes. Two of the three passages were cited as line 1.</p>
   <div class="prompt-card">
-    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT — IT DOES THE REST</span>
+    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT. IT DOES THE REST</span>
     <code>Read https://xerj.org/llms.txt. Start one local node. Export issues and pull requests to JSONL, run xerj autoindex, then search with a _search body that lists _source fields. Report number, title and state. If a passage is cited as line 1 for two different issues, trust number and title, not the line.</code>
     <button type="button" class="prompt-copy" data-copy="Read https://xerj.org/llms.txt. Start one local node. Export issues and pull requests to JSONL, run xerj autoindex, then search with a _search body that lists _source fields. Report number, title and state. If a passage is cited as line 1 for two different issues, trust number and title, not the line.">COPY THE PROMPT</button>
   </div>
@@ -279,10 +279,10 @@
   <p>In this capture <code class="inline">xerj search</code> labeled two different passages <code class="inline">issues.jsonl:1</code>. Read <code class="inline">number</code> and <code class="inline">title</code> from <code class="inline">_source</code>.</p>
   <h2>Evidence</h2>
   <ul>
-    <li>The issue export indexed in 7.2 s, 1,532 records, exit 0. — <code>benchmarks/agent-queries-2026-10-20/01-autoindex-issues.txt</code></li>
-    <li>xerj search's capture file was 1,865 bytes and the gh capture file was 36,550 bytes. — <code>benchmarks/agent-queries-2026-10-20/01-byte-compare.txt</code></li>
-    <li>The narrowed _search response reported _savings of 19,444 bytes, sampled. — <code>benchmarks/agent-queries-2026-10-20/01-duplicate-search.json</code></li>
-    <li>tools/list returned 17 tools. — <code>benchmarks/agent-queries-2026-10-20/05-tool-names.txt</code></li>
+    <li>The issue export indexed in 7.2 s, 1,532 records, exit 0. Source: <code>benchmarks/agent-queries-2026-10-20/01-autoindex-issues.txt</code></li>
+    <li>xerj search's capture file was 1,865 bytes and the gh capture file was 36,550 bytes. Source: <code>benchmarks/agent-queries-2026-10-20/01-byte-compare.txt</code></li>
+    <li>The narrowed _search response reported _savings of 19,444 bytes, sampled. Source: <code>benchmarks/agent-queries-2026-10-20/01-duplicate-search.json</code></li>
+    <li>tools/list returned 17 tools. Source: <code>benchmarks/agent-queries-2026-10-20/05-tool-names.txt</code></li>
   </ul>
   <h2>Related</h2>
   <ul>

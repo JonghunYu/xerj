@@ -51,7 +51,7 @@ faq:
     a: "No. XERJ parses each PDF in an isolated worker process, so one failure is recorded and the run continues. The isolation guards against crashes, not against hostile input."
 ---
 
-**TL;DR** — `xerj autoindex` indexes a folder of PDFs in one command, and a single `match_phrase` query then searches inside all of them. In a captured run, 3 born-digital PDFs produced 9 documents and one phrase hit all 3 files. The fourth PDF, an image-only file, produced 0 documents.
+**TL;DR**: `xerj autoindex` indexes a folder of PDFs in one command, and a single `match_phrase` query then searches inside all of them. In a captured run, 3 born-digital PDFs produced 9 documents and one phrase hit all 3 files. The fourth PDF, an image-only file, produced 0 documents.
 
 ## Index the folder, then query it
 

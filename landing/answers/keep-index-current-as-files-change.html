@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="How do I keep a XERJ index up to date as files change?">
@@ -238,9 +238,9 @@
     <p>How do I keep a search index up to date as files change, without re-indexing everything? Run xerj autoindex ./folder --watch --no-graph. It indexes once, then reindexes only what the filesystem reports changed. Measured idle cost was 0.00 CPU-seconds per minute, against 1.7 s and a full corpus re-read for every timed re-run.</p>
     <p class="key-fact"><strong>Key number:</strong> The --debounce quiet period accepts at most 60,000 ms (<code class="inline">MAX_DEBOUNCE_MS</code>); longer than a minute is a timer, not a debounce. <span class="mute">(as of 2026-10-19 · source: <a href="https://github.com/xerj-org/xerj/blob/main/engine/crates/xerj-autoindex/src/cli.rs">engine/crates/xerj-autoindex/src/cli.rs</a>)</span></p>
   </div>
-  <p><strong>TL;DR</strong> — <code class="inline">xerj autoindex ./folder --watch --no-graph</code> indexes once, then reindexes what changed. At idle it costs nothing; a re-run on a timer costs a full walk and a full re-hash of the corpus on every tick.</p>
+  <p><strong>TL;DR</strong>: <code class="inline">xerj autoindex ./folder --watch --no-graph</code> indexes once, then reindexes what changed. At idle it costs nothing; a re-run on a timer costs a full walk and a full re-hash of the corpus on every tick.</p>
   <div class="prompt-card">
-    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT — IT DOES THE REST</span>
+    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT. IT DOES THE REST</span>
     <code>Act as a coding agent keeping a folder searchable. Read https://xerj.org/llms.txt first. Index the folder once with xerj autoindex --no-graph, then start xerj autoindex --watch --no-graph on the same --state-dir and --prefix, read the per-pass watch lines on stderr to confirm hashed= versus carried=, and do not add a cron job that re-runs the indexer.</code>
     <button type="button" class="prompt-copy" data-copy="Act as a coding agent keeping a folder searchable. Read https://xerj.org/llms.txt first. Index the folder once with xerj autoindex --no-graph, then start xerj autoindex --watch --no-graph on the same --state-dir and --prefix, read the per-pass watch lines on stderr to confirm hashed= versus carried=, and do not add a cron job that re-runs the indexer.">COPY THE PROMPT</button>
   </div>
@@ -271,14 +271,14 @@
       <tr><td>Index the folder again from scratch</td><td>293.8 s</td><td>127.9 s</td><td>167.5 s</td></tr>
       <tr><td>Re-run the same command, nothing changed</td><td>1.7 s</td><td>2.1 s</td><td>0.01 s</td></tr>
       <tr><td>Re-run it, one file modified</td><td>44.3 s</td><td>7.6 s</td><td>27.9 s</td></tr>
-      <tr><td><code class="inline">--watch</code>, idle</td><td>—</td><td>0.00 s per minute</td><td>0.07 s per minute</td></tr>
+      <tr><td><code class="inline">--watch</code>, idle</td><td>n/a</td><td>0.00 s per minute</td><td>0.07 s per minute</td></tr>
       <tr><td><code class="inline">--watch</code>, one file modified</td><td>47.6 s</td><td>6.6 s</td><td>34.5 s</td></tr>
     </tbody>
   </table>
   <p>The table says three things. Read all three.</p>
   <p><strong>Idle is where the watcher wins outright.</strong> It waits on an event channel and holds one OS watch per indexed directory: 0.00 CPU-seconds per minute, measured twice. A poll loop instead pays 1.7 s and re-reads every byte on every tick to find nothing, and waits half a tick to notice a real change. What the watcher does hold at idle is memory: 157 MiB and 295 worker threads between passes.</p>
   <p><strong>Per change, the watcher is not faster than re-running the same command.</strong> It skips the corpus re-hash, but that saving is smaller than the run-to-run noise here and we could not measure it: an independent re-run of the same case came out the other way (5.6 CPU-seconds re-running against 7.2 under <code class="inline">--watch</code>). The pass that follows costs the same either way. A one-file change still seals a snapshot over the whole corpus: ~13 s, one blob per file, each copied, twice verified and fsynced. It still rewrites one catalog document per file on the server, at ~27 s of server CPU. Both terms are O(corpus), both are shared with a plain re-run, and both are filed as the next lever.</p>
-  <p><strong>Against re-indexing the folder from scratch, incremental wins by an order of magnitude</strong> — 44-48 s against 294 s, and 7 CPU-seconds against 128.</p>
+  <p><strong>Against re-indexing the folder from scratch, incremental wins by an order of magnitude</strong>: 44-48 s against 294 s, and 7 CPU-seconds against 128.</p>
   <h2>Start it</h2>
   <pre class="code"><code class="language-sh"># once, to build the corpus
 xerj autoindex ./notes --url http://127.0.0.1:9200 \

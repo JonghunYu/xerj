@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="ripgrep vs a code index for coding agents: 30 tasks">
@@ -238,9 +238,9 @@
     <p>Is ripgrep enough for a coding agent, or do I need a code index? Keep ripgrep for one-off questions and add an index when an agent asks one tree many questions. On one 331-file tree the two named the same files on 18 of 30 disclosed tasks, and ripgrep 14.1.1 won 5 outright.</p>
     <p class="key-fact"><strong>Key number:</strong> ripgrep has 69,257 GitHub stars and its latest release is 15.2.0 (2026-07-15); the 30-task run used 14.1.1. <span class="mute">(as of 2026-10-19 · source: <a href="https://github.com/BurntSushi/ripgrep">github.com/BurntSushi/ripgrep</a>)</span></p>
   </div>
-  <p><strong>TL;DR</strong> — Keep ripgrep for one-off questions and reach for the index when an agent asks one tree many questions. On one 331-file code tree the two named the same files on 18 of 30 disclosed tasks. Five of the 30 went to ripgrep 14.1.1 outright. On a substring inside an identifier it found 7 files and the index found 0.</p>
+  <p><strong>TL;DR</strong>: Keep ripgrep for one-off questions and reach for the index when an agent asks one tree many questions. On one 331-file code tree the two named the same files on 18 of 30 disclosed tasks. Five of the 30 went to ripgrep 14.1.1 outright. On a substring inside an identifier it found 7 files and the index found 0.</p>
   <div class="prompt-card">
-    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT — IT DOES THE REST</span>
+    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT. IT DOES THE REST</span>
     <code>Act as a coding agent. Read https://xerj.org/llms.txt, index one code tree with xerj autoindex, then run the same 30 literal, phrase and symbol tasks through ripgrep and through the index, reduce both sides to the set of distinct files, publish every disagreement in both directions, and say which tool you would reach for first.</code>
     <button type="button" class="prompt-copy" data-copy="Act as a coding agent. Read https://xerj.org/llms.txt, index one code tree with xerj autoindex, then run the same 30 literal, phrase and symbol tasks through ripgrep and through the index, reduce both sides to the set of distinct files, publish every disagreement in both directions, and say which tool you would reach for first.">COPY THE PROMPT</button>
   </div>
@@ -374,7 +374,7 @@ T28 ripgrep-only: xerj-api/tests/sq8_codes_follow_document_updates.rs, xerj-comm
   <p>Order of magnitude, several hundred on this tree. The derived figure was about 713 queries, and it ignores index memory, disk and staleness.</p>
   <h2>Evidence</h2>
   <ul>
-    <li>ripgrep is a line-oriented recursive search tool that respects .gitignore and skips hidden and binary files by default, which is why its file sets and the index file sets can differ on the same tree. — <a href="https://github.com/BurntSushi/ripgrep">https://github.com/BurntSushi/ripgrep</a></li>
+    <li>ripgrep is a line-oriented recursive search tool that respects .gitignore and skips hidden and binary files by default, which is why its file sets and the index file sets can differ on the same tree. Source: <a href="https://github.com/BurntSushi/ripgrep">https://github.com/BurntSushi/ripgrep</a></li>
   </ul>
   <h2>Related</h2>
   <ul>

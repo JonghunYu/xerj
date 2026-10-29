@@ -12,7 +12,7 @@ source: "content/answers/full-text-search-browser-history.md"
 
 **Key number:** Each record keeps at most 512 fields (`MAX_FIELDS_PER_RECORD`), so even a wide SQLite table maps without schema work. (as of 2026-10-19; source: [engine/crates/xerj-autoindex/src/extract/mod.rs](https://github.com/xerj-org/xerj/blob/main/engine/crates/xerj-autoindex/src/extract/mod.rs))
 
-**TL;DR** — Copy the Chrome `History` SQLite file, then run `xerj autoindex` on the folder. A captured run returned 60 hits for a title phrase and 1 hit for an exact URL. All 3 source checksums were unchanged, and `body` returned 0 documents because Chrome stores no page text.
+**TL;DR**: Copy the Chrome `History` SQLite file, then run `xerj autoindex` on the folder. A captured run returned 60 hits for a title phrase and 1 hit for an exact URL. All 3 source checksums were unchanged, and `body` returned 0 documents because Chrome stores no page text.
 
 ## Agent prompt
 

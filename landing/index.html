@@ -109,7 +109,7 @@
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="XERJ: the search engine for AI agents">
@@ -294,7 +294,7 @@ $ xerj def <span class="accent">"euler_to_rotationmatrix"</span>
     same commits.
   </p>
 
-  <p class="viz-caption"><a class="mono" href="/case-studies/reference-coding" style="color:var(--z-mute);">THE FULL CASE STUDY — EVERY NUMBER, EVERY TASK, THE EXACT PROMPT →</a><span class="dash" style="color:var(--z-mute);">·</span><a class="mono" href="https://github.com/xerj-org/xerj/blob/main/user-feedback/11-reference-coding-field-reports/2026-08-11-token-savings-reports.md" style="color:var(--z-mute);">THE FIELD REPORTS BEHIND THE TOKEN SAVINGS →</a></p>
+  <p class="viz-caption"><a class="mono" href="/case-studies/reference-coding" style="color:var(--z-mute);">THE FULL CASE STUDY, EVERY NUMBER, EVERY TASK, THE EXACT PROMPT →</a><span class="dash" style="color:var(--z-mute);">·</span><a class="mono" href="https://github.com/xerj-org/xerj/blob/main/user-feedback/11-reference-coding-field-reports/2026-08-11-token-savings-reports.md" style="color:var(--z-mute);">THE FIELD REPORTS BEHIND THE TOKEN SAVINGS →</a></p>
 </section>
 
 <!-- 02 — POINT XERJ AT A FOLDER ------------------------------->
@@ -336,7 +336,7 @@ done in 0.2s — 3 datasets, 5801 records live, 0 junk records, 1 junk/skipped f
 
 next: `xerj autoindex map --url http://localhost:9280` for the data map; search via GET /ax-*/_search</pre>
 
-  <p class="viz-caption">CAPTURE NOTE · THAT RUN'S NODE WAS STARTED ON A NON-DEFAULT PORT, SO THE OUTPUT ECHOES <span class="mono">:9280</span>. THE DEFAULT ES-COMPAT PORT IS <span class="mono">:9200</span> — USE <span class="mono">http://localhost:9200</span> UNLESS YOU CHANGED IT. THE TRANSCRIPT ABOVE IS REPRODUCED UNEDITED.</p>
+  <p class="viz-caption">CAPTURE NOTE · THAT RUN'S NODE WAS STARTED ON A NON-DEFAULT PORT, SO THE OUTPUT ECHOES <span class="mono">:9280</span>. THE DEFAULT ES-COMPAT PORT IS <span class="mono">:9200</span>, USE <span class="mono">http://localhost:9200</span> UNLESS YOU CHANGED IT. THE TRANSCRIPT ABOVE IS REPRODUCED UNEDITED.</p>
 
   <div class="ticker" style="margin-top:var(--sp-6);">
     <div class="tk">
@@ -423,7 +423,7 @@ $ curl -sXPOST localhost:9200/_memory/agent-demo/_recall \
     </a>
   </div>
 
-  <p class="viz-caption"><a class="mono" href="/for-agents" style="color:var(--z-mute);">THE FULL AGENT SURFACE — SEVEN OPERATIONS + LLMS.TXT →</a></p>
+  <p class="viz-caption"><a class="mono" href="/for-agents" style="color:var(--z-mute);">THE FULL AGENT SURFACE: SEVEN OPERATIONS + LLMS.TXT →</a></p>
 </section>
 
 
@@ -441,15 +441,15 @@ $ curl -sXPOST localhost:9200/_memory/agent-demo/_recall \
 
   <div class="row">
     <div class="k">AST code search</div>
-    <div class="v">Source is parsed with tree-sitter (36 languages) into symbols with kind and line number plus a searchable definitions field — the agent retrieves a <em>function with its contract</em>, not a grep line that needs the whole file opened to judge</div>
+    <div class="v">Source is parsed with tree-sitter (36 languages) into symbols with kind and line number plus a searchable definitions field: the agent retrieves a <em>function with its contract</em>, not a grep line that needs the whole file opened to judge</div>
   </div>
   <div class="row">
     <div class="k">Token economics</div>
-    <div class="v">In the <a href="/use-cases/code-security-audit">WordPress security audit</a>, an agent worked across 1,492 PHP files on roughly <strong>26,000 tokens</strong> — about half a percent of the tree read into context. That is the product; the speed is a side effect</div>
+    <div class="v">In the <a href="/use-cases/code-security-audit">WordPress security audit</a>, an agent worked across 1,492 PHP files on roughly <strong>26,000 tokens</strong>: about half a percent of the tree read into context. That is the product; the speed is a side effect</div>
   </div>
   <div class="row">
     <div class="k">Hybrid in one pass</div>
-    <div class="v">50 query types, machine-checked against the parser dispatch table, including native BM25 + kNN fusion (RRF) in a single query tree — no bolt-on vector database, no fusion glue between two systems</div>
+    <div class="v">50 query types, machine-checked against the parser dispatch table, including native BM25 + kNN fusion (RRF) in a single query tree, no bolt-on vector database, no fusion glue between two systems</div>
   </div>
   <div class="row">
     <div class="k">Semantic without setup</div>
@@ -457,19 +457,19 @@ $ curl -sXPOST localhost:9200/_memory/agent-demo/_recall \
   </div>
   <div class="row">
     <div class="k">Agent memory + graph</div>
-    <div class="v">A namespaced <code class="inline">/_memory</code> REST API — store, recall by meaning / keyword / vector, filter, forget, physically isolated per agent — and a <code class="inline">/_graph</code> knowledge layer with evidence on every link</div>
+    <div class="v">A namespaced <code class="inline">/_memory</code> REST API (store, recall by meaning / keyword / vector, filter, forget, physically isolated per agent) and a <code class="inline">/_graph</code> knowledge layer with evidence on every link</div>
   </div>
   <div class="row">
     <div class="k">Zero-config ingest</div>
-    <div class="v">One command sniffs 13 format families by content — code, CSV, JSON, PDF, DOCX, SQLite, logs — honours <code class="inline">.gitignore</code>, records junk instead of crashing on it, and resumes incrementally</div>
+    <div class="v">One command sniffs 13 format families by content (code, CSV, JSON, PDF, DOCX, SQLite, logs) honours <code class="inline">.gitignore</code>, records junk instead of crashing on it, and resumes incrementally</div>
   </div>
   <div class="row">
     <div class="k">Speaks Elasticsearch</div>
-    <div class="v">1,444 / 1,454 wire-conformance cases green on every commit (0 failed, 10 skipped) — existing clients, dashboards and tooling connect unchanged. A migration bridge, not a clone: the engine underneath is designed for agents</div>
+    <div class="v">1,444 / 1,454 wire-conformance cases green on every commit (0 failed, 10 skipped): existing clients, dashboards and tooling connect unchanged. A migration bridge, not a clone: the engine underneath is designed for agents</div>
   </div>
   <div class="row">
     <div class="k">One static binary</div>
-    <div class="v">Rust, no JVM, sub-second start, Apache-2.0 — laptop to server with the same artifact. Benchmarks with wins <em>and</em> losses published at <a href="/benchmarks/">xerj.org/benchmarks</a></div>
+    <div class="v">Rust, no JVM, sub-second start, Apache-2.0: laptop to server with the same artifact. Benchmarks with wins <em>and</em> losses published at <a href="/benchmarks/">xerj.org/benchmarks</a></div>
   </div>
 </section>
 
@@ -530,7 +530,7 @@ $ curl -sXPOST localhost:9200/_memory/agent-demo/_recall \
 <section class="scene-section hiring">
   <div class="row">
     <div class="k">Looking for a CEO</div>
-    <div class="v">A developer-evangelist type — 100k+ followers on X, laser-focused on AI reshaping how machines write code. If that is you: <a href="mailto:git@xerj.org?subject=CEO%20for%20XERJ%20%2F%20%5BYour%20Name%5D">git@xerj.org</a>, subject <code class="inline">CEO for XERJ / [Your Name]</code></div>
+    <div class="v">A developer-evangelist type: 100k+ followers on X, laser-focused on AI reshaping how machines write code. If that is you: <a href="mailto:git@xerj.org?subject=CEO%20for%20XERJ%20%2F%20%5BYour%20Name%5D">git@xerj.org</a>, subject <code class="inline">CEO for XERJ / [Your Name]</code></div>
   </div>
 </section>
 

@@ -12,7 +12,7 @@ source: "content/answers/search-claude-code-past-sessions.md"
 
 **Key number:** A match on message_content for zstd returned 2 hits and took 0 ms. (as of 2026-10-20; source: [benchmarks/agent-queries-2026-10-20/08-sessions-message.json](https://github.com/xerj-org/xerj/blob/main/benchmarks/agent-queries-2026-10-20/08-sessions-message.json))
 
-**TL;DR** — Search Claude Code past sessions by indexing the session JSONL and querying the message field. On 2026-10-20 a three-file fixture, not a live chat folder, indexed 8 records in 0.6 s. Searching zstd on message_content returned 2 hits. xerj search on the same words returned no match.
+**TL;DR**: Search Claude Code past sessions by indexing the session JSONL and querying the message field. On 2026-10-20 a three-file fixture, not a live chat folder, indexed 8 records in 0.6 s. Searching zstd on message_content returned 2 hits. xerj search on the same words returned no match.
 
 ## Agent prompt
 
@@ -129,13 +129,13 @@ No. This machine had no `~/.claude` directory. The three files are a fixture in 
 
 ## Evidence
 
-- The session fixture indexed 8 records in 0.6 s, exit 0. — `benchmarks/agent-queries-2026-10-20/07-autoindex-sessions.txt`
-- xerj search printed no match in sessions-*. — `benchmarks/agent-queries-2026-10-20/07-xerj-search.txt`
-- A match on message_content for zstd returned 2 hits and took 0. — `benchmarks/agent-queries-2026-10-20/08-sessions-message.json`
-- The tool-output line was 10769 bytes. — `benchmarks/agent-queries-2026-10-20/07-long-line-bytes.txt`
-- A phrase search for TOOL_OUTPUT_MARKER returned 1 hit and took 0. — `benchmarks/agent-queries-2026-10-20/08-sessions-marker.json`
-- MAX_LINE is commented as a 16 MB line cap. — `engine/crates/xerj-autoindex/src/extract/mod.rs:96`
-- Issue 1793, Index past agent sessions as searchable memory, is open. — `benchmarks/agent-queries-2026-10-20/09-issue-1793.json`
+- The session fixture indexed 8 records in 0.6 s, exit 0. Source: `benchmarks/agent-queries-2026-10-20/07-autoindex-sessions.txt`
+- xerj search printed no match in sessions-*. Source: `benchmarks/agent-queries-2026-10-20/07-xerj-search.txt`
+- A match on message_content for zstd returned 2 hits and took 0. Source: `benchmarks/agent-queries-2026-10-20/08-sessions-message.json`
+- The tool-output line was 10769 bytes. Source: `benchmarks/agent-queries-2026-10-20/07-long-line-bytes.txt`
+- A phrase search for TOOL_OUTPUT_MARKER returned 1 hit and took 0. Source: `benchmarks/agent-queries-2026-10-20/08-sessions-marker.json`
+- MAX_LINE is commented as a 16 MB line cap. Source: `engine/crates/xerj-autoindex/src/extract/mod.rs:96`
+- Issue 1793, Index past agent sessions as searchable memory, is open. Source: `benchmarks/agent-queries-2026-10-20/09-issue-1793.json`
 
 ## Related
 

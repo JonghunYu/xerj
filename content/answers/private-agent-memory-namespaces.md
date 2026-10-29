@@ -49,7 +49,7 @@ faq:
     a: "TLS and API-key authentication. Any client that reaches the port can then read and delete every index, so use it on a development machine only."
 ---
 
-**TL;DR** — Agent memory stays on local disk, and our capture recorded 0 non-loopback connections during store and recall. Privacy from other callers is a different question. XERJ stores roles but does not enforce them, so a namespace is only as private as the scoped API key that reaches it.
+**TL;DR**: Agent memory stays on local disk, and our capture recorded 0 non-loopback connections during store and recall. Privacy from other callers is a different question. XERJ stores roles but does not enforce them, so a namespace is only as private as the scoped API key that reaches it.
 
 ## What stays local
 

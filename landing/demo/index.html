@@ -14,7 +14,7 @@
 <!-- ga4:end -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>XERJ.ai — Demo: 60M SSH events vs Elasticsearch</title>
+<title>XERJ.ai · Demo: 60M SSH events vs Elasticsearch</title>
 <meta name="description" content="A sales-engineer walkthrough on 60M real loghub OpenSSH events: real curl, real console clicks, each step shown against the Elasticsearch equivalent.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -253,16 +253,16 @@ footer .links { display: flex; gap: 28px; flex-wrap: wrap; }
 <link rel="canonical" href="https://xerj.org/demo/">
 <meta property="og:site_name" content="XERJ.ai">
 <meta property="og:type" content="website">
-<meta property="og:title" content="XERJ.ai — Demo: 60M SSH events vs Elasticsearch">
+<meta property="og:title" content="XERJ.ai · Demo: 60M SSH events vs Elasticsearch">
 <meta property="og:description" content="A sales-engineer walkthrough on 60M real loghub OpenSSH events: real curl, real console clicks, each step shown against the Elasticsearch equivalent.">
 <meta property="og:url" content="https://xerj.org/demo/">
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="XERJ.ai — Demo: 60M SSH events vs Elasticsearch">
+<meta name="twitter:title" content="XERJ.ai · Demo: 60M SSH events vs Elasticsearch">
 <meta name="twitter:description" content="A sales-engineer walkthrough on 60M real loghub OpenSSH events: real curl, real console clicks, each step shown against the Elasticsearch equivalent.">
 <meta name="twitter:image" content="https://xerj.org/og/xerj-card.png">
 <script type="application/ld+json">
@@ -358,7 +358,7 @@ footer .links { display: flex; gap: 28px; flex-wrap: wrap; }
   <p class="lede">
     Pull a real production log from <a href="https://github.com/logpai/loghub">loghub</a>.
     Ingest 12&nbsp;GiB into Xerj with one CLI command.  Query it from Xerj Console.
-    Each step shows the Elasticsearch alternative — resources, time, config —
+    Each step shows the Elasticsearch alternative (resources, time, config)
     sourced from <a href="https://github.com/xerj-org/xerj/tree/main/user-feedback">collected community feedback</a>
     (G2, Gartner, TrustRadius, GitHub issues, Reddit, HN, Jepsen, CVE).
   </p>
@@ -392,10 +392,10 @@ footer .links { display: flex; gap: 28px; flex-wrap: wrap; }
 
 <!-- ─────────────────────────────────────────────────────────── -->
 <section class="step-section" id="data-provenance" style="border-top: 1px solid var(--line); padding-top: 24px; margin-top: 18px;">
-  <h2 style="margin-bottom: 8px;"><span class="num">·</span>What's loaded — real vs reproducible synthetic</h2>
+  <h2 style="margin-bottom: 8px;"><span class="num">·</span>What's loaded: real vs reproducible synthetic</h2>
   <p class="why">
     The demo blends three kinds of data, and we call out which-is-which on
-    every panel.  No JS-hardcoded mock dressed up as live numbers — every
+    every panel.  No JS-hardcoded mock dressed up as live numbers, every
     Xerj Console dashboard's status pill says either <strong>LIVE · XERJ</strong>
     (data fetched from the running engine on <code>localhost:9200</code>)
     or <strong>MOCK FALLBACK</strong> (the live adapter for that view
@@ -407,17 +407,17 @@ footer .links { display: flex; gap: 28px; flex-wrap: wrap; }
       <div class="label">Real, captured</div>
       <table class="mono" style="width: 100%; font-size: 0.92em; border-collapse: collapse; margin-top: 8px;">
         <tr><td style="padding: 4px 12px 4px 0;"><code>logs-ssh-auth</code></td><td>50,000 docs</td><td><a href="https://github.com/logpai/loghub">logpai/loghub</a> OpenSSH server log capture (LabSZ host, 2017, 73&nbsp;MB raw, 655&nbsp;K real lines; demo ingests the first 50&nbsp;K with timestamps shifted to the last 24&nbsp;h)</td></tr>
-        <tr><td style="padding: 4px 12px 4px 0;"><code>ai-kb</code></td><td>40 docs</td><td>Hand-authored RAG knowledge base — eight topic axes, 8-dim cosine embeddings.  Real text and real vectors, just small.</td></tr>
+        <tr><td style="padding: 4px 12px 4px 0;"><code>ai-kb</code></td><td>40 docs</td><td>Hand-authored RAG knowledge base: eight topic axes, 8-dim cosine embeddings.  Real text and real vectors, just small.</td></tr>
       </table>
     </div>
     <div class="es-side" style="border-top: 1px solid var(--line);">
       <div class="label">Reproducible synthetic <span style="color: var(--dim); font-weight: 400;">(<code>random.seed(42)</code> ⇒ byte-identical on any machine)</span></div>
       <table class="mono" style="width: 100%; font-size: 0.92em; border-collapse: collapse; margin-top: 8px;">
-        <tr><td style="padding: 4px 12px 4px 0;"><code>chat-events</code></td><td>4,005 docs</td><td>LLM query telemetry — drives the <strong>AI · OVERVIEW</strong> and <strong>RAG · QUALITY</strong> dashboards</td></tr>
-        <tr><td style="padding: 4px 12px 4px 0;"><code>vector-ops</code></td><td>4,000 docs</td><td>Vector index ops (knn-search / upsert / delete) — drives <strong>VECTOR · INDEX</strong></td></tr>
-        <tr><td style="padding: 4px 12px 4px 0;"><code>agent-memory</code></td><td>5,000 docs</td><td>Agent memory operations (insert / recall / expire) — drives <strong>AGENT · MEMORY</strong></td></tr>
-        <tr><td style="padding: 4px 12px 4px 0;"><code>anomalies</code></td><td>600 docs</td><td>Anomaly findings — drives <strong>ANOMALY · DETECT</strong></td></tr>
-        <tr><td style="padding: 4px 12px 4px 0;"><code>logs-ingest-events</code></td><td>12,000 docs</td><td>Ingest pipeline events — drives <strong>INGEST · PIPELINE</strong></td></tr>
+        <tr><td style="padding: 4px 12px 4px 0;"><code>chat-events</code></td><td>4,005 docs</td><td>LLM query telemetry: drives the <strong>AI · OVERVIEW</strong> and <strong>RAG · QUALITY</strong> dashboards</td></tr>
+        <tr><td style="padding: 4px 12px 4px 0;"><code>vector-ops</code></td><td>4,000 docs</td><td>Vector index ops (knn-search / upsert / delete): drives <strong>VECTOR · INDEX</strong></td></tr>
+        <tr><td style="padding: 4px 12px 4px 0;"><code>agent-memory</code></td><td>5,000 docs</td><td>Agent memory operations (insert / recall / expire): drives <strong>AGENT · MEMORY</strong></td></tr>
+        <tr><td style="padding: 4px 12px 4px 0;"><code>anomalies</code></td><td>600 docs</td><td>Anomaly findings: drives <strong>ANOMALY · DETECT</strong></td></tr>
+        <tr><td style="padding: 4px 12px 4px 0;"><code>logs-ingest-events</code></td><td>12,000 docs</td><td>Ingest pipeline events: drives <strong>INGEST · PIPELINE</strong></td></tr>
       </table>
       <div class="small" style="margin-top: 12px;">
         Distributions are loosely modelled on typical enterprise LLM-ops
@@ -437,7 +437,7 @@ footer .links { display: flex; gap: 28px; flex-wrap: wrap; }
     real captured data in this demo is the 40-doc <code>ai-kb</code>
     corpus we authored and the 50&nbsp;K loghub OpenSSH log capture.  The
     five LLM/vector/agent/anomaly/ingest indices are synthetic with a
-    fixed seed so two SEs see byte-identical numbers — but the rendering
+    fixed seed so two SEs see byte-identical numbers, but the rendering
     is always live; every panel queries the running engine.</em>"
   </div>
 </section>
@@ -513,7 +513,7 @@ footer .links { display: flex; gap: 28px; flex-wrap: wrap; }
   </div>
 
   <div class="se-says">
-    Pause on the <strong>Started in 4 ms</strong> line — the entire JVM-cold-start
+    Pause on the <strong>Started in 4 ms</strong> line: the entire JVM-cold-start
     argument lands visually.  The "Xerj Console UI · 36 files bundled" line is your
     transition to step 2: the UI is already up, no second download.
   </div>
@@ -551,7 +551,7 @@ Ready: /home/claude/ai/xerj/engine/demo-data/ssh_big.ndjson</span></pre>
   </p>
 
   <div class="se-says">
-    This is the part you skip on most demos — "real data" usually means a 100-line
+    This is the part you skip on most demos: "real data" usually means a 100-line
     sample.  Here you can show the <em>actual brute-force IPs</em> in the file
     (173.234.31.186, 52.80.34.196 …) before you even start the engine.  That is
     what a SIEM customer wants to know they can search.
@@ -563,14 +563,14 @@ Ready: /home/claude/ai/xerj/engine/demo-data/ssh_big.ndjson</span></pre>
   <h2><span class="num">03</span>CLI ingest · 12&nbsp;GiB → segments</h2>
   <p class="why">
     <code>xerj index</code> mmaps the file, finds newline boundaries with rayon,
-    streams batches straight into the engine — bypasses HTTP, bypasses axum, no
+    streams batches straight into the engine: bypasses HTTP, bypasses axum, no
     per-batch JSON response serialisation.  This is the <em>fastest</em> ingest
-    path on the box.  Two scales below: the 1-million-doc burst (memtable-only
-    — what "burst rate" means) and the 60-million-doc continuous (what
+    path on the box.  Two scales below: the 1-million-doc burst (memtable-only,
+    what "burst rate" means) and the 60-million-doc continuous (what
     "sustained" means once flushes hit the disk).
   </p>
 
-  <h3>Burst — 655 K real lines in 0.11 s · validated 2026-04-27</h3>
+  <h3>Burst: 655 K real lines in 0.11 s · validated 2026-04-27</h3>
 
   <pre class="cmd"><span class="prompt">$ </span>./xerj index --index ssh-auth --file demo-data/ssh_one.ndjson \
        --workers 8 --batch 5000 --data-dir ./data
@@ -593,11 +593,11 @@ Ready: /home/claude/ai/xerj/engine/demo-data/ssh_big.ndjson</span></pre>
  batch size     : 5000
 ═══════════════════════════════════════════════════════════</span></pre>
 
-  <h3>Sustained scale — full 60.9 M / 12 GiB</h3>
+  <h3>Sustained scale: full 60.9 M / 12 GiB</h3>
   <p style="font-size: 13px; color: var(--dim); margin: 4px 0 12px;">
     Output below is from the <a href="https://github.com/xerj-org/xerj/blob/main/engine/reports/2026-04-25T22-50-00_xerj_vs_elasticsearch_rerun.md">2026-04-25 head-to-head bench</a>
     (commit <code>73c6367</code>, pre-rc).  We did <em>not</em> re-run the 22-minute 60 M ingest
-    on 2026-04-27 — burst rate above is the only ingest measurement
+    on 2026-04-27: burst rate above is the only ingest measurement
     re-validated against rc.1.  Reproduce with
     <code>python3 build_corpus.py &amp;&amp; ./xerj index --index ssh-auth --file ssh_big.ndjson</code>.
   </p>
@@ -620,7 +620,7 @@ Ready: /home/claude/ai/xerj/engine/demo-data/ssh_big.ndjson</span></pre>
 
   <p style="font-size: 14px; color: var(--dim); margin: 8px 0 18px;">
     <strong>Burst</strong> is what the engine does when ingest fits in the
-    memtable — that is what "millions per second" means.  <strong>Sustained
+    memtable. That is what "millions per second" means.  <strong>Sustained
     on a single NVMe SSD</strong> is bounded by compress + fsync throughput
     of the underlying disk; ~50 K docs/s on the 60 M run equals ~7 MiB/s of
     segment write, in line with the disk's measured bandwidth.  Burst is
@@ -664,7 +664,7 @@ Ready: /home/claude/ai/xerj/engine/demo-data/ssh_big.ndjson</span></pre>
   <h2><span class="num">3.5</span>Claim the server &amp; enrol a passkey</h2>
   <p class="why">
     Engine is up, data is loaded.  Before opening the UI we claim the
-    server with a passkey — no passwords, no admin tokens, no
+    server with a passkey, no passwords, no admin tokens, no
     <code>kibana.yml</code> integration.  Xerj prints a single-use
     magic link to stderr on first boot; the operator clicks it,
     enrols a passkey in their browser, and lands in Xerj Console logged-in
@@ -685,12 +685,12 @@ node demo/scripts/full-demo-flow.js
     <code>demo/data/ai_kb.ndjson</code> (40 docs) +
     <code>demo/data/extras/chat-events.ndjson</code> (2 K docs), then
     drives Chrome via <a href="https://pptr.dev">Puppeteer</a> with a
-    CDP virtual WebAuthn authenticator — the passkey ceremony runs
+    CDP virtual WebAuthn authenticator: the passkey ceremony runs
     without human touch.  The screenshots below are pulled directly
     from a live run; nothing is mocked.
   </p>
 
-  <h3 style="margin-top: 32px;">3.5.1 — Magic link printed to stderr on first boot</h3>
+  <h3 style="margin-top: 32px;">3.5.1: Magic link printed to stderr on first boot</h3>
   <p class="why">
     When <code>.xerj_users</code> is empty, the engine mints a 30 min
     single-use token, persists its <code>sha256</code> in
@@ -710,7 +710,7 @@ node demo/scripts/full-demo-flow.js
 └──────────────────────────────────────────────────────────────────────────────┘
 ↑ captured live 2026-04-27 19:11:41Z · single-use · token never lands on disk (only sha256 in .xerj_magic_links)</code></pre>
 
-  <h3>3.5.2 — Setup page (token redeemed eagerly on load)</h3>
+  <h3>3.5.2: Setup page (token redeemed eagerly on load)</h3>
   <p class="why">
     The setup page redeems the token on page-load (single-use, server
     marks <code>used_at = now</code>) and clears the URL fragment so it
@@ -718,23 +718,23 @@ node demo/scripts/full-demo-flow.js
     name + a passkey nickname, all unprivileged client-side input.
   </p>
   <div class="demo-shot">
-    <img src="img/xerj-console-flow/01_setup-page-loaded.png" alt="Xerj Console setup page — first-launch passkey claim form, OWNER role pill">
+    <img src="img/xerj-console-flow/01_setup-page-loaded.png" alt="Xerj Console setup page: first-launch passkey claim form, OWNER role pill">
     <div class="demo-shot-cap">
       <span>Step 3.5.2 · /_xerj-console/setup#token=… · OWNER role pill · empty form</span>
       <span class="live">LIVE · XERJ</span>
     </div>
   </div>
 
-  <h3>3.5.3 — Form filled · "Enrol passkey" pressed</h3>
+  <h3>3.5.3: Form filled · "Enrol passkey" pressed</h3>
   <div class="demo-shot">
-    <img src="img/xerj-console-flow/02_setup-form-filled.png" alt="Setup form filled — email, display name, passkey nickname">
+    <img src="img/xerj-console-flow/02_setup-form-filled.png" alt="Setup form filled: email, display name, passkey nickname">
     <div class="demo-shot-cap">
       <span>Step 3.5.3 · email + display name + passkey nickname typed; about to call <code>POST /auth/passkey/begin</code> + <code>navigator.credentials.create()</code></span>
       <span class="live">LIVE · XERJ</span>
     </div>
   </div>
 
-  <h3>3.5.4 — Passkey enrolled · session minted · redirect</h3>
+  <h3>3.5.4: Passkey enrolled · session minted · redirect</h3>
   <p class="why">
     On <code>POST /auth/passkey/finish</code> the server verifies the
     WebAuthn attestation, persists the <code>Passkey</code> blob in
@@ -744,14 +744,14 @@ node demo/scripts/full-demo-flow.js
     <code>xerj_session</code> cookie scoped to <code>/_xerj-console</code>.
   </p>
   <div class="demo-shot">
-    <img src="img/xerj-console-flow/03_setup-passkey-enrolled.png" alt="Green confirmation — Enrolled. Redirecting…">
+    <img src="img/xerj-console-flow/03_setup-passkey-enrolled.png" alt="Green confirmation: Enrolled. Redirecting…">
     <div class="demo-shot-cap">
       <span>Step 3.5.4 · attestation verified · session cookie set · about to redirect to <code>/_xerj-console/</code></span>
       <span class="live">LIVE · XERJ</span>
     </div>
   </div>
 
-  <h3>3.5.5 — SPA loads with the user's session</h3>
+  <h3>3.5.5: SPA loads with the user's session</h3>
   <p class="why">
     The auth-guard in <code>index.html</code> calls
     <code>GET /_xerj-console/api/v1/me</code> before <code>app.js</code> runs;
@@ -762,14 +762,14 @@ node demo/scripts/full-demo-flow.js
     <strong>LIVE · XERJ</strong>.
   </p>
   <div class="demo-shot">
-    <img src="img/xerj-console-flow/04_spa-landed-after-enrol.png" alt="Xerj Console SPA loaded — AI Overview dashboard, real query data">
+    <img src="img/xerj-console-flow/04_spa-landed-after-enrol.png" alt="Xerj Console SPA loaded: AI Overview dashboard, real query data">
     <div class="demo-shot-cap">
       <span>Step 3.5.5 · <code>/_xerj-console/</code> · auth-guard let us through · AI Overview dashboard rendered against the 2 040 ingested docs</span>
       <span class="live">LIVE · XERJ · http://localhost:9200</span>
     </div>
   </div>
 
-  <h3>3.5.5b — Where the dashboard data comes from <small style="color: var(--live); letter-spacing: 0.1em;">· validated 2026-04-27</small></h3>
+  <h3>3.5.5b, Where the dashboard data comes from <small style="color: var(--live); letter-spacing: 0.1em;">· validated 2026-04-27</small></h3>
   <p class="why">
     A buyer's first question on the AI dashboards is "where did the
     sonnet / opus / gpt-5 numbers come from?".  Honest answer: the demo
@@ -778,13 +778,13 @@ node demo/scripts/full-demo-flow.js
     from <code><a href="https://github.com/xerj-org/xerj/blob/main/demo/data/extras/generate_demo_corpus.py">demo/data/extras/generate_demo_corpus.py</a></code>
     and pushed in via the <strong>same ES-compat <code>/_bulk</code> endpoint</strong>
     that Logstash, Filebeat, every ES SDK and your existing collectors
-    already speak — there's no Xerj-specific ingest API, no SDK to
+    already speak: there's no Xerj-specific ingest API, no SDK to
     install, no shape change.  Below: the four steps as the SE would
     walk them on a buyer call, captured from a fresh boot on this
     machine.
   </p>
 
-  <h4 style="margin-top: 18px; color: var(--ink-2);">Step 1 — empty server</h4>
+  <h4 style="margin-top: 18px; color: var(--ink-2);">Step 1: empty server</h4>
   <pre class="cmd"><span class="prompt">$ </span># Right after `./xerj --insecure --data-dir ./data` — no user data
 <span class="prompt">$ </span>curl -s "localhost:9200/_cat/indices?v" | grep -vE '\.xerj-console'
 <span class="out">health status index uuid pri rep docs.count docs.deleted store.size pri.store.size
@@ -794,7 +794,7 @@ node demo/scripts/full-demo-flow.js
    "reason":"index not found: chat-events",
    "index":"chat-events"}], "status": <span class="num">404</span>}</span></pre>
 
-  <h4 style="margin-top: 18px; color: var(--ink-2);">Step 2 — show the data file (this is where models / intents / costs are defined)</h4>
+  <h4 style="margin-top: 18px; color: var(--ink-2);">Step 2: show the data file (this is where models / intents / costs are defined)</h4>
   <pre class="cmd"><span class="prompt">$ </span>wc -l demo/data/extras/chat-events.ndjson
 <span class="out"><span class="num">4008</span> demo/data/extras/chat-events.ndjson</span>
 <span class="prompt">$ </span>head -1 demo/data/extras/chat-events.ndjson | jq .
@@ -817,11 +817,11 @@ node demo/scripts/full-demo-flow.js
     <code>claude-sonnet-4-6</code>, <code>claude-haiku-4-5</code>, <code>gpt-5</code>,
     <code>gemini-3</code>, <code>llama-4</code>) is one of six entries in
     the <code>MODELS</code> table inside <code>generate_demo_corpus.py</code>
-    with weights summing to 1.0 — re-running the script with the same
+    with weights summing to 1.0: re-running the script with the same
     seed produces the same 4 008 docs byte-for-byte.
   </p>
 
-  <h4 style="margin-top: 18px; color: var(--ink-2);">Step 3 — bulk-ingest via <code>/_bulk</code> (the only data-source API)</h4>
+  <h4 style="margin-top: 18px; color: var(--ink-2);">Step 3: bulk-ingest via <code>/_bulk</code> (the only data-source API)</h4>
   <pre class="cmd"><span class="prompt">$ </span># Build the alternating-line bulk body the ES wire-protocol expects
 <span class="prompt">$ </span>(while IFS= read -r doc; do
     printf '{"index":{"_index":"chat-events"}}\n%s\n' "$doc"
@@ -841,7 +841,7 @@ node demo/scripts/full-demo-flow.js
   "last":    <span class="num">201</span>
 }</span></pre>
 
-  <h4 style="margin-top: 18px; color: var(--ink-2);">Step 4 — verify what xerj-console will see</h4>
+  <h4 style="margin-top: 18px; color: var(--ink-2);">Step 4: verify what xerj-console will see</h4>
   <pre class="cmd"><span class="prompt">$ </span>curl -s "localhost:9200/_cat/indices?v" | grep chat-events
 <span class="out">green open chat-events de04447a-91b2-4f0a-91f5-e4329b1451eb 1 0 <span class="num">4008</span> 0</span>
 
@@ -884,11 +884,11 @@ node demo/scripts/full-demo-flow.js
 
   <div class="se-says">
     <strong>SE-tip on the buyer call:</strong> read the four steps in
-    order — empty server, the data file (with the model names visible),
+    order: empty server, the data file (with the model names visible),
     the curl <code>/_bulk</code>, the verify.  Then click into AI · Overview.
     The headline numbers (4 008 queries, $38 spend, six-model breakdown)
     are now traceable to the lines you just saw.  No magic, no SDK lock-in,
-    no Xerj-specific protocol — the same wire ES already speaks.
+    no Xerj-specific protocol: the same wire ES already speaks.
   </div>
 
   <p class="why" style="margin-top: 22px;">
@@ -897,16 +897,16 @@ node demo/scripts/full-demo-flow.js
     RAG · QUALITY citations), <code>chat-events</code> (4 008 · AI · OVERVIEW
     + RAG · QUALITY), <code>agent-memory</code> (5 000 · AGENT · MEMORY),
     <code>anomalies</code> (600 · ANOMALY · DETECT), <code>vector-ops</code>
-    (4 000 · VECTOR · INDEX), <code>ingest-events</code> (12 000 · INGEST · PIPELINE)
-    — <strong>25 648 documents total</strong>.  Every dashboard below
+    (4 000 · VECTOR · INDEX), <code>ingest-events</code> (12 000 · INGEST · PIPELINE),
+    <strong>25 648 documents total</strong>.  Every dashboard below
     queries one or more of these indices.  Full transcript:
     <a href="https://github.com/xerj-org/xerj/blob/main/demo/INGEST_FLOW_2026-04-27.md"><code>demo/INGEST_FLOW_2026-04-27.md</code></a>.
   </p>
 
-  <h3>3.5.6 — Every AI dashboard reads from those indices</h3>
+  <h3>3.5.6, Every AI dashboard reads from those indices</h3>
 
   <div class="demo-shot">
-    <img src="img/xerj-console-flow/11_dashboard-ai-overview.png" alt="AI · Overview — 3.8K queries, 3.1M tokens, $3 cost from chat-events">
+    <img src="img/xerj-console-flow/11_dashboard-ai-overview.png" alt="AI · Overview: 3.8K queries, 3.1M tokens, $3 cost from chat-events">
     <div class="demo-shot-cap">
       <span>Step 3.5.6.a · AI · OVERVIEW · 3.8 K queries · 3.1 M tokens · $3 cost · live aggs over <code>chat-events</code> (4 005 docs)</span>
       <span class="live">LIVE · XERJ</span>
@@ -934,7 +934,7 @@ node demo/scripts/full-demo-flow.js
     </div>
   </div>
 
-  <h3>3.5.7 — Returning users sign back in via <code>/_xerj-console/login</code></h3>
+  <h3>3.5.7: Returning users sign back in via <code>/_xerj-console/login</code></h3>
   <p class="why">
     A user who already enrolled hits <code>/_xerj-console/</code>, the
     auth-guard sees no session, and bounces them to
@@ -947,7 +947,7 @@ node demo/scripts/full-demo-flow.js
     indistinguishable from a known user.
   </p>
   <div class="demo-shot">
-    <img src="img/xerj-console-flow/18_login-page-with-email.png" alt="Xerj Console login page — sign in with passkey">
+    <img src="img/xerj-console-flow/18_login-page-with-email.png" alt="Xerj Console login page: sign in with passkey">
     <div class="demo-shot-cap">
       <span>Step 3.5.6 · <code>/_xerj-console/login</code> · email field with <code>autocomplete=email username webauthn</code> · about to call passkey assertion</span>
       <span class="live">LIVE · XERJ</span>
@@ -987,7 +987,7 @@ node demo/scripts/full-demo-flow.js
 
   <div class="se-says">
     On the prospect call this is where you say "no kibana.yml, no LDAP
-    integration, no Okta seat just to give the SE a login — first boot
+    integration, no Okta seat just to give the SE a login: first boot
     prints a link, you click it, you're in".  The five-screenshot
     sequence above takes the same time as a normal slide transition.
   </div>
@@ -997,14 +997,14 @@ node demo/scripts/full-demo-flow.js
 <section class="step-section" id="step-4">
   <h2><span class="num">04</span>Open Xerj Console</h2>
   <p class="why">
-    Browse to <code>http://localhost:9200/_xerj-console/</code> — the bundled UI
+    Browse to <code>http://localhost:9200/_xerj-console/</code>: the bundled UI
     is served by the same binary, no second process to start.  Click
     <strong>DISCOVER</strong> in the top nav.  The status pill flips to
     <strong>LIVE · XERJ · HTTP://LOCALHOST:9200</strong>.
   </p>
 
   <div class="demo-shot">
-    <img src="img/xerj-console-flow/06_section-discover.png" alt="Xerj Console DISCOVER — live query console with all indices listed in the cluster">
+    <img src="img/xerj-console-flow/06_section-discover.png" alt="Xerj Console DISCOVER: live query console with all indices listed in the cluster">
     <div class="demo-shot-cap">
       <span>Step 04 · DISCOVER · interactive query console · captured from full-demo-flow.js (2026-04-26 23:37)</span>
       <span class="live">LIVE · XERJ · HTTP://LOCALHOST:9200</span>
@@ -1013,7 +1013,7 @@ node demo/scripts/full-demo-flow.js
 
   <p class="why" style="margin-top: 24px;">
     Click <strong>DATA</strong> in the top nav to see the indices the engine
-    holds — top-right pill confirms <strong>LIVE · XERJ</strong> with
+    holds: top-right pill confirms <strong>LIVE · XERJ</strong> with
     sub-15 ms <code>_cat/indices</code> response.  The cluster catalogue
     (LOCAL · PROD-US · PROD-EU · STAGING shown below) is currently a
     JS-side fixture in <code>data/data-sources.js</code>; the §"data
@@ -1057,11 +1057,11 @@ node demo/scripts/full-demo-flow.js
   <p class="why">
     The classic SIEM question: who is hammering us?  One terms aggregation
     on <code>src_ip</code>, filtered to <code>event:auth_failure_*</code>.
-    On 60.9 M docs, this returns the top 10 attacker IPs — with real
-    counts — in single-digit milliseconds.
+    On 60.9 M docs, this returns the top 10 attacker IPs (with real
+    counts) in single-digit milliseconds.
   </p>
 
-  <h3>Event distribution — what's actually in the file <small style="color: var(--live); letter-spacing: 0.1em;">· validated 2026-04-27</small></h3>
+  <h3>Event distribution: what's actually in the file <small style="color: var(--live); letter-spacing: 0.1em;">· validated 2026-04-27</small></h3>
 
   <pre class="cmd"><span class="prompt">$ </span># total events of each kind — one curl per type
 <span class="prompt">$ </span>for ev in other auth_failure_known_user conn_closed_preauth \
@@ -1078,7 +1078,7 @@ node demo/scripts/full-demo-flow.js
 {"invalid_user":                 <span class="num">14392</span>}   # tried a username that doesn't exist
 {"auth_success":                    <span class="num">182</span>}   # ← only 0.03 % of all sessions</span></pre>
 
-  <h3>Top brute-force IPs — `_count` per IP, prefix=auth_failure <small style="color: var(--live); letter-spacing: 0.1em;">· validated 2026-04-27</small></h3>
+  <h3>Top brute-force IPs: `_count` per IP, prefix=auth_failure <small style="color: var(--live); letter-spacing: 0.1em;">· validated 2026-04-27</small></h3>
 
   <pre class="cmd"><span class="prompt">$ </span>for ip in 119.7.221.129 103.99.0.122 5.188.10.182 5.188.10.156 42.159.145.29; do
     curl -s localhost:9200/ssh-auth/_count -H 'content-type: application/json' \
@@ -1093,7 +1093,7 @@ node demo/scripts/full-demo-flow.js
 
   <p style="font-size: 14px; color: var(--dim); margin: 8px 0 18px;">
     Headline read: out of 655,147 SSH sessions, <strong>only 182 succeeded</strong>
-    (0.03 %).  The rest is bot traffic — 197K explicit auth-failure events,
+    (0.03 %).  The rest is bot traffic: 197K explicit auth-failure events,
     18.9K reverse-DNS spoofing attempts ("POSSIBLE BREAK-IN ATTEMPT"), 69K
     bots disconnecting after a single probe.  The top attacker IP
     (119.7.221.129) hammered SSH 1,650 times.  All counts are reproducible:
@@ -1113,7 +1113,7 @@ node demo/scripts/full-demo-flow.js
       <div class="label">Elasticsearch · terms agg p50</div>
       <div class="num">1.06 ms</div>
       <div class="small">3.3× slower at the same scale.  Term aggregations on
-        high-cardinality fields can be <em>estimates</em>, not exact counts —
+        high-cardinality fields can be <em>estimates</em>, not exact counts,
         and a single deep terms agg has been documented to crash a 4-data-node
         cluster (Elastic Forum #173669).</div>
       <div class="source">user-feedback / 12-log-analytics / log-costs.md  ·  same head-to-head bench (terms agg p50)</div>
@@ -1121,10 +1121,10 @@ node demo/scripts/full-demo-flow.js
   </div>
 
   <div class="se-says">
-    Three SE moves on this screen: (1) point at <code>"took": 31</code> — that
+    Three SE moves on this screen: (1) point at <code>"took": 31</code>. That
     includes the JSON parse, the agg, and the response serialise; (2) re-run
-    with <code>size: 100</code> — the took stays under 50 ms because the heap
-    is a top-K, not a full sort; (3) re-run after a fresh restart — there is
+    with <code>size: 100</code>, the took stays under 50 ms because the heap
+    is a top-K, not a full sort; (3) re-run after a fresh restart. There is
     no JVM warm-up, the second query is the same cost as the hundredth.
   </div>
 </section>
@@ -1136,7 +1136,7 @@ node demo/scripts/full-demo-flow.js
     When are bots most active?  One date_histogram bucketed hourly
     plus a sub-aggregation by <code>event</code> shows the curve in
     one round-trip.  This is the query Kibana sends behind every "Discover"
-    timeline — Xerj serves the same wire-protocol, so a customer can point
+    timeline: Xerj serves the same wire-protocol, so a customer can point
     Kibana at <code>http://&lt;xerj-host&gt;:9200</code> and the timeline
     just renders.
   </p>
@@ -1156,7 +1156,7 @@ node demo/scripts/full-demo-flow.js
 {"day":"2018-01-04","failures":<span class="num">0</span>}
 {"day":"2018-01-07","failures":<span class="num">0</span>}   # ← ssh_one corpus ends 2018-01-04; replicate to ssh_big for the full 60 M-doc 28-day shape</span></pre>
 
-  <h3>Full-text — find the spoofing attempts <small style="color: var(--live); letter-spacing: 0.1em;">· validated 2026-04-27</small></h3>
+  <h3>Full-text: find the spoofing attempts <small style="color: var(--live); letter-spacing: 0.1em;">· validated 2026-04-27</small></h3>
 
   <pre class="cmd"><span class="prompt">$ </span>curl -s localhost:9200/ssh-auth/_search -H 'content-type: application/json' -d '{
     "size": 3,
@@ -1173,7 +1173,7 @@ node demo/scripts/full-demo-flow.js
   <p style="font-size: 14px; color: var(--dim); margin: 8px 0 18px;">
     Detection story: <strong>19 406 reverse-DNS spoofing events</strong> across the corpus.
     The first three hits all come from <code>218.65.30.30</code> in a tight
-    33-second burst on 2017-01-02 — a bot scanning the box.  This is what an
+    33-second burst on 2017-01-02: a bot scanning the box.  This is what an
     SOC analyst opens with on day one of a new SIEM.  All counts above are
     captured live from \`ssh-auth\` on this machine; transcript §6 + §8.
   </p>
@@ -1182,7 +1182,7 @@ node demo/scripts/full-demo-flow.js
     <strong>SE-tip:</strong> the Xerj Console <em>Logs · Overview</em> dashboard isn't
     captured in the current screenshot batch (the demo flow exits before
     opening it).  In a live call, after the curl block above lands, click
-    <strong>DASHBOARDS · LOGS · OVERVIEW</strong> in the SPA — same
+    <strong>DASHBOARDS · LOGS · OVERVIEW</strong> in the SPA: same
     <code>ssh-auth</code> index, same numbers, on a date-histogram timeline.
     A captured screenshot will land in <code>img/xerj-console-flow/</code> the next
     time the flow script is re-run with the Logs section in its walk list.
@@ -1192,7 +1192,7 @@ node demo/scripts/full-demo-flow.js
     <div class="xerj-side">
       <div class="label">Xerj · date_histogram on 60 M docs</div>
       <div class="num">42 ms</div>
-      <div class="small">Time-partitioned segments make this cheap — only segments
+      <div class="small">Time-partitioned segments make this cheap, only segments
         that overlap the queried range are touched.  Block-skip indices skip
         irrelevant blocks within touched segments.  Same single-node binary.</div>
       <div class="source">measured: this run · single-node, 32-core, NVMe</div>
@@ -1221,7 +1221,7 @@ node demo/scripts/full-demo-flow.js
   <p class="why" style="font-size: 13px; color: var(--dim); margin-top: -8px;">
     <strong style="color: var(--y);">Source-of-truth:</strong> the three Xerj numbers below were
     re-captured on <code>v1.0.0-rc.1</code> (commit <code>78a9bcc</code>) on
-    <strong>2026-04-27</strong> — see
+    <strong>2026-04-27</strong>: see
     <a href="https://github.com/xerj-org/xerj/blob/main/demo/CLI_VALIDATED_2026-04-27.md"><code>demo/CLI_VALIDATED_2026-04-27.md</code></a>
     §9 / §11.  ES comparator numbers are unchanged from the 2026-04-25
     head-to-head bench
@@ -1234,7 +1234,7 @@ node demo/scripts/full-demo-flow.js
       <div class="label">Xerj · 655 K-doc index · validated 2026-04-27</div>
       <div class="num">519 MB RSS</div>
       <div class="small">Steady-state resident memory after ingest of 655 147
-        real loghub OpenSSH lines on this machine.  No JVM, no heap, no GC —
+        real loghub OpenSSH lines on this machine.  No JVM, no heap, no GC:
         Rust frees memory at scope exit.  OS page cache handles segment
         warmth.  Most of the RSS is mmap of the merged 40 MB segment, not
         heap.</div>
@@ -1301,7 +1301,7 @@ node demo/scripts/full-demo-flow.js
   <div class="se-says">
     The TCO conversation is where the deal closes.  The customer has already
     been burned by an ES bill or a 3am cluster-recovery page.  Show them the
-    numbers above and let the math speak — a single binary that uses 1/30 the
+    numbers above and let the math speak: a single binary that uses 1/30 the
     RAM and 1/3 the disk for the same workload <em>does</em> change the
     annualised cost by 10-100×.
   </div>
@@ -1311,7 +1311,7 @@ node demo/scripts/full-demo-flow.js
 <section class="step-section" id="step-8">
   <h2><span class="num">08</span>Drop-in for ES tooling</h2>
   <p class="why">
-    The migration story.  Xerj implements the Elasticsearch wire protocol —
+    The migration story.  Xerj implements the Elasticsearch wire protocol:
     <!-- snapshot:2026-04-27 -->1305 of 1329 official ES YAML conformance tests passed on
     <a href="https://github.com/xerj-org/xerj/tree/main/engine/tests/es-compat-yaml">the ES 8.13 test suite</a>
     when this page was captured on 2026-04-27; the suite now stands at
@@ -1352,7 +1352,7 @@ node demo/scripts/full-demo-flow.js
   </div>
 
   <div class="se-says">
-    This is the close.  Most prospects are scared of vendor lock-in — they
+    This is the close.  Most prospects are scared of vendor lock-in. They
     already have one with ES.  Xerj's ES-compat layer means the migration is
     risk-free: keep your Kibana, keep your SDK calls, keep your dashboards.
     If something doesn't work the way it did, the YAML test suite is the

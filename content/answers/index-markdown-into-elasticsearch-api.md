@@ -48,7 +48,7 @@ faq:
     a: "Send a `match_phrase` query on `body` for the heading text. No `headings` field exists on a Markdown index, so the heading is body text."
 ---
 
-**TL;DR** — XERJ indexes a Markdown folder with `xerj autoindex` and serves it on the Elasticsearch REST API. Markdown lands in the `txt-prose` family, not in a Markdown family. In our capture XERJ mapped 9 fields, extracted the title as the literal `# Runbook`, and produced no `headings` array.
+**TL;DR**: XERJ indexes a Markdown folder with `xerj autoindex` and serves it on the Elasticsearch REST API. Markdown lands in the `txt-prose` family, not in a Markdown family. In our capture XERJ mapped 9 fields, extracted the title as the literal `# Runbook`, and produced no `headings` array.
 
 ## One command, an Elasticsearch-shaped index
 

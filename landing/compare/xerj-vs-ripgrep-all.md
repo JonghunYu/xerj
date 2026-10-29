@@ -201,15 +201,15 @@ Not with the shipped adapters. Its config file accepts custom subprocess adapter
 
 ## Evidence
 
-- ripgrep-all wraps ripgrep and adds adapters for PDF (poppler), Office and e-book formats (pandoc), zip, tar, compressed files, media metadata (ffmpeg) and SQLite databases. — [https://github.com/phiresky/ripgrep-all](https://github.com/phiresky/ripgrep-all)
-- ripgrep-all recursively descends into archives and matches text in every file type it knows, with a default maximum archive recursion depth. — [https://github.com/phiresky/ripgrep-all](https://github.com/phiresky/ripgrep-all)
-- The ripgrep-all mail adapter for mbox, mbx and eml files is disabled by default and is turned on with --rga-adapters=+mail. — [https://github.com/phiresky/ripgrep-all](https://github.com/phiresky/ripgrep-all)
-- ripgrep-all caches the extracted text of each file in a database under the user cache directory, and --rga-no-cache turns that off. — [https://github.com/phiresky/ripgrep-all](https://github.com/phiresky/ripgrep-all)
-- ripgrep-all 0.10.3 added a config file with custom subprocess-spawning adapters, which is how a user adds a converter such as an OCR program. — [https://github.com/phiresky/ripgrep-all/blob/master/CHANGELOG.md](https://github.com/phiresky/ripgrep-all/blob/master/CHANGELOG.md)
-- ripgrep is a line-oriented search tool that respects .gitignore and skips hidden and binary files by default. — [https://github.com/BurntSushi/ripgrep](https://github.com/BurntSushi/ripgrep)
-- grep is a line matcher over text files and has no document adapters of any kind. — [https://www.gnu.org/software/grep/manual/grep.html](https://www.gnu.org/software/grep/manual/grep.html)
-- Recoll indexes email and can run OCR on image-only PDF documents through tesseract or ABBYY FineReader. — [https://www.recoll.org/usermanual/usermanual.html](https://www.recoll.org/usermanual/usermanual.html)
-- Elasticsearch is a distributed engine with cross-node replication and failover, which a single-node engine does not provide. — [https://www.elastic.co/docs/deploy-manage/distributed-architecture](https://www.elastic.co/docs/deploy-manage/distributed-architecture)
+- ripgrep-all wraps ripgrep and adds adapters for PDF (poppler), Office and e-book formats (pandoc), zip, tar, compressed files, media metadata (ffmpeg) and SQLite databases. Source: [https://github.com/phiresky/ripgrep-all](https://github.com/phiresky/ripgrep-all)
+- ripgrep-all recursively descends into archives and matches text in every file type it knows, with a default maximum archive recursion depth. Source: [https://github.com/phiresky/ripgrep-all](https://github.com/phiresky/ripgrep-all)
+- The ripgrep-all mail adapter for mbox, mbx and eml files is disabled by default and is turned on with --rga-adapters=+mail. Source: [https://github.com/phiresky/ripgrep-all](https://github.com/phiresky/ripgrep-all)
+- ripgrep-all caches the extracted text of each file in a database under the user cache directory, and --rga-no-cache turns that off. Source: [https://github.com/phiresky/ripgrep-all](https://github.com/phiresky/ripgrep-all)
+- ripgrep-all 0.10.3 added a config file with custom subprocess-spawning adapters, which is how a user adds a converter such as an OCR program. Source: [https://github.com/phiresky/ripgrep-all/blob/master/CHANGELOG.md](https://github.com/phiresky/ripgrep-all/blob/master/CHANGELOG.md)
+- ripgrep is a line-oriented search tool that respects .gitignore and skips hidden and binary files by default. Source: [https://github.com/BurntSushi/ripgrep](https://github.com/BurntSushi/ripgrep)
+- grep is a line matcher over text files and has no document adapters of any kind. Source: [https://www.gnu.org/software/grep/manual/grep.html](https://www.gnu.org/software/grep/manual/grep.html)
+- Recoll indexes email and can run OCR on image-only PDF documents through tesseract or ABBYY FineReader. Source: [https://www.recoll.org/usermanual/usermanual.html](https://www.recoll.org/usermanual/usermanual.html)
+- Elasticsearch is a distributed engine with cross-node replication and failover, which a single-node engine does not provide. Source: [https://www.elastic.co/docs/deploy-manage/distributed-architecture](https://www.elastic.co/docs/deploy-manage/distributed-architecture)
 
 ## Related
 

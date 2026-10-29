@@ -217,7 +217,7 @@
   <div class="kicker"><span>ANSWERS · ANSWERS FOR CODING AGENTS</span></div>
   <h1 class="h1-long">Full-text search over JSONL files from the CLI: index a folder and query it with BM25</h1>
   <div class="source-note">AUTHOR · XERJ documentation team · REVIEWED BY · XERJ engineering team · PUBLISHED · 2026-10-19 · UPDATED · 2026-10-20</div>
-  <p><strong>TL;DR</strong> — For full-text search over JSONL files from the CLI, run <code class="inline">xerj autoindex</code> on the folder and query it with BM25. No schema or mapping is needed; CSV works the same way. On 2026-10-19 a folder of 2,902 JSONL and CSV rows indexed in 12.4 s, and the field queries returned ranked hits in 1 ms.</p>
+  <p><strong>TL;DR</strong>: For full-text search over JSONL files from the CLI, run <code class="inline">xerj autoindex</code> on the folder and query it with BM25. No schema or mapping is needed; CSV works the same way. On 2026-10-19 a folder of 2,902 JSONL and CSV rows indexed in 12.4 s, and the field queries returned ranked hits in 1 ms.</p>
   <div class="prompt-card">
     <span class="prompt-label">RUN THIS XERJ COMMAND</span>
     <code>xerj --insecure --data-dir ./xerj-data</code>
@@ -311,11 +311,11 @@ indexed: 2902 documents live; this run submitted 2902 source records from 3 file
   <p>Yes, but check the label. Our 1,385-record file was detected as format <code class="inline">json</code> rather than <code class="inline">jsonl</code>; the records still indexed one per document.</p>
   <h2>Evidence</h2>
   <ul>
-    <li>autoindex: done in 12.4s (12.4 s), 2902 documents, 3 datasets — <code>benchmarks/agent-intents-2026-10-19/03-autoindex-jsonl-csv.txt</code></li>
-    <li>CSV match: took 1 ms, 79 hits, id 480 first — <code>benchmarks/agent-intents-2026-10-19/03-csv-match.json</code></li>
-    <li>JSONL multi_match: took 1 ms, 57 hits, #1801 first — <code>benchmarks/agent-intents-2026-10-19/03-jsonl-multi-match.json</code></li>
-    <li>xerj search cites two documents as xerj-prs.jsonl:1 — <code>benchmarks/agent-intents-2026-10-19/03-xerj-search-cli.txt</code></li>
-    <li>Folder size 6,444,108 bytes (6.4 MB); rg counts 0 and 41 — <code>benchmarks/agent-intents-2026-10-19/README.md</code></li>
+    <li>autoindex: done in 12.4s (12.4 s), 2902 documents, 3 datasets. Source: <code>benchmarks/agent-intents-2026-10-19/03-autoindex-jsonl-csv.txt</code></li>
+    <li>CSV match: took 1 ms, 79 hits, id 480 first. Source: <code>benchmarks/agent-intents-2026-10-19/03-csv-match.json</code></li>
+    <li>JSONL multi_match: took 1 ms, 57 hits, #1801 first. Source: <code>benchmarks/agent-intents-2026-10-19/03-jsonl-multi-match.json</code></li>
+    <li>xerj search cites two documents as xerj-prs.jsonl:1. Source: <code>benchmarks/agent-intents-2026-10-19/03-xerj-search-cli.txt</code></li>
+    <li>Folder size 6,444,108 bytes (6.4 MB); rg counts 0 and 41. Source: <code>benchmarks/agent-intents-2026-10-19/README.md</code></li>
   </ul>
   <h2>Related</h2>
   <ul>

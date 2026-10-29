@@ -32,7 +32,7 @@
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="XERJ.ai · Docs · Upgrades">
@@ -232,7 +232,7 @@
   <h1>Upgrades</h1>
 
 
-  <p>XERJ follows SemVer. Patch releases (<code class="inline">0.1.x</code>) are drop-in replacements. Minor releases (<code class="inline">0.x.0</code>) can introduce backward-compatible schema fields. Major releases (<code class="inline">x.0.0</code>) may change the on-disk format — when they do, the binary ships a one-shot migration tool.</p>
+  <p>XERJ follows SemVer. Patch releases (<code class="inline">0.1.x</code>) are drop-in replacements. Minor releases (<code class="inline">0.x.0</code>) can introduce backward-compatible schema fields. Major releases (<code class="inline">x.0.0</code>) may change the on-disk format, when they do, the binary ships a one-shot migration tool.</p>
 
   <h2>Single-node upgrade</h2>
 <pre class="code"># 1. Back up (see Backup &amp; restore)
@@ -272,10 +272,10 @@ $ sudo systemctl start xerj
 $ curl -s http://127.0.0.1:8080/v1/health | jq .version
 "1.0.0-rc.18"</pre>
 
-  <p>Downtime is the time it takes the WAL to replay — usually a few seconds for workloads in the low millions of live docs.</p>
+  <p>Downtime is the time it takes the WAL to replay, usually a few seconds for workloads in the low millions of live docs.</p>
 
   <h2>Cluster upgrade</h2>
-  <p>The cluster wire protocol has no version negotiation: a node on a new wire version cannot talk to a node on the old one, in either direction. Upgrading a cluster is a full stop/start of all nodes in one maintenance window, not a rolling restart — there is no drain/activate API and no shard migration to sequence around.</p>
+  <p>The cluster wire protocol has no version negotiation: a node on a new wire version cannot talk to a node on the old one, in either direction. Upgrading a cluster is a full stop/start of all nodes in one maintenance window, not a rolling restart. There is no drain/activate API and no shard migration to sequence around.</p>
 
 <pre class="code"># On every node, within the same window:
 $ ssh node-&lt;id&gt; sudo systemctl stop xerj
@@ -283,7 +283,7 @@ $ ssh node-&lt;id&gt; sudo install -m 0755 xerj-new /usr/local/bin/xerj
 $ ssh node-&lt;id&gt; sudo systemctl start xerj
 # The ring re-elects a leader on its own once a quorum is back up</pre>
 
-  <p>Because index data is node-local today, each node's data directory is also each node's upgrade responsibility — snapshot per the <a href="/docs/backup-restore">backup guide</a> before touching the binary.</p>
+  <p>Because index data is node-local today, each node's data directory is also each node's upgrade responsibility: snapshot per the <a href="/docs/backup-restore">backup guide</a> before touching the binary.</p>
 
   <h2>On-disk format</h2>
   <p>There is no migration step and no <code class="inline">migrate</code> subcommand: a newer binary opens an older data directory in place. What guards the layout is a format marker that every index directory carries, <code class="inline">&lt;data_dir&gt;/&lt;index&gt;/xerj_meta.json</code>:</p>

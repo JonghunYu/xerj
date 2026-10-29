@@ -153,12 +153,12 @@ Not by XERJ. A single-node XERJ process reads local files and answers on localho
 
 ## Evidence
 
-- Exa describes itself as a search engine built for AI systems and says it builds its own index of pages on the web, refreshed every hour. — [https://exa.ai/docs/reference/faqs](https://exa.ai/docs/reference/faqs)
-- The Exa contents endpoint takes a list of URLs as its input and returns page text, summaries and metadata. — [https://exa.ai/docs/reference/get-contents](https://exa.ai/docs/reference/get-contents)
-- Tavily describes its REST API as a search engine for LLM agents plus an extraction product, and its extract endpoint takes a list of URLs. — [https://docs.tavily.com/documentation/api-reference/endpoint/extract](https://docs.tavily.com/documentation/api-reference/endpoint/extract)
-- The Tavily free plan includes 1,000 API credits every month with no credit card. — [https://docs.tavily.com/documentation/api-credits](https://docs.tavily.com/documentation/api-credits)
-- The Firecrawl scrape endpoint requires a url body parameter documented as 'The URL to scrape', and the site-traversal endpoint requires a base URL. — [https://docs.firecrawl.dev/api-reference/endpoint/scrape](https://docs.firecrawl.dev/api-reference/endpoint/scrape)
-- Mastra is a TypeScript framework for agents that provides a common interface over third-party vector databases rather than its own index, and its web search tools wrap the Tavily API. — [https://mastra.ai/docs/rag/vector-databases](https://mastra.ai/docs/rag/vector-databases)
+- Exa describes itself as a search engine built for AI systems and says it builds its own index of pages on the web, refreshed every hour. Source: [https://exa.ai/docs/reference/faqs](https://exa.ai/docs/reference/faqs)
+- The Exa contents endpoint takes a list of URLs as its input and returns page text, summaries and metadata. Source: [https://exa.ai/docs/reference/get-contents](https://exa.ai/docs/reference/get-contents)
+- Tavily describes its REST API as a search engine for LLM agents plus an extraction product, and its extract endpoint takes a list of URLs. Source: [https://docs.tavily.com/documentation/api-reference/endpoint/extract](https://docs.tavily.com/documentation/api-reference/endpoint/extract)
+- The Tavily free plan includes 1,000 API credits every month with no credit card. Source: [https://docs.tavily.com/documentation/api-credits](https://docs.tavily.com/documentation/api-credits)
+- The Firecrawl scrape endpoint requires a url body parameter documented as 'The URL to scrape', and the site-traversal endpoint requires a base URL. Source: [https://docs.firecrawl.dev/api-reference/endpoint/scrape](https://docs.firecrawl.dev/api-reference/endpoint/scrape)
+- Mastra is a TypeScript framework for agents that provides a common interface over third-party vector databases rather than its own index, and its web search tools wrap the Tavily API. Source: [https://mastra.ai/docs/rag/vector-databases](https://mastra.ai/docs/rag/vector-databases)
 
 ## Related
 

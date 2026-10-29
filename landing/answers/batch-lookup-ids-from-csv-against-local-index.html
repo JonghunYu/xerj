@@ -214,9 +214,9 @@
     <p>Look up 1,000 IDs against a local index with one <code class="inline">terms</code> query, then mark each ID found or not found. On 2026-10-20 the query sent 1,000 numbers over 532 issues. The response <code class="inline">took</code> was 0. 532 IDs were in the index and 468 were not.</p>
     <p class="key-fact"><strong>Key number:</strong> A terms query of 1,000 IDs against 532 issues returned 532 hits and took 0 ms. <span class="mute">(as of 2026-10-20 · source: <a href="https://github.com/xerj-org/xerj/blob/main/benchmarks/agent-queries-2026-10-20/08-batch-terms.json">benchmarks/agent-queries-2026-10-20/08-batch-terms.json</a>)</span></p>
   </div>
-  <p><strong>TL;DR</strong> — Look up 1,000 IDs against a local index with one <code class="inline">terms</code> query, then mark each ID found or not found. On 2026-10-20 the query sent 1,000 numbers over 532 issues. The response <code class="inline">took</code> was 0. 532 IDs were in the index and 468 were not.</p>
+  <p><strong>TL;DR</strong>: Look up 1,000 IDs against a local index with one <code class="inline">terms</code> query, then mark each ID found or not found. On 2026-10-20 the query sent 1,000 numbers over 532 issues. The response <code class="inline">took</code> was 0. 532 IDs were in the index and 468 were not.</p>
   <div class="prompt-card">
-    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT — IT DOES THE REST</span>
+    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT. IT DOES THE REST</span>
     <code>Read https://xerj.org/llms.txt. Start one local node, index the dataset, and read the id field type from xerj autoindex map. Send one terms query with every id from the CSV. Print found or not found for each id from the hits. A wildcard index name on _msearch is not a pattern.</code>
     <button type="button" class="prompt-copy" data-copy="Read https://xerj.org/llms.txt. Start one local node, index the dataset, and read the id field type from xerj autoindex map. Send one terms query with every id from the CSV. Print found or not found for each id from the hits. A wildcard index name on _msearch is not a pattern.">COPY THE PROMPT</button>
   </div>
@@ -281,8 +281,8 @@
   <p>Guessing <code class="inline">gh-issues</code> returned 404. The real names were <code class="inline">gh-jsonl</code> and <code class="inline">gh-json</code>. Read <code class="inline">xerj autoindex map</code>.</p>
   <h2>Evidence</h2>
   <ul>
-    <li>A fuzziness AUTO query took 1 ms and ranked issue 960 first. — <code>benchmarks/agent-queries-2026-10-20/08-fuzzy.json</code></li>
-    <li>The terms query over 1,000 ids returned took 0 and 532 hits. — <code>benchmarks/agent-queries-2026-10-20/08-batch-terms.json</code></li>
+    <li>A fuzziness AUTO query took 1 ms and ranked issue 960 first. Source: <code>benchmarks/agent-queries-2026-10-20/08-fuzzy.json</code></li>
+    <li>The terms query over 1,000 ids returned took 0 and 532 hits. Source: <code>benchmarks/agent-queries-2026-10-20/08-batch-terms.json</code></li>
   </ul>
   <h2>Related</h2>
   <ul>

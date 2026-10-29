@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Can I route or spam-filter text without an LLM call?">
@@ -224,7 +224,7 @@
   </div>
   <p><strong>TL;DR</strong> — If you already have labelled examples, you can route and filter text with no LLM or API call. Index the examples, fetch the 10 nearest for each new item, and vote. Measured: 0.933 accuracy on 77-way intent routing and 0.983 on SMS spam. The 0.933 figure needs <code class="inline">--embed-mode neural</code>, which runs one local MiniLM embedding per item; the spam figure is plain BM25, with no model of any kind.</p>
   <div class="prompt-card">
-    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT — IT DOES THE REST</span>
+    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT. IT DOES THE REST</span>
     <code>Act as a coding agent. Read https://xerj.org/llms.txt, index the user's labelled examples into one XERJ index with the label in a keyword field, classify each held-out item by a rank-weighted vote over its 10 nearest neighbours, and report accuracy, the share of items decided at confidence 0.8 or higher, and the accuracy on that share.</code>
     <button type="button" class="prompt-copy" data-copy="Act as a coding agent. Read https://xerj.org/llms.txt, index the user&#x27;s labelled examples into one XERJ index with the label in a keyword field, classify each held-out item by a rank-weighted vote over its 10 nearest neighbours, and report accuracy, the share of items decided at confidence 0.8 or higher, and the accuracy on that share.">COPY THE PROMPT</button>
   </div>
@@ -304,9 +304,9 @@
   <p>No. XERJ did not run any judge model on these datasets and claims nothing about how one would score.</p>
   <h2>Evidence</h2>
   <ul>
-    <li>Banking77, 77-way intent routing, 10,003 labelled examples indexed, 1,000 held-out test items, k = 10: accuracy 0.819 for BM25, 0.933 for MiniLM neighbours and 0.937 for hybrid RRF; expected calibration error 0.089, 0.012 and 0.052; 50.6%, 86.9% and 79.2% of items decided at confidence 0.8 or higher, at accuracy 0.996, 0.979 and 0.989; 2.2, 8.6 and 12.4 ms per item. — <code>benchmarks/decisions-as-retrieval/results/run-2026-09-18.txt</code></li>
-    <li>SMS spam, yes-or-no detection, 4,000 labelled examples indexed, 1,000 held-out test items, k = 10: accuracy 0.983 for BM25, 0.982 for MiniLM neighbours and 0.989 for hybrid RRF; spam F1 0.944, 0.940 and 0.962; expected calibration error 0.017, 0.009 and 0.015; 0.9, 74.5 and 67.2 ms per item. — <code>benchmarks/decisions-as-retrieval/results/run-2026-09-18.txt</code></li>
-    <li>The run was made on 2026-09-18 with xerj v1.0.0-rc.74 and --embed-mode neural using all-MiniLM-L6-v2 on CPU, with a seeded shuffle for the held-out split, on a machine that was also compiling. — <code>benchmarks/decisions-as-retrieval/README.md</code></li>
+    <li>Banking77, 77-way intent routing, 10,003 labelled examples indexed, 1,000 held-out test items, k = 10: accuracy 0.819 for BM25, 0.933 for MiniLM neighbours and 0.937 for hybrid RRF; expected calibration error 0.089, 0.012 and 0.052; 50.6%, 86.9% and 79.2% of items decided at confidence 0.8 or higher, at accuracy 0.996, 0.979 and 0.989; 2.2, 8.6 and 12.4 ms per item. Source: <code>benchmarks/decisions-as-retrieval/results/run-2026-09-18.txt</code></li>
+    <li>SMS spam, yes-or-no detection, 4,000 labelled examples indexed, 1,000 held-out test items, k = 10: accuracy 0.983 for BM25, 0.982 for MiniLM neighbours and 0.989 for hybrid RRF; spam F1 0.944, 0.940 and 0.962; expected calibration error 0.017, 0.009 and 0.015; 0.9, 74.5 and 67.2 ms per item. Source: <code>benchmarks/decisions-as-retrieval/results/run-2026-09-18.txt</code></li>
+    <li>The run was made on 2026-09-18 with xerj v1.0.0-rc.74 and --embed-mode neural using all-MiniLM-L6-v2 on CPU, with a seeded shuffle for the held-out split, on a machine that was also compiling. Source: <code>benchmarks/decisions-as-retrieval/README.md</code></li>
   </ul>
   <h2>Related</h2>
   <ul>

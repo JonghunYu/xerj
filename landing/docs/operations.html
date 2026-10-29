@@ -15,7 +15,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>XERJ.ai · Docs · Running in production</title>
-<meta name="description" content="Running XERJ in production — the systemd unit, non-root user setup, readiness, config reload, log levels, health and metrics, and capacity planning.">
+<meta name="description" content="Running XERJ in production: the systemd unit, non-root user setup, readiness, config reload, log levels, health and metrics, and capacity planning.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;700;800;900&family=Inter:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -27,16 +27,16 @@
 <meta property="og:site_name" content="XERJ.ai">
 <meta property="og:type" content="article">
 <meta property="og:title" content="XERJ.ai · Docs · Running in production">
-<meta property="og:description" content="Running XERJ in production — the systemd unit, non-root user setup, readiness, config reload, log levels, health and metrics, and capacity planning.">
+<meta property="og:description" content="Running XERJ in production: the systemd unit, non-root user setup, readiness, config reload, log levels, health and metrics, and capacity planning.">
 <meta property="og:url" content="https://xerj.org/docs/operations">
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="XERJ.ai · Docs · Running in production">
-<meta name="twitter:description" content="Running XERJ in production — the systemd unit, non-root user setup, readiness, config reload, log levels, health and metrics, and capacity planning.">
+<meta name="twitter:description" content="Running XERJ in production: the systemd unit, non-root user setup, readiness, config reload, log levels, health and metrics, and capacity planning.">
 <meta name="twitter:image" content="https://xerj.org/og/xerj-card.png">
 <script type="application/ld+json">
 {
@@ -72,7 +72,7 @@
   "@context": "https://schema.org",
   "@type": "TechArticle",
   "headline": "XERJ.ai · Docs · Running in production",
-  "description": "Running XERJ in production — the systemd unit, non-root user setup, readiness, config reload, log levels, health and metrics, and capacity planning.",
+  "description": "Running XERJ in production: the systemd unit, non-root user setup, readiness, config reload, log levels, health and metrics, and capacity planning.",
   "url": "https://xerj.org/docs/operations",
   "image": "https://xerj.org/og/xerj-card.png",
   "inLanguage": "en",
@@ -232,7 +232,7 @@
   <h1>Running in production</h1>
 
 
-  <p>One binary, one config file, one data directory. That's the mental model — everything else is tuning. This page walks the end-to-end deployment: systemd unit, readiness, config reload, log levels, health + metrics, and capacity planning.</p>
+  <p>One binary, one config file, one data directory. That's the mental model. Everything else is tuning. This page walks the end-to-end deployment: systemd unit, readiness, config reload, log levels, health + metrics, and capacity planning.</p>
 
   <h2>Systemd unit</h2>
   <p>Run XERJ as a non-root user. Create the user and data directory first:</p>
@@ -280,15 +280,15 @@ $ journalctl -u xerj -f</pre>
   <h2>Readiness vs liveness</h2>
   <p>Two separate probes so orchestrators don't kill a healthy node mid-recovery.</p>
   <ul>
-    <li><strong>Liveness</strong> — <code class="inline">GET /v1/health</code>. Returns 200 as soon as the process has bound its listeners. Use as a Kubernetes <code class="inline">livenessProbe</code>.</li>
-    <li><strong>Readiness</strong> — <code class="inline">GET /v1/health/ready</code>. Returns 200 only after the WAL has been fully replayed and the last flush checkpoint is on disk. Use as a <code class="inline">readinessProbe</code> so traffic doesn't hit a node mid-restart.</li>
+    <li><strong>Liveness</strong>: <code class="inline">GET /v1/health</code>. Returns 200 as soon as the process has bound its listeners. Use as a Kubernetes <code class="inline">livenessProbe</code>.</li>
+    <li><strong>Readiness</strong>: <code class="inline">GET /v1/health/ready</code>. Returns 200 only after the WAL has been fully replayed and the last flush checkpoint is on disk. Use as a <code class="inline">readinessProbe</code> so traffic doesn't hit a node mid-restart.</li>
   </ul>
 <pre class="code">$ curl -sf http://127.0.0.1:8080/v1/health/ready &amp;&amp; echo OK
 {"status":"ready","wal_replayed":true,"indices":4,"uptime_s":17}
 OK</pre>
 
   <h2>Config reload</h2>
-  <p>Most tunables pick up on <code class="inline">SIGHUP</code> without a restart. A few (ports, TLS certs, data_dir, cluster.enabled) require a full restart — those reject a reload with a clear error in the log.</p>
+  <p>Most tunables pick up on <code class="inline">SIGHUP</code> without a restart. A few (ports, TLS certs, data_dir, cluster.enabled) require a full restart. Those reject a reload with a clear error in the log.</p>
 <pre class="code">$ sudo systemctl reload xerj    # sends SIGHUP
 $ journalctl -u xerj -n 10 --no-pager
 ... config reloaded: merge.max_merge_count 16 → 24
@@ -327,8 +327,8 @@ scrape_configs:
   <h2>Capacity planning</h2>
   <p>Three numbers dominate sizing. Pick the largest and plan around it.</p>
   <div class="enum-list">
-    <div class="item">Disk<span class="dsc">A <strong>~1.6× smaller on-disk footprint than Elasticsearch</strong> is the working number (measured 1.61× vs ES 8.13.4; varies by data shape). Reserve 30% headroom for merges — a merge of two 5 GiB segments needs 10 GiB free temporarily.</span></div>
-    <div class="item">RAM<span class="dsc">~400 MB idle baseline. Vector fields add ~<code class="inline">dims × 4</code> bytes per vector — <strong>including with <code class="inline">scalar8</code> quantization</strong>, which changes scoring precision but not what is resident, so plan for <code class="inline">dims × 4</code> either way (<a href="https://github.com/xerj-org/xerj/issues/392">#392</a>). Memtables are bounded by <code class="inline">flush_size_mb</code> per index.</span></div>
+    <div class="item">Disk<span class="dsc">A <strong>~1.6× smaller on-disk footprint than Elasticsearch</strong> is the working number (measured 1.61× vs ES 8.13.4; varies by data shape). Reserve 30% headroom for merges: a merge of two 5 GiB segments needs 10 GiB free temporarily.</span></div>
+    <div class="item">RAM<span class="dsc">~400 MB idle baseline. Vector fields add ~<code class="inline">dims × 4</code> bytes per vector: <strong>including with <code class="inline">scalar8</code> quantization</strong>, which changes scoring precision but not what is resident, so plan for <code class="inline">dims × 4</code> either way (<a href="https://github.com/xerj-org/xerj/issues/392">#392</a>). Memtables are bounded by <code class="inline">flush_size_mb</code> per index.</span></div>
     <div class="item">CPU<span class="dsc">One turbo-ingest pass pins one core per <code class="inline">turbo_parallel</code> worker. Leave at least 2 cores free for the query path on busy nodes.</span></div>
   </div>
 

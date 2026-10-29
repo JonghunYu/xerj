@@ -57,7 +57,7 @@ faq:
     a: "Unzip it to local disk and run the same `xerj autoindex` command on the folder. A Discord export is JSON, and XERJ picks the family by reading the content rather than the file name. No Discord export was captured for this page, so read `xerj autoindex map` and the mapping for your own export before you write a filter."
 ---
 
-**TL;DR** — Unzip the Slack export to local disk, then run `xerj autoindex` on the folder. In a captured run, a phrase written inside a threaded reply returned 2 hits at `incidents/2026-01-15.json` with `ax_locator` `e1`. The `ts`, `thread_ts` and `user` values all survived.
+**TL;DR**: Unzip the Slack export to local disk, then run `xerj autoindex` on the folder. In a captured run, a phrase written inside a threaded reply returned 2 hits at `incidents/2026-01-15.json` with `ax_locator` `e1`. The `ts`, `thread_ts` and `user` values all survived.
 
 ## Index the unzipped export folder
 

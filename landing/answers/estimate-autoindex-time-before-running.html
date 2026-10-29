@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="How do I estimate folder-indexing time?">
@@ -222,9 +222,9 @@
     <p>How long will it take to index a folder for search? Run xerj autoindex --dry-run first: it measures an extraction floor on your own machine and writes nothing. Add --max-minutes and the decision gate exits 4 with a JSON decision request. On 2,500 PDFs the floor was 2.2 minutes and the finished run took 157.7 seconds.</p>
     <p class="key-fact"><strong>Key number:</strong> Without --max-minutes, the gate asks before any run estimated at more than 10 minutes (<code class="inline">DEFAULT_MAX_MINUTES</code>). <span class="mute">(as of 2026-10-19 · source: <a href="https://github.com/xerj-org/xerj/blob/main/engine/crates/xerj-autoindex/src/gate.rs">engine/crates/xerj-autoindex/src/gate.rs</a>)</span></p>
   </div>
-  <p><strong>TL;DR</strong> — <code class="inline">xerj autoindex --dry-run</code> prints a measured extraction floor for your own machine, and it writes nothing. Add <code class="inline">--max-minutes</code> and <code class="inline">--quiet</code>, and the decision gate exits 4 with a JSON decision request. On 2,500 PDFs the floor was 2.2 min and the finished run took 157.7 s.</p>
+  <p><strong>TL;DR</strong>: <code class="inline">xerj autoindex --dry-run</code> prints a measured extraction floor for your own machine, and it writes nothing. Add <code class="inline">--max-minutes</code> and <code class="inline">--quiet</code>, and the decision gate exits 4 with a JSON decision request. On 2,500 PDFs the floor was 2.2 min and the finished run took 157.7 s.</p>
   <div class="prompt-card">
-    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT — IT DOES THE REST</span>
+    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT. IT DOES THE REST</span>
     <code>Act as a coding agent. Read https://xerj.org/llms.txt, run xerj autoindex with --dry-run to read the measured extraction floor, then re-run with --max-minutes and --quiet so the decision gate returns exit 4 and a machine-readable decision JSON on stdout before any document is written.</code>
     <button type="button" class="prompt-copy" data-copy="Act as a coding agent. Read https://xerj.org/llms.txt, run xerj autoindex with --dry-run to read the measured extraction floor, then re-run with --max-minutes and --quiet so the decision gate returns exit 4 and a machine-readable decision JSON on stdout before any document is written.">COPY THE PROMPT</button>
   </div>

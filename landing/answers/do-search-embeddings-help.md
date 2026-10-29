@@ -12,7 +12,7 @@ source: "content/answers/do-search-embeddings-help.md"
 
 **Key number:** On BEIR SciFact, hybrid RRF with the neural embedder scored nDCG@10 0.6993 against 0.6572 for BM25 alone. (as of 2026-09-18; source: [benchmarks/beir-hybrid/results/scifact.txt](https://github.com/xerj-org/xerj/blob/main/benchmarks/beir-hybrid/results/scifact.txt))
 
-**TL;DR** — Embeddings help only when you opt into XERJ's neural embedder. The default embedder is lexical feature hashing, and on 8 judged queries it scored 0.4167 precision at 3 against BM25's 0.375. The opt-in flag `--embed-mode neural` moved the same measurement to 0.6667 and recall to 1.0.
+**TL;DR**: Embeddings help only when you opt into XERJ's neural embedder. The default embedder is lexical feature hashing, and on 8 judged queries it scored 0.4167 precision at 3 against BM25's 0.375. The opt-in flag `--embed-mode neural` moved the same measurement to 0.6667 and recall to 1.0.
 
 ## Agent prompt
 

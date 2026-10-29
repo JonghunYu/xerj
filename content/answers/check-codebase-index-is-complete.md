@@ -48,7 +48,7 @@ faq:
     a: "No. Even with bytes=b it returned human-formatted values such as 58.5kb, so read GET /{index}/_stats and use _all.total.store.size_in_bytes."
 ---
 
-**TL;DR** — Reconcile 4 numbers before you trust an "indexed" status: files on disk, the `--dry-run` plan, `xerj autoindex status`, and the document count in `_cat/indices`. A captured XERJ run turned 64 non-hidden files into a 3-file plan, and every missing file had a named ignore rule.
+**TL;DR**: Reconcile 4 numbers before you trust an "indexed" status: files on disk, the `--dry-run` plan, `xerj autoindex status`, and the document count in `_cat/indices`. A captured XERJ run turned 64 non-hidden files into a 3-file plan, and every missing file had a named ignore rule.
 
 ## The 4 numbers that must agree
 

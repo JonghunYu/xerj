@@ -61,7 +61,7 @@ faq:
     a: "No, the opposite. The exact scan has recall 1.00 by construction. The graph path is approximate, and its recall is measured rather than guaranteed."
 ---
 
-**TL;DR** — The filter changed the retrieval path. An unfiltered cosine `knn` over a large enough full-precision field is served by a beam search over a persisted HNSW graph. A filtered one runs an exact scan, and its cost grows with the vectors it reads. This page publishes no latency measurement.
+**TL;DR**: The filter changed the retrieval path. An unfiltered cosine `knn` over a large enough full-precision field is served by a beam search over a persisted HNSW graph. A filtered one runs an exact scan, and its cost grows with the vectors it reads. This page publishes no latency measurement.
 
 ## This page publishes no timing
 

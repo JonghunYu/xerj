@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Let an agent look up endpoints in an API spec">
@@ -232,7 +232,7 @@
   </div>
   <p><strong>TL;DR</strong> — XERJ makes an OpenAPI document queryable when <code class="inline">xerj autoindex</code> reads the file from disk. In a captured run, a route name, a description and an <code class="inline">operationId</code> each returned 2 hits, 1 per serialization. Extraction is format-based: the whole spec produced only <code class="inline">body</code> and <code class="inline">title</code>.</p>
   <div class="prompt-card">
-    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT — IT DOES THE REST</span>
+    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT. IT DOES THE REST</span>
     <code>Act as a coding agent. Read https://xerj.org/llms.txt, start a local XERJ node, put an OpenAPI document on disk as both .json and .yaml, run `xerj autoindex ./api-specs --url http://127.0.0.1:9200 --prefix oa --progress plain`, then POST a match on body for a route name and for an operationId, GET /oa-docs/_mapping, and report the ax_format of every hit plus the complete field list the spec produced.</code>
     <button type="button" class="prompt-copy" data-copy="Act as a coding agent. Read https://xerj.org/llms.txt, start a local XERJ node, put an OpenAPI document on disk as both .json and .yaml, run `xerj autoindex ./api-specs --url http://127.0.0.1:9200 --prefix oa --progress plain`, then POST a match on body for a route name and for an operationId, GET /oa-docs/_mapping, and report the ax_format of every hit plus the complete field list the spec produced.">COPY THE PROMPT</button>
   </div>

@@ -193,15 +193,15 @@ No. XERJ has no OCR, so a PDF with no text layer produces no text. Recoll has OC
 
 ## Evidence
 
-- Recoll uses the Xapian retrieval library, with per-language stemming and a query language that carries dir:, mime:, ext: and date: clauses. — [https://www.recoll.org/usermanual/usermanual.html](https://www.recoll.org/usermanual/usermanual.html)
-- Recoll processes documents embedded inside other documents to an arbitrary depth, for example a LibreOffice document attached to an email message inside an email folder archived in a zip file. — [https://www.recoll.org/usermanual/usermanual.html](https://www.recoll.org/usermanual/usermanual.html)
-- Recoll runs OCR on image-only PDF and image documents through tesseract or ABBYY FineReader once the feature is turned on in the PDF or image handler. — [https://www.recoll.org/usermanual/usermanual.html](https://www.recoll.org/usermanual/usermanual.html)
-- The Recoll result window lists extracts around each search term with the page number, as links that start the native viewer on that page. — [https://www.recoll.org/usermanual/usermanual.html](https://www.recoll.org/usermanual/usermanual.html)
-- Recoll can index in real time: recollindex runs as a daemon and uses a file system alteration monitor such as inotify to index new and updated files at once. — [https://www.recoll.org/usermanual/usermanual.html](https://www.recoll.org/usermanual/usermanual.html)
-- Recoll can be queried outside the GUI through the recollq command, through recoll -t, and through the Recoll Python API. — [https://www.recoll.org/usermanual/usermanual.html](https://www.recoll.org/usermanual/usermanual.html)
-- ripgrep-all wraps ripgrep with adapters for PDF, Office documents, zip, tar, compressed files and SQLite, and needs no index. — [https://github.com/phiresky/ripgrep-all](https://github.com/phiresky/ripgrep-all)
-- DocFetcher is an open-source desktop search application under the Eclipse Public License, with portable versions that keep the index in the application folder. — [https://docfetcher.sourceforge.io/](https://docfetcher.sourceforge.io/)
-- Elasticsearch is a distributed engine with cross-node replication and failover, which a single-node engine does not provide. — [https://www.elastic.co/docs/deploy-manage/distributed-architecture](https://www.elastic.co/docs/deploy-manage/distributed-architecture)
+- Recoll uses the Xapian retrieval library, with per-language stemming and a query language that carries dir:, mime:, ext: and date: clauses. Source: [https://www.recoll.org/usermanual/usermanual.html](https://www.recoll.org/usermanual/usermanual.html)
+- Recoll processes documents embedded inside other documents to an arbitrary depth, for example a LibreOffice document attached to an email message inside an email folder archived in a zip file. Source: [https://www.recoll.org/usermanual/usermanual.html](https://www.recoll.org/usermanual/usermanual.html)
+- Recoll runs OCR on image-only PDF and image documents through tesseract or ABBYY FineReader once the feature is turned on in the PDF or image handler. Source: [https://www.recoll.org/usermanual/usermanual.html](https://www.recoll.org/usermanual/usermanual.html)
+- The Recoll result window lists extracts around each search term with the page number, as links that start the native viewer on that page. Source: [https://www.recoll.org/usermanual/usermanual.html](https://www.recoll.org/usermanual/usermanual.html)
+- Recoll can index in real time: recollindex runs as a daemon and uses a file system alteration monitor such as inotify to index new and updated files at once. Source: [https://www.recoll.org/usermanual/usermanual.html](https://www.recoll.org/usermanual/usermanual.html)
+- Recoll can be queried outside the GUI through the recollq command, through recoll -t, and through the Recoll Python API. Source: [https://www.recoll.org/usermanual/usermanual.html](https://www.recoll.org/usermanual/usermanual.html)
+- ripgrep-all wraps ripgrep with adapters for PDF, Office documents, zip, tar, compressed files and SQLite, and needs no index. Source: [https://github.com/phiresky/ripgrep-all](https://github.com/phiresky/ripgrep-all)
+- DocFetcher is an open-source desktop search application under the Eclipse Public License, with portable versions that keep the index in the application folder. Source: [https://docfetcher.sourceforge.io/](https://docfetcher.sourceforge.io/)
+- Elasticsearch is a distributed engine with cross-node replication and failover, which a single-node engine does not provide. Source: [https://www.elastic.co/docs/deploy-manage/distributed-architecture](https://www.elastic.co/docs/deploy-manage/distributed-architecture)
 
 ## Related
 

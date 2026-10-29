@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="XERJ vs LocalSynapse for MCP local file search">
@@ -240,7 +240,7 @@
   </div>
   <p><strong>TL;DR</strong> — LocalSynapse wins the desktop experience: a search window you double-click, whole-drive indexing, and mail shapes beyond mbox and eml that XERJ has no extractor for. XERJ wins data files — Excel sheets included, read as typed tables — and the Elasticsearch query surface. No head-to-head was run for this page.</p>
   <div class="prompt-card">
-    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT — IT DOES THE REST</span>
+    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT. IT DOES THE REST</span>
     <code>Act as a coding agent. Read https://xerj.org/llms.txt, start a local node with `xerj --insecure --data-dir ./xerj-data`, run `xerj autoindex ./work --prefix work --state-dir ./state-work` on one chosen folder rather than a whole drive, attach it with `xerj mcp --url http://127.0.0.1:9200`, then answer the user question with an Elasticsearch DSL query and report every file the run refused together with the reason it gave.</code>
     <button type="button" class="prompt-copy" data-copy="Act as a coding agent. Read https://xerj.org/llms.txt, start a local node with `xerj --insecure --data-dir ./xerj-data`, run `xerj autoindex ./work --prefix work --state-dir ./state-work` on one chosen folder rather than a whole drive, attach it with `xerj mcp --url http://127.0.0.1:9200`, then answer the user question with an Elasticsearch DSL query and report every file the run refused together with the reason it gave.">COPY THE PROMPT</button>
   </div>
@@ -320,12 +320,12 @@
   <p>Give it a local MCP server over an index of those files. Both sides here run on your machine, they index different things, and an agent can hold a tool list from each.</p>
   <h2>Evidence</h2>
   <ul>
-    <li>LocalSynapse is a local search product for files and mail on Windows that combines full-text BM25 with a local embedder, and the same binary is both a desktop search window and an MCP server. — <a href="https://github.com/LocalSynapse/LocalSynapse">https://github.com/LocalSynapse/LocalSynapse</a></li>
-    <li>LocalSynapse runs on Windows and macOS, indexes whole drives automatically and skips cloud placeholder files from OneDrive and Dropbox. — <a href="https://localsynapse.com/en">https://localsynapse.com/en</a></li>
-    <li>The LocalSynapse embedder is BGE-M3 running through ONNX Runtime on the CPU, and its search index is stored in a local SQLite database. — <a href="https://localsynapse.com/en/blog/mcp-local-file-search">https://localsynapse.com/en/blog/mcp-local-file-search</a></li>
-    <li>The LocalSynapse MCP server communicates over stdio, opens no network port, and exposes search_files, get_file_content, list_indexed_files and get_pipeline_status. — <a href="https://localsynapse.com/en/mcp">https://localsynapse.com/en/mcp</a></li>
-    <li>LocalSynapse reads PDF, Word, PowerPoint, Hangul, CSV, Markdown and plain text, plus .eml, .msg and .mbox mail, and reads Excel workbooks with cell coordinates and merged ranges up to 25 MB. — <a href="https://github.com/LocalSynapse/LocalSynapse">https://github.com/LocalSynapse/LocalSynapse</a></li>
-    <li>LocalSynapse is licensed Apache-2.0, but its repository states that it hosts release artifacts only and that the source tree is no longer published from version 2.15.0 onward. — <a href="https://github.com/LocalSynapse/LocalSynapse">https://github.com/LocalSynapse/LocalSynapse</a></li>
+    <li>LocalSynapse is a local search product for files and mail on Windows that combines full-text BM25 with a local embedder, and the same binary is both a desktop search window and an MCP server. Source: <a href="https://github.com/LocalSynapse/LocalSynapse">https://github.com/LocalSynapse/LocalSynapse</a></li>
+    <li>LocalSynapse runs on Windows and macOS, indexes whole drives automatically and skips cloud placeholder files from OneDrive and Dropbox. Source: <a href="https://localsynapse.com/en">https://localsynapse.com/en</a></li>
+    <li>The LocalSynapse embedder is BGE-M3 running through ONNX Runtime on the CPU, and its search index is stored in a local SQLite database. Source: <a href="https://localsynapse.com/en/blog/mcp-local-file-search">https://localsynapse.com/en/blog/mcp-local-file-search</a></li>
+    <li>The LocalSynapse MCP server communicates over stdio, opens no network port, and exposes search_files, get_file_content, list_indexed_files and get_pipeline_status. Source: <a href="https://localsynapse.com/en/mcp">https://localsynapse.com/en/mcp</a></li>
+    <li>LocalSynapse reads PDF, Word, PowerPoint, Hangul, CSV, Markdown and plain text, plus .eml, .msg and .mbox mail, and reads Excel workbooks with cell coordinates and merged ranges up to 25 MB. Source: <a href="https://github.com/LocalSynapse/LocalSynapse">https://github.com/LocalSynapse/LocalSynapse</a></li>
+    <li>LocalSynapse is licensed Apache-2.0, but its repository states that it hosts release artifacts only and that the source tree is no longer published from version 2.15.0 onward. Source: <a href="https://github.com/LocalSynapse/LocalSynapse">https://github.com/LocalSynapse/LocalSynapse</a></li>
   </ul>
   <h2>Related</h2>
   <ul>

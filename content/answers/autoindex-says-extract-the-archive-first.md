@@ -12,7 +12,7 @@ author: "XERJ documentation team"
 reviewer: "XERJ engineering team"
 schema_type: "TechArticle"
 structured_data: [faq]
-agent_prompt: "Act as a coding agent. Read https://xerj.org/llms.txt. If a run prints 'not indexed — archives are never opened' under its summary (or its --json summary has a non-empty unextracted_archives list), run the command each line names (unzip, tar -xzf, 7z x, unrar x, xz -dk) on that file, then run xerj autoindex again on the extracted folder. Exit code 3 with those lines is a completed run, not a failure, but if the archive was the only thing in the folder nothing was indexed: tell the user."
+agent_prompt: "Act as a coding agent. Read https://xerj.org/llms.txt. If a run prints 'not indexed: archives are never opened' under its summary (or its --json summary has a non-empty unextracted_archives list), run the command each line names (unzip, tar -xzf, 7z x, unrar x, xz -dk) on that file, then run xerj autoindex again on the extracted folder. Exit code 3 with those lines is a completed run, not a failure, but if the archive was the only thing in the folder nothing was indexed: tell the user."
 answer: "Why does xerj autoindex say to extract a zip first? Because autoindex never opens archives. A .zip, .tgz, .7z, .rar or .xz is marked as junk with a reason that quotes the extraction command, the rest of the folder is indexed, and the run exits 3. Extract the archive and run the same command again."
 key_fact: "autoindex classifies a file from its first 8,192 bytes (`PREFIX` in the sniffer), which is how an archive is recognised by magic bytes rather than by its extension."
 key_fact_source: "engine/crates/xerj-autoindex/src/sniff.rs"
@@ -30,17 +30,17 @@ links_out:
   - "autoindex-exit-codes"
   - "why-autoindex-skipped-files"
 evidence:
-  - claim: "The junk reason for an archive reads 'unextracted <kind>: autoindex does not open archives — extract it first (<command>), then run autoindex on the extracted folder', with the command chosen per kind: unzip, tar -xf, tar -xzf, 7z x, unrar x, xz -dk."
+  - claim: "The junk reason for an archive reads 'unextracted <kind>: autoindex does not open archives, extract it first (<command>), then run autoindex on the extracted folder', with the command chosen per kind: unzip, tar -xf, tar -xzf, 7z x, unrar x, xz -dk."
     source: "engine/crates/xerj-autoindex/src/sniff.rs"
-  - claim: "Archives are detected by magic bytes — a tar by its ustar header checksum, not by text that happens to say ustar — so a renamed archive gets the same reason."
+  - claim: "Archives are detected by magic bytes: a tar by its ustar header checksum, not by text that happens to say ustar, so a renamed archive gets the same reason."
     source: "engine/crates/xerj-autoindex/src/sniff.rs"
-  - claim: "The run prints every unextracted archive under its summary, after 'not indexed — archives are never opened', with the archive's path and its reason (at most ten lines, then a count and a pointer to xerj autoindex map), and puts the same lines in its --json summary as unextracted_archives."
+  - claim: "The run prints every unextracted archive under its summary, after 'not indexed: archives are never opened', with the archive's path and its reason (at most ten lines, then a count and a pointer to xerj autoindex map), and puts the same lines in its --json summary as unextracted_archives."
     source: "engine/crates/xerj-autoindex/src/lib.rs"
   - claim: "Exit code 3 is completed-with-junk; junk is recorded, never fatal."
     source: "engine/crates/xerj-autoindex/src/cli.rs"
 faq:
   - q: "Why does xerj autoindex say to extract a zip first?"
-    a: "Because it never opens archives. Extracting is one command it quotes in the reason, and it keeps the index from holding the same files twice — once inside the archive and once beside it."
+    a: "Because it never opens archives. Extracting is one command it quotes in the reason, and it keeps the index from holding the same files twice, once inside the archive and once beside it."
   - q: "Is the run a failure?"
     a: "No. The archive is recorded as junk with its reason and everything else in the folder is indexed. The exit code is 3, completed-with-junk. If the archive was the only file, the run indexed nothing, and the lines it prints under its summary say why."
   - q: "Which archive kinds does it recognise?"
@@ -49,7 +49,7 @@ faq:
     a: "A plain gzip-compressed file is streamed through decompression and sniffed like the file inside; only a gzip that contains a tar is treated as an archive."
 ---
 
-**TL;DR** — autoindex does not open archives. When it meets a `.zip`, `.tgz`, `.7z`, `.rar` or `.xz`, it marks the file as junk with a reason that quotes the extraction command, and prints that under the run's summary. The run finishes with exit code 3 and the rest of the folder is indexed. Extract the archive and run the same command on the extracted folder.
+**TL;DR**: autoindex does not open archives. When it meets a `.zip`, `.tgz`, `.7z`, `.rar` or `.xz`, it marks the file as junk with a reason that quotes the extraction command, and prints that under the run's summary. The run finishes with exit code 3 and the rest of the folder is indexed. Extract the archive and run the same command on the extracted folder.
 
 ## What the run prints
 

@@ -214,9 +214,9 @@
     <p>Find duplicate GitHub issues before you file. Export the issues to JSONL, index the folder with <code class="inline">xerj autoindex</code>, and search the draft title. On 2026-10-20 that search over 1,532 records ranked issue 960 first and took 7 ms. A paraphrase of the same bug did not rank it first.</p>
     <p class="key-fact"><strong>Key number:</strong> A search over 1,532 indexed records ranked issue 960 first and took 7 ms. <span class="mute">(as of 2026-10-20 · source: <a href="https://github.com/xerj-org/xerj/blob/main/benchmarks/agent-queries-2026-10-20/01-duplicate-search.json">benchmarks/agent-queries-2026-10-20/01-duplicate-search.json</a>)</span></p>
   </div>
-  <p><strong>TL;DR</strong> — Find duplicate GitHub issues before you file. Export the issues to JSONL, index the folder with <code class="inline">xerj autoindex</code>, and search the draft title. On 2026-10-20 that search over 1,532 records ranked issue 960 first and took 7 ms. A paraphrase of the same bug did not rank it first.</p>
+  <p><strong>TL;DR</strong>: Find duplicate GitHub issues before you file. Export the issues to JSONL, index the folder with <code class="inline">xerj autoindex</code>, and search the draft title. On 2026-10-20 that search over 1,532 records ranked issue 960 first and took 7 ms. A paraphrase of the same bug did not rank it first.</p>
   <div class="prompt-card">
-    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT — IT DOES THE REST</span>
+    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT. IT DOES THE REST</span>
     <code>Read https://xerj.org/llms.txt. Start one local node. Export the repo issues to JSONL, run xerj autoindex on that folder, and search the draft title before you file. Report the top hit's number, state and title, and say when a reworded query does not rank the same issue first.</code>
     <button type="button" class="prompt-copy" data-copy="Read https://xerj.org/llms.txt. Start one local node. Export the repo issues to JSONL, run xerj autoindex on that folder, and search the draft title before you file. Report the top hit&#x27;s number, state and title, and say when a reworded query does not rank the same issue first.">COPY THE PROMPT</button>
   </div>
@@ -281,10 +281,10 @@
   <p>No. This is a local check you run before you file. One-off lookups can stay on GitHub's own search.</p>
   <h2>Evidence</h2>
   <ul>
-    <li>autoindex committed 1,532 records in 7.2 s, exit 0. — <code>benchmarks/agent-queries-2026-10-20/01-autoindex-issues.txt</code></li>
-    <li>The title-and-body query took 7 ms and ranked issue 960 first. — <code>benchmarks/agent-queries-2026-10-20/01-duplicate-search.json</code></li>
-    <li>The paraphrase query took 7 ms and ranked an unrelated pull request first. — <code>benchmarks/agent-queries-2026-10-20/01-paraphrase-search.json</code></li>
-    <li>more_like_this took 4 ms and still returned 1,501 hits. — <code>benchmarks/agent-queries-2026-10-20/01-more-like-this.json</code></li>
+    <li>autoindex committed 1,532 records in 7.2 s, exit 0. Source: <code>benchmarks/agent-queries-2026-10-20/01-autoindex-issues.txt</code></li>
+    <li>The title-and-body query took 7 ms and ranked issue 960 first. Source: <code>benchmarks/agent-queries-2026-10-20/01-duplicate-search.json</code></li>
+    <li>The paraphrase query took 7 ms and ranked an unrelated pull request first. Source: <code>benchmarks/agent-queries-2026-10-20/01-paraphrase-search.json</code></li>
+    <li>more_like_this took 4 ms and still returned 1,501 hits. Source: <code>benchmarks/agent-queries-2026-10-20/01-more-like-this.json</code></li>
   </ul>
   <h2>Related</h2>
   <ul>

@@ -15,7 +15,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>XERJ.ai · Docs · Playbook · Observability</title>
-<meta name="description" content="Metrics, traces and logs as one queryable store — OTLP in, Prometheus text out, traces as a connected graph. Replaces Splunk plus Prometheus plus Tempo.">
+<meta name="description" content="Metrics, traces and logs as one queryable store: OTLP in, Prometheus text out, traces as a connected graph. Replaces Splunk plus Prometheus plus Tempo.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;700;800;900&family=Inter:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -27,16 +27,16 @@
 <meta property="og:site_name" content="XERJ.ai">
 <meta property="og:type" content="article">
 <meta property="og:title" content="XERJ.ai · Docs · Playbook · Observability">
-<meta property="og:description" content="Metrics, traces and logs as one queryable store — OTLP in, Prometheus text out, traces as a connected graph. Replaces Splunk plus Prometheus plus Tempo.">
+<meta property="og:description" content="Metrics, traces and logs as one queryable store: OTLP in, Prometheus text out, traces as a connected graph. Replaces Splunk plus Prometheus plus Tempo.">
 <meta property="og:url" content="https://xerj.org/docs/playbooks/observability">
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="XERJ.ai · Docs · Playbook · Observability">
-<meta name="twitter:description" content="Metrics, traces and logs as one queryable store — OTLP in, Prometheus text out, traces as a connected graph. Replaces Splunk plus Prometheus plus Tempo.">
+<meta name="twitter:description" content="Metrics, traces and logs as one queryable store: OTLP in, Prometheus text out, traces as a connected graph. Replaces Splunk plus Prometheus plus Tempo.">
 <meta name="twitter:image" content="https://xerj.org/og/xerj-card.png">
 <script type="application/ld+json">
 {
@@ -72,7 +72,7 @@
   "@context": "https://schema.org",
   "@type": "TechArticle",
   "headline": "XERJ.ai · Docs · Playbook · Observability",
-  "description": "Metrics, traces and logs as one queryable store — OTLP in, Prometheus text out, traces as a connected graph. Replaces Splunk plus Prometheus plus Tempo.",
+  "description": "Metrics, traces and logs as one queryable store: OTLP in, Prometheus text out, traces as a connected graph. Replaces Splunk plus Prometheus plus Tempo.",
   "url": "https://xerj.org/docs/playbooks/observability",
   "image": "https://xerj.org/og/xerj-card.png",
   "inLanguage": "en",
@@ -294,7 +294,7 @@ $ OTEL_EXPORTER_OTLP_ENDPOINT=http://xerj:8080/v1/indices/traces/otlp \
   <p>Recursive: scrape <code class="inline">/v1/metrics</code> to watch XERJ's own health while it serves the observability workload.</p>
 
   <h2>Dashboards</h2>
-  <p>Open the playground → <a href="/playground">INGEST · PIPELINE</a> and <a href="/playground">SYSTEM · OVERVIEW</a> — every panel is a real Prometheus metric from the engine's <code class="inline">common::metrics</code> module.</p>
+  <p>Open the playground → <a href="/playground">INGEST · PIPELINE</a> and <a href="/playground">SYSTEM · OVERVIEW</a>, every panel is a real Prometheus metric from the engine's <code class="inline">common::metrics</code> module.</p>
 
   <p class="source-note">Source · engine/crates/xerj-api/src/native.rs · engine/crates/xerj-common/src/metrics.rs</p>
   

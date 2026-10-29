@@ -50,7 +50,7 @@ faq:
     a: "`autoindex` creates 1 `.xerj-memory-<brain>-edges` index per indexed folder by default. Our run finished with 18 of them."
 ---
 
-**TL;DR** — `xerj autoindex map` prints the catalog that the last run inferred. In our capture the map described 2 datasets from a 6-file folder. Each dataset carried every field with its type, its cardinality, its null share and a ready-to-send query.
+**TL;DR**: `xerj autoindex map` prints the catalog that the last run inferred. In our capture the map described 2 datasets from a 6-file folder. Each dataset carried every field with its type, its cardinality, its null share and a ready-to-send query.
 
 ## Index the folder, then print the map
 
@@ -70,8 +70,8 @@ The map opens with the run header, then lists one row per dataset, then one fiel
 
 | index | documents | files | formats | time field | time range |
 | --- | --- | --- | --- | --- | --- |
-| `mx-data` | 41 | 1 | `["csv"]` | — | — |
-| `mx-docs` | 10 | 5 | `["code","html","json","txt-prose","yaml"]` | — | — |
+| `mx-data` | 41 | 1 | `["csv"]` | n/a | n/a |
+| `mx-docs` | 10 | 5 | `["code","html","json","txt-prose","yaml"]` | n/a | n/a |
 
 The document counts in that table come from a capture taken before XERJ began writing one document per code declaration. A source file now contributes one document for every declaration it holds on top of its whole-file document, so the dataset carrying the `code` file produces more documents than the row shows. The CSV row is unaffected. Read the count from your own map.
 

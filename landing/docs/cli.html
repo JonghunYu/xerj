@@ -15,7 +15,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>XERJ.ai · Docs · CLI reference</title>
-<meta name="description" content="The xerj command line — server flags, config and data-dir overrides, the autoindex and mcp subcommands, and the Corpus Hub commands: ask, hub and code --def.">
+<meta name="description" content="The xerj command line: server flags, config and data-dir overrides, the autoindex and mcp subcommands, and the Corpus Hub commands (ask, hub and code --def).">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;700;800;900&family=Inter:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -27,16 +27,16 @@
 <meta property="og:site_name" content="XERJ.ai">
 <meta property="og:type" content="article">
 <meta property="og:title" content="XERJ.ai · Docs · CLI reference">
-<meta property="og:description" content="The xerj command line — server flags, config and data-dir overrides, the autoindex and mcp subcommands, and the Corpus Hub commands: ask, hub and code --def.">
+<meta property="og:description" content="The xerj command line: server flags, config and data-dir overrides, the autoindex and mcp subcommands, and the Corpus Hub commands (ask, hub and code --def).">
 <meta property="og:url" content="https://xerj.org/docs/cli">
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="XERJ.ai · Docs · CLI reference">
-<meta name="twitter:description" content="The xerj command line — server flags, config and data-dir overrides, the autoindex and mcp subcommands, and the Corpus Hub commands: ask, hub and code --def.">
+<meta name="twitter:description" content="The xerj command line: server flags, config and data-dir overrides, the autoindex and mcp subcommands, and the Corpus Hub commands (ask, hub and code --def).">
 <meta name="twitter:image" content="https://xerj.org/og/xerj-card.png">
 <script type="application/ld+json">
 {
@@ -72,7 +72,7 @@
   "@context": "https://schema.org",
   "@type": "TechArticle",
   "headline": "XERJ.ai · Docs · CLI reference",
-  "description": "The xerj command line — server flags, config and data-dir overrides, the autoindex and mcp subcommands, and the Corpus Hub commands: ask, hub and code --def.",
+  "description": "The xerj command line: server flags, config and data-dir overrides, the autoindex and mcp subcommands, and the Corpus Hub commands (ask, hub and code --def).",
   "url": "https://xerj.org/docs/cli",
   "image": "https://xerj.org/og/xerj-card.png",
   "inLanguage": "en",
@@ -232,7 +232,7 @@
   <h1>CLI reference</h1>
 
 
-  <p>Bare <code class="inline">xerj</code> starts the server, and everything the engine itself does is controlled by the TOML config and driven through the HTTP API. The subcommands — <a href="#autoindex"><code class="inline">autoindex</code></a>, <code class="inline">index</code>, <code class="inline">brain</code>, <a href="#mcp"><code class="inline">mcp</code></a>, and the Corpus Hub commands <a href="#ask"><code class="inline">ask</code></a>, <a href="#hub"><code class="inline">hub</code></a> and <a href="#code-def"><code class="inline">code --def</code></a> — are <em>clients</em> of a running node, not other ways to run one. (<code class="inline">xerj ask</code> starts a node of its own when none answers; see <a href="#ask">below</a>.)</p>
+  <p>Bare <code class="inline">xerj</code> starts the server, and everything the engine itself does is controlled by the TOML config and driven through the HTTP API. The subcommands: <a href="#autoindex"><code class="inline">autoindex</code></a>, <code class="inline">index</code>, <code class="inline">brain</code>, <a href="#mcp"><code class="inline">mcp</code></a>, and the Corpus Hub commands <a href="#ask"><code class="inline">ask</code></a>, <a href="#hub"><code class="inline">hub</code></a> and <a href="#code-def"><code class="inline">code --def</code></a>: are <em>clients</em> of a running node, not other ways to run one. (<code class="inline">xerj ask</code> starts a node of its own when none answers; see <a href="#ask">below</a>.)</p>
 
 <pre class="code">USAGE:
   xerj [OPTIONS]
@@ -267,7 +267,7 @@ SUBCOMMANDS:
   <p>Convenience override for <code class="inline">[server] data_dir</code>. Useful for ephemeral dev runs and for pointing XERJ at a tmpfs when you just want to burn something down after.</p>
 
   <h2 id="bind-flag">--bind / -b</h2>
-  <p>Interface to bind every listener to; overrides <code class="inline">[server] bind_address</code>. Env: <code class="inline">XERJ_BIND_ADDRESS</code>. The default is <code class="inline">127.0.0.1</code> — loopback only. Pass <code class="inline">0.0.0.0</code> (or a specific address) to expose the node; with TLS off that also needs <code class="inline">server.allow_insecure_network_bind = true</code> (env <code class="inline">XERJ_ALLOW_INSECURE_NETWORK_BIND</code>), because every request, API key included, would cross the network in cleartext. The value must be an IPv4 or IPv6 literal; host names are not resolved, and one is refused at startup before the data directory is created.</p>
+  <p>Interface to bind every listener to; overrides <code class="inline">[server] bind_address</code>. Env: <code class="inline">XERJ_BIND_ADDRESS</code>. The default is <code class="inline">127.0.0.1</code>: loopback only. Pass <code class="inline">0.0.0.0</code> (or a specific address) to expose the node; with TLS off that also needs <code class="inline">server.allow_insecure_network_bind = true</code> (env <code class="inline">XERJ_ALLOW_INSECURE_NETWORK_BIND</code>), because every request, API key included, would cross the network in cleartext. The value must be an IPv4 or IPv6 literal; host names are not resolved, and one is refused at startup before the data directory is created.</p>
 
   <h2 id="insecure-flag">--insecure / -k</h2>
   <p>Disables TLS and API-key auth. <strong>Dev only.</strong> It does not unlock a network bind: clearing <code class="inline">tls.enabled</code> is exactly what makes a non-loopback <code class="inline">bind_address</code> refuse to start, so <code class="inline">--insecure</code> on <code class="inline">0.0.0.0</code> exits non-zero unless the exposure is declared.</p>
@@ -279,7 +279,7 @@ SUBCOMMANDS:
   <p>Prints the version, git SHA, and build date. Useful in oncall pages: <code class="inline">xerj -V | head -1</code>.</p>
 
   <h2 id="autoindex">xerj autoindex &lt;folder&gt;</h2>
-  <p>Point it at a folder and it discovers, infers and indexes the contents — no mapping to write, no pipeline to configure. It is a client of a node that is <em>already running</em>, and it never reads the TOML config, so the endpoint and the credential are its own flags.</p>
+  <p>Point it at a folder and it discovers, infers and indexes the contents, no mapping to write, no pipeline to configure. It is a client of a node that is <em>already running</em>, and it never reads the TOML config, so the endpoint and the credential are its own flags.</p>
 <pre class="code">USAGE:
   xerj autoindex &lt;folder&gt; [OPTIONS]   discover + index a folder
   xerj autoindex map [OPTIONS]        print the discovered data map
@@ -297,7 +297,7 @@ OPTIONS (abridged — `xerj autoindex --help` prints all of them):
   --progress &lt;MODE&gt;   liveness on stderr: auto|plain|json|none</pre>
 
   <h2 id="autoindex-api-key">autoindex --api-key</h2>
-  <p>The key the target node expects, or env <code class="inline">XERJ_API_KEY</code> (the flag wins). <code class="inline">autoindex</code> never takes it from <code class="inline">xerj.toml</code> — the config file belongs to the server, not to its clients. A node running with <code class="inline">[auth] enabled = true</code> (the default, and what happens on any start without <code class="inline">--insecure</code>) refuses an unauthenticated run with <code class="inline">HTTP 401 Unauthorized</code>. That node wrote its key to <code class="inline">&lt;data_dir&gt;/admin.key</code> on first boot:</p>
+  <p>The key the target node expects, or env <code class="inline">XERJ_API_KEY</code> (the flag wins). <code class="inline">autoindex</code> never takes it from <code class="inline">xerj.toml</code>: the config file belongs to the server, not to its clients. A node running with <code class="inline">[auth] enabled = true</code> (the default, and what happens on any start without <code class="inline">--insecure</code>) refuses an unauthenticated run with <code class="inline">HTTP 401 Unauthorized</code>. That node wrote its key to <code class="inline">&lt;data_dir&gt;/admin.key</code> on first boot:</p>
 <pre class="code">$ export XERJ_API_KEY="$(cat ./data/admin.key)"
 $ xerj autoindex ~/my-project
 
@@ -450,7 +450,7 @@ answered from: local pack</pre>
 
   <p class="source-note">Source · engine/crates/xerj-hub/src/cli.rs · engine/crates/xerj-hub/src/sync.rs · engine/crates/xerj-hub/src/build_catalogue.rs · engine/crates/xerj-autoindex/src/xc.rs</p>
   <h2 id="mcp">xerj mcp</h2>
-  <p>Starts a <strong>Model Context Protocol</strong> server on stdio — newline-delimited JSON-RPC 2.0 on stdin/stdout — so any MCP client (desktop assistants, IDE agents, function-calling hosts) can query XERJ without a shell. It is part of the single installed binary: if you ran the installer, you already have it.</p>
+  <p>Starts a <strong>Model Context Protocol</strong> server on stdio (newline-delimited JSON-RPC 2.0 on stdin/stdout) so any MCP client (desktop assistants, IDE agents, function-calling hosts) can query XERJ without a shell. It is part of the single installed binary: if you ran the installer, you already have it.</p>
 
   <p>It does <strong>not</strong> start a node. Start one first; <code class="inline">xerj mcp</code> proxies every tool call to the URL in <code class="inline">XERJ_URL</code>.</p>
 
@@ -465,7 +465,7 @@ OPTIONS:
   -h, --help       Print help (includes the client config block below)
   -V, --version    Print version and exit</pre>
 
-  <p>Client configuration — the standard <code class="inline">mcpServers</code> shape:</p>
+  <p>Client configuration, the standard <code class="inline">mcpServers</code> shape:</p>
 
 <pre class="code">{
   "mcpServers": {
@@ -477,7 +477,7 @@ OPTIONS:
   }
 }</pre>
 
-  <p>Use an <em>absolute</em> path. The <code class="inline">sh</code> installer (Linux, macOS, and Windows Git Bash, MSYS and Cygwin) puts <code class="inline">xerj</code> in <code class="inline">~/.local/bin</code> (<code class="inline">xerj.exe</code> on Windows; <code class="inline">command -v xerj</code> confirms) and does not edit PATH. The PowerShell installer (<code class="inline">get.ps1</code>) puts <code class="inline">xerj.exe</code> in <code class="inline">%LOCALAPPDATA%\Programs\xerj</code> and adds that directory to the user PATH (<code class="inline">(Get-Command xerj).Source</code> prints it; <code class="inline">XERJ_NO_PATH=1</code> opts out). An MCP host launched from a desktop icon does not inherit your shell's <code class="inline">PATH</code>. When the node is not running <code class="inline">--insecure</code>, add <code class="inline">"XERJ_AUTH": "ApiKey &lt;key&gt;"</code> next to <code class="inline">XERJ_URL</code>; the key lives in <code class="inline">&lt;data-dir&gt;/admin.key</code>. For a loopback node that manual step is optional: with no <code class="inline">XERJ_AUTH</code> given, the server reads <code class="inline">&lt;data-dir&gt;/admin.key</code> itself (the same locations <code class="inline">xerj autoindex</code> checks) and announces the file it used on stderr — it never does this for a non-loopback URL.</p>
+  <p>Use an <em>absolute</em> path. The <code class="inline">sh</code> installer (Linux, macOS, and Windows Git Bash, MSYS and Cygwin) puts <code class="inline">xerj</code> in <code class="inline">~/.local/bin</code> (<code class="inline">xerj.exe</code> on Windows; <code class="inline">command -v xerj</code> confirms) and does not edit PATH. The PowerShell installer (<code class="inline">get.ps1</code>) puts <code class="inline">xerj.exe</code> in <code class="inline">%LOCALAPPDATA%\Programs\xerj</code> and adds that directory to the user PATH (<code class="inline">(Get-Command xerj).Source</code> prints it; <code class="inline">XERJ_NO_PATH=1</code> opts out). An MCP host launched from a desktop icon does not inherit your shell's <code class="inline">PATH</code>. When the node is not running <code class="inline">--insecure</code>, add <code class="inline">"XERJ_AUTH": "ApiKey &lt;key&gt;"</code> next to <code class="inline">XERJ_URL</code>; the key lives in <code class="inline">&lt;data-dir&gt;/admin.key</code>. For a loopback node that manual step is optional: with no <code class="inline">XERJ_AUTH</code> given, the server reads <code class="inline">&lt;data-dir&gt;/admin.key</code> itself (the same locations <code class="inline">xerj autoindex</code> checks) and announces the file it used on stderr. It never does this for a non-loopback URL.</p>
 
   <h3 id="mcp-clients">Supported agents</h3>
 

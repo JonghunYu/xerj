@@ -12,7 +12,7 @@ source: "content/answers/filter-knn-exact-scan-caveat.md"
 
 **Key number:** The HNSW beam width (`num_candidates`) is floored at 800, and indexes under 1,024 documents always use the exact scan. (as of 2026-10-19; source: [landing/llms.txt](https://github.com/xerj-org/xerj/blob/main/landing/llms.txt))
 
-**TL;DR** — The filter changed the retrieval path. An unfiltered cosine `knn` over a large enough full-precision field is served by a beam search over a persisted HNSW graph. A filtered one runs an exact scan, and its cost grows with the vectors it reads. This page publishes no latency measurement.
+**TL;DR**: The filter changed the retrieval path. An unfiltered cosine `knn` over a large enough full-precision field is served by a beam search over a persisted HNSW graph. A filtered one runs an exact scan, and its cost grows with the vectors it reads. This page publishes no latency measurement.
 
 ## Agent prompt
 
@@ -173,10 +173,10 @@ No, the opposite. The exact scan has recall 1.00 by construction. The graph path
 
 ## Evidence
 
-- kNN is HNSW-served (approximate) when unfiltered, exact brute-force otherwise. An unfiltered knn on a full-precision cosine field with at least 1,024 docs runs a beam search over a persisted HNSW graph and exact-rescores its candidates, so scores match the exact path bit-for-bit. — `landing/llms.txt:209`
-- Filtered or nested kNN, non-cosine similarity, SQ8-quantized fields, indexes under 1,024 docs, a stale graph, and semantic or _memory recall all use the exact scan; recall is 1.00 by construction and latency scales with vectors scanned. — `landing/llms.txt:209`
-- num_candidates is the beam width, floored at 800, and the Elasticsearch 1.5x k default applies when it is omitted. — `landing/llms.txt:209`
-- An aggregation-bearing kNN always runs the exact scan, and no performance claim exists for that path. — `landing/llms.txt:270`
+- kNN is HNSW-served (approximate) when unfiltered, exact brute-force otherwise. An unfiltered knn on a full-precision cosine field with at least 1,024 docs runs a beam search over a persisted HNSW graph and exact-rescores its candidates, so scores match the exact path bit-for-bit. Source: `landing/llms.txt:209`
+- Filtered or nested kNN, non-cosine similarity, SQ8-quantized fields, indexes under 1,024 docs, a stale graph, and semantic or _memory recall all use the exact scan; recall is 1.00 by construction and latency scales with vectors scanned. Source: `landing/llms.txt:209`
+- num_candidates is the beam width, floored at 800, and the Elasticsearch 1.5x k default applies when it is omitted. Source: `landing/llms.txt:209`
+- An aggregation-bearing kNN always runs the exact scan, and no performance claim exists for that path. Source: `landing/llms.txt:270`
 
 ## Related
 

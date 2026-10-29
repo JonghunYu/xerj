@@ -32,7 +32,7 @@
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="XERJ.ai · Docs · Analyzers">
@@ -245,7 +245,7 @@
   <p>Splits on any non-letter. Lowercases. Good for mixed-punctuation inputs where you don't want the standard analyzer's tokenizer rules.</p>
 
   <h2>english</h2>
-  <p>Standard + English stemming (Porter2) + a slightly larger stop-word list. Use when you want "running" and "runs" to match. Disable with <code class="inline">[indexing] turbo_fast_analyzer = true</code> to trade recall for ingest speed — the turbo path skips stemming for documents classified as log-shaped.</p>
+  <p>Standard + English stemming (Porter2) + a slightly larger stop-word list. Use when you want "running" and "runs" to match. Disable with <code class="inline">[indexing] turbo_fast_analyzer = true</code> to trade recall for ingest speed: the turbo path skips stemming for documents classified as log-shaped.</p>
 
   <h2>Per-field override</h2>
 <pre class="code">{

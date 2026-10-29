@@ -55,7 +55,7 @@ faq:
     a: "No. The default embedder is lexical feature hashing, so a query matches terms and phrases. Neural retrieval is opt-in through `--embed-mode neural`."
 ---
 
-**TL;DR** — `xerj autoindex` makes the contents of a folder searchable in one command. In a captured run over a folder of 6 formats, XERJ indexed 51 documents into 2 indices with 0 junk files. One `match_phrase` query then returned 3 hits from an HTML file, a JSON file and a Markdown file.
+**TL;DR**: `xerj autoindex` makes the contents of a folder searchable in one command. In a captured run over a folder of 6 formats, XERJ indexed 51 documents into 2 indices with 0 junk files. One `match_phrase` query then returned 3 hits from an HTML file, a JSON file and a Markdown file.
 
 ## One command indexes the folder
 

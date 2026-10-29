@@ -12,7 +12,7 @@ source: "content/answers/check-codebase-index-is-complete.md"
 
 **Key number:** Source files above 2 MiB are not parsed for symbols (`CODE_CAP`), one of the documented reasons a file can be missing from the code fields. (as of 2026-10-19; source: [engine/crates/xerj-autoindex/src/extract/code.rs](https://github.com/xerj-org/xerj/blob/main/engine/crates/xerj-autoindex/src/extract/code.rs))
 
-**TL;DR** — Reconcile 4 numbers before you trust an "indexed" status: files on disk, the `--dry-run` plan, `xerj autoindex status`, and the document count in `_cat/indices`. A captured XERJ run turned 64 non-hidden files into a 3-file plan, and every missing file had a named ignore rule.
+**TL;DR**: Reconcile 4 numbers before you trust an "indexed" status: files on disk, the `--dry-run` plan, `xerj autoindex status`, and the document count in `_cat/indices`. A captured XERJ run turned 64 non-hidden files into a 3-file plan, and every missing file had a named ignore rule.
 
 ## Agent prompt
 

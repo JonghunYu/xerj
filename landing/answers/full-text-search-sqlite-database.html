@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Full-text search a SQLite database (FTS5 alternative)">
@@ -230,9 +230,9 @@
     <p>How do I full-text search a SQLite database? Run xerj autoindex on it: the file is read read-only and each table becomes an index. In a captured WAL-mode run XERJ created sq-tickets with 400 documents and sq-agents with 13, left all 3 files byte-identical, and missed rows still in the write-ahead log.</p>
     <p class="key-fact"><strong>Key number:</strong> XERJ maps each existing SQLite table without an FTS5 virtual table, keeping up to 512 fields per record (<code class="inline">MAX_FIELDS_PER_RECORD</code>). <span class="mute">(as of 2026-10-19 · source: <a href="https://github.com/xerj-org/xerj/blob/main/engine/crates/xerj-autoindex/src/extract/mod.rs">engine/crates/xerj-autoindex/src/extract/mod.rs</a>)</span></p>
   </div>
-  <p><strong>TL;DR</strong> — <code class="inline">xerj autoindex</code> reads a SQLite file read-only and turns each table into an index. In a captured WAL-mode run, XERJ created <code class="inline">sq-tickets</code> with 400 documents and <code class="inline">sq-agents</code> with 13, and left all 3 source files byte-identical. Rows still resident in the write-ahead log were absent.</p>
+  <p><strong>TL;DR</strong>: <code class="inline">xerj autoindex</code> reads a SQLite file read-only and turns each table into an index. In a captured WAL-mode run, XERJ created <code class="inline">sq-tickets</code> with 400 documents and <code class="inline">sq-agents</code> with 13, and left all 3 source files byte-identical. Rows still resident in the write-ahead log were absent.</p>
   <div class="prompt-card">
-    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT — IT DOES THE REST</span>
+    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT. IT DOES THE REST</span>
     <code>Act as a coding agent. Read https://xerj.org/llms.txt, run sqlite3 on the target database with PRAGMA wal_checkpoint(TRUNCATE) so no committed row is left in the -wal file, record sha256sum of the .db, -wal and -shm files, start a local XERJ node, run `xerj autoindex ./sqlite --url http://127.0.0.1:9200 --prefix sq --progress plain`, compare the checksums again, then POST a match_phrase query to /sq-*/_search and report the hit total against the row count you expected.</code>
     <button type="button" class="prompt-copy" data-copy="Act as a coding agent. Read https://xerj.org/llms.txt, run sqlite3 on the target database with PRAGMA wal_checkpoint(TRUNCATE) so no committed row is left in the -wal file, record sha256sum of the .db, -wal and -shm files, start a local XERJ node, run `xerj autoindex ./sqlite --url http://127.0.0.1:9200 --prefix sq --progress plain`, compare the checksums again, then POST a match_phrase query to /sq-*/_search and report the hit total against the row count you expected.">COPY THE PROMPT</button>
   </div>

@@ -32,7 +32,7 @@
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="XERJ · Docs · For AI · Endpoint contract">
@@ -226,7 +226,7 @@
   <div class="kicker"><span>FOR AI · 03</span></div>
   <h1>Endpoint contract</h1>
 
-  <p>The exact wire contract for the six <em>HTTP</em> agent operations plus the data endpoints they build on, and the three MCP-only <a href="#hub-tools">Corpus Hub tools</a>. The seventh canonical operation, <code class="inline">xerj_autoindex</code>, is a CLI subcommand with no endpoint — its contract is in the <a href="/docs/recipes/zero-config-autoindex">zero-config indexing recipe</a>. Everything is on port <code class="inline">9200</code>, JSON in and JSON out. Optional fields are marked <code class="inline">?</code>. Response shapes are shown as they actually come back from a live XERJ.</p>
+  <p>The exact wire contract for the six <em>HTTP</em> agent operations plus the data endpoints they build on, and the three MCP-only <a href="#hub-tools">Corpus Hub tools</a>. The seventh canonical operation, <code class="inline">xerj_autoindex</code>, is a CLI subcommand with no endpoint. Its contract is in the <a href="/docs/recipes/zero-config-autoindex">zero-config indexing recipe</a>. Everything is on port <code class="inline">9200</code>, JSON in and JSON out. Optional fields are marked <code class="inline">?</code>. Response shapes are shown as they actually come back from a live XERJ.</p>
 
   <h2>At a glance</h2>
   <div class="api">
@@ -236,27 +236,27 @@
 
     <div class="cell m">POST</div>
     <div class="cell p"><a href="#search">/:index/_search</a></div>
-    <div class="cell dsc"><code class="inline">xerj_search</code> — keyword / structured (<code class="inline">match</code>, <code class="inline">term</code>, <code class="inline">bool</code>, <code class="inline">range</code>).</div>
+    <div class="cell dsc"><code class="inline">xerj_search</code>: keyword / structured (<code class="inline">match</code>, <code class="inline">term</code>, <code class="inline">bool</code>, <code class="inline">range</code>).</div>
 
     <div class="cell m">POST</div>
     <div class="cell p"><a href="#semantic">/:index/_search</a></div>
-    <div class="cell dsc"><code class="inline">xerj_semantic_search</code> — <code class="inline">semantic</code> query; server embeds the query text.</div>
+    <div class="cell dsc"><code class="inline">xerj_semantic_search</code>: <code class="inline">semantic</code> query; server embeds the query text.</div>
 
     <div class="cell m">POST</div>
     <div class="cell p"><a href="#vector">/:index/_search</a></div>
-    <div class="cell dsc"><code class="inline">xerj_vector_search</code> — top-level <code class="inline">knn</code>; HNSW-served with exact rescoring when unfiltered, exact scan when filtered.</div>
+    <div class="cell dsc"><code class="inline">xerj_vector_search</code>: top-level <code class="inline">knn</code>; HNSW-served with exact rescoring when unfiltered, exact scan when filtered.</div>
 
     <div class="cell m">POST</div>
     <div class="cell p"><a href="#hybrid">/:index/_search</a></div>
-    <div class="cell dsc"><code class="inline">xerj_hybrid_search</code> — <code class="inline">hybrid</code> query; <code class="inline">rrf</code> or <code class="inline">linear</code> fusion.</div>
+    <div class="cell dsc"><code class="inline">xerj_hybrid_search</code>: <code class="inline">hybrid</code> query; <code class="inline">rrf</code> or <code class="inline">linear</code> fusion.</div>
 
     <div class="cell m">POST</div>
     <div class="cell p"><a href="#memory-store">/_memory/:ns</a></div>
-    <div class="cell dsc"><code class="inline">xerj_memory_store</code> — store a memory (text auto-embedded).</div>
+    <div class="cell dsc"><code class="inline">xerj_memory_store</code>: store a memory (text auto-embedded).</div>
 
     <div class="cell m">POST</div>
     <div class="cell p"><a href="#memory-recall">/_memory/:ns/_recall</a></div>
-    <div class="cell dsc"><code class="inline">xerj_memory_recall</code> — recall top-k by meaning / keyword / vector.</div>
+    <div class="cell dsc"><code class="inline">xerj_memory_recall</code>: recall top-k by meaning / keyword / vector.</div>
 
     <div class="cell m">GET</div>
     <div class="cell p"><a href="#memory-list">/_memory/:ns</a></div>
@@ -280,7 +280,7 @@
   </div>
   <p class="source-note">Routes: engine/crates/xerj-api/src/router.rs · handlers: es_compat.rs, memory_api.rs</p>
 
-  <h2 id="search">xerj_search — keyword &amp; structured</h2>
+  <h2 id="search">xerj_search: keyword &amp; structured</h2>
   <p>Standard ES query DSL on <code class="inline">POST /{index}/_search</code>: <code class="inline">match</code> (BM25 full-text), <code class="inline">term</code>/<code class="inline">terms</code> (exact), <code class="inline">range</code>, <code class="inline">bool</code> (<code class="inline">must</code>/<code class="inline">should</code>/<code class="inline">must_not</code>/<code class="inline">filter</code>), plus <code class="inline">from</code>, <code class="inline">size</code>, <code class="inline">sort</code>, <code class="inline">_source</code>, <code class="inline">aggs</code>, <code class="inline">highlight</code>. See the full <a href="/docs/queries">query-types reference</a>.</p>
 <pre class="code">POST /notes/_search
 {"query": {"match": {"body": "deployment"}}, "size": 5, "_source": ["body"]}
@@ -289,8 +289,8 @@
             "hits": [{"_id": "1", "_score": 0.28…,
                       "_source": {"body": "How do I roll back a bad deployment?"}}]}}</pre>
 
-  <h2 id="semantic">xerj_semantic_search — retrieve by meaning</h2>
-  <p>Requires a field mapped as <code class="inline">semantic_text</code> (see <a href="#data">creating an index</a>). XERJ auto-embeds that field on ingest into a companion <code class="inline">&lt;field&gt;_vector</code>; the <code class="inline">semantic</code> query embeds the query text the same way and ranks by vector similarity — <strong>no client-side embedding, no external key.</strong></p>
+  <h2 id="semantic">xerj_semantic_search: retrieve by meaning</h2>
+  <p>Requires a field mapped as <code class="inline">semantic_text</code> (see <a href="#data">creating an index</a>). XERJ auto-embeds that field on ingest into a companion <code class="inline">&lt;field&gt;_vector</code>; the <code class="inline">semantic</code> query embeds the query text the same way and ranks by vector similarity: <strong>no client-side embedding, no external key.</strong></p>
   <table>
     <thead><tr><th>Field</th><th>Type</th><th>Meaning</th></tr></thead>
     <tbody>
@@ -306,9 +306,9 @@
  "_source": ["body"]}
 
 → top hit _id "2" — "Reverting a broken release to the previous version." (shares no words)</pre>
-  <p><strong>Honesty:</strong> the zero-config built-in embedder is deterministic and lexical, not a large neural model — great for offline, reproducible retrieval. For production semantic quality, map the field with an <code class="inline">inference_id</code> / <code class="inline">inference_endpoint</code> pointing at your own OpenAI-compatible embeddings service; the query shape is unchanged.</p>
+  <p><strong>Honesty:</strong> the zero-config built-in embedder is deterministic and lexical, not a large neural model: great for offline, reproducible retrieval. For production semantic quality, map the field with an <code class="inline">inference_id</code> / <code class="inline">inference_endpoint</code> pointing at your own OpenAI-compatible embeddings service; the query shape is unchanged.</p>
 
-  <h2 id="vector">xerj_vector_search — kNN</h2>
+  <h2 id="vector">xerj_vector_search: kNN</h2>
   <p>Bring your own embeddings: map a <code class="inline">dense_vector</code> field, store vectors on each doc, and pass a <code class="inline">query_vector</code> as a <strong>top-level</strong> <code class="inline">knn</code> block (ES 8.x shape).</p>
   <table>
     <thead><tr><th>Field</th><th>Type</th><th>Meaning</th></tr></thead>
@@ -324,9 +324,9 @@
  "_source": ["body"]}
 
 → [("1", 1.0), ("2", 0.9998)]   # exact cosine scores</pre>
-  <p><strong>Honesty:</strong> unfiltered <code class="inline">knn</code> is <strong>HNSW-served (approximate) with exact rescoring</strong> — measured recall@10 1.00 on the official bench query, 100-probe mean 0.976; recall is measured, not guaranteed, and <code class="inline">num_candidates</code> sets the beam width (floored at 800). Filtered kNN, non-cosine metrics, SQ8 fields, and indexes under 1,024 docs run the <strong>exact brute-force scan</strong> (recall 1.00; latency scales with vectors scanned).</p>
+  <p><strong>Honesty:</strong> unfiltered <code class="inline">knn</code> is <strong>HNSW-served (approximate) with exact rescoring</strong>: measured recall@10 1.00 on the official bench query, 100-probe mean 0.976; recall is measured, not guaranteed, and <code class="inline">num_candidates</code> sets the beam width (floored at 800). Filtered kNN, non-cosine metrics, SQ8 fields, and indexes under 1,024 docs run the <strong>exact brute-force scan</strong> (recall 1.00; latency scales with vectors scanned).</p>
 
-  <h2 id="hybrid">xerj_hybrid_search — fuse keyword + vector</h2>
+  <h2 id="hybrid">xerj_hybrid_search: fuse keyword + vector</h2>
   <p>Run several sub-queries and fuse their rankings in one call. Each entry in <code class="inline">queries</code> is <code class="inline">{"query": {…}, "weight"?: float}</code>; <code class="inline">fusion</code> is <code class="inline">"rrf"</code> (reciprocal-rank fusion, default) or <code class="inline">"linear"</code> (weighted score sum).</p>
 <pre class="code">POST /notes/_search
 {"query": {"hybrid": {
@@ -366,7 +366,7 @@
   <table>
     <thead><tr><th>Field</th><th>Type</th><th>Meaning</th></tr></thead>
     <tbody>
-      <tr><td><code class="inline">query</code>?</td><td>string</td><td>Text query — BM25, or embedded when <code class="inline">semantic:true</code>.</td></tr>
+      <tr><td><code class="inline">query</code>?</td><td>string</td><td>Text query: BM25, or embedded when <code class="inline">semantic:true</code>.</td></tr>
       <tr><td><code class="inline">semantic</code>?</td><td>bool</td><td>Embed <code class="inline">query</code> server-side and recall by similarity.</td></tr>
       <tr><td><code class="inline">vector</code>?</td><td>float[]</td><td>Recall by kNN against a supplied embedding. Wins over <code class="inline">query</code>.</td></tr>
       <tr><td><code class="inline">k</code>?</td><td>int</td><td>Number of memories to return (default 10).</td></tr>
@@ -380,10 +380,10 @@
 → {"hits": [{"id": "77eff57b-…", "text": "The user prefers metric units and a dark UI theme.",
              "metadata": {"kind": "preference"}, "score": 0.6555…}],
    "namespace": "agent-demo"}</pre>
-  <p>Recall of an unknown namespace returns <code class="inline">{"hits": [], "namespace": …}</code> — isolation is structural: each namespace is a physically separate index, so a recall in one can never read another.</p>
+  <p>Recall of an unknown namespace returns <code class="inline">{"hits": [], "namespace": …}</code>, isolation is structural: each namespace is a physically separate index, so a recall in one can never read another.</p>
 
   <h2 id="memory-list">List a namespace</h2>
-  <p><code class="inline">GET /_memory/{namespace}</code> returns a bounded, recent-first view for debugging/audit (up to 100 entries) — not a full export.</p>
+  <p><code class="inline">GET /_memory/{namespace}</code> returns a bounded, recent-first view for debugging/audit (up to 100 entries), not a full export.</p>
 <pre class="code">GET /_memory/agent-demo
 → {"namespace": "agent-demo", "exists": true, "count": 2,
    "entries": [{"id": "…", "text": "…", "metadata": {…}, "score": 1.0}, …]}</pre>

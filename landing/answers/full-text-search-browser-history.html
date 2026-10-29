@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Can I full-text search my browser history file?">
@@ -230,9 +230,9 @@
     <p>Is there a way to full-text search my browser history? Copy Chrome's History SQLite file and run xerj autoindex on the folder. A captured run returned 60 hits for a title phrase and 1 for an exact URL, left all 3 source checksums unchanged, and found no page text, because Chrome stores none.</p>
     <p class="key-fact"><strong>Key number:</strong> Each record keeps at most 512 fields (<code class="inline">MAX_FIELDS_PER_RECORD</code>), so even a wide SQLite table maps without schema work. <span class="mute">(as of 2026-10-19 · source: <a href="https://github.com/xerj-org/xerj/blob/main/engine/crates/xerj-autoindex/src/extract/mod.rs">engine/crates/xerj-autoindex/src/extract/mod.rs</a>)</span></p>
   </div>
-  <p><strong>TL;DR</strong> — Copy the Chrome <code class="inline">History</code> SQLite file, then run <code class="inline">xerj autoindex</code> on the folder. A captured run returned 60 hits for a title phrase and 1 hit for an exact URL. All 3 source checksums were unchanged, and <code class="inline">body</code> returned 0 documents because Chrome stores no page text.</p>
+  <p><strong>TL;DR</strong>: Copy the Chrome <code class="inline">History</code> SQLite file, then run <code class="inline">xerj autoindex</code> on the folder. A captured run returned 60 hits for a title phrase and 1 hit for an exact URL. All 3 source checksums were unchanged, and <code class="inline">body</code> returned 0 documents because Chrome stores no page text.</p>
   <div class="prompt-card">
-    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT — IT DOES THE REST</span>
+    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT. IT DOES THE REST</span>
     <code>Act as a coding agent. Read https://xerj.org/llms.txt, close the browser, copy the Chrome History file and its -wal and -shm side files to a scratch folder, record sha256 of all 3, start a local XERJ node, run `xerj autoindex ./browser-history --url http://127.0.0.1:9200 --prefix bh --progress plain`, re-record the checksums, then POST a match_phrase on title, a term on url, and an exists query on body, and report the hit totals plus the row count in the source urls table.</code>
     <button type="button" class="prompt-copy" data-copy="Act as a coding agent. Read https://xerj.org/llms.txt, close the browser, copy the Chrome History file and its -wal and -shm side files to a scratch folder, record sha256 of all 3, start a local XERJ node, run `xerj autoindex ./browser-history --url http://127.0.0.1:9200 --prefix bh --progress plain`, re-record the checksums, then POST a match_phrase on title, a term on url, and an exists query on body, and report the hit totals plus the row count in the source urls table.">COPY THE PROMPT</button>
   </div>

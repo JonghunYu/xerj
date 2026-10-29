@@ -1,0 +1,328 @@
+#!/usr/bin/env python3
+"""No em dashes in xerj.org site copy.
+
+The site is written in plain, short sentences.  An em dash (``—``) and an
+en dash used as a dash (``a – b``) are two of the most common tells of
+machine-written prose, and the house style (docs/research/writing-corpus-2026-09)
+already says most of them should be a full stop.  This module finds them so the
+generators can refuse new ones:
+
+* ``build_articles.py`` fails the build when an article source under
+  ``content/`` carries one (``--check`` runs in CI).
+* ``seo_lint.py`` gates hand-written pages under ``landing/`` (rule
+  ``copy.dash``).
+* ``ste_check.py`` reports one as STE140 while drafting.
+
+What counts as copy: visible prose, headings, table cells, frontmatter titles,
+descriptions, FAQ answers and evidence claims, alt/title/aria-label/placeholder
+text and head metadata.  What does not: fenced and inline code, ``<pre>``,
+``<code>``, ``<kbd>``, ``<samp>``, scripts, styles, SVG, HTML comments,
+terminal blocks styled as code (``class="code"``, ``zt-term``, ``asx-code``),
+Markdown blockquotes (verbatim third-party quotes), and frontmatter fields that
+must match a source byte for byte (``cmd``, ``source``, ``slug`` …).  A number
+range (``20–25``) is an en dash doing its job and is allowed.
+
+Fix a finding by rewriting the sentence: a full stop, a comma, a colon or
+parentheses.  Do not swap in ``--`` or ``-``.
+
+    python3 scripts/seo/copy_dashes.py              # every file in scope
+    python3 scripts/seo/copy_dashes.py FILE ...     # just these
+    python3 scripts/seo/copy_dashes.py --self-test
+"""
+
+from __future__ import annotations
+
+import pathlib
+import re
+import sys
+
+REPO = pathlib.Path(__file__).resolve().parents[2]
+
+#: An em dash in any spelling, or an en dash with a space on either side
+#: (``a – b``, ``a –b``).  ``20–25`` is a range and is not matched.
+DASH_RE = re.compile(
+    r"—|&mdash;|&#8212;|&#x2014;"
+    r"|(?<=\s)(?:–|&ndash;|&#8211;|&#x2013;)|(?:–|&ndash;|&#8211;|&#x2013;)(?=\s)",
+    re.I,
+)
+
+#: Files an open pull request is already rewriting.  They were left alone by
+#: the site-wide clean-up to avoid merge conflicts; each one is checked again
+#: as soon as it is clean, and the entry should be deleted then.  The checks
+#: print a note when a listed file no longer needs its entry.  Do not add new
+#: entries: fix the copy instead.
+PENDING: frozenset[str] = frozenset({
+    # Rewritten by open PRs #2615 (seo/keyword-gaps-agentic-memory) and
+    # #2617 (seo/rework-underperforming-1028); both remove these dashes.
+    "content/answers/agent-memory-without-postgres-qdrant.md",
+    "content/answers/ask-questions-about-a-github-repo-without-cloning.md",
+    "content/answers/autoindex-server-back-pressure-429.md",
+    "content/answers/batch-lookup-cve-ghsa-ids-offline.md",
+    "content/answers/classify-text-from-labelled-history-without-llm.md",
+    "content/answers/code-search-mcp-for-claude-code.md",
+    "content/answers/coding-agent-memory-across-sessions.md",
+    "content/answers/give-chatgpt-claude-local-file-access.md",
+    "content/answers/how-xerj-autoindexes-a-folder.md",
+    "content/answers/hybrid-search-quality-measured-ndcg.md",
+    "content/answers/improve-basic-faiss-rag-pipeline.md",
+    "content/answers/index-multiple-csv-files.md",
+    "content/answers/local-code-search-mcp-fewer-tokens-than-grep.md",
+    "content/answers/local-embeddings-without-openai-api.md",
+    "content/answers/local-search-mcp-for-codex-and-cursor.md",
+    "content/answers/mcp-api-search-or-vector-search.md",
+    "content/answers/rag-without-vector-database.md",
+    "content/answers/read-indexed-email-and-pdf-folder.md",
+    "content/answers/reciprocal-rank-fusion-when-to-use.md",
+    "content/answers/reduce-embedding-api-cost.md",
+    "content/answers/reindex-taking-forever.md",
+    "content/answers/rerank-search-results-calibrated-judge.md",
+    "content/answers/resume-interrupted-autoindex-run.md",
+    "content/answers/search-bvh-motion-capture-files.md",
+    "content/answers/search-engine-without-docker.md",
+    "content/answers/search-github-issues-and-prs-locally.md",
+    "content/answers/search-gzip-logs-without-zgrep.md",
+    "content/answers/search-jupyter-notebook-cells.md",
+    "content/answers/search-kubernetes-pod-logs-on-disk.md",
+    "content/answers/search-openapi-spec-for-agent.md",
+    "content/answers/search-unity-project-assets.md",
+    "content/answers/search-word-documents-in-a-folder.md",
+    "content/answers/set-mcp-memory-storage-path.md",
+    "content/answers/share-folder-read-only-search-without-uploading.md",
+    "content/answers/store-agent-memory-without-llm-call.md",
+    "content/answers/what-is-xerj.md",
+    "content/compare/best-grep-alternative-for-ai-coding-agents-2026.md",
+    "content/compare/best-mcp-server-local-code-search-2026.md",
+    "content/compare/xerj-vs-ast-grep.md",
+    "content/compare/xerj-vs-docfetcher.md",
+    "content/compare/xerj-vs-houdahspot.md",
+    "content/compare/xerj-vs-khoj.md",
+    "content/compare/xerj-vs-localsynapse.md",
+    "content/compare/xerj-vs-meilisearch.md",
+    "content/compare/xerj-vs-obsidian-omnisearch.md",
+    "content/compare/xerj-vs-pagefind.md",
+    "content/compare/xerj-vs-recoll.md",
+    "content/compare/xerj-vs-ripgrep-all.md",
+    "content/compare/xerj-vs-spotlight.md",
+    "content/compare/xerj-vs-typesense.md",
+    "content/compare/xerj-vs-vector-database.md",
+    "content/compare/xerj-vs-web-agent-search.md",
+    "landing/benchmarks/elasticsearch.html",
+    "landing/blog/corpus-hub-v2.html",
+    "landing/blog/the-corpus-hub.html",
+    "landing/blog/the-rc80-gates.html",
+    "landing/case-studies/wordpress-security-audit.html",
+    "landing/for-agents.html",
+    "landing/llms-full.txt",
+    "landing/llms.txt",
+    "landing/use-cases.html",
+})
+
+#: Frontmatter keys whose values must match a source verbatim or are not prose.
+EXEMPT_KEYS = frozenset("""
+    cmd source slug key_fact_source canonical updated published key_fact_date
+    intent author reviewer schema_type og_image
+""".split())
+
+GENERATED_RE = re.compile(r"\A<!-- generated by build_articles\.py")
+_FM_KV_RE = re.compile(r"^\s*(?:-\s+)?([A-Za-z_][\w-]*)\s*:\s*(.*)$")
+_INLINE_CODE_RE = re.compile(r"`[^`\n]*`")
+_URL_RE = re.compile(r"https?://\S+|\]\([^)\s]*\)")
+_COMMENT_RE = re.compile(r"<!--.*?-->", re.S)
+_SKIP_ELEMENTS = ("script", "style", "pre", "code", "kbd", "samp", "textarea", "svg")
+_CODE_CLASS_RE = re.compile(
+    r'<(div|span|p)\b[^>]*\bclass="(?:code|zt-term|asx-code)(?:\s[^"]*)?"[^>]*>', re.I)
+
+
+def _blank(m: re.Match) -> str:
+    """Replace a match with spaces, keeping newlines so line numbers hold."""
+    return re.sub(r"[^\n]", "x", m.group(0))
+
+
+def _hits(text: str, line_of) -> list[tuple[int, str]]:
+    out = []
+    for m in DASH_RE.finditer(text):
+        lo = text.rfind("\n", 0, m.start()) + 1
+        hi = text.find("\n", m.end())
+        excerpt = text[lo:hi if hi != -1 else len(text)].strip()
+        out.append((line_of(m.start()), excerpt[:160]))
+    return out
+
+
+def markdown_findings(text: str) -> list[tuple[int, str]]:
+    """``(line, excerpt)`` for each dash in Markdown copy (frontmatter included)."""
+    findings: list[tuple[int, str]] = []
+    lines = text.split("\n")
+    in_fm = bool(lines) and lines[0].strip() == "---"
+    fence = None
+    for idx, line in enumerate(lines, start=1):
+        if in_fm:
+            if idx > 1 and line.strip() in ("---", "..."):
+                in_fm = False
+                continue
+            m = _FM_KV_RE.match(line)
+            if m and m.group(1) in EXEMPT_KEYS:
+                continue
+            if not m and line.lstrip().startswith("- "):
+                continue  # plain list items (search queries) are user phrasing
+            scan = line
+        else:
+            stripped = line.lstrip()
+            marker = re.match(r"(`{3,}|~{3,})", stripped)
+            if fence:
+                if marker and marker.group(1)[0] == fence[0] and len(marker.group(1)) >= len(fence):
+                    fence = None
+                continue
+            if marker:
+                fence = marker.group(1)
+                continue
+            if stripped.startswith(">"):
+                continue  # blockquotes carry verbatim quotes
+            scan = line
+        scan = _COMMENT_RE.sub(_blank, scan)
+        scan = _INLINE_CODE_RE.sub(_blank, scan)
+        scan = _URL_RE.sub(_blank, scan)
+        for _, excerpt in _hits(scan, lambda _o: idx):
+            findings.append((idx, line.strip()[:160]))
+    return findings
+
+
+def _mask_element(text: str, tag: str) -> str:
+    return re.sub(r"<%s\b[^>]*>.*?</%s\s*>" % (tag, tag), _blank, text, flags=re.I | re.S)
+
+
+def _mask_code_classes(text: str) -> str:
+    pos = 0
+    while True:
+        m = _CODE_CLASS_RE.search(text, pos)
+        if not m:
+            return text
+        tag = m.group(1).lower()
+        depth, end = 0, len(text)
+        for t in re.finditer(r"<(/?)%s\b[^>]*>" % tag, text[m.start():], re.I):
+            depth += -1 if t.group(1) else 1
+            if depth == 0:
+                end = m.start() + t.end()
+                break
+        chunk = text[m.start():end]
+        text = text[:m.start()] + re.sub(r"[^\n]", "x", chunk) + text[end:]
+        pos = end
+
+
+def html_findings(text: str) -> list[tuple[int, str]]:
+    """``(line, excerpt)`` for each dash in HTML copy, head metadata included."""
+    original = text
+    text = _COMMENT_RE.sub(_blank, text)
+    for tag in _SKIP_ELEMENTS:
+        text = _mask_element(text, tag)
+    text = _mask_code_classes(text)
+
+    def line_of(offset: int) -> int:
+        return original.count("\n", 0, offset) + 1
+
+    out = []
+    for m in DASH_RE.finditer(text):
+        ln = line_of(m.start())
+        out.append((ln, original.split("\n")[ln - 1].strip()[:160]))
+    return out
+
+
+def findings_for(path: pathlib.Path) -> list[tuple[int, str]]:
+    text = path.read_text(encoding="utf-8", errors="replace")
+    if path.suffix.lower() == ".html":
+        return html_findings(text)
+    return markdown_findings(text)
+
+
+def rel(path: pathlib.Path) -> str:
+    try:
+        return path.resolve().relative_to(REPO).as_posix()
+    except ValueError:
+        return path.as_posix()
+
+
+def landing_files(landing: pathlib.Path) -> list[pathlib.Path]:
+    """Hand-written site copy: every .html/.md/.txt that build_articles did not write."""
+    out = []
+    for f in sorted(landing.rglob("*")):
+        if not f.is_file() or f.suffix.lower() not in (".html", ".md", ".txt"):
+            continue
+        if f.name == "robots.txt":
+            continue
+        head = f.read_text(encoding="utf-8", errors="replace")[:200]
+        if GENERATED_RE.match(head):
+            continue  # its source under content/ is what gets checked
+        out.append(f)
+    return out
+
+
+def check(paths: list[pathlib.Path]) -> tuple[list[str], list[str]]:
+    """Returns (problems, notes).  Problems fail the caller; notes do not."""
+    problems, notes = [], []
+    for p in paths:
+        r = rel(p)
+        hits = findings_for(p)
+        if r in PENDING:
+            if not hits:
+                notes.append(f"{r}: listed in copy_dashes.PENDING but already clean; "
+                             f"delete the entry")
+            continue
+        for line, excerpt in hits:
+            problems.append(f"{r}:{line}: em dash or spaced en dash in site copy; "
+                            f"rewrite with a full stop, comma, colon or parentheses: "
+                            f"{excerpt!r}")
+    return problems, notes
+
+
+def self_test() -> int:
+    failures = []
+
+    def ok(cond: bool, msg: str) -> None:
+        if not cond:
+            failures.append(msg)
+
+    ok(markdown_findings("A thing — another thing.\n"), "md: em dash must be found")
+    ok(markdown_findings("A thing &mdash; another.\n"), "md: &mdash; must be found")
+    ok(markdown_findings("A thing – another.\n"), "md: spaced en dash must be found")
+    ok(not markdown_findings("Pages 20–25 hold it.\n"), "md: a number range is allowed")
+    ok(not markdown_findings("Run `a — b` now.\n"), "md: inline code is exempt")
+    ok(not markdown_findings("```\nout — put\n```\n"), "md: fences are exempt")
+    ok(not markdown_findings("> They said — verbatim.\n"), "md: blockquotes are exempt")
+    ok(markdown_findings('---\ntitle: "A — B"\n---\nBody.\n'), "md: frontmatter title is copy")
+    ok(not markdown_findings('---\ncmd: "a — b"\n---\nBody.\n'), "md: cmd is exempt")
+    ok(markdown_findings('---\nfaq:\n  - q: "Why?"\n    a: "Because — yes."\n---\n'),
+       "md: FAQ answers are copy")
+    ok(html_findings("<p>One — two.</p>"), "html: em dash in a paragraph must be found")
+    ok(html_findings('<meta name="description" content="A — B">'), "html: meta is copy")
+    ok(html_findings('<img alt="A — B" src="x.png">'), "html: alt text is copy")
+    ok(not html_findings("<pre>a — b</pre><code>c — d</code>"), "html: code is exempt")
+    ok(not html_findings("<!-- seo:begin — generated -->"), "html: comments are exempt")
+    ok(not html_findings('<div class="code"><div>x — y</div></div>'), "html: code blocks are exempt")
+    ok(not html_findings("<script>var a = 'x — y';</script>"), "html: scripts are exempt")
+    if failures:
+        print("SELF-TEST FAILED:")
+        for f in failures:
+            print("  - " + f)
+        return 1
+    print("SELF-TEST PASSED")
+    return 0
+
+
+def main(argv: list[str] | None = None) -> int:
+    argv = list(sys.argv[1:] if argv is None else argv)
+    if "--self-test" in argv:
+        return self_test()
+    if argv:
+        paths = [pathlib.Path(a) for a in argv]
+    else:
+        paths = landing_files(REPO / "landing") + sorted((REPO / "content").rglob("*.md"))
+    problems, notes = check(paths)
+    for n in notes:
+        print("note: " + n)
+    for p in problems:
+        print(p)
+    print(f"copy_dashes: {len(paths)} file(s), {len(problems)} finding(s)")
+    return 1 if problems else 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

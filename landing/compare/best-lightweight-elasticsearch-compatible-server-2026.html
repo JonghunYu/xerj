@@ -319,9 +319,9 @@
     <p class="key-fact"><strong>Key number:</strong> XERJ passes 1444 of 1454 Elasticsearch YAML conformance cases on every commit; OpenSearch, the full-API option, has 13,892 GitHub stars and released 3.9.0 on 2026-09-29. <span class="mute">(as of 2026-10-23 · source: <a href="https://github.com/xerj-org/xerj/blob/main/README.md">README.md</a>)</span></p>
     <p class="mute">Last checked: 2026-10-19. Every third-party fact on this page was re-read from the tool's own docs or repository on that date.</p>
   </div>
-  <p><strong>TL;DR</strong> — "Elasticsearch-compatible" means a different slice of the API for each server. OpenSearch keeps the whole API and the cluster. ZincSearch and XERJ are small single nodes. Quickwit and OpenObserve are built for logs on object storage. Manticore is SQL-first with Elasticsearch-compatible writes.</p>
+  <p><strong>TL;DR</strong>: "Elasticsearch-compatible" means a different slice of the API for each server. OpenSearch keeps the whole API and the cluster. ZincSearch and XERJ are small single nodes. Quickwit and OpenObserve are built for logs on object storage. Manticore is SQL-first with Elasticsearch-compatible writes.</p>
   <div class="prompt-card">
-    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT — IT DOES THE REST</span>
+    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT. IT DOES THE REST</span>
     <code>Act as a coding agent. Read https://xerj.org/llms.txt, then pick an Elasticsearch-compatible server for this project from the table on this page: OpenSearch if you need the full API and a cluster, ZincSearch or XERJ for one small node, Quickwit or OpenObserve for logs on object storage, Manticore if you prefer SQL. Check which Elasticsearch endpoints your client actually calls before you choose.</code>
     <button type="button" class="prompt-copy" data-copy="Act as a coding agent. Read https://xerj.org/llms.txt, then pick an Elasticsearch-compatible server for this project from the table on this page: OpenSearch if you need the full API and a cluster, ZincSearch or XERJ for one small node, Quickwit or OpenObserve for logs on object storage, Manticore if you prefer SQL. Check which Elasticsearch endpoints your client actually calls before you choose.">COPY THE PROMPT</button>
   </div>
@@ -381,15 +381,15 @@
   <p>No. Manticore, Quickwit and OpenObserve publish their own speed and cost comparisons against Elasticsearch. This page quotes none of them as fact and ran no cross-vendor benchmark.</p>
   <h2>Evidence</h2>
   <ul>
-    <li>OpenSearch is Apache-2.0, includes Apache-licensed Elasticsearch code, and runs as a single node with docker run and discovery.type=single-node. — <a href="https://github.com/opensearch-project/OpenSearch">https://github.com/opensearch-project/OpenSearch</a></li>
-    <li>ZincSearch is a single binary, is compatible with the Elasticsearch APIs for ingestion (single record and bulk), does not support Kibana, has no high availability, and its README lists hundreds of GBs as the maximum data supported. — <a href="https://github.com/zincsearch/zincsearch">https://github.com/zincsearch/zincsearch</a></li>
-    <li>Quickwit exposes an Elasticsearch-compatible API subset, searches indexes on object storage such as Amazon S3, and offers high availability for search, and for indexing only with a Kafka source. — <a href="https://github.com/quickwit-oss/quickwit">https://github.com/quickwit-oss/quickwit</a></li>
-    <li>Manticore Search is SQL-first and MySQL-compatible, offers an HTTP JSON API with Elasticsearch-compatible writes, and is distributed under GPLv3 or later. — <a href="https://github.com/manticoresoftware/manticoresearch">https://github.com/manticoresoftware/manticoresearch</a></li>
-    <li>OpenObserve is an AGPL-3.0 observability platform for logs, metrics and traces with Parquet columnar storage on S3-compatible object storage. — <a href="https://github.com/openobserve/openobserve">https://github.com/openobserve/openobserve</a></li>
-    <li>Elasticsearch's default licence is a choice of AGPL-3.0, SSPL v1 or Elastic License 2.0, and start-local runs it with Kibana in Docker for local development. — <a href="https://github.com/elastic/elasticsearch">https://github.com/elastic/elasticsearch</a></li>
-    <li>XERJ's conformance suite runs on every commit and passes 1444 of 1454 cases. — <code>README.md</code></li>
-    <li>The published board against a live Elasticsearch 8.13.4 at 100,000 documents on one host is 55 wins, 26 ties, 4 losses and 3 not-applicable across 88 cells. — <code>demo/playbooks/SCORECARD.md</code></li>
-    <li>In the JSONL benchmark of 2026-10-19 the XERJ node peaked at 9,578,548 kB (about 9.1 GiB) resident while indexing one 9.7 MB file of 50,000 records. — <code>benchmarks/best-of-jsonl-search-2026/README.md</code></li>
+    <li>OpenSearch is Apache-2.0, includes Apache-licensed Elasticsearch code, and runs as a single node with docker run and discovery.type=single-node. Source: <a href="https://github.com/opensearch-project/OpenSearch">https://github.com/opensearch-project/OpenSearch</a></li>
+    <li>ZincSearch is a single binary, is compatible with the Elasticsearch APIs for ingestion (single record and bulk), does not support Kibana, has no high availability, and its README lists hundreds of GBs as the maximum data supported. Source: <a href="https://github.com/zincsearch/zincsearch">https://github.com/zincsearch/zincsearch</a></li>
+    <li>Quickwit exposes an Elasticsearch-compatible API subset, searches indexes on object storage such as Amazon S3, and offers high availability for search, and for indexing only with a Kafka source. Source: <a href="https://github.com/quickwit-oss/quickwit">https://github.com/quickwit-oss/quickwit</a></li>
+    <li>Manticore Search is SQL-first and MySQL-compatible, offers an HTTP JSON API with Elasticsearch-compatible writes, and is distributed under GPLv3 or later. Source: <a href="https://github.com/manticoresoftware/manticoresearch">https://github.com/manticoresoftware/manticoresearch</a></li>
+    <li>OpenObserve is an AGPL-3.0 observability platform for logs, metrics and traces with Parquet columnar storage on S3-compatible object storage. Source: <a href="https://github.com/openobserve/openobserve">https://github.com/openobserve/openobserve</a></li>
+    <li>Elasticsearch's default licence is a choice of AGPL-3.0, SSPL v1 or Elastic License 2.0, and start-local runs it with Kibana in Docker for local development. Source: <a href="https://github.com/elastic/elasticsearch">https://github.com/elastic/elasticsearch</a></li>
+    <li>XERJ's conformance suite runs on every commit and passes 1444 of 1454 cases. Source: <code>README.md</code></li>
+    <li>The published board against a live Elasticsearch 8.13.4 at 100,000 documents on one host is 55 wins, 26 ties, 4 losses and 3 not-applicable across 88 cells. Source: <code>demo/playbooks/SCORECARD.md</code></li>
+    <li>In the JSONL benchmark of 2026-10-19 the XERJ node peaked at 9,578,548 kB (about 9.1 GiB) resident while indexing one 9.7 MB file of 50,000 records. Source: <code>benchmarks/best-of-jsonl-search-2026/README.md</code></li>
   </ul>
   <h2>Related</h2>
   <ul>

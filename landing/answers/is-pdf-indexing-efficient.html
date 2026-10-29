@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Is it efficient to index PDF files?">
@@ -238,9 +238,9 @@
     <p>Is it inefficient to index PDF files into a search engine? Compared with opening every file by hand, no, though PDF is the slowest family XERJ parses. Extraction runs in an isolated worker process sized from free memory, capped five ways, and each file is parsed once. Image-only PDFs are refused with a reason string.</p>
     <p class="key-fact"><strong>Key number:</strong> XERJ runs at most 4 concurrent PDF worker processes (<code class="inline">MAX_PDF_WORKERS</code>) and reads at most 100,000 pages per file (<code class="inline">MAX_PAGES</code>). <span class="mute">(as of 2026-10-19 · source: <a href="https://github.com/xerj-org/xerj/blob/main/engine/crates/xerj-autoindex/src/resources.rs">engine/crates/xerj-autoindex/src/resources.rs</a>)</span></p>
   </div>
-  <p><strong>TL;DR</strong> — Yes, when the alternative is opening every file by hand, and PDF is still the slowest family XERJ parses. XERJ isolates extraction in a worker process, caps it 5 ways, and parses each file once. In our capture 3 born-digital PDFs produced 9 documents, and the 4th file failed with a reason string.</p>
+  <p><strong>TL;DR</strong>: Yes, when the alternative is opening every file by hand, and PDF is still the slowest family XERJ parses. XERJ isolates extraction in a worker process, caps it 5 ways, and parses each file once. In our capture 3 born-digital PDFs produced 9 documents, and the 4th file failed with a reason string.</p>
   <div class="prompt-card">
-    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT — IT DOES THE REST</span>
+    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT. IT DOES THE REST</span>
     <code>Act as a coding agent. Read https://xerj.org/llms.txt, start a XERJ node with --insecure, run xerj autoindex on a PDF folder with --prefix pdfx, then query autoindex-catalog for doc_kind run and report pdf_workers, resource_notes, wall_seconds and the pdf_extraction_reuse counters, and query doc_kind file with status junk to report every PDF that failed and its reason string.</code>
     <button type="button" class="prompt-copy" data-copy="Act as a coding agent. Read https://xerj.org/llms.txt, start a XERJ node with --insecure, run xerj autoindex on a PDF folder with --prefix pdfx, then query autoindex-catalog for doc_kind run and report pdf_workers, resource_notes, wall_seconds and the pdf_extraction_reuse counters, and query doc_kind file with status junk to report every PDF that failed and its reason string.">COPY THE PROMPT</button>
   </div>

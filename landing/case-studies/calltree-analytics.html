@@ -14,7 +14,7 @@
 <!-- ga4:end -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>XERJ.ai — Case study: semantic analytics in one request</title>
+<title>XERJ.ai · Case study: semantic analytics in one request</title>
 <meta name="description" content="kNN and aggregations in a single POST /_search: a deep-research question over 130 synthetic support conversations. A correctness demo, not a benchmark.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,16 +38,16 @@
 <link rel="canonical" href="https://xerj.org/case-studies/calltree-analytics">
 <meta property="og:site_name" content="XERJ.ai">
 <meta property="og:type" content="article">
-<meta property="og:title" content="XERJ.ai — Case study: semantic analytics in one request">
+<meta property="og:title" content="XERJ.ai · Case study: semantic analytics in one request">
 <meta property="og:description" content="kNN and aggregations in a single POST /_search: a deep-research question over 130 synthetic support conversations. A correctness demo, not a benchmark.">
 <meta property="og:url" content="https://xerj.org/case-studies/calltree-analytics">
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="XERJ.ai — Case study: semantic analytics in one request">
+<meta name="twitter:title" content="XERJ.ai · Case study: semantic analytics in one request">
 <meta name="twitter:description" content="kNN and aggregations in a single POST /_search: a deep-research question over 130 synthetic support conversations. A correctness demo, not a benchmark.">
 <meta name="twitter:image" content="https://xerj.org/og/xerj-card.png">
 <script type="application/ld+json">
@@ -83,7 +83,7 @@
 {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "XERJ.ai — Case study: semantic analytics in one request",
+  "headline": "XERJ.ai · Case study: semantic analytics in one request",
   "description": "kNN and aggregations in a single POST /_search: a deep-research question over 130 synthetic support conversations. A correctness demo, not a benchmark.",
   "url": "https://xerj.org/case-studies/calltree-analytics",
   "image": "https://xerj.org/og/xerj-card.png",
@@ -170,7 +170,7 @@
 <div class="uc-hero">
   <div class="uc-eyebrow">CASE STUDY · SEMANTIC ANALYTICS</div>
   <h1>DEEP RESEARCH.<br><span class="accent">ONE REQUEST.</span></h1>
-  <p class="uc-lead">"Of calls about wifi issues, how many are 2.4GHz vs 5GHz, and what are the key issues?" One question bundles retrieval, aggregation, labeling and evidence — normally an OLAP engine plus a vector store, with ETL between them. In XERJ it is one <code class="inline">POST /_search</code>: slice, breakdown, metrics and evidence come back together.</p>
+  <p class="uc-lead">"Of calls about wifi issues, how many are 2.4GHz vs 5GHz, and what are the key issues?" One question bundles retrieval, aggregation, labeling and evidence: normally an OLAP engine plus a vector store, with ETL between them. In XERJ it is one <code class="inline">POST /_search</code>: slice, breakdown, metrics and evidence come back together.</p>
   <div class="kicker"><span>FOR</span><span class="dash">·</span><span>AI-OVER-SUPPORT TEAMS</span><span class="dash">·</span><span>DATA PLATFORM ENGINEERS</span></div>
 </div>
 
@@ -246,7 +246,7 @@
   <div class="stat">
     <div class="num">0</div>
     <div class="label">ETL JOBS</div>
-    <div class="ctx">columns, text and vectors live in one store — nothing to sync</div>
+    <div class="ctx">columns, text and vectors live in one store. Nothing to sync</div>
   </div>
 
 </div>
@@ -254,7 +254,7 @@
 
 <section class="scene-section">
   <h2 class="scene" style="font-size:var(--fs-56);">ONE REQUEST, <span class="accent">WHOLE ANSWER.</span></h2>
-  <p class="wide"><code class="inline">query.knn</code> retrieves the semantic slice; the <code class="inline">aggs</code> block computes the band split, key issues, CSAT percentile and handle-time average over that slice; <code class="inline">size: 3</code> returns the evidence hits. Demonstrated live with real 768-dim vectors — XERJ stores and searches them, it does not embed, so retrieval quality is your embedding model's job (EmbeddingGemma is a stand-in for yours).</p>
+  <p class="wide"><code class="inline">query.knn</code> retrieves the semantic slice; the <code class="inline">aggs</code> block computes the band split, key issues, CSAT percentile and handle-time average over that slice; <code class="inline">size: 3</code> returns the evidence hits. Demonstrated live with real 768-dim vectors. XERJ stores and searches them, it does not embed, so retrieval quality is your embedding model's job (EmbeddingGemma is a stand-in for yours).</p>
 
   <pre class="code">curl -s localhost:9200/conversations/_search -H 'Content-Type: application/json' -d '{
   "query": { "<span class="k">knn</span>": { "field": "vec", "query_vector": [<span class="comment">/* embed("wifi issues...") */</span>],
@@ -290,7 +290,7 @@ deep-research narrative (LLM over the retrieved examples):
     <div class="n">02</div>
     <div class="law">
       <div class="t">BUCKETS COUNT <span class="accent">THE SLICE.</span></div>
-      <div class="b">Aggregations count only the retrieved top-k neighbour set, and <code class="inline">hits.total.value</code> echoes k — the 80 is the request parameter coming back, not a corpus match count.</div>
+      <div class="b">Aggregations count only the retrieved top-k neighbour set, and <code class="inline">hits.total.value</code> echoes k: the 80 is the request parameter coming back, not a corpus match count.</div>
     </div>
     <div class="n">03</div>
     <div class="law">
@@ -300,14 +300,14 @@ deep-research narrative (LLM over the retrieved examples):
     <div class="n">04</div>
     <div class="law">
       <div class="t">SYNTHETIC, <span class="accent">NOT EXCLUSIVE.</span></div>
-      <div class="b">The numbers are artifacts, not findings. ES/OpenSearch or Postgres + pgvector can express this shape too — what differs is cost model and operational weight, not possibility.</div>
+      <div class="b">The numbers are artifacts, not findings. ES/OpenSearch or Postgres + pgvector can express this shape too: what differs is cost model and operational weight, not possibility.</div>
     </div>
   </div>
 </section>
 
 <section class="scene-section">
   <h2 class="scene" style="font-size:var(--fs-56);">READ THE <span class="accent">WALKTHROUGH.</span></h2>
-  <p class="wide">The question came from calltree.ai, who run AI over support interactions — a motivating party, not a customer. The walkthrough has the three runnable scripts, the recorded output and the scaling guide. XERJ on :9200 plus Ollama is the whole stack.</p>
+  <p class="wide">The question came from calltree.ai, who run AI over support interactions: a motivating party, not a customer. The walkthrough has the three runnable scripts, the recorded output and the scaling guide. XERJ on :9200 plus Ollama is the whole stack.</p>
   <div style="display:flex; gap:var(--sp-6); margin-top:var(--sp-6); flex-wrap:wrap;">
     <a href="https://github.com/xerj-org/xerj/tree/main/docs/case-studies/calltree-analytics" rel="external" class="cta" style="font-size:var(--fs-20); padding:var(--sp-4) 0; border-bottom:0; flex:1; min-width:280px;">
       <span>OPEN THE WALKTHROUGH</span>
@@ -323,7 +323,7 @@ deep-research narrative (LLM over the retrieved examples):
 <section class="lead-capture" id="demo">
   <div class="kicker"><span>READY?</span><span class="dash">·</span><span>REQUEST ACCESS</span></div>
   <h3>RUN IT ON<br><span class="accent">YOUR CONVERSATIONS.</span></h3>
-  <p>Send us your mapping and one deep-research question. We'll send back the single-request version — kNN + aggs over your schema — with the scripts to reproduce it.</p>
+  <p>Send us your mapping and one deep-research question. We'll send back the single-request version (kNN + aggs over your schema) with the scripts to reproduce it.</p>
   <form class="lead-form" id="leadForm" action="#" method="post" novalidate>
     <div class="lead-form-input">
       <input type="email" name="email" placeholder="you@company.com" required aria-label="Work email" autocomplete="email" />

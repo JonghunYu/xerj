@@ -15,7 +15,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>XERJ · Docs · Recipe · Continuous anomaly datafeeds</title>
-<meta name="description" content="Run an Elasticsearch _ml datafeed on XERJ to score a live metric index continuously — one pass now, then a timer that appends only newly flagged buckets.">
+<meta name="description" content="Run an Elasticsearch _ml datafeed on XERJ to score a live metric index continuously: one pass now, then a timer that appends only newly flagged buckets.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;700;800;900&family=Inter:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -27,16 +27,16 @@
 <meta property="og:site_name" content="XERJ.ai">
 <meta property="og:type" content="article">
 <meta property="og:title" content="XERJ · Docs · Recipe · Continuous anomaly datafeeds">
-<meta property="og:description" content="Run an Elasticsearch _ml datafeed on XERJ to score a live metric index continuously — one pass now, then a timer that appends only newly flagged buckets.">
+<meta property="og:description" content="Run an Elasticsearch _ml datafeed on XERJ to score a live metric index continuously: one pass now, then a timer that appends only newly flagged buckets.">
 <meta property="og:url" content="https://xerj.org/docs/recipes/continuous-anomaly-datafeeds">
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="XERJ · Docs · Recipe · Continuous anomaly datafeeds">
-<meta name="twitter:description" content="Run an Elasticsearch _ml datafeed on XERJ to score a live metric index continuously — one pass now, then a timer that appends only newly flagged buckets.">
+<meta name="twitter:description" content="Run an Elasticsearch _ml datafeed on XERJ to score a live metric index continuously: one pass now, then a timer that appends only newly flagged buckets.">
 <meta name="twitter:image" content="https://xerj.org/og/xerj-card.png">
 <script type="application/ld+json">
 {
@@ -72,7 +72,7 @@
   "@context": "https://schema.org",
   "@type": "TechArticle",
   "headline": "XERJ · Docs · Recipe · Continuous anomaly datafeeds",
-  "description": "Run an Elasticsearch _ml datafeed on XERJ to score a live metric index continuously — one pass now, then a timer that appends only newly flagged buckets.",
+  "description": "Run an Elasticsearch _ml datafeed on XERJ to score a live metric index continuously: one pass now, then a timer that appends only newly flagged buckets.",
   "url": "https://xerj.org/docs/recipes/continuous-anomaly-datafeeds",
   "image": "https://xerj.org/og/xerj-card.png",
   "inLanguage": "en",
@@ -234,14 +234,14 @@
   <h1>Continuous anomaly datafeeds</h1>
 
 
-  <p><strong>Goal:</strong> you already know how to score a metric series for anomalies on demand (see <a href="/docs/recipes/anomaly-detection">Detect a spike in a metric series</a> — you POST <code class="inline">_score</code> and get the whole timeline back). But a dashboard or an alerting loop doesn't want to <em>ask</em> every time; it wants the engine to keep watching a live index and hand you new anomalies as they appear. That's a <strong>datafeed</strong>.</p>
+  <p><strong>Goal:</strong> you already know how to score a metric series for anomalies on demand (see <a href="/docs/recipes/anomaly-detection">Detect a spike in a metric series</a>. You POST <code class="inline">_score</code> and get the whole timeline back). But a dashboard or an alerting loop doesn't want to <em>ask</em> every time; it wants the engine to keep watching a live index and hand you new anomalies as they appear. That's a <strong>datafeed</strong>.</p>
 
-  <p>XERJ ships the Elasticsearch <code class="inline">_ml/datafeeds</code> surface. A datafeed references an existing anomaly-detection job (a detector), reads from one or more <code class="inline">indices</code> through an optional <code class="inline">query</code>, and runs on a fixed <code class="inline">frequency</code>. When you <code class="inline">_start</code> it, XERJ scores the series once immediately and then keeps re-scoring on a timer, appending only the <strong>newly</strong> flagged buckets to the job's results — which you read back with <code class="inline">GET /_ml/anomaly_detectors/{job}/results/records</code>. Same transparent moving mean/stddev z-score as the on-demand path; now it runs itself.</p>
+  <p>XERJ ships the Elasticsearch <code class="inline">_ml/datafeeds</code> surface. A datafeed references an existing anomaly-detection job (a detector), reads from one or more <code class="inline">indices</code> through an optional <code class="inline">query</code>, and runs on a fixed <code class="inline">frequency</code>. When you <code class="inline">_start</code> it, XERJ scores the series once immediately and then keeps re-scoring on a timer, appending only the <strong>newly</strong> flagged buckets to the job's results, which you read back with <code class="inline">GET /_ml/anomaly_detectors/{job}/results/records</code>. Same transparent moving mean/stddev z-score as the on-demand path; now it runs itself.</p>
 
-  <p><strong>Honest scope.</strong> The scoring is the same deterministic moving-window z-score as <code class="inline">_score</code> — a great fit for "this metric jumped relative to its recent self," not a seasonal/multivariate model. Results are held <strong>in memory</strong> (bounded to the last ~10k records per job) and the background scorer is a per-node <strong>tokio task</strong>: results and running datafeeds do <strong>not</strong> survive a restart (a reloaded datafeed comes back <code class="inline">stopped</code>, and <code class="inline">_start</code> begins a fresh run). This is single-node — there is no cross-node datafeed scheduler. It is exactly what you want for a live dashboard or a self-contained alert loop on one node; it is not a replacement for a clustered, durable ML pipeline.</p>
+  <p><strong>Honest scope.</strong> The scoring is the same deterministic moving-window z-score as <code class="inline">_score</code>: a great fit for "this metric jumped relative to its recent self," not a seasonal/multivariate model. Results are held <strong>in memory</strong> (bounded to the last ~10k records per job) and the background scorer is a per-node <strong>tokio task</strong>: results and running datafeeds do <strong>not</strong> survive a restart (a reloaded datafeed comes back <code class="inline">stopped</code>, and <code class="inline">_start</code> begins a fresh run). This is single-node. There is no cross-node datafeed scheduler. It is exactly what you want for a live dashboard or a self-contained alert loop on one node; it is not a replacement for a clustered, durable ML pipeline.</p>
 
   <h2>The scenario</h2>
-  <p><code class="inline">cpu_datafeed</code> collects one CPU reading per minute. For sixteen minutes it sits around 20%, with a runaway spike to <strong>96%</strong> at minute 12. We create a detector, attach a datafeed, and start it. Then — while the datafeed is running — a <strong>second</strong> spike (88%) lands at minute 20, and we watch the datafeed find it on its own.</p>
+  <p><code class="inline">cpu_datafeed</code> collects one CPU reading per minute. For sixteen minutes it sits around 20%, with a runaway spike to <strong>96%</strong> at minute 12. We create a detector, attach a datafeed, and start it. Then (while the datafeed is running) a <strong>second</strong> spike (88%) lands at minute 20, and we watch the datafeed find it on its own.</p>
 
   <h2>1. Map the index and create the detector</h2>
   <p>The time field must be a <code class="inline">date</code>; the metric must be numeric. The detector is the same object as in the on-demand recipe: <code class="inline">mean(cpu)</code> over one-minute buckets.</p>
@@ -262,7 +262,7 @@ curl -XPUT localhost:9200/_ml/anomaly_detectors/cpu-spike \
   }'</pre>
 
   <h2>2. Create the datafeed</h2>
-  <p>A datafeed needs a <code class="inline">job_id</code> (which must reference an existing detector — else <code class="inline">404</code>). <code class="inline">indices</code> defaults to the detector's <code class="inline">source_index</code>, <code class="inline">query</code> to <code class="inline">match_all</code>, and <code class="inline">frequency</code> parses an ES time value (<code class="inline">"2s"</code>, <code class="inline">"5m"</code>, …; clamped to <code class="inline">&gt;= 1s</code>, default <code class="inline">60s</code>).</p>
+  <p>A datafeed needs a <code class="inline">job_id</code> (which must reference an existing detector: else <code class="inline">404</code>). <code class="inline">indices</code> defaults to the detector's <code class="inline">source_index</code>, <code class="inline">query</code> to <code class="inline">match_all</code>, and <code class="inline">frequency</code> parses an ES time value (<code class="inline">"2s"</code>, <code class="inline">"5m"</code>, …; clamped to <code class="inline">&gt;= 1s</code>, default <code class="inline">60s</code>).</p>
 <pre class="code">curl -XPUT localhost:9200/_ml/datafeeds/cpu-spike-feed \
   -H 'Content-Type: application/json' -d '{
     "job_id":    "cpu-spike",
@@ -278,7 +278,7 @@ curl -XPUT localhost:9200/_ml/anomaly_detectors/cpu-spike \
   "frequency": "2s"
 }</pre>
 
-  <h2>3. Start it — one pass now, then a timer</h2>
+  <h2>3. Start it: one pass now, then a timer</h2>
   <p><code class="inline">_start</code> marks the datafeed <code class="inline">started</code>, runs <strong>one scoring pass synchronously</strong> (so results are immediately queryable), and spawns a background task that re-scores every <code class="inline">frequency</code>.</p>
 <pre class="code">curl -XPOST localhost:9200/_ml/datafeeds/cpu-spike-feed/_start
 # -&gt; {"started": true}</pre>
@@ -304,10 +304,10 @@ curl -XPUT localhost:9200/_ml/anomaly_detectors/cpu-spike \
     }
   ]
 }</pre>
-  <p>Each record reuses the fields the <code class="inline">_score</code> endpoint emits per bucket, plus the ES <code class="inline">record_score</code> (the 0–100 severity, mirrored as <code class="inline">anomaly_score</code>), the <code class="inline">result_type</code> tag, and <code class="inline">typical</code> (ES's name for the baseline <code class="inline">expected</code>). Those values are deterministic for this fixed series — this exact record is what the run below prints.</p>
+  <p>Each record reuses the fields the <code class="inline">_score</code> endpoint emits per bucket, plus the ES <code class="inline">record_score</code> (the 0–100 severity, mirrored as <code class="inline">anomaly_score</code>), the <code class="inline">result_type</code> tag, and <code class="inline">typical</code> (ES's name for the baseline <code class="inline">expected</code>). Those values are deterministic for this fixed series. This exact record is what the run below prints.</p>
 
   <h2>4. The continuous part</h2>
-  <p>Now push a <strong>new</strong> spike into the live index — without touching the datafeed:</p>
+  <p>Now push a <strong>new</strong> spike into the live index, without touching the datafeed:</p>
 <pre class="code">curl -XPOST 'localhost:9200/_bulk?refresh=true' \
   -H 'Content-Type: application/x-ndjson' --data-binary $'
 {"index":{"_index":"cpu_datafeed"}}
@@ -316,8 +316,8 @@ curl -XPUT localhost:9200/_ml/anomaly_detectors/cpu-spike \
   <p>Within one <code class="inline">frequency</code> tick the background scorer re-buckets the series, sees the new bucket, and appends it. Poll again a couple of seconds later:</p>
 <pre class="code">curl 'localhost:9200/_ml/anomaly_detectors/cpu-spike/results/records'
 # -&gt; count: 2  (the 00:12 spike AND the new 00:20 spike)</pre>
-  <p>The datafeed tracks the highest bucket timestamp it has already scored, so each pass appends only the <strong>new</strong> anomalies — the 00:12 record is never duplicated.</p>
-  <p><strong>A note on freshness.</strong> XERJ's read path caches aggregation results keyed by <code class="inline">(query, dataset_version)</code>, and version only bumps on a segment flush — so an <em>identical</em> query repeated against an index that has only taken unflushed (in-memory) writes can be served a cached result. Because a datafeed re-issues the same query every tick, its scorer deliberately requests an <strong>uncached</strong> read so it always sees the newest buckets. (The on-demand <code class="inline">_score</code> endpoint is unchanged and remains cache-eligible.)</p>
+  <p>The datafeed tracks the highest bucket timestamp it has already scored, so each pass appends only the <strong>new</strong> anomalies, the 00:12 record is never duplicated.</p>
+  <p><strong>A note on freshness.</strong> XERJ's read path caches aggregation results keyed by <code class="inline">(query, dataset_version)</code>, and version only bumps on a segment flush, so an <em>identical</em> query repeated against an index that has only taken unflushed (in-memory) writes can be served a cached result. Because a datafeed re-issues the same query every tick, its scorer deliberately requests an <strong>uncached</strong> read so it always sees the newest buckets. (The on-demand <code class="inline">_score</code> endpoint is unchanged and remains cache-eligible.)</p>
 
   <h2>5. Filter and cap the results</h2>
   <p><code class="inline">results/records</code> accepts a <code class="inline">record_score</code> floor (query param or JSON body) and a <code class="inline">size</code> cap:</p>
@@ -335,10 +335,10 @@ curl localhost:9200/_cat/ml/datafeeds
 
 curl -XDELETE localhost:9200/_ml/datafeeds/cpu-spike-feed
 # {"acknowledged": true}</pre>
-  <p>A datafeed must be stopped before it can be deleted — deleting a <code class="inline">started</code> datafeed returns <code class="inline">409</code>, exactly like Elasticsearch.</p>
+  <p>A datafeed must be stopped before it can be deleted: deleting a <code class="inline">started</code> datafeed returns <code class="inline">409</code>, exactly like Elasticsearch.</p>
 
   <h2>Reproduce it yourself</h2>
-  <p>Two shells, no external packages — the <a href="https://github.com/xerj-org/xerj/blob/main/docs/examples/continuous-anomaly-datafeeds/datafeed_demo.py">example script</a> is pure Python 3 standard library (no <code class="inline">pip install</code>, no third-party service, no API key).</p>
+  <p>Two shells, no external packages: the <a href="https://github.com/xerj-org/xerj/blob/main/docs/examples/continuous-anomaly-datafeeds/datafeed_demo.py">example script</a> is pure Python 3 standard library (no <code class="inline">pip install</code>, no third-party service, no API key).</p>
 <pre class="code"># 1. Start a throwaway XERJ (listens on :9200 by default)
 xerj --insecure
 
@@ -347,7 +347,7 @@ python3 docs/examples/continuous-anomaly-datafeeds/datafeed_demo.py
 
 # Point it at a different host/port with XERJ_URL (XERJ still works as an alias):
 XERJ_URL=http://localhost:9200 python3 docs/examples/continuous-anomaly-datafeeds/datafeed_demo.py</pre>
-  <p>The script maps the index, ingests the series with the first spike, creates the detector and datafeed, starts it, dumps the first anomaly record in full, injects the second spike into the live index, polls until the running datafeed picks it up on its own, then filters/caps the results, stops, deletes, and <strong>asserts</strong> both spikes were detected — the second without a second <code class="inline">_start</code>. It exits non-zero if any of that regresses, so it doubles as a smoke test.</p>
+  <p>The script maps the index, ingests the series with the first spike, creates the detector and datafeed, starts it, dumps the first anomaly record in full, injects the second spike into the live index, polls until the running datafeed picks it up on its own, then filters/caps the results, stops, deletes, and <strong>asserts</strong> both spikes were detected: the second without a second <code class="inline">_start</code>. It exits non-zero if any of that regresses, so it doubles as a smoke test.</p>
   <p>The metric series is fixed, so the numbers are deterministic run to run: the 00:12 bucket scores <code class="inline">actual 96.0</code> against <code class="inline">expected 20.25</code> (<code class="inline">std_dev 1.1636866703140785</code>, <code class="inline">z_score 65.09</code>, <code class="inline">record_score 100.0</code>) and the continuously-detected 00:20 bucket scores <code class="inline">actual 88.0</code> against the same baseline. Only the wall time (~2s, one or two <code class="inline">2s</code> scorer ticks) varies.</p>
   <p>Expected output:</p>
 <pre class="code">datafeed cpu-spike-feed -&gt; job cpu-spike (every 2s), state=stopped

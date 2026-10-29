@@ -41,7 +41,7 @@ evidence:
     source: "demo/playbooks/SCORECARD.md"
   - claim: "The four losses are the mixed read-under-write p99 cells, a known architectural gap where live-memtable reads sit behind the writer's per-shard lock."
     source: "demo/playbooks/SCORECARD.md"
-  - claim: "The #948 ingest RSS runaway is fixed (PR #1002, shipped v1.0.0-rc.76: at-rest retention after a 100k-doc ingest fell ~677 to ~108 MB), but the server still retains heap per indexed document — three per-segment caches are unbounded until a merge retires their segment, an open tracked defect as issue #1032."
+  - claim: "The #948 ingest RSS runaway is fixed (PR #1002, shipped v1.0.0-rc.76: at-rest retention after a 100k-doc ingest fell ~677 to ~108 MB), but the server still retains heap per indexed document, three per-segment caches are unbounded until a merge retires their segment, an open tracked defect as issue #1032."
     source: "landing/llms.txt:53"
   - claim: "An Elasticsearch index is a logical grouping of physical shards distributed across nodes, and a replica shard is a copy of a primary shard."
     source: "https://www.elastic.co/guide/en/elasticsearch/reference/8.13/scalability.html"
@@ -72,7 +72,7 @@ faq:
     a: "When you read while a heavy writer runs, when you need more than one host, or when your corpus grows past a few million documents."
 ---
 
-**TL;DR** — One published board measures both engines on one host: 55 wins, 26 ties, 4 losses and 3 not-applicable across 88 cells against a live Elasticsearch 8.13.4 at 100,000 documents. Every one of the 4 losses is read p99 under a write flood. XERJ is single-node only.
+**TL;DR**: One published board measures both engines on one host: 55 wins, 26 ties, 4 losses and 3 not-applicable across 88 cells against a live Elasticsearch 8.13.4 at 100,000 documents. Every one of the 4 losses is read p99 under a write flood. XERJ is single-node only.
 
 ## What the board measures, and what it does not
 

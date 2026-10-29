@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Code search MCP for Claude Code: cite file:line, not grep">
@@ -232,7 +232,7 @@
   </div>
   <p><strong>TL;DR</strong> — Index the repository with <code class="inline">xerj autoindex</code>, then register <code class="inline">xerj mcp</code> as an MCP server in the agent host. One captured <code class="inline">xerj_search</code> call on the <code class="inline">defs</code> field returned 2 documents. Each carried a <code class="inline">symbols</code> array with file and line, including <code class="inline">merge_segments</code> at <code class="inline">src/lib.rs</code> line 17.</p>
   <div class="prompt-card">
-    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT — IT DOES THE REST</span>
+    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT. IT DOES THE REST</span>
     <code>Act as a coding agent. Read https://xerj.org/llms.txt, index this repository with xerj autoindex --prefix mcpcode, add xerj mcp to your MCP host with the absolute binary path, then answer 'where is merge_segments defined' with one xerj_search call on the defs field and quote the file and line from the symbols array without opening the file.</code>
     <button type="button" class="prompt-copy" data-copy="Act as a coding agent. Read https://xerj.org/llms.txt, index this repository with xerj autoindex --prefix mcpcode, add xerj mcp to your MCP host with the absolute binary path, then answer &#x27;where is merge_segments defined&#x27; with one xerj_search call on the defs field and quote the file and line from the symbols array without opening the file.">COPY THE PROMPT</button>
   </div>

@@ -12,7 +12,7 @@ source: "content/answers/verify-ai-report-claims-against-sources.md"
 
 **Key number:** 3 of 5 body phrases were found in the docs index; the first check took 490 ms. (as of 2026-10-20; source: [benchmarks/agent-queries-2026-10-20/08-claims.jsonl](https://github.com/xerj-org/xerj/blob/main/benchmarks/agent-queries-2026-10-20/08-claims.jsonl))
 
-**TL;DR** — Verify claims in a report against the saved sources. Index those files, then run one `match_phrase` per claim. A claim with no hit is unverified. On 2026-10-20, 3 of 5 phrases were in the docs index and 2 were not. The first check took 490 ms.
+**TL;DR**: Verify claims in a report against the saved sources. Index those files, then run one `match_phrase` per claim. A claim with no hit is unverified. On 2026-10-20, 3 of 5 phrases were in the docs index and 2 were not. The first check took 490 ms.
 
 ## Agent prompt
 
@@ -113,9 +113,9 @@ No. There is no score for how well a report follows its sources. You get found o
 
 ## Evidence
 
-- The first body phrase took 490 ms and the second took 485 ms. — `benchmarks/agent-queries-2026-10-20/08-claims.jsonl`
-- Three later body phrases took 1 ms each. — `benchmarks/agent-queries-2026-10-20/08-claims.jsonl`
-- The docs folder index finished in 14.3 s. — `benchmarks/agent-queries-2026-10-20/02-autoindex-docs.txt`
+- The first body phrase took 490 ms and the second took 485 ms. Source: `benchmarks/agent-queries-2026-10-20/08-claims.jsonl`
+- Three later body phrases took 1 ms each. Source: `benchmarks/agent-queries-2026-10-20/08-claims.jsonl`
+- The docs folder index finished in 14.3 s. Source: `benchmarks/agent-queries-2026-10-20/02-autoindex-docs.txt`
 
 ## Related
 

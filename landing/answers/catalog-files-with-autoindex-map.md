@@ -12,7 +12,7 @@ source: "content/answers/catalog-files-with-autoindex-map.md"
 
 **Key number:** Type inference keeps at most 512 fields per dataset (`MAX_FIELDS_PER_DATASET`), so a map never lists more than that for one dataset. (as of 2026-10-19; source: [engine/crates/xerj-autoindex/src/infer/mod.rs](https://github.com/xerj-org/xerj/blob/main/engine/crates/xerj-autoindex/src/infer/mod.rs))
 
-**TL;DR** — `xerj autoindex map` prints the catalog that the last run inferred. In our capture the map described 2 datasets from a 6-file folder. Each dataset carried every field with its type, its cardinality, its null share and a ready-to-send query.
+**TL;DR**: `xerj autoindex map` prints the catalog that the last run inferred. In our capture the map described 2 datasets from a 6-file folder. Each dataset carried every field with its type, its cardinality, its null share and a ready-to-send query.
 
 ## Agent prompt
 
@@ -64,8 +64,8 @@ The map opens with the run header, then lists one row per dataset, then one fiel
 
 | index | documents | files | formats | time field | time range |
 | --- | --- | --- | --- | --- | --- |
-| `mx-data` | 41 | 1 | `["csv"]` | — | — |
-| `mx-docs` | 10 | 5 | `["code","html","json","txt-prose","yaml"]` | — | — |
+| `mx-data` | 41 | 1 | `["csv"]` | n/a | n/a |
+| `mx-docs` | 10 | 5 | `["code","html","json","txt-prose","yaml"]` | n/a | n/a |
 
 The document counts in that table come from a capture taken before XERJ began writing one document per code declaration. A source file now contributes one document for every declaration it holds on top of its whole-file document, so the dataset carrying the `code` file produces more documents than the row shows. The CSV row is unaffected. Read the count from your own map.
 

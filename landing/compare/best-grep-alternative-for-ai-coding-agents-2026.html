@@ -321,7 +321,7 @@
   </div>
   <p><strong>TL;DR</strong> — For a one-off literal search, ripgrep is still the right tool, and nothing here replaces it. The alternatives win different jobs: ugrep for Boolean and fuzzy queries, ast-grep and Semgrep for syntax patterns, zoekt for a ranked index over many repositories, XERJ for ranked passages behind an MCP server.</p>
   <div class="prompt-card">
-    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT — IT DOES THE REST</span>
+    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT. IT DOES THE REST</span>
     <code>Act as a coding agent. Read https://xerj.org/llms.txt, then choose a search tool for this repository from the table on this page: keep ripgrep for one-off literal searches, ast-grep or Semgrep for syntax patterns, zoekt for a ranked trigram index over many repositories, XERJ for ranked passages over code plus docs and data files through MCP. Report which one you chose and why.</code>
     <button type="button" class="prompt-copy" data-copy="Act as a coding agent. Read https://xerj.org/llms.txt, then choose a search tool for this repository from the table on this page: keep ripgrep for one-off literal searches, ast-grep or Semgrep for syntax patterns, zoekt for a ranked trigram index over many repositories, XERJ for ranked passages over code plus docs and data files through MCP. Report which one you chose and why.">COPY THE PROMPT</button>
   </div>
@@ -382,13 +382,13 @@
   <p>No head-to-head benchmark was run for this page. The ripgrep numbers come from the published 30-task comparison and the 1,303-byte answer from the psf/requests capture, both linked on this page.</p>
   <h2>Evidence</h2>
   <ul>
-    <li>ripgrep installs with brew install ripgrep, apt-get install ripgrep or cargo install ripgrep. — <a href="https://github.com/BurntSushi/ripgrep">https://github.com/BurntSushi/ripgrep</a></li>
-    <li>ugrep supports Google-like Boolean query patterns with AND, OR and NOT, fuzzy search, searching archives and compressed files, searching PDF and Office documents, and includes a file indexer for slow and cold file systems. — <a href="https://github.com/Genivia/ugrep">https://github.com/Genivia/ugrep</a></li>
-    <li>ast-grep installs with brew install ast-grep or cargo install ast-grep --locked. — <a href="https://github.com/ast-grep/ast-grep">https://github.com/ast-grep/ast-grep</a></li>
-    <li>Semgrep ships an MCP server that lets AI coding assistants run Semgrep scans; semgrep mcp starts it locally. — <a href="https://github.com/semgrep/semgrep">https://github.com/semgrep/semgrep</a></li>
-    <li>zoekt is based on trigram indexing and syntactic parsing, installs with go install, and recommends Universal ctags because symbol information is a key signal in ranking search results. — <a href="https://github.com/sourcegraph/zoekt">https://github.com/sourcegraph/zoekt</a></li>
-    <li>On one 331-file code tree ripgrep and the XERJ index named the same files on 18 of 30 disclosed tasks, and ripgrep 14.1.1 won 5 outright. — <a href="/compare/xerj-vs-ripgrep-for-code-agents">/compare/xerj-vs-ripgrep-for-code-agents</a></li>
-    <li>On psf/requests one XERJ answer was 1,303 bytes where rg printed 25,150. — <a href="/answers/local-code-search-mcp-fewer-tokens-than-grep">/answers/local-code-search-mcp-fewer-tokens-than-grep</a></li>
+    <li>ripgrep installs with brew install ripgrep, apt-get install ripgrep or cargo install ripgrep. Source: <a href="https://github.com/BurntSushi/ripgrep">https://github.com/BurntSushi/ripgrep</a></li>
+    <li>ugrep supports Google-like Boolean query patterns with AND, OR and NOT, fuzzy search, searching archives and compressed files, searching PDF and Office documents, and includes a file indexer for slow and cold file systems. Source: <a href="https://github.com/Genivia/ugrep">https://github.com/Genivia/ugrep</a></li>
+    <li>ast-grep installs with brew install ast-grep or cargo install ast-grep --locked. Source: <a href="https://github.com/ast-grep/ast-grep">https://github.com/ast-grep/ast-grep</a></li>
+    <li>Semgrep ships an MCP server that lets AI coding assistants run Semgrep scans; semgrep mcp starts it locally. Source: <a href="https://github.com/semgrep/semgrep">https://github.com/semgrep/semgrep</a></li>
+    <li>zoekt is based on trigram indexing and syntactic parsing, installs with go install, and recommends Universal ctags because symbol information is a key signal in ranking search results. Source: <a href="https://github.com/sourcegraph/zoekt">https://github.com/sourcegraph/zoekt</a></li>
+    <li>On one 331-file code tree ripgrep and the XERJ index named the same files on 18 of 30 disclosed tasks, and ripgrep 14.1.1 won 5 outright. Source: <a href="/compare/xerj-vs-ripgrep-for-code-agents">/compare/xerj-vs-ripgrep-for-code-agents</a></li>
+    <li>On psf/requests one XERJ answer was 1,303 bytes where rg printed 25,150. Source: <a href="/answers/local-code-search-mcp-fewer-tokens-than-grep">/answers/local-code-search-mcp-fewer-tokens-than-grep</a></li>
   </ul>
   <h2>Related</h2>
   <ul>

@@ -53,7 +53,7 @@ faq:
     a: "Yes. Gzip is transparent on every parsed family, so a `.jsonl.gz` file indexes like the plain file next to it and lands in the same query pattern."
 ---
 
-**TL;DR** — `xerj autoindex` detects JSON-array and JSONL log files from their content and gives each its own index. In a captured run over 2 files, XERJ inferred `timestamp` and `ts` as date fields with no configuration. A filter for `level=ERROR` returned exactly 386 hits.
+**TL;DR**: `xerj autoindex` detects JSON-array and JSONL log files from their content and gives each its own index. In a captured run over 2 files, XERJ inferred `timestamp` and `ts` as date fields with no configuration. A filter for `level=ERROR` returned exactly 386 hits.
 
 ## Index the log folder in one command
 

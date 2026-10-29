@@ -15,7 +15,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>XERJ.ai · Docs · Aggregations</title>
-<meta name="description" content="Bucket and metric aggregations in XERJ, with exact counts in the bucket path and no HyperLogLog approximation — plus the deliberate sampling exceptions.">
+<meta name="description" content="Bucket and metric aggregations in XERJ, with exact counts in the bucket path and no HyperLogLog approximation, plus the deliberate sampling exceptions.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;700;800;900&family=Inter:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -27,16 +27,16 @@
 <meta property="og:site_name" content="XERJ.ai">
 <meta property="og:type" content="article">
 <meta property="og:title" content="XERJ.ai · Docs · Aggregations">
-<meta property="og:description" content="Bucket and metric aggregations in XERJ, with exact counts in the bucket path and no HyperLogLog approximation — plus the deliberate sampling exceptions.">
+<meta property="og:description" content="Bucket and metric aggregations in XERJ, with exact counts in the bucket path and no HyperLogLog approximation, plus the deliberate sampling exceptions.">
 <meta property="og:url" content="https://xerj.org/docs/aggregations">
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="XERJ.ai · Docs · Aggregations">
-<meta name="twitter:description" content="Bucket and metric aggregations in XERJ, with exact counts in the bucket path and no HyperLogLog approximation — plus the deliberate sampling exceptions.">
+<meta name="twitter:description" content="Bucket and metric aggregations in XERJ, with exact counts in the bucket path and no HyperLogLog approximation, plus the deliberate sampling exceptions.">
 <meta name="twitter:image" content="https://xerj.org/og/xerj-card.png">
 <script type="application/ld+json">
 {
@@ -72,7 +72,7 @@
   "@context": "https://schema.org",
   "@type": "TechArticle",
   "headline": "XERJ.ai · Docs · Aggregations",
-  "description": "Bucket and metric aggregations in XERJ, with exact counts in the bucket path and no HyperLogLog approximation — plus the deliberate sampling exceptions.",
+  "description": "Bucket and metric aggregations in XERJ, with exact counts in the bucket path and no HyperLogLog approximation, plus the deliberate sampling exceptions.",
   "url": "https://xerj.org/docs/aggregations",
   "image": "https://xerj.org/og/xerj-card.png",
   "inLanguage": "en",
@@ -232,9 +232,9 @@
   <h1>Aggregations</h1>
 
 
-  <p>Every bucket aggregation returns an exact count — no HyperLogLog approximations in the bucket path. The one deliberate exception is the sampling family below (<code class="inline">sampler</code>, <code class="inline">random_sampler</code>, <code class="inline">diversified_sampler</code>), which is a sample by definition: it truncates to the top <code class="inline">shard_size</code> matched documents by <code class="inline">_score</code>, and its sub-aggregations see only that slice. Once an index passes 10,000 live documents, <code class="inline">terms</code> and the other columnar-eligible aggregations read a doc-values ordinal histogram instead of scanning postings (<code class="inline">fast_aggs.rs</code>); below that the JSON path answers directly and stays the reference implementation.</p>
+  <p>Every bucket aggregation returns an exact count, no HyperLogLog approximations in the bucket path. The one deliberate exception is the sampling family below (<code class="inline">sampler</code>, <code class="inline">random_sampler</code>, <code class="inline">diversified_sampler</code>), which is a sample by definition: it truncates to the top <code class="inline">shard_size</code> matched documents by <code class="inline">_score</code>, and its sub-aggregations see only that slice. Once an index passes 10,000 live documents, <code class="inline">terms</code> and the other columnar-eligible aggregations read a doc-values ordinal histogram instead of scanning postings (<code class="inline">fast_aggs.rs</code>); below that the JSON path answers directly and stays the reference implementation.</p>
 
-  <p>The list below is the <em>complete</em> set of aggregation keys the engine dispatches, generated from <code class="inline">xerj_engine::aggs::SUPPORTED_AGG_TYPES</code> and held to it by a test. Being listed means the aggregation runs and returns the ES response shape — it is not a promise that every parameter of every type is honoured.</p>
+  <p>The list below is the <em>complete</em> set of aggregation keys the engine dispatches, generated from <code class="inline">xerj_engine::aggs::SUPPORTED_AGG_TYPES</code> and held to it by a test. Being listed means the aggregation runs and returns the ES response shape. It is not a promise that every parameter of every type is honoured.</p>
 
   <!-- generated:agg-types -->
   <h2>Metric aggregations</h2>
@@ -246,7 +246,7 @@
     <div class="item">stats<span class="dsc">min, max, sum, count, avg in one pass.</span></div>
     <div class="item">extended_stats</div>
     <div class="item">value_count</div>
-    <div class="item">cardinality<span class="dsc">Exact — every distinct value goes into a hash set, so memory grows with cardinality.</span></div>
+    <div class="item">cardinality<span class="dsc">Exact, every distinct value goes into a hash set, so memory grows with cardinality.</span></div>
     <div class="item">percentiles<span class="dsc">Linear interpolation over the sorted values; the hdr option switches to HdrHistogram nearest-rank.</span></div>
     <div class="item">percentile_ranks</div>
     <div class="item">median_absolute_deviation</div>
@@ -288,7 +288,7 @@
     <div class="item">geotile_grid</div>
     <div class="item">sampler<span class="dsc">The one deliberate exception to exactness: keeps the top shard_size matched docs by _score (default 200), so sub-aggregations run over that sample.</span></div>
     <div class="item">diversified_sampler<span class="dsc">Same truncation, plus a cap of max_docs_per_value docs sharing one field value (default 1).</span></div>
-    <div class="item">random_sampler<span class="dsc">Shares the sampler implementation — same top-by-_score slice; ES's probability parameter is not read.</span></div>
+    <div class="item">random_sampler<span class="dsc">Shares the sampler implementation: same top-by-_score slice; ES's probability parameter is not read.</span></div>
     <div class="item">time_series</div>
   </div>
 

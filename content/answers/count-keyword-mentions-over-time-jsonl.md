@@ -63,7 +63,7 @@ faq:
     a: "No. The posts file was a GitHub issue export whose `createdAt` values are ISO strings. Do not treat these month counts as a Reddit corpus."
 ---
 
-**TL;DR** — Count mentions of a word over time in a posts dataset. Index the JSONL, check the date field, and send one date histogram. On 2026-10-20 the phrase autoindex in issue titles returned 88 hits and took 123 ms: 1 in July, 50 in August, 11 in September, 26 in October. A fractional epoch field returned no months.
+**TL;DR**: Count mentions of a word over time in a posts dataset. Index the JSONL, check the date field, and send one date histogram. On 2026-10-20 the phrase autoindex in issue titles returned 88 hits and took 123 ms: 1 in July, 50 in August, 11 in September, 26 in October. A fractional epoch field returned no months.
 
 XERJ is a new way for AI to search for data.
 

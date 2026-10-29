@@ -179,10 +179,10 @@ Yes, and on a Mac that is the sensible answer. Spotlight for finding the file, X
 
 ## Evidence
 
-- Spotlight helps you quickly find things on your computer and shows suggestions from apps, files, actions, the internet, and the Clipboard. — [https://support.apple.com/guide/mac-help/search-with-spotlight-mchlp1008/mac](https://support.apple.com/guide/mac-help/search-with-spotlight-mchlp1008/mac)
-- Spotlight metadata importers are plug-ins that extract metadata and text content from a file so the system metadata store can answer queries about it, and an application ships an importer for its own document types. — [https://developer.apple.com/documentation/coreservices/file_metadata/mdimporter](https://developer.apple.com/documentation/coreservices/file_metadata/mdimporter)
-- mdfind queries the central metadata store and returns matching files, with -onlyin to restrict the search to a directory, -name to match on file name, -count to return a total, -literal and -interpret to control query parsing, and -live to keep the count updated. — [https://keith.github.io/xcode-man-pages/mdfind.1.html](https://keith.github.io/xcode-man-pages/mdfind.1.html)
-- XERJ streaming extractors cover JSON/JSONL, dialect-sniffed CSV, structured logs, SQL dumps, SQLite, PDF, DOCX, HTML, XML, YAML, plain text and gzip variants, with no configuration file and no mapping. — `landing/llms.txt:231`
+- Spotlight helps you quickly find things on your computer and shows suggestions from apps, files, actions, the internet, and the Clipboard. Source: [https://support.apple.com/guide/mac-help/search-with-spotlight-mchlp1008/mac](https://support.apple.com/guide/mac-help/search-with-spotlight-mchlp1008/mac)
+- Spotlight metadata importers are plug-ins that extract metadata and text content from a file so the system metadata store can answer queries about it, and an application ships an importer for its own document types. Source: [https://developer.apple.com/documentation/coreservices/file_metadata/mdimporter](https://developer.apple.com/documentation/coreservices/file_metadata/mdimporter)
+- mdfind queries the central metadata store and returns matching files, with -onlyin to restrict the search to a directory, -name to match on file name, -count to return a total, -literal and -interpret to control query parsing, and -live to keep the count updated. Source: [https://keith.github.io/xcode-man-pages/mdfind.1.html](https://keith.github.io/xcode-man-pages/mdfind.1.html)
+- XERJ streaming extractors cover JSON/JSONL, dialect-sniffed CSV, structured logs, SQL dumps, SQLite, PDF, DOCX, HTML, XML, YAML, plain text and gzip variants, with no configuration file and no mapping. Source: `landing/llms.txt:231`
 
 ## Related
 

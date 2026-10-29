@@ -45,6 +45,7 @@ import xml.etree.ElementTree as ET
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import audit as audit_mod  # noqa: E402  (reuse the auditor's HTML parser)
+import copy_dashes  # noqa: E402
 import gen_sitemap  # noqa: E402  (the sitemap is a deploy artifact, not a file)
 import pagedata  # noqa: E402
 import urlmap  # noqa: E402
@@ -1023,7 +1024,23 @@ class Lint:
         self.check_pages()
         self.check_markdown_twins()
         self.check_links()
+        self.check_copy_dashes()
         return self.issues
+
+    # ── no em dashes in hand-written copy (rule 68) ─────────────────────────
+    def check_copy_dashes(self) -> None:
+        """Hand-written pages carry no em dash and no en dash used as a dash.
+
+        Generated article pages are skipped: build_articles.py gates their
+        sources under content/.  Code, comments and blockquoted quotes are
+        exempt; see copy_dashes.py for the full scope."""
+        files = copy_dashes.landing_files(self.root)
+        problems, notes = copy_dashes.check(files)
+        for note in notes:
+            self.warn("copy.dash", note.split(":", 1)[0], note.split(": ", 1)[-1])
+        for problem in problems:
+            path, rest = problem.split(":", 1)
+            self.gate("copy.dash", path, f"line {rest} (rule 68)")
 
 
 def _head_of(src: str) -> str:

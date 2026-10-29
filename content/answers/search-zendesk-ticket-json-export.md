@@ -53,7 +53,7 @@ faq:
     a: "Yes. The captured run put `ticket_comments.json` into its own index, `zd-json-ticket-comments`, with 61 documents."
 ---
 
-**TL;DR** — XERJ answers a Zendesk ticket search from the exported JSON on local disk, with 1 `xerj autoindex` run. In a captured run, a phrase from a ticket description returned 36 hits with per-ticket locators such as `tickets:e4`. A `status` aggregation returned 6 buckets of exactly 30.
+**TL;DR**: XERJ answers a Zendesk ticket search from the exported JSON on local disk, with 1 `xerj autoindex` run. In a captured run, a phrase from a ticket description returned 36 hits with per-ticket locators such as `tickets:e4`. A `status` aggregation returned 6 buckets of exactly 30.
 
 ## Index the saved export
 

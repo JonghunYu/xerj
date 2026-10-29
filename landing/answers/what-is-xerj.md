@@ -170,7 +170,7 @@ No. XERJ fetches no web page and runs no crawler. Its inputs are folders on loca
 
 ## Evidence
 
-- XERJ uses the Apache-2.0 license. — [https://www.apache.org/licenses/LICENSE-2.0](https://www.apache.org/licenses/LICENSE-2.0)
+- XERJ uses the Apache-2.0 license. Source: [https://www.apache.org/licenses/LICENSE-2.0](https://www.apache.org/licenses/LICENSE-2.0)
 
 ## Related
 

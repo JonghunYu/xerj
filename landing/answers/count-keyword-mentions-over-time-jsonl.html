@@ -214,9 +214,9 @@
     <p>Count mentions of a word over time in a posts dataset. Index the JSONL, check the date field, and send one date histogram. On 2026-10-20 the phrase autoindex in issue titles returned 88 hits and took 123 ms: 1 in July, 50 in August, 11 in September, 26 in October. A fractional epoch field returned no months.</p>
     <p class="key-fact"><strong>Key number:</strong> A date histogram for the phrase autoindex returned 88 hits and took 123 ms. <span class="mute">(as of 2026-10-20 · source: <a href="https://github.com/xerj-org/xerj/blob/main/benchmarks/agent-queries-2026-10-20/08-histogram-phrase.json">benchmarks/agent-queries-2026-10-20/08-histogram-phrase.json</a>)</span></p>
   </div>
-  <p><strong>TL;DR</strong> — Count mentions of a word over time in a posts dataset. Index the JSONL, check the date field, and send one date histogram. On 2026-10-20 the phrase autoindex in issue titles returned 88 hits and took 123 ms: 1 in July, 50 in August, 11 in September, 26 in October. A fractional epoch field returned no months.</p>
+  <p><strong>TL;DR</strong>: Count mentions of a word over time in a posts dataset. Index the JSONL, check the date field, and send one date histogram. On 2026-10-20 the phrase autoindex in issue titles returned 88 hits and took 123 ms: 1 in July, 50 in August, 11 in September, 26 in October. A fractional epoch field returned no months.</p>
   <div class="prompt-card">
-    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT — IT DOES THE REST</span>
+    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT. IT DOES THE REST</span>
     <code>Read https://xerj.org/llms.txt. Start one local node, run xerj autoindex on the JSONL folder, and read xerj autoindex map before you aggregate. Send one _search with size 0, a match_phrase, and a date_histogram on the field the map types as date. If that field is double, say the histogram is empty and do not invent months.</code>
     <button type="button" class="prompt-copy" data-copy="Read https://xerj.org/llms.txt. Start one local node, run xerj autoindex on the JSONL folder, and read xerj autoindex map before you aggregate. Send one _search with size 0, a match_phrase, and a date_histogram on the field the map types as date. If that field is double, say the histogram is empty and do not invent months.">COPY THE PROMPT</button>
   </div>
@@ -286,12 +286,12 @@
   <p>No. The posts file was a GitHub issue export whose <code class="inline">createdAt</code> values are ISO strings. Do not treat these month counts as a Reddit corpus.</p>
   <h2>Evidence</h2>
   <ul>
-    <li>The issue export autoindex finished in 7.2 s with 1,532 records. — <code>benchmarks/agent-queries-2026-10-20/01-autoindex-issues.txt</code></li>
-    <li>The match_phrase date histogram took 123 ms and returned 88 hits. — <code>benchmarks/agent-queries-2026-10-20/08-histogram-phrase.json</code></li>
-    <li>The match date histogram took 630 ms and returned the same four months. — <code>benchmarks/agent-queries-2026-10-20/08-histogram.json</code></li>
-    <li>A string field becomes date when at least 95% of sampled values parse. — <code>engine/crates/xerj-autoindex/src/infer/mod.rs:470</code></li>
-    <li>The fractional-epoch fixture indexed 40 records in 0.6 s and the histogram returned no buckets. — <code>benchmarks/agent-queries-2026-10-20/06-autoindex-epoch.txt</code></li>
-    <li>date_histogram on the double field ts returned buckets empty and took 0. — <code>benchmarks/agent-queries-2026-10-20/08-epoch-histogram-all.json</code></li>
+    <li>The issue export autoindex finished in 7.2 s with 1,532 records. Source: <code>benchmarks/agent-queries-2026-10-20/01-autoindex-issues.txt</code></li>
+    <li>The match_phrase date histogram took 123 ms and returned 88 hits. Source: <code>benchmarks/agent-queries-2026-10-20/08-histogram-phrase.json</code></li>
+    <li>The match date histogram took 630 ms and returned the same four months. Source: <code>benchmarks/agent-queries-2026-10-20/08-histogram.json</code></li>
+    <li>A string field becomes date when at least 95% of sampled values parse. Source: <code>engine/crates/xerj-autoindex/src/infer/mod.rs:470</code></li>
+    <li>The fractional-epoch fixture indexed 40 records in 0.6 s and the histogram returned no buckets. Source: <code>benchmarks/agent-queries-2026-10-20/06-autoindex-epoch.txt</code></li>
+    <li>date_histogram on the double field ts returned buckets empty and took 0. Source: <code>benchmarks/agent-queries-2026-10-20/08-epoch-histogram-all.json</code></li>
   </ul>
   <h2>Related</h2>
   <ul>

@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="How much better is hybrid search than BM25? Measured.">
@@ -224,7 +224,7 @@
   </div>
   <p><strong>TL;DR</strong> — On two public BEIR datasets, XERJ's hybrid RRF beat BM25 alone and beat vectors alone: nDCG@10 0.6993 against 0.6572 on SciFact, and 0.3448 against 0.3016 on NFCorpus. These runs used <code class="inline">--embed-mode neural</code> with all-MiniLM-L6-v2. The default embedder is lexical feature hashing, and these vector figures do not apply to it.</p>
   <div class="prompt-card">
-    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT — IT DOES THE REST</span>
+    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT. IT DOES THE REST</span>
     <code>Act as a coding agent. Read https://xerj.org/llms.txt, start a throwaway XERJ node with --embed-mode neural, load the BEIR SciFact corpus with benchmarks/beir-hybrid/load.py, run benchmarks/beir-hybrid/eval.py, and report nDCG@10 for the BM25, vector-only, reorder and hybrid RRF arms next to the published figures.</code>
     <button type="button" class="prompt-copy" data-copy="Act as a coding agent. Read https://xerj.org/llms.txt, start a throwaway XERJ node with --embed-mode neural, load the BEIR SciFact corpus with benchmarks/beir-hybrid/load.py, run benchmarks/beir-hybrid/eval.py, and report nDCG@10 for the BM25, vector-only, reorder and hybrid RRF arms next to the published figures.">COPY THE PROMPT</button>
   </div>
@@ -312,11 +312,11 @@
   <p>About 3 to 7 documents per second on CPU in this run. SciFact's 5,183 short abstracts took about 25 minutes to index.</p>
   <h2>Evidence</h2>
   <ul>
-    <li>On BEIR SciFact (300 test queries, 5,183 documents) nDCG@10 was 0.6572 for BM25, 0.6764 for MiniLM vectors only, 0.6855 for a BM25 top-30 shortlist reordered by MiniLM, and 0.6993 for hybrid RRF. — <code>benchmarks/beir-hybrid/results/scifact.txt</code></li>
-    <li>On BEIR NFCorpus (323 test queries, 3,633 documents) nDCG@10 was 0.3016 for BM25, 0.3291 for MiniLM vectors only, 0.3323 for the reorder arm, and 0.3448 for hybrid RRF. BM25 returned zero hits for 25 of the 323 queries. — <code>benchmarks/beir-hybrid/results/nfcorpus.txt</code></li>
-    <li>Exactly 25 of the 323 NFCorpus test queries share no token with any document title or text, which accounts for every empty BM25 result list; the same check reports 0 for SciFact. — <code>benchmarks/beir-hybrid/results/nfcorpus-lexical-gap.txt</code></li>
-    <li>The run was made on 2026-09-18 with xerj v1.0.0-rc.74 and --embed-mode neural, using the built-in all-MiniLM-L6-v2 model at 384 dimensions on CPU, one node and one shard with default settings. Neural indexing ran at about 3 to 7 documents per second, SciFact took about 25 minutes, and hybrid queries cost about 220 to 370 ms at p50 against about 18 ms for BM25. — <code>benchmarks/beir-hybrid/README.md</code></li>
-    <li>The nDCG@10 figures for Jev (0.768 SciFact, 0.358 NFCorpus), Voyage rerank-3 (0.755, 0.357) and Cohere rerank-v3.5 (0.745, 0.340) are published in the hev/jev-rerank README. XERJ did not run them. — <a href="https://github.com/hev/jev-rerank">https://github.com/hev/jev-rerank</a></li>
+    <li>On BEIR SciFact (300 test queries, 5,183 documents) nDCG@10 was 0.6572 for BM25, 0.6764 for MiniLM vectors only, 0.6855 for a BM25 top-30 shortlist reordered by MiniLM, and 0.6993 for hybrid RRF. Source: <code>benchmarks/beir-hybrid/results/scifact.txt</code></li>
+    <li>On BEIR NFCorpus (323 test queries, 3,633 documents) nDCG@10 was 0.3016 for BM25, 0.3291 for MiniLM vectors only, 0.3323 for the reorder arm, and 0.3448 for hybrid RRF. BM25 returned zero hits for 25 of the 323 queries. Source: <code>benchmarks/beir-hybrid/results/nfcorpus.txt</code></li>
+    <li>Exactly 25 of the 323 NFCorpus test queries share no token with any document title or text, which accounts for every empty BM25 result list; the same check reports 0 for SciFact. Source: <code>benchmarks/beir-hybrid/results/nfcorpus-lexical-gap.txt</code></li>
+    <li>The run was made on 2026-09-18 with xerj v1.0.0-rc.74 and --embed-mode neural, using the built-in all-MiniLM-L6-v2 model at 384 dimensions on CPU, one node and one shard with default settings. Neural indexing ran at about 3 to 7 documents per second, SciFact took about 25 minutes, and hybrid queries cost about 220 to 370 ms at p50 against about 18 ms for BM25. Source: <code>benchmarks/beir-hybrid/README.md</code></li>
+    <li>The nDCG@10 figures for Jev (0.768 SciFact, 0.358 NFCorpus), Voyage rerank-3 (0.755, 0.357) and Cohere rerank-v3.5 (0.745, 0.340) are published in the hev/jev-rerank README. XERJ did not run them. Source: <a href="https://github.com/hev/jev-rerank">https://github.com/hev/jev-rerank</a></li>
   </ul>
   <h2>Related</h2>
   <ul>

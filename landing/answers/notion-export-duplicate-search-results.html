@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Why does my Notion export duplicate titles?">
@@ -230,9 +230,9 @@
     <p>Why does my Notion export duplicate titles in search results? The duplicates come from the export layout and from the 2 documents XERJ writes per Markdown file, not from re-indexing. A captured run indexed the same Notion export twice and returned 8 documents both times, with byte-identical ids, so the index never doubled.</p>
     <p class="key-fact"><strong>Key number:</strong> Re-indexing the same 4-file Notion export a second time returned the same 8 documents, with byte-identical ids. <span class="mute">(as of 2026-08-21 · source: the captured run documented on this page)</span></p>
   </div>
-  <p><strong>TL;DR</strong> — The duplicate titles come from the export layout and from the 2 documents XERJ writes per Markdown file. Re-indexing is not the cause. A captured run indexed the same export twice and returned 8 documents both times, with byte-identical ids.</p>
+  <p><strong>TL;DR</strong>: The duplicate titles come from the export layout and from the 2 documents XERJ writes per Markdown file. Re-indexing is not the cause. A captured run indexed the same export twice and returned 8 documents both times, with byte-identical ids.</p>
   <div class="prompt-card">
-    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT — IT DOES THE REST</span>
+    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT. IT DOES THE REST</span>
     <code>Act as a coding agent. Read https://xerj.org/llms.txt, start a local XERJ node, unzip a Notion Markdown and CSV workspace export, run `xerj autoindex ./notion-export --url http://127.0.0.1:9200 --prefix nt --progress plain` twice, POST a match_all sorted by ax_path and ax_locator after each run, compare the returned _id lists byte for byte, and report every file the autoindex-catalog marked junk with its reason.</code>
     <button type="button" class="prompt-copy" data-copy="Act as a coding agent. Read https://xerj.org/llms.txt, start a local XERJ node, unzip a Notion Markdown and CSV workspace export, run `xerj autoindex ./notion-export --url http://127.0.0.1:9200 --prefix nt --progress plain` twice, POST a match_all sorted by ax_path and ax_locator after each run, compare the returned _id lists byte for byte, and report every file the autoindex-catalog marked junk with its reason.">COPY THE PROMPT</button>
   </div>
@@ -285,7 +285,7 @@
   <pre class="code"><code class="language-sh">xerj autoindex ./notion-export --url http://127.0.0.1:9200 --prefix nt --progress plain
 </code></pre>
   <h2>Watch for database pages refused as YAML</h2>
-  <p>If most of an exported page's non-blank lines read as YAML — a <code class="inline">key: value</code> line, or a line opening with <code class="inline">- </code> — the family sniffer classifies the page as <code class="inline">yaml</code>. Notion writes a database row page as a title over <code class="inline">Status:</code>, <code class="inline">Owner:</code> and <code class="inline">Decided:</code> lines, which is exactly that shape. YAML parsing then fails and XERJ drops the file with 0 documents. There is no fallback to prose, and the only terminal signal is a junk file count. A <code class="inline">---</code> front-matter block at the top of a Markdown file does not trigger this on its own: a file that opens with front matter is classified by the body under it.</p>
+  <p>If most of an exported page's non-blank lines read as YAML (a <code class="inline">key: value</code> line, or a line opening with <code class="inline">- </code>) the family sniffer classifies the page as <code class="inline">yaml</code>. Notion writes a database row page as a title over <code class="inline">Status:</code>, <code class="inline">Owner:</code> and <code class="inline">Decided:</code> lines, which is exactly that shape. YAML parsing then fails and XERJ drops the file with 0 documents. There is no fallback to prose, and the only terminal signal is a junk file count. A <code class="inline">---</code> front-matter block at the top of a Markdown file does not trigger this on its own: a file that opens with front matter is classified by the body under it.</p>
   <p>All 3 database row pages under <code class="inline">Decisions 0f1e2d3c4b5a69788796a5b4c3d2e1f0/</code> were refused this way, with the reason <code class="inline">no records extracted (yaml candidate family, 1 junk lines)</code>. The run reported <code class="inline">junk_files=3</code>.</p>
   <p>A minimal 3-file reproduction shows the same behavior outside Notion. XERJ indexed <code class="inline">prose-no-colons.txt</code> as <code class="inline">txt-prose</code>. It gave <code class="inline">speaker-colons.txt</code> and <code class="inline">markdown-bullets.md</code> the <code class="inline">yaml</code> family and dropped both.</p>
   <h2>The database CSV still works</h2>

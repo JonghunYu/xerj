@@ -214,9 +214,9 @@
     <p>Search Claude Code past sessions by indexing the session JSONL and querying the message field. On 2026-10-20 a three-file fixture, not a live chat folder, indexed 8 records in 0.6 s. Searching zstd on message_content returned 2 hits. xerj search on the same words returned no match.</p>
     <p class="key-fact"><strong>Key number:</strong> A match on message_content for zstd returned 2 hits and took 0 ms. <span class="mute">(as of 2026-10-20 · source: <a href="https://github.com/xerj-org/xerj/blob/main/benchmarks/agent-queries-2026-10-20/08-sessions-message.json">benchmarks/agent-queries-2026-10-20/08-sessions-message.json</a>)</span></p>
   </div>
-  <p><strong>TL;DR</strong> — Search Claude Code past sessions by indexing the session JSONL and querying the message field. On 2026-10-20 a three-file fixture, not a live chat folder, indexed 8 records in 0.6 s. Searching zstd on message_content returned 2 hits. xerj search on the same words returned no match.</p>
+  <p><strong>TL;DR</strong>: Search Claude Code past sessions by indexing the session JSONL and querying the message field. On 2026-10-20 a three-file fixture, not a live chat folder, indexed 8 records in 0.6 s. Searching zstd on message_content returned 2 hits. xerj search on the same words returned no match.</p>
   <div class="prompt-card">
-    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT — IT DOES THE REST</span>
+    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT. IT DOES THE REST</span>
     <code>Read https://xerj.org/llms.txt. Start one local node and run xerj autoindex on the session JSONL folder, then read xerj autoindex map for the message field. Search that field with a match query and cite ax_path. If xerj search returns no match, say so. This is BM25 over files you point at, not a session-memory feature.</code>
     <button type="button" class="prompt-copy" data-copy="Read https://xerj.org/llms.txt. Start one local node and run xerj autoindex on the session JSONL folder, then read xerj autoindex map for the message field. Search that field with a match query and cite ax_path. If xerj search returns no match, say so. This is BM25 over files you point at, not a session-memory feature.">COPY THE PROMPT</button>
   </div>
@@ -287,13 +287,13 @@ no match in sessions-* for: why did we decide zstd
   <p>No. This machine had no <code class="inline">~/.claude</code> directory. The three files are a fixture in the Claude Code JSONL shape, committed under the benchmark folder.</p>
   <h2>Evidence</h2>
   <ul>
-    <li>The session fixture indexed 8 records in 0.6 s, exit 0. — <code>benchmarks/agent-queries-2026-10-20/07-autoindex-sessions.txt</code></li>
-    <li>xerj search printed no match in sessions-*. — <code>benchmarks/agent-queries-2026-10-20/07-xerj-search.txt</code></li>
-    <li>A match on message_content for zstd returned 2 hits and took 0. — <code>benchmarks/agent-queries-2026-10-20/08-sessions-message.json</code></li>
-    <li>The tool-output line was 10769 bytes. — <code>benchmarks/agent-queries-2026-10-20/07-long-line-bytes.txt</code></li>
-    <li>A phrase search for TOOL_OUTPUT_MARKER returned 1 hit and took 0. — <code>benchmarks/agent-queries-2026-10-20/08-sessions-marker.json</code></li>
-    <li>MAX_LINE is commented as a 16 MB line cap. — <code>engine/crates/xerj-autoindex/src/extract/mod.rs:96</code></li>
-    <li>Issue 1793, Index past agent sessions as searchable memory, is open. — <code>benchmarks/agent-queries-2026-10-20/09-issue-1793.json</code></li>
+    <li>The session fixture indexed 8 records in 0.6 s, exit 0. Source: <code>benchmarks/agent-queries-2026-10-20/07-autoindex-sessions.txt</code></li>
+    <li>xerj search printed no match in sessions-*. Source: <code>benchmarks/agent-queries-2026-10-20/07-xerj-search.txt</code></li>
+    <li>A match on message_content for zstd returned 2 hits and took 0. Source: <code>benchmarks/agent-queries-2026-10-20/08-sessions-message.json</code></li>
+    <li>The tool-output line was 10769 bytes. Source: <code>benchmarks/agent-queries-2026-10-20/07-long-line-bytes.txt</code></li>
+    <li>A phrase search for TOOL_OUTPUT_MARKER returned 1 hit and took 0. Source: <code>benchmarks/agent-queries-2026-10-20/08-sessions-marker.json</code></li>
+    <li>MAX_LINE is commented as a 16 MB line cap. Source: <code>engine/crates/xerj-autoindex/src/extract/mod.rs:96</code></li>
+    <li>Issue 1793, Index past agent sessions as searchable memory, is open. Source: <code>benchmarks/agent-queries-2026-10-20/09-issue-1793.json</code></li>
   </ul>
   <h2>Related</h2>
   <ul>

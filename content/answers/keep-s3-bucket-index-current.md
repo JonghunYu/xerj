@@ -20,7 +20,7 @@ key_fact_date: "2026-10-19"
 intent_group: "operating autoindex"
 commands:
   - cmd: "xerj autoindex s3://logs/2026/09/ --watch --dry-run --endpoint-url https://ACCOUNT.r2.cloudflarestorage.com"
-    note: "One cycle, no object reads, nothing emitted, no journal written — but the listing itself is real and is billed: ceil(objects / 1000) Class A operations, charged to the spend ledger. It prints the projected monthly Class A operation count for that prefix at that interval, which is the number to decide on."
+    note: "One cycle, no object reads, nothing emitted, no journal written, but the listing itself is real and is billed: ceil(objects / 1000) Class A operations, charged to the spend ledger. It prints the projected monthly Class A operation count for that prefix at that interval, which is the number to decide on."
   - cmd: "xerj autoindex s3://logs/2026/09/ --watch --poll-interval 900 --events-out /var/lib/xerj/logs.jsonl"
     note: "Polls every 15 minutes and appends one JSON line per changed object. Stdout stays free, so the feed can also be piped."
   - cmd: "xerj autoindex s3://logs/ --watch --append-only --poll-interval 60"
@@ -43,7 +43,7 @@ evidence:
     source: "engine/crates/xerj-autoindex/src/objwatch/mod.rs"
   - claim: "The Class A and Class B operations spent this calendar month are counted in the state directory and survive a restart, including a SIGKILL in the middle of a listing: the ledger is written before the calls it pays for, in batches of 16. When the budget is spent, the next cycle is refused."
     source: "engine/crates/xerj-autoindex/tests/objwatch_minio.rs"
-  - claim: "A dry run reads no objects, emits nothing and writes no journal, so a real run afterwards still emits every object — but its listing is billed: measured against MinIO, a dry run on a 2,000-object prefix cost 2 Class A operations and charged them to the spend ledger."
+  - claim: "A dry run reads no objects, emits nothing and writes no journal, so a real run afterwards still emits every object, but its listing is billed: measured against MinIO, a dry run on a 2,000-object prefix cost 2 Class A operations and charged them to the spend ledger."
     source: "engine/crates/xerj-autoindex/tests/objwatch_minio.rs"
   - claim: "Change is decided by ETag, then size, then LastModified, against a journal of what was seen before."
     source: "engine/crates/xerj-autoindex/src/objwatch/mod.rs"
@@ -55,7 +55,7 @@ faq:
   - q: "My documents live in an S3 or R2 bucket. How do I keep a XERJ index current as objects change?"
     a: "Poll the bucket with `xerj autoindex s3://bucket/prefix --watch`. It lists the prefix, compares each object's ETag, size and modification time against a journal, and emits one JSON event per added, changed or deleted object. Choose the poll interval from the cost table, not from the latency you would like."
   - q: "What does a poll actually cost?"
-    a: "`ListObjectsV2` is a Class A operation, the expensive class, and one call returns at most 1,000 keys. A prefix holding N objects therefore costs at least `ceil(N / 1000)` Class A operations every cycle, whether anything changed or not — at least, because when a store stops paging is its own choice: MinIO served 11 calls for 10,000 objects, not 10. A cycle where nothing changed issues zero object reads on top of that, which the MinIO test asserts directly."
+    a: "`ListObjectsV2` is a Class A operation, the expensive class, and one call returns at most 1,000 keys. A prefix holding N objects therefore costs at least `ceil(N / 1000)` Class A operations every cycle, whether anything changed or not, at least, because when a store stops paging is its own choice: MinIO served 11 calls for 10,000 objects, not 10. A cycle where nothing changed issues zero object reads on top of that, which the MinIO test asserts directly."
   - q: "What is a safe poll interval on Cloudflare R2's free tier?"
     a: "The free tier is 1,000,000 Class A operations a month, which is about 23 a minute for a whole account. The default 300-second interval runs 8,640 cycles a month, so it stays inside a 200,000-operation budget up to roughly 23,000 objects. A 5-second poll costs 518,400 a month even on an empty bucket."
   - q: "What happens if I ask for an interval that cannot stay inside the budget?"
@@ -65,12 +65,12 @@ faq:
   - q: "Does `--append-only` detect deletions?"
     a: "No, and that is the trade. It passes the highest key seen as `start-after`, so the listing is partial, and absent from a partial listing does not mean deleted. It also cannot see an edit to a key below that point."
   - q: "Does `--watch` update a XERJ index by itself?"
-    a: "No, and it is not the same command as `xerj autoindex s3://bucket/prefix`, which does index a bucket — once, by mirroring the prefix to local disk and running the ordinary pipeline over it. `--watch` emits a change feed and never writes to a node. Wiring the feed into that indexer, so a bucket stays current without a cron, is still separate work; today the feed tells you which keys to re-read."
+    a: "No, and it is not the same command as `xerj autoindex s3://bucket/prefix`, which does index a bucket, once, by mirroring the prefix to local disk and running the ordinary pipeline over it. `--watch` emits a change feed and never writes to a node. Wiring the feed into that indexer, so a bucket stays current without a cron, is still separate work; today the feed tells you which keys to re-read."
   - q: "Does XERJ support event notifications from S3 or R2 instead of polling?"
     a: "Not yet. The docs page writes down exactly what it would take, including the piece people forget: a reconciling full pass on a long interval, because at-least-once delivery means a missed event is otherwise invisible."
 ---
 
-**TL;DR** — Poll the prefix with `xerj autoindex s3://bucket/prefix --watch`. Decide the interval from the operation count, not from the latency you want. `ListObjectsV2` is a Class A operation at one call per 1,000 keys, **every cycle**. Cloudflare R2's free tier is 1,000,000 Class A operations a month. A 5-second poll spends half of that to watch an empty bucket. Full detail in [docs/WATCHING_OBJECT_STORAGE.md](https://github.com/xerj-org/xerj/blob/main/docs/WATCHING_OBJECT_STORAGE.md).
+**TL;DR**: Poll the prefix with `xerj autoindex s3://bucket/prefix --watch`. Decide the interval from the operation count, not from the latency you want. `ListObjectsV2` is a Class A operation at one call per 1,000 keys, **every cycle**. Cloudflare R2's free tier is 1,000,000 Class A operations a month. A 5-second poll spends half of that to watch an empty bucket. Full detail in [docs/WATCHING_OBJECT_STORAGE.md](https://github.com/xerj-org/xerj/blob/main/docs/WATCHING_OBJECT_STORAGE.md).
 
 ## There are two options, and only two
 
@@ -89,11 +89,11 @@ Object stores price operations in classes. `ListObjectsV2` is in the expensive o
 | --- | --- | --- |
 | **A** | `ListObjectsV2`, `PutObject`, `CopyObject`, the multipart calls | **1,000,000** |
 | B | `GetObject`, `HeadObject` | 10,000,000 |
-| free | `DeleteObject` | — |
+| free | `DeleteObject` | n/a |
 
-One list call returns at most 1,000 keys — `--page-size` keys, and 1,000 is both the default and the API maximum. A prefix holding N objects therefore costs **at least** `ceil(N / page_size)` Class A operations on every cycle, whether anything changed or not. An empty prefix still costs one: you have to ask to learn that it is empty. A smaller page costs proportionally more, and the projection is computed at the page size the watch actually uses.
+One list call returns at most 1,000 keys: `--page-size` keys, and 1,000 is both the default and the API maximum. A prefix holding N objects therefore costs **at least** `ceil(N / page_size)` Class A operations on every cycle, whether anything changed or not. An empty prefix still costs one: you have to ask to learn that it is empty. A smaller page costs proportionally more, and the projection is computed at the page size the watch actually uses.
 
-At least, not exactly: when a store stops paging is implementation-defined. Counted against MinIO at page size 1,000, a 1,000-object prefix cost 1 call and a 2,000-object one cost 2, but 3,000 cost 4, 5,000 cost 6 and 10,000 cost **11** — above two pages its walker only learns it has reached the end by asking once more and getting an empty page. Treat the arithmetic as the floor and budget for one call more; XERJ prices the next cycle at whichever is larger, the arithmetic or the calls the store just served.
+At least, not exactly: when a store stops paging is implementation-defined. Counted against MinIO at page size 1,000, a 1,000-object prefix cost 1 call and a 2,000-object one cost 2, but 3,000 cost 4, 5,000 cost 6 and 10,000 cost **11**: above two pages its walker only learns it has reached the end by asking once more and getting an empty page. Treat the arithmetic as the floor and budget for one call more; XERJ prices the next cycle at whichever is larger, the arithmetic or the calls the store just served.
 
 1,000,000 operations a month is about **23 a minute for a whole account**, shared with everything else that account does:
 
@@ -117,13 +117,13 @@ The default interval is **300 seconds**. The default budget is **200,000 Class A
 
 If a cycle's projection exceeds the budget, the run is **refused**. Nothing further is listed, nothing is read, nothing is emitted, a JSON decision-request document goes to stdout and the exit code is 4. "Nothing further" is the honest word: the projection for the next cycle is computed from the listing this one already made, so a cycle that trips the breaker has already paid for its own listing. The document carries `min_safe_interval_secs`, the smallest interval that fits, so the next command is obvious. Three answers are offered: a longer interval, `--append-only`, or `--allow-cost` to accept the spend.
 
-The budget is a **circuit breaker, checked on every cycle**. A prefix that grows past the budget while the watch runs stops the watch. A month whose allowance is spent stops it too: the operations spent this calendar month are counted in `<state-dir>/objwatch-spend.json`. That file survives a restart, so a supervisor that restarts a crashing watcher cannot give it a fresh budget every minute — and it survives a **hard kill in the middle of a listing**, because the ledger is written before the calls it pays for, sixteen at a time. A `kill -9` part-way through a long first scan still leaves the run owing what it spent; the test that proves it SIGKILLs a child mid-scan and then shows the restart being refused. Reads have a budget of their own, `--max-monthly-gets`, which defaults to 2,000,000 and is checked before the first read of a cycle.
+The budget is a **circuit breaker, checked on every cycle**. A prefix that grows past the budget while the watch runs stops the watch. A month whose allowance is spent stops it too: the operations spent this calendar month are counted in `<state-dir>/objwatch-spend.json`. That file survives a restart, so a supervisor that restarts a crashing watcher cannot give it a fresh budget every minute, and it survives a **hard kill in the middle of a listing**, because the ledger is written before the calls it pays for, sixteen at a time. A `kill -9` part-way through a long first scan still leaves the run owing what it spent; the test that proves it SIGKILLs a child mid-scan and then shows the restart being refused. Reads have a budget of their own, `--max-monthly-gets`, which defaults to 2,000,000 and is checked before the first read of a cycle.
 
-One case the file cannot defend against: deleting it. The state directory is the trust boundary, so give the watcher a durable one it owns. A ledger stamped with a month in the future — a clock that stepped backwards — is no longer read as a fresh allowance either; the recorded spend is carried forward and the anomaly is printed.
+One case the file cannot defend against: deleting it. The state directory is the trust boundary, so give the watcher a durable one it owns. A ledger stamped with a month in the future (a clock that stepped backwards) is no longer read as a fresh allowance either; the recorded spend is carried forward and the anomaly is printed.
 
 Price it before you commit with `--dry-run`. It runs one cycle, reads no objects, emits nothing and writes no journal, so the real run afterwards still sees every object as new.
 
-**A dry run is not free.** It runs one real cycle, and the listing is the expensive half: `ceil(objects / page_size)` Class A operations, charged to the spend ledger like any other cycle. Measured against MinIO, a dry run on a 2,000-object prefix cost 2 Class A operations; on a million-object prefix it is 1,000, and on a prefix with `--page-size 1` it is one call per key. It is a price check you pay for — cheaper than a month of polling, not free. Point it at the narrowest prefix that answers your question.
+**A dry run is not free.** It runs one real cycle, and the listing is the expensive half: `ceil(objects / page_size)` Class A operations, charged to the spend ledger like any other cycle. Measured against MinIO, a dry run on a 2,000-object prefix cost 2 Class A operations; on a million-object prefix it is 1,000, and on a prefix with `--page-size 1` it is one call per key. It is a price check you pay for: cheaper than a month of polling, not free. Point it at the narrowest prefix that answers your question.
 
 ## Making it cheaper
 
@@ -150,7 +150,7 @@ Two details cause most of the mistakes here.
 
 A **multipart object's ETag is not a hash of its content.** It has the form `hex-partcount`. XERJ compares ETags as opaque strings and never reads one as a content hash, so an object replaced by a multipart upload is detected by the change in the string. The MinIO test proves that with a real multipart upload.
 
-An **ETag can change while the bytes do not** — a copy, a lifecycle rewrite, a gateway that re-stamps. When the bytes hash identical to what the journal already holds, XERJ updates the journal and emits nothing. Re-reading an unchanged document costs a bulk request, a merge and a refresh for no gain.
+An **ETag can change while the bytes do not**: a copy, a lifecycle rewrite, a gateway that re-stamps. When the bytes hash identical to what the journal already holds, XERJ updates the journal and emits nothing. Re-reading an unchanged document costs a bulk request, a merge and a refresh for no gain.
 
 ## Seeing what it has spent
 
@@ -169,7 +169,7 @@ One field is worth watching: `skipped_deadlines` counts poll deadlines that pass
 
 ## What this does not do
 
-It does not index, and it is not the same command as `xerj autoindex s3://bucket/prefix`. That one indexes a bucket **once**: it mirrors the prefix to local disk and runs the ordinary discovery pipeline over it. `--watch` emits a change feed and never writes to a node. Wiring the feed into that indexer — so a bucket stays current without a cron — is still separate work; today the feed is what tells you which keys to re-read.
+It does not index, and it is not the same command as `xerj autoindex s3://bucket/prefix`. That one indexes a bucket **once**: it mirrors the prefix to local disk and runs the ordinary discovery pipeline over it. `--watch` emits a change feed and never writes to a node. Wiring the feed into that indexer (so a bucket stays current without a cron) is still separate work; today the feed is what tells you which keys to re-read.
 
 It does not implement event notifications, retries with backoff, virtual-host addressing, or credential chains from a profile or a metadata service. Credentials come from the environment only: `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`, optionally `AWS_SESSION_TOKEN`. There is no flag for them, because a flag puts a secret in a shell history and in `ps`.
 
@@ -179,4 +179,4 @@ A versioned bucket is watched by current version only.
 
 Events are cheaper above about 100,000 objects, and they are the right answer at that size. Polling landed first for two reasons. It is portable: S3, R2, MinIO and Ceph RGW all serve `ListObjectsV2`, while event delivery is per-vendor plumbing with its own credentials. And it is self-correcting: every cycle re-derives the truth from the bucket, so a dropped notification cannot leave the index permanently wrong.
 
-That second property is the one people forget when they choose events. At-least-once delivery means duplicates, which a digest comparison absorbs, but it also means a **missed** event is invisible — the index goes quietly stale and nothing reports it. Any event-driven design still needs a reconciling full pass on a long interval, which is the same arithmetic as the table above. The docs page writes down the rest of what that path would take.
+That second property is the one people forget when they choose events. At-least-once delivery means duplicates, which a digest comparison absorbs, but it also means a **missed** event is invisible: the index goes quietly stale and nothing reports it. Any event-driven design still needs a reconciling full pass on a long interval, which is the same arithmetic as the table above. The docs page writes down the rest of what that path would take.

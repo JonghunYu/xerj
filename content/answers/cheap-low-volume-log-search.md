@@ -50,7 +50,7 @@ faq:
     a: "The 3 measured steps stored 1.045, 1.319 and 1.039 bytes per source byte. The ratio is not stable, so do not publish a single storage multiplier."
 ---
 
-**TL;DR** — XERJ indexes plain-text logs on one node, returns exact error counts, and answered a `level=ERROR` filter at p50 0.488 ms on a 16 MB corpus. Memory is the limit, not speed: peak resident memory grew to about 200× the corpus, and the measured ladder stopped at 16 MB.
+**TL;DR**: XERJ indexes plain-text logs on one node, returns exact error counts, and answered a `level=ERROR` filter at p50 0.488 ms on a 16 MB corpus. Memory is the limit, not speed: peak resident memory grew to about 200× the corpus, and the measured ladder stopped at 16 MB.
 
 ## What was actually measured
 

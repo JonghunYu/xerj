@@ -12,7 +12,7 @@ source: "content/answers/index-markdown-into-elasticsearch-api.md"
 
 **Key number:** XERJ passes 1444 of 1454 Elasticsearch YAML conformance cases, so ES clients query the Markdown index unchanged. (as of 2026-10-23; source: [README.md](https://github.com/xerj-org/xerj/blob/main/README.md))
 
-**TL;DR** — XERJ indexes a Markdown folder with `xerj autoindex` and serves it on the Elasticsearch REST API. Markdown lands in the `txt-prose` family, not in a Markdown family. In our capture XERJ mapped 9 fields, extracted the title as the literal `# Runbook`, and produced no `headings` array.
+**TL;DR**: XERJ indexes a Markdown folder with `xerj autoindex` and serves it on the Elasticsearch REST API. Markdown lands in the `txt-prose` family, not in a Markdown family. In our capture XERJ mapped 9 fields, extracted the title as the literal `# Runbook`, and produced no `headings` array.
 
 ## Agent prompt
 

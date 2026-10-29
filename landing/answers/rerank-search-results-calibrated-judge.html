@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="How do I rerank search results with a relevance judge?">
@@ -232,7 +232,7 @@
   </div>
   <p><strong>TL;DR</strong> — Add <code class="inline">"rerank": {}</code> to a XERJ <code class="inline">_search</code> body. The top 30 hits go to an external judge, which returns a 0 to 1 relevance probability per document. That probability replaces <code class="inline">_score</code>. Order by it, never threshold it with <code class="inline">min_score</code> — the measured probabilities are not calibrated (ECE 0.10–0.31). It sends document text off the machine. Ranking quality is measured: <a href="https://github.com/xerj-org/xerj/pull/975">PR #975</a> scored median nDCG@10 of 0.7410 SciFact, 0.3312 NFCorpus and 0.3638 FiQA over 1,271 queries.</p>
   <div class="prompt-card">
-    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT — IT DOES THE REST</span>
+    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT. IT DOES THE REST</span>
     <code>Act as a coding agent. Read https://xerj.org/llms.txt, ask the operator whether a rerank provider key is set on the XERJ node and whether document text may leave the machine, then run one search without the rerank block and one with it, and report the _rerank block of the second response, including whether applied is true.</code>
     <button type="button" class="prompt-copy" data-copy="Act as a coding agent. Read https://xerj.org/llms.txt, ask the operator whether a rerank provider key is set on the XERJ node and whether document text may leave the machine, then run one search without the rerank block and one with it, and report the _rerank block of the second response, including whether applied is true.">COPY THE PROMPT</button>
   </div>
@@ -336,12 +336,12 @@ endpoint = "https://api.typesafe.ai/v1/systemone"
   <p>Yes. The <code class="inline">xerj_search</code> and <code class="inline">xerj_hybrid_search</code> tools take an optional <code class="inline">rerank</code> argument. It only works when the operator has set a provider key on the node.</p>
   <h2>Evidence</h2>
   <ul>
-    <li>Reranking is the only search-time feature that sends document text off the node. Proxy embeddings and the WAL tap also send text off the node when configured; the neural model download and cluster Raft messages carry no document or query text. A test checks that list against every outbound network client in the engine source. — <code>engine/crates/xerj-rerank/tests/egress_inventory.rs</code></li>
-    <li>The rerank stage defaults to a window of 30 hits, allows at most 300, sends at most 30 documents per provider call, runs 8 calls in flight by default and 16 at most, and defaults to a 10000 ms stage budget capped at 60000 ms. — <code>engine/crates/xerj-rerank/src/lib.rs</code></li>
-    <li>The failure policy, every refused combination, the 400, 403, 502 and 503 statuses, paging inside the window, and the rule that only returned text is sent are each pinned by an HTTP test against an in-process stub of the provider wire format. — <code>engine/crates/xerj-api/tests/rerank_stage_http.rs</code></li>
-    <li>The nDCG@10 figures for Jev (0.768 SciFact, 0.358 NFCorpus), Voyage rerank-3 (0.755, 0.357) and Cohere rerank-v3.5 (0.745, 0.340) are published in the hev/jev-rerank README. XERJ did not run them, and they rerank that project's own first-stage shortlist. — <a href="https://github.com/hev/jev-rerank">https://github.com/hev/jev-rerank</a></li>
-    <li>XERJ hybrid RRF scored nDCG@10 0.6993 on SciFact and 0.3448 on NFCorpus with --embed-mode neural and all-MiniLM-L6-v2, not with the default lexical embedder. — <code>benchmarks/beir-hybrid/README.md</code></li>
-    <li>Ranking quality with the real Jev model is measured (PR #975, merged 2026-09-20): the reranker judged 1,271 BEIR queries ranking off a XERJ node — median nDCG@10 0.7410 SciFact, 0.3312 NFCorpus, 0.3638 FiQA, against BM25 first stages of 0.6572, 0.3016 and 0.2382 — after an integration defect of XERJ's own was found and fixed (SciFact pilot 0.3822 to 0.8299). The same runs measured calibration (ECE 0.10-0.31, worst on FiQA: documents rated ~0.93 confidence were relevant 34% of the time) and provider non-determinism (mean per-document drift 0.0077-0.0096, max 0.08; comparisons tighter than ~±0.01 nDCG@10 are noise). — <code>benchmarks/beir-hybrid/results</code></li>
+    <li>Reranking is the only search-time feature that sends document text off the node. Proxy embeddings and the WAL tap also send text off the node when configured; the neural model download and cluster Raft messages carry no document or query text. A test checks that list against every outbound network client in the engine source. Source: <code>engine/crates/xerj-rerank/tests/egress_inventory.rs</code></li>
+    <li>The rerank stage defaults to a window of 30 hits, allows at most 300, sends at most 30 documents per provider call, runs 8 calls in flight by default and 16 at most, and defaults to a 10000 ms stage budget capped at 60000 ms. Source: <code>engine/crates/xerj-rerank/src/lib.rs</code></li>
+    <li>The failure policy, every refused combination, the 400, 403, 502 and 503 statuses, paging inside the window, and the rule that only returned text is sent are each pinned by an HTTP test against an in-process stub of the provider wire format. Source: <code>engine/crates/xerj-api/tests/rerank_stage_http.rs</code></li>
+    <li>The nDCG@10 figures for Jev (0.768 SciFact, 0.358 NFCorpus), Voyage rerank-3 (0.755, 0.357) and Cohere rerank-v3.5 (0.745, 0.340) are published in the hev/jev-rerank README. XERJ did not run them, and they rerank that project's own first-stage shortlist. Source: <a href="https://github.com/hev/jev-rerank">https://github.com/hev/jev-rerank</a></li>
+    <li>XERJ hybrid RRF scored nDCG@10 0.6993 on SciFact and 0.3448 on NFCorpus with --embed-mode neural and all-MiniLM-L6-v2, not with the default lexical embedder. Source: <code>benchmarks/beir-hybrid/README.md</code></li>
+    <li>Ranking quality with the real Jev model is measured (PR #975, merged 2026-09-20): the reranker judged 1,271 BEIR queries ranking off a XERJ node — median nDCG@10 0.7410 SciFact, 0.3312 NFCorpus, 0.3638 FiQA, against BM25 first stages of 0.6572, 0.3016 and 0.2382 — after an integration defect of XERJ's own was found and fixed (SciFact pilot 0.3822 to 0.8299). The same runs measured calibration (ECE 0.10-0.31, worst on FiQA: documents rated ~0.93 confidence were relevant 34% of the time) and provider non-determinism (mean per-document drift 0.0077-0.0096, max 0.08; comparisons tighter than ~±0.01 nDCG@10 are noise). Source: <code>benchmarks/beir-hybrid/results</code></li>
   </ul>
   <h2>Related</h2>
   <ul>

@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Search a SQL dump without restoring it">
@@ -230,9 +230,9 @@
     <p>I have a 2 GB SQL dump; how do I find rows mentioning a customer without loading it into Postgres? Run xerj autoindex on the .sql file; it parses MySQL-style dumps with no database server. In a captured run one file produced dump-articles with 301 documents and dump-authors with 20, and match_phrase found text inside an INSERT.</p>
     <p class="key-fact"><strong>Key number:</strong> The captured dump produced 2 indices holding 301 and 20 documents, 321 in total. <span class="mute">(as of 2026-08-21 · source: the captured run documented on this page)</span></p>
   </div>
-  <p><strong>TL;DR</strong> — <code class="inline">xerj autoindex</code> parses a MySQL-style <code class="inline">.sql</code> file directly, with no database server involved. In a captured run one file produced 2 indices, <code class="inline">dump-articles</code> with 301 documents and <code class="inline">dump-authors</code> with 20. A <code class="inline">match_phrase</code> query then found a phrase inside an <code class="inline">INSERT</code> value.</p>
+  <p><strong>TL;DR</strong>: <code class="inline">xerj autoindex</code> parses a MySQL-style <code class="inline">.sql</code> file directly, with no database server involved. In a captured run one file produced 2 indices, <code class="inline">dump-articles</code> with 301 documents and <code class="inline">dump-authors</code> with 20. A <code class="inline">match_phrase</code> query then found a phrase inside an <code class="inline">INSERT</code> value.</p>
   <div class="prompt-card">
-    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT — IT DOES THE REST</span>
+    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT. IT DOES THE REST</span>
     <code>Act as a coding agent. Read https://xerj.org/llms.txt, start a local XERJ node, run `xerj autoindex ./sqldump --url http://127.0.0.1:9200 --prefix dump --progress plain`, GET /_cat/indices/dump-*?format=json to see one index per table, then POST a match_phrase query to /dump-*/_search for a string you expect inside an INSERT value and report the hit with its ax_locator.</code>
     <button type="button" class="prompt-copy" data-copy="Act as a coding agent. Read https://xerj.org/llms.txt, start a local XERJ node, run `xerj autoindex ./sqldump --url http://127.0.0.1:9200 --prefix dump --progress plain`, GET /_cat/indices/dump-*?format=json to see one index per table, then POST a match_phrase query to /dump-*/_search for a string you expect inside an INSERT value and report the hit with its ax_locator.">COPY THE PROMPT</button>
   </div>
@@ -320,7 +320,7 @@
   <p>Read <code class="inline">ax_locator</code> and <code class="inline">ax_path</code>. In the captured run <code class="inline">ax_locator</code> held <code class="inline">tarticles:s0:t41</code>, which names the table and the position of the row inside the file.</p>
   <h2>Evidence</h2>
   <ul>
-    <li>GNU grep is line-oriented. It selects and prints the input lines that match a pattern, so a multi-row INSERT that sits on one physical line is returned whole. — <a href="https://www.gnu.org/software/grep/manual/grep.html">https://www.gnu.org/software/grep/manual/grep.html</a></li>
+    <li>GNU grep is line-oriented. It selects and prints the input lines that match a pattern, so a multi-row INSERT that sits on one physical line is returned whole. Source: <a href="https://www.gnu.org/software/grep/manual/grep.html">https://www.gnu.org/software/grep/manual/grep.html</a></li>
   </ul>
   <h2>Related</h2>
   <ul>

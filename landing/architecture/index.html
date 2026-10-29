@@ -14,8 +14,8 @@
 <!-- ga4:end -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>XERJ.ai — Architecture &amp; Deployment</title>
-<meta name="description" content="XERJ deployment topologies — single node, HA cluster, multi-region and air-gapped — all from the same ~36 MB binary, with RTO and RPO targets each.">
+<title>XERJ.ai · Architecture &amp; Deployment</title>
+<meta name="description" content="XERJ deployment topologies (single node, HA cluster, multi-region and air-gapped) all from the same ~36 MB binary, with RTO and RPO targets each.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;700;800;900&family=Inter:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -26,17 +26,17 @@
 <link rel="canonical" href="https://xerj.org/architecture/">
 <meta property="og:site_name" content="XERJ.ai">
 <meta property="og:type" content="website">
-<meta property="og:title" content="XERJ.ai — Architecture &amp; Deployment">
-<meta property="og:description" content="XERJ deployment topologies — single node, HA cluster, multi-region and air-gapped — all from the same ~36 MB binary, with RTO and RPO targets each.">
+<meta property="og:title" content="XERJ.ai · Architecture &amp; Deployment">
+<meta property="og:description" content="XERJ deployment topologies (single node, HA cluster, multi-region and air-gapped) all from the same ~36 MB binary, with RTO and RPO targets each.">
 <meta property="og:url" content="https://xerj.org/architecture/">
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="XERJ.ai — Architecture &amp; Deployment">
-<meta name="twitter:description" content="XERJ deployment topologies — single node, HA cluster, multi-region and air-gapped — all from the same ~36 MB binary, with RTO and RPO targets each.">
+<meta name="twitter:title" content="XERJ.ai · Architecture &amp; Deployment">
+<meta name="twitter:description" content="XERJ deployment topologies (single node, HA cluster, multi-region and air-gapped) all from the same ~36 MB binary, with RTO and RPO targets each.">
 <meta name="twitter:image" content="https://xerj.org/og/xerj-card.png">
 <script type="application/ld+json">
 {
@@ -77,7 +77,7 @@
   "applicationSubCategory": "Search engine",
   "operatingSystem": "Linux, macOS, Windows",
   "url": "https://xerj.org/architecture/",
-  "description": "XERJ deployment topologies — single node, HA cluster, multi-region and air-gapped — all from the same ~36 MB binary, with RTO and RPO targets each.",
+  "description": "XERJ deployment topologies (single node, HA cluster, multi-region and air-gapped) all from the same ~36 MB binary, with RTO and RPO targets each.",
   "image": "https://xerj.org/og/xerj-card.png",
   "license": "https://www.apache.org/licenses/LICENSE-2.0",
   "isAccessibleForFree": true,
@@ -186,7 +186,7 @@
       </g>
     </svg>
     <div class="row"><div class="k">NODES</div><div class="v">1</div></div>
-    <div class="row"><div class="k">RTO</div><div class="v">Single point — restore from snapshot</div></div>
+    <div class="row"><div class="k">RTO</div><div class="v">Single point: restore from snapshot</div></div>
     <div class="row"><div class="k">RPO</div><div class="v">WAL fsync (sub-second)</div></div>
     <div class="row"><div class="k">AVAILABILITY</div><div class="v">Best effort</div></div>
     <div class="row"><div class="k">USE WHEN</div><div class="v">POC · dev · CI · edge site · air-gapped lab · single-tenant small corpus</div></div>

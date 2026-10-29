@@ -12,7 +12,7 @@ source: "content/answers/autoindex-exit-codes.md"
 
 **Key number:** The decision gate that produces exit 4 defaults to 10 minutes of estimated work (`DEFAULT_MAX_MINUTES`). (as of 2026-10-19; source: [engine/crates/xerj-autoindex/src/gate.rs](https://github.com/xerj-org/xerj/blob/main/engine/crates/xerj-autoindex/src/gate.rs))
 
-**TL;DR** — Read the terminal reason as well as the exit code. Exit 3 with `completed-with-junk` is success. With `stale-resume-plan`, `ok=false` means new files were not indexed.
+**TL;DR**: Read the terminal reason as well as the exit code. Exit 3 with `completed-with-junk` is success. With `stale-resume-plan`, `ok=false` means new files were not indexed.
 
 ## Agent prompt
 
@@ -125,7 +125,7 @@ If the upper end is longer and no `--approve` or `--yes` was given, **nothing is
 
 You answer it by re-running the same command with `--approve proceed`, `--approve fast` or `--approve cancel`. `fast` also applies `--no-semantic --no-graph`.
 
-A person at a terminal is prompted instead, but only when the question can actually be seen: stdin a terminal, stderr a terminal, and the progress surface on. A piped or agent-driven run is never prompted, and `--quiet` silences the prompt as well. Every un-prompted run behaves identically — the JSON request goes to stdout, which `--quiet` does not silence, and the process exits 4. The payload's `prompt_not_offered_because` names which of the three conditions was missing.
+A person at a terminal is prompted instead, but only when the question can actually be seen: stdin a terminal, stderr a terminal, and the progress surface on. A piped or agent-driven run is never prompted, and `--quiet` silences the prompt as well. Every un-prompted run behaves identically: the JSON request goes to stdout, which `--quiet` does not silence, and the process exits 4. The payload's `prompt_not_offered_because` names which of the three conditions was missing.
 
 `xerj autoindex` never waits on stdin for a question it did not print.
 
@@ -175,7 +175,7 @@ xerj-done ok=true exit=3 reason=completed-with-junk wall=0.6s files=4 records=1 
 
 That line carries the reason string, the wall time and the code-coverage counters `code_files`, `code_files_indexed` and `code_files_junked`. A corpus whose source files were all dropped therefore cannot print the same line as a healthy one.
 
-Two cases print no terminal line at all. `--quiet` and `--progress none` print none by design, so poll `xerj autoindex status --state-dir <dir>` or read the exit code instead of waiting for output that never comes. A run killed by a signal cannot print one either — a missing terminal line after the process is gone means it died, not that it finished.
+Two cases print no terminal line at all. `--quiet` and `--progress none` print none by design, so poll `xerj autoindex status --state-dir <dir>` or read the exit code instead of waiting for output that never comes. A run killed by a signal cannot print one either: a missing terminal line after the process is gone means it died, not that it finished.
 
 ## What an agent should do with each code
 
@@ -235,13 +235,13 @@ Do not blindly retry 0 or 3. Exit 3 with stale-resume-plan requires a --fresh re
 
 ## Evidence
 
-- Exit 3 completed-with-junk is success. The separate stale-resume-plan outcome carries ok=false and requires --fresh to include new files. Dataset refusal counters name missing datasets even when ok=true. Exit 1 reports real errors; usage is 2 and a decision request is 4. — `engine/crates/xerj-autoindex/src/cli.rs:771`
-- Exit 4 is a code of its own; 1 is the catch-all for real failures, and the decision request is answered by re-running the same command with --approve proceed, fast or cancel. — `engine/crates/xerj-autoindex/src/cli.rs:771`
-- A forced mapping refusal ended xerj-done ok=true exit=3 reason=completed-with-junk wall=0.7s files=1 records=1 generation=1 datasets_refused=1 files_refused=2, with the other dataset indexed. — `benchmarks/autoindex-resilience/refusal-e2e.run1.stderr.txt`
-- Before issue #955 was fixed, a 48,533-file --no-graph run applied every operation and then ended xerj-done ok=false exit=1 reason=aborted wall=10336.0s, because the catalog went out as one bulk request of 51,129 actions and the engine's max_actions_per_bulk is 50,000. — `benchmarks/autoindex-resilience/before-955.stderr.txt`
-- Resuming that same generation with the fix ended xerj-done ok=true exit=3 reason=completed-with-junk wall=415.0s files=47444 records=821840 generation=1. — `benchmarks/autoindex-resilience/after-955.full-corpus-resume.stderr.txt`
-- On a real node started with a 64 MiB memory cap, a --no-graph run ended xerj-done ok=false exit=1 reason=server-backpressure wall=609.1s ops_applied=0 ops_remaining=231; against real nodes with max_actions_per_bulk = 64 and with max_body_bytes = 98304, each run ended ok=true exit=3 records=1663 bulk_splits=1. — `benchmarks/autoindex-resilience/limits-real-node.txt`
-- Every run that reaches an exit ends with one terminal line in every progress mode except none, which --quiet selects; a run killed by a signal cannot print one either. — `engine/crates/xerj-autoindex/src/lib.rs:277`
+- Exit 3 completed-with-junk is success. The separate stale-resume-plan outcome carries ok=false and requires --fresh to include new files. Dataset refusal counters name missing datasets even when ok=true. Exit 1 reports real errors; usage is 2 and a decision request is 4. Source: `engine/crates/xerj-autoindex/src/cli.rs:771`
+- Exit 4 is a code of its own; 1 is the catch-all for real failures, and the decision request is answered by re-running the same command with --approve proceed, fast or cancel. Source: `engine/crates/xerj-autoindex/src/cli.rs:771`
+- A forced mapping refusal ended xerj-done ok=true exit=3 reason=completed-with-junk wall=0.7s files=1 records=1 generation=1 datasets_refused=1 files_refused=2, with the other dataset indexed. Source: `benchmarks/autoindex-resilience/refusal-e2e.run1.stderr.txt`
+- Before issue #955 was fixed, a 48,533-file --no-graph run applied every operation and then ended xerj-done ok=false exit=1 reason=aborted wall=10336.0s, because the catalog went out as one bulk request of 51,129 actions and the engine's max_actions_per_bulk is 50,000. Source: `benchmarks/autoindex-resilience/before-955.stderr.txt`
+- Resuming that same generation with the fix ended xerj-done ok=true exit=3 reason=completed-with-junk wall=415.0s files=47444 records=821840 generation=1. Source: `benchmarks/autoindex-resilience/after-955.full-corpus-resume.stderr.txt`
+- On a real node started with a 64 MiB memory cap, a --no-graph run ended xerj-done ok=false exit=1 reason=server-backpressure wall=609.1s ops_applied=0 ops_remaining=231; against real nodes with max_actions_per_bulk = 64 and with max_body_bytes = 98304, each run ended ok=true exit=3 records=1663 bulk_splits=1. Source: `benchmarks/autoindex-resilience/limits-real-node.txt`
+- Every run that reaches an exit ends with one terminal line in every progress mode except none, which --quiet selects; a run killed by a signal cannot print one either. Source: `engine/crates/xerj-autoindex/src/lib.rs:277`
 
 ## Related
 

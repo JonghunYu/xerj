@@ -15,7 +15,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>XERJ.ai · Docs · Vectors &amp; kNN</title>
-<meta name="description" content="Dense vectors and kNN in XERJ — full-precision storage, a persisted HNSW graph, exact rescoring of candidates, and measured recall against ES 8.13.4.">
+<meta name="description" content="Dense vectors and kNN in XERJ: full-precision storage, a persisted HNSW graph, exact rescoring of candidates, and measured recall against ES 8.13.4.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;700;800;900&family=Inter:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -27,16 +27,16 @@
 <meta property="og:site_name" content="XERJ.ai">
 <meta property="og:type" content="article">
 <meta property="og:title" content="XERJ.ai · Docs · Vectors &amp; kNN">
-<meta property="og:description" content="Dense vectors and kNN in XERJ — full-precision storage, a persisted HNSW graph, exact rescoring of candidates, and measured recall against ES 8.13.4.">
+<meta property="og:description" content="Dense vectors and kNN in XERJ: full-precision storage, a persisted HNSW graph, exact rescoring of candidates, and measured recall against ES 8.13.4.">
 <meta property="og:url" content="https://xerj.org/docs/vectors">
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="XERJ.ai · Docs · Vectors &amp; kNN">
-<meta name="twitter:description" content="Dense vectors and kNN in XERJ — full-precision storage, a persisted HNSW graph, exact rescoring of candidates, and measured recall against ES 8.13.4.">
+<meta name="twitter:description" content="Dense vectors and kNN in XERJ: full-precision storage, a persisted HNSW graph, exact rescoring of candidates, and measured recall against ES 8.13.4.">
 <meta name="twitter:image" content="https://xerj.org/og/xerj-card.png">
 <script type="application/ld+json">
 {
@@ -72,7 +72,7 @@
   "@context": "https://schema.org",
   "@type": "TechArticle",
   "headline": "XERJ.ai · Docs · Vectors & kNN",
-  "description": "Dense vectors and kNN in XERJ — full-precision storage, a persisted HNSW graph, exact rescoring of candidates, and measured recall against ES 8.13.4.",
+  "description": "Dense vectors and kNN in XERJ: full-precision storage, a persisted HNSW graph, exact rescoring of candidates, and measured recall against ES 8.13.4.",
   "url": "https://xerj.org/docs/vectors",
   "image": "https://xerj.org/og/xerj-card.png",
   "inLanguage": "en",
@@ -232,21 +232,21 @@
   <h1>Vectors & kNN</h1>
 
 
-  <p>XERJ stores your vectors in full at <strong>ingest</strong> time and maintains a <strong>persisted HNSW graph</strong> alongside them. An unfiltered <code class="inline">knn</code> on a full-precision cosine field (≥1,024 docs) is served by an approximate HNSW beam search whose candidates are <strong>exact-rescored</strong>, so returned scores match the exact path bit-for-bit — measured recall@10 1.00 on the official bench query, 100-probe mean 0.976 (ES 8.13.4 same protocol: 0.937). <code class="inline">num_candidates</code> sets the beam width (floored at 800 to match Elasticsearch's per-segment candidate semantics). A <code class="inline">filter</code>, non-cosine similarity, SQ8 quantization, a small index, or a stale graph falls back to the <strong>exact brute-force</strong> scan: every candidate is scored and the true nearest neighbours returned (recall 1.00; latency scales with vectors scanned). Distance metric and quantization are set in config. See <a href="#knn-query">KNN query</a> below.</p>
+  <p>XERJ stores your vectors in full at <strong>ingest</strong> time and maintains a <strong>persisted HNSW graph</strong> alongside them. An unfiltered <code class="inline">knn</code> on a full-precision cosine field (≥1,024 docs) is served by an approximate HNSW beam search whose candidates are <strong>exact-rescored</strong>, so returned scores match the exact path bit-for-bit: measured recall@10 1.00 on the official bench query, 100-probe mean 0.976 (ES 8.13.4 same protocol: 0.937). <code class="inline">num_candidates</code> sets the beam width (floored at 800 to match Elasticsearch's per-segment candidate semantics). A <code class="inline">filter</code>, non-cosine similarity, SQ8 quantization, a small index, or a stale graph falls back to the <strong>exact brute-force</strong> scan: every candidate is scored and the true nearest neighbours returned (recall 1.00; latency scales with vectors scanned). Distance metric and quantization are set in config. See <a href="#knn-query">KNN query</a> below.</p>
 
-  <h2 id="embedders">Embedding backends — how vectors get made</h2>
+  <h2 id="embedders">Embedding backends: how vectors get made</h2>
   <p>Everything above assumes a vector already exists on the doc. XERJ can produce that vector for you from a <code class="inline">semantic_text</code> field, and you pick <em>how</em> once at the server with <code class="inline">--embed-mode</code> (or <code class="inline">embedding.mode</code> in config, or <code class="inline">XERJ_EMBED_MODE</code>). The mapping and the <code class="inline">semantic</code> query are identical across all three:</p>
   <div class="cfg" style="grid-template-columns: 1fr 1.2fr 3fr;">
     <div class="head">MODE</div><div class="head">SHIPS / NEEDS</div><div class="head">WHAT IT IS</div>
-    <div class="cell k">lexical</div><div class="cell t">built-in · default</div><div class="cell dsc">Feature-hash embedder. Offline, deterministic, zero download. Maps overlapping and related vocabulary into vector space — strong when question and answer share terms, not a neural sentence encoder.</div>
-    <div class="cell k">neural</div><div class="cell t">built-in · ~90 MB on first use</div><div class="cell dsc">BERT sentence encoder (<code class="inline">all-MiniLM-L6-v2</code>) running in-process via <code class="inline">candle</code> — pure Rust, no Python, no external service. The model auto-downloads (~90 MB) once, or point <code class="inline">embedding.local_model_dir</code> at a pre-staged copy for a fully <strong>air-gapped</strong> install. Captures meaning with no shared term (<em>rotate ≈ regenerate</em>).</div>
+    <div class="cell k">lexical</div><div class="cell t">built-in · default</div><div class="cell dsc">Feature-hash embedder. Offline, deterministic, zero download. Maps overlapping and related vocabulary into vector space: strong when question and answer share terms, not a neural sentence encoder.</div>
+    <div class="cell k">neural</div><div class="cell t">built-in · ~90 MB on first use</div><div class="cell dsc">BERT sentence encoder (<code class="inline">all-MiniLM-L6-v2</code>) running in-process via <code class="inline">candle</code>: pure Rust, no Python, no external service. The model auto-downloads (~90 MB) once, or point <code class="inline">embedding.local_model_dir</code> at a pre-staged copy for a fully <strong>air-gapped</strong> install. Captures meaning with no shared term (<em>rotate ≈ regenerate</em>).</div>
     <div class="cell k">proxy</div><div class="cell t">external endpoint</div><div class="cell dsc">Bring your own model: XERJ calls any OpenAI-compatible <code class="inline">/v1/embeddings</code> (OpenAI, Cohere, a local vLLM). Set <code class="inline">embedding.default_endpoint</code>. Embedding happens at ingest time.</div>
   </div>
-  <p>Turn on the built-in neural embedder with a single server flag — no mapping or query change:</p>
+  <p>Turn on the built-in neural embedder with a single server flag, no mapping or query change:</p>
 <pre class="code">xerj --insecure --data-dir ./data --embed-mode neural</pre>
   <p>See the <a href="/docs/recipes/semantic-search-rag">Semantic search &amp; RAG recipe</a> for the end-to-end walkthrough.</p>
 
-  <h2 id="hnsw">hnsw_* config keys — accepted, no effect on search</h2>
+  <h2 id="hnsw">hnsw_* config keys: accepted, no effect on search</h2>
   <div class="cfg" style="grid-template-columns: 1.5fr 1fr 1fr 2.5fr;">
     <div class="head">KEY</div>
     <div class="head">TYPE</div>
@@ -256,17 +256,17 @@
     <div class="cell k">hnsw_m</div>
     <div class="cell t">u32</div>
     <div class="cell d">16</div>
-    <div class="cell dsc">Accepted and validated; the built-in HNSW graph currently builds with fixed M=16 — this key is not yet wired to the build.</div>
+    <div class="cell dsc">Accepted and validated; the built-in HNSW graph currently builds with fixed M=16. This key is not yet wired to the build.</div>
 
     <div class="cell k">hnsw_ef_construction</div>
     <div class="cell t">u32</div>
     <div class="cell d">200</div>
-    <div class="cell dsc">Accepted; must be ≥ hnsw_m. The graph currently builds with fixed ef_construction=200 — this key is not yet wired to the build.</div>
+    <div class="cell dsc">Accepted; must be ≥ hnsw_m. The graph currently builds with fixed ef_construction=200. This key is not yet wired to the build.</div>
 
     <div class="cell k">hnsw_ef_search</div>
     <div class="cell t">u32</div>
     <div class="cell d">100</div>
-    <div class="cell dsc">Accepted but not read by the serving path — the ANN beam width comes from the request's num_candidates (floored at 800).</div>
+    <div class="cell dsc">Accepted but not read by the serving path: the ANN beam width comes from the request's num_candidates (floored at 800).</div>
 
     <div class="cell k">default_metric</div>
     <div class="cell t">enum</div>
@@ -275,15 +275,15 @@
   </div>
 
   <h2 id="quantization">Quantization</h2>
-  <p><strong>Quantization is off by default</strong> — <code class="inline">[vector] default_quantization = "none"</code>, full-precision f32. Opt in per field with <code class="inline">index_options.type: int8_hnsw</code> (or <code class="inline">int8_flat</code>) on the mapping. The node-wide key is not wired as a default: only its <code class="inline">"binary"</code> refusal reads it, so <code class="inline">"scalar8"</code> there quantizes nothing.</p>
+  <p><strong>Quantization is off by default</strong>: <code class="inline">[vector] default_quantization = "none"</code>, full-precision f32. Opt in per field with <code class="inline">index_options.type: int8_hnsw</code> (or <code class="inline">int8_flat</code>) on the mapping. The node-wide key is not wired as a default: only its <code class="inline">"binary"</code> refusal reads it, so <code class="inline">"scalar8"</code> there quantizes nothing.</p>
   <ul>
-    <li><strong>none</strong> — full-precision f32. <em>The default.</em> Use when recall matters more than RAM.</li>
-    <li><strong>scalar8</strong> — 8-bit per dimension, 1–2% recall loss. The one quantizer the serving path reads. It buys <strong>precision, not memory</strong>: the scan reads the full-precision vector from <code class="inline">_source</code> and quantizes it per query, so nothing shrinks in RAM, and a <code class="inline">scalar8</code> <code class="inline">_score</code> (and the order it produces) depends on the candidate set — see the <a href="/docs/recipes/vector-quantization">quantization recipe</a> and <a href="https://github.com/xerj-org/xerj/issues/392">#392</a>.</li>
-    <li><strong>binary</strong> — 1-bit per dimension. Not implemented: the server <strong>refuses to start</strong> on <code class="inline">default_quantization = "binary"</code> rather than silently storing full precision while claiming a 32× saving.</li>
+    <li><strong>none</strong>: full-precision f32. <em>The default.</em> Use when recall matters more than RAM.</li>
+    <li><strong>scalar8</strong>: 8-bit per dimension, 1–2% recall loss. The one quantizer the serving path reads. It buys <strong>precision, not memory</strong>: the scan reads the full-precision vector from <code class="inline">_source</code> and quantizes it per query, so nothing shrinks in RAM, and a <code class="inline">scalar8</code> <code class="inline">_score</code> (and the order it produces) depends on the candidate set, see the <a href="/docs/recipes/vector-quantization">quantization recipe</a> and <a href="https://github.com/xerj-org/xerj/issues/392">#392</a>.</li>
+    <li><strong>binary</strong>: 1-bit per dimension. Not implemented: the server <strong>refuses to start</strong> on <code class="inline">default_quantization = "binary"</code> rather than silently storing full precision while claiming a 32× saving.</li>
   </ul>
   <p>A 4-bit quantizer exists in the vector crate but no config or mapping value reaches it, so <code class="inline">scalar4</code> is not a mode you can select in this build.</p>
-  <p><strong>A mapping's <code class="inline">quantization</code> value is honoured or refused — never accepted and ignored</strong> (<a href="https://github.com/xerj-org/xerj/issues/275">#275</a>, fixed). <code class="inline">"scalar8"</code> (alias <code class="inline">"int8"</code>) and <code class="inline">"none"</code> are the values this build implements. Anything else — <code class="inline">"binary"</code>, <code class="inline">"scalar4"</code>, <code class="inline">"int4"</code>, or a typo such as <code class="inline">"sq8"</code> — is now a <code class="inline">400 mapper_parsing_exception</code> naming the value and the accepted set, on both <code class="inline">PUT /&lt;index&gt;</code> and <code class="inline">PUT /&lt;index&gt;/_mapping</code>, and the index is not created. Before the fix those values answered <code class="inline">200</code>, were echoed back verbatim by <code class="inline">GET /_mapping</code>, and were then ignored, so the field stored full-precision f32 while the mapping you read back to confirm it said otherwise. This is the same guard <code class="inline">Config::validate</code> applies to <code class="inline">[vector] default_quantization</code> at startup, now at the per-field surface that sets the same field.</p>
-  <p>The strictness is confined to XERJ's own <code class="inline">quantization</code> key. Elasticsearch's <code class="inline">index_options.type</code> stays permissive — <code class="inline">hnsw</code>, <code class="inline">flat</code>, <code class="inline">int4_*</code> and <code class="inline">bbq_*</code> mappings still create, served by the exact f32 scan — because an ES mapping must not be rejected on a wire-compatibility surface.</p>
+  <p><strong>A mapping's <code class="inline">quantization</code> value is honoured or refused, never accepted and ignored</strong> (<a href="https://github.com/xerj-org/xerj/issues/275">#275</a>, fixed). <code class="inline">"scalar8"</code> (alias <code class="inline">"int8"</code>) and <code class="inline">"none"</code> are the values this build implements. Anything else: <code class="inline">"binary"</code>, <code class="inline">"scalar4"</code>, <code class="inline">"int4"</code>, or a typo such as <code class="inline">"sq8"</code>, is now a <code class="inline">400 mapper_parsing_exception</code> naming the value and the accepted set, on both <code class="inline">PUT /&lt;index&gt;</code> and <code class="inline">PUT /&lt;index&gt;/_mapping</code>, and the index is not created. Before the fix those values answered <code class="inline">200</code>, were echoed back verbatim by <code class="inline">GET /_mapping</code>, and were then ignored, so the field stored full-precision f32 while the mapping you read back to confirm it said otherwise. This is the same guard <code class="inline">Config::validate</code> applies to <code class="inline">[vector] default_quantization</code> at startup, now at the per-field surface that sets the same field.</p>
+  <p>The strictness is confined to XERJ's own <code class="inline">quantization</code> key. Elasticsearch's <code class="inline">index_options.type</code> stays permissive: <code class="inline">hnsw</code>, <code class="inline">flat</code>, <code class="inline">int4_*</code> and <code class="inline">bbq_*</code> mappings still create, served by the exact f32 scan, because an ES mapping must not be rejected on a wire-compatibility surface.</p>
 
   <h2 id="knn-query">KNN query</h2>
 <pre class="code">{
@@ -294,9 +294,9 @@
     "num_candidates": 200
   }
 }</pre>
-  <p><code class="inline">num_candidates</code> is the ANN beam width on the HNSW-served (unfiltered, ≥1,024-doc) path — larger values trade latency for recall, floored at 800 to match Elasticsearch's per-segment candidate semantics. On the exact scan (filtered kNN, small indexes, SQ8 fields) it has no effect on results.</p>
+  <p><code class="inline">num_candidates</code> is the ANN beam width on the HNSW-served (unfiltered, ≥1,024-doc) path: larger values trade latency for recall, floored at 800 to match Elasticsearch's per-segment candidate semantics. On the exact scan (filtered kNN, small indexes, SQ8 fields) it has no effect on results.</p>
 
-  <h2>Hybrid — BM25 + KNN in one planner pass</h2>
+  <h2>Hybrid: BM25 + KNN in one planner pass</h2>
 <pre class="code">{
   "hybrid": {
     "fusion": "rrf",

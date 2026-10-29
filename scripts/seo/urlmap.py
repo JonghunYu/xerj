@@ -51,7 +51,7 @@ LANDING = "landing"
 OG_IMAGE_PATH = "og/xerj-card.png"
 OG_IMAGE_WIDTH = "1200"
 OG_IMAGE_HEIGHT = "630"
-OG_IMAGE_ALT = "XERJ.ai — the search engine built for AI agents"
+OG_IMAGE_ALT = "XERJ.ai: the search engine built for AI agents"
 
 #: Pages that carry `<meta name="robots" content="noindex">`.
 #:

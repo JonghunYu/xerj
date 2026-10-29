@@ -190,14 +190,14 @@ The published coding-agent benchmark measured 2.7 times fewer output tokens than
 
 ## Evidence
 
-- psf/requests autoindex: done in 2.9s, 95 files, 36 code files — `benchmarks/agent-intents-2026-10-19/01-autoindex-requests.txt`
-- xerj search answer: 1,303 bytes, sessions.py:309 first — `benchmarks/agent-intents-2026-10-19/01-xerj-search.txt`
-- xerj def answer: 949 bytes, sessions.py:154 — `benchmarks/agent-intents-2026-10-19/01-xerj-def.txt`
-- rg -n -i redirect: 282 lines, 25,150 bytes — `benchmarks/agent-intents-2026-10-19/01-rg-redirect.txt`
-- Wall times 8 to 23 ms for xerj search, 5 to 7 ms for rg — `benchmarks/agent-intents-2026-10-19/README.md`
-- MCP tools/list returns 17 tools — `benchmarks/agent-intents-2026-10-19/00-mcp-tools-list.json`
-- 2.7 times fewer output tokens, 9,982 vs 26,477; idle 8% CPU and 8.3 GB vs Zoekt 0.03% and 119 MB — `landing/benchmarks/index.html`
-- --embed-mode neural downloads all-MiniLM-L6-v2, about 90 MB; lexical by default — [https://github.com/xerj-org/xerj/blob/main/README.md](https://github.com/xerj-org/xerj/blob/main/README.md)
+- psf/requests autoindex: done in 2.9s, 95 files, 36 code files. Source: `benchmarks/agent-intents-2026-10-19/01-autoindex-requests.txt`
+- xerj search answer: 1,303 bytes, sessions.py:309 first. Source: `benchmarks/agent-intents-2026-10-19/01-xerj-search.txt`
+- xerj def answer: 949 bytes, sessions.py:154. Source: `benchmarks/agent-intents-2026-10-19/01-xerj-def.txt`
+- rg -n -i redirect: 282 lines, 25,150 bytes. Source: `benchmarks/agent-intents-2026-10-19/01-rg-redirect.txt`
+- Wall times 8 to 23 ms for xerj search, 5 to 7 ms for rg. Source: `benchmarks/agent-intents-2026-10-19/README.md`
+- MCP tools/list returns 17 tools. Source: `benchmarks/agent-intents-2026-10-19/00-mcp-tools-list.json`
+- 2.7 times fewer output tokens, 9,982 vs 26,477; idle 8% CPU and 8.3 GB vs Zoekt 0.03% and 119 MB. Source: `landing/benchmarks/index.html`
+- --embed-mode neural downloads all-MiniLM-L6-v2, about 90 MB; lexical by default. Source: [https://github.com/xerj-org/xerj/blob/main/README.md](https://github.com/xerj-org/xerj/blob/main/README.md)
 
 ## Related
 

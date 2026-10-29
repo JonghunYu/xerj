@@ -60,7 +60,7 @@ faq:
     a: "No. This is a local check you run before you file. One-off lookups can stay on GitHub's own search."
 ---
 
-**TL;DR** — Find duplicate GitHub issues before you file. Export the issues to JSONL, index the folder with `xerj autoindex`, and search the draft title. On 2026-10-20 that search over 1,532 records ranked issue 960 first and took 7 ms. A paraphrase of the same bug did not rank it first.
+**TL;DR**: Find duplicate GitHub issues before you file. Export the issues to JSONL, index the folder with `xerj autoindex`, and search the draft title. On 2026-10-20 that search over 1,532 records ranked issue 960 first and took 7 ms. A paraphrase of the same bug did not rank it first.
 
 XERJ is a new way for AI to search for data.
 

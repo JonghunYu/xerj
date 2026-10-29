@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="XERJ vs Meilisearch for local and agent search">
@@ -240,7 +240,7 @@
   </div>
   <p><strong>TL;DR</strong> — Meilisearch wins typo-tolerant instant search, and its own defaults document the win. XERJ wins the step before the query: it reads a folder of mixed files with one command, where Meilisearch expects you to build and POST the documents. No head-to-head was run for this page.</p>
   <div class="prompt-card">
-    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT — IT DOES THE REST</span>
+    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT. IT DOES THE REST</span>
     <code>Act as a coding agent. Read https://xerj.org/llms.txt, start a local node with `xerj --insecure --data-dir ./xerj-data`, run `xerj autoindex ./docs-folder --prefix docs --state-dir ./state-docs` against the raw folder, then POST an explicit fuzzy query on body to /docs-*/_search and report the hits. Also report how many documents you had to build and POST by hand before the first query.</code>
     <button type="button" class="prompt-copy" data-copy="Act as a coding agent. Read https://xerj.org/llms.txt, start a local node with `xerj --insecure --data-dir ./xerj-data`, run `xerj autoindex ./docs-folder --prefix docs --state-dir ./state-docs` against the raw folder, then POST an explicit fuzzy query on body to /docs-*/_search and report the hits. Also report how many documents you had to build and POST by hand before the first query.">COPY THE PROMPT</button>
   </div>
@@ -321,12 +321,12 @@
   <p>Call Meilisearch when a person types into a search field. Call XERJ when an agent must query files that are already on disk.</p>
   <h2>Evidence</h2>
   <ul>
-    <li>Meilisearch accepts one typo for query terms of five or more characters and up to two typos when the term is at least nine characters long, and typo tolerance is on by default. — <a href="https://www.meilisearch.com/docs/capabilities/full_text_search/relevancy/typo_tolerance_settings">https://www.meilisearch.com/docs/capabilities/full_text_search/relevancy/typo_tolerance_settings</a></li>
-    <li>Documents enter Meilisearch through POST /indexes/{index_uid}/documents, and the endpoint accepts application/json, application/x-ndjson and text/csv. — <a href="https://www.meilisearch.com/docs/reference/api/documents/add-or-update-documents">https://www.meilisearch.com/docs/reference/api/documents/add-or-update-documents</a></li>
-    <li>Meilisearch hybrid search merges the two result sets with a semanticRatio that defaults to 0.5 and gives equal weight to each side. — <a href="https://www.meilisearch.com/docs/capabilities/hybrid_search/advanced/custom_hybrid_ranking">https://www.meilisearch.com/docs/capabilities/hybrid_search/advanced/custom_hybrid_ranking</a></li>
-    <li>Meilisearch publishes a first-party Model Context Protocol server so an assistant can create indices, add documents and search over them. — <a href="https://www.meilisearch.com/docs/getting_started/integrations/mcp">https://www.meilisearch.com/docs/getting_started/integrations/mcp</a></li>
-    <li>Meilisearch's Enterprise Edition is licensed under the Business Source License 1.1 and cannot be freely used in production, and sharding is the only feature exclusive to it. — <a href="https://www.meilisearch.com/docs/resources/self_hosting/enterprise_edition">https://www.meilisearch.com/docs/resources/self_hosting/enterprise_edition</a></li>
-    <li>Meilisearch Cloud is a paid managed plan that starts at 20 dollars per month with usage-based or resource-based billing. — <a href="https://www.meilisearch.com/pricing">https://www.meilisearch.com/pricing</a></li>
+    <li>Meilisearch accepts one typo for query terms of five or more characters and up to two typos when the term is at least nine characters long, and typo tolerance is on by default. Source: <a href="https://www.meilisearch.com/docs/capabilities/full_text_search/relevancy/typo_tolerance_settings">https://www.meilisearch.com/docs/capabilities/full_text_search/relevancy/typo_tolerance_settings</a></li>
+    <li>Documents enter Meilisearch through POST /indexes/{index_uid}/documents, and the endpoint accepts application/json, application/x-ndjson and text/csv. Source: <a href="https://www.meilisearch.com/docs/reference/api/documents/add-or-update-documents">https://www.meilisearch.com/docs/reference/api/documents/add-or-update-documents</a></li>
+    <li>Meilisearch hybrid search merges the two result sets with a semanticRatio that defaults to 0.5 and gives equal weight to each side. Source: <a href="https://www.meilisearch.com/docs/capabilities/hybrid_search/advanced/custom_hybrid_ranking">https://www.meilisearch.com/docs/capabilities/hybrid_search/advanced/custom_hybrid_ranking</a></li>
+    <li>Meilisearch publishes a first-party Model Context Protocol server so an assistant can create indices, add documents and search over them. Source: <a href="https://www.meilisearch.com/docs/getting_started/integrations/mcp">https://www.meilisearch.com/docs/getting_started/integrations/mcp</a></li>
+    <li>Meilisearch's Enterprise Edition is licensed under the Business Source License 1.1 and cannot be freely used in production, and sharding is the only feature exclusive to it. Source: <a href="https://www.meilisearch.com/docs/resources/self_hosting/enterprise_edition">https://www.meilisearch.com/docs/resources/self_hosting/enterprise_edition</a></li>
+    <li>Meilisearch Cloud is a paid managed plan that starts at 20 dollars per month with usage-based or resource-based billing. Source: <a href="https://www.meilisearch.com/pricing">https://www.meilisearch.com/pricing</a></li>
   </ul>
   <h2>Related</h2>
   <ul>

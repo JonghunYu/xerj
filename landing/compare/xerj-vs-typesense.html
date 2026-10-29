@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="XERJ vs Typesense when the corpus is a folder">
@@ -240,7 +240,7 @@
   </div>
   <p><strong>TL;DR</strong> — Typesense wins faceted product browsing, and its own documentation names that as a headline use case. XERJ wins the step before the query, because it reads a folder of mixed files with one command. No faceting head-to-head was measured for this page.</p>
   <div class="prompt-card">
-    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT — IT DOES THE REST</span>
+    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT. IT DOES THE REST</span>
     <code>Act as a coding agent handed a folder of CSV exports, SQLite files and PDFs. Read https://xerj.org/llms.txt, start a node with `xerj --insecure --data-dir ./xerj-data`, run `xerj autoindex ./exports --prefix ex --state-dir ./state-ex`, then POST a terms aggregation on an inferred keyword field to /ex-*/_search and report both the bucket counts and how many files you had to convert to JSON first.</code>
     <button type="button" class="prompt-copy" data-copy="Act as a coding agent handed a folder of CSV exports, SQLite files and PDFs. Read https://xerj.org/llms.txt, start a node with `xerj --insecure --data-dir ./xerj-data`, run `xerj autoindex ./exports --prefix ex --state-dir ./state-ex`, then POST a terms aggregation on an inferred keyword field to /ex-*/_search and report both the bucket counts and how many files you had to convert to JSON first.">COPY THE PROMPT</button>
   </div>
@@ -322,12 +322,12 @@
   <p>No. Typesense says it should not hold the only copy of your data, and XERJ is single-node only, so both need the original files kept elsewhere.</p>
   <h2>Evidence</h2>
   <ul>
-    <li>Typesense documents faceted navigation and browsing as a headline use case and states that it should not hold the only copy of your data. — <a href="https://typesense.org/docs/overview/use-cases.html">https://typesense.org/docs/overview/use-cases.html</a></li>
-    <li>Typesense faceting uses facet_by, including labelled numeric range facets, and filtering uses filter_by. — <a href="https://typesense.org/docs/30.2/api/search.html">https://typesense.org/docs/30.2/api/search.html</a></li>
-    <li>Typesense is primarily a JSON store, bulk import needs newline-delimited JSON, and PDF, PPT and XLS files must be extracted with an external library such as Apache Tika before they can be indexed. — <a href="https://typesense.org/docs/30.2/api/documents.html">https://typesense.org/docs/30.2/api/documents.html</a></li>
-    <li>Typesense typo tolerance defaults to two typos, with one-typo correction from word length four and two-typo correction from word length seven. — <a href="https://typesense.org/docs/30.2/api/search.html">https://typesense.org/docs/30.2/api/search.html</a></li>
-    <li>Typesense combines its two result rankings with the documented formula rank_fusion_score = 0.7 * K + 0.3 * S, tunable through the alpha parameter. — <a href="https://typesense.org/docs/30.2/api/vector-search.html">https://typesense.org/docs/30.2/api/vector-search.html</a></li>
-    <li>The Typesense server is licensed GPL-3.0, and Typesense Cloud sells a dedicated cluster at a fixed hourly cost rather than charging per document or per search. — <a href="https://github.com/typesense/typesense">https://github.com/typesense/typesense</a></li>
+    <li>Typesense documents faceted navigation and browsing as a headline use case and states that it should not hold the only copy of your data. Source: <a href="https://typesense.org/docs/overview/use-cases.html">https://typesense.org/docs/overview/use-cases.html</a></li>
+    <li>Typesense faceting uses facet_by, including labelled numeric range facets, and filtering uses filter_by. Source: <a href="https://typesense.org/docs/30.2/api/search.html">https://typesense.org/docs/30.2/api/search.html</a></li>
+    <li>Typesense is primarily a JSON store, bulk import needs newline-delimited JSON, and PDF, PPT and XLS files must be extracted with an external library such as Apache Tika before they can be indexed. Source: <a href="https://typesense.org/docs/30.2/api/documents.html">https://typesense.org/docs/30.2/api/documents.html</a></li>
+    <li>Typesense typo tolerance defaults to two typos, with one-typo correction from word length four and two-typo correction from word length seven. Source: <a href="https://typesense.org/docs/30.2/api/search.html">https://typesense.org/docs/30.2/api/search.html</a></li>
+    <li>Typesense combines its two result rankings with the documented formula rank_fusion_score = 0.7 * K + 0.3 * S, tunable through the alpha parameter. Source: <a href="https://typesense.org/docs/30.2/api/vector-search.html">https://typesense.org/docs/30.2/api/vector-search.html</a></li>
+    <li>The Typesense server is licensed GPL-3.0, and Typesense Cloud sells a dedicated cluster at a fixed hourly cost rather than charging per document or per search. Source: <a href="https://github.com/typesense/typesense">https://github.com/typesense/typesense</a></li>
   </ul>
   <h2>Related</h2>
   <ul>

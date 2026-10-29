@@ -52,7 +52,7 @@ faq:
     a: "Run `PRAGMA wal_checkpoint(TRUNCATE)` on the database before you index it, or index a copy taken after a checkpoint."
 ---
 
-**TL;DR** — `xerj autoindex` reads a SQLite file read-only and turns each table into an index. In a captured WAL-mode run, XERJ created `sq-tickets` with 400 documents and `sq-agents` with 13, and left all 3 source files byte-identical. Rows still resident in the write-ahead log were absent.
+**TL;DR**: `xerj autoindex` reads a SQLite file read-only and turns each table into an index. In a captured WAL-mode run, XERJ created `sq-tickets` with 400 documents and `sq-agents` with 13, and left all 3 source files byte-identical. Rows still resident in the write-ahead log were absent.
 
 ## Index the database file in one command
 

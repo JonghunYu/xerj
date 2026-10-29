@@ -153,12 +153,12 @@ The console has a read-only guest mode driven by a share record that names one k
 
 ## Evidence
 
-- In the recorded run xerj brain turned 10 files into 81 records in one dataset, ax-docs, and wrote 33 links into the brain casefile. — `docs/usecases/console-reader/live-e2e.json`
-- The shared index held 6 emails and 43 attachment records; the guest key got 200 on its own index and on the brain, 403 on another index, on autoindex-catalog and on a write, and 401 from the console API; the guest tab made 0 console API requests. — `docs/usecases/console-reader/live-e2e.json`
-- The graph panel of the hostile email showed 2 linked records, both same_dir links of the file the email came from; the signed-in operator's graph panel was refused with HTTP 401 on the auth-enabled node. — `docs/usecases/console-reader/live-e2e.json`
-- On an index where autoindex typed email_subject as keyword, match on email_subject for Lunch returned 0 hits with the subject Lunch on Friday? indexed, and the case-insensitive wildcard *lunch* returned 1. — `docs/usecases/console-reader/review-repro/review-repro.json`
-- The console page is served with a Content-Security-Policy whose script-src and connect-src are 'self'. — `engine/crates/xerj-console-api/src/spa.rs`
-- A guest session can build only _search, _count, _mapping and ego requests, and fails closed on a malformed or expired record. — `xerj-ux/src/data/guest.js`
+- In the recorded run xerj brain turned 10 files into 81 records in one dataset, ax-docs, and wrote 33 links into the brain casefile. Source: `docs/usecases/console-reader/live-e2e.json`
+- The shared index held 6 emails and 43 attachment records; the guest key got 200 on its own index and on the brain, 403 on another index, on autoindex-catalog and on a write, and 401 from the console API; the guest tab made 0 console API requests. Source: `docs/usecases/console-reader/live-e2e.json`
+- The graph panel of the hostile email showed 2 linked records, both same_dir links of the file the email came from; the signed-in operator's graph panel was refused with HTTP 401 on the auth-enabled node. Source: `docs/usecases/console-reader/live-e2e.json`
+- On an index where autoindex typed email_subject as keyword, match on email_subject for Lunch returned 0 hits with the subject Lunch on Friday? indexed, and the case-insensitive wildcard *lunch* returned 1. Source: `docs/usecases/console-reader/review-repro/review-repro.json`
+- The console page is served with a Content-Security-Policy whose script-src and connect-src are 'self'. Source: `engine/crates/xerj-console-api/src/spa.rs`
+- A guest session can build only _search, _count, _mapping and ego requests, and fails closed on a malformed or expired record. Source: `xerj-ux/src/data/guest.js`
 
 ## Related
 

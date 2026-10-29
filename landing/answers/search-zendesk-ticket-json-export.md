@@ -12,7 +12,7 @@ source: "content/answers/search-zendesk-ticket-json-export.md"
 
 **Key number:** A `status` terms aggregation returned 6 buckets of exactly 30 tickets each. (as of 2026-08-21; source: the captured run documented on this page)
 
-**TL;DR** — XERJ answers a Zendesk ticket search from the exported JSON on local disk, with 1 `xerj autoindex` run. In a captured run, a phrase from a ticket description returned 36 hits with per-ticket locators such as `tickets:e4`. A `status` aggregation returned 6 buckets of exactly 30.
+**TL;DR**: XERJ answers a Zendesk ticket search from the exported JSON on local disk, with 1 `xerj autoindex` run. In a captured run, a phrase from a ticket description returned 36 hits with per-ticket locators such as `tickets:e4`. A `status` aggregation returned 6 buckets of exactly 30.
 
 ## Agent prompt
 
@@ -158,7 +158,7 @@ Yes. The captured run put `ticket_comments.json` into its own index, `zd-json-ti
 
 ## Evidence
 
-- JSONL line cap is 16 MB (MAX_LINE = 16 << 20). A line at or above that length is skipped; the rest of the file still indexes. — `engine/crates/xerj-autoindex/src/extract/mod.rs`
+- JSONL line cap is 16 MB (MAX_LINE = 16 << 20). A line at or above that length is skipped; the rest of the file still indexes. Source: `engine/crates/xerj-autoindex/src/extract/mod.rs`
 
 ## Related
 

@@ -115,9 +115,9 @@ No. Start the node, then run `xerj mcp`. The handshake can succeed and every too
 
 ## Evidence
 
-- xerj init wrote .mcp.json and .cursor/mcp.json and appended .codex/config.toml. — `benchmarks/agent-queries-2026-10-20/05-init-stdout.txt`
-- tools/list returned 17 tools from xerj mcp v1.0.0-rc.97. — `benchmarks/agent-queries-2026-10-20/05-tool-names.txt`
-- Codex config is read for trusted projects only. — `engine/crates/xerj-autoindex/src/init.rs:221`
+- xerj init wrote .mcp.json and .cursor/mcp.json and appended .codex/config.toml. Source: `benchmarks/agent-queries-2026-10-20/05-init-stdout.txt`
+- tools/list returned 17 tools from xerj mcp v1.0.0-rc.97. Source: `benchmarks/agent-queries-2026-10-20/05-tool-names.txt`
+- Codex config is read for trusted projects only. Source: `engine/crates/xerj-autoindex/src/init.rs:221`
 
 ## Related
 

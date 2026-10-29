@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Should agent memory use a graph?">
@@ -230,9 +230,9 @@
     <p>Is anyone using knowledge graphs for LLM agent memory and context management? Links help, but XERJ is not a graph database. It builds a bounded, graph-shaped link index over documents it already indexed. Our capture produced 7 edges over 6 documents, answered 1 hop with 3 edges and 2 hops with 6, and refused 3 hops.</p>
     <p class="key-fact"><strong>Key number:</strong> The shared-term detector links a document to at most 5 others (<code class="inline">MAX_EDGES_PER_DOC</code>). <span class="mute">(as of 2026-10-19 · source: <a href="https://github.com/xerj-org/xerj/blob/main/engine/crates/xerj-autoindex/src/detect/sharedterm.rs">engine/crates/xerj-autoindex/src/detect/sharedterm.rs</a>)</span></p>
   </div>
-  <p><strong>TL;DR</strong> — Links help, and XERJ is not a graph database. XERJ builds a bounded, graph-shaped link index over the documents it already indexed. Our capture produced 7 edges over 6 documents, answered 1 hop with 3 edges and 2 hops with 6, and refused 3 hops.</p>
+  <p><strong>TL;DR</strong>: Links help, and XERJ is not a graph database. XERJ builds a bounded, graph-shaped link index over the documents it already indexed. Our capture produced 7 edges over 6 documents, answered 1 hop with 3 edges and 2 hops with 6, and refused 3 hops.</p>
   <div class="prompt-card">
-    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT — IT DOES THE REST</span>
+    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT. IT DOES THE REST</span>
     <code>Act as a coding agent. Read https://xerj.org/llms.txt, run `xerj autoindex ./notes --url http://127.0.0.1:9430 --prefix br --brain notes --progress plain`, GET /_graph/notes/overview to read the totals and the detector split, then request /_graph/notes/ego at hops=1, hops=2 and hops=3 and report the edge counts plus the exact text of the refusal you get at 3 hops.</code>
     <button type="button" class="prompt-copy" data-copy="Act as a coding agent. Read https://xerj.org/llms.txt, run `xerj autoindex ./notes --url http://127.0.0.1:9430 --prefix br --brain notes --progress plain`, GET /_graph/notes/overview to read the totals and the detector split, then request /_graph/notes/ego at hops=1, hops=2 and hops=3 and report the edge counts plus the exact text of the refusal you get at 3 hops.">COPY THE PROMPT</button>
   </div>

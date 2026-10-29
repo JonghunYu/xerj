@@ -37,7 +37,7 @@ links_out:
   - "why-autoindex-skipped-files"
   - "/docs/recipes/zero-config-autoindex"
 evidence:
-  - claim: "An mbox is detected by content — a From separator line carrying an asctime date followed by RFC 5322 headers — and the .mbox extension proves nothing either way."
+  - claim: "An mbox is detected by content (a From separator line carrying an asctime date followed by RFC 5322 headers) and the .mbox extension proves nothing either way."
     source: "engine/crates/xerj-autoindex/src/sniff.rs"
   - claim: "The splitter holds one buffered chunk, at most 1024 bytes of the current line while deciding what it is, and the one message being assembled, capped at 64 MB. The bytes of messages in flight on the parse pool are bounded at 256 MB for the whole process."
     source: "engine/crates/xerj-autoindex/src/extract/mbox.rs"
@@ -49,11 +49,11 @@ evidence:
     source: "engine/crates/xerj-autoindex/src/extract/eml.rs"
   - claim: "A folder holding archive_browser.html is a Takeout root; that page and a Keep note's .html twin are skipped by the rules default:takeout-index and default:takeout-keep-html-twin, both reported in the ignore accounting."
     source: "engine/crates/xerj-autoindex/src/walk.rs"
-  - claim: "A .zip or .tgz is recorded as junk with the reason 'autoindex does not open archives — extract it first', naming the command for the kind in hand, and the run prints that line under its summary and in the --json summary as unextracted_archives."
+  - claim: "A .zip or .tgz is recorded as junk with the reason 'autoindex does not open archives: extract it first', naming the command for the kind in hand, and the run prints that line under its summary and in the --json summary as unextracted_archives."
     source: "engine/crates/xerj-autoindex/src/lib.rs"
   - claim: "The email-thread@1 detector writes replies_to edges from In-Reply-To or the nearest resolvable References ancestor, and attachment_of edges from attachment records to their message; every edge carries the header it came from as evidence. A run that re-reads only some mailboxes loads the message nodes of the others back from the index, so a reply across Inbox and Sent survives an incremental run; a test pins that and the compacted-mailbox case."
     source: "engine/crates/xerj-autoindex/src/detect/e2e_mail.rs"
-  - claim: "The Takeout layout rules and every number in this article come from a synthetic mailbox written by scripts/synthetic-takeout.py — it plants quoted and unquoted From lines, 8-bit bodies, a truncated multipart, a 300 KB line and a duplicated Message-ID; none of it is verified on a real Takeout export."
+  - claim: "The Takeout layout rules and every number in this article come from a synthetic mailbox written by scripts/synthetic-takeout.py. It plants quoted and unquoted From lines, 8-bit bodies, a truncated multipart, a 300 KB line and a duplicated Message-ID; none of it is verified on a real Takeout export."
     source: "scripts/synthetic-takeout.py"
   - claim: "A per-item HTTP 429 from the server's memory circuit breaker is re-offered for up to 600 seconds instead of aborting the run; per-item 5xx and write blocks are not waited on."
     source: "engine/crates/xerj-autoindex/src/esclient.rs"
@@ -79,7 +79,7 @@ faq:
   - q: "Why does a term filter on email_from find nothing?"
     a: "`email_from` holds the header as a person reads it, such as `Alice Anders <alice@example.org>`, and it is a keyword, so only the whole string matches. Filter on `email_from_address` (or `email_to_address`, `email_cc_address`) with the bare, lower-case address."
   - q: "The mbox is 8 GB. Does it get loaded into memory?"
-    a: "Not by autoindex. The splitter streams the file, and the client peaked at 296 MiB on a 1 GB mailbox. The node was the limit before #1002 (v1.0.0-rc.76, 2026-09): a 1 GB mailbox needed 66.9 GiB with its cap lifted and aborted under the default 16 GiB cap, and a 300 MB mailbox peaked at 18–20 GiB against a laptop's 8 GiB cap. Since #1002 closed #948, the 1 GB mailbox completes under the default 16 GiB cap in 407.7 s, and the 300 MB mailbox fits the 8 GiB cap at 7,963.6 MiB. The peak still crosses the cap — 21,405.3 MiB on the fixed 1 GB run — because per-segment caches grow until a merge retires their segment; that is open as #1032."
+    a: "Not by autoindex. The splitter streams the file, and the client peaked at 296 MiB on a 1 GB mailbox. The node was the limit before #1002 (v1.0.0-rc.76, 2026-09): a 1 GB mailbox needed 66.9 GiB with its cap lifted and aborted under the default 16 GiB cap, and a 300 MB mailbox peaked at 18–20 GiB against a laptop's 8 GiB cap. Since #1002 closed #948, the 1 GB mailbox completes under the default 16 GiB cap in 407.7 s, and the 300 MB mailbox fits the 8 GiB cap at 7,963.6 MiB. The peak still crosses the cap (21,405.3 MiB on the fixed 1 GB run) because per-segment caches grow until a merge retires their segment; that is open as #1032."
   - q: "Can it search inside the PDFs people attached?"
     a: "Yes. A PDF attachment goes through the PDF extractor and becomes one record per page, titled with the attachment's name and carrying the parent's `email_message_id`, `email_subject` and `email_from_address`. An `attachment_of` edge points back to the message."
   - q: "Does it keep the Gmail threads?"
@@ -92,7 +92,7 @@ faq:
     a: "No. The mbox splitter and the message extractor are tested against a generated mailbox that reproduces the hard cases real exports contain. The Takeout folder layout rules have only seen that synthetic tree. Treat them as unverified on a real export until someone runs one."
 ---
 
-**TL;DR** — Unzip the Takeout download, run `xerj autoindex` on the folder with its own `--prefix`, then search the mailbox over HTTP. The mbox is recognised by its content and streamed one message at a time. Attached PDFs become per-page documents linked to their message. Senders are filterable by bare address, and Gmail thread ids and reply headers become filters and graph edges. With the default embedder, which is lexical (feature hashing, not neural), no message text leaves your machine. The node's ingest memory, which before #1002 (2026-09) pushed a 300 MB mailbox past a laptop's RAM, now finishes a 1 GB mailbox under the node's default 16 GiB cap in 407.7 s; the peak still crosses the cap (21,405.3 MiB on that run) because per-segment caches grow until a merge retires them, tracked as #1032.
+**TL;DR**: Unzip the Takeout download, run `xerj autoindex` on the folder with its own `--prefix`, then search the mailbox over HTTP. The mbox is recognised by its content and streamed one message at a time. Attached PDFs become per-page documents linked to their message. Senders are filterable by bare address, and Gmail thread ids and reply headers become filters and graph edges. With the default embedder, which is lexical (feature hashing, not neural), no message text leaves your machine. The node's ingest memory, which before #1002 (2026-09) pushed a 300 MB mailbox past a laptop's RAM, now finishes a 1 GB mailbox under the node's default 16 GiB cap in 407.7 s; the peak still crosses the cap (21,405.3 MiB on that run) because per-segment caches grow until a merge retires them, tracked as #1032.
 
 ## Unzip first
 
@@ -172,7 +172,7 @@ A 16 GiB laptop's default cap is 8 GiB. A 300 MB synthetic mailbox run at that c
 
 Since #1002, the same 1 GB mailbox completes under the node's default 16 GiB cap in **407.7 s**, with every needle and every edge verified, and the 300 MB mailbox fits the 8 GiB cap at a peak of **7,963.6 MiB**.
 
-What is left is [#1032](https://github.com/xerj-org/xerj/issues/1032) (filed 2026-09-26): three per-segment caches — `stored_value_cache`, `dv_cache` and `id_pos_cache` — stay unbounded until a merge retires their segment. The fixed 1 GB run still peaked at **21,405.3 MiB**, 1.3× that run's cap. We have not run it on a 16 GiB machine, so leave headroom for a multi-GB export.
+What is left is [#1032](https://github.com/xerj-org/xerj/issues/1032) (filed 2026-09-26): three per-segment caches (`stored_value_cache`, `dv_cache` and `id_pos_cache`) stay unbounded until a merge retires their segment. The fixed 1 GB run still peaked at **21,405.3 MiB**, 1.3× that run's cap. We have not run it on a 16 GiB machine, so leave headroom for a multi-GB export.
 
 **Searching after a restart is uneven.** We reopened the same 1 GB index on a fresh node under the default cap. Most first-time questions took under 50 ms, and others took several seconds. In two measurements, 16 and 17 of 40 queries took over a second, and the slowest took 16.6 s.
 

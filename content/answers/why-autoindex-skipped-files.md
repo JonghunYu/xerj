@@ -46,7 +46,7 @@ faq:
     a: "Exit 3 is success. The run finished and refused at least one file. The terminal line reads reason=completed-with-junk, and junk_files counts the refusals. Do not rerun it as a failure."
 ---
 
-**TL;DR** — XERJ prints one line per ignore rule with an exact file count, and stores a refusal reason for every file it opened. A capture over 26 files on disk indexed 1, refused 2 with named reasons, and excluded 23 through ignore rules. The run exited 3 with `reason=completed-with-junk`.
+**TL;DR**: XERJ prints one line per ignore rule with an exact file count, and stores a refusal reason for every file it opened. A capture over 26 files on disk indexed 1, refused 2 with named reasons, and excluded 23 through ignore rules. The run exited 3 with `reason=completed-with-junk`.
 
 ## Files disappear for 2 different causes
 

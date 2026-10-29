@@ -67,7 +67,7 @@ faq:
     a: "No. The 13 reference libraries were written for the study so they could not be in a training set. A real private codebase is the untested end state, and the page says so rather than assuming it transfers."
 ---
 
-**TL;DR** — Clone the library you are about to write against. Index it with `xerj autoindex`. Let the agent retrieve the passage before it writes code. A published study measured a gain on code the model cannot recall, and a loss on code it knows.
+**TL;DR**: Clone the library you are about to write against. Index it with `xerj autoindex`. Let the agent retrieve the passage before it writes code. A published study measured a gain on code the model cannot recall, and a loss on code it knows.
 
 ## The four steps
 

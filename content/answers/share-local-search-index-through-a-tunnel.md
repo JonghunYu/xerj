@@ -54,7 +54,7 @@ faq:
     a: "No. The lockout is charged to the share, not to the address: 30 attempts an hour from anywhere. Junk ids are charged to the source address, where one shared bucket only makes the bound tighter."
 ---
 
-**TL;DR** — `xerj share` with `--tunnel` starts your own `cloudflared`, prints a public HTTPS guest link, and runs until you press Ctrl-C. Stopping it closes the tunnel and revokes the share. No port is opened on your router. The trade: the guest's traffic passes through Cloudflare, which terminates the TLS connection.
+**TL;DR**: `xerj share` with `--tunnel` starts your own `cloudflared`, prints a public HTTPS guest link, and runs until you press Ctrl-C. Stopping it closes the tunnel and revokes the share. No port is opened on your router. The trade: the guest's traffic passes through Cloudflare, which terminates the TLS connection.
 
 ## What the command does
 

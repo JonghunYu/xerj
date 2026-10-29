@@ -32,7 +32,7 @@
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="XERJ · Docs · Recipe · Anomaly detection">
@@ -234,11 +234,11 @@
   <h1>Anomaly detection</h1>
 
 
-  <p><strong>Goal:</strong> you have a timestamped metric — CPU, latency, request rate, error count — and you want to know <em>when it went wrong</em> without hand-tuning a fixed red-line. A CPU box that idles at 20% is fine at 20% and alarming at 96%, but the "alarming" number depends on the box. You want the engine to learn the normal band and flag the minute it broke out.</p>
+  <p><strong>Goal:</strong> you have a timestamped metric (CPU, latency, request rate, error count) and you want to know <em>when it went wrong</em> without hand-tuning a fixed red-line. A CPU box that idles at 20% is fine at 20% and alarming at 96%, but the "alarming" number depends on the box. You want the engine to learn the normal band and flag the minute it broke out.</p>
 
   <p>XERJ ships an on-demand anomaly detector (<code class="inline">_ml/anomaly_detectors</code>, Elasticsearch wire-shape). You point it at an index, tell it the time field, the metric (<code class="inline">mean(cpu)</code>), and a bucket span. When you score it, XERJ buckets the data by time, computes the metric per bucket, builds a <strong>moving baseline from prior normal buckets</strong>, and scores each bucket by how many standard deviations it sits from that baseline. A spike lands many sigmas out and gets flagged; ordinary jitter does not.</p>
 
-  <p><strong>Honest scope.</strong> This is <strong>on-demand batch scoring</strong>: you POST <code class="inline">_score</code> and get the full timeline back in one response. There is <strong>no continuous datafeed or background job</strong> yet — nothing runs on a timer, and there is no alerting. To monitor live, call <code class="inline">_score</code> on a schedule (cron, your alertmanager, a <code class="inline">/loop</code>) over a recent time window and act on <code class="inline">anomaly_count</code>. The model is a transparent moving-window z-score, not a seasonal/multivariate ML model — it's excellent for "this metric jumped relative to its recent self," which covers the large majority of ops spikes.</p>
+  <p><strong>Honest scope.</strong> This is <strong>on-demand batch scoring</strong>: you POST <code class="inline">_score</code> and get the full timeline back in one response. There is <strong>no continuous datafeed or background job</strong> yet. Nothing runs on a timer, and there is no alerting. To monitor live, call <code class="inline">_score</code> on a schedule (cron, your alertmanager, a <code class="inline">/loop</code>) over a recent time window and act on <code class="inline">anomaly_count</code>. The model is a transparent moving-window z-score, not a seasonal/multivariate ML model: it's excellent for "this metric jumped relative to its recent self," which covers the large majority of ops spikes.</p>
 
   <h2>The scenario</h2>
   <p><code class="inline">cpu_metrics</code> collects four host readings per minute. For fifteen minutes CPU sits around 20%. At <strong>minute 12</strong> a runaway process pins a box and the per-minute mean jumps to <strong>96%</strong>, then recovers. We want XERJ to flag exactly that minute.</p>
@@ -254,7 +254,7 @@
 }'</pre>
 
   <h2>2. Bulk-ingest the series (spike injected at minute 12)</h2>
-  <p>Standard <code class="inline">_bulk</code> NDJSON — 16 minutes × 4 hosts. Normal minutes read ~20%; minute 12 reads ~96%. (Full generator in the script below.)</p>
+  <p>Standard <code class="inline">_bulk</code> NDJSON: 16 minutes × 4 hosts. Normal minutes read ~20%; minute 12 reads ~96%. (Full generator in the script below.)</p>
 <pre class="code">{"index":{"_index":"cpu_metrics"}}
 {"@timestamp":"2026-07-06T00:00:00Z","host":"web-0","cpu":19}
 ...
@@ -263,7 +263,7 @@
 ...</pre>
 
   <h2>3. Create the detector</h2>
-  <p><code class="inline">function: mean</code> over the <code class="inline">cpu</code> field, one-minute buckets. <code class="inline">anomaly_threshold</code> is the z-score gate (defaults to <code class="inline">3.0</code> — a bucket is flagged when it sits more than 3σ from the baseline).</p>
+  <p><code class="inline">function: mean</code> over the <code class="inline">cpu</code> field, one-minute buckets. <code class="inline">anomaly_threshold</code> is the z-score gate (defaults to <code class="inline">3.0</code>: a bucket is flagged when it sits more than 3σ from the baseline).</p>
 <pre class="code">curl -XPUT localhost:9200/_ml/anomaly_detectors/cpu-spike \
   -H 'Content-Type: application/json' -d '{
     "source_index": "cpu_metrics",
@@ -287,7 +287,7 @@
   "anomaly_threshold": 3.0
 }</pre>
 
-  <p>Supported <code class="inline">function</code> values: <code class="inline">count</code> (no field needed — buckets by doc count, great for request/error rate), <code class="inline">mean</code>/<code class="inline">avg</code>, <code class="inline">min</code>, <code class="inline">max</code>, <code class="inline">sum</code>.</p>
+  <p>Supported <code class="inline">function</code> values: <code class="inline">count</code> (no field needed, buckets by doc count, great for request/error rate), <code class="inline">mean</code>/<code class="inline">avg</code>, <code class="inline">min</code>, <code class="inline">max</code>, <code class="inline">sum</code>.</p>
 
   <h2>4. Score it</h2>
 <pre class="code">curl -XPOST localhost:9200/_ml/anomaly_detectors/cpu-spike/_score</pre>
@@ -328,17 +328,17 @@
   <h2>How the scoring works (and how to read the numbers)</h2>
   <ul>
     <li><strong>Warm-up.</strong> The first 4 buckets seed the baseline and are not scored (<code class="inline">"expected": null</code>, <code class="inline">"note": "insufficient_baseline"</code>). Give the detector a span of history before the interesting part.</li>
-    <li><strong><code class="inline">expected</code> / <code class="inline">std_dev</code>.</strong> The mean and standard deviation of prior <strong>normal</strong> buckets. Crucially, a flagged bucket is <strong>not folded back into the baseline</strong> — one spike can't poison the expectation for the minutes after it. Notice <code class="inline">expected</code> stays ~20 straight through the spike.</li>
+    <li><strong><code class="inline">expected</code> / <code class="inline">std_dev</code>.</strong> The mean and standard deviation of prior <strong>normal</strong> buckets. A flagged bucket is <strong>not folded back into the baseline</strong>: one spike can't poison the expectation for the minutes after it. Notice <code class="inline">expected</code> stays ~20 straight through the spike.</li>
     <li><strong><code class="inline">z_score</code>.</strong> <code class="inline">(actual − expected) / std_dev</code>. The spike is 65σ out; normal jitter stays within a couple of sigma.</li>
     <li><strong><code class="inline">is_anomaly</code></strong> is the decision, gated purely on <code class="inline">|z| &gt; anomaly_threshold</code>. Only the spike crosses it here.</li>
-    <li><strong><code class="inline">anomaly_score</code> (0–100)</strong> is a normalized, human-friendly severity: it maps |z| = threshold to ~50 and saturates toward 100 for large deviations. It is <strong>not</strong> the flag. That's why the <code class="inline">00:04</code> jitter bucket shows a mid score of 48 (its z of 2.8 is close to the threshold of 3) yet is correctly <em>not</em> flagged. <strong>Alert on <code class="inline">is_anomaly</code> / <code class="inline">anomaly_count</code>; use <code class="inline">anomaly_score</code> for ranking and dashboards.</strong> In this run the spike (100.0) is more than 2× the top normal bucket (48.0) — clean separation.</li>
+    <li><strong><code class="inline">anomaly_score</code> (0–100)</strong> is a normalized, human-friendly severity: it maps |z| = threshold to ~50 and saturates toward 100 for large deviations. It is <strong>not</strong> the flag. That's why the <code class="inline">00:04</code> jitter bucket shows a mid score of 48 (its z of 2.8 is close to the threshold of 3) yet is correctly <em>not</em> flagged. <strong>Alert on <code class="inline">is_anomaly</code> / <code class="inline">anomaly_count</code>; use <code class="inline">anomaly_score</code> for ranking and dashboards.</strong> In this run the spike (100.0) is more than 2× the top normal bucket (48.0): clean separation.</li>
   </ul>
 
   <h2>Narrow or re-tune a run without recreating the job</h2>
   <p><code class="inline">_score</code> accepts two per-run overrides in the POST body:</p>
   <ul>
-    <li><strong><code class="inline">query</code></strong> — restrict which docs feed the buckets (e.g. one <code class="inline">host</code>, one service). Any XERJ query works: <code class="inline">{"query": {"term": {"host": "web-1"}}}</code>.</li>
-    <li><strong><code class="inline">anomaly_threshold</code></strong> — override the flag sensitivity for this run only.</li>
+    <li><strong><code class="inline">query</code></strong>: restrict which docs feed the buckets (e.g. one <code class="inline">host</code>, one service). Any XERJ query works: <code class="inline">{"query": {"term": {"host": "web-1"}}}</code>.</li>
+    <li><strong><code class="inline">anomaly_threshold</code></strong>: override the flag sensitivity for this run only.</li>
   </ul>
 <pre class="code"># Same data, stricter gate (10σ) — the 65σ spike still stands alone.
 curl -XPOST localhost:9200/_ml/anomaly_detectors/cpu-spike/_score \
@@ -346,7 +346,7 @@ curl -XPOST localhost:9200/_ml/anomaly_detectors/cpu-spike/_score \
 # -&gt; "anomaly_threshold": 10.0, "anomaly_count": 1</pre>
 
   <h2>Count instead of mean (rate spikes)</h2>
-  <p>For "too many errors this minute" you don't need a metric field — use <code class="inline">function: count</code>, drop <code class="inline">field</code>, and point the detector at your log index. Each bucket's <code class="inline">actual</code> becomes the doc count, scored the same way. Same recipe, same response shape.</p>
+  <p>For "too many errors this minute" you don't need a metric field: use <code class="inline">function: count</code>, drop <code class="inline">field</code>, and point the detector at your log index. Each bucket's <code class="inline">actual</code> becomes the doc count, scored the same way. Same recipe, same response shape.</p>
 
   <h2>List detectors</h2>
 <pre class="code">curl localhost:9200/_cat/ml/anomaly_detectors
@@ -355,7 +355,7 @@ curl -XPOST localhost:9200/_ml/anomaly_detectors/cpu-spike/_score \
   <p><code class="inline">GET /_ml/anomaly_detectors/{id}</code> and <code class="inline">DELETE /_ml/anomaly_detectors/{id}</code> round out lifecycle management.</p>
 
   <h2>Reproduce it yourself</h2>
-  <p>Start XERJ on its default port (<code class="inline">9200</code>) and run the example — no keys, no external services, stdlib Python only:</p>
+  <p>Start XERJ on its default port (<code class="inline">9200</code>) and run the example, no keys, no external services, stdlib Python only:</p>
 <pre class="code"># 1. Start a throwaway XERJ (ES-compat wire on :9200 by default)
 xerj --insecure --data-dir ./data
 
@@ -382,7 +382,7 @@ OK: spike at 00:12 flagged (score 100.0); 11 normal buckets, none flagged (top n
 == _cat/ml/anomaly_detectors ==
   cpu-spike opened cpu_metrics mean 1m</pre>
 
-  <p>The script maps the index, ingests the series with the injected spike, creates the detector, scores it, prints the table above, and <strong>asserts</strong> the result: exactly one anomaly, at 00:12, score 100.0, mean 96.0, 65σ out — and no normal bucket flagged (the spike's score is 100.0 vs. a top normal of 48.0, clean separation). It exits non-zero if any of that regresses, so it doubles as a smoke test.</p>
+  <p>The script maps the index, ingests the series with the injected spike, creates the detector, scores it, prints the table above, and <strong>asserts</strong> the result: exactly one anomaly, at 00:12, score 100.0, mean 96.0, 65σ out, and no normal bucket flagged (the spike's score is 100.0 vs. a top normal of 48.0, clean separation). It exits non-zero if any of that regresses, so it doubles as a smoke test.</p>
 
   <p>Full example script on GitHub: <a href="https://github.com/xerj-org/xerj/blob/main/docs/examples/anomaly-detection/anomaly_detection.py">docs/examples/anomaly-detection/anomaly_detection.py</a>.</p>
 

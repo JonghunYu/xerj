@@ -12,7 +12,7 @@ source: "content/answers/syntax-aware-code-search-refactoring.md"
 
 **Key number:** XERJ's tree-sitter registry covers 36 languages, pinned by a unit test. (as of 2026-10-19; source: [engine/crates/xerj-autoindex/src/extract/code.rs](https://github.com/xerj-org/xerj/blob/main/engine/crates/xerj-autoindex/src/extract/code.rs))
 
-**TL;DR** — XERJ gives you 2 code queries on the same index: a `match` on `body` for raw text, and a `match` on `defs` for declared symbols. The definition query returns a `symbols` array with a kind, a name and a line. Extraction is definitions only.
+**TL;DR**: XERJ gives you 2 code queries on the same index: a `match` on `body` for raw text, and a `match` on `defs` for declared symbols. The definition query returns a `symbols` array with a kind, a name and a line. Extraction is definitions only.
 
 ## Agent prompt
 

@@ -61,7 +61,7 @@ faq:
     a: "No. The measured gzip capture on this site is the log family. The CSV and JSON wrapper behaviour here is documented capability, and it is written as such."
 ---
 
-**TL;DR** — Gzip is a wrapper, not a family. `xerj autoindex` strips it during the run and sniffs the bytes underneath. A `.csv.gz` becomes typed columns, and a `.json.gz` becomes documents with fields. You never decompress anything yourself, and no query re-reads the archive.
+**TL;DR**: Gzip is a wrapper, not a family. `xerj autoindex` strips it during the run and sniffs the bytes underneath. A `.csv.gz` becomes typed columns, and a `.json.gz` becomes documents with fields. You never decompress anything yourself, and no query re-reads the archive.
 
 ## What this page measured, and what it did not
 
@@ -73,7 +73,7 @@ If your export matters, run the dry run on your own folder first and read the pl
 
 ## Gzip is a wrapper, not a family
 
-XERJ detects file families by content, not by file extension. Gzip sits one layer above that. The streaming extractors cover JSON and JSONL, CSV with dialect sniffing, structured logs, `sqldump` files, SQLite, PDF, DOCX, HTML, XML, YAML and plain text — **and gzip variants of them**.
+XERJ detects file families by content, not by file extension. Gzip sits one layer above that. The streaming extractors cover JSON and JSONL, CSV with dialect sniffing, structured logs, `sqldump` files, SQLite, PDF, DOCX, HTML, XML, YAML and plain text: **and gzip variants of them**.
 
 So the question "which family is this file?" is answered after the wrapper comes off, not before. A `sales.csv.gz` is a CSV. An `events.json.gz` is JSON.
 
@@ -117,7 +117,7 @@ Provenance still names the compressed source. `ax_path` keeps the `.gz` file nam
 
 Choose `ripgrep-all` when the archive is **nested**. It wraps ripgrep with adapters for PDF, Office documents, zip, tar, compressed files and SQLite. It walks into them without building an index.
 
-XERJ has no archive handler. A `.tar.gz` and a `.zip` are not unpacked, so their contents are not searchable in XERJ at all. That is a real rga win and it is not worked around on this page. A mail archive is the exception, because it needs no unpacking: since v1.0.0-rc.75 an `mbox` file is detected by content — a From-separator plus RFC 5322 headers, the extension is irrelevant — and streamed one message at a time ([#949](https://github.com/xerj-org/xerj/pull/949)), so its messages are searchable. PST, OST and Maildir are still unhandled.
+XERJ has no archive handler. A `.tar.gz` and a `.zip` are not unpacked, so their contents are not searchable in XERJ at all. That is a real rga win and it is not worked around on this page. A mail archive is the exception, because it needs no unpacking: since v1.0.0-rc.75 an `mbox` file is detected by content (a From-separator plus RFC 5322 headers, the extension is irrelevant) and streamed one message at a time ([#949](https://github.com/xerj-org/xerj/pull/949)), so its messages are searchable. PST, OST and Maildir are still unhandled.
 
 Choose `ripgrep-all` for one question asked once, too. There is no node to start and no index to build. For a single regex over a single compressed file, that is less work by every measure.
 

@@ -12,7 +12,7 @@ source: "content/answers/search-json-and-jsonl-logs.md"
 
 **Key number:** One JSONL file yields at most 4,096 records per extraction window (`MAX_RECORDS_PER_FILE`). (as of 2026-10-19; source: [engine/crates/xerj-autoindex/src/extract/mod.rs](https://github.com/xerj-org/xerj/blob/main/engine/crates/xerj-autoindex/src/extract/mod.rs))
 
-**TL;DR** — `xerj autoindex` detects JSON-array and JSONL log files from their content and gives each its own index. In a captured run over 2 files, XERJ inferred `timestamp` and `ts` as date fields with no configuration. A filter for `level=ERROR` returned exactly 386 hits.
+**TL;DR**: `xerj autoindex` detects JSON-array and JSONL log files from their content and gives each its own index. In a captured run over 2 files, XERJ inferred `timestamp` and `ts` as date fields with no configuration. A filter for `level=ERROR` returned exactly 386 hits.
 
 ## Agent prompt
 

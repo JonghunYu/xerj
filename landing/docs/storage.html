@@ -32,7 +32,7 @@
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="XERJ.ai · Docs · Storage &amp; WAL">
@@ -232,7 +232,7 @@
   <h1>Storage & WAL</h1>
 
 
-  <p>XERJ writes one WAL per index and a list of immutable segments. Each segment is three files, not a segment directory with twelve — a data file, a skip index, and a doc-id sidecar. All three are <strong>mmap'd</strong>, so reads come straight out of the OS page cache with no application-side buffer.</p>
+  <p>XERJ writes one WAL per index and a list of immutable segments. Each segment is three files, not a segment directory with twelve: a data file, a skip index, and a doc-id sidecar. All three are <strong>mmap'd</strong>, so reads come straight out of the OS page cache with no application-side buffer.</p>
 
 <pre class="code">data/
 ├── logs/                      · an index
@@ -257,27 +257,27 @@
   <h2>WAL</h2>
   <p>Append-only per index. Generation-rotated at <code class="inline">wal_max_size_mb</code> (default <strong>1024 MiB</strong>). Retained until the flush checkpoint passes the tail generation, then the old file is released. Fsync policy is controlled by <code class="inline">[storage] wal_sync</code>:</p>
   <ul>
-    <li><strong>sync</strong> — fsync <em>before</em> acknowledging each write (one fsync per <code class="inline">_bulk</code> request = group commit). <strong>Power-loss durable</strong>, matching Elasticsearch's default <code class="inline">index.translog.durability: request</code>. Lowest throughput; financial or compliance workloads.</li>
-    <li><strong>batched</strong> (default) — writes reach the kernel immediately, so an XERJ <strong>process crash loses nothing</strong>; a background loop fsyncs every <code class="inline">wal_batch_ms</code> (default 100 ms), so a <strong>power loss or kernel panic</strong> can lose at most the last ~100 ms of acknowledged writes. Deliberately <em>below</em> Elasticsearch's request-fsync default in exchange for throughput — set <code class="inline">wal_sync = "sync"</code> when you need power-loss durability.</li>
-    <li><strong>async</strong> — never fsync; the OS decides when to flush. Maximum throughput; a power loss or OS crash can lose up to ~1 s. Dev/bench only.</li>
+    <li><strong>sync</strong>: fsync <em>before</em> acknowledging each write (one fsync per <code class="inline">_bulk</code> request = group commit). <strong>Power-loss durable</strong>, matching Elasticsearch's default <code class="inline">index.translog.durability: request</code>. Lowest throughput; financial or compliance workloads.</li>
+    <li><strong>batched</strong> (default): writes reach the kernel immediately, so an XERJ <strong>process crash loses nothing</strong>; a background loop fsyncs every <code class="inline">wal_batch_ms</code> (default 100 ms), so a <strong>power loss or kernel panic</strong> can lose at most the last ~100 ms of acknowledged writes. Deliberately <em>below</em> Elasticsearch's request-fsync default in exchange for throughput: set <code class="inline">wal_sync = "sync"</code> when you need power-loss durability.</li>
+    <li><strong>async</strong>, never fsync; the OS decides when to flush. Maximum throughput; a power loss or OS crash can lose up to ~1 s. Dev/bench only.</li>
   </ul>
 
   <h2>Segments</h2>
   <p>Three files per segment:</p>
   <ul>
-    <li><strong>segment.seg</strong> — columnar data. Each field is a separate column run; queries only touch the columns they actually read. Integer columns use delta-of-delta or FOR; string columns use dictionary + FST. The whole file is mmap'd read-only at open time.</li>
-    <li><strong>segment.sidx</strong> — skip index. A sparse per-column seek table so point-lookups don't scan the whole column. Mmap'd alongside the segment.</li>
-    <li><strong>segment.ids</strong> — doc-id sidecar mapping external document ids to internal ordinals. Kept outside the main file so id lookups don't pull columnar pages into memory. Mmap'd read-only.</li>
+    <li><strong>segment.seg</strong>: columnar data. Each field is a separate column run; queries only touch the columns they actually read. Integer columns use delta-of-delta or FOR; string columns use dictionary + FST. The whole file is mmap'd read-only at open time.</li>
+    <li><strong>segment.sidx</strong>: skip index. A sparse per-column seek table so point-lookups don't scan the whole column. Mmap'd alongside the segment.</li>
+    <li><strong>segment.ids</strong>: doc-id sidecar mapping external document ids to internal ordinals. Kept outside the main file so id lookups don't pull columnar pages into memory. Mmap'd read-only.</li>
   </ul>
   <p>Segments are <strong>immutable once written</strong>. Updates and deletes work by writing a new segment and a tombstone; merges rewrite surviving documents into a larger segment.</p>
 
   <h2>Merges</h2>
-  <p><code class="inline">[merge] max_segment_mb</code> excludes anything that big from further merging (default 8192). <code class="inline">tier_floor_mb</code> (default 4) sets the tier boundaries, <code class="inline">min_merge_count</code> (default 4) is the per-tier trigger, and <code class="inline">max_merge_count</code> (default 16) caps how many segments one batch merges — and so caps peak merge RAM. Those four are what the merge path reads.</p>
+  <p><code class="inline">[merge] max_segment_mb</code> excludes anything that big from further merging (default 8192). <code class="inline">tier_floor_mb</code> (default 4) sets the tier boundaries, <code class="inline">min_merge_count</code> (default 4) is the per-tier trigger, and <code class="inline">max_merge_count</code> (default 16) caps how many segments one batch merges, and so caps peak merge RAM. Those four are what the merge path reads.</p>
   <p><code class="inline">strategy</code> has exactly one implemented value: <code class="inline">size_tiered</code>. <code class="inline">log_structured</code> is <strong>refused at startup</strong> rather than silently substituted, so a config that asks for it fails loudly instead of running the other policy.</p>
-  <p><strong>Three further keys in this section are accepted but not wired</strong>, and setting any of them away from its default logs a warning at startup: <code class="inline">min_segments</code> (superseded by <code class="inline">min_merge_count</code>), <code class="inline">io_rate_mb_per_sec</code> — <strong>merge I/O is not throttled in this build</strong>; the rate limiter that honours it sits in a storage-crate merge executor the engine never constructs — and <code class="inline">max_concurrent</code>, since merge parallelism comes from the <code class="inline">XERJ_MERGE_PARALLELISM</code> environment variable (default 1).</p>
+  <p><strong>Three further keys in this section are accepted but not wired</strong>, and setting any of them away from its default logs a warning at startup: <code class="inline">min_segments</code> (superseded by <code class="inline">min_merge_count</code>), <code class="inline">io_rate_mb_per_sec</code>, <strong>merge I/O is not throttled in this build</strong>; the rate limiter that honours it sits in a storage-crate merge executor the engine never constructs, and <code class="inline">max_concurrent</code>, since merge parallelism comes from the <code class="inline">XERJ_MERGE_PARALLELISM</code> environment variable (default 1).</p>
 
   <h2>Cluster metadata</h2>
-  <p>In single-node mode there is no <code class="inline">cluster/</code> directory — everything the engine needs is right next to the index data. When the server is started with a cluster config, a sibling <code class="inline">cluster/</code> directory holds the embedded Raft log and snapshots. Index <em>data</em> is never in Raft — only the <strong>metadata</strong> (index schemas, shard assignments, node roster). See <a href="/docs/clustering">Clustering</a>.</p>
+  <p>In single-node mode there is no <code class="inline">cluster/</code> directory. Everything the engine needs is right next to the index data. When the server is started with a cluster config, a sibling <code class="inline">cluster/</code> directory holds the embedded Raft log and snapshots. Index <em>data</em> is never in Raft, only the <strong>metadata</strong> (index schemas, shard assignments, node roster). See <a href="/docs/clustering">Clustering</a>.</p>
 
   <p class="source-note">Source · engine/crates/xerj-storage/src/segment.rs · engine/crates/xerj-storage/src/lib.rs</p>
   

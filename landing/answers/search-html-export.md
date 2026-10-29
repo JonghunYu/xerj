@@ -12,7 +12,7 @@ source: "content/answers/search-html-export.md"
 
 **Key number:** The captured 3-page HTML export returned 3 hits for one `match` on `body`, with 0 non-loopback network peers. (as of 2026-08-21; source: the captured run documented on this page)
 
-**TL;DR** — XERJ `autoindex` indexes a static HTML export straight from local disk. In our 3-page capture XERJ extracted a `title` and a `headings` array from each page, and one `match` query on `body` returned 3 hits. A network watch observed 0 non-loopback peers during the run.
+**TL;DR**: XERJ `autoindex` indexes a static HTML export straight from local disk. In our 3-page capture XERJ extracted a `title` and a `headings` array from each page, and one `match` query on `body` returned 3 hits. A network watch observed 0 non-loopback peers during the run.
 
 ## Agent prompt
 

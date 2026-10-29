@@ -12,7 +12,7 @@ source: "content/answers/search-slack-json-export.md"
 
 **Key number:** Records keep up to 512 fields each (`MAX_FIELDS_PER_RECORD`), so nested Slack message fields map without a schema. (as of 2026-10-19; source: [engine/crates/xerj-autoindex/src/extract/mod.rs](https://github.com/xerj-org/xerj/blob/main/engine/crates/xerj-autoindex/src/extract/mod.rs))
 
-**TL;DR** — Unzip the Slack export to local disk, then run `xerj autoindex` on the folder. In a captured run, a phrase written inside a threaded reply returned 2 hits at `incidents/2026-01-15.json` with `ax_locator` `e1`. The `ts`, `thread_ts` and `user` values all survived.
+**TL;DR**: Unzip the Slack export to local disk, then run `xerj autoindex` on the folder. In a captured run, a phrase written inside a threaded reply returned 2 hits at `incidents/2026-01-15.json` with `ax_locator` `e1`. The `ts`, `thread_ts` and `user` values all survived.
 
 ## Agent prompt
 
@@ -162,8 +162,8 @@ Unzip it to local disk and run the same `xerj autoindex` command on the folder. 
 
 ## Evidence
 
-- JSONL line cap is 16 MB (MAX_LINE = 16 << 20). A line at or above that length is skipped; the rest of the file still indexes. — `engine/crates/xerj-autoindex/src/extract/mod.rs`
-- The sniffer reads an 8 KB prefix. A JSONL file whose first line is longer than that prefix can be labelled JSON, and the JSON extractor then falls back to per-line JSONL. — `engine/crates/xerj-autoindex/src/extract/json.rs`
+- JSONL line cap is 16 MB (MAX_LINE = 16 << 20). A line at or above that length is skipped; the rest of the file still indexes. Source: `engine/crates/xerj-autoindex/src/extract/mod.rs`
+- The sniffer reads an 8 KB prefix. A JSONL file whose first line is longer than that prefix can be labelled JSON, and the JSON extractor then falls back to per-line JSONL. Source: `engine/crates/xerj-autoindex/src/extract/json.rs`
 
 ## Related
 

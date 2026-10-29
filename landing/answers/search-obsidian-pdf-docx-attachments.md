@@ -12,7 +12,7 @@ source: "content/answers/search-obsidian-pdf-docx-attachments.md"
 
 **Key number:** Omnisearch, the in-app alternative, has 2,169 GitHub stars and released 1.31.0 on 2026-09-05. (as of 2026-10-19; source: [github.com/scambier/obsidian-omnisearch](https://github.com/scambier/obsidian-omnisearch))
 
-**TL;DR** — XERJ `autoindex` reads a vault folder from local disk and extracts text from its attachments. In a captured run, a phrase that exists only inside `pangolin-escalation-matrix.pdf` returned 1 hit, and a phrase only inside `capybara-change-window.docx` returned 1 hit. Wikilinks between the notes became `wikilink` edges, each carrying the line that created it.
+**TL;DR**: XERJ `autoindex` reads a vault folder from local disk and extracts text from its attachments. In a captured run, a phrase that exists only inside `pangolin-escalation-matrix.pdf` returned 1 hit, and a phrase only inside `capybara-change-window.docx` returned 1 hit. Wikilinks between the notes became `wikilink` edges, each carrying the line that created it.
 
 ## Agent prompt
 
@@ -135,7 +135,7 @@ No. Omnisearch is a plugin for a person working inside the app, and it keeps tha
 
 ### Why did one of my notes return no results?
 
-A note whose non-blank lines mostly read as YAML — `key: value` lines or `- ` bullets — can be classified as `yaml` and refused with 0 documents. Front matter on its own no longer does it. Read the `autoindex-catalog` for the reason string.
+A note whose non-blank lines mostly read as YAML (`key: value` lines or `- ` bullets) can be classified as `yaml` and refused with 0 documents. Front matter on its own no longer does it. Read the `autoindex-catalog` for the reason string.
 
 ### Does XERJ connect to Obsidian itself?
 

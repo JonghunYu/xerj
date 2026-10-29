@@ -53,7 +53,7 @@ faq:
     a: "`rrf` and `linear`. `rrf` uses rank position with a default k of 60; `linear` adds weighted scores and lets one signal dominate."
 ---
 
-**TL;DR** — One `hybrid` request carries a BM25 sub-query and a kNN sub-query against a single index, and Reciprocal Rank Fusion merges their two ranked lists into one. Fusion reads rank position rather than score, so the BM25 and cosine scales never have to be normalized.
+**TL;DR**: One `hybrid` request carries a BM25 sub-query and a kNN sub-query against a single index, and Reciprocal Rank Fusion merges their two ranked lists into one. Fusion reads rank position rather than score, so the BM25 and cosine scales never have to be normalized.
 
 ## Send both signals in one request
 

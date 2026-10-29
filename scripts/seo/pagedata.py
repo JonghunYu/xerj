@@ -43,7 +43,7 @@ from __future__ import annotations
 import pathlib
 
 # Site-name suffix conventions already in use on the site are preserved:
-# marketing pages read "XERJ.ai — Topic", docs read "XERJ.ai · Docs · Topic".
+# marketing pages read "XERJ.ai · Topic", docs read "XERJ.ai · Docs · Topic".
 # Only the nine over-length titles and the six duplicated ones are rewritten.
 
 PAGES: dict[str, dict[str, str]] = {
@@ -65,11 +65,11 @@ PAGES: dict[str, dict[str, str]] = {
     # comes from urlmap.NOINDEX, and it is kept out of sitemap.xml.
     "404.html": dict(
         label="Page not found", kind="webpage",
-        description="This URL has no page behind it on xerj.org. The response is a real HTTP 404, not a copy of the homepage — the docs, the answers hub and the site map are here.",
+        description="This URL has no page behind it on xerj.org. The response is a real HTTP 404, not a copy of the homepage: the docs, the answers hub and the site map are here.",
     ),
     "product.html": dict(
         label="Product", kind="software",
-        title="XERJ.ai — Local search for AI agents",
+        title="XERJ.ai · Local search for AI agents",
         # Rewritten 2026-10-23 against the v1.0.0-rc.98 release binary
         # (xerj --help, xerj mcp --help, a tools/list, and one xerj ask run)
         # plus the files and fetches named on the page.
@@ -86,15 +86,15 @@ PAGES: dict[str, dict[str, str]] = {
     ),
     "playground.html": dict(
         label="Playground", kind="software",
-        description="Live XERJ dashboards running on seeded data — click filters, drill down, read real queries. Leave a work email to unlock the interactive playground.",
+        description="Live XERJ dashboards running on seeded data: click filters, drill down, read real queries. Leave a work email to open the interactive playground.",
     ),
     "playground/index.html": dict(
         label="Dashboards", kind="webpage",
-        description="The XERJ observability dashboards application. Deliberately not indexed — open it from the playground gate at xerj.org/playground instead.",
+        description="The XERJ observability dashboards application. Deliberately not indexed: open it from the playground gate at xerj.org/playground instead.",
     ),
     "benchmarks/index.html": dict(
         label="Benchmarks", kind="software",
-        title="XERJ.ai — Benchmarks: performance, retrieval, tokens, ZTA",
+        title="XERJ.ai · Benchmarks: performance, retrieval, tokens, ZTA",
         description="Every number traces to a run: the 88-cell Elasticsearch board, code retrieval measured head-to-head against Zoekt and ripgrep, 6.5x cheaper agent runs, and the zero-token architecture behind them.",
     ),
     "benchmarks/elasticsearch.html": dict(
@@ -150,8 +150,8 @@ PAGES: dict[str, dict[str, str]] = {
     # prior-art signature table is our 2026-09 survey, phrased as a survey.
     "blog/one-vulnerability-three-names.html": dict(
         label="One vulnerability, three names", kind="article",
-        title="One vulnerability, three names — and a pack we sign",
-        description="The same Rust vulnerability arrives as RUSTSEC, GHSA and CVE. We collapsed 4,107 advisories to 1,950 identity-resolved records, packed them, and signed the pack — because no vulnerability database we surveyed does.",
+        title="One vulnerability, three names, and a pack we sign",
+        description="The same Rust vulnerability arrives as RUSTSEC, GHSA and CVE. We collapsed 4,107 advisories to 1,950 identity-resolved records, packed them, and signed the pack, because no vulnerability database we surveyed does.",
         published="2026-09-27",
         # 2026-10-20: one in-body link to the offline advisory-id lookup.
         updated="2026-10-20",
@@ -263,13 +263,13 @@ PAGES: dict[str, dict[str, str]] = {
     ),
     "blog/index.html": dict(
         label="Blog", kind="collection",
-        title="XERJ.ai — Blog: the engineering log",
+        title="XERJ.ai · Blog: the engineering log",
         description="Faster autoindex and leaner indexes: the performance post, with each improvement explained. Also the rc.99 launch, Corpus Hub v2 and the exploit hub.",
         updated="2026-10-26",
     ),
     "demo/index.html": dict(
         label="Real-data demo", kind="software",
-        title="XERJ.ai — Demo: 60M SSH events vs Elasticsearch",
+        title="XERJ.ai · Demo: 60M SSH events vs Elasticsearch",
         description="A sales-engineer walkthrough on 60M real loghub OpenSSH events: real curl, real console clicks, each step shown against the Elasticsearch equivalent.",
     ),
     "agent-search/index.html": dict(
@@ -277,25 +277,25 @@ PAGES: dict[str, dict[str, str]] = {
     ),
     "aise-demo.html": dict(
         label="Product tour", kind="software",
-        description="A 90-second single-take product tour of XERJ — one 22 MB binary with no JVM, the Elasticsearch-compatible API, and the live AI-telemetry dashboards.",
+        description="A 90-second single-take product tour of XERJ: one 22 MB binary with no JVM, the Elasticsearch-compatible API, and the live AI-telemetry dashboards.",
     ),
 
     # ── enterprise funnel ───────────────────────────────────────────────────
     "pricing/index.html": dict(
         label="Pricing", kind="software",
-        description="XERJ editions — Community, Professional and Enterprise. Every tier ships the same binary; deployment footprint, support and compliance are what differ.",
+        description="XERJ editions: Community, Professional and Enterprise. Every tier ships the same binary; deployment footprint, support and compliance are what differ.",
     ),
     "security/index.html": dict(
         label="Security", kind="software",
-        description="XERJ's security posture — mutual TLS, RBAC, audit logging, BYOK encryption and certification status for a zero-trust-ready, self-hosted data plane.",
+        description="XERJ's security posture: mutual TLS, RBAC, audit logging, BYOK encryption and certification status for a zero-trust-ready, self-hosted data plane.",
     ),
     "architecture/index.html": dict(
         label="Architecture", kind="software",
-        description="XERJ deployment topologies — single node, HA cluster, multi-region and air-gapped — all from the same ~36 MB binary, with RTO and RPO targets each.",
+        description="XERJ deployment topologies (single node, HA cluster, multi-region and air-gapped) all from the same ~36 MB binary, with RTO and RPO targets each.",
     ),
     "solutions/index.html": dict(
         label="Solutions", kind="collection",
-        description="XERJ by solution — SIEM, RAG, observability, Elasticsearch replacement, operational intelligence, AI security review and semantic analytics.",
+        description="XERJ by solution: SIEM, RAG, observability, Elasticsearch replacement, operational intelligence, AI security review and semantic analytics.",
     ),
     "resources/index.html": dict(
         label="Resources", kind="collection",
@@ -320,42 +320,42 @@ PAGES: dict[str, dict[str, str]] = {
     ),
     "use-cases/ai-search-retrieval.html": dict(
         label="AI search & retrieval", kind="webpage", updated="2026-10-24",
-        title="XERJ.ai — Use case: AI-native search & retrieval",
+        title="XERJ.ai · Use case: AI-native search & retrieval",
         description="XERJ runs BM25 and exact vector kNN in one query tree and one execution pass, so hybrid retrieval for RAG is a feature rather than an integration project.",
     ),
     "use-cases/elasticsearch-replacement.html": dict(
         label="Elasticsearch replacement", kind="webpage", updated="2026-10-24",
-        title="XERJ.ai — Use case: Elasticsearch replacement",
-        description="A drop-in Elasticsearch replacement — same :9200 API, same query DSL, same client libraries — on one binary instead of a JVM cluster. Measured vs ES 8.13.",
+        title="XERJ.ai · Use case: Elasticsearch replacement",
+        description="A drop-in Elasticsearch replacement (same :9200 API, same query DSL, same client libraries) on one binary instead of a JVM cluster. Measured vs ES 8.13.",
     ),
     "use-cases/operational-intelligence.html": dict(
         label="Operational intelligence", kind="webpage", updated="2026-10-24",
-        title="XERJ.ai — Use case: operational intelligence",
+        title="XERJ.ai · Use case: operational intelligence",
         description="Replace Beats, Logstash, Elasticsearch and cold storage with one ingest endpoint, one storage engine and one retention number. Measured against ES 8.13.",
     ),
     "use-cases/security-analytics.html": dict(
         label="Security analytics", kind="webpage", updated="2026-10-24",
-        title="XERJ.ai — Use case: security analytics at scale",
-        description="SOC search-and-aggregate workloads — filters, term lookups, aggregations — on a single XERJ node instead of a four-node Elasticsearch 8.13 cluster.",
+        title="XERJ.ai · Use case: security analytics at scale",
+        description="SOC search-and-aggregate workloads (filters, term lookups, aggregations) on a single XERJ node instead of a four-node Elasticsearch 8.13 cluster.",
     ),
     "use-cases/unified-observability.html": dict(
         label="Unified observability", kind="webpage", updated="2026-10-24",
-        title="XERJ.ai — Use case: unified observability",
+        title="XERJ.ai · Use case: unified observability",
         description="Logs, metrics and traces in one engine with one query language and one bill, instead of Loki or Splunk plus Prometheus plus Tempo. Measured vs ES 8.13.",
     ),
     "use-cases/code-security-audit.html": dict(
         label="AI code-security audit", kind="webpage", updated="2026-10-24",
-        title="XERJ.ai — Use case: AI code-security audit",
-        description="Index a codebase as security facts, compile the rule into a queryable invariant, then read only the violators — ~26,000 tokens to audit WordPress core.",
+        title="XERJ.ai · Use case: AI code-security audit",
+        description="Index a codebase as security facts, compile the rule into a queryable invariant, then read only the violators: ~26,000 tokens to audit WordPress core.",
     ),
     "use-cases/second-brain.html": dict(
         label="Second brain", kind="webpage", updated="2026-10-24",
-        title="XERJ.ai — Use case: a second brain from a folder",
+        title="XERJ.ai · Use case: a second brain from a folder",
         description="xerj brain <folder> turns notes into a bi-temporal, evidence-carrying knowledge graph. Every link shows the text that taught it; 121 files to 364 links.",
     ),
     "use-cases/semantic-analytics.html": dict(
         label="Semantic analytics", kind="webpage", updated="2026-10-24",
-        title="XERJ.ai — Use case: semantic analytics in one call",
+        title="XERJ.ai · Use case: semantic analytics in one call",
         description="Retrieval and aggregation in one POST /_search: XERJ runs aggregations over the retrieved top-k neighbour set, so text and vectors are queried together.",
     ),
     # Added by main after this branch was cut; its own <title> and
@@ -380,8 +380,8 @@ PAGES: dict[str, dict[str, str]] = {
     ),
     "case-studies/reference-coding.html": dict(
         label="Reference-coding for Claude Code", kind="article",
-        title="XERJ.ai — Case study: reference-coding for agents",
-        description="Across 13 purpose-built libraries in 5 languages, XERJ retrieval made the same Claude Code model correct where its memory failed — 21/21 against 1/21.",
+        title="XERJ.ai · Case study: reference-coding for agents",
+        description="Across 13 purpose-built libraries in 5 languages, XERJ retrieval made the same Claude Code model correct where its memory failed: 21/21 against 1/21.",
     ),
     "case-studies/wordpress-security-audit.html": dict(
         label="WordPress security audit", kind="article",
@@ -395,25 +395,25 @@ PAGES: dict[str, dict[str, str]] = {
     # ── docs · hubs ─────────────────────────────────────────────────────────
     "docs/index.html": dict(
         label="Docs", kind="collection",
-        description="XERJ documentation — install, configure and operate the engine. Every key, flag and default here comes out of the Rust crates under engine/crates/.",
+        description="XERJ documentation: install, configure and operate the engine. Every key, flag and default here comes out of the Rust crates under engine/crates/.",
     ),
     "docs/recipes/index.html": dict(
         label="Recipes", kind="collection",
-        description="Task-oriented XERJ recipes, each verified end to end against a live node — zero-config indexing, retrieval by meaning, agent memory, hybrid ranking.",
+        description="Task-oriented XERJ recipes, each verified end to end against a live node: zero-config indexing, retrieval by meaning, agent memory, hybrid ranking.",
     ),
     "docs/agents/index.html": dict(
         label="For AI", kind="collection",
-        description="Build with XERJ: the seven canonical agent operations — autoindex a folder, then search, semantic, vector kNN, hybrid and agent memory on the :9200 API.",
+        description="Build with XERJ: the seven canonical agent operations: autoindex a folder, then search, semantic, vector kNN, hybrid and agent memory on the :9200 API.",
     ),
 
     # ── docs · start ────────────────────────────────────────────────────────
     "docs/quickstart.html": dict(
         label="Quickstart", kind="techarticle",
-        description="Operator quickstart for XERJ's native REST API on port 8080 — create indices with explicit field mappings and bulk-ingest through the turbo-ingest path.",
+        description="Operator quickstart for XERJ's native REST API on port 8080: create indices with explicit field mappings and bulk-ingest through the turbo-ingest path.",
     ),
     "docs/install.html": dict(
         label="Install", kind="techarticle",
-        description="Install XERJ from its single static binary — system requirements, checksum verification, directory layout and a systemd unit, on Linux, macOS or Windows.",
+        description="Install XERJ from its single static binary: system requirements, checksum verification, directory layout and a systemd unit, on Linux, macOS or Windows.",
     ),
     "docs/migration-from-es.html": dict(
         label="Migrate from Elasticsearch", kind="techarticle",
@@ -423,7 +423,7 @@ PAGES: dict[str, dict[str, str]] = {
     # ── docs · reference ────────────────────────────────────────────────────
     "docs/cli.html": dict(
         label="CLI reference", kind="techarticle",
-        description="The xerj command line — server flags, config and data-dir overrides, the autoindex and mcp subcommands, and the Corpus Hub commands: ask, hub and code --def.",
+        description="The xerj command line: server flags, config and data-dir overrides, the autoindex and mcp subcommands, and the Corpus Hub commands (ask, hub and code --def).",
     ),
     # Corpus Hub v2 consumer guide (xerj ask / xerj hub / MCP hub tools) plus the
     # contribution walkthrough for the corpus-hub branch, whose
@@ -438,21 +438,21 @@ PAGES: dict[str, dict[str, str]] = {
     ),
     "docs/env.html": dict(
         label="Environment variables", kind="techarticle",
-        description="Every environment variable the xerj binary reads — config path, log filter, server overrides, secrets, client settings — and which one wins over the TOML.",
+        description="Every environment variable the xerj binary reads (config path, log filter, server overrides, secrets, client settings) and which one wins over the TOML.",
     ),
     "docs/api-native.html": dict(
         label="Native REST API", kind="techarticle",
-        description="XERJ's native REST API on port 8080 — health, Prometheus metrics, index management, turbo-ingest, explain plans and the log-shaped endpoints.",
+        description="XERJ's native REST API on port 8080: health, Prometheus metrics, index management, turbo-ingest, explain plans and the log-shaped endpoints.",
     ),
     "docs/api-es-compat.html": dict(
         label="ES-compatible API", kind="techarticle",
-        description="The Elasticsearch-compatible API on port 9200 — supported index, document, bulk and search operations, and the structured error for anything unsupported.",
+        description="The Elasticsearch-compatible API on port 9200: supported index, document, bulk and search operations, and the structured error for anything unsupported.",
     ),
 
     # ── docs · data model ───────────────────────────────────────────────────
     "docs/queries.html": dict(
         label="Query types", kind="techarticle",
-        description="Every query type XERJ's parser dispatches, generated from the engine source — match, term, range, bool, knn, semantic, hybrid and the rest of the set.",
+        description="Every query type XERJ's parser dispatches, generated from the engine source: match, term, range, bool, knn, semantic, hybrid and the rest of the set.",
     ),
     "docs/analyzers.html": dict(
         label="Analyzers", kind="techarticle",
@@ -460,15 +460,15 @@ PAGES: dict[str, dict[str, str]] = {
     ),
     "docs/aggregations.html": dict(
         label="Aggregations", kind="techarticle",
-        description="Bucket and metric aggregations in XERJ, with exact counts in the bucket path and no HyperLogLog approximation — plus the deliberate sampling exceptions.",
+        description="Bucket and metric aggregations in XERJ, with exact counts in the bucket path and no HyperLogLog approximation, plus the deliberate sampling exceptions.",
     ),
     "docs/vectors.html": dict(
         label="Vectors & kNN", kind="techarticle",
-        description="Dense vectors and kNN in XERJ — full-precision storage, a persisted HNSW graph, exact rescoring of candidates, and measured recall against ES 8.13.4.",
+        description="Dense vectors and kNN in XERJ: full-precision storage, a persisted HNSW graph, exact rescoring of candidates, and measured recall against ES 8.13.4.",
     ),
     "docs/ingest.html": dict(
         label="Ingest pipelines", kind="techarticle",
-        description="Four ingest paths into XERJ — turbo-ingest NDJSON bulk, the ES bulk API, autoindex and streaming — with parsers running in-process with the writer.",
+        description="Four ingest paths into XERJ (turbo-ingest NDJSON bulk, the ES bulk API, autoindex and streaming) with parsers running in-process with the writer.",
     ),
 
     # ── docs · engine ───────────────────────────────────────────────────────
@@ -478,11 +478,11 @@ PAGES: dict[str, dict[str, str]] = {
     ),
     "docs/compression.html": dict(
         label="Compression & encodings", kind="techarticle",
-        description="XERJ's two compression layers — per-field column encodings chosen at write time and Zstandard block compression — measured 1.61x smaller on disk than ES.",
+        description="XERJ's two compression layers (per-field column encodings chosen at write time and Zstandard block compression) measured 1.61x smaller on disk than ES.",
     ),
     "docs/clustering.html": dict(
         label="Clustering", kind="techarticle",
-        description="XERJ ships an embedded Raft ring — leader election, heartbeats, and an authenticated cluster transport in one binary. What replicates today and what is roadmap, stated plainly.",
+        description="XERJ ships an embedded Raft ring: leader election, heartbeats, and an authenticated cluster transport in one binary. What replicates today and what is roadmap, stated plainly.",
     ),
 
     # ── docs · operate ──────────────────────────────────────────────────────
@@ -492,11 +492,11 @@ PAGES: dict[str, dict[str, str]] = {
     ),
     "docs/backup-restore.html": dict(
         label="Backup & restore", kind="techarticle",
-        description="Segments are immutable and the WAL append-only, so a XERJ backup is a filesystem copy — hot backup with rsync, the restore procedure, and the caveats.",
+        description="Segments are immutable and the WAL append-only, so a XERJ backup is a filesystem copy: hot backup with rsync, the restore procedure, and the caveats.",
     ),
     "docs/operations.html": dict(
         label="Running in production", kind="techarticle",
-        description="Running XERJ in production — the systemd unit, non-root user setup, readiness, config reload, log levels, health and metrics, and capacity planning.",
+        description="Running XERJ in production: the systemd unit, non-root user setup, readiness, config reload, log levels, health and metrics, and capacity planning.",
     ),
     "docs/metrics.html": dict(
         label="Metrics", kind="techarticle",
@@ -504,7 +504,7 @@ PAGES: dict[str, dict[str, str]] = {
     ),
     "docs/troubleshooting.html": dict(
         label="Troubleshooting", kind="techarticle",
-        description="The short list of things that go wrong in a XERJ deployment — the symptom, the metric and log line that confirm it, and the config key you turn.",
+        description="The short list of things that go wrong in a XERJ deployment: the symptom, the metric and log line that confirm it, and the config key you turn.",
     ),
     "docs/upgrades.html": dict(
         label="Upgrades", kind="techarticle",
@@ -514,23 +514,23 @@ PAGES: dict[str, dict[str, str]] = {
     # ── docs · playbooks ────────────────────────────────────────────────────
     "docs/playbooks/full-text.html": dict(
         label="Playbook · Full-text search", kind="techarticle",
-        description="Full-text search on XERJ — BM25 scoring, analyzers, highlighters and query-time boosting, with the schema, the ingest command and the queries to copy.",
+        description="Full-text search on XERJ: BM25 scoring, analyzers, highlighters and query-time boosting, with the schema, the ingest command and the queries to copy.",
     ),
     "docs/playbooks/log-analytics.html": dict(
         label="Playbook · Log analytics", kind="techarticle",
-        description="Ingest Nginx, JSON, syslog or OTLP logs at line rate and query them in milliseconds — the schema, the ingest command and the queries to copy.",
+        description="Ingest Nginx, JSON, syslog or OTLP logs at line rate and query them in milliseconds: the schema, the ingest command and the queries to copy.",
     ),
     "docs/playbooks/observability.html": dict(
         label="Playbook · Observability", kind="techarticle",
-        description="Metrics, traces and logs as one queryable store — OTLP in, Prometheus text out, traces as a connected graph. Replaces Splunk plus Prometheus plus Tempo.",
+        description="Metrics, traces and logs as one queryable store: OTLP in, Prometheus text out, traces as a connected graph. Replaces Splunk plus Prometheus plus Tempo.",
     ),
     "docs/playbooks/siem.html": dict(
         label="Playbook · SIEM", kind="techarticle",
-        description="Security analytics on an event stream — auth logs, firewall drops, process executions, DNS. Schema, ingest command, and five core detection queries.",
+        description="Security analytics on an event stream: auth logs, firewall drops, process executions, DNS. Schema, ingest command, and five core detection queries.",
     ),
     "docs/playbooks/vector-search.html": dict(
         label="Playbook · Vector & RAG", kind="techarticle",
-        description="Vector and RAG retrieval on one box — the dense_vector schema, hybrid BM25 plus kNN fusion, and dashboards for recall, latency and cache hit rate.",
+        description="Vector and RAG retrieval on one box: the dense_vector schema, hybrid BM25 plus kNN fusion, and dashboards for recall, latency and cache hit rate.",
     ),
 
     # ── docs · agents ───────────────────────────────────────────────────────
@@ -546,7 +546,7 @@ PAGES: dict[str, dict[str, str]] = {
     "docs/recipes/zero-config-autoindex.html": dict(
         label="Zero-config autoindex", kind="techarticle",
         title="XERJ · Docs · Recipe · Zero-config autoindex",
-        description="One command — xerj autoindex <folder> — turns JSONL, CSV, SQLite, PDF, DOCX, HTML and log files into typed, queryable indices with zero configuration.",
+        description="One command (xerj autoindex <folder>) turns JSONL, CSV, SQLite, PDF, DOCX, HTML and log files into typed, queryable indices with zero configuration.",
     ),
     "docs/recipes/document-folder-index.html": dict(
         label="Index a folder of documents", kind="techarticle",
@@ -555,12 +555,12 @@ PAGES: dict[str, dict[str, str]] = {
     ),
     "docs/recipes/semantic-search-rag.html": dict(
         label="Semantic search & RAG", kind="techarticle",
-        description="Semantic search and RAG retrieval with XERJ — map a field as semantic_text, auto-embed on ingest, retrieve by meaning, with no separate vector database.",
+        description="Semantic search and RAG retrieval with XERJ: map a field as semantic_text, auto-embed on ingest, retrieve by meaning, with no separate vector database.",
     ),
     "docs/recipes/hybrid-search.html": dict(label="Hybrid search", kind="techarticle"),
     "docs/recipes/vector-search-knn.html": dict(
         label="Vector search · kNN", kind="techarticle",
-        description="Vector similarity search in XERJ — dense_vector fields, Elasticsearch-8 knn queries served by HNSW when unfiltered, and pre-filtering with bool filter.",
+        description="Vector similarity search in XERJ: dense_vector fields, Elasticsearch-8 knn queries served by HNSW when unfiltered, and pre-filtering with bool filter.",
     ),
     "docs/recipes/vector-quantization.html": dict(
         label="Vector quantization", kind="techarticle",
@@ -572,7 +572,7 @@ PAGES: dict[str, dict[str, str]] = {
     ),
     "docs/recipes/agentic-memory.html": dict(
         label="Agent memory", kind="techarticle",
-        description="Give an AI agent long-term memory with XERJ's namespaced offline memory API — store, recall by vector or text, filter by metadata, forget, stay isolated.",
+        description="Give an AI agent long-term memory with XERJ's namespaced offline memory API: store, recall by vector or text, filter by metadata, forget, stay isolated.",
     ),
     "docs/recipes/log-analytics.html": dict(
         label="Log analytics", kind="techarticle",
@@ -584,11 +584,11 @@ PAGES: dict[str, dict[str, str]] = {
     ),
     "docs/recipes/continuous-anomaly-datafeeds.html": dict(
         label="Continuous anomaly datafeeds", kind="techarticle",
-        description="Run an Elasticsearch _ml datafeed on XERJ to score a live metric index continuously — one pass now, then a timer that appends only newly flagged buckets.",
+        description="Run an Elasticsearch _ml datafeed on XERJ to score a live metric index continuously: one pass now, then a timer that appends only newly flagged buckets.",
     ),
     "docs/recipes/migrate-from-elasticsearch.html": dict(
         label="Migrate from Elasticsearch", kind="techarticle",
-        description="Migrate to XERJ by pointing your client's base URL at it — XERJ speaks the Elasticsearch REST wire protocol on 9200, so queries and bulk loads survive.",
+        description="Migrate to XERJ by pointing your client's base URL at it: XERJ speaks the Elasticsearch REST wire protocol on 9200, so queries and bulk loads survive.",
     ),
 
     # ── generated article hubs ─────────────────────────────────────────────
@@ -599,7 +599,7 @@ PAGES: dict[str, dict[str, str]] = {
     ),
     "compare/index.html": dict(
         label="Comparisons", kind="collection",
-        title="XERJ comparisons — retrieval choices",
+        title="XERJ comparisons: retrieval choices",
         description="Focused comparisons for teams choosing a search, vector and agent-memory architecture, with evidence links and clear trade-offs.",
     ),
 }

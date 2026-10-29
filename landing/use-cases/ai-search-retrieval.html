@@ -14,7 +14,7 @@
 <!-- ga4:end -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>XERJ.ai — Use case: AI-native search &amp; retrieval</title>
+<title>XERJ.ai · Use case: AI-native search &amp; retrieval</title>
 <meta name="description" content="XERJ runs BM25 and exact vector kNN in one query tree and one execution pass, so hybrid retrieval for RAG is a feature rather than an integration project.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,16 +26,16 @@
 <link rel="canonical" href="https://xerj.org/use-cases/ai-search-retrieval">
 <meta property="og:site_name" content="XERJ.ai">
 <meta property="og:type" content="website">
-<meta property="og:title" content="XERJ.ai — Use case: AI-native search &amp; retrieval">
+<meta property="og:title" content="XERJ.ai · Use case: AI-native search &amp; retrieval">
 <meta property="og:description" content="XERJ runs BM25 and exact vector kNN in one query tree and one execution pass, so hybrid retrieval for RAG is a feature rather than an integration project.">
 <meta property="og:url" content="https://xerj.org/use-cases/ai-search-retrieval">
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="XERJ.ai — Use case: AI-native search &amp; retrieval">
+<meta name="twitter:title" content="XERJ.ai · Use case: AI-native search &amp; retrieval">
 <meta name="twitter:description" content="XERJ runs BM25 and exact vector kNN in one query tree and one execution pass, so hybrid retrieval for RAG is a feature rather than an integration project.">
 <meta name="twitter:image" content="https://xerj.org/og/xerj-card.png">
 <script type="application/ld+json">
@@ -71,7 +71,7 @@
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": "XERJ.ai — Use case: AI-native search & retrieval",
+  "name": "XERJ.ai · Use case: AI-native search & retrieval",
   "description": "XERJ runs BM25 and exact vector kNN in one query tree and one execution pass, so hybrid retrieval for RAG is a feature rather than an integration project.",
   "url": "https://xerj.org/use-cases/ai-search-retrieval",
   "image": "https://xerj.org/og/xerj-card.png",
@@ -155,7 +155,7 @@
 <div class="uc-hero">
   <h1 class="uc-eyebrow">Use case: AI-native search and retrieval</h1>
   <p class="uc-display">AI-NATIVE<br>SEARCH &<br><span class="accent">RETRIEVAL.</span></p>
-  <p class="uc-lead">Your RAG pipeline has a vector database that doesn't know about text, and a text search engine that doesn't know about vectors. XERJ runs BM25 and exact vector kNN in one query tree, one cost model, one execution pass — so hybrid search is a feature, not an integration project.</p>
+  <p class="uc-lead">Your RAG pipeline has a vector database that doesn't know about text, and a text search engine that doesn't know about vectors. XERJ runs BM25 and exact vector kNN in one query tree, one cost model, one execution pass, so hybrid search is a feature, not an integration project.</p>
 </div>
 
 <div class="prompt-card answer-first" id="short-answer" style="max-width:820px;margin:0 0 var(--sp-8);">
@@ -183,11 +183,11 @@
 <div class="pain-solve">
   <div class="pain">
     <h3>THE TWO-SYSTEM PROBLEM</h3>
-    <ul><li><strong>Pinecone + ES = double ops.</strong> Two systems, two schemas, two billing lines, two failure domains. Data sync between them is a pipeline you have to build and maintain.</li><li><strong>Hybrid search is an orchestration hack.</strong> Call ES for BM25, call Pinecone for kNN, merge results client-side. Latency doubles, relevance suffers, and the fusion logic is yours to debug.</li><li><strong>Vector DB lock-in is real.</strong> Pinecone is closed-source. Qdrant has WAL corruption bugs. Milvus requires external dependencies. Migrating between them means re-indexing billions of vectors.</li><li><strong>Cost per vector adds up.</strong> Full float32 storage means paying for four bytes per dimension, per vector, at billion-scale — before you run a single query.</li></ul>
+    <ul><li><strong>Pinecone + ES = double ops.</strong> Two systems, two schemas, two billing lines, two failure domains. Data sync between them is a pipeline you have to build and maintain.</li><li><strong>Hybrid search is an orchestration hack.</strong> Call ES for BM25, call Pinecone for kNN, merge results client-side. Latency doubles, relevance suffers, and the fusion logic is yours to debug.</li><li><strong>Vector DB lock-in is real.</strong> Pinecone is closed-source. Qdrant has WAL corruption bugs. Milvus requires external dependencies. Migrating between them means re-indexing billions of vectors.</li><li><strong>Cost per vector adds up.</strong> Full float32 storage means paying for four bytes per dimension, per vector, at billion-scale, before you run a single query.</li></ul>
   </div>
   <div class="solve">
     <h3>THE XERJ ANSWER</h3>
-    <ul><li><strong>One engine for text + vectors.</strong> BM25 and vector kNN share one planner. A hybrid query is one POST, not two API calls stitched together.</li><li><strong>SQ8 quantization built in.</strong> kNN scores from int8 codes at recall@10 = 0.998. It is a precision option, not a memory one: the full-precision vector is still what is resident (<a href="https://github.com/xerj-org/xerj/issues/392">#392</a>).</li><li><strong>Semantic search at query time.</strong> Configure an embedding endpoint and XERJ auto-embeds the query — no client-side embedding step.</li><li><strong>No data sync.</strong> Text and vectors live in the same index, the same document, the same WAL. One write path, one consistency model.</li></ul>
+    <ul><li><strong>One engine for text + vectors.</strong> BM25 and vector kNN share one planner. A hybrid query is one POST, not two API calls stitched together.</li><li><strong>SQ8 quantization built in.</strong> kNN scores from int8 codes at recall@10 = 0.998. It is a precision option, not a memory one: the full-precision vector is still what is resident (<a href="https://github.com/xerj-org/xerj/issues/392">#392</a>).</li><li><strong>Semantic search at query time.</strong> Configure an embedding endpoint and XERJ auto-embeds the query, no client-side embedding step.</li><li><strong>No data sync.</strong> Text and vectors live in the same index, the same document, the same WAL. One write path, one consistency model.</li></ul>
   </div>
 </div>
 
@@ -272,7 +272,7 @@
 
 <section class="scene-section">
   <h2 class="scene" style="font-size:var(--fs-56);">SEE IT <span class="accent">LIVE.</span></h2>
-  <p class="wide">The playbook walks the full recipe — schema, ingest command, queries, and the dashboard. The playground runs on seeded data; benchmarks were measured against Elasticsearch 8.13 on 2026-04-14.</p>
+  <p class="wide">The playbook walks the full recipe: schema, ingest command, queries, and the dashboard. The playground runs on seeded data; benchmarks were measured against Elasticsearch 8.13 on 2026-04-14.</p>
   <div style="display:flex; gap:var(--sp-6); margin-top:var(--sp-6); flex-wrap:wrap;">
     <a href="/docs/playbooks/vector-search" class="cta" style="font-size:var(--fs-20); padding:var(--sp-4) 0; border-bottom:0; flex:1; min-width:280px;">
       <span>OPEN THE PLAYBOOK</span>
@@ -288,7 +288,7 @@
 <section class="lead-capture" id="demo">
   <div class="kicker"><span>READY?</span><span class="dash">·</span><span>REQUEST ACCESS</span></div>
   <h3>RUN IT ON<br><span class="accent">YOUR DATA.</span></h3>
-  <p>Send us your embedding model and a sample corpus. We'll run hybrid search benchmarks — recall@10, latency p95, memory per million vectors — and share the reproduction.</p>
+  <p>Send us your embedding model and a sample corpus. We'll run hybrid search benchmarks (recall@10, latency p95, memory per million vectors) and share the reproduction.</p>
   <form class="lead-form" id="leadForm" action="#" method="post" novalidate>
     <input type="email" name="email" placeholder="you@company.com" required aria-label="Work email" autocomplete="email" />
     <button type="submit" class="demo">SEE THE DEMO <span class="arrow">→</span></button>

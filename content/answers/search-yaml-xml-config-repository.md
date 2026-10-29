@@ -48,7 +48,7 @@ faq:
     a: "The whole-file cap is 64 MiB and the longest line is 16 MiB. One document holds at most 512 fields, and one dataset holds at most 512 fields."
 ---
 
-**TL;DR** — XERJ `autoindex` indexes a folder of YAML and XML config files with no schema file. In our capture 1 `cluster.yaml` and 1 `service.xml` became 4 documents in one `cfg-docs` index. One bool query returned 2 hits, one from each format.
+**TL;DR**: XERJ `autoindex` indexes a folder of YAML and XML config files with no schema file. In our capture 1 `cluster.yaml` and 1 `service.xml` became 4 documents in one `cfg-docs` index. One bool query returned 2 hits, one from each format.
 
 ## One command for both formats
 

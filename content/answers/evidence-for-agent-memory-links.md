@@ -49,7 +49,7 @@ faq:
     a: "In the index named `.xerj-memory-{brain}-edges`. Filter on `{\"exists\":{\"field\":\"src\"}}` to skip the brain metadata document, which has no `src`."
 ---
 
-**TL;DR** — XERJ stores the line that taught each link. All 7 detected edges in our capture carried an `evidence` object with a quote, a filename and an offset. A hand-asserted link carried none, and retiring a link wrote a tombstone instead of deleting the edge.
+**TL;DR**: XERJ stores the line that taught each link. All 7 detected edges in our capture carried an `evidence` object with a quote, a filename and an offset. A hand-asserted link carried none, and retiring a link wrote a tombstone instead of deleting the edge.
 
 ## Detected links carry the exact line
 
@@ -72,7 +72,7 @@ Confidence is a per-detector constant, not a learned number. Our run carried 0.9
 
 XERJ invents nothing to fill a gap. XERJ renders a real quote, a structural rationale and an asserted link as three different things.
 
-Code lookup follows the same rule — exit 1 and no invented hit when a symbol is missing, file:line when it answers — on [retrieval that says not found](/answers/retrieval-that-says-not-found-with-file-line-citations).
+Code lookup follows the same rule, exit 1 and no invented hit when a symbol is missing, file:line when it answers, on [retrieval that says not found](/answers/retrieval-that-says-not-found-with-file-line-citations).
 
 ## An asserted link carries no evidence
 

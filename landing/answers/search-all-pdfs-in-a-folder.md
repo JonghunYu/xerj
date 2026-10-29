@@ -12,7 +12,7 @@ source: "content/answers/search-all-pdfs-in-a-folder.md"
 
 **Key number:** XERJ reads at most 100,000 pages per PDF (`MAX_PAGES`) in an isolated worker process. (as of 2026-10-19; source: [engine/crates/xerj-autoindex/src/resources.rs](https://github.com/xerj-org/xerj/blob/main/engine/crates/xerj-autoindex/src/resources.rs))
 
-**TL;DR** — `xerj autoindex` indexes a folder of PDFs in one command, and a single `match_phrase` query then searches inside all of them. In a captured run, 3 born-digital PDFs produced 9 documents and one phrase hit all 3 files. The fourth PDF, an image-only file, produced 0 documents.
+**TL;DR**: `xerj autoindex` indexes a folder of PDFs in one command, and a single `match_phrase` query then searches inside all of them. In a captured run, 3 born-digital PDFs produced 9 documents and one phrase hit all 3 files. The fourth PDF, an image-only file, produced 0 documents.
 
 ## Agent prompt
 

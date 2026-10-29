@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Search gzipped logs without decompressing them">
@@ -232,7 +232,7 @@
   </div>
   <p><strong>TL;DR</strong> — XERJ decompresses a <code class="inline">.gz</code> log once at index time, so a query never reads the compressed file again. In our capture the plain copy and the gzip copy of one log both returned <code class="inline">5001</code> from <code class="inline">_count</code>. Both also returned 1250 hits for <code class="inline">level=ERROR</code>.</p>
   <div class="prompt-card">
-    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT — IT DOES THE REST</span>
+    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT. IT DOES THE REST</span>
     <code>Act as a coding agent. Read https://xerj.org/llms.txt, start a XERJ node with --insecure, run xerj autoindex on a folder of .gz logs with --prefix gzz, then GET /gzz-*/_count and POST a bool filter on level to /gzz-*/_search, and report that ax_format is logs(gzip) and that ts is a date field you can range over.</code>
     <button type="button" class="prompt-copy" data-copy="Act as a coding agent. Read https://xerj.org/llms.txt, start a XERJ node with --insecure, run xerj autoindex on a folder of .gz logs with --prefix gzz, then GET /gzz-*/_count and POST a bool filter on level to /gzz-*/_search, and report that ax_format is logs(gzip) and that ts is a date field you can range over.">COPY THE PROMPT</button>
   </div>

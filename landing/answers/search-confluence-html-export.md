@@ -12,7 +12,7 @@ source: "content/answers/search-confluence-html-export.md"
 
 **Key number:** One body-text query on a nested page returned 1 hit at `Recovery-procedure_262146.html` in the captured run. (as of 2026-08-21; source: the captured run documented on this page)
 
-**TL;DR** — Unzip the Confluence space export to local disk, then run `xerj autoindex` on the folder. In a captured run, body text on a nested page returned 1 hit at `Recovery-procedure_262146.html`. The title came back as Confluence writes it: `PLAT : Recovery procedure`.
+**TL;DR**: Unzip the Confluence space export to local disk, then run `xerj autoindex` on the folder. In a captured run, body text on a nested page returned 1 hit at `Recovery-procedure_262146.html`. The title came back as Confluence writes it: `PLAT : Recovery procedure`.
 
 ## Agent prompt
 

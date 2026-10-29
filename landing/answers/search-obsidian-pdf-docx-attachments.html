@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Search markdown notes and PDFs in one vault">
@@ -156,7 +156,7 @@
       "name": "Why did one of my notes return no results?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A note whose non-blank lines mostly read as YAML — key: value lines or - bullets — can be classified as yaml and refused with 0 documents. Front matter on its own no longer does it. Read the autoindex-catalog for the reason string."
+        "text": "A note whose non-blank lines mostly read as YAML (key: value lines or - bullets) can be classified as yaml and refused with 0 documents. Front matter on its own no longer does it. Read the autoindex-catalog for the reason string."
       }
     },
     {
@@ -230,9 +230,9 @@
     <p>What's the best way to search Markdown notes and PDFs in the same vault? Run xerj autoindex on the vault folder; it reads attachments too. In a captured run a phrase found only inside a PDF attachment returned 1 hit, a phrase only inside a DOCX returned 1 hit, and wikilinks became edges carrying the line that made them.</p>
     <p class="key-fact"><strong>Key number:</strong> Omnisearch, the in-app alternative, has 2,169 GitHub stars and released 1.31.0 on 2026-09-05. <span class="mute">(as of 2026-10-19 · source: <a href="https://github.com/scambier/obsidian-omnisearch">github.com/scambier/obsidian-omnisearch</a>)</span></p>
   </div>
-  <p><strong>TL;DR</strong> — XERJ <code class="inline">autoindex</code> reads a vault folder from local disk and extracts text from its attachments. In a captured run, a phrase that exists only inside <code class="inline">pangolin-escalation-matrix.pdf</code> returned 1 hit, and a phrase only inside <code class="inline">capybara-change-window.docx</code> returned 1 hit. Wikilinks between the notes became <code class="inline">wikilink</code> edges, each carrying the line that created it.</p>
+  <p><strong>TL;DR</strong>: XERJ <code class="inline">autoindex</code> reads a vault folder from local disk and extracts text from its attachments. In a captured run, a phrase that exists only inside <code class="inline">pangolin-escalation-matrix.pdf</code> returned 1 hit, and a phrase only inside <code class="inline">capybara-change-window.docx</code> returned 1 hit. Wikilinks between the notes became <code class="inline">wikilink</code> edges, each carrying the line that created it.</p>
   <div class="prompt-card">
-    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT — IT DOES THE REST</span>
+    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT. IT DOES THE REST</span>
     <code>Act as a coding agent. Read https://xerj.org/llms.txt, start a local XERJ node, run `xerj autoindex ./vault --url http://127.0.0.1:9200 --prefix ob --progress plain`, then POST a match_phrase on body for a string that exists only inside a PDF attachment and a second one for a string only inside a DOCX attachment, read the autoindex-catalog for any file whose status is junk, and report the hit paths and the junk reasons.</code>
     <button type="button" class="prompt-copy" data-copy="Act as a coding agent. Read https://xerj.org/llms.txt, start a local XERJ node, run `xerj autoindex ./vault --url http://127.0.0.1:9200 --prefix ob --progress plain`, then POST a match_phrase on body for a string that exists only inside a PDF attachment and a second one for a string only inside a DOCX attachment, read the autoindex-catalog for any file whose status is junk, and report the hit paths and the junk reasons.">COPY THE PROMPT</button>
   </div>
@@ -307,7 +307,7 @@
   <h3>Does this replace Omnisearch inside Obsidian?</h3>
   <p>No. Omnisearch is a plugin for a person working inside the app, and it keeps that job. XERJ indexes the vault folder from outside so an agent can query it without the app open.</p>
   <h3>Why did one of my notes return no results?</h3>
-  <p>A note whose non-blank lines mostly read as YAML — <code class="inline">key: value</code> lines or <code class="inline">- </code> bullets — can be classified as <code class="inline">yaml</code> and refused with 0 documents. Front matter on its own no longer does it. Read the <code class="inline">autoindex-catalog</code> for the reason string.</p>
+  <p>A note whose non-blank lines mostly read as YAML (<code class="inline">key: value</code> lines or <code class="inline">- </code> bullets) can be classified as <code class="inline">yaml</code> and refused with 0 documents. Front matter on its own no longer does it. Read the <code class="inline">autoindex-catalog</code> for the reason string.</p>
   <h3>Does XERJ connect to Obsidian itself?</h3>
   <p>No. XERJ reads the vault folder from local disk. The captured node opened 0 non-loopback connections over its whole life, so no application or service was contacted.</p>
   <h2>Related</h2>

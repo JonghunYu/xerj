@@ -15,7 +15,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>XERJ · Docs · For AI · Overview</title>
-<meta name="description" content="Build with XERJ: the seven canonical agent operations — autoindex a folder, then search, semantic, vector kNN, hybrid and agent memory on the :9200 API.">
+<meta name="description" content="Build with XERJ: the seven canonical agent operations: autoindex a folder, then search, semantic, vector kNN, hybrid and agent memory on the :9200 API.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;700;800;900&family=Inter:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -27,16 +27,16 @@
 <meta property="og:site_name" content="XERJ.ai">
 <meta property="og:type" content="website">
 <meta property="og:title" content="XERJ · Docs · For AI · Overview">
-<meta property="og:description" content="Build with XERJ: the seven canonical agent operations — autoindex a folder, then search, semantic, vector kNN, hybrid and agent memory on the :9200 API.">
+<meta property="og:description" content="Build with XERJ: the seven canonical agent operations: autoindex a folder, then search, semantic, vector kNN, hybrid and agent memory on the :9200 API.">
 <meta property="og:url" content="https://xerj.org/docs/agents/">
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="XERJ · Docs · For AI · Overview">
-<meta name="twitter:description" content="Build with XERJ: the seven canonical agent operations — autoindex a folder, then search, semantic, vector kNN, hybrid and agent memory on the :9200 API.">
+<meta name="twitter:description" content="Build with XERJ: the seven canonical agent operations: autoindex a folder, then search, semantic, vector kNN, hybrid and agent memory on the :9200 API.">
 <meta name="twitter:image" content="https://xerj.org/og/xerj-card.png">
 <script type="application/ld+json">
 {
@@ -72,7 +72,7 @@
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "name": "XERJ · Docs · For AI · Overview",
-  "description": "Build with XERJ: the seven canonical agent operations — autoindex a folder, then search, semantic, vector kNN, hybrid and agent memory on the :9200 API.",
+  "description": "Build with XERJ: the seven canonical agent operations: autoindex a folder, then search, semantic, vector kNN, hybrid and agent memory on the :9200 API.",
   "url": "https://xerj.org/docs/agents/",
   "image": "https://xerj.org/og/xerj-card.png",
   "inLanguage": "en",
@@ -213,22 +213,22 @@
   <div class="kicker"><span>FOR AI · OVERVIEW</span></div>
   <h1>Build with XERJ</h1>
 
-  <p>XERJ is the <strong>search, data, and memory layer for AI agents</strong>. It speaks the Elasticsearch wire protocol on port <code class="inline">9200</code>, so any HTTP client an agent can already make works out of the box — no SDK, no signup, no external embedding key. This page is the map: the seven operations an agent needs, what each one really does, and where to go next.</p>
+  <p>XERJ is the <strong>search, data, and memory layer for AI agents</strong>. It speaks the Elasticsearch wire protocol on port <code class="inline">9200</code>, so any HTTP client an agent can already make works out of the box, no SDK, no signup, no external embedding key. This page is the map: the seven operations an agent needs, what each one really does, and where to go next.</p>
 
   <p>Everything below is verified against a running XERJ (<code class="inline">--insecure</code>, single node, empty data dir). Copy any request, paste it into your agent's tool, and it runs.</p>
 
   <h2>The seven canonical agent operations</h2>
-  <p>An agent needs to turn a folder into something queryable, find things, find things by meaning, remember things, and recall them later. XERJ exposes exactly those as seven operations: one CLI subcommand that ingests a folder, and six HTTP operations over two families of endpoints — normal ES search on your indices, and a dedicated namespaced <code class="inline">/_memory</code> API.</p>
+  <p>An agent needs to turn a folder into something queryable, find things, find things by meaning, remember things, and recall them later. XERJ exposes exactly those as seven operations: one CLI subcommand that ingests a folder, and six HTTP operations over two families of endpoints, normal ES search on your indices, and a dedicated namespaced <code class="inline">/_memory</code> API.</p>
 
   <table>
     <thead>
       <tr><th>Operation</th><th>Endpoint</th><th>What it does</th></tr>
     </thead>
     <tbody>
-      <tr><td><code class="inline">xerj_autoindex</code></td><td><code class="inline">xerj autoindex &lt;folder&gt;</code> · <strong>CLI only — no HTTP route</strong></td><td>Make a folder searchable with zero config: formats sniffed by content, field types and date encodings inferred, explicit mappings written, everything streamed in with idempotent ids, and a self-describing <code class="inline">autoindex-catalog</code> index left behind. It is a client of a running node — start one first. Full contract: the <a href="/docs/recipes/zero-config-autoindex">zero-config indexing recipe</a>.</td></tr>
+      <tr><td><code class="inline">xerj_autoindex</code></td><td><code class="inline">xerj autoindex &lt;folder&gt;</code> · <strong>CLI only, no HTTP route</strong></td><td>Make a folder searchable with zero config: formats sniffed by content, field types and date encodings inferred, explicit mappings written, everything streamed in with idempotent ids, and a self-describing <code class="inline">autoindex-catalog</code> index left behind. It is a client of a running node: start one first. Full contract: the <a href="/docs/recipes/zero-config-autoindex">zero-config indexing recipe</a>.</td></tr>
       <tr><td><code class="inline">xerj_search</code></td><td><code class="inline">POST /{index}/_search</code> · <code class="inline">match</code>/<code class="inline">term</code>/<code class="inline">bool</code></td><td>Full-text and structured search (BM25 + filters). The exact-word path.</td></tr>
       <tr><td><code class="inline">xerj_semantic_search</code></td><td><code class="inline">POST /{index}/_search</code> · <code class="inline">semantic</code> query</td><td>Search by meaning over a <code class="inline">semantic_text</code> field. The server embeds the query text for you.</td></tr>
-      <tr><td><code class="inline">xerj_vector_search</code></td><td><code class="inline">POST /{index}/_search</code> · <code class="inline">knn</code></td><td>Nearest-neighbor over a <code class="inline">dense_vector</code> field, using vectors you supply — HNSW-served with exact rescoring when unfiltered, exact scan when filtered.</td></tr>
+      <tr><td><code class="inline">xerj_vector_search</code></td><td><code class="inline">POST /{index}/_search</code> · <code class="inline">knn</code></td><td>Nearest-neighbor over a <code class="inline">dense_vector</code> field, using vectors you supply: HNSW-served with exact rescoring when unfiltered, exact scan when filtered.</td></tr>
       <tr><td><code class="inline">xerj_hybrid_search</code></td><td><code class="inline">POST /{index}/_search</code> · <code class="inline">hybrid</code> query</td><td>Fuse keyword + vector results in one query with <code class="inline">rrf</code> or <code class="inline">linear</code> fusion.</td></tr>
       <tr><td><code class="inline">xerj_memory_store</code></td><td><code class="inline">POST /_memory/{namespace}</code></td><td>Remember a fact for later. Text is auto-embedded; metadata optional.</td></tr>
       <tr><td><code class="inline">xerj_memory_recall</code></td><td><code class="inline">POST /_memory/{namespace}/_recall</code></td><td>Recall top-k relevant memories by meaning, keyword, or vector.</td></tr>
@@ -239,13 +239,13 @@
 
   <h2>Three jobs, one binary</h2>
   <ul>
-    <li><strong>Search layer.</strong> Keyword, structured, semantic, vector, and hybrid retrieval over your own indices — the same <code class="inline">_search</code> endpoint an ES client already targets.</li>
+    <li><strong>Search layer.</strong> Keyword, structured, semantic, vector, and hybrid retrieval over your own indices: the same <code class="inline">_search</code> endpoint an ES client already targets.</li>
     <li><strong>Data layer.</strong> Index documents with <code class="inline">POST /{index}/_doc</code> (auto-id), <code class="inline">PUT /{index}/_doc/{id}</code> (explicit id), or NDJSON <code class="inline">POST /{index}/_bulk</code>. Read them back, delete them, aggregate over them.</li>
-    <li><strong>Memory layer.</strong> A dedicated per-agent memory store at <code class="inline">/_memory/{namespace}</code> — store, recall, list, forget. Each namespace is a physically isolated index, so agent A can never read agent B's memories.</li>
+    <li><strong>Memory layer.</strong> A dedicated per-agent memory store at <code class="inline">/_memory/{namespace}</code>: store, recall, list, forget. Each namespace is a physically isolated index, so agent A can never read agent B's memories.</li>
   </ul>
 
   <h2>A 30-second taste</h2>
-  <p>Store something an agent learned, then recall it by meaning — no vectors supplied, no external service, no index to create first (the namespace is created on first store):</p>
+  <p>Store something an agent learned, then recall it by meaning, no vectors supplied, no external service, no index to create first (the namespace is created on first store):</p>
 <pre class="code">$ curl -sXPOST localhost:9200/_memory/agent-demo \
     -H 'content-type: application/json' \
     -d '{"text":"The user prefers metric units and a dark UI theme.","metadata":{"kind":"preference"}}'
@@ -259,13 +259,13 @@ $ curl -sXPOST localhost:9200/_memory/agent-demo/_recall \
           "score":0.655571460723877,
           "text":"The user prefers metric units and a dark UI theme."}],
  "namespace":"agent-demo"}</pre>
-  <p>The recall query never contains the words "metric" or "theme" — <code class="inline">"semantic":true</code> tells XERJ to embed the query text with the same built-in embedder it used at store time and match by vector similarity. That output is a real run, not an illustration.</p>
+  <p>The recall query never contains the words "metric" or "theme": <code class="inline">"semantic":true</code> tells XERJ to embed the query text with the same built-in embedder it used at store time and match by vector similarity. That output is a real run, not an illustration.</p>
 
   <h2>What is honest to claim</h2>
   <p>XERJ is aggressive about not faking capabilities. Two things worth knowing before you build:</p>
   <ul>
-    <li><strong>The built-in embedder is deterministic and local, not a large neural model.</strong> It runs with zero configuration and no external key, which is why the examples here are fully reproducible offline — but for production-grade semantic quality you point XERJ at your own OpenAI-compatible embeddings endpoint, or pass your own vectors. The request shapes do not change.</li>
-    <li><strong><code class="inline">knn</code> is HNSW-served (approximate) when unfiltered, exact otherwise.</strong> Unfiltered kNN on a full-precision cosine field (≥1,024 docs) runs a persisted-HNSW beam search with exact rescoring — measured recall@10 1.00 on the official bench query (100-probe mean 0.976); <code class="inline">num_candidates</code> tunes the beam width. Filtered kNN, non-cosine metrics, SQ8 fields, and small indexes are scored exhaustively (recall 1.00). Vectors you pass are what get compared.</li>
+    <li><strong>The built-in embedder is deterministic and local, not a large neural model.</strong> It runs with zero configuration and no external key, which is why the examples here are fully reproducible offline, but for production-grade semantic quality you point XERJ at your own OpenAI-compatible embeddings endpoint, or pass your own vectors. The request shapes do not change.</li>
+    <li><strong><code class="inline">knn</code> is HNSW-served (approximate) when unfiltered, exact otherwise.</strong> Unfiltered kNN on a full-precision cosine field (≥1,024 docs) runs a persisted-HNSW beam search with exact rescoring: measured recall@10 1.00 on the official bench query (100-probe mean 0.976); <code class="inline">num_candidates</code> tunes the beam width. Filtered kNN, non-cosine metrics, SQ8 fields, and small indexes are scored exhaustively (recall 1.00). Vectors you pass are what get compared.</li>
   </ul>
   <p>Where a feature is not implemented, XERJ fails loudly rather than pretending. For example, <code class="inline">hybrid</code> fusion only supports <code class="inline">rrf</code> and <code class="inline">linear</code>; asking for <code class="inline">"fusion":"learned"</code> returns a clear error (<code class="inline">hybrid fusion learned is not yet supported; use rrf or linear</code>) instead of silently substituting another strategy.</p>
 

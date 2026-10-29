@@ -12,7 +12,7 @@ source: "content/answers/batch-lookup-ids-from-csv-against-local-index.md"
 
 **Key number:** A terms query of 1,000 IDs against 532 issues returned 532 hits and took 0 ms. (as of 2026-10-20; source: [benchmarks/agent-queries-2026-10-20/08-batch-terms.json](https://github.com/xerj-org/xerj/blob/main/benchmarks/agent-queries-2026-10-20/08-batch-terms.json))
 
-**TL;DR** — Look up 1,000 IDs against a local index with one `terms` query, then mark each ID found or not found. On 2026-10-20 the query sent 1,000 numbers over 532 issues. The response `took` was 0. 532 IDs were in the index and 468 were not.
+**TL;DR**: Look up 1,000 IDs against a local index with one `terms` query, then mark each ID found or not found. On 2026-10-20 the query sent 1,000 numbers over 532 issues. The response `took` was 0. 532 IDs were in the index and 468 were not.
 
 ## Agent prompt
 
@@ -118,8 +118,8 @@ Guessing `gh-issues` returned 404. The real names were `gh-jsonl` and `gh-json`.
 
 ## Evidence
 
-- A fuzziness AUTO query took 1 ms and ranked issue 960 first. — `benchmarks/agent-queries-2026-10-20/08-fuzzy.json`
-- The terms query over 1,000 ids returned took 0 and 532 hits. — `benchmarks/agent-queries-2026-10-20/08-batch-terms.json`
+- A fuzziness AUTO query took 1 ms and ranked issue 960 first. Source: `benchmarks/agent-queries-2026-10-20/08-fuzzy.json`
+- The terms query over 1,000 ids returned took 0 and 532 hits. Source: `benchmarks/agent-queries-2026-10-20/08-batch-terms.json`
 
 ## Related
 

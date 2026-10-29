@@ -14,8 +14,8 @@
 <!-- ga4:end -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>XERJ.ai — Security &amp; Compliance</title>
-<meta name="description" content="XERJ&#x27;s security posture — mutual TLS, RBAC, audit logging, BYOK encryption and certification status for a zero-trust-ready, self-hosted data plane.">
+<title>XERJ.ai · Security &amp; Compliance</title>
+<meta name="description" content="XERJ&#x27;s security posture: mutual TLS, RBAC, audit logging, BYOK encryption and certification status for a zero-trust-ready, self-hosted data plane.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;700;800;900&family=Inter:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -26,17 +26,17 @@
 <link rel="canonical" href="https://xerj.org/security/">
 <meta property="og:site_name" content="XERJ.ai">
 <meta property="og:type" content="website">
-<meta property="og:title" content="XERJ.ai — Security &amp; Compliance">
-<meta property="og:description" content="XERJ&#x27;s security posture — mutual TLS, RBAC, audit logging, BYOK encryption and certification status for a zero-trust-ready, self-hosted data plane.">
+<meta property="og:title" content="XERJ.ai · Security &amp; Compliance">
+<meta property="og:description" content="XERJ&#x27;s security posture: mutual TLS, RBAC, audit logging, BYOK encryption and certification status for a zero-trust-ready, self-hosted data plane.">
 <meta property="og:url" content="https://xerj.org/security/">
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="XERJ.ai — Security &amp; Compliance">
-<meta name="twitter:description" content="XERJ&#x27;s security posture — mutual TLS, RBAC, audit logging, BYOK encryption and certification status for a zero-trust-ready, self-hosted data plane.">
+<meta name="twitter:title" content="XERJ.ai · Security &amp; Compliance">
+<meta name="twitter:description" content="XERJ&#x27;s security posture: mutual TLS, RBAC, audit logging, BYOK encryption and certification status for a zero-trust-ready, self-hosted data plane.">
 <meta name="twitter:image" content="https://xerj.org/og/xerj-card.png">
 <script type="application/ld+json">
 {
@@ -77,7 +77,7 @@
   "applicationSubCategory": "Search engine",
   "operatingSystem": "Linux, macOS, Windows",
   "url": "https://xerj.org/security/",
-  "description": "XERJ's security posture — mutual TLS, RBAC, audit logging, BYOK encryption and certification status for a zero-trust-ready, self-hosted data plane.",
+  "description": "XERJ's security posture: mutual TLS, RBAC, audit logging, BYOK encryption and certification status for a zero-trust-ready, self-hosted data plane.",
   "image": "https://xerj.org/og/xerj-card.png",
   "license": "https://www.apache.org/licenses/LICENSE-2.0",
   "isAccessibleForFree": true,
@@ -187,7 +187,7 @@
     <div class="matrix-row"><span class="mk">AZURE KEY VAULT</span><span class="mv">BYOK via Azure Key Vault</span><span class="mstatus road">ROAD Q2</span></div>
     <div class="matrix-row"><span class="mk">HASHICORP VAULT</span><span class="mv">Vault Enterprise · FIPS-mode supported</span><span class="mstatus road">ROAD Q2</span></div>
     <div class="matrix-row"><span class="mk">HSM</span><span class="mv">Thales Luna · AWS CloudHSM · PKCS#11</span><span class="mstatus road">ROAD Q3</span></div>
-    <div class="matrix-row"><span class="mk">NO PLAINTEXT ACCESS</span><span class="mv">XERJ has no path to unwrap the master key — envelopes only</span><span class="mstatus ga">GA</span></div>
+    <div class="matrix-row"><span class="mk">NO PLAINTEXT ACCESS</span><span class="mv">XERJ has no path to unwrap the master key: envelopes only</span><span class="mstatus ga">GA</span></div>
   </div>
 
   <div class="pane" data-group="sec-layer" data-pane="access">
@@ -203,10 +203,10 @@
     <div class="matrix-row"><span class="mk">QUERY AUDIT</span><span class="mv">Principal · index · query shape · rows returned · realized cost</span><span class="mstatus beta">BETA</span></div>
     <div class="matrix-row"><span class="mk">SCHEMA CHANGES</span><span class="mv">Every field add / retype is an audit event with before + after state</span><span class="mstatus beta">BETA</span></div>
     <div class="matrix-row"><span class="mk">ROLE ASSIGNMENT</span><span class="mv">Every role binding change logged · granted-by · granted-at</span><span class="mstatus road">ROAD Q2</span></div>
-    <div class="matrix-row"><span class="mk">SNAPSHOTS</span><span class="mv">Create · list · restore · delete — audit every operation</span><span class="mstatus ga">GA</span></div>
+    <div class="matrix-row"><span class="mk">SNAPSHOTS</span><span class="mv">Create · list · restore · delete: audit every operation</span><span class="mstatus ga">GA</span></div>
     <div class="matrix-row"><span class="mk">CONFIG RELOAD</span><span class="mv">Every SIGHUP reload audit-logged with config diff</span><span class="mstatus ga">GA</span></div>
     <div class="matrix-row"><span class="mk">EXPLAIN-PLAN</span><span class="mv">Per-query explain-plan doubles as retrieval-layer audit artifact</span><span class="mstatus ga">GA</span></div>
-    <div class="matrix-row"><span class="mk">AUDIT INDEX</span><span class="mv">The audit log is a regular XERJ index — queryable · replayable · exportable</span><span class="mstatus ga">GA</span></div>
+    <div class="matrix-row"><span class="mk">AUDIT INDEX</span><span class="mv">The audit log is a regular XERJ index: queryable · replayable · exportable</span><span class="mstatus ga">GA</span></div>
     <div class="matrix-row"><span class="mk">MODEL RISK</span><span class="mv">Aligned with SR 11-7 · EBA · PRA SS1/23 evidence patterns</span><span class="mstatus ga">GA</span></div>
   </div>
 

@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Give two agents private memory on one laptop">
@@ -230,9 +230,9 @@
     <p>How do I keep one agent's memory from leaking into another agent's? Give each agent its own namespace and its own scoped API key. XERJ keeps memory on local disk, and our capture saw 0 non-loopback connections during store and recall, but roles are stored, not enforced, so the key is the boundary.</p>
     <p class="key-fact"><strong>Key number:</strong> Our capture recorded 0 non-loopback connections while storing and recalling memory. <span class="mute">(as of 2026-08-23 · source: the captured run documented on this page)</span></p>
   </div>
-  <p><strong>TL;DR</strong> — Agent memory stays on local disk, and our capture recorded 0 non-loopback connections during store and recall. Privacy from other callers is a different question. XERJ stores roles but does not enforce them, so a namespace is only as private as the scoped API key that reaches it.</p>
+  <p><strong>TL;DR</strong>: Agent memory stays on local disk, and our capture recorded 0 non-loopback connections during store and recall. Privacy from other callers is a different question. XERJ stores roles but does not enforce them, so a namespace is only as private as the scoped API key that reaches it.</p>
   <div class="prompt-card">
-    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT — IT DOES THE REST</span>
+    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT. IT DOES THE REST</span>
     <code>Act as a coding agent. Read https://xerj.org/llms.txt, start a XERJ node without --insecure, mint a scoped API key, store a memory in one namespace, then try to recall a different namespace with that key and report the exact status code you receive.</code>
     <button type="button" class="prompt-copy" data-copy="Act as a coding agent. Read https://xerj.org/llms.txt, start a XERJ node without --insecure, mint a scoped API key, store a memory in one namespace, then try to recall a different namespace with that key and report the exact status code you receive.">COPY THE PROMPT</button>
   </div>

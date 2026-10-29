@@ -32,7 +32,7 @@
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="XERJ · Docs · Recipe · Index a document folder">
@@ -236,20 +236,20 @@
   <h1>Index a folder of PDFs, Word docs &amp; web pages</h1>
 
 
-  <p><strong>Goal:</strong> point an AI agent at a real, messy shared drive — an HR handbook in <strong>PDF</strong>, an on-call runbook in <strong>Word</strong>, a product FAQ in <strong>HTML</strong>, architecture notes in <strong>Markdown</strong>, meeting notes in <strong>plain text</strong> — and let it answer questions with <em>cited passages</em>, regardless of format.</p>
+  <p><strong>Goal:</strong> point an AI agent at a real, messy shared drive: an HR handbook in <strong>PDF</strong>, an on-call runbook in <strong>Word</strong>, a product FAQ in <strong>HTML</strong>, architecture notes in <strong>Markdown</strong>, meeting notes in <strong>plain text</strong>, and let it answer questions with <em>cited passages</em>, regardless of format.</p>
 
-  <p>The obvious shell-only approach is to <code class="inline">grep</code>/<code class="inline">rg</code> the files. It hits a hard ceiling almost immediately: it <strong>cannot read a PDF or a <code class="inline">.docx</code></strong> (they are compressed binary containers, so the answer is simply invisible), and to actually quote an answer buried in a large document it must slurp the <strong>whole file</strong> into the model's context window. (A fair grep of the question's own terms <em>does</em> find differently-phrased plaintext answers — so we do not claim a meaning-understanding edge; see the honest scorecard below.)</p>
+  <p>The obvious shell-only approach is to <code class="inline">grep</code>/<code class="inline">rg</code> the files. It hits a hard ceiling almost immediately: it <strong>cannot read a PDF or a <code class="inline">.docx</code></strong> (they are compressed binary containers, so the answer is simply invisible), and to actually quote an answer buried in a large document it must slurp the <strong>whole file</strong> into the model's context window. (A fair grep of the question's own terms <em>does</em> find differently-phrased plaintext answers, so we do not claim a meaning-understanding edge; see the honest scorecard below.)</p>
 
-  <p>With XERJ, one <code class="inline">xerj-index</code> pass walks the tree, extracts text from <em>every</em> format, chunks it, auto-embeds each chunk with the built-in embedder, and bulk-indexes into a single <code class="inline">docfolder</code> index. The agent then searches it three ways — <strong>lexical</strong>, <strong>semantic</strong>, and <strong>hybrid</strong> — and gets back ranked, cited passages.</p>
+  <p>With XERJ, one <code class="inline">xerj-index</code> pass walks the tree, extracts text from <em>every</em> format, chunks it, auto-embeds each chunk with the built-in embedder, and bulk-indexes into a single <code class="inline">docfolder</code> index. The agent then searches it three ways (<strong>lexical</strong>, <strong>semantic</strong>, and <strong>hybrid</strong>) and gets back ranked, cited passages.</p>
 
   <blockquote>
-    <p><strong>Everything on this page was measured live.</strong> The numbers come from a real run of the indexer + comparison harness in <a href="https://github.com/xerj-org/xerj/tree/main/demo/usecases/doc-index"><code class="inline">demo/usecases/doc-index</code></a> against a live XERJ node — a fictional-company corpus ("Northwind Robotics") of <strong>29 files</strong> across PDF/DOCX/HTML/MD/TXT (including four realistically large ≥60 KB documents), indexed into <strong>420 chunks</strong>, scored over a <strong>22-question</strong> ground-truth set. Nothing here is hand-tuned or aspirational; the raw <code class="inline">results.json</code> and <code class="inline">SCORECARD.md</code> ship next to the scripts so you can reproduce it. The grep baseline is run fairly — it searches the union of each query's keywords <em>and</em> the salient tokens of the question itself.</p>
+    <p><strong>Everything on this page was measured live.</strong> The numbers come from a real run of the indexer + comparison harness in <a href="https://github.com/xerj-org/xerj/tree/main/demo/usecases/doc-index"><code class="inline">demo/usecases/doc-index</code></a> against a live XERJ node: a fictional-company corpus ("Northwind Robotics") of <strong>29 files</strong> across PDF/DOCX/HTML/MD/TXT (including four realistically large ≥60 KB documents), indexed into <strong>420 chunks</strong>, scored over a <strong>22-question</strong> ground-truth set. Nothing here is hand-tuned or aspirational; the raw <code class="inline">results.json</code> and <code class="inline">SCORECARD.md</code> ship next to the scripts so you can reproduce it. The grep baseline is run fairly. It searches the union of each query's keywords <em>and</em> the salient tokens of the question itself.</p>
   </blockquote>
 
   <hr>
 
   <h2>The problem, made concrete: grep can't read a PDF</h2>
-  <p>The HR handbook is a real PDF. Ask it "how many weeks of paid parental leave do employees receive?" and grep the salient terms — <code class="inline">rg</code> returns <strong>nothing</strong>, because the file is a FlateDecode-compressed binary stream, not text:</p>
+  <p>The HR handbook is a real PDF. Ask it "how many weeks of paid parental leave do employees receive?" and grep the salient terms, <code class="inline">rg</code> returns <strong>nothing</strong>, because the file is a FlateDecode-compressed binary stream, not text:</p>
 <pre class="code">$ file corpus/hr/handbook.pdf
 corpus/hr/handbook.pdf: PDF document, version 1.7, 5 page(s)
 
@@ -264,17 +264,17 @@ x^]XMM-KM-dF...          # compressed bytes — no readable words
 $ rg -i -F -e 'parental leave' -e 'paid leave' corpus/
    # (exit 1, no matches — rg detects the NUL bytes and skips the file)</pre>
 
-  <p>The answer <em>is</em> in there — it is just locked inside the binary. Run a proper extractor and you can see it:</p>
+  <p>The answer <em>is</em> in there. It is just locked inside the binary. Run a proper extractor and you can see it:</p>
 <pre class="code">$ pdftotext -layout corpus/hr/handbook.pdf - | grep -i 'parental leave'
 Parental leave
 Paid parental leave is 16 weeks for eligible full-time staff.</pre>
 
-  <p>That extraction step is exactly what <code class="inline">xerj-index</code> does for every file — and then it chunks, embeds, and indexes the result so you can search it. A naive grep agent is structurally blind to it.</p>
+  <p>That extraction step is exactly what <code class="inline">xerj-index</code> does for every file, and then it chunks, embeds, and indexes the result so you can search it. A naive grep agent is structurally blind to it.</p>
 
   <hr>
 
   <h2>1. Create the <code class="inline">docfolder</code> index</h2>
-  <p>Two fields carry the document text. <code class="inline">body</code> is mapped as <code class="inline">semantic_text</code> — XERJ auto-embeds it on ingest for meaning-aware retrieval — and <code class="inline">body_text</code> is a plain <code class="inline">text</code> field holding the <em>same</em> chunk for BM25 lexical / <code class="inline">match</code>. The rest are cheap keyword/metadata fields so you can filter by folder or format and cite the source path.</p>
+  <p>Two fields carry the document text. <code class="inline">body</code> is mapped as <code class="inline">semantic_text</code> (XERJ auto-embeds it on ingest for meaning-aware retrieval) and <code class="inline">body_text</code> is a plain <code class="inline">text</code> field holding the <em>same</em> chunk for BM25 lexical / <code class="inline">match</code>. The rest are cheap keyword/metadata fields so you can filter by folder or format and cite the source path.</p>
 <pre class="code">curl -X PUT localhost:9209/docfolder -H 'Content-Type: application/json' -d '{
   "mappings": {
     "properties": {
@@ -290,7 +290,7 @@ Paid parental leave is 16 weeks for eligible full-time staff.</pre>
 }'</pre>
 
   <blockquote>
-    <p><strong>Port note.</strong> This walkthrough talks to a node on <code class="inline">:9209</code> — the port the demo harness uses so it never collides with anything else on the box. XERJ's default ES-compat port is <code class="inline">:9200</code>; use whichever you started the node on (the scripts honour <code class="inline">XERJ_PORT</code>).</p>
+    <p><strong>Port note.</strong> This walkthrough talks to a node on <code class="inline">:9209</code>: the port the demo harness uses so it never collides with anything else on the box. XERJ's default ES-compat port is <code class="inline">:9200</code>; use whichever you started the node on (the scripts honour <code class="inline">XERJ_PORT</code>).</p>
   </blockquote>
 
   <h2>2. Index the folder in one pass</h2>
@@ -323,7 +323,7 @@ elapsed ms        : 1339</pre>
 
   <h2>3. Search it three ways</h2>
 
-  <h3>Lexical — <code class="inline">match</code> on <code class="inline">body_text</code></h3>
+  <h3>Lexical: <code class="inline">match</code> on <code class="inline">body_text</code></h3>
   <p>Plain BM25 over the extracted text. Good when the query words are literally in the doc:</p>
 <pre class="code">curl -s localhost:9209/docfolder/_search -H 'Content-Type: application/json' -d '{
   "size": 5,
@@ -340,8 +340,8 @@ elapsed ms        : 1339</pre>
 }
 // _score + body_vector trimmed for brevity — top hit shown</pre>
 
-  <h3>Semantic — <code class="inline">semantic</code> on <code class="inline">body</code></h3>
-  <p>The user rarely uses the doc's exact words. Ask "what is Northwind's policy on remote work versus coming into the office?" — the facilities note never says "remote work," it says staff "may work from home up to three days a week." The <code class="inline">semantic</code> query retrieves it by embedding (word/sub-word) overlap in one shot, without your having to guess synonyms. Be honest about the scope, though: a diligent grep of the question's <em>own</em> salient terms ("work", "office") lands the same line — on differently-phrased plaintext the two approaches <strong>tie</strong> (see the robustness row below). The convenience is single-query retrieval, not a capability grep lacks:</p>
+  <h3>Semantic: <code class="inline">semantic</code> on <code class="inline">body</code></h3>
+  <p>The user rarely uses the doc's exact words. Ask "what is Northwind's policy on remote work versus coming into the office?": the facilities note never says "remote work," it says staff "may work from home up to three days a week." The <code class="inline">semantic</code> query retrieves it by embedding (word/sub-word) overlap in one shot, without your having to guess synonyms. Be honest about the scope, though: a diligent grep of the question's <em>own</em> salient terms ("work", "office") lands the same line, on differently-phrased plaintext the two approaches <strong>tie</strong> (see the robustness row below). The convenience is single-query retrieval, not a capability grep lacks:</p>
 <pre class="code">curl -s localhost:9209/docfolder/_search -H 'Content-Type: application/json' -d '{
   "size": 5,
   "query": { "semantic": { "field": "body",
@@ -359,7 +359,7 @@ elapsed ms        : 1339</pre>
   ] }
 }</pre>
 
-  <h3>Hybrid — fuse both with RRF</h3>
+  <h3>Hybrid: fuse both with RRF</h3>
   <p>The default the harness scores with: fan out a <code class="inline">match</code> on <code class="inline">body_text</code> and a <code class="inline">semantic</code> query on <code class="inline">body</code>, then fuse the two rankings with Reciprocal Rank Fusion. This is what answers the parental-leave question that grep could not touch:</p>
 <pre class="code">curl -s localhost:9209/docfolder/_search -H 'Content-Type: application/json' -d '{
   "size": 5,
@@ -374,7 +374,7 @@ elapsed ms        : 1339</pre>
     }
   }
 }'</pre>
-  <p>Measured response — the answer chunk from the binary PDF ranks #1, and every hit carries its source path so the agent can cite it (query latency for this one was <strong>116.09 ms</strong>):</p>
+  <p>Measured response: the answer chunk from the binary PDF ranks #1, and every hit carries its source path so the agent can cite it (query latency for this one was <strong>116.09 ms</strong>):</p>
 <pre class="code">{
   "hits": { "hits": [
     { "_index": "docfolder", "_source": {
@@ -394,10 +394,10 @@ elapsed ms        : 1339</pre>
   <h2>The measured scorecard: XERJ vs. a fair shell-only grep</h2>
   <p>The harness runs both approaches over the same 22 ground-truth questions. A query "hits" if any returned passage contains the known answer substring. The grep baseline is <strong>fair</strong>: it searches the union of each query's curated keywords <em>and</em> the salient tokens of the question itself, so it is never rigged to dodge the answer's own line. The questions are split into four honest buckets:</p>
   <ul>
-    <li><strong>binary_only</strong> (7) — the answer lives <em>only</em> inside a PDF or DOCX. XERJ extracted it; grep is structurally blind. <strong>This is the headline — a capability grep lacks.</strong></li>
-    <li><strong>large_literal</strong> (4) — the answer is a literal string buried inside a realistically <em>large</em> (≥60 KB) document. A fair grep <em>finds</em> the line, but must load the whole file to quote/verify it; XERJ returns one ranked passage. This is where the context-efficiency win shows up honestly.</li>
-    <li><strong>robustness</strong> (5) — the answer is phrased differently than the question, in a plaintext file grep can read. A fair grep of the question's own terms matches the same line XERJ's lexical embedder finds, so this is expected to <strong>tie</strong> — kept to show single-query convenience, not a meaning win.</li>
-    <li><strong>literal</strong> (6) — the answer is a literal substring in a small plaintext file. Both approaches should find these; the honest control that checks XERJ isn't just inflating the easy cases.</li>
+    <li><strong>binary_only</strong> (7): the answer lives <em>only</em> inside a PDF or DOCX. XERJ extracted it; grep is structurally blind. <strong>This is the headline: a capability grep lacks.</strong></li>
+    <li><strong>large_literal</strong> (4): the answer is a literal string buried inside a realistically <em>large</em> (≥60 KB) document. A fair grep <em>finds</em> the line, but must load the whole file to quote/verify it; XERJ returns one ranked passage. This is where the context-efficiency win shows up honestly.</li>
+    <li><strong>robustness</strong> (5): the answer is phrased differently than the question, in a plaintext file grep can read. A fair grep of the question's own terms matches the same line XERJ's lexical embedder finds, so this is expected to <strong>tie</strong>: kept to show single-query convenience, not a meaning win.</li>
+    <li><strong>literal</strong> (6): the answer is a literal substring in a small plaintext file. Both approaches should find these; the honest control that checks XERJ isn't just inflating the easy cases.</li>
   </ul>
 
 <pre class="code">Metric                                   XERJ            Baseline (grep)
@@ -410,7 +410,7 @@ literal      (plaintext substring)       6/6             6/6
 Query latency p50 / mean / max (ms)      61.23 / 64.9 / 116.09
 Index build time (ms)                    1339</pre>
 
-  <p>Coverage by the format the answer lives in — the binary formats are the whole story:</p>
+  <p>Coverage by the format the answer lives in, the binary formats are the whole story:</p>
 <pre class="code">Format   Queries   XERJ            Baseline
 ------   -------   -----------     ----------
 docx     3         2/3 (66.7%)     0/3 (0%)
@@ -419,10 +419,10 @@ html     5         5/5 (100%)      5/5 (100%)
 md       7         7/7 (100%)      7/7 (100%)
 txt      2         2/2 (100%)      2/2 (100%)</pre>
 
-  <p>The decisive gap is exactly where you'd predict, and only there: on answers locked in PDF/DOCX, grep gets <strong>0/7</strong> and XERJ gets <strong>6/7</strong> (it misses one — see the honest miss below). On the plaintext buckets a <em>fair</em> grep keeps up — <strong>robustness ties 5/5</strong> and the <strong>literal control ties 6/6</strong> — so XERJ is not winning the cases grep can actually read. What XERJ adds on those is single-query, ranked retrieval and, on large documents, far less context.</p>
+  <p>The decisive gap is exactly where you'd predict, and only there: on answers locked in PDF/DOCX, grep gets <strong>0/7</strong> and XERJ gets <strong>6/7</strong> (it misses one: see the honest miss below). On the plaintext buckets a <em>fair</em> grep keeps up (<strong>robustness ties 5/5</strong> and the <strong>literal control ties 6/6</strong>) so XERJ is not winning the cases grep can actually read. What XERJ adds on those is single-query, ranked retrieval and, on large documents, far less context.</p>
 
-  <h3>Context efficiency — real, but scale-dependent (not flat)</h3>
-  <p>To quote or verify an answer, the grep baseline must open the answer-containing file the hit lives in; XERJ returns just the ranked passage(s). The baseline is charged <strong>only that single answer file</strong> (<code class="inline">statSync(answer_path)</code>), and <strong>0 bytes on any query it cannot answer</strong> — never the false-positive files its broad terms also matched. Measured that way, the win is genuine but <strong>scale-dependent</strong>: large on big documents, and it INVERTS on tiny ones:</p>
+  <h3>Context efficiency: real, but scale-dependent (not flat)</h3>
+  <p>To quote or verify an answer, the grep baseline must open the answer-containing file the hit lives in; XERJ returns just the ranked passage(s). The baseline is charged <strong>only that single answer file</strong> (<code class="inline">statSync(answer_path)</code>), and <strong>0 bytes on any query it cannot answer</strong>, never the false-positive files its broad terms also matched. Measured that way, the win is genuine but <strong>scale-dependent</strong>: large on big documents, and it INVERTS on tiny ones:</p>
 <pre class="code">View                                     Baseline B   XERJ B    Ratio
 --------------------------------------   ----------   -------   --------
 large_literal (returned passages)          192,782    11,180    17.24×   ← THE REAL WIN
@@ -431,7 +431,7 @@ literal (returned passages)                  4,741    20,965     0.23×   ← IN
 literal (single best passage)                4,741     3,930     1.21×
 answerable (all 14 baseline answers)       202,063    50,750     3.98×
 naive overall (all 22 queries)             202,063    79,872     2.53×   ← NOT a claim*</pre>
-  <p>* The naive whole-corpus ratio <strong>flatters the blind baseline</strong> — it opens 0 bytes on every query it cannot answer — so we do not lean on it. The headline rests on the <code class="inline">large_literal</code> ratio (<strong>17.24×</strong>); on the small-file <code class="inline">literal</code> set the same metric drops to <strong>0.23×</strong>, because a handful of returned passages can meet or exceed a tiny whole file. Side by side — large_literal <strong>17.24×</strong> vs. literal <strong>0.23×</strong> — <em>is</em> the scale-dependence, measured rather than asserted; that is why the corpus deliberately includes four ≥60 KB documents, to show the win where it is real. <em>(Diagnostic only, used in no ratio or claim: had the baseline instead been charged every file its broad terms matched — false positives included — the total would be 4,218,746 bytes.)</em></p>
+  <p>* The naive whole-corpus ratio <strong>flatters the blind baseline</strong> (it opens 0 bytes on every query it cannot answer) so we do not lean on it. The headline rests on the <code class="inline">large_literal</code> ratio (<strong>17.24×</strong>); on the small-file <code class="inline">literal</code> set the same metric drops to <strong>0.23×</strong>, because a handful of returned passages can meet or exceed a tiny whole file. Side by side: large_literal <strong>17.24×</strong> vs. literal <strong>0.23×</strong>: <em>is</em> the scale-dependence, measured rather than asserted; that is why the corpus deliberately includes four ≥60 KB documents, to show the win where it is real. <em>(Diagnostic only, used in no ratio or claim: had the baseline instead been charged every file its broad terms matched (false positives included) the total would be 4,218,746 bytes.)</em></p>
 
   <hr>
 
@@ -440,17 +440,17 @@ naive overall (all 22 queries)             202,063    79,872     2.53×   ← NO
 
   <ul>
     <li><strong>The built-in embedder is <em>lexical</em>, not neural.</strong> XERJ's zero-config embedder is a deterministic feature-hashing model (384 dimensions, L2-normalised → cosine). It captures word / sub-word overlap, not deep meaning. That is exactly why the <code class="inline">robustness</code> bucket is an honest <strong>5/5 tie</strong>: a fair grep of the question's own terms matches the same lines XERJ's lexical embedder finds. We make <strong>no</strong> "beats grep on meaning" claim. For production-grade semantics, point the <code class="inline">semantic_text</code> field at an external OpenAI-compatible <code class="inline">/v1/embeddings</code> endpoint; the ingest and query paths are identical.</li>
-    <li><strong>The semantic sub-query is exact brute-force at query time.</strong> Semantic-query vector scoring is not routed through the HNSW graph (only unfiltered <code class="inline">knn</code> on ≥1,024-doc indexes is), so every chunk vector is scanned. That's fine (and gives exact results) at this corpus size — the measured max query latency was <strong>116.09 ms</strong> over 420 chunks — but latency grows with the number of vectors scanned.</li>
+    <li><strong>The semantic sub-query is exact brute-force at query time.</strong> Semantic-query vector scoring is not routed through the HNSW graph (only unfiltered <code class="inline">knn</code> on ≥1,024-doc indexes is), so every chunk vector is scanned. That's fine (and gives exact results) at this corpus size (the measured max query latency was <strong>116.09 ms</strong> over 420 chunks) but latency grows with the number of vectors scanned.</li>
     <li><strong>Extraction quality is only as good as the extractor.</strong> <code class="inline">pdftotext</code>/<code class="inline">soffice</code> handle digital PDFs and Word files well, but a <em>scanned</em> PDF (an image of text) yields nothing without an OCR step, which this recipe does not include. Garbled extraction = garbled index. The indexer logs and skips files it cannot read rather than crashing.</li>
-    <li><strong>Context efficiency is real, but scale-dependent — not free on tiny files.</strong> The baseline is charged only the single answer-containing file it must open (and 0 bytes when it cannot answer at all). On the <code class="inline">large_literal</code> set XERJ returns <strong>17.24×</strong> less context than the whole answer files a fair grep must open (85.68× on a single best passage). But on the small-file <code class="inline">literal</code> set the same metric INVERTS to <strong>0.23×</strong> — a few returned passages can exceed a tiny whole file — and the naive whole-corpus ratio (2.53×) flatters the blind baseline, so we headline the measured large-document number, not the naive one. The context win appears as documents grow, and honestly disappears on tiny ones.</li>
-    <li><strong>The one miss (q05).</strong> "What is the acknowledgement SLA for a Sev-1 incident?" — the answer, "within 5 minutes," lives in <code class="inline">oncall-runbook.docx</code>. It <em>was</em> extracted and indexed (a direct <code class="inline">match_phrase</code> on the live index returns exactly that chunk), but for this phrasing hybrid ranking pushes it out of the top-5: the answer chunk lacks the word "SLA," and larger incident-heavy docs outrank it. So <code class="inline">binary_only</code> is honestly XERJ 6/7 — still strictly &gt; the baseline's 0/7. We did not change the retrieval strategy to force this to pass.</li>
-    <li><strong>The baseline could be upgraded.</strong> A script agent <em>could</em> shell out to <code class="inline">pdftotext</code>/<code class="inline">soffice</code> and close the binary gap. But it would still have no ranking, no per-chunk retrieval, no semantic layer, and would keep paying the whole-file context cost. XERJ's win is not "it can read PDFs" alone — it's format-agnostic extraction <em>plus</em> chunked, ranked, context-aware retrieval with a real (if shallow) semantic layer.</li>
+    <li><strong>Context efficiency is real, but scale-dependent, not free on tiny files.</strong> The baseline is charged only the single answer-containing file it must open (and 0 bytes when it cannot answer at all). On the <code class="inline">large_literal</code> set XERJ returns <strong>17.24×</strong> less context than the whole answer files a fair grep must open (85.68× on a single best passage). But on the small-file <code class="inline">literal</code> set the same metric INVERTS to <strong>0.23×</strong> (a few returned passages can exceed a tiny whole file) and the naive whole-corpus ratio (2.53×) flatters the blind baseline, so we headline the measured large-document number, not the naive one. The context win appears as documents grow, and honestly disappears on tiny ones.</li>
+    <li><strong>The one miss (q05).</strong> "What is the acknowledgement SLA for a Sev-1 incident?": the answer, "within 5 minutes," lives in <code class="inline">oncall-runbook.docx</code>. It <em>was</em> extracted and indexed (a direct <code class="inline">match_phrase</code> on the live index returns exactly that chunk), but for this phrasing hybrid ranking pushes it out of the top-5: the answer chunk lacks the word "SLA," and larger incident-heavy docs outrank it. So <code class="inline">binary_only</code> is honestly XERJ 6/7: still strictly &gt; the baseline's 0/7. We did not change the retrieval strategy to force this to pass.</li>
+    <li><strong>The baseline could be upgraded.</strong> A script agent <em>could</em> shell out to <code class="inline">pdftotext</code>/<code class="inline">soffice</code> and close the binary gap. But it would still have no ranking, no per-chunk retrieval, no semantic layer, and would keep paying the whole-file context cost. XERJ's win is not "it can read PDFs" alone: it's format-agnostic extraction <em>plus</em> chunked, ranked, context-aware retrieval with a real (if shallow) semantic layer.</li>
   </ul>
 
   <hr>
 
   <h2>Reproduce it yourself</h2>
-  <p>The whole thing — corpus generator, indexer, grep baseline, and comparison harness — lives in <a href="https://github.com/xerj-org/xerj/tree/main/demo/usecases/doc-index"><code class="inline">demo/usecases/doc-index</code></a>. Prereqs: Node 18+ (tested on v24), <code class="inline">pdftotext</code> (poppler-utils), <code class="inline">soffice</code>/LibreOffice, and <code class="inline">rg</code> (ripgrep). Then:</p>
+  <p>The whole thing (corpus generator, indexer, grep baseline, and comparison harness) lives in <a href="https://github.com/xerj-org/xerj/tree/main/demo/usecases/doc-index"><code class="inline">demo/usecases/doc-index</code></a>. Prereqs: Node 18+ (tested on v24), <code class="inline">pdftotext</code> (poppler-utils), <code class="inline">soffice</code>/LibreOffice, and <code class="inline">rg</code> (ripgrep). Then:</p>
 <pre class="code"># 1. Start a throwaway XERJ (ES-compat wire; default port :9200)
 xerj --insecure --data-dir ./docfolder-data
 
@@ -466,7 +466,7 @@ node xerj-index.mjs --recreate
 # 5. Score XERJ vs the grep baseline → writes results.json + SCORECARD.md
 node compare.mjs</pre>
 
-  <p>Open <code class="inline">SCORECARD.md</code> for the per-query table and the honest verdict, or <code class="inline">results.json</code> for the machine-readable numbers. The full contract these scripts obey — index mappings, chunking, query schema, scoring, and the gate — is documented in <code class="inline">SPEC.md</code> and the deliverable's <code class="inline">README.md</code>. Every figure on this page is emitted by that run; nothing is hardcoded.</p>
+  <p>Open <code class="inline">SCORECARD.md</code> for the per-query table and the honest verdict, or <code class="inline">results.json</code> for the machine-readable numbers. The full contract these scripts obey (index mappings, chunking, query schema, scoring, and the gate) is documented in <code class="inline">SPEC.md</code> and the deliverable's <code class="inline">README.md</code>. Every figure on this page is emitted by that run; nothing is hardcoded.</p>
 
   <!-- Print-only branded footer (hidden on screen, visible in PDF) -->
   <div class="print-footer" style="display:none;">

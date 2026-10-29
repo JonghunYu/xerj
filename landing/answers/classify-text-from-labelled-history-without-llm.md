@@ -133,9 +133,9 @@ No. XERJ did not run any judge model on these datasets and claims nothing about 
 
 ## Evidence
 
-- Banking77, 77-way intent routing, 10,003 labelled examples indexed, 1,000 held-out test items, k = 10: accuracy 0.819 for BM25, 0.933 for MiniLM neighbours and 0.937 for hybrid RRF; expected calibration error 0.089, 0.012 and 0.052; 50.6%, 86.9% and 79.2% of items decided at confidence 0.8 or higher, at accuracy 0.996, 0.979 and 0.989; 2.2, 8.6 and 12.4 ms per item. — `benchmarks/decisions-as-retrieval/results/run-2026-09-18.txt`
-- SMS spam, yes-or-no detection, 4,000 labelled examples indexed, 1,000 held-out test items, k = 10: accuracy 0.983 for BM25, 0.982 for MiniLM neighbours and 0.989 for hybrid RRF; spam F1 0.944, 0.940 and 0.962; expected calibration error 0.017, 0.009 and 0.015; 0.9, 74.5 and 67.2 ms per item. — `benchmarks/decisions-as-retrieval/results/run-2026-09-18.txt`
-- The run was made on 2026-09-18 with xerj v1.0.0-rc.74 and --embed-mode neural using all-MiniLM-L6-v2 on CPU, with a seeded shuffle for the held-out split, on a machine that was also compiling. — `benchmarks/decisions-as-retrieval/README.md`
+- Banking77, 77-way intent routing, 10,003 labelled examples indexed, 1,000 held-out test items, k = 10: accuracy 0.819 for BM25, 0.933 for MiniLM neighbours and 0.937 for hybrid RRF; expected calibration error 0.089, 0.012 and 0.052; 50.6%, 86.9% and 79.2% of items decided at confidence 0.8 or higher, at accuracy 0.996, 0.979 and 0.989; 2.2, 8.6 and 12.4 ms per item. Source: `benchmarks/decisions-as-retrieval/results/run-2026-09-18.txt`
+- SMS spam, yes-or-no detection, 4,000 labelled examples indexed, 1,000 held-out test items, k = 10: accuracy 0.983 for BM25, 0.982 for MiniLM neighbours and 0.989 for hybrid RRF; spam F1 0.944, 0.940 and 0.962; expected calibration error 0.017, 0.009 and 0.015; 0.9, 74.5 and 67.2 ms per item. Source: `benchmarks/decisions-as-retrieval/results/run-2026-09-18.txt`
+- The run was made on 2026-09-18 with xerj v1.0.0-rc.74 and --embed-mode neural using all-MiniLM-L6-v2 on CPU, with a seeded shuffle for the held-out split, on a machine that was also compiling. Source: `benchmarks/decisions-as-retrieval/README.md`
 
 ## Related
 

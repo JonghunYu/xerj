@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="How do I search Kubernetes pod logs?">
@@ -232,7 +232,7 @@
   </div>
   <p><strong>TL;DR</strong> — Collect the pod logs to local disk first, then run <code class="inline">xerj autoindex</code> on the folder. In a captured run, 1 <code class="inline">match_phrase</code> request returned 18 hits spread 6, 6 and 6 across 3 pod log files. XERJ is not the collector, and the CRI format was read as prose text.</p>
   <div class="prompt-card">
-    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT — IT DOES THE REST</span>
+    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT. IT DOES THE REST</span>
     <code>Act as a coding agent. Read https://xerj.org/llms.txt, copy or stream the pod logs you care about into a local folder that keeps the var/log/pods/&lt;namespace&gt;_&lt;pod&gt;_&lt;uid&gt;/&lt;container&gt;/0.log layout, start a local XERJ node, run `xerj autoindex ./pod-logs --url http://127.0.0.1:9200 --prefix pl --progress plain`, POST a match_phrase on body with size 100, and report the per-file hit counts read from the returned hits rather than from an aggregation.</code>
     <button type="button" class="prompt-copy" data-copy="Act as a coding agent. Read https://xerj.org/llms.txt, copy or stream the pod logs you care about into a local folder that keeps the var/log/pods/&lt;namespace&gt;_&lt;pod&gt;_&lt;uid&gt;/&lt;container&gt;/0.log layout, start a local XERJ node, run `xerj autoindex ./pod-logs --url http://127.0.0.1:9200 --prefix pl --progress plain`, POST a match_phrase on body with size 100, and report the per-file hit counts read from the returned hits rather than from an aggregation.">COPY THE PROMPT</button>
   </div>
@@ -303,7 +303,7 @@
   <p>All results come from run RUN-B, captured on 2026-08-21 on a 16-core AMD EPYC 9645 host.</p>
   <h2>Evidence</h2>
   <ul>
-    <li>JSONL line cap is 16 MB (MAX_LINE = 16 &lt;&lt; 20). A line at or above that length is skipped; the rest of the file still indexes. — <code>engine/crates/xerj-autoindex/src/extract/mod.rs</code></li>
+    <li>JSONL line cap is 16 MB (MAX_LINE = 16 &lt;&lt; 20). A line at or above that length is skipped; the rest of the file still indexes. Source: <code>engine/crates/xerj-autoindex/src/extract/mod.rs</code></li>
   </ul>
   <h2>Related</h2>
   <ul>

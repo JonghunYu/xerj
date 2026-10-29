@@ -56,7 +56,7 @@ faq:
     a: "Read every document in the shared index and copy what they read. A share grants whole indices. There is no per-document or per-field restriction to apply."
 ---
 
-**TL;DR** — A share-link guest gets a key with `read` on the shared index and nothing else. A route allow-list, used for guests only, closes `_cat`, `_cluster`, every other index, all writes, and scroll and point-in-time contexts. Each refusal is a check in a live test that ran 237 checks on 2026-09-19, with 0 failures.
+**TL;DR**: A share-link guest gets a key with `read` on the shared index and nothing else. A route allow-list, used for guests only, closes `_cat`, `_cluster`, every other index, all writes, and scroll and point-in-time contexts. Each refusal is a check in a live test that ran 237 checks on 2026-09-19, with 0 failures.
 
 ## The key a guest is given
 

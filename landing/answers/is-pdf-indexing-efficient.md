@@ -12,7 +12,7 @@ source: "content/answers/is-pdf-indexing-efficient.md"
 
 **Key number:** XERJ runs at most 4 concurrent PDF worker processes (`MAX_PDF_WORKERS`) and reads at most 100,000 pages per file (`MAX_PAGES`). (as of 2026-10-19; source: [engine/crates/xerj-autoindex/src/resources.rs](https://github.com/xerj-org/xerj/blob/main/engine/crates/xerj-autoindex/src/resources.rs))
 
-**TL;DR** — Yes, when the alternative is opening every file by hand, and PDF is still the slowest family XERJ parses. XERJ isolates extraction in a worker process, caps it 5 ways, and parses each file once. In our capture 3 born-digital PDFs produced 9 documents, and the 4th file failed with a reason string.
+**TL;DR**: Yes, when the alternative is opening every file by hand, and PDF is still the slowest family XERJ parses. XERJ isolates extraction in a worker process, caps it 5 ways, and parses each file once. In our capture 3 born-digital PDFs produced 9 documents, and the 4th file failed with a reason string.
 
 ## Agent prompt
 

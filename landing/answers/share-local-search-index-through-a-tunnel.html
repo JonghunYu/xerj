@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Share a local search index through a tunnel">
@@ -222,9 +222,9 @@
     <p>How can I give a remote person temporary search access to files on my laptop without port forwarding or a VPN? Run xerj share with --tunnel: it starts your own cloudflared, prints a public HTTPS guest link, and runs until Ctrl-C, which closes the tunnel and revokes the share. Cloudflare terminates the TLS.</p>
     <p class="key-fact"><strong>Key number:</strong> A known share accepts at most 30 passcode attempts an hour, from any address. <span class="mute">(as of 2026-10-19 · source: <a href="https://github.com/xerj-org/xerj/blob/main/engine/crates/xerj-api/src/share.rs">engine/crates/xerj-api/src/share.rs</a>)</span></p>
   </div>
-  <p><strong>TL;DR</strong> — <code class="inline">xerj share</code> with <code class="inline">--tunnel</code> starts your own <code class="inline">cloudflared</code>, prints a public HTTPS guest link, and runs until you press Ctrl-C. Stopping it closes the tunnel and revokes the share. No port is opened on your router. The trade: the guest's traffic passes through Cloudflare, which terminates the TLS connection.</p>
+  <p><strong>TL;DR</strong>: <code class="inline">xerj share</code> with <code class="inline">--tunnel</code> starts your own <code class="inline">cloudflared</code>, prints a public HTTPS guest link, and runs until you press Ctrl-C. Stopping it closes the tunnel and revokes the share. No port is opened on your router. The trade: the guest's traffic passes through Cloudflare, which terminates the TLS connection.</p>
   <div class="prompt-card">
-    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT — IT DOES THE REST</span>
+    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT. IT DOES THE REST</span>
     <code>Act as a coding agent. Read https://xerj.org/llms.txt. Confirm cloudflared is installed, then run xerj share on the user's indexed folder with --tunnel in the background, wait for the line that says the tunnel is up, and give the user the https link and the passcode separately. Tell them the link stops working when the command stops, and that stopping it revokes the share.</code>
     <button type="button" class="prompt-copy" data-copy="Act as a coding agent. Read https://xerj.org/llms.txt. Confirm cloudflared is installed, then run xerj share on the user&#x27;s indexed folder with --tunnel in the background, wait for the line that says the tunnel is up, and give the user the https link and the passcode separately. Tell them the link stops working when the command stops, and that stopping it revokes the share.">COPY THE PROMPT</button>
   </div>
@@ -297,10 +297,10 @@
   <p>No. The lockout is charged to the share, not to the address: 30 attempts an hour from anywhere. Junk ids are charged to the source address, where one shared bucket only makes the bound tighter.</p>
   <h2>Evidence</h2>
   <ul>
-    <li>xerj share --tunnel runs cloudflared tunnel --url against 127.0.0.1 and reads the trycloudflare.com hostname from its output. — <code>engine/crates/xerj-server/src/share.rs</code></li>
-    <li>A real quick tunnel was exercised on 2026-09-18: page 200, wrong passcode 401, claim 200, guest _cat 403, and after SIGINT the guest key answered 401 with 1 key invalidated. — <code>docs/usecases/share-links/VERIFICATION.md</code></li>
-    <li>A known share is limited to 30 passcode attempts an hour from anywhere, so the lockout does not depend on the source address. — <code>engine/crates/xerj-api/src/share.rs</code></li>
-    <li>Forwarded headers are read only when the peer is listed in server.trusted_proxies. — <code>engine/crates/xerj-console-api/src/client_ip.rs</code></li>
+    <li>xerj share --tunnel runs cloudflared tunnel --url against 127.0.0.1 and reads the trycloudflare.com hostname from its output. Source: <code>engine/crates/xerj-server/src/share.rs</code></li>
+    <li>A real quick tunnel was exercised on 2026-09-18: page 200, wrong passcode 401, claim 200, guest _cat 403, and after SIGINT the guest key answered 401 with 1 key invalidated. Source: <code>docs/usecases/share-links/VERIFICATION.md</code></li>
+    <li>A known share is limited to 30 passcode attempts an hour from anywhere, so the lockout does not depend on the source address. Source: <code>engine/crates/xerj-api/src/share.rs</code></li>
+    <li>Forwarded headers are read only when the peer is listed in server.trusted_proxies. Source: <code>engine/crates/xerj-console-api/src/client_ip.rs</code></li>
   </ul>
   <h2>Related</h2>
   <ul>

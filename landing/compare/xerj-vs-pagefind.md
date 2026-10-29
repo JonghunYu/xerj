@@ -150,11 +150,11 @@ It depends who is asking. Pagefind serves your readers in the browser on a built
 
 ## Evidence
 
-- Pagefind is a fully static search library that runs after a static site generator and adds a search bundle to the built files, and its documentation states that Pagefind itself has no server component. — [https://pagefind.app/docs/](https://pagefind.app/docs/)
-- Pagefind splits its index into chunks so that a browser loads only a subset, and it reports a full-text search on a 10,000 page site with a total network payload under 300kB, closer to 100kB for most sites. — [https://pagefind.app/](https://pagefind.app/)
-- The Pagefind command-line tool discovers files with a glob that defaults to HTML only. — [https://pagefind.app/docs/config-options/](https://pagefind.app/docs/config-options/)
-- Non-HTML content such as PDFs or subtitles enters a Pagefind index through addCustomRecord, where the caller supplies the already-extracted content text. — [https://pagefind.app/docs/node-api/](https://pagefind.app/docs/node-api/)
-- Pagefind is published under the MIT license. — [https://github.com/Pagefind/pagefind](https://github.com/Pagefind/pagefind)
+- Pagefind is a fully static search library that runs after a static site generator and adds a search bundle to the built files, and its documentation states that Pagefind itself has no server component. Source: [https://pagefind.app/docs/](https://pagefind.app/docs/)
+- Pagefind splits its index into chunks so that a browser loads only a subset, and it reports a full-text search on a 10,000 page site with a total network payload under 300kB, closer to 100kB for most sites. Source: [https://pagefind.app/](https://pagefind.app/)
+- The Pagefind command-line tool discovers files with a glob that defaults to HTML only. Source: [https://pagefind.app/docs/config-options/](https://pagefind.app/docs/config-options/)
+- Non-HTML content such as PDFs or subtitles enters a Pagefind index through addCustomRecord, where the caller supplies the already-extracted content text. Source: [https://pagefind.app/docs/node-api/](https://pagefind.app/docs/node-api/)
+- Pagefind is published under the MIT license. Source: [https://github.com/Pagefind/pagefind](https://github.com/Pagefind/pagefind)
 
 ## Related
 

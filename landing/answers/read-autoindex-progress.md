@@ -12,7 +12,7 @@ source: "content/answers/read-autoindex-progress.md"
 
 **Key number:** With --no-graph, a 231-file repository reported 9 phases in order, and its index phase read pct=81.7 at 169/231 items. (as of 2026-10-19; source: [benchmarks/autoindex-resilience/after-fix.small-repo.stderr.txt](https://github.com/xerj-org/xerj/blob/main/benchmarks/autoindex-resilience/after-fix.small-repo.stderr.txt))
 
-**TL;DR** — Pass `--progress plain`, then read the `xerj-progress` lines on stderr. A captured 22.2 s XERJ run emitted 12 phases in order and ended with `xerj-done ok=true exit=0 reason=completed`. On a single 16 MB file the percentage stayed at `0.0%`, so read `since_progress_s` and `waiting_on` instead.
+**TL;DR**: Pass `--progress plain`, then read the `xerj-progress` lines on stderr. A captured 22.2 s XERJ run emitted 12 phases in order and ended with `xerj-done ok=true exit=0 reason=completed`. On a single 16 MB file the percentage stayed at `0.0%`, so read `since_progress_s` and `waiting_on` instead.
 
 ## Agent prompt
 
@@ -82,10 +82,10 @@ Split a large corpus into several files if you want the percentage to move.
 
 A run passes through fixed phases, and the capture recorded all of them in this order.
 
-1. `walk`, `hash`, `scan` — find and fingerprint the files.
-2. `prepare`, `graph` — infer datasets and prepare relationship detection.
-3. `index`, `graph-corpus` — write documents and edges to the node.
-4. `finalize-refresh`, `finalize-count`, `finalize-correlate`, `finalize-histogram`, `finalize-catalog` — settle and catalog the result.
+1. `walk`, `hash`, `scan`: find and fingerprint the files.
+2. `prepare`, `graph`: infer datasets and prepare relationship detection.
+3. `index`, `graph-corpus`: write documents and edges to the node.
+4. `finalize-refresh`, `finalize-count`, `finalize-correlate`, `finalize-histogram`, `finalize-catalog`: settle and catalog the result.
 
 A run that sits in `finalize-count` waits on the node, not on the disk. The captured line names the index it waits for, as `waiting_on=log16-logs`.
 
@@ -203,15 +203,15 @@ No. --quiet means no progress output, so the decision-JSON recipe and the progre
 
 ## Evidence
 
-- With --no-graph, a 231-file repository reported 9 phases in order: walk, hash, scan, prepare, snapshot, index, finalize-catalog, finalize-refresh, finalize-verify, with 0 progress lines reading scan at pct=100.0, and ended xerj-done ok=true exit=3 reason=completed-with-junk wall=3.9s files=231 records=1663. — `benchmarks/autoindex-resilience/after-fix.small-repo.stderr.txt`
-- The same run's index phase read phase=index basis=bytes pct=81.7 items=169/231 bytes=1881018/2303369, 1.0 s into the phase, with eta_s=unknown. — `benchmarks/autoindex-resilience/after-fix.small-repo.stderr.txt`
-- The terminal bar drew the same 9 phases under a pseudo-terminal, including index at 78.1% with 160/231 items and 1.7MB/2.2MB. — `benchmarks/autoindex-resilience/after-fix.small-repo.tty.txt`
-- Resuming a full-corpus generation interrupted with 12,890 of 47,444 operations committed reported starting, then replay, then opened index at items=0/34554 bytes=0/805561870, and never reported scan or snapshot. — `benchmarks/autoindex-resilience/after-fix.resume-probe.stderr.txt`
-- A probe of 60 index refreshes on a node holding 1,526 datasets took 6.36 s, about 106 ms each, which projects to about 160 seconds for all 1,526. — `benchmarks/autoindex-resilience/README.md`
-- Resuming a full-corpus generation whose 47,444 operations were all applied, on a node restarted onto the same data, finalize-catalog took 49.7 s, finalize-refresh 9.2 s for 1,527 indices and finalize-verify 331.6 s for 47,444 read-backs, and the run ended xerj-done ok=true exit=3 reason=completed-with-junk wall=415.0s. — `benchmarks/autoindex-resilience/after-955.full-corpus-resume.stderr.txt`
-- On v1.0.0-rc.74 the --no-graph path reported only walk, hash and scan: 48 progress lines read phase=scan pct=100.0 eta_quality=stalled, since_progress_s climbed to 250.0, and the run ended exit=1 aborted wall=270.0s on a 48,533-file corpus. — `benchmarks/autoindex-resilience/before-rc74.stderr.txt`
-- A full-corpus run aborted at 60.4% of its index phase after 5122.5 s when one bulk came back with 747 items rejected 429 by the node's memory circuit breaker. — `benchmarks/autoindex-resilience/before-944.full-corpus.stderr.txt`
-- A --no-graph run whose node keeps rejecting for the whole 600 s a bulk waits ends with reason=server-backpressure and exit 1, and its terminal line carries ops_applied and ops_remaining. — `engine/crates/xerj-autoindex/src/sync_executor.rs`
+- With --no-graph, a 231-file repository reported 9 phases in order: walk, hash, scan, prepare, snapshot, index, finalize-catalog, finalize-refresh, finalize-verify, with 0 progress lines reading scan at pct=100.0, and ended xerj-done ok=true exit=3 reason=completed-with-junk wall=3.9s files=231 records=1663. Source: `benchmarks/autoindex-resilience/after-fix.small-repo.stderr.txt`
+- The same run's index phase read phase=index basis=bytes pct=81.7 items=169/231 bytes=1881018/2303369, 1.0 s into the phase, with eta_s=unknown. Source: `benchmarks/autoindex-resilience/after-fix.small-repo.stderr.txt`
+- The terminal bar drew the same 9 phases under a pseudo-terminal, including index at 78.1% with 160/231 items and 1.7MB/2.2MB. Source: `benchmarks/autoindex-resilience/after-fix.small-repo.tty.txt`
+- Resuming a full-corpus generation interrupted with 12,890 of 47,444 operations committed reported starting, then replay, then opened index at items=0/34554 bytes=0/805561870, and never reported scan or snapshot. Source: `benchmarks/autoindex-resilience/after-fix.resume-probe.stderr.txt`
+- A probe of 60 index refreshes on a node holding 1,526 datasets took 6.36 s, about 106 ms each, which projects to about 160 seconds for all 1,526. Source: `benchmarks/autoindex-resilience/README.md`
+- Resuming a full-corpus generation whose 47,444 operations were all applied, on a node restarted onto the same data, finalize-catalog took 49.7 s, finalize-refresh 9.2 s for 1,527 indices and finalize-verify 331.6 s for 47,444 read-backs, and the run ended xerj-done ok=true exit=3 reason=completed-with-junk wall=415.0s. Source: `benchmarks/autoindex-resilience/after-955.full-corpus-resume.stderr.txt`
+- On v1.0.0-rc.74 the --no-graph path reported only walk, hash and scan: 48 progress lines read phase=scan pct=100.0 eta_quality=stalled, since_progress_s climbed to 250.0, and the run ended exit=1 aborted wall=270.0s on a 48,533-file corpus. Source: `benchmarks/autoindex-resilience/before-rc74.stderr.txt`
+- A full-corpus run aborted at 60.4% of its index phase after 5122.5 s when one bulk came back with 747 items rejected 429 by the node's memory circuit breaker. Source: `benchmarks/autoindex-resilience/before-944.full-corpus.stderr.txt`
+- A --no-graph run whose node keeps rejecting for the whole 600 s a bulk waits ends with reason=server-backpressure and exit 1, and its terminal line carries ops_applied and ops_remaining. Source: `engine/crates/xerj-autoindex/src/sync_executor.rs`
 
 ## Related
 

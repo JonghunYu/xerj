@@ -12,7 +12,7 @@ source: "content/answers/cheap-low-volume-log-search.md"
 
 **Key number:** The page's measured ladder stopped at a 16 MB log corpus, where peak resident memory was about 200 times the corpus size. (as of 2026-08-23; source: the captured run documented on this page)
 
-**TL;DR** — XERJ indexes plain-text logs on one node, returns exact error counts, and answered a `level=ERROR` filter at p50 0.488 ms on a 16 MB corpus. Memory is the limit, not speed: peak resident memory grew to about 200× the corpus, and the measured ladder stopped at 16 MB.
+**TL;DR**: XERJ indexes plain-text logs on one node, returns exact error counts, and answered a `level=ERROR` filter at p50 0.488 ms on a 16 MB corpus. Memory is the limit, not speed: peak resident memory grew to about 200× the corpus, and the measured ladder stopped at 16 MB.
 
 ## Agent prompt
 

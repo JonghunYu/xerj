@@ -12,7 +12,7 @@ source: "content/answers/how-xerj-combines-search.md"
 
 **Key number:** XERJ's RRF uses a default k of 60, so a document ranked first in both lists scores 1/61 + 1/61 = 0.032787. (as of 2026-08-23; source: [/answers/reciprocal-rank-fusion-when-to-use](/answers/reciprocal-rank-fusion-when-to-use))
 
-**TL;DR** — One `hybrid` request carries a BM25 sub-query and a kNN sub-query against a single index, and Reciprocal Rank Fusion merges their two ranked lists into one. Fusion reads rank position rather than score, so the BM25 and cosine scales never have to be normalized.
+**TL;DR**: One `hybrid` request carries a BM25 sub-query and a kNN sub-query against a single index, and Reciprocal Rank Fusion merges their two ranked lists into one. Fusion reads rank position rather than score, so the BM25 and cosine scales never have to be normalized.
 
 ## Agent prompt
 

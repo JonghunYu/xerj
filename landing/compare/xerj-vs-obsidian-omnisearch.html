@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XERJ.ai — the search engine built for AI agents">
+<meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="XERJ vs Omnisearch for an Obsidian vault">
@@ -240,7 +240,7 @@
   </div>
   <p><strong>TL;DR</strong> — Omnisearch wins inside Obsidian: an instant search interface, BM25 ranking, and PDFs and images reached through the Text Extractor plugin. XERJ reads the same folder with Obsidian closed and answers an agent. No head-to-head was run for this page.</p>
   <div class="prompt-card">
-    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT — IT DOES THE REST</span>
+    <span class="prompt-label">PASTE THIS TO YOUR AI AGENT. IT DOES THE REST</span>
     <code>Act as a coding agent whose user has closed Obsidian. Read https://xerj.org/llms.txt, start a node outside the vault with `xerj --insecure --data-dir ./xerj-data`, run `xerj autoindex ./MyVault --prefix vault --state-dir ./state-vault`, then POST a match_phrase on body for a phrase that exists only inside a PDF or DOCX attachment and report the ax_path of every hit without opening Obsidian.</code>
     <button type="button" class="prompt-copy" data-copy="Act as a coding agent whose user has closed Obsidian. Read https://xerj.org/llms.txt, start a node outside the vault with `xerj --insecure --data-dir ./xerj-data`, run `xerj autoindex ./MyVault --prefix vault --state-dir ./state-vault`, then POST a match_phrase on body for a phrase that exists only inside a PDF or DOCX attachment and report the ax_path of every hit without opening Obsidian.">COPY THE PROMPT</button>
   </div>
@@ -318,11 +318,11 @@
   <p>Yes, and that is the usual answer. Omnisearch serves you inside the editor, and XERJ serves the agent outside it.</p>
   <h2>Evidence</h2>
   <ul>
-    <li>Omnisearch is a search plugin inside Obsidian whose stated first goal is to locate files instantly, and it scores documents with the BM25 algorithm through the MiniSearch library. — <a href="https://github.com/scambier/obsidian-omnisearch">https://github.com/scambier/obsidian-omnisearch</a></li>
-    <li>Omnisearch indexes PDFs, images and some Microsoft Office documents with the help of the Text Extractor plugin, and its own documentation warns that extraction is not guaranteed and that many PDFs do not work with Text Extractor. — <a href="https://publish.obsidian.md/omnisearch/Images,+PDFs,+and+non-text+documents">https://publish.obsidian.md/omnisearch/Images,+PDFs,+and+non-text+documents</a></li>
-    <li>The Omnisearch HTTP server must be activated in settings, is not accessible outside localhost, is unavailable on mobile, and stops automatically when Obsidian closes. — <a href="https://publish.obsidian.md/omnisearch/Public+API+%26+URL+Scheme">https://publish.obsidian.md/omnisearch/Public+API+%26+URL+Scheme</a></li>
-    <li>The Omnisearch README points at a third-party MCP server that detects Omnisearch and exposes it as a BM25-ranked search mode for agents reading a vault. — <a href="https://github.com/scambier/obsidian-omnisearch">https://github.com/scambier/obsidian-omnisearch</a></li>
-    <li>Omnisearch is licensed under GPL-3. — <a href="https://github.com/scambier/obsidian-omnisearch">https://github.com/scambier/obsidian-omnisearch</a></li>
+    <li>Omnisearch is a search plugin inside Obsidian whose stated first goal is to locate files instantly, and it scores documents with the BM25 algorithm through the MiniSearch library. Source: <a href="https://github.com/scambier/obsidian-omnisearch">https://github.com/scambier/obsidian-omnisearch</a></li>
+    <li>Omnisearch indexes PDFs, images and some Microsoft Office documents with the help of the Text Extractor plugin, and its own documentation warns that extraction is not guaranteed and that many PDFs do not work with Text Extractor. Source: <a href="https://publish.obsidian.md/omnisearch/Images,+PDFs,+and+non-text+documents">https://publish.obsidian.md/omnisearch/Images,+PDFs,+and+non-text+documents</a></li>
+    <li>The Omnisearch HTTP server must be activated in settings, is not accessible outside localhost, is unavailable on mobile, and stops automatically when Obsidian closes. Source: <a href="https://publish.obsidian.md/omnisearch/Public+API+%26+URL+Scheme">https://publish.obsidian.md/omnisearch/Public+API+%26+URL+Scheme</a></li>
+    <li>The Omnisearch README points at a third-party MCP server that detects Omnisearch and exposes it as a BM25-ranked search mode for agents reading a vault. Source: <a href="https://github.com/scambier/obsidian-omnisearch">https://github.com/scambier/obsidian-omnisearch</a></li>
+    <li>Omnisearch is licensed under GPL-3. Source: <a href="https://github.com/scambier/obsidian-omnisearch">https://github.com/scambier/obsidian-omnisearch</a></li>
   </ul>
   <h2>Related</h2>
   <ul>

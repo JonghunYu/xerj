@@ -333,7 +333,12 @@ MARKETING = [
     r"magical(?:ly)?", r"magic", r"simply", r"just\s+(?=works|run|add|use|point|set)",
     r"easy", r"easily", r"powerful", r"robust", r"blazing", r"amazing",
     r"incredible", r"awesome", r"stunning", r"insane(?:ly)?",
+    r"delv(?:e|es|ed|ing)", r"tapestry", r"revolutioni[sz](?:e|es|ed|ing)",
+    r"elevate[sd]?", r"harness(?:es)?\s+the\s+power",
 ]
+# An em dash, or an en dash with a space beside it (STE140).
+DASH_RE = re.compile(r"\u2014|&mdash;|(?<=\s)\u2013|\u2013(?=\s)")
+
 MARKETING_RE = re.compile(r"\b(" + "|".join(MARKETING) + r")\b", re.I)
 
 # --------------------------------------------------------------------------------------
@@ -910,6 +915,8 @@ class Checker:
             self.check_contractions(b, text)
         self.check_british(b, text)
         self.check_forward_refs(b, text)
+        if b.kind != "quote":
+            self.check_dashes(b, text)
 
         if b.kind in ("heading", "table"):
             return
@@ -1134,6 +1141,16 @@ class Checker:
             self.add(b, m.start(), WARN, "STE130",
                      "forward or backward reference '%s'; link to the anchor instead"
                      % m.group(0), m.group(0))
+
+    def check_dashes(self, b, text):
+        # An em dash (or an en dash standing in for one) is the most common
+        # tell of machine-written prose; the house style makes most of them a
+        # full stop.  Number ranges (20–25) are allowed.  Same pattern as the
+        # build gate in copy_dashes.py.
+        for m in DASH_RE.finditer(text):
+            self.add(b, m.start(), ERROR, "STE140",
+                     "em dash or spaced en dash; use a full stop, comma, colon or parentheses",
+                     m.group(0))
 
     # -- document structure ------------------------------------------------------
 
@@ -1462,6 +1479,12 @@ def self_test():
     ok(len(_by_rule(f, "STE060")) >= 2, "STE060: marketing words must ERROR")
     f = check_text("XERJ indexed 25,329 files in 158.1 seconds.\n", opts=Opts(article=False))
     ok(not _by_rule(f, "STE060"), "STE060: factual sentence must pass")
+
+    # --- dashes -----------------------------------------------------------------
+    f = check_text("XERJ indexes a folder \u2014 then it answers.\n", opts=Opts(article=False))
+    ok(any(x.rule == "STE140" and x.sev == ERROR for x in f), "STE140: em dash must ERROR")
+    f = check_text("XERJ reads pages 20\u201325 and `a \u2014 b`.\n", opts=Opts(article=False))
+    ok(not _by_rule(f, "STE140"), "STE140: ranges and inline code must pass")
 
     # --- contractions, latinisms, idioms, spelling ------------------------------
     f = check_text("It's fine and you don't need a JVM.\n", opts=Opts(article=False))

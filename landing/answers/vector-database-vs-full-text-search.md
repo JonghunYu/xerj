@@ -12,7 +12,7 @@ source: "content/answers/vector-database-vs-full-text-search.md"
 
 **Key number:** On BEIR SciFact, BM25 scored nDCG@10 0.6572, vectors alone 0.6764, and hybrid RRF 0.6993. (as of 2026-09-18; source: [benchmarks/beir-hybrid/results/scifact.txt](https://github.com/xerj-org/xerj/blob/main/benchmarks/beir-hybrid/results/scifact.txt))
 
-**TL;DR** — Full-text search matches tokens and ranks with BM25, while a kNN query compares one embedding against stored dense vectors. XERJ holds both in one index, so the decision is which clause to send. On our 8 judged queries the three modes disagreed on the top hit once.
+**TL;DR**: Full-text search matches tokens and ranks with BM25, while a kNN query compares one embedding against stored dense vectors. XERJ holds both in one index, so the decision is which clause to send. On our 8 judged queries the three modes disagreed on the top hit once.
 
 ## Agent prompt
 

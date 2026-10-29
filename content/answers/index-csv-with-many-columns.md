@@ -50,7 +50,7 @@ faq:
     a: "XERJ falls back to a string type when fewer than 95% of the non-null values parse as one type. The column stays searchable as text or as a keyword."
 ---
 
-**TL;DR** — `xerj autoindex` infers a mapping for a wide CSV with no schema work. In a captured run a 120-column file became 128 mapped fields, 121 from the file and 7 provenance fields, across 501 documents. A terms aggregation on an inferred `keyword` column returned 4 exact buckets of 125.
+**TL;DR**: `xerj autoindex` infers a mapping for a wide CSV with no schema work. In a captured run a 120-column file became 128 mapped fields, 121 from the file and 7 provenance fields, across 501 documents. A terms aggregation on an inferred `keyword` column returned 4 exact buckets of 125.
 
 ## One command, no mapping file
 
@@ -70,7 +70,7 @@ The captured run indexed a 120-column CSV of 500 data rows and created 1 index, 
 | --- | --- | --- |
 | columns from the file | 121 | 118 `long`, 2 `keyword`, 1 `text` |
 | provenance added by XERJ | 7 | 7 `keyword` |
-| total mapped fields | 128 | — |
+| total mapped fields | 128 | n/a |
 
 The 2 `keyword` columns are `region` and `status`, the low-cardinality string columns. The single `text` field is the derived `title`. XERJ elects `keyword` for exact filtering and aggregation, and `text` for full-text search.
 
