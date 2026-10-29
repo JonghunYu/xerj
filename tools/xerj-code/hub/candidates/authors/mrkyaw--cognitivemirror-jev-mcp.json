@@ -1,0 +1,23 @@
+{
+ "corpus": "mrkyaw--cognitivemirror-jev-mcp",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "AI",
+ "domain": "an agent working on agent-memory, agentic-ai, ai-agents queries this for how MrKyaw/CognitiveMirror-Jev-MCP implements it: Cognitive middleware for personal and enterprise AI agents: 14 MCP tools and a REST API for intent mirroring, persona/context profiling, dec",
+ "repos": [
+  {
+   "repo": "CognitiveMirror-Jev-MCP",
+   "url": "https://github.com/MrKyaw/CognitiveMirror-Jev-MCP",
+   "sha": "ddefbc29c6f54dc145ffca7cc61901ee95dc4a1a",
+   "licence": "MIT (LICENSE file at pin ddefbc29c6f5, GitHub licence API 2026-10-29)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-29T01:15Z",
+    "consent_receipt": "86c69dd7edbe",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-29T01:15Z (receipt 86c69dd7edbe); pinned to the default-branch head. LICENSE file at pin ddefbc29c6f5 detected as MIT by the GitHub licence API on 2026-10-29; used under that licence with attribution."
+   }
+  }
+ ]
+}

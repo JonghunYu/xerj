@@ -1,0 +1,23 @@
+{
+ "corpus": "hsuanshao--golibs",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on Go queries this for how hsuanshao/golibs implements it: hsuanshao/golibs (Go)",
+ "repos": [
+  {
+   "repo": "golibs",
+   "url": "https://github.com/hsuanshao/golibs",
+   "sha": "42ec909519f7d5c581890d2642a22d7e9ddba40e",
+   "licence": "author's permission (LICENSE at pin 42ec909519f7: NONE; repository: none)",
+   "review": {
+    "spdx": "NONE",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-29T01:16Z",
+    "consent_receipt": "acef356bf595",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-29T01:16Z (receipt acef356bf595); pinned to the default-branch head. LICENSE at pin 42ec909519f7: NONE (repository: none); used with the author's permission, with attribution."
+   }
+  }
+ ]
+}

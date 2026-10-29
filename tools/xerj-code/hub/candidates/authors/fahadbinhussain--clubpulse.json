@@ -1,0 +1,23 @@
+{
+ "corpus": "fahadbinhussain--clubpulse",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "WEB",
+ "domain": "an agent working on activity-tracking, analytics-dashboard, club-management queries this for how FahadBinHussain/clubpulse implements it: Role-based club activity monitoring dashboard with automated low-activity alerts, analytics, and email queue management",
+ "repos": [
+  {
+   "repo": "clubpulse",
+   "url": "https://github.com/FahadBinHussain/clubpulse",
+   "sha": "7d7044ba195c95cae9a4b4e30908e76e4354ccc7",
+   "licence": "MIT (LICENSE file at pin 7d7044ba195c, GitHub licence API 2026-10-29)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-29T02:34Z",
+    "consent_receipt": "ea2569e2a2a4",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-29T02:34Z (receipt ea2569e2a2a4); pinned to the default-branch head. LICENSE file at pin 7d7044ba195c detected as MIT by the GitHub licence API on 2026-10-29; used under that licence with attribution."
+   }
+  }
+ ]
+}

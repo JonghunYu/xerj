@@ -1,0 +1,23 @@
+{
+ "corpus": "mrkyaw--agentic-ops-services-platform",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "AI",
+ "domain": "an agent working on agentic-ai, angular, evaluation queries this for how MrKyaw/Agentic-Ops-Services-Platform implements it: Multi-tenant foundation for building, evaluating, and operating agentic AI workflows. MCP-governed agents, hybrid retrieval (FTS+vector+grap",
+ "repos": [
+  {
+   "repo": "Agentic-Ops-Services-Platform",
+   "url": "https://github.com/MrKyaw/Agentic-Ops-Services-Platform",
+   "sha": "19fc28f769e90c42bdd9f8883240229a7fab9f98",
+   "licence": "MIT (LICENSE file at pin 19fc28f769e9, GitHub licence API 2026-10-29)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-29T01:15Z",
+    "consent_receipt": "0554ea046469",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-29T01:15Z (receipt 0554ea046469); pinned to the default-branch head. LICENSE file at pin 19fc28f769e9 detected as MIT by the GitHub licence API on 2026-10-29; used under that licence with attribution."
+   }
+  }
+ ]
+}

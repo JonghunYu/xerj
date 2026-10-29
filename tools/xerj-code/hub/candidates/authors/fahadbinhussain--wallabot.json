@@ -1,0 +1,23 @@
+{
+ "corpus": "fahadbinhussain--wallabot",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on discord-bot, wallabag queries this for how FahadBinHussain/wallabot implements it: A simple Wall-a-bag Discord Bot!",
+ "repos": [
+  {
+   "repo": "wallabot",
+   "url": "https://github.com/FahadBinHussain/wallabot",
+   "sha": "75ea457e617beeb19b7783cde91a0c732b7eb8c5",
+   "licence": "author's permission (LICENSE at pin 75ea457e617b: NONE; repository: none)",
+   "review": {
+    "spdx": "NONE",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-29T02:34Z",
+    "consent_receipt": "786302e5d72c",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-29T02:34Z (receipt 786302e5d72c); pinned to the default-branch head. LICENSE at pin 75ea457e617b: NONE (repository: none); used with the author's permission, with attribution."
+   }
+  }
+ ]
+}

@@ -1,0 +1,23 @@
+{
+ "corpus": "mrkyaw--implementing-call-handling-with-pipecat",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "AI",
+ "domain": "an agent working on accessibility, call-center, fastapi queries this for how MrKyaw/Implementing-Call-Handling-with-Pipecat implements it: Deterministic call control for Pipecat voice agents: lifecycle, silence escalation, explainable intent routing, TTL cache and telemetry. 88 ",
+ "repos": [
+  {
+   "repo": "Implementing-Call-Handling-with-Pipecat",
+   "url": "https://github.com/MrKyaw/Implementing-Call-Handling-with-Pipecat",
+   "sha": "21d6a37b33e85524556f1753eb32776bda0860da",
+   "licence": "MIT (LICENSE file at pin 21d6a37b33e8, GitHub licence API 2026-10-29)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-29T01:15Z",
+    "consent_receipt": "f69c857bacf2",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-29T01:15Z (receipt f69c857bacf2); pinned to the default-branch head. LICENSE file at pin 21d6a37b33e8 detected as MIT by the GitHub licence API on 2026-10-29; used under that licence with attribution."
+   }
+  }
+ ]
+}

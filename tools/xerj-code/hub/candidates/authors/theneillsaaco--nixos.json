@@ -3,7 +3,7 @@
  "cloned_at": null,
  "status": "draft",
  "shelf": "API",
- "domain": "an agent working on Nix queries this for how Theneillsaaco/nixos implements it: Theneillsaaco/nixos (Nix) (selected work: modules/services, hosts, the project root)",
+ "domain": "an agent working on Nix queries this for how Theneillsaaco/nixos implements it: My personal config of nixos (selected work: modules/services, hosts, the project root)",
  "repos": [
   {
    "repo": "nixos",

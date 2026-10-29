@@ -1,0 +1,23 @@
+{
+ "corpus": "mrkyaw--med-foundation-models",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "AI",
+ "domain": "an agent working on agentic-ai, biomarker-extraction, clinical-ai queries this for how MrKyaw/Med-Foundation-Models implements it: Foundation Models for Whole-Body MRI: Self-Supervised Learning, Multimodal Fusion & Clinical Translation",
+ "repos": [
+  {
+   "repo": "Med-Foundation-Models",
+   "url": "https://github.com/MrKyaw/Med-Foundation-Models",
+   "sha": "bd10736c1dc37be43b007209b966dfb79159fbb2",
+   "licence": "MIT (LICENSE file at pin bd10736c1dc3, GitHub licence API 2026-10-29)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-29T01:15Z",
+    "consent_receipt": "1b8d1a7d6343",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-29T01:15Z (receipt 1b8d1a7d6343); pinned to the default-branch head. LICENSE file at pin bd10736c1dc3 detected as MIT by the GitHub licence API on 2026-10-29; used under that licence with attribution."
+   }
+  }
+ ]
+}

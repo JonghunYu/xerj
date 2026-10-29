@@ -1,0 +1,23 @@
+{
+ "corpus": "adoxcol--syncd",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on TypeScript queries this for how Adoxcol/syncd implements it: Adoxcol/syncd (TypeScript)",
+ "repos": [
+  {
+   "repo": "syncd",
+   "url": "https://github.com/Adoxcol/syncd",
+   "sha": "eeca7bb1559e47cf1b59d4fcdd3c3969ab189441",
+   "licence": "author's permission (LICENSE at pin eeca7bb1559e: NONE; repository: none)",
+   "review": {
+    "spdx": "NONE",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-29T01:30Z",
+    "consent_receipt": "668a2fcdea66",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-29T01:30Z (receipt 668a2fcdea66); pinned to the default-branch head. LICENSE at pin eeca7bb1559e: NONE (repository: none); used with the author's permission, with attribution."
+   }
+  }
+ ]
+}

@@ -1,0 +1,23 @@
+{
+ "corpus": "fahadbinhussain--wall-you-need",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "WEB",
+ "domain": "an agent working on automation, desktop-app, dotnet queries this for how FahadBinHussain/wall-you-need implements it: Multi-platform wallpaper manager with WinUI 3, WPF, and Python/Tkinter apps for automated downloads and rotation from Unsplash, Pexels, Back",
+ "repos": [
+  {
+   "repo": "wall-you-need",
+   "url": "https://github.com/FahadBinHussain/wall-you-need",
+   "sha": "f5202473cb6b0283309185e09b29f371eaa16916",
+   "licence": "MIT (LICENSE file at pin f5202473cb6b, GitHub licence API 2026-10-29)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-29T02:34Z",
+    "consent_receipt": "e081f4448526",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-29T02:34Z (receipt e081f4448526); pinned to the default-branch head. LICENSE file at pin f5202473cb6b detected as MIT by the GitHub licence API on 2026-10-29; used under that licence with attribution."
+   }
+  }
+ ]
+}

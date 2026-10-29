@@ -1,0 +1,23 @@
+{
+ "corpus": "fahadbinhussain--redirector-izer",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "WEB",
+ "domain": "an agent working on browser-extension, chrome-extension, javascript queries this for how FahadBinHussain/Redirector-izer implements it: chromium extension that bounces chrome://extensions/ to about:blank the moment the page opens. manifest v2, one six-line background script, ",
+ "repos": [
+  {
+   "repo": "Redirector-izer",
+   "url": "https://github.com/FahadBinHussain/Redirector-izer",
+   "sha": "97c01fec173d2d161d1fe7788bdd4da15eaadc05",
+   "licence": "author's permission (LICENSE at pin 97c01fec173d: NONE; repository: none)",
+   "review": {
+    "spdx": "NONE",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-29T02:34Z",
+    "consent_receipt": "de1aed8df1b4",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-29T02:34Z (receipt de1aed8df1b4); pinned to the default-branch head. LICENSE at pin 97c01fec173d: NONE (repository: none); used with the author's permission, with attribution."
+   }
+  }
+ ]
+}

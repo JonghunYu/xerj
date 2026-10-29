@@ -1,0 +1,23 @@
+{
+ "corpus": "omid-io--arena-ai-chat-downloader",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "AI",
+ "domain": "an agent working on ai-tools, browser-extension, chat-downloader queries this for how omid-io/arena.ai-chat-downloader implements it: A Tampermonkey userscript designed to help you easily download your chat conversations from the LMSYS Arena (arena.ai / lmarena.ai). It expo",
+ "repos": [
+  {
+   "repo": "arena.ai-chat-downloader",
+   "url": "https://github.com/omid-io/arena.ai-chat-downloader",
+   "sha": "47409bf46f5dd495ee249d1d4f41a44f3dbcf403",
+   "licence": "MIT (LICENSE file at pin 47409bf46f5d, GitHub licence API 2026-10-29)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-29T03:06Z",
+    "consent_receipt": "e6417f696f4f",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-29T03:06Z (receipt e6417f696f4f); pinned to the default-branch head. LICENSE file at pin 47409bf46f5d detected as MIT by the GitHub licence API on 2026-10-29; used under that licence with attribution."
+   }
+  }
+ ]
+}

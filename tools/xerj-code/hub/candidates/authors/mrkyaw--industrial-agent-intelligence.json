@@ -1,0 +1,23 @@
+{
+ "corpus": "mrkyaw--industrial-agent-intelligence",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "AI",
+ "domain": "an agent working on ai-agents, datacenter, evaluation queries this for how MrKyaw/Industrial-Agent-Intelligence implements it: Grounded reasoning, policy-checked tools, guardrails, and behavioural evals for industrial AI agents. Zero runtime deps, 119 tests, 22/22 ev",
+ "repos": [
+  {
+   "repo": "Industrial-Agent-Intelligence",
+   "url": "https://github.com/MrKyaw/Industrial-Agent-Intelligence",
+   "sha": "56bb2bc0d1b4cdc8ef8a74608682d410605307c1",
+   "licence": "MIT (LICENSE file at pin 56bb2bc0d1b4, GitHub licence API 2026-10-29)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-29T01:15Z",
+    "consent_receipt": "425733312797",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-29T01:15Z (receipt 425733312797); pinned to the default-branch head. LICENSE file at pin 56bb2bc0d1b4 detected as MIT by the GitHub licence API on 2026-10-29; used under that licence with attribution."
+   }
+  }
+ ]
+}

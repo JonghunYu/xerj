@@ -3,7 +3,7 @@
  "cloned_at": null,
  "status": "draft",
  "shelf": "WEB",
- "domain": "an agent working on Dart queries this for how donfreddy/troona-music implements it: A high-performance, offline-first music player for Flutter. Features a refined glassmorphism UI inspired by Apple Music, built with Clean Ar (selected work: lib/features, lib/core, test)",
+ "domain": "an agent working on audio-player, clean-architecture, dart queries this for how donfreddy/troona-music implements it: Offline-first music player built with Flutter. Glassmorphism UI, Clean Architecture, no ads or tracking (selected work: lib/features, lib/core, test)",
  "repos": [
   {
    "repo": "troona-music",

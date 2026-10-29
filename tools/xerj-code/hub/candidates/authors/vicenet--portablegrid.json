@@ -1,0 +1,23 @@
+{
+ "corpus": "vicenet--portablegrid",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on adobe-cep, adobe-illustrator, baseline-grid queries this for how vicenet/PortableGrid implements it: Free open-source layout grid plugin for Adobe Illustrator & Photoshop: column, modular, baseline, golden ratio, isometric and composition gr",
+ "repos": [
+  {
+   "repo": "PortableGrid",
+   "url": "https://github.com/vicenet/PortableGrid",
+   "sha": "298b77d9fb5f4ae218c387d41ed5771f40e56fed",
+   "licence": "GPL-3.0 (LICENSE file at pin 298b77d9fb5f, GitHub licence API 2026-10-29)",
+   "review": {
+    "spdx": "GPL-3.0",
+    "use": "approach-only",
+    "by": "author-consent",
+    "at": "2026-10-29T01:33Z",
+    "consent_receipt": "b95092034be0",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-29T01:33Z (receipt b95092034be0); pinned to the default-branch head. LICENSE file at pin 298b77d9fb5f detected as GPL-3.0 by the GitHub licence API on 2026-10-29; used under that licence with attribution."
+   }
+  }
+ ]
+}

@@ -1,0 +1,23 @@
+{
+ "corpus": "fahadbinhussain--algovian",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "WEB",
+ "domain": "an agent working on computer-science, framer-motion, nextjs queries this for how FahadBinHussain/Algovian implements it: Modern Next.js website for the Algovian Computer Science Society, featuring events, projects, community pages, and membership onboarding",
+ "repos": [
+  {
+   "repo": "Algovian",
+   "url": "https://github.com/FahadBinHussain/Algovian",
+   "sha": "0b95eb4c407028e7149a65327474d1b70ca81784",
+   "licence": "Apache-2.0 (LICENSE file at pin 0b95eb4c4070, GitHub licence API 2026-10-29)",
+   "review": {
+    "spdx": "Apache-2.0",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-29T02:34Z",
+    "consent_receipt": "45da8a961bd1",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-29T02:34Z (receipt 45da8a961bd1); pinned to the default-branch head. LICENSE file at pin 0b95eb4c4070 detected as Apache-2.0 by the GitHub licence API on 2026-10-29; used under that licence with attribution."
+   }
+  }
+ ]
+}

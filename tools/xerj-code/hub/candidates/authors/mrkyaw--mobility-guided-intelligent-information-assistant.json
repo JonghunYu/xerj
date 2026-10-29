@@ -1,0 +1,23 @@
+{
+ "corpus": "mrkyaw--mobility-guided-intelligent-information-assistant",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "AI",
+ "domain": "an agent working on computer-vision, generative-ai, llama-vision queries this for how MrKyaw/Mobility-Guided-Intelligent-Information-Assistant implements it: Offline mobility scene guidance: explainable risk scoring, accessible narration, cooldowns, Markdown/HTML/JSON reports. 109 tests, 100% bran",
+ "repos": [
+  {
+   "repo": "Mobility-Guided-Intelligent-Information-Assistant",
+   "url": "https://github.com/MrKyaw/Mobility-Guided-Intelligent-Information-Assistant",
+   "sha": "f2a55bad7c56a42882184976b3a6b043ee0796ac",
+   "licence": "MIT (LICENSE file at pin f2a55bad7c56, GitHub licence API 2026-10-29)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-29T01:15Z",
+    "consent_receipt": "989b5cf92d73",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-29T01:15Z (receipt 989b5cf92d73); pinned to the default-branch head. LICENSE file at pin f2a55bad7c56 detected as MIT by the GitHub licence API on 2026-10-29; used under that licence with attribution."
+   }
+  }
+ ]
+}

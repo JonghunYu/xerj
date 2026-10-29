@@ -1,0 +1,23 @@
+{
+ "corpus": "thegreatprabh--leviathan",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "SEC",
+ "domain": "an agent working on attack-graph, cybersecurity, devsecops queries this for how Thegreatprabh/LEVIATHAN implements it: \ud83d\udc09 Autonomous attack-path engine for authorized infrastructure \u2014 signed ScopeLock enforcement, capability-state attack graphs, blast-radius &",
+ "repos": [
+  {
+   "repo": "LEVIATHAN",
+   "url": "https://github.com/Thegreatprabh/LEVIATHAN",
+   "sha": "f1e9b6ac04e8378a184aec196262f61853ff115a",
+   "licence": "MIT (LICENSE file at pin f1e9b6ac04e8, GitHub licence API 2026-10-29)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-29T02:22Z",
+    "consent_receipt": "0309fe15e8d7",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-29T02:22Z (receipt 0309fe15e8d7); pinned to the default-branch head. LICENSE file at pin f1e9b6ac04e8 detected as MIT by the GitHub licence API on 2026-10-29; used under that licence with attribution."
+   }
+  }
+ ]
+}

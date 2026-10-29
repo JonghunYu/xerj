@@ -1,0 +1,23 @@
+{
+ "corpus": "mrkyaw--enterprise-ai-reference-architecture",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "AI",
+ "domain": "an agent working on agentic-ai, ai-architecture, ai-governance queries this for how MrKyaw/Enterprise-AI-Reference-Architecture implements it: Vendor-neutral enterprise AI architecture and practical leadership: discovery, decisions, 24 lifecycles, 8 reference designs, 17 starter sca",
+ "repos": [
+  {
+   "repo": "Enterprise-AI-Reference-Architecture",
+   "url": "https://github.com/MrKyaw/Enterprise-AI-Reference-Architecture",
+   "sha": "1d5cae6772d22c3d48ab332f6be469f08e54f8eb",
+   "licence": "MIT (LICENSE file at pin 1d5cae6772d2, GitHub licence API 2026-10-29)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-29T01:15Z",
+    "consent_receipt": "f8e7ea320907",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-29T01:15Z (receipt f8e7ea320907); pinned to the default-branch head. LICENSE file at pin 1d5cae6772d2 detected as MIT by the GitHub licence API on 2026-10-29; used under that licence with attribution."
+   }
+  }
+ ]
+}

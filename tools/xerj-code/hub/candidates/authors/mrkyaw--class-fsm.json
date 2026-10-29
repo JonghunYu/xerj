@@ -1,0 +1,23 @@
+{
+ "corpus": "mrkyaw--class-fsm",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on automata, cli, deterministic-systems queries this for how MrKyaw/class_fsm implements it: Production-grade finite-state-machine toolkit in Python: validated transitions, guards over context, bounded audit history, Mermaid/DOT expo",
+ "repos": [
+  {
+   "repo": "class_fsm",
+   "url": "https://github.com/MrKyaw/class_fsm",
+   "sha": "e9c8ae6f8fe168c220456bef98152076268d082d",
+   "licence": "MIT (LICENSE file at pin e9c8ae6f8fe1, GitHub licence API 2026-10-29)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-29T01:15Z",
+    "consent_receipt": "bd5dcbc08443",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-29T01:15Z (receipt bd5dcbc08443); pinned to the default-branch head. LICENSE file at pin e9c8ae6f8fe1 detected as MIT by the GitHub licence API on 2026-10-29; used under that licence with attribution."
+   }
+  }
+ ]
+}

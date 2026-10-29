@@ -1,0 +1,23 @@
+{
+ "corpus": "mrkyaw--onnx-rust-web-assembly-triton-promethus-grafana",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "OPS",
+ "domain": "an agent working on docker, docker-compose, fastapi queries this for how MrKyaw/Onnx_Rust_Web_Assembly_Triton_Promethus_Grafana implements it: ONNX inference in Rust/WebAssembly plus a validated Triton gateway: batching, readiness, Prometheus metrics, Grafana, Docker Compose. 83 Pyt",
+ "repos": [
+  {
+   "repo": "Onnx_Rust_Web_Assembly_Triton_Promethus_Grafana",
+   "url": "https://github.com/MrKyaw/Onnx_Rust_Web_Assembly_Triton_Promethus_Grafana",
+   "sha": "b2d7e234337c37008336ba6522824bfe35071fbe",
+   "licence": "MIT (LICENSE file at pin b2d7e234337c, GitHub licence API 2026-10-29)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-29T01:15Z",
+    "consent_receipt": "d65b2001a757",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-29T01:15Z (receipt d65b2001a757); pinned to the default-branch head. LICENSE file at pin b2d7e234337c detected as MIT by the GitHub licence API on 2026-10-29; used under that licence with attribution."
+   }
+  }
+ ]
+}
