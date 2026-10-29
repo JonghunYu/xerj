@@ -7,15 +7,15 @@
       "repo": "ai_agent_chat",
       "url": "https://github.com/DuNorth595/ai_agent_chat",
       "licence": "MIT",
-      "sha": "c106b3fe2e12641fe55ebda0817847f35104bc22",
+      "sha": "6386bb68eccb73c20605f9ab6c3792411b61a4c9",
       "files": 47,
-      "bytes": 843197,
+      "bytes": 846992,
       "review": {
         "spdx": "MIT",
         "use": "adapt-with-attribution",
         "by": "@DuNorth595",
         "at": "2026-10-28",
-        "note": "First-party code by the commit author. LICENSE file at pin c106b3fe2e12 opened and read: it is the verbatim MIT License (Copyright (c) 2026 Justin Douglas (S_DevLabs)) with no added clauses. The GitHub licence API and the xerj detector independently report MIT. Pinned commit c106b3fe2e12: \"docs: say what this is in plain words, for search\"."
+        "note": "First-party code by the commit author. LICENSE file at pin 6386bb68eccb opened and read: it is the verbatim MIT License (Copyright (c) 2026 Justin Douglas (S_DevLabs)) with no added clauses. The GitHub licence API and the xerj detector independently report MIT. Pinned commit 6386bb68eccb: \"chore: version control -- CHANGELOG, release table, and no personal paths\"."
       }
     }
   ]
