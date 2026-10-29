@@ -3,7 +3,7 @@
  "cloned_at": null,
  "status": "draft",
  "shelf": "WEB",
- "domain": "an agent working on Dart queries this for how Antoine-Lagache/psitta implements it: Application Flutter d\u2019apprentissage des langues bas\u00e9e sur un algorithme de r\u00e9p\u00e9tition espac\u00e9e (SRS) (selected work: tools, the project root, android)",
+ "domain": "an agent working on Dart queries this for how Antoine-Lagache/psitta implements it: An open-source language learning app powered by spaced repetition, built with Flutter (selected work: tools, the project root, android)",
  "repos": [
   {
    "repo": "psitta",

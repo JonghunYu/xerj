@@ -3,7 +3,7 @@
  "cloned_at": null,
  "status": "draft",
  "shelf": "API",
- "domain": "an agent working on TypeScript queries this for how Nashidiwa/discordbot_lora implements it: This is the new source code for a private bot on Neuro-sama HQ Vietnam (Discord server). Currently alpha version. Feel free to use if you're (selected work: src/features, src/shared)",
+ "domain": "an agent working on TypeScript queries this for how Nashidiwa/discordbot_lora implements it: This is the source code (v2) for a private bot on Neuro-sama HQ Vietnam (Discord server). Feel free to use if you're interested (selected work: src/features, src/shared)",
  "repos": [
   {
    "repo": "discordbot_lora",

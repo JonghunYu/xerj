@@ -1,0 +1,23 @@
+{
+ "corpus": "tripleaceme--dbt-doc-inherit",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on Python queries this for how tripleaceme/dbt-doc-inherit implements it: A dbt package that propagates column descriptions along the DAG \u2014 define once, inherit downstream",
+ "repos": [
+  {
+   "repo": "dbt-doc-inherit",
+   "url": "https://github.com/tripleaceme/dbt-doc-inherit",
+   "sha": "9e248f57165cd3a89132bff7bc3fcc6c52e251eb",
+   "licence": "author's permission (LICENSE at pin 9e248f57165c: NOASSERTION; repository: NOASSERTION)",
+   "review": {
+    "spdx": "NOASSERTION",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T23:41Z",
+    "consent_receipt": "934329fc0c79",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T23:41Z (receipt 934329fc0c79); pinned to the default-branch head. LICENSE at pin 9e248f57165c: NOASSERTION (repository: NOASSERTION); used with the author's permission, with attribution."
+   }
+  }
+ ]
+}

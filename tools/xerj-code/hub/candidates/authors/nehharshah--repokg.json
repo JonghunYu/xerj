@@ -1,0 +1,23 @@
+{
+ "corpus": "nehharshah--repokg",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "AI",
+ "domain": "an agent working on Python queries this for how NehharShah/repokg implements it: repokg: AI ready knowledge graph of any codebase: modules, import edges, branch/PR state, ops surface. One command, zero deps",
+ "repos": [
+  {
+   "repo": "repokg",
+   "url": "https://github.com/NehharShah/repokg",
+   "sha": "c85ac03e8301edfc4d4fa067bc4f0bc44c45efc8",
+   "licence": "MIT (LICENSE file at pin c85ac03e8301, GitHub licence API 2026-10-29)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-29T00:24Z",
+    "consent_receipt": "dea62115ed3f",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-29T00:24Z (receipt dea62115ed3f); pinned to the default-branch head. LICENSE file at pin c85ac03e8301 detected as MIT by the GitHub licence API on 2026-10-29; used under that licence with attribution."
+   }
+  }
+ ]
+}

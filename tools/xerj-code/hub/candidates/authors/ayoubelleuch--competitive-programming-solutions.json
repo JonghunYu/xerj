@@ -1,0 +1,23 @@
+{
+ "corpus": "ayoubelleuch--competitive-programming-solutions",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on algorithms, ccc, competitive-programming queries this for how AyoubElleuch/Competitive-Programming-Solutions implements it: C++ solutions to CCC, IOI, and LeetCode problems plus classic algorithm templates, each with a write-up of the approach and complexity",
+ "repos": [
+  {
+   "repo": "Competitive-Programming-Solutions",
+   "url": "https://github.com/AyoubElleuch/Competitive-Programming-Solutions",
+   "sha": "62f81e262d010c384b0ba0b257cd211141416451",
+   "licence": "MIT (LICENSE file at pin 62f81e262d01, GitHub licence API 2026-10-29)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-29T00:15Z",
+    "consent_receipt": "536e0c142764",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-29T00:15Z (receipt 536e0c142764); pinned to the default-branch head. LICENSE file at pin 62f81e262d01 detected as MIT by the GitHub licence API on 2026-10-29; used under that licence with attribution."
+   }
+  }
+ ]
+}

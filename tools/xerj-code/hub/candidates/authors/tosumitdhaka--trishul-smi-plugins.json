@@ -1,0 +1,23 @@
+{
+ "corpus": "tosumitdhaka--trishul-smi-plugins",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on Python queries this for how tosumitdhaka/trishul-smi-plugins implements it: Plugin formatters for trishul-smi (entry-point group trishul_smi.formatters)",
+ "repos": [
+  {
+   "repo": "trishul-smi-plugins",
+   "url": "https://github.com/tosumitdhaka/trishul-smi-plugins",
+   "sha": "3214b0a0a74f38067f498114b406c77060fe2abd",
+   "licence": "MIT (LICENSE file at pin 3214b0a0a74f, GitHub licence API 2026-10-29)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-29T00:43Z",
+    "consent_receipt": "1f8b1089b73b",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-29T00:43Z (receipt 1f8b1089b73b); pinned to the default-branch head. LICENSE file at pin 3214b0a0a74f detected as MIT by the GitHub licence API on 2026-10-29; used under that licence with attribution."
+   }
+  }
+ ]
+}

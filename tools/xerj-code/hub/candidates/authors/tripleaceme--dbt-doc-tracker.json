@@ -1,0 +1,23 @@
+{
+ "corpus": "tripleaceme--dbt-doc-tracker",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "WRITE",
+ "domain": "an agent working on code queries this for how tripleaceme/dbt-doc-tracker implements it: A dbt package that detects and records documentation changes across your dbt project. Instead of storing full snapshots, it only records the",
+ "repos": [
+  {
+   "repo": "dbt-doc-tracker",
+   "url": "https://github.com/tripleaceme/dbt-doc-tracker",
+   "sha": "0970a719542dc0f43a0883c06e4c14ee29d96702",
+   "licence": "author's permission (LICENSE at pin 0970a719542d: NOASSERTION; repository: NOASSERTION)",
+   "review": {
+    "spdx": "NOASSERTION",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T23:41Z",
+    "consent_receipt": "25bad422fbb3",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T23:41Z (receipt 25bad422fbb3); pinned to the default-branch head. LICENSE at pin 0970a719542d: NOASSERTION (repository: NOASSERTION); used with the author's permission, with attribution."
+   }
+  }
+ ]
+}

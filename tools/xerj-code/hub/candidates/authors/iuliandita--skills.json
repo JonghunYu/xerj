@@ -3,7 +3,7 @@
  "cloned_at": null,
  "status": "draft",
  "shelf": "OPS",
- "domain": "an agent working on ai-coding, ansible, claude-code queries this for how iuliandita/skills implements it: Agent skills for infrastructure, security, software engineering, and agent workflows, with portable installs, quality checks, and evidence-b (selected work: scripts, the project root)",
+ "domain": "an agent working on ai-coding, ansible, claude-code queries this for how iuliandita/skills implements it: Task skills for coding agents, from Kubernetes to code review. Install only the ones you need (selected work: scripts, the project root)",
  "repos": [
   {
    "repo": "skills",

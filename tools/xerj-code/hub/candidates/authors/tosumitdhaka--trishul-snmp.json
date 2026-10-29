@@ -1,0 +1,23 @@
+{
+ "corpus": "tosumitdhaka--trishul-snmp",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on alarms, pysnmp, simulator queries this for how tosumitdhaka/trishul-snmp implements it: A modern SNMP runtime and manager with optional tsmi-powered MIB enrichment",
+ "repos": [
+  {
+   "repo": "trishul-snmp",
+   "url": "https://github.com/tosumitdhaka/trishul-snmp",
+   "sha": "1b01976356d61f508a6bbab32f232aa65a0909cd",
+   "licence": "MIT (LICENSE file at pin 1b01976356d6, GitHub licence API 2026-10-29)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-29T00:43Z",
+    "consent_receipt": "baf1fecca010",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-29T00:43Z (receipt baf1fecca010); pinned to the default-branch head. LICENSE file at pin 1b01976356d6 detected as MIT by the GitHub licence API on 2026-10-29; used under that licence with attribution."
+   }
+  }
+ ]
+}

@@ -3,20 +3,20 @@
  "cloned_at": null,
  "status": "draft",
  "shelf": "AI",
- "domain": "an agent working on affiliate-system, ai-gateway, ai-marketplace queries this for how yanstd888/node2mint implements it: Self-hosted AI marketplace, token billing engine, and OpenAI-compatible API gateway with atomic balances, provider failover, and affiliate c",
+ "domain": "an agent working on affiliate-system, ai-gateway, ai-marketplace queries this for how yanstd888/node2mint implements it: Self-hosted AI marketplace, token billing engine & OpenAI-compatible Go API gateway with atomic PostgreSQL ledger, escrow commerce, and Stri",
  "repos": [
   {
    "repo": "node2mint",
    "url": "https://github.com/yanstd888/node2mint",
-   "sha": "7859eb262bd90c2c1a4bafe03a0d7f759297a074",
-   "licence": "MIT (LICENSE file at pin 7859eb262bd9, GitHub licence API 2026-10-28)",
+   "sha": "9634029482565a54cdd7ead545e4d6032e88c3a9",
+   "licence": "MIT (LICENSE file at pin 963402948256, GitHub licence API 2026-10-29)",
    "review": {
     "spdx": "MIT",
     "use": "adapt-with-attribution",
     "by": "author-consent",
     "at": "2026-10-28T23:13Z",
     "consent_receipt": "1798c32f7f33",
-    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T23:13Z (receipt 1798c32f7f33); pinned to the default-branch head. LICENSE file at pin 7859eb262bd9 detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T23:13Z (receipt 1798c32f7f33); pinned to the default-branch head. LICENSE file at pin 963402948256 detected as MIT by the GitHub licence API on 2026-10-29; used under that licence with attribution."
    }
   }
  ]

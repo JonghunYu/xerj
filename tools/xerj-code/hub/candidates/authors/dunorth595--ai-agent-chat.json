@@ -8,15 +8,15 @@
   {
    "repo": "ai_agent_chat",
    "url": "https://github.com/DuNorth595/ai_agent_chat",
-   "sha": "c106b3fe2e12641fe55ebda0817847f35104bc22",
-   "licence": "MIT (LICENSE file at pin c106b3fe2e12, GitHub licence API 2026-10-28)",
+   "sha": "6386bb68eccb73c20605f9ab6c3792411b61a4c9",
+   "licence": "MIT (LICENSE file at pin 6386bb68eccb, GitHub licence API 2026-10-29)",
    "review": {
     "spdx": "MIT",
     "use": "adapt-with-attribution",
     "by": "author-consent",
     "at": "2026-10-28T19:14Z",
     "consent_receipt": "f0322cb7bf9e",
-    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T19:14Z (receipt f0322cb7bf9e); pinned to the default-branch head. LICENSE file at pin c106b3fe2e12 detected as MIT by the GitHub licence API on 2026-10-28; used under that licence with attribution."
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T19:14Z (receipt f0322cb7bf9e); pinned to the default-branch head. LICENSE file at pin 6386bb68eccb detected as MIT by the GitHub licence API on 2026-10-29; used under that licence with attribution."
    }
   }
  ]

@@ -1,0 +1,23 @@
+{
+ "corpus": "suraj-dhal--reverse-prompt-engineer",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on Python queries this for how Suraj-Dhal/reverse-prompt-engineer implements it: Suraj-Dhal/reverse-prompt-engineer (Python)",
+ "repos": [
+  {
+   "repo": "reverse-prompt-engineer",
+   "url": "https://github.com/Suraj-Dhal/reverse-prompt-engineer",
+   "sha": "1ef1bc96c8c1208171041eb1d63ff3ca281ad81a",
+   "licence": "MIT (LICENSE file at pin 1ef1bc96c8c1, GitHub licence API 2026-10-29)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-29T00:08Z",
+    "consent_receipt": "1f0a5be62982",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-29T00:08Z (receipt 1f0a5be62982); pinned to the default-branch head. LICENSE file at pin 1ef1bc96c8c1 detected as MIT by the GitHub licence API on 2026-10-29; used under that licence with attribution."
+   }
+  }
+ ]
+}
