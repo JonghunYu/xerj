@@ -1,0 +1,23 @@
+{
+ "corpus": "vickysharma-prog--recovering-computer-vision-annotations",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "AI",
+ "domain": "an agent working on Python queries this for how vickysharma-prog/Recovering-computer-vision-annotations implements it: vickysharma-prog/Recovering-computer-vision-annotations (Python)",
+ "repos": [
+  {
+   "repo": "Recovering-computer-vision-annotations",
+   "url": "https://github.com/vickysharma-prog/Recovering-computer-vision-annotations",
+   "sha": "3d1d9c61f16b889b77c46c5ec486a2211d0065e3",
+   "licence": "MIT (LICENSE file at pin 3d1d9c61f16b, GitHub licence API 2026-10-29)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-29T00:05Z",
+    "consent_receipt": "15772e8a9723",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-29T00:05Z (receipt 15772e8a9723); pinned to the default-branch head. LICENSE file at pin 3d1d9c61f16b detected as MIT by the GitHub licence API on 2026-10-29; used under that licence with attribution."
+   }
+  }
+ ]
+}

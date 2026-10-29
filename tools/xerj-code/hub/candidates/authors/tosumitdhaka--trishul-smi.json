@@ -1,0 +1,23 @@
+{
+ "corpus": "tosumitdhaka--trishul-smi",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on compiler, mib, snmp queries this for how tosumitdhaka/trishul-smi implements it: A clean, modern Python SMI/MIB compiler \u2014 ASN.1 to JSON with automatic dependency resolution",
+ "repos": [
+  {
+   "repo": "trishul-smi",
+   "url": "https://github.com/tosumitdhaka/trishul-smi",
+   "sha": "d555140daa720b922c621932c399302fa3efb4f3",
+   "licence": "MIT (LICENSE file at pin d555140daa72, GitHub licence API 2026-10-29)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-29T00:43Z",
+    "consent_receipt": "c4a6de62abf5",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-29T00:43Z (receipt c4a6de62abf5); pinned to the default-branch head. LICENSE file at pin d555140daa72 detected as MIT by the GitHub licence API on 2026-10-29; used under that licence with attribution."
+   }
+  }
+ ]
+}

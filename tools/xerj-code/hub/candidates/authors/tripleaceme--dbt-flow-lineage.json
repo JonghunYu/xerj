@@ -1,0 +1,23 @@
+{
+ "corpus": "tripleaceme--dbt-flow-lineage",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "API",
+ "domain": "an agent working on TypeScript queries this for how tripleaceme/dbt-flow-lineage implements it: Animated column-level lineage visualization for dbt projects",
+ "repos": [
+  {
+   "repo": "dbt-flow-lineage",
+   "url": "https://github.com/tripleaceme/dbt-flow-lineage",
+   "sha": "4b42294067680acabc1e9504ebc270c38c940b12",
+   "licence": "MIT (LICENSE file at pin 4b4229406768, GitHub licence API 2026-10-29)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-28T23:41Z",
+    "consent_receipt": "6e98ecc38aae",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-28T23:41Z (receipt 6e98ecc38aae); pinned to the default-branch head. LICENSE file at pin 4b4229406768 detected as MIT by the GitHub licence API on 2026-10-29; used under that licence with attribution."
+   }
+  }
+ ]
+}

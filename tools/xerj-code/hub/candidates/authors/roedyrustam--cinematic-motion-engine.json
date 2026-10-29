@@ -1,0 +1,23 @@
+{
+ "corpus": "roedyrustam--cinematic-motion-engine",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "AI",
+ "domain": "an agent working on ai-agent-skills, antigravity, audio-reactive queries this for how roedyrustam/cinematic-motion-engine implements it: \ud83c\udfac Standalone Broadcast Programmatic Motion Graphics, Kinetic Typography, Living Cartoon Stage & 60fps Video Engine for AI Agents (Antigravit",
+ "repos": [
+  {
+   "repo": "cinematic-motion-engine",
+   "url": "https://github.com/roedyrustam/cinematic-motion-engine",
+   "sha": "a2ce2d9a62e7dedd99806f419c91bef19f9526ef",
+   "licence": "author's permission (LICENSE at pin a2ce2d9a62e7: NONE; repository: none)",
+   "review": {
+    "spdx": "NONE",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-29T00:09Z",
+    "consent_receipt": "15e4951a3515",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-29T00:09Z (receipt 15e4951a3515); pinned to the default-branch head. LICENSE at pin a2ce2d9a62e7: NONE (repository: none); used with the author's permission, with attribution."
+   }
+  }
+ ]
+}

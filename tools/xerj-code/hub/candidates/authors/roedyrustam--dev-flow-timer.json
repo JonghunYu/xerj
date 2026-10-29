@@ -1,0 +1,23 @@
+{
+ "corpus": "roedyrustam--dev-flow-timer",
+ "cloned_at": null,
+ "status": "draft",
+ "shelf": "AI",
+ "domain": "an agent working on antigravity, antigravity-plugin, developer-productivity queries this for how roedyrustam/dev-flow-timer implements it: Smart timer and rhythm tracker for coding duration, ergonomic breaks, and developer productivity for Antigravity AI (Sidecar UI + MCP Tools ",
+ "repos": [
+  {
+   "repo": "dev-flow-timer",
+   "url": "https://github.com/roedyrustam/dev-flow-timer",
+   "sha": "00b954cab6ac791bbe474ec670e556d6d83f039c",
+   "licence": "MIT (LICENSE file at pin 00b954cab6ac, GitHub licence API 2026-10-29)",
+   "review": {
+    "spdx": "MIT",
+    "use": "adapt-with-attribution",
+    "by": "author-consent",
+    "at": "2026-10-29T00:09Z",
+    "consent_receipt": "a0b82e3e13f4",
+    "note": "Inclusion consented by the repository owner, signed in with GitHub on hub.xerj.org/add, at 2026-10-29T00:09Z (receipt a0b82e3e13f4); pinned to the default-branch head. LICENSE file at pin 00b954cab6ac detected as MIT by the GitHub licence API on 2026-10-29; used under that licence with attribution."
+   }
+  }
+ ]
+}

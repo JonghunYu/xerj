@@ -3,7 +3,7 @@
  "cloned_at": null,
  "status": "draft",
  "shelf": "AI",
- "domain": "an agent working on rust, classification, csharp queries this for how olafurjohannsson/kjarni implements it: Native and Private ML inference engine, embeddings, classification, reranking, search, and text generation running on CPU and GPU. Rust, C#, (selected work: crates/kjarni-transformers, crates/kjarni-models, crates/kjarni)",
+ "domain": "an agent working on rust, classification, csharp queries this for how olafurjohannsson/kjarni implements it: Local embeddings, semantic search, classification, reranking, chat, speech to text, summarization, translation and image search for C#, Go,  (selected work: crates/kjarni-transformers, crates/kjarni-models, crates/kjarni)",
  "repos": [
   {
    "repo": "kjarni",
