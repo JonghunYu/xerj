@@ -7,7 +7,7 @@ cluster: "Hybrid retrieval: architecture"
 question: "How do I build RAG without a vector database?"
 intent: "how-to"
 published: "2026-08-21"
-updated: "2026-10-19"
+updated: "2026-10-28"
 author: "XERJ documentation team"
 reviewer: "XERJ engineering team"
 schema_type: "TechArticle"
@@ -34,6 +34,7 @@ links_out:
   - "xerj-vs-vector-database"
   - "/docs/recipes/hybrid-search"
   - "retrieval-that-says-not-found-with-file-line-citations"
+  - "agentic-memory-vs-rag"
 faq:
   - q: "Does XERJ need a separate vector database?"
     a: "No. XERJ stores the dense vector beside the inverted index in one index, and one `_search` request queries both. Our capture ran with no second service."
@@ -49,7 +50,7 @@ faq:
     a: "One. XERJ is single-node, with no replication, no sharding and no failover, so this RAG layer is one process on one host."
 ---
 
-**TL;DR** — XERJ holds the inverted index and the dense vector in one index, so a RAG retrieval layer needs no second service. One `hybrid` request fuses a BM25 sub-query and a kNN sub-query with Reciprocal Rank Fusion. Our 20-document capture returned `d08`, `d04` and `d10`.
+**TL;DR**: XERJ holds the inverted index and the dense vector in one index, so a RAG retrieval layer needs no second service. One `hybrid` request fuses a BM25 sub-query and a kNN sub-query with Reciprocal Rank Fusion. Our 20-document capture returned `d08`, `d04` and `d10`.
 
 ## One index, both signals
 

@@ -1,13 +1,13 @@
 ---
-title: "How do I search Kubernetes pod logs?"
+title: "Search text across Kubernetes pod logs from many pods"
 h1: "How do I search Kubernetes pod logs?"
-description: "Collect the pod logs to disk first, then index the folder. A captured run answered 1 phrase query across 3 pods and returned 18 hits, 6 per pod."
+description: "Collect pod logs to disk, then index the folder once. A captured run answered 1 phrase query across 3 pod log files and returned 18 hits, 6 per pod."
 slug: "search-kubernetes-pod-logs-on-disk"
 cluster: "Files and formats"
 question: "Grep for specific text from kubernetes multiple pods"
 intent: "how-to"
 published: "2026-08-21"
-updated: "2026-10-20"
+updated: "2026-10-28"
 author: "XERJ documentation team"
 reviewer: "XERJ engineering team"
 schema_type: "TechArticle"
@@ -51,7 +51,7 @@ faq:
     a: "All results come from run RUN-B, captured on 2026-08-21 on a 16-core AMD EPYC 9645 host."
 ---
 
-**TL;DR** — Collect the pod logs to local disk first, then run `xerj autoindex` on the folder. In a captured run, 1 `match_phrase` request returned 18 hits spread 6, 6 and 6 across 3 pod log files. XERJ is not the collector, and the CRI format was read as prose text.
+**TL;DR**: Collect the pod logs to local disk first, then run `xerj autoindex` on the folder. In a captured run, 1 `match_phrase` request returned 18 hits spread 6, 6 and 6 across 3 pod log files. XERJ is not the collector, and the CRI format was read as prose text.
 
 ## Get the logs onto disk
 

@@ -7,7 +7,7 @@ cluster: "Comparison: desktop search"
 question: "How do I grep PDFs and Word docs from the command line?"
 intent: "comparison"
 published: "2026-08-22"
-updated: "2026-10-23"
+updated: "2026-10-28"
 author: "XERJ documentation team"
 reviewer: "XERJ engineering team"
 schema_type: "TechArticle"
@@ -69,7 +69,7 @@ faq:
     a: "Not with the shipped adapters. Its config file accepts custom subprocess adapters, so an OCR program can be added by hand. XERJ has no OCR at all."
 ---
 
-**TL;DR** — ripgrep-all is the better choice for one question, today. It converts PDFs and Office files as it goes, walks into archives, and wants no daemon and no index. XERJ indexes the same folder once for an agent to query many times. No head-to-head benchmark was run.
+**TL;DR**: ripgrep-all is the better choice for one question, today. It converts PDFs and Office files as it goes, walks into archives, and wants no daemon and no index. XERJ indexes the same folder once for an agent to query many times. No head-to-head benchmark was run.
 
 ## No benchmark was run, and this page says so
 
@@ -110,7 +110,7 @@ The command takes no configuration file and no mapping. It also needs no helper 
 
 The node answers the Elasticsearch REST API. `xerj autoindex map` prints a data map of what the folder became. An agent reads that map, then names a real index and a real field.
 
-`xerj mcp` is a stdio MCP server in the same binary. It serves 22 tools against a node you already started. Agent memory lives in the engine under `/_memory/{namespace}`.
+`xerj mcp` is a stdio MCP server in the same binary. It serves 23 tools against a node you already started. Agent memory lives in the engine under `/_memory/{namespace}`.
 
 XERJ is single-node. There is no replication and no failover. The default embedder is lexical feature hashing, not a neural model, and neural retrieval is opt-in through `--embed-mode neural`.
 
@@ -132,7 +132,7 @@ Every row is a documented capability of each tool. No row is a measured result.
 | ranking of results | none, matches in file order | BM25 over the extracted text |
 | filter by file family or path | shell globs and ripgrep flags | keyword fields, `ax_format` and `ax_path` |
 | HTTP query API | none | yes, Elasticsearch REST API |
-| MCP server for an agent | none | yes, `xerj mcp`, 22 tools |
+| MCP server for an agent | none | yes, `xerj mcp`, 23 tools |
 | catalog of refused files | messages on standard error | `autoindex-catalog`, one reason per file |
 | agent memory in the engine | none | yes, `/_memory/{namespace}` |
 
@@ -146,7 +146,7 @@ Choose ripgrep-all when the documents sit inside archives. It walks into zip, ta
 
 A single gzipped file is the one exception on the XERJ side. `xerj autoindex` detects gzip by content and decompresses it during indexing, on every parsed family. A `.jsonl.gz` log therefore lands beside the plain file next to it.
 
-Choose ripgrep-all when the mail goes beyond a plain mailbox. XERJ reads .mbox and .eml — the mbox is detected by content and streamed since v1.0.0-rc.75 ([#949](https://github.com/xerj-org/xerj/pull/949)). The opt-in mail adapter keeps mbx, and rga reads mail nested inside an archive, which XERJ never opens.
+Choose ripgrep-all when the mail goes beyond a plain mailbox. XERJ reads .mbox and .eml: the mbox is detected by content and streamed since v1.0.0-rc.75 ([#949](https://github.com/xerj-org/xerj/pull/949)). The opt-in mail adapter keeps mbx, and rga reads mail nested inside an archive, which XERJ never opens.
 
 Choose ripgrep-all when you must add a converter of your own. Custom subprocess adapters are configuration, so an OCR program can sit in front of the search. XERJ has no OCR and no adapter interface.
 
@@ -166,7 +166,7 @@ Choose Elasticsearch instead when the documents must live on more than one host.
 
 Choose XERJ when the same folder answers many questions. The parse happens once, and every later query reads the index rather than the PDFs.
 
-Choose XERJ when the caller is a program. An agent that speaks HTTP or MCP needs no wrapper and no output parser. `xerj mcp` serves 22 tools.
+Choose XERJ when the caller is a program. An agent that speaks HTTP or MCP needs no wrapper and no output parser. `xerj mcp` serves 23 tools.
 
 Choose XERJ when the order of the answers matters. rga returns every match in file order. BM25 puts the best documents first.
 

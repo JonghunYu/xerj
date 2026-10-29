@@ -152,7 +152,7 @@ Yes. Gzip is transparent on every parsed family, so a `.jsonl.gz` file indexes l
 
 ## Related
 
-- [How do I search gzipped logs without decompressing the whole file — including when JSONL sits next to them?](/answers/search-gzip-logs-without-zgrep)
+- [How do I search gzipped logs without decompressing the whole file, including when JSONL sits next to them?](/answers/search-gzip-logs-without-zgrep)
 - [How do I search Kubernetes pod logs?](/answers/search-kubernetes-pod-logs-on-disk)
 - [What can I use for low-volume log search?](/answers/cheap-low-volume-log-search)
 - [Is there a single-binary local search engine I can just run?](/answers/search-engine-without-docker)

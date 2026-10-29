@@ -1,13 +1,13 @@
 ---
-title: "Improve a basic FAISS RAG pipeline"
+title: "Improve a basic FAISS RAG pipeline with hybrid search"
 h1: "How do I improve a basic FAISS RAG pipeline?"
-description: "Move the chunk store into one XERJ index and fuse BM25 with kNN. Two request shapes that a FAISS user reaches for first both return HTTP 400."
+description: "Move the FAISS chunk store into one XERJ index and fuse BM25 with vectors in a hybrid query. Two request shapes FAISS users try first return HTTP 400."
 slug: "improve-basic-faiss-rag-pipeline"
 cluster: "RAG: troubleshooting"
 question: "How can I improve a basic FAISS RAG pipeline?"
 intent: "troubleshooting"
 published: "2026-08-21"
-updated: "2026-10-19"
+updated: "2026-10-28"
 author: "XERJ documentation team"
 reviewer: "XERJ engineering team"
 schema_type: "TechArticle"
@@ -49,7 +49,7 @@ faq:
     a: "Partly. Weighted `linear` fusion reached 0.4583 precision at 3 on the lexical default, against 0.6667 for every vector-backed mode under `--embed-mode neural`."
 ---
 
-**TL;DR** — Load the chunk store into one XERJ index with a `semantic_text` field. Retrieve with the `hybrid` clause instead of vectors alone. Our 20-chunk migration indexed cleanly, and the two request shapes a FAISS user writes first both returned HTTP 400.
+**TL;DR**: Load the chunk store into one XERJ index with a `semantic_text` field. Retrieve with the `hybrid` clause instead of vectors alone. Our 20-chunk migration indexed cleanly, and the two request shapes a FAISS user writes first both returned HTTP 400.
 
 ## Move the chunk store into one index
 

@@ -18,7 +18,8 @@ descriptions, FAQ answers and evidence claims, alt/title/aria-label/placeholder
 text and head metadata.  What does not: fenced and inline code, ``<pre>``,
 ``<code>``, ``<kbd>``, ``<samp>``, scripts, styles, SVG, HTML comments,
 terminal blocks styled as code (``class="code"``, ``zt-term``, ``asx-code``),
-Markdown blockquotes (verbatim third-party quotes), and frontmatter fields that
+Markdown blockquotes (verbatim third-party quotes; llms*.txt summaries in
+``> `` blocks are still copy), and frontmatter fields that
 must match a source byte for byte (``cmd``, ``source``, ``slug`` …).  A number
 range (``20–25``) is an en dash doing its job and is allowed.
 
@@ -51,71 +52,7 @@ DASH_RE = re.compile(
 #: as soon as it is clean, and the entry should be deleted then.  The checks
 #: print a note when a listed file no longer needs its entry.  Do not add new
 #: entries: fix the copy instead.
-PENDING: frozenset[str] = frozenset({
-    # Rewritten by open PRs #2615 (seo/keyword-gaps-agentic-memory) and
-    # #2617 (seo/rework-underperforming-1028); both remove these dashes.
-    "content/answers/agent-memory-without-postgres-qdrant.md",
-    "content/answers/ask-questions-about-a-github-repo-without-cloning.md",
-    "content/answers/autoindex-server-back-pressure-429.md",
-    "content/answers/batch-lookup-cve-ghsa-ids-offline.md",
-    "content/answers/classify-text-from-labelled-history-without-llm.md",
-    "content/answers/code-search-mcp-for-claude-code.md",
-    "content/answers/coding-agent-memory-across-sessions.md",
-    "content/answers/give-chatgpt-claude-local-file-access.md",
-    "content/answers/how-xerj-autoindexes-a-folder.md",
-    "content/answers/hybrid-search-quality-measured-ndcg.md",
-    "content/answers/improve-basic-faiss-rag-pipeline.md",
-    "content/answers/index-multiple-csv-files.md",
-    "content/answers/local-code-search-mcp-fewer-tokens-than-grep.md",
-    "content/answers/local-embeddings-without-openai-api.md",
-    "content/answers/local-search-mcp-for-codex-and-cursor.md",
-    "content/answers/mcp-api-search-or-vector-search.md",
-    "content/answers/rag-without-vector-database.md",
-    "content/answers/read-indexed-email-and-pdf-folder.md",
-    "content/answers/reciprocal-rank-fusion-when-to-use.md",
-    "content/answers/reduce-embedding-api-cost.md",
-    "content/answers/reindex-taking-forever.md",
-    "content/answers/rerank-search-results-calibrated-judge.md",
-    "content/answers/resume-interrupted-autoindex-run.md",
-    "content/answers/search-bvh-motion-capture-files.md",
-    "content/answers/search-engine-without-docker.md",
-    "content/answers/search-github-issues-and-prs-locally.md",
-    "content/answers/search-gzip-logs-without-zgrep.md",
-    "content/answers/search-jupyter-notebook-cells.md",
-    "content/answers/search-kubernetes-pod-logs-on-disk.md",
-    "content/answers/search-openapi-spec-for-agent.md",
-    "content/answers/search-unity-project-assets.md",
-    "content/answers/search-word-documents-in-a-folder.md",
-    "content/answers/set-mcp-memory-storage-path.md",
-    "content/answers/share-folder-read-only-search-without-uploading.md",
-    "content/answers/store-agent-memory-without-llm-call.md",
-    "content/answers/what-is-xerj.md",
-    "content/compare/best-grep-alternative-for-ai-coding-agents-2026.md",
-    "content/compare/best-mcp-server-local-code-search-2026.md",
-    "content/compare/xerj-vs-ast-grep.md",
-    "content/compare/xerj-vs-docfetcher.md",
-    "content/compare/xerj-vs-houdahspot.md",
-    "content/compare/xerj-vs-khoj.md",
-    "content/compare/xerj-vs-localsynapse.md",
-    "content/compare/xerj-vs-meilisearch.md",
-    "content/compare/xerj-vs-obsidian-omnisearch.md",
-    "content/compare/xerj-vs-pagefind.md",
-    "content/compare/xerj-vs-recoll.md",
-    "content/compare/xerj-vs-ripgrep-all.md",
-    "content/compare/xerj-vs-spotlight.md",
-    "content/compare/xerj-vs-typesense.md",
-    "content/compare/xerj-vs-vector-database.md",
-    "content/compare/xerj-vs-web-agent-search.md",
-    "landing/benchmarks/elasticsearch.html",
-    "landing/blog/corpus-hub-v2.html",
-    "landing/blog/the-corpus-hub.html",
-    "landing/blog/the-rc80-gates.html",
-    "landing/case-studies/wordpress-security-audit.html",
-    "landing/for-agents.html",
-    "landing/llms-full.txt",
-    "landing/llms.txt",
-    "landing/use-cases.html",
-})
+PENDING: frozenset[str] = frozenset()
 
 #: Frontmatter keys whose values must match a source verbatim or are not prose.
 EXEMPT_KEYS = frozenset("""
@@ -148,7 +85,7 @@ def _hits(text: str, line_of) -> list[tuple[int, str]]:
     return out
 
 
-def markdown_findings(text: str) -> list[tuple[int, str]]:
+def markdown_findings(text: str, quotes_are_copy: bool = False) -> list[tuple[int, str]]:
     """``(line, excerpt)`` for each dash in Markdown copy (frontmatter included)."""
     findings: list[tuple[int, str]] = []
     lines = text.split("\n")
@@ -175,7 +112,7 @@ def markdown_findings(text: str) -> list[tuple[int, str]]:
             if marker:
                 fence = marker.group(1)
                 continue
-            if stripped.startswith(">"):
+            if stripped.startswith(">") and not quotes_are_copy:
                 continue  # blockquotes carry verbatim quotes
             scan = line
         scan = _COMMENT_RE.sub(_blank, scan)
@@ -230,7 +167,9 @@ def findings_for(path: pathlib.Path) -> list[tuple[int, str]]:
     text = path.read_text(encoding="utf-8", errors="replace")
     if path.suffix.lower() == ".html":
         return html_findings(text)
-    return markdown_findings(text)
+    # llms.txt and llms-full.txt use "> " blocks for their own summaries, not
+    # for quoting anyone, so those blocks are copy too.
+    return markdown_findings(text, quotes_are_copy=path.suffix.lower() == ".txt")
 
 
 def rel(path: pathlib.Path) -> str:
@@ -287,6 +226,7 @@ def self_test() -> int:
     ok(not markdown_findings("Run `a — b` now.\n"), "md: inline code is exempt")
     ok(not markdown_findings("```\nout — put\n```\n"), "md: fences are exempt")
     ok(not markdown_findings("> They said — verbatim.\n"), "md: blockquotes are exempt")
+    ok(markdown_findings("> Our summary — here.\n", quotes_are_copy=True), "txt: blockquotes are copy")
     ok(markdown_findings('---\ntitle: "A — B"\n---\nBody.\n'), "md: frontmatter title is copy")
     ok(not markdown_findings('---\ncmd: "a — b"\n---\nBody.\n'), "md: cmd is exempt")
     ok(markdown_findings('---\nfaq:\n  - q: "Why?"\n    a: "Because — yes."\n---\n'),

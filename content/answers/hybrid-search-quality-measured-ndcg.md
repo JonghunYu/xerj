@@ -7,7 +7,7 @@ cluster: "Hybrid retrieval: quality"
 question: "How much better is hybrid search than BM25 alone?"
 intent: "informational"
 published: "2026-09-18"
-updated: "2026-10-19"
+updated: "2026-10-28"
 author: "XERJ documentation team"
 reviewer: "XERJ engineering team"
 schema_type: "TechArticle"
@@ -34,6 +34,7 @@ links_out:
   - "rerank-search-results-calibrated-judge"
   - "local-embeddings-without-openai-api"
   - "retrieval-that-says-not-found-with-file-line-citations"
+  - "/answers/improve-basic-faiss-rag-pipeline"
 evidence:
   - claim: "On BEIR SciFact (300 test queries, 5,183 documents) nDCG@10 was 0.6572 for BM25, 0.6764 for MiniLM vectors only, 0.6855 for a BM25 top-30 shortlist reordered by MiniLM, and 0.6993 for hybrid RRF."
     source: "benchmarks/beir-hybrid/results/scifact.txt"
@@ -60,7 +61,7 @@ faq:
     a: "About 3 to 7 documents per second on CPU in this run. SciFact's 5,183 short abstracts took about 25 minutes to index."
 ---
 
-**TL;DR** — On two public BEIR datasets, XERJ's hybrid RRF beat BM25 alone and beat vectors alone: nDCG@10 0.6993 against 0.6572 on SciFact, and 0.3448 against 0.3016 on NFCorpus. These runs used `--embed-mode neural` with all-MiniLM-L6-v2. The default embedder is lexical feature hashing, and these vector figures do not apply to it.
+**TL;DR**: On two public BEIR datasets, XERJ's hybrid RRF beat BM25 alone and beat vectors alone: nDCG@10 0.6993 against 0.6572 on SciFact, and 0.3448 against 0.3016 on NFCorpus. These runs used `--embed-mode neural` with all-MiniLM-L6-v2. The default embedder is lexical feature hashing, and these vector figures do not apply to it.
 
 ## The numbers
 

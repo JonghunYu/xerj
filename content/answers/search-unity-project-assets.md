@@ -7,7 +7,7 @@ cluster: "Files and formats"
 question: "How do I search a Unity project's assets?"
 intent: "how-to"
 published: "2026-08-21"
-updated: "2026-10-19"
+updated: "2026-10-28"
 author: "XERJ documentation team"
 reviewer: "XERJ engineering team"
 schema_type: "TechArticle"
@@ -29,6 +29,7 @@ links_out:
   - "search-yaml-xml-config-repository"
   - "index-monorepo-for-agent"
   - "catalog-files-with-autoindex-map"
+  - "/answers/search-bvh-motion-capture-files"
 faq:
   - q: "How do I search a Unity project's assets?"
     a: "Run `xerj autoindex` on the project folder. XERJ detects `.unity` scenes and `.meta` files as their own families and extracts typed fields from both."
@@ -46,7 +47,7 @@ faq:
     a: "No. The scene indices carry typed Unity fields such as `m_Name` and `unity_class`, so a `match` query on `body` returns 0 hits against them."
 ---
 
-**TL;DR** — Run `xerj autoindex` on the project folder. XERJ detects the `unity` and `unity-meta` families and extracts `m_Name`, `unity_class` and `guid`. One `bool` query joined an asset to its `.meta` document and returned 3 documents across 2 families.
+**TL;DR**: Run `xerj autoindex` on the project folder. XERJ detects the `unity` and `unity-meta` families and extracts `m_Name`, `unity_class` and `guid`. One `bool` query joined an asset to its `.meta` document and returned 3 documents across 2 families.
 
 ## Index the project folder
 

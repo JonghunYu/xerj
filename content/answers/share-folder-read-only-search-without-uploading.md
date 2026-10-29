@@ -1,13 +1,13 @@
 ---
-title: "Read-only search over a folder, without uploading it"
+title: "Share read-only search over a folder without uploading it"
 h1: "How do I give my lawyer or accountant read-only search over a folder of email and PDFs without uploading it?"
-description: "Index the folder on your own machine, then run xerj share: the other person gets a link, a passcode and a read-only search page. The folder is not uploaded."
+description: "Index the folder on your machine, then run xerj share. The other person gets a link, a passcode and a read-only search page. Your files stay with you."
 slug: "share-folder-read-only-search-without-uploading"
 cluster: "Sharing: read-only guest access"
 question: "I need my accountant to search a folder of emails and PDFs. How do I do that without uploading everything somewhere?"
 intent: "how-to"
 published: "2026-09-18"
-updated: "2026-10-19"
+updated: "2026-10-28"
 author: "XERJ documentation team"
 reviewer: "XERJ engineering team"
 schema_type: "TechArticle"
@@ -60,7 +60,7 @@ faq:
     a: "No. It is search and reading only: no text is generated and no model is called. The default embedder is lexical feature hashing, so ranking is by word and sub-word overlap plus BM25."
 ---
 
-**TL;DR** — Index the folder with `xerj brain`, then run `xerj share` on the same folder. The other person gets a link and a passcode. They open a read-only search page in a browser and read what they find. The documents and the index stay on your machine. You can revoke it at any time.
+**TL;DR**: Index the folder with `xerj brain`, then run `xerj share` on the same folder. The other person gets a link and a passcode. They open a read-only search page in a browser and read what they find. The documents and the index stay on your machine. You can revoke it at any time.
 
 ## The two commands
 

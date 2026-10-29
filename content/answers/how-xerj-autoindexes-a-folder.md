@@ -7,7 +7,7 @@ cluster: "Folder indexing"
 question: "I want to point something at a folder and then ask questions about what's in it. What should I use?"
 intent: "informational"
 published: "2026-08-21"
-updated: "2026-10-23"
+updated: "2026-10-28"
 author: "XERJ documentation team"
 reviewer: "XERJ engineering team"
 schema_type: "Article"
@@ -41,6 +41,10 @@ links_out:
   - "give-chatgpt-claude-local-file-access"
   - "catalog-files-with-autoindex-map"
   - "/compare/xerj-vs-web-agent-search"
+  - "/answers/autoindex-exit-codes"
+  - "/answers/autoindex-dataset-refused-by-server"
+  - "/answers/autoindex-says-extract-the-archive-first"
+  - "/answers/autoindex-server-back-pressure-429"
 faq:
   - q: "I want to point something at a folder and then ask questions about what's in it. What should I use?"
     a: "Index the folder with `xerj autoindex`, read `xerj autoindex map` to see what it found, then let the agent query the index over MCP. No configuration file is involved."
@@ -58,7 +62,7 @@ faq:
     a: "Every run prints what it dropped and by which ignore rule, and files it opened but refused land in `autoindex-catalog` with a reason string. Hidden files are always skipped."
 ---
 
-**TL;DR** — Run `xerj autoindex <folder>` against a local node. It detects the file types itself, builds typed indices, and needs no configuration file. Then run `xerj autoindex map` to see which index and field to query. Ask the folder a question over HTTP or through `xerj mcp`.
+**TL;DR**: Run `xerj autoindex <folder>` against a local node. It detects the file types itself, builds typed indices, and needs no configuration file. Then run `xerj autoindex map` to see which index and field to query. Ask the folder a question over HTTP or through `xerj mcp`.
 
 ## Index the folder with one command
 
@@ -91,7 +95,7 @@ An agent answers from the returned passage and cites `ax_path`, rather than read
 
 ## Hand the indexed folder to an agent
 
-`xerj mcp` exposes the indexed folder to an agent host as a stdio tool server, serving 22 tools against a node that is already running. The agent sends a query and reads hits with file paths, instead of opening files one by one.
+`xerj mcp` exposes the indexed folder to an agent host as a stdio tool server, serving 23 tools against a node that is already running. The agent sends a query and reads hits with file paths, instead of opening files one by one.
 
 The node and the MCP server both run on your machine. No file content is uploaded, because the agent host calls a local process rather than a hosted API.
 

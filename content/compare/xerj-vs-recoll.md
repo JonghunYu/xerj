@@ -7,7 +7,7 @@ cluster: "Comparison: desktop search"
 question: "What is the best local desktop search for a folder of PDFs and docs?"
 intent: "comparison"
 published: "2026-08-22"
-updated: "2026-10-23"
+updated: "2026-10-28"
 author: "XERJ documentation team"
 reviewer: "XERJ engineering team"
 schema_type: "TechArticle"
@@ -61,7 +61,7 @@ faq:
   - q: "Is Recoll enough for AI agents or do I need an API?"
     a: "Recoll is enough if you write the wrapper. It answers on the command line through recollq and through a Python API, so an agent can call it through a subprocess you maintain. XERJ answers HTTP and MCP with no wrapper."
   - q: "How do I search my documents folder from Claude or ChatGPT?"
-    a: "Index the folder with `xerj autoindex`, then attach the folder to the agent through `xerj mcp`, a stdio MCP server that serves 22 tools against a running node."
+    a: "Index the folder with `xerj autoindex`, then attach the folder to the agent through `xerj mcp`, a stdio MCP server that serves 23 tools against a running node."
   - q: "Did you run a head-to-head benchmark between XERJ and Recoll?"
     a: "No. No shared corpus was frozen and no recall or timing numbers were measured, so this page publishes documented capabilities and no win counts."
   - q: "Which tool indexes email, mbox and attachments?"
@@ -70,7 +70,7 @@ faq:
     a: "No. XERJ has no OCR, so a PDF with no text layer produces no text. Recoll has OCR hooks for tesseract and ABBYY, and that is the correct tool for that folder."
 ---
 
-**TL;DR** — Recoll is the better choice for a person at a desk. It has a GUI, email handled in the application — mail folders, attachments, nesting — OCR hooks and open-at-page. XERJ is a search engine that an agent calls over HTTP or MCP. No head-to-head benchmark was run, so this page compares documented capabilities.
+**TL;DR**: Recoll is the better choice for a person at a desk. It has a GUI, email handled in the application (mail folders, attachments, nesting) OCR hooks and open-at-page. XERJ is a search engine that an agent calls over HTTP or MCP. No head-to-head benchmark was run, so this page compares documented capabilities.
 
 ## No benchmark was run, and this page says so
 
@@ -102,7 +102,7 @@ The node answers the Elasticsearch REST API. A `match_phrase` query and a filter
 
 An agent reads that map first. It then names a real index and a real field in the query.
 
-`xerj mcp` is a stdio MCP server in the same binary. It serves 22 tools against a node you already started. Agent memory lives in the engine under `/_memory/{namespace}`.
+`xerj mcp` is a stdio MCP server in the same binary. It serves 23 tools against a node you already started. Agent memory lives in the engine under `/_memory/{namespace}`.
 
 XERJ is single-node. There is no replication and no failover. The index is as durable as the one host it lives on.
 
@@ -123,7 +123,7 @@ Every row is a documented capability of each tool. No row is a measured result.
 | format detection | file name and MIME configuration | content sniffing per family |
 | helper programs on the host | many handlers are external | none, the binary parses in process |
 | HTTP query API | not in the core application | yes, Elasticsearch REST API |
-| MCP server for an agent | not in the core application | yes, `xerj mcp`, 22 tools |
+| MCP server for an agent | not in the core application | yes, `xerj mcp`, 23 tools |
 | catalog of refused files | index failures are reported | `autoindex-catalog`, one reason per file |
 | agent memory in the engine | no | yes, `/_memory/{namespace}` |
 
@@ -133,7 +133,7 @@ Choose Recoll when a person does the searching. The GUI is the product. A result
 
 Choose Recoll for mail folders and everything nested in them. It indexes mail folders, the messages and the attached documents. It also walks a document inside an attachment inside an archive.
 
-XERJ reads .mbox and .eml files. An mbox is detected by content — a From-separator plus RFC 5322 headers, the extension is irrelevant — and indexed since v1.0.0-rc.75 ([#949](https://github.com/xerj-org/xerj/pull/949)). PST, OST and Maildir are still unhandled, and archives are never opened, so mail inside a zip stays out of the index.
+XERJ reads .mbox and .eml files. An mbox is detected by content (a From-separator plus RFC 5322 headers, the extension is irrelevant) and indexed since v1.0.0-rc.75 ([#949](https://github.com/xerj-org/xerj/pull/949)). PST, OST and Maildir are still unhandled, and archives are never opened, so mail inside a zip stays out of the index.
 
 Choose Recoll for image-only PDFs and for images. OCR through tesseract or ABBYY is a documented Recoll feature. XERJ has no OCR.
 
@@ -157,7 +157,7 @@ Choose Elasticsearch instead when the documents must live on more than one host.
 
 Choose XERJ when the caller is a program. An agent that speaks HTTP or MCP needs no wrapper and no subprocess protocol.
 
-`xerj mcp` serves 22 tools. A coding agent can start the node itself.
+`xerj mcp` serves 23 tools. A coding agent can start the node itself.
 
 Choose XERJ when the folder is mixed. Format detection reads content, not the file extension. A CSV file with the wrong file extension still lands in a typed dataset.
 

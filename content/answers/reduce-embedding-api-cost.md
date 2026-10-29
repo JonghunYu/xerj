@@ -1,13 +1,13 @@
 ---
-title: "How do I reduce embedding API cost?"
+title: "Reduce embedding API cost: embed inside the search engine"
 h1: "How do I reduce embedding API cost?"
-description: "XERJ embeds documents inside the node by default, so a captured lexical run made 0 outbound calls. Proxy mode sent exactly 2 calls for the same 100 documents."
+description: "XERJ embeds documents inside the node by default, so a captured run saw 0 non-loopback peers. Proxy mode sent exactly 2 requests for 100 documents."
 slug: "reduce-embedding-api-cost"
 cluster: "Embeddings: cost"
 question: "My embedding bill is too high"
 intent: "cost"
 published: "2026-08-21"
-updated: "2026-10-19"
+updated: "2026-10-28"
 author: "XERJ documentation team"
 reviewer: "XERJ engineering team"
 schema_type: "TechArticle"
@@ -46,7 +46,7 @@ faq:
     a: "Call GET /v1/embedding/identity on the native REST port. The backend field reads lexical, neural or proxy, and proxy is the only one that leaves the host."
 ---
 
-**TL;DR** — XERJ embeds `semantic_text` fields inside the node, so the default configuration bills nothing to an embedding API. A capture watched a default single-node process for its whole 3.51 s life and observed 0 non-loopback peers. Proxy mode, which does call out, sent exactly 2 requests for 100 documents.
+**TL;DR**: XERJ embeds `semantic_text` fields inside the node, so the default configuration bills nothing to an embedding API. A capture watched a default single-node process for its whole 3.51 s life and observed 0 non-loopback peers. Proxy mode, which does call out, sent exactly 2 requests for 100 documents.
 
 ## The default embedder never leaves the host
 

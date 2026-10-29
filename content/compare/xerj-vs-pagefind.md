@@ -7,7 +7,7 @@ cluster: "Comparison: site and export search"
 question: "Pagefind vs indexing a local HTML dump for an agent?"
 intent: "comparison"
 published: "2026-08-22"
-updated: "2026-10-23"
+updated: "2026-10-28"
 author: "XERJ documentation team"
 reviewer: "XERJ engineering team"
 schema_type: "TechArticle"
@@ -60,7 +60,7 @@ faq:
     a: "It depends who is asking. Pagefind serves your readers in the browser on a built site, XERJ answers your agent about the same files on disk, and both can run against one folder."
 ---
 
-**TL;DR** — Pagefind wins search on a built static website: no server, a chunked index and a small download for the visitor. XERJ wins when an agent must query a saved HTML export on disk alongside the PDFs next to it. No head-to-head was run for this page.
+**TL;DR**: Pagefind wins search on a built static website: no server, a chunked index and a small download for the visitor. XERJ wins when an agent must query a saved HTML export on disk alongside the PDFs next to it. No head-to-head was run for this page.
 
 ## Pagefind is very good at its job
 
@@ -90,7 +90,7 @@ The command reads a content signature rather than the file extension. It infers 
 
 Thirteen families are covered. The list holds HTML, plain text, PDF, DOCX and CSV. It also holds JSON and JSONL, structured logs, SQL exports, SQLite, XML, YAML, code and gzip variants.
 
-The result is queryable over the Elasticsearch REST API, and `xerj mcp` serves 22 tools to an agent over stdio. A `match_phrase` query returns the file path and the matching passage rather than the whole page.
+The result is queryable over the Elasticsearch REST API, and `xerj mcp` serves 23 tools to an agent over stdio. A `match_phrase` query returns the file path and the matching passage rather than the whole page.
 
 ## What XERJ is not
 

@@ -14,8 +14,8 @@
 <!-- ga4:end -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Corpus Hub: pinned, licenced, signed, contributed by PR</title>
-<meta name="description" content="A public registry of corpora for AI agents: reference code pinned to SHAs, record packs ed25519-signed, every source licence-reviewed by a human. The measured use case (2.7× fewer output tokens), the tie we published anyway, and how to contribute yours by PR.">
+<title>XERJ Corpus Hub: signed, pinned corpora for AI agents</title>
+<meta name="description" content="The XERJ Corpus Hub is a public registry of corpora for AI agents: sources pinned to commit SHAs, licences recorded, record packs ed25519-signed.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;700;800;900&family=Inter:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -26,8 +26,8 @@
 <link rel="canonical" href="https://xerj.org/blog/the-corpus-hub">
 <meta property="og:site_name" content="XERJ.ai">
 <meta property="og:type" content="article">
-<meta property="og:title" content="The Corpus Hub: pinned, licenced, signed, contributed by PR">
-<meta property="og:description" content="A public registry of corpora for AI agents: reference code pinned to SHAs, record packs ed25519-signed, every source licence-reviewed by a human. The measured use case (2.7× fewer output tokens), the tie we published anyway, and how to contribute yours by PR.">
+<meta property="og:title" content="XERJ Corpus Hub: signed, pinned corpora for AI agents">
+<meta property="og:description" content="The XERJ Corpus Hub is a public registry of corpora for AI agents: sources pinned to commit SHAs, licences recorded, record packs ed25519-signed.">
 <meta property="og:url" content="https://xerj.org/blog/the-corpus-hub">
 <meta property="og:image" content="https://xerj.org/og/blog-the-corpus-hub.png">
 <meta property="og:image:width" content="1200">
@@ -35,8 +35,8 @@
 <meta property="og:image:alt" content="Cover: “The Corpus Hub” in display type beside the post’s square-matrix art, labelled with its figures. The art: a 10 by 10 wall of square-matrix pack tiles in shades of ink, the first four solid yellow and the fifth framed">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="The Corpus Hub: pinned, licenced, signed, contributed by PR">
-<meta name="twitter:description" content="A public registry of corpora for AI agents: reference code pinned to SHAs, record packs ed25519-signed, every source licence-reviewed by a human. The measured use case (2.7× fewer output tokens), the tie we published anyway, and how to contribute yours by PR.">
+<meta name="twitter:title" content="XERJ Corpus Hub: signed, pinned corpora for AI agents">
+<meta name="twitter:description" content="The XERJ Corpus Hub is a public registry of corpora for AI agents: sources pinned to commit SHAs, licences recorded, record packs ed25519-signed.">
 <meta name="twitter:image" content="https://xerj.org/og/blog-the-corpus-hub.png">
 <script type="application/ld+json">
 {
@@ -71,13 +71,13 @@
 {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "The Corpus Hub: pinned, licenced, signed, contributed by PR",
-  "description": "A public registry of corpora for AI agents: reference code pinned to SHAs, record packs ed25519-signed, every source licence-reviewed by a human. The measured use case (2.7× fewer output tokens), the tie we published anyway, and how to contribute yours by PR.",
+  "headline": "XERJ Corpus Hub: signed, pinned corpora for AI agents",
+  "description": "The XERJ Corpus Hub is a public registry of corpora for AI agents: sources pinned to commit SHAs, licences recorded, record packs ed25519-signed.",
   "url": "https://xerj.org/blog/the-corpus-hub",
   "image": "https://xerj.org/og/blog-the-corpus-hub.png",
   "inLanguage": "en",
   "datePublished": "2026-10-01",
-  "dateModified": "2026-10-20",
+  "dateModified": "2026-10-28",
   "author": {
     "@id": "https://xerj.org/#organization"
   },
@@ -151,18 +151,20 @@
   <h1>THE CORPUS HUB: PINNED, LICENCED, SIGNED,<br><span class="accent">AND CONTRIBUTED BY PULL REQUEST</span></h1>
   <p class="blog-byline">XERJ ENGINEERING · PUBLISHED 2026-10-01</p>
 
+  <p class="lede">The XERJ Corpus Hub is a public registry of corpora for AI agents. Each source is
+  pinned to a commit SHA, its licence is recorded, and its record pack is ed25519-signed.</p>
+
   <p class="lede">Every team that points an AI agent at a body of knowledge re-solves the same four
   problems in private: which exact version of the sources, under what licence, whether the copy you
   have is the copy I have, and who vouches for the bytes. We are opening the answers as a registry:
-  the <strong>Corpus Hub</strong>, a branch on our GitHub where corpora arrive as pull requests —
+  the <strong>Corpus Hub</strong>, a branch on our GitHub where corpora arrive as pull requests:
   source pinned to SHAs, licences reviewed by a human per source, record packs checksummed and
   ed25519-signed. It ships with four reference corpora, one signed daily pack, a measured use case,
   and one result we did not want and are publishing anyway.</p>
 
   <p class="lede"><strong>Update, 2026-10-06:</strong> the registry has outgrown this post. The
   launch four are now <strong>100 live corpora</strong> (119 backlog rows, every live one named in
-  the <code>xerj-code</code> skill's domain-selection table since rc.83) across seven categories —
-  including non-IT domains mined from real demand: eCFR titles 12/26/29 and UK legislation — and the
+  the <code>xerj-code</code> skill's domain-selection table since rc.83) across seven categories (including non-IT domains mined from real demand: eCFR titles 12/26/29 and UK legislation) and the
   registry has its own site: browse every corpus with its licence verdict, pin, size, use case and
   measured retrieval scores at <a href="https://hub.xerj.org" rel="external">hub.xerj.org</a>.
   What follows is the post as written at launch.</p>
@@ -182,7 +184,7 @@
     <thead><tr><th>Property</th><th>Why it matters</th><th>How the Hub does it</th></tr></thead>
     <tbody>
       <tr><td class="t"><strong>pinned</strong></td><td class="t">two people must retrieve the same bytes or results are incomparable</td><td class="t">every repo recorded at the full SHA the build used; moving a pin is its own PR with a reason</td></tr>
-      <tr><td class="t"><strong>licenced</strong></td><td class="t">"where did this text come from and may I act on it" is not optional the day someone pastes</td><td class="t">a human <code class="inline">review</code> block per source — adapt-freely / read-don't-paste / mixed — not a detector's guess</td></tr>
+      <tr><td class="t"><strong>licenced</strong></td><td class="t">"where did this text come from and may I act on it" is not optional the day someone pastes</td><td class="t">a human <code class="inline">review</code> block per source (adapt-freely / read-don't-paste / mixed) not a detector's guess</td></tr>
       <tr><td class="t"><strong>checksummed</strong></td><td class="t">a corpus that silently drifts is a corpus that lies</td><td class="t">packs carry per-file SHA-256; <code class="inline">corpus add</code> refuses the pack whole on mismatch</td></tr>
       <tr><td class="t"><strong>signed</strong></td><td class="t">checksums prove integrity; only a signature proves authorship</td><td class="t">detached ed25519 over SHA256SUMS, verified with <code class="inline">--verify-sig</code> before a record is trusted</td></tr>
     </tbody>
@@ -200,10 +202,10 @@
   <div class="kicker">02 · WHAT IS IN IT</div>
   <h2 class="scene">Two lanes: reference corpora and record packs</h2>
 
-  <p><strong>Reference corpora</strong> are other people's source code, cloned at pinned commits —
+  <p><strong>Reference corpora</strong> are other people's source code, cloned at pinned commits:
   the material for <em>reference coding</em>, where an agent reads how three other engines solved
   the problem before writing a fourth. <strong>Record packs</strong> are structured data you
-  curate — the first is 1,950 Rust vulnerability advisories identity-resolved across osv.dev and
+  curate: the first is 1,950 Rust vulnerability advisories identity-resolved across osv.dev and
   RustSec, rebuilt and signed daily. From manifest to answer, with a local node running
   (<code class="inline">--from</code> reads a local file, so the manifest is downloaded first):</p>
 
@@ -228,7 +230,7 @@
   <p>The grouping rule is the one design decision that matters: <strong>corpora are built by
   domain, not by language or popularity.</strong> A corpus that contains everything retrieves
   like a search engine with no query. The four reference corpora exist because an agent working
-  on merge policy and an agent working on HNSW construction need different precedent — the same
+  on merge policy and an agent working on HNSW construction need different precedent: the same
   study that shows retrieval winning also shows the win gated by having the <em>right</em>
   precedent, not more of it.</p>
 </section>
@@ -238,9 +240,9 @@
   <h2 class="scene">Reference coding: the same solve rate, 2.7× fewer output tokens</h2>
 
   <p>The Hub's reason to exist is the measured one. In a
-  <a href="/case-studies/reference-coding">controlled study</a> — 16 tasks across five languages,
+  <a href="/case-studies/reference-coding">controlled study</a>: 16 tasks across five languages,
   on libraries written for the study so no training set contains them, each carrying a runtime
-  contract the compiler cannot warn about — an agent with XERJ reference corpora and the same
+  contract the compiler cannot warn about, an agent with XERJ reference corpora and the same
   agent with native file access both solved <strong>16/16</strong>. The difference was what it
   cost:</p>
 
@@ -257,8 +259,8 @@
 
   <p>Read the fine print, because it is the same fine print the next section turns into a whole
   experiment: on the study's two memorised public controls (tantivy; valkey + memcached),
-  retrieval was neutral-to-harmful — the model reproduces even a 256-value quantisation table
-  from memory. The collapse happened exactly where the agent could not have known the answer — a
+  retrieval was neutral-to-harmful, the model reproduces even a 256-value quantisation table
+  from memory. The collapse happened exactly where the agent could not have known the answer: a
   runtime rule like "seal before you read", a recovery order no compiler will tell you. Without
   retrieval, the same model solved <strong>1 of 21</strong> such tasks and burned
   <strong>$21.9</strong> flailing; with native grep but no retrieval focus, one corpus had
@@ -269,8 +271,8 @@
 
   <pre class="code"><span class="prompt">$</span> xerj code rust-vulns "smallvec insert_many buffer overflow"</pre>
 
-  <p>returns the identity-resolved advisory — one record carrying the RustSec prose, the GHSA
-  filing, the CVE, the affected functions, the fixed versions — instead of three half-records in
+  <p>returns the identity-resolved advisory: one record carrying the RustSec prose, the GHSA
+  filing, the CVE, the affected functions, the fixed versions, instead of three half-records in
   two databases that never talk to each other.</p>
 </section>
 
@@ -279,7 +281,7 @@
   <h2 class="scene">We A/B-tested the corpus on our own code. It tied.</h2>
 
   <p>Before opening a hub we ran the experiment that would justify it: two blinded arms auditing
-  XERJ's own engine for security vulnerabilities — a plain agent, and the same agent with the
+  XERJ's own engine for security vulnerabilities, a plain agent, and the same agent with the
   rust-vulns corpus and XERJ retrieval. Same task, same turn budget, same pinned binary, two
   independent runs per arm, and a manual gate that re-proved every finding dynamically before
   counting it. Result, <a href="https://github.com/xerj-org/xerj/blob/main/benchmarks/corpus-ab-2026-10/RESULTS.md" rel="external">published in full</a>:</p>
@@ -290,27 +292,27 @@
     <tbody>
       <tr><td class="t">findings filed</td><td class="n">20</td><td class="n">18</td></tr>
       <tr><td class="t">confirmed exploitable (dynamic PoC)</td><td class="n">13</td><td class="n">16</td></tr>
-      <tr><td class="t">false positives</td><td class="n">1 — its only CRITICAL claim</td><td class="n">0</td></tr>
+      <tr><td class="t">false positives</td><td class="n">1: its only CRITICAL claim</td><td class="n">0</td></tr>
       <tr><td class="t">cost / wall clock</td><td class="n">$65.72 · 99.7 min</td><td class="n">$70.55 · 89.8 min</td></tr>
-      <tr><td class="t">findings traceable to the corpus</td><td class="n">—</td><td class="n"><strong>zero</strong></td></tr>
+      <tr><td class="t">findings traceable to the corpus</td><td class="n">n/a</td><td class="n"><strong>zero</strong></td></tr>
     </tbody>
   </table>
   </div>
 
-  <p>The corpus arm was marginally better on precision and it was <em>never queried</em> — one
+  <p>The corpus arm was marginally better on precision and it was <em>never queried</em>: one
   unused sweep call in one run, zero in the other. A tie, published as a tie, and then diagnosed
   against the pack itself: 1,963 records of advisory prose, only 14% containing any code, nothing
   that retrieves against a code-shaped question like "does slicing at a byte offset inside a
-  multi-byte character have precedent?" — while half the pack was published after 2025, so
+  multi-byte character have precedent?", while half the pack was published after 2025, so
   memorisation was never the whole story. The failure was <strong>surface</strong> (nothing made
   retrieval the natural move), then <strong>shape</strong> (prose cannot match code), and only
   then size.</p>
 
   <p>That diagnosis is now the Hub's roadmap, with
   <a href="https://github.com/xerj-org/xerj/blob/main/benchmarks/corpus-ab-2026-10/CORPUS-X100.md" rel="external">pre-registered predictions</a>:
-  the next pack generation is code-shaped — version-pinned vulnerable functions extracted at the
+  the next pack generation is code-shaped, version-pinned vulnerable functions extracted at the
   fix commit, before/after regression tests as trigger pairs, a bug-class taxonomy seeded from the
-  33 confirmed defect classes the two arms found — because we measured 9.8 extractable vulnerable
+  33 confirmed defect classes the two arms found, because we measured 9.8 extractable vulnerable
   functions per advisory and that is what a reviewer's question can actually retrieve against. If
   the re-test still ties, that gets published too. A registry whose numbers you can check is worth
   more than a demo.</p>
@@ -322,7 +324,7 @@
 
   <p>The Hub is a branch: <a href="https://github.com/xerj-org/xerj/tree/corpus-hub" rel="external"><code class="inline">corpus-hub</code></a>
   on xerj-org/xerj. Branch from it, open a PR against it, and a stdlib-only validator checks the
-  format on every push — manifest fields, full 40-hex SHAs, licence review blocks, recipe shape,
+  format on every push: manifest fields, full 40-hex SHAs, licence review blocks, recipe shape,
   no binaries, no private keys. The full guide with templates lives in
   <a href="/docs/corpus-hub">/docs/corpus-hub</a> and in the branch's
   <a href="https://github.com/xerj-org/xerj/blob/corpus-hub/tools/xerj-code/hub/CONTRIBUTING.md" rel="external">CONTRIBUTING.md</a>.
@@ -333,23 +335,23 @@
     <thead><tr><th>rule</th><th>what it means</th></tr></thead>
     <tbody>
       <tr><td class="t"><strong>a nameable domain</strong></td><td class="t">finish the sentence "an agent working on ___ would query this for ___" or it is not ready</td></tr>
-      <tr><td class="t"><strong>un-memorised content</strong></td><td class="t">retrieval's measured win is on niche, private, internal, post-cutoff material — not on famous snippets a model knows by heart</td></tr>
-      <tr><td class="t"><strong>human licence review</strong></td><td class="t">a <code class="inline">review</code> block per source with one of three verdicts: adapt-with-attribution (Apache/MIT/BSD), approach-only (AGPL/SSPL/Elastic/BUSL/GPL — read the design, never paste), or mixed</td></tr>
+      <tr><td class="t"><strong>un-memorised content</strong></td><td class="t">retrieval's measured win is on niche, private, internal, post-cutoff material, not on famous snippets a model knows by heart</td></tr>
+      <tr><td class="t"><strong>human licence review</strong></td><td class="t">a <code class="inline">review</code> block per source with one of three verdicts: adapt-with-attribution (Apache/MIT/BSD), approach-only (AGPL/SSPL/Elastic/BUSL/GPL, read the design, never paste), or mixed</td></tr>
       <tr><td class="t"><strong>no binaries in git</strong></td><td class="t">recipes and manifests only; built packs are signed Release assets a maintainer attaches after review</td></tr>
     </tbody>
   </table>
   </div>
 
   <p>The licence row is where we are least flexible, because we have been burned by our own
-  tooling: our licence detector once reported Elasticsearch as Apache-2.0 — the AGPL text contains
-  the phrase «an "Apache License 2.0" compatible license» — and a detector's false "permissive" is
+  tooling: our licence detector once reported Elasticsearch as Apache-2.0 (the AGPL text contains
+  the phrase «an "Apache License 2.0" compatible license») and a detector's false "permissive" is
   how restricted code ends up pasted into an Apache-2.0 project. So the CI checks that a human
   review block <em>exists</em>; only the reviewer's own opened licence file makes it true.</p>
 
   <p>What is next for the Hub itself: the code-shaped pack generation above, and the pre-indexed
-  half — a corpus you mount instead of indexing, so a consumer's CPU is not the price of entry.
-  Both tracked in the open. If you have a domain worth retrieving from — engine internals,
-  protocol specs, incident postmortems, hardware errata — the branch is open.</p>
+  half, a corpus you mount instead of indexing, so a consumer's CPU is not the price of entry.
+  Both tracked in the open. If you have a domain worth retrieving from (engine internals,
+  protocol specs, incident postmortems, hardware errata) the branch is open.</p>
 
   <p>Asking one question of a pinned repository pack, without cloning it, is
   <a href="/answers/ask-questions-about-a-github-repo-without-cloning">ask a GitHub repo without cloning</a>.</p>

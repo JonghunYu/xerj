@@ -154,7 +154,7 @@ The 3 measured steps stored 1.045, 1.319 and 1.039 bytes per source byte. The ra
 ## Related
 
 - [What's the easiest way to search JSON logs plus some old gzip text logs in the same folder?](/answers/search-json-and-jsonl-logs)
-- [How do I search gzipped logs without decompressing the whole file — including when JSONL sits next to them?](/answers/search-gzip-logs-without-zgrep)
+- [How do I search gzipped logs without decompressing the whole file, including when JSONL sits next to them?](/answers/search-gzip-logs-without-zgrep)
 - [How do I search Kubernetes pod logs?](/answers/search-kubernetes-pod-logs-on-disk)
 - [Log analytics](/docs/recipes/log-analytics)
 - [What's a free DocFetcher alternative that an agent can call?](/compare/xerj-vs-docfetcher) (same intent: logs and docs)

@@ -1,13 +1,13 @@
 ---
-title: "What is Reciprocal Rank Fusion?"
+title: "Reciprocal Rank Fusion (RRF): what it is, when to use it"
 h1: "What is Reciprocal Rank Fusion?"
-description: "Reciprocal Rank Fusion scores a document by 1 divided by k plus its rank in each list. XERJ uses k 60, and this page checks the arithmetic by hand."
+description: "Reciprocal Rank Fusion scores a document by the sum of weight / (k + rank) across ranked lists. XERJ uses k = 60, and a captured score checks the math."
 slug: "reciprocal-rank-fusion-when-to-use"
 cluster: "Hybrid retrieval: RRF"
 question: "What is reciprocal rank fusion and when should I use it?"
 intent: "informational"
 published: "2026-08-21"
-updated: "2026-10-19"
+updated: "2026-10-28"
 author: "XERJ documentation team"
 reviewer: "XERJ engineering team"
 schema_type: "TechArticle"
@@ -52,7 +52,7 @@ faq:
     a: "No. `fusion: \"learned\"` is rejected with an HTTP 400 at parse time. XERJ offers `rrf` and `linear` only."
 ---
 
-**TL;DR** — Reciprocal Rank Fusion scores a document by the sum of `weight / (k + rank)` across every ranked list that returned it. XERJ uses a default k of 60 inside the `hybrid` clause. Our captured fused score for `d02` was 0.032787, which is exactly 1/61 plus 1/61.
+**TL;DR**: Reciprocal Rank Fusion scores a document by the sum of `weight / (k + rank)` across every ranked list that returned it. XERJ uses a default k of 60 inside the `hybrid` clause. Our captured fused score for `d02` was 0.032787, which is exactly 1/61 plus 1/61.
 
 ## The rule in one line
 
@@ -75,7 +75,7 @@ The BM25 sub-query returned exactly 1 hit. The kNN sub-query returned 3.
 
 | list | rank 1 | rank 2 | rank 3 |
 | --- | --- | --- | --- |
-| BM25 | `d02` (3.567053) | — | — |
+| BM25 | `d02` (3.567053) | n/a | n/a |
 | kNN | `d02` (0.710547) | `d13` (0.666096) | `d09` (0.55798) |
 
 Now add the contributions with `k` at 60 and both weights at 1.0.

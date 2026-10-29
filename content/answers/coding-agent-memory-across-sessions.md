@@ -7,7 +7,7 @@ cluster: "Agent memory: setup"
 question: "How do people store user preferences so an agent can recall them next week?"
 intent: "how-to"
 published: "2026-08-21"
-updated: "2026-10-19"
+updated: "2026-10-28"
 author: "XERJ documentation team"
 reviewer: "XERJ engineering team"
 schema_type: "TechArticle"
@@ -33,6 +33,8 @@ links_out:
   - "set-mcp-memory-storage-path"
   - "private-agent-memory-namespaces"
   - "/docs/recipes/agentic-memory"
+  - "what-is-agentic-memory"
+  - "what-is-an-mcp-memory-server"
 faq:
   - q: "How do people store user preferences so an agent can recall them next week?"
     a: "Write each preference with `POST /_memory/{namespace}` and read it back with `POST /_memory/{namespace}/_recall`. The record lives in a reserved index in the data directory and survives a full node restart."
@@ -50,7 +52,7 @@ faq:
     a: "Only if you ask. Plain `query` runs BM25, `semantic: true` embeds server-side, and a supplied `vector` runs pure kNN. `hybrid: true` runs the BM25 and the server-side semantic leg over the same `query` and fuses them by reciprocal rank inside `_recall`; it is off unless you set it."
 ---
 
-**TL;DR** — XERJ stores each memory as an ordinary document in a reserved index named `.xerj-memory-{namespace}`. Our capture stored two memories, stopped the node, started it again against the same data directory, and recalled both by id. One forget call by id removed exactly that memory.
+**TL;DR**: XERJ stores each memory as an ordinary document in a reserved index named `.xerj-memory-{namespace}`. Our capture stored two memories, stopped the node, started it again against the same data directory, and recalled both by id. One forget call by id removed exactly that memory.
 
 ## Store a fact in the first session
 

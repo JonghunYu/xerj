@@ -1,13 +1,13 @@
 ---
-title: "The indexer died overnight. Do I start over?"
+title: "Resume an interrupted indexing run without starting over"
 h1: "The indexer died overnight. Do I have to start over?"
-description: "XERJ keeps a resume journal in the state directory, so re-running autoindex is idempotent. A capture reached 82,231 documents and matched a clean control run."
+description: "XERJ keeps a resume journal in the state directory, so re-running autoindex resumes it. A resumed capture reached 82,231 documents, like a clean run."
 slug: "resume-interrupted-autoindex-run"
 cluster: "Operations: recovery"
 question: "The indexer died overnight. Do I have to start over?"
 intent: "troubleshooting"
 published: "2026-08-21"
-updated: "2026-10-19"
+updated: "2026-10-28"
 author: "XERJ documentation team"
 reviewer: "XERJ engineering team"
 schema_type: "TechArticle"
@@ -48,7 +48,7 @@ faq:
     a: "The client reports xerj-done ok=false exit=1 reason=aborted and a connection error. Re-run with the same --state-dir once the node is back."
 ---
 
-**TL;DR** — XERJ writes a resume journal into the `--state-dir`, so re-running the identical `autoindex` command is idempotent. In a capture the interrupted run, the resumed run and a clean control run all ended at 82,231 documents. The first 20 document ids matched exactly.
+**TL;DR**: XERJ writes a resume journal into the `--state-dir`, so re-running the identical `autoindex` command is idempotent. In a capture the interrupted run, the resumed run and a clean control run all ended at 82,231 documents. The first 20 document ids matched exactly.
 
 ## The state directory carries the recovery
 

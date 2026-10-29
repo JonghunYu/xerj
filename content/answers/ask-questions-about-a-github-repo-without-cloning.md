@@ -1,13 +1,13 @@
 ---
-title: "Ask a GitHub repo without cloning: cited file:line answers"
+title: "Ask questions about a GitHub repo without cloning it"
 h1: "Ask questions about a GitHub repo without cloning it"
-description: "xerj ask answers from a signed, pre-indexed pack with file:line, pinned commit and licence. Nothing to clone. Works for repos in the Corpus Hub catalogue."
+description: "Run xerj ask and get answers about a GitHub repo with file:line, the pinned commit and the licence, from a signed pre-indexed pack. Nothing to clone."
 slug: "ask-questions-about-a-github-repo-without-cloning"
 cluster: "Answers for coding agents"
 question: "How can I ask questions about a GitHub repo without cloning it?"
 intent: "how-to"
 published: "2026-10-19"
-updated: "2026-10-20"
+updated: "2026-10-28"
 author: "XERJ documentation team"
 reviewer: "XERJ engineering team"
 schema_type: "TechArticle"
@@ -59,7 +59,7 @@ faq:
     a: "Check the licence line. Each answer prints the SPDX licence and a class. zstd and lz4 are approach-only, and the output says read, do not copy."
 ---
 
-**TL;DR** — To ask questions about a GitHub repo without cloning it, run `xerj ask "your question"`. If the repo is in the Corpus Hub catalogue, xerj pulls a signed, pre-indexed pack and answers with file:line, the pinned commit and the licence. Measured 2026-10-19: first answer 2,356 ms including the download, later answers 30 to 40 ms.
+**TL;DR**: To ask questions about a GitHub repo without cloning it, run `xerj ask "your question"`. If the repo is in the Corpus Hub catalogue, xerj pulls a signed, pre-indexed pack and answers with file:line, the pinned commit and the licence. Measured 2026-10-19: first answer 2,356 ms including the download, later answers 30 to 40 ms.
 
 ## Run it
 

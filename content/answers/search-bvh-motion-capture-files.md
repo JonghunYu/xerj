@@ -1,13 +1,13 @@
 ---
-title: "Search BVH motion-capture files"
+title: "Search BVH motion-capture files by joint, frame and length"
 h1: "How do I search BVH motion-capture files?"
-description: "xerj autoindex detects the bvh family and extracts frames, frame_time_s, duration_s, joint_count and a joints keyword array. The family produces no body field."
+description: "xerj autoindex reads .bvh files and writes frames, frame_time_s, duration_s, joint_count and a joints array you can query. Run one command on the folder."
 slug: "search-bvh-motion-capture-files"
 cluster: "Files and formats"
 question: "How do I search motion-capture data?"
 intent: "how-to"
 published: "2026-08-21"
-updated: "2026-10-19"
+updated: "2026-10-28"
 author: "XERJ documentation team"
 reviewer: "XERJ engineering team"
 schema_type: "TechArticle"
@@ -46,7 +46,7 @@ faq:
     a: "No. The coverage matrix rates BVH as curiosity value with negligible volume. The family works, and the demand behind it is small."
 ---
 
-**TL;DR** — Run `xerj autoindex` on the folder. XERJ detects the `bvh` family and writes `frames`, `frame_time_s`, `duration_s`, `joint_count` and a `joints` array. Our clip reported 60 frames over 1.999998 seconds, and a `terms` query on `joints` returned it.
+**TL;DR**: Run `xerj autoindex` on the folder. XERJ detects the `bvh` family and writes `frames`, `frame_time_s`, `duration_s`, `joint_count` and a `joints` array. Our clip reported 60 frames over 1.999998 seconds, and a `terms` query on `joints` returned it.
 
 ## Index the folder of clips
 

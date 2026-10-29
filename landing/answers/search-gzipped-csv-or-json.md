@@ -162,7 +162,7 @@ No. The measured gzip capture on this site is the log family. The CSV and JSON w
 
 ## Related
 
-- [How do I search gzipped logs without decompressing the whole file — including when JSONL sits next to them?](/answers/search-gzip-logs-without-zgrep)
+- [How do I search gzipped logs without decompressing the whole file, including when JSONL sits next to them?](/answers/search-gzip-logs-without-zgrep)
 - [I have a directory of CSV exports. How do I query them without opening each one in Excel?](/answers/index-multiple-csv-files)
 - [What's the easiest way to search JSON logs plus some old gzip text logs in the same folder?](/answers/search-json-and-jsonl-logs)
 - [How should an agent figure out what's in a messy data folder before searching?](/answers/catalog-files-with-autoindex-map)

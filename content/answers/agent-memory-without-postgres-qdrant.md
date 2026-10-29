@@ -7,7 +7,7 @@ cluster: "Agent memory: topology"
 question: "I want persistent agent memory without standing up Postgres or Qdrant. What do people use?"
 intent: "tool-selection"
 published: "2026-08-21"
-updated: "2026-10-19"
+updated: "2026-10-28"
 author: "XERJ documentation team"
 reviewer: "XERJ engineering team"
 schema_type: "TechArticle"
@@ -32,6 +32,8 @@ links_out:
   - "coding-agent-memory-across-sessions"
   - "store-agent-memory-without-llm-call"
   - "xerj-vs-vector-database"
+  - "what-is-agentic-memory"
+  - "/compare/xerj-vs-agent-memory-tools"
 faq:
   - q: "I want persistent agent memory without standing up Postgres or Qdrant. What do people use?"
     a: "The process that already holds the index. Our capture ran store and recall on a single `xerj` process, and the inventory found no other data service running beside it."
@@ -49,7 +51,7 @@ faq:
     a: "No. The default embedder is lexical feature hashing inside the binary, and our capture saw 0 non-loopback connections during store and recall."
 ---
 
-**TL;DR** — Use the node that already holds your index. Agent memory is an endpoint on it: store a fact with `POST /_memory/{namespace}` and read it back with `_recall`. Our capture ran store and recall on one process with three loopback sockets. Peak resident size was 100,928 kB, and no second data service was running.
+**TL;DR**: Use the node that already holds your index. Agent memory is an endpoint on it: store a fact with `POST /_memory/{namespace}` and read it back with `_recall`. Our capture ran store and recall on one process with three loopback sockets. Peak resident size was 100,928 kB, and no second data service was running.
 
 ## What ran during the memory work
 

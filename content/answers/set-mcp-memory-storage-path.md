@@ -7,7 +7,7 @@ cluster: "Agent memory: storage"
 question: "Memory MCP ignores custom storage path setting"
 intent: "troubleshooting"
 published: "2026-08-21"
-updated: "2026-10-19"
+updated: "2026-10-28"
 author: "XERJ documentation team"
 reviewer: "XERJ engineering team"
 schema_type: "TechArticle"
@@ -31,6 +31,7 @@ links_out:
   - "coding-agent-memory-across-sessions"
   - "resume-interrupted-autoindex-run"
   - "/docs/storage"
+  - "what-is-an-mcp-memory-server"
 faq:
   - q: "Where does XERJ store agent memory?"
     a: "In the node data directory, under a reserved index named `.xerj-memory-{namespace}`. Our capture found `.xerj-memory-agentmem` at the top level of that directory."
@@ -46,7 +47,7 @@ faq:
     a: "No. The `node.lock` file guards the directory, and XERJ is single-node with no replication, so one directory belongs to one running node."
 ---
 
-**TL;DR** — XERJ has no memory-specific storage path. Agent memory is an ordinary index named `.xerj-memory-{namespace}` inside the node data directory, so `--data-dir` sets it. Our capture stored a memory, restarted the node against the same directory, and recalled it.
+**TL;DR**: XERJ has no memory-specific storage path. Agent memory is an ordinary index named `.xerj-memory-{namespace}` inside the node data directory, so `--data-dir` sets it. Our capture stored a memory, restarted the node against the same directory, and recalled it.
 
 ## There is no memory path setting
 

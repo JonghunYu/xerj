@@ -7,7 +7,7 @@ cluster: "Comparison: desktop search"
 question: "What is a free DocFetcher alternative that an agent can call?"
 intent: "comparison"
 published: "2026-08-22"
-updated: "2026-10-23"
+updated: "2026-10-28"
 author: "XERJ documentation team"
 reviewer: "XERJ engineering team"
 schema_type: "TechArticle"
@@ -69,7 +69,7 @@ faq:
     a: "Not the free desktop application, which has a GUI and no API. A multi-user web interface is sold separately as DocFetcher Server."
 ---
 
-**TL;DR** — DocFetcher is a mature desktop search GUI. It reads Outlook PST files and nested archives, and its portable version carries the index on a USB drive. XERJ is a search engine that a program calls over HTTP or MCP. No head-to-head benchmark was run.
+**TL;DR**: DocFetcher is a mature desktop search GUI. It reads Outlook PST files and nested archives, and its portable version carries the index on a USB drive. XERJ is a search engine that a program calls over HTTP or MCP. No head-to-head benchmark was run.
 
 ## No benchmark was run, and this page says so
 
@@ -99,7 +99,7 @@ The command takes no configuration file and no mapping.
 
 The node answers the Elasticsearch REST API. `xerj autoindex map` prints a data map of what the folder became. An agent reads that map, then names a real index and a real field.
 
-`xerj mcp` is a stdio MCP server in the same binary. It serves 22 tools against a node you already started. Agent memory lives in the engine under `/_memory/{namespace}`.
+`xerj mcp` is a stdio MCP server in the same binary. It serves 23 tools against a node you already started. Agent memory lives in the engine under `/_memory/{namespace}`.
 
 XERJ is single-node. There is no replication and no failover. The default embedder is lexical feature hashing, not a neural model, and neural retrieval is opt-in through `--embed-mode neural`.
 
@@ -119,7 +119,7 @@ Every row is a documented capability of each tool. No row is a measured result.
 | automatic index updates | yes, while the application runs | rerun `xerj autoindex` |
 | format detection | file extension, with a regex option | content sniffing per family |
 | HTTP query API | not in the free application | yes, Elasticsearch REST API |
-| MCP server for an agent | none | yes, `xerj mcp`, 22 tools |
+| MCP server for an agent | none | yes, `xerj mcp`, 23 tools |
 | catalog of refused files | index report in the GUI | `autoindex-catalog`, one reason per file |
 | agent memory in the engine | none | yes, `/_memory/{namespace}` |
 | license | Eclipse Public License | Apache-2.0 |

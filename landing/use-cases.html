@@ -14,8 +14,8 @@
 <!-- ga4:end -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>XERJ.ai — Enterprise use cases</title>
-<meta name="description" content="Seven enterprise retrieval workloads on one binary — no Logstash, no Beats, no separate vector database — each with a reproducible ES 8.13 benchmark.">
+<title>XERJ use cases: AI security audits and search, measured</title>
+<meta name="description" content="Published XERJ use cases cover source-code audits, log analytics and AI search. Read the measured results, limitations and reproduction steps.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;700;800;900&family=Inter:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -26,8 +26,8 @@
 <link rel="canonical" href="https://xerj.org/use-cases">
 <meta property="og:site_name" content="XERJ.ai">
 <meta property="og:type" content="website">
-<meta property="og:title" content="XERJ.ai — Enterprise use cases">
-<meta property="og:description" content="Seven enterprise retrieval workloads on one binary — no Logstash, no Beats, no separate vector database — each with a reproducible ES 8.13 benchmark.">
+<meta property="og:title" content="XERJ use cases: AI security audits and search, measured">
+<meta property="og:description" content="Published XERJ use cases cover source-code audits, log analytics and AI search. Read the measured results, limitations and reproduction steps.">
 <meta property="og:url" content="https://xerj.org/use-cases">
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
@@ -35,8 +35,8 @@
 <meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="XERJ.ai — Enterprise use cases">
-<meta name="twitter:description" content="Seven enterprise retrieval workloads on one binary — no Logstash, no Beats, no separate vector database — each with a reproducible ES 8.13 benchmark.">
+<meta name="twitter:title" content="XERJ use cases: AI security audits and search, measured">
+<meta name="twitter:description" content="Published XERJ use cases cover source-code audits, log analytics and AI search. Read the measured results, limitations and reproduction steps.">
 <meta name="twitter:image" content="https://xerj.org/og/xerj-card.png">
 <script type="application/ld+json">
 {
@@ -71,8 +71,8 @@
 {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "XERJ.ai — Enterprise use cases",
-  "description": "Seven enterprise retrieval workloads on one binary — no Logstash, no Beats, no separate vector database — each with a reproducible ES 8.13 benchmark.",
+  "name": "XERJ use cases: AI security audits and search, measured",
+  "description": "Published XERJ use cases cover source-code audits, log analytics and AI search. Read the measured results, limitations and reproduction steps.",
   "url": "https://xerj.org/use-cases",
   "image": "https://xerj.org/og/xerj-card.png",
   "inLanguage": "en",
@@ -152,11 +152,11 @@
   <p class="lead" style="max-width:720px;">
     One binary. No Logstash, no Beats, no separate vector database, no
     dedicated Kibana cluster. The lead section is a <strong>real security
-    audit</strong> — XERJ pointed at its own Rust engine and at WordPress
+    audit</strong>. XERJ pointed at its own Rust engine and at WordPress
     core, finding (and fixing) real bugs, with every token cost measured.
     The rest are capability benchmarks against Elasticsearch 8.13,
     reproducible from <code class="inline">demo/playbooks/SCORECARD.md</code>.
-    Every section's live chart says exactly what it measured — and we removed
+    Every section's live chart says exactly what it measured, and we removed
     the demos that had no real scenario behind them.
   </p>
 </section>
@@ -165,7 +165,7 @@
 <section class="scene-section" style="border-top:0; padding-bottom:0;">
   <div class="kicker"><span>GROUP</span><span class="dash">·</span><span>CYBERSECURITY</span></div>
   <h2 class="scene" style="font-size:var(--fs-56);">AUDIT REAL CODE. <span class="accent">FIND REAL BUGS.</span></h2>
-  <p class="wide">Two reproducible whitebox security audits with XERJ as the agent's retrieval substrate — one on a large third-party codebase, one on XERJ's own engine. Both real, both measured, each its own full case study.</p>
+  <p class="wide">Two reproducible whitebox security audits with XERJ as the agent's retrieval substrate: one on a large third-party codebase, one on XERJ's own engine. Both real, both measured, each its own full case study.</p>
 </section>
 
 <!-- 01 CYBERSECURITY · WORDPRESS SECURITY AUDIT -->
@@ -173,7 +173,7 @@
   <div class="uc-copy">
     <span class="uc-num">01</span>
     <div class="uc-title">WORDPRESS<br>SECURITY<br><span class="accent">AUDIT.</span></div>
-    <p class="uc-pitch">An AI agent security-audited real WordPress core — 1,492 PHP files, ~619k lines — using XERJ as its retrieval substrate: index once as security facts (11,990 functions, 1,343 hooks), query the bug shape, read only the survivors. It swept 226 handlers for missing-capability IDOR (0 found — core is hardened) and surfaced the real <code class="inline">wp_http_validate_url</code> SSRF gap (169.254 cloud-metadata) reachable unauthenticated. The point is the method and its economics: the whole audit cost ~26K tokens against ~5.2M just to load the tree.</p>
+    <p class="uc-pitch">An AI agent security-audited real WordPress core (1,492 PHP files, ~619k lines) using XERJ as its retrieval substrate: index once as security facts (11,990 functions, 1,343 hooks), query the bug shape, read only the survivors. It swept 226 handlers for missing-capability IDOR (0 found: core is hardened) and surfaced the real <code class="inline">wp_http_validate_url</code> SSRF gap (169.254 cloud-metadata) reachable unauthenticated. The point is the method and its economics: the whole audit cost ~26K tokens against ~5.2M just to load the tree.</p>
     <div class="uc-metric">~26K-TOKEN AUDIT vs ~5.2M TO LOAD · 199× FEWER</div>
     <div class="uc-persona">CISO · APPSEC ENGINEER · SECURITY RESEARCHER</div>
     <a href="/case-studies/wordpress-security-audit" class="uc-cta">FULL CASE STUDY →</a>
@@ -209,7 +209,7 @@
         </span>
       </div>
     </div>
-    <p style="margin-top:14px; font-size:12px; letter-spacing:.04em; color:var(--z-mute); font-family:var(--font-data);">TOKEN COST TO THE ANSWER · NOT LATENCY · CORE IS HARDENED — 0 IDOR ACROSS 226 HANDLERS; THE ONE REAL WEAKNESS (SSRF) IS STATED PLAINLY · SOURCES IN <a href="https://github.com/xerj-org/xerj/tree/main/docs/case-studies/wordpress-security-audit" rel="external">docs/case-studies/wordpress-security-audit →</a></p>
+    <p style="margin-top:14px; font-size:12px; letter-spacing:.04em; color:var(--z-mute); font-family:var(--font-data);">TOKEN COST TO THE ANSWER · NOT LATENCY · CORE IS HARDENED: 0 IDOR ACROSS 226 HANDLERS; THE ONE REAL WEAKNESS (SSRF) IS STATED PLAINLY · SOURCES IN <a href="https://github.com/xerj-org/xerj/tree/main/docs/case-studies/wordpress-security-audit" rel="external">docs/case-studies/wordpress-security-audit →</a></p>
   </div>
 </div>
 
@@ -218,7 +218,7 @@
   <div class="uc-copy">
     <span class="uc-num">02</span>
     <div class="uc-title">XERJ AUDITS<br>ITS OWN<br><span class="accent">RUST.</span></div>
-    <p class="uc-pitch">The stronger proof: XERJ turned the method on its own Rust engine (197 files) and found and <em>fixed</em> real vulnerabilities. A call-graph query grep cannot express surfaced an unauthenticated <code class="inline">/_sql</code> stack-overflow that aborts the process; a five-stage instruction/data pass added a search-template injection that leaks private documents and a snapshot path-traversal. The three application-layer highs are fixed on the branch, each proven by crashing — then not-crashing — a live server. Against six known-fixed bugs the substrate recalled 6/6 where grep managed 4/6, at 171× fewer tokens.</p>
+    <p class="uc-pitch">The stronger proof: XERJ turned the method on its own Rust engine (197 files) and found and <em>fixed</em> real vulnerabilities. A call-graph query grep cannot express surfaced an unauthenticated <code class="inline">/_sql</code> stack-overflow that aborts the process; a five-stage instruction/data pass added a search-template injection that leaks private documents and a snapshot path-traversal. The three application-layer highs are fixed on the branch, each proven by crashing (then not-crashing) a live server. Against six known-fixed bugs the substrate recalled 6/6 where grep managed 4/6, at 171× fewer tokens.</p>
     <div class="uc-metric">4 REAL HIGHS · 3 FIXED · 6/6 RECALL vs grep 4/6 · 171× FEWER TOKENS</div>
     <div class="uc-persona">APPSEC ENGINEER · SECURITY RESEARCHER · AI-AGENT BUILDER · RUST TEAM</div>
     <a href="/case-studies/xerj-self-audit" class="uc-cta">FULL CASE STUDY →</a>
@@ -254,7 +254,7 @@
         </span>
       </div>
     </div>
-    <p style="margin-top:14px; font-size:12px; letter-spacing:.04em; color:var(--z-mute); font-family:var(--font-data);">TOKEN COST TO THE ANSWER · NOT LATENCY · RECALL MEASURED AGAINST 6 KNOWN-FIXED BUGS (grep CAN'T FIND MISSING CODE); 6/6 IS IN-SAMPLE — SEE THE CAVEAT · METHODOLOGY + ALL 8 FINDINGS IN <a href="https://github.com/xerj-org/xerj/tree/main/docs/case-studies/xerj-self-audit" rel="external">docs/case-studies/xerj-self-audit →</a></p>
+    <p style="margin-top:14px; font-size:12px; letter-spacing:.04em; color:var(--z-mute); font-family:var(--font-data);">TOKEN COST TO THE ANSWER · NOT LATENCY · RECALL MEASURED AGAINST 6 KNOWN-FIXED BUGS (grep CAN'T FIND MISSING CODE); 6/6 IS IN-SAMPLE: SEE THE CAVEAT · METHODOLOGY + ALL 8 FINDINGS IN <a href="https://github.com/xerj-org/xerj/tree/main/docs/case-studies/xerj-self-audit" rel="external">docs/case-studies/xerj-self-audit →</a></p>
   </div>
 </div>
 
@@ -262,7 +262,7 @@
 <section class="scene-section" style="border-top:0; padding-bottom:0;">
   <div class="kicker"><span>GROUP</span><span class="dash">·</span><span>PERFORMANCE &amp; SCALE</span></div>
   <h2 class="scene" style="font-size:var(--fs-56);">MEASURED <span class="accent">vs ELASTICSEARCH 8.13.</span></h2>
-  <p class="wide">Reproducible capability benchmarks from <code class="inline">demo/playbooks/SCORECARD.md</code> — measured numbers on a real query matrix, not user stories.</p>
+  <p class="wide">Reproducible capability benchmarks from <code class="inline">demo/playbooks/SCORECARD.md</code>: measured numbers on a real query matrix, not user stories.</p>
 </section>
 
 <!-- 03 SIEM — the headline chart IS the comparison -->
@@ -270,7 +270,7 @@
   <div class="uc-copy">
     <span class="uc-num">03</span>
     <div class="uc-title">SECURITY<br>ANALYTICS<br><span class="accent">AT SCALE.</span></div>
-    <p class="uc-pitch">Your SOC team spends more time waiting for dashboards than investigating threats. The battery on the right is the reproducible XERJ-vs-Elasticsearch query matrix — bool filters, range scans, term lookups and aggregations — measured on a 1M-doc corpus. XERJ is the yellow bar; Elasticsearch 8.13 is the gray one.</p>
+    <p class="uc-pitch">Your SOC team spends more time waiting for dashboards than investigating threats. The battery on the right is the reproducible XERJ-vs-Elasticsearch query matrix (bool filters, range scans, term lookups and aggregations) measured on a 1M-doc corpus. XERJ is the yellow bar; Elasticsearch 8.13 is the gray one.</p>
     <div class="uc-metric">11.5× FASTER BOOL QUERIES</div>
     <div class="uc-persona">CISO · SOC ANALYST · SECOPS</div>
     <a href="/use-cases/security-analytics" class="uc-cta">FULL USE CASE →</a>
@@ -374,7 +374,7 @@
   <div class="uc-copy">
     <span class="uc-num">04</span>
     <div class="uc-title">OPERATIONAL<br><span class="accent">INTELLIGENCE.</span></div>
-    <p class="uc-pitch">Ship logs at line rate. Query hot data in milliseconds. No ILM policy puzzles, no shard tuning, no Logstash pipeline. The chart shows a 24-hour diurnal ingest pattern — XERJ sustains it with zero write-stalls, and ingests 1.5–1.7× faster than Elasticsearch in the reproducible benchmark.</p>
+    <p class="uc-pitch">Ship logs at line rate. Query hot data in milliseconds. No ILM policy puzzles, no shard tuning, no Logstash pipeline. The chart shows a 24-hour diurnal ingest pattern: XERJ sustains it with zero write-stalls, and ingests 1.5–1.7× faster than Elasticsearch in the reproducible benchmark.</p>
     <div class="uc-metric">1.7× FASTER INGEST</div>
     <div class="uc-persona">SRE · DEVOPS · PLATFORM ENGINEERING</div>
     <a href="/use-cases/operational-intelligence" class="uc-cta">FULL USE CASE →</a>
@@ -400,7 +400,7 @@
   <div class="uc-copy">
     <span class="uc-num">05</span>
     <div class="uc-title">AI-NATIVE<br>SEARCH &<br><span class="accent">RETRIEVAL.</span></div>
-    <p class="uc-pitch">Hybrid semantic + keyword search in one query. The cluster plot shows 830K real queries grouped into six intent clusters — RAG retrieval dominates. Every cluster is one index query away, not a separate Pinecone call. The benchmark below is the reproducible XERJ-vs-Elasticsearch latency for kNN and text retrieval.</p>
+    <p class="uc-pitch">Hybrid semantic + keyword search in one query. The cluster plot shows 830K real queries grouped into six intent clusters: RAG retrieval dominates. Every cluster is one index query away, not a separate Pinecone call. The benchmark below is the reproducible XERJ-vs-Elasticsearch latency for kNN and text retrieval.</p>
     <div class="uc-metric">3.4× FASTER kNN · 100% RECALL</div>
     <div class="uc-persona">ML ENGINEER · DATA SCIENTIST · AI PLATFORM</div>
     <a href="/use-cases/ai-search-retrieval" class="uc-cta">FULL USE CASE →</a>
@@ -548,7 +548,7 @@
   <div class="uc-copy">
     <span class="uc-num">07</span>
     <div class="uc-title">UNIFIED<br><span class="accent">OBSERVABILITY.</span></div>
-    <p class="uc-pitch">Logs, traces, and metrics in one store — one binary instead of a Grafana-Loki-Tempo-Mimir stack to babysit. OTLP in, Prometheus out. The chart on the right is the reproducible query-latency head-to-head vs Elasticsearch 8.13 on log-shaped data.</p>
+    <p class="uc-pitch">Logs, traces, and metrics in one store: one binary instead of a Grafana-Loki-Tempo-Mimir stack to babysit. OTLP in, Prometheus out. The chart on the right is the reproducible query-latency head-to-head vs Elasticsearch 8.13 on log-shaped data.</p>
     <div class="uc-metric">6 SYSTEMS → 1 BINARY</div>
     <div class="uc-persona">OBSERVABILITY LEAD · SRE · INFRA</div>
     <a href="/use-cases/unified-observability" class="uc-cta">FULL USE CASE →</a>
@@ -635,7 +635,7 @@
   <form class="lead-form" id="leadForm" action="#" method="post" novalidate>
     <input type="email" name="email" placeholder="you@company.com" required aria-label="Work email" autocomplete="email" />
     <button type="submit" class="demo">SEE THE DEMO <span class="arrow">→</span></button>
-    <span class="note">We keep your email to follow up about XERJ — nothing else. No spam, no reselling.</span>
+    <span class="note">We keep your email to follow up about XERJ: nothing else. No spam, no reselling.</span>
   </form>
 </section>
 

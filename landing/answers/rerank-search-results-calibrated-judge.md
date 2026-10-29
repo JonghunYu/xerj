@@ -2,17 +2,17 @@
 ---
 title: "How do I rerank search results with a relevance judge?"
 canonical: "https://xerj.org/answers/rerank-search-results-calibrated-judge"
-updated: "2026-10-19"
+updated: "2026-10-28"
 source: "content/answers/rerank-search-results-calibrated-judge.md"
 ---
 
 # How do I rerank search results with a relevance judge?
 
-**Short answer** (updated 2026-10-19): How do I rerank search results with a relevance judge? Add a rerank block to a XERJ _search body. The top 30 hits go to an external judge, which returns a 0 to 1 relevance probability that replaces _score. Order by it, but never threshold it with min_score: measured calibration error was 0.10 to 0.31.
+**Short answer** (updated 2026-10-28): How do I rerank search results with a relevance judge? Add a rerank block to a XERJ _search body. The top 30 hits go to an external judge, which returns a 0 to 1 relevance probability that replaces _score. Order by it, but never threshold it with min_score: measured calibration error was 0.10 to 0.31.
 
 **Key number:** The rerank stage defaults to a 30-hit window and allows at most 300. (as of 2026-10-19; source: [engine/crates/xerj-rerank/src/lib.rs](https://github.com/xerj-org/xerj/blob/main/engine/crates/xerj-rerank/src/lib.rs))
 
-**TL;DR** — Add `"rerank": {}` to a XERJ `_search` body. The top 30 hits go to an external judge, which returns a 0 to 1 relevance probability per document. That probability replaces `_score`. Order by it, never threshold it with `min_score` — the measured probabilities are not calibrated (ECE 0.10–0.31). It sends document text off the machine. Ranking quality is measured: [PR #975](https://github.com/xerj-org/xerj/pull/975) scored median nDCG@10 of 0.7410 SciFact, 0.3312 NFCorpus and 0.3638 FiQA over 1,271 queries.
+**TL;DR**: Add `"rerank": {}` to a XERJ `_search` body. The top 30 hits go to an external judge, which returns a 0 to 1 relevance probability per document. That probability replaces `_score`. Order by it, never threshold it with `min_score`: the measured probabilities are not calibrated (ECE 0.10–0.31). It sends document text off the machine. Ranking quality is measured: [PR #975](https://github.com/xerj-org/xerj/pull/975) scored median nDCG@10 of 0.7410 SciFact, 0.3312 NFCorpus and 0.3638 FiQA over 1,271 queries.
 
 ## Agent prompt
 
@@ -66,7 +66,7 @@ The provider is TypeSafe AI's Jev model, reached through its System One API. XER
 
 A BM25 score orders results but has no absolute meaning. A score of 7.2 on one query is not comparable to 7.2 on another query, so you cannot use it as a threshold.
 
-The judge's probability turns out to need the same caution: [PR #975](https://github.com/xerj-org/xerj/pull/975) (merged 2026-09-20) measured it against graded human-relevance labels on 1,271 judged queries. Expected calibration error is 0.10–0.31, worst on FiQA: documents the judge rated around 0.93 confidence were relevant 34% of the time. The curve still rises to the right — the model discriminates, which is what the ranking gains ride on — but a 0.9 is not a 90% chance of relevance. Order by the scores; never threshold the raw probability with `min_score`, which cuts documents the judgments call relevant. If you need an absolute cut-off, make sure the threshold holds against your own data first. The top-level `min_score` stays the engine's threshold on engine scores, and the two compose.
+The judge's probability turns out to need the same caution: [PR #975](https://github.com/xerj-org/xerj/pull/975) (merged 2026-09-20) measured it against graded human-relevance labels on 1,271 judged queries. Expected calibration error is 0.10–0.31, worst on FiQA: documents the judge rated around 0.93 confidence were relevant 34% of the time. The curve still rises to the right (the model discriminates, which is what the ranking gains ride on) but a 0.9 is not a 90% chance of relevance. Order by the scores; never threshold the raw probability with `min_score`, which cuts documents the judgments call relevant. If you need an absolute cut-off, make sure the threshold holds against your own data first. The top-level `min_score` stays the engine's threshold on engine scores, and the two compose.
 
 ## This sends your data off the machine
 
@@ -102,7 +102,7 @@ Every reranked response carries a `_rerank` block ahead of `hits`. Read `applied
 | `applied` | `true` means the order is the judge's. `false` means the engine's order stands, and `reason` says why. |
 | `score_kind` | `probability` or `engine`. |
 | `judged` | Documents the provider returned a verdict for. |
-| `pruned_below_min_score` | Judged hits removed by `rerank.min_score` — a coarse filter, not a calibrated cut-off (the probabilities are not calibrated). |
+| `pruned_below_min_score` | Judged hits removed by `rerank.min_score`: a coarse filter, not a calibrated cut-off (the probabilities are not calibrated). |
 | `fields_without_text` | Named fields that no hit in the window returned text for. |
 | `usage` | Tokens the provider reported for this search. |
 
@@ -136,13 +136,13 @@ The strings have ceilings too. `instructions` is limited to 2,000 characters, be
 
 When this page was updated on 2026-09-20, ranking quality with the real Jev model was genuinely unverified. XERJ had no provider key, and every test of the stage ran against a test double that scores by a table the test supplies.
 
-[PR #975](https://github.com/xerj-org/xerj/pull/975), merged later that day, changed that: the real Jev reranker judged 1,271 BEIR queries ranking off a XERJ node. The run found and fixed an integration defect of XERJ's own — the SciFact pilot scored 0.3822 before the fix and 0.8299 after it. The full runs scored median nDCG@10 of 0.7410 on SciFact (300 queries), 0.3312 on NFCorpus (323) and 0.3638 on FiQA (648), against BM25 first stages of 0.6572, 0.3016 and 0.2382. The numbers and the reliability curves are published in `benchmarks/beir-hybrid/results/2026-09-20-rerank-pilot`, `-rerank-full` and `-rerank-full-fiqa`, with the write-up in `landing/blog/does-xerj-beat-jev.html`. The stage's own HTTP tests still use a test double; the benchmark runs carry the quality claim.
+[PR #975](https://github.com/xerj-org/xerj/pull/975), merged later that day, changed that: the real Jev reranker judged 1,271 BEIR queries ranking off a XERJ node. The run found and fixed an integration defect of XERJ's own: the SciFact pilot scored 0.3822 before the fix and 0.8299 after it. The full runs scored median nDCG@10 of 0.7410 on SciFact (300 queries), 0.3312 on NFCorpus (323) and 0.3638 on FiQA (648), against BM25 first stages of 0.6572, 0.3016 and 0.2382. The numbers and the reliability curves are published in `benchmarks/beir-hybrid/results/2026-09-20-rerank-pilot`, `-rerank-full` and `-rerank-full-fiqa`, with the write-up in `landing/blog/does-xerj-beat-jev.html`. The stage's own HTTP tests still use a test double; the benchmark runs carry the quality claim.
 
 The `hev/jev-rerank` README publishes nDCG@10 of 0.768 on SciFact and 0.358 on NFCorpus for Jev. XERJ did not run those systems, and they rerank that project's own first-stage shortlist, not XERJ's. XERJ's own hybrid search scored 0.6993 and 0.3448 on the same datasets. Those two figures were measured with `--embed-mode neural` and the all-MiniLM-L6-v2 model. The default embedder is lexical feature hashing, which has no model in it. This is not a controlled comparison.
 
 ## When reranking is not worth it
 
-Do not rerank an exact identifier lookup, a filter, or an aggregation-only request. The first stage already answers those, and the stage adds a paid network call per search. Rerank when the right document is probably in the top 30 but not at the top. If you also need an absolute relevance cut-off, make sure the threshold holds against your own data first — the judge's probabilities order well but are not calibrated.
+Do not rerank an exact identifier lookup, a filter, or an aggregation-only request. The first stage already answers those, and the stage adds a paid network call per search. Rerank when the right document is probably in the top 30 but not at the top. If you also need an absolute relevance cut-off, make sure the threshold holds against your own data first: the judge's probabilities order well but are not calibrated.
 
 ## FAQ
 
@@ -181,7 +181,7 @@ Yes. The `xerj_search` and `xerj_hybrid_search` tools take an optional `rerank` 
 - The failure policy, every refused combination, the 400, 403, 502 and 503 statuses, paging inside the window, and the rule that only returned text is sent are each pinned by an HTTP test against an in-process stub of the provider wire format. Source: `engine/crates/xerj-api/tests/rerank_stage_http.rs`
 - The nDCG@10 figures for Jev (0.768 SciFact, 0.358 NFCorpus), Voyage rerank-3 (0.755, 0.357) and Cohere rerank-v3.5 (0.745, 0.340) are published in the hev/jev-rerank README. XERJ did not run them, and they rerank that project's own first-stage shortlist. Source: [https://github.com/hev/jev-rerank](https://github.com/hev/jev-rerank)
 - XERJ hybrid RRF scored nDCG@10 0.6993 on SciFact and 0.3448 on NFCorpus with --embed-mode neural and all-MiniLM-L6-v2, not with the default lexical embedder. Source: `benchmarks/beir-hybrid/README.md`
-- Ranking quality with the real Jev model is measured (PR #975, merged 2026-09-20): the reranker judged 1,271 BEIR queries ranking off a XERJ node — median nDCG@10 0.7410 SciFact, 0.3312 NFCorpus, 0.3638 FiQA, against BM25 first stages of 0.6572, 0.3016 and 0.2382 — after an integration defect of XERJ's own was found and fixed (SciFact pilot 0.3822 to 0.8299). The same runs measured calibration (ECE 0.10-0.31, worst on FiQA: documents rated ~0.93 confidence were relevant 34% of the time) and provider non-determinism (mean per-document drift 0.0077-0.0096, max 0.08; comparisons tighter than ~±0.01 nDCG@10 are noise). Source: `benchmarks/beir-hybrid/results`
+- Ranking quality with the real Jev model is measured (PR #975, merged 2026-09-20): the reranker judged 1,271 BEIR queries ranking off a XERJ node, median nDCG@10 0.7410 SciFact, 0.3312 NFCorpus, 0.3638 FiQA, against BM25 first stages of 0.6572, 0.3016 and 0.2382, after an integration defect of XERJ's own was found and fixed (SciFact pilot 0.3822 to 0.8299). The same runs measured calibration (ECE 0.10-0.31, worst on FiQA: documents rated ~0.93 confidence were relevant 34% of the time) and provider non-determinism (mean per-document drift 0.0077-0.0096, max 0.08; comparisons tighter than ~±0.01 nDCG@10 are noise). Source: `benchmarks/beir-hybrid/results`
 
 ## Related
 
@@ -189,6 +189,7 @@ Yes. The `xerj_search` and `xerj_hybrid_search` tools take an optional `rerank` 
 - [How much better is hybrid search than BM25? Measured nDCG numbers](/answers/hybrid-search-quality-measured-ndcg)
 - [How does XERJ combine BM25 and kNN?](/answers/how-xerj-combines-search)
 - [Config TOML](/docs/config)
+- [The rc.80 gates](/blog/the-rc80-gates)
+- [How do I improve a basic FAISS RAG pipeline?](/answers/improve-basic-faiss-rag-pipeline) (same intent: retrieval research and eval)
 - [Can I route tickets or filter spam from labelled history, without an LLM call?](/answers/classify-text-from-labelled-history-without-llm) (same intent: retrieval research and eval)
 - [When should I turn on neural embeddings, and when is the lexical default enough?](/answers/do-search-embeddings-help) (same intent: retrieval research and eval)
-- [How do I improve a basic FAISS RAG pipeline?](/answers/improve-basic-faiss-rag-pipeline) (same intent: retrieval research and eval)

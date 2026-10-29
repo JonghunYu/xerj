@@ -1,13 +1,13 @@
 ---
-title: "Search gzipped logs without decompressing them"
-h1: "How do I search gzipped logs without decompressing the whole file — including when JSONL sits next to them?"
-description: "XERJ autoindex decompresses a .gz log once at index time. In our capture the plain and gzip copies returned identical counts, identical hits and one date field."
+title: "Search .gz logs without zgrep: decompress once, query often"
+h1: "How do I search gzipped logs without decompressing the whole file, including when JSONL sits next to them?"
+description: "XERJ decompresses a .gz log once at index time, so queries never read the archive again. The plain and gzip copies of one log returned the same counts."
 slug: "search-gzip-logs-without-zgrep"
 cluster: "Files and formats"
 question: "How do I search gzipped logs without decompressing the whole file?"
 intent: "how-to"
 published: "2026-08-21"
-updated: "2026-10-19"
+updated: "2026-10-28"
 author: "XERJ documentation team"
 reviewer: "XERJ engineering team"
 schema_type: "TechArticle"
@@ -48,7 +48,7 @@ faq:
     a: "Because a log index has no field named `text`. Filter on `level`, run a `wildcard` on `message`, and range over `ts`."
 ---
 
-**TL;DR** — XERJ decompresses a `.gz` log once at index time, so a query never reads the compressed file again. In our capture the plain copy and the gzip copy of one log both returned `5001` from `_count`. Both also returned 1250 hits for `level=ERROR`.
+**TL;DR**: XERJ decompresses a `.gz` log once at index time, so a query never reads the compressed file again. In our capture the plain copy and the gzip copy of one log both returned `5001` from `_count`. Both also returned 1250 hits for `level=ERROR`.
 
 ## Gzip is transparent to autoindex
 

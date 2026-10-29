@@ -1,13 +1,13 @@
 ---
-title: "Search a folder of CSV files with BM25, without a database"
+title: "Search multiple CSV files at once, without a database"
 h1: "I have a directory of CSV exports. How do I query them without opening each one in Excel?"
-description: "Point xerj autoindex at the folder once. A captured run split 3 CSV files across 2 schemas into 2 indices and answered one query across both of them."
+description: "Point xerj autoindex at a folder of CSV files once. A captured run split 3 CSVs with 2 headers into 2 indices and answered one query across both."
 slug: "index-multiple-csv-files"
 cluster: "Files and formats"
 question: "I have a directory of CSV exports. How do I query them without opening each one in Excel?"
 intent: "how-to"
 published: "2026-08-21"
-updated: "2026-10-19"
+updated: "2026-10-28"
 author: "XERJ documentation team"
 reviewer: "XERJ engineering team"
 schema_type: "TechArticle"
@@ -52,7 +52,7 @@ faq:
     a: "Run `xerj autoindex` on the folder again. Document ids are content-derived and the run journal converges, so re-runs do not duplicate the earlier files."
 ---
 
-**TL;DR** — Give `xerj autoindex` the folder rather than each file. In a captured run, 3 CSV files across 2 different headers became 2 indices holding 402 and 151 documents. One `query_string` request across `multi-*` then returned 171 hits and split them by dataset.
+**TL;DR**: Give `xerj autoindex` the folder rather than each file. In a captured run, 3 CSV files across 2 different headers became 2 indices holding 402 and 151 documents. One `query_string` request across `multi-*` then returned 171 hits and split them by dataset.
 
 ## Index the folder, not each file
 

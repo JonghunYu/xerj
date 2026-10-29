@@ -7,7 +7,7 @@ cluster: "Comparison: vector database"
 question: "Should my agent call a search API or a vector store?"
 intent: "comparison"
 published: "2026-08-21"
-updated: "2026-10-19"
+updated: "2026-10-28"
 author: "XERJ documentation team"
 reviewer: "XERJ engineering team"
 schema_type: "TechArticle"
@@ -39,6 +39,8 @@ links_out:
   - "private-agent-memory-namespaces"
   - "store-agent-memory-without-llm-call"
   - "/answers/retrieval-that-says-not-found-with-file-line-citations"
+  - "xerj-vs-agent-memory-tools"
+  - "/answers/agentic-memory-vs-rag"
 evidence:
   - claim: "Qdrant's built-in embedding inference is available on Qdrant Cloud only; self-hosted deployments run an external service or a client-side embedder."
     source: "https://qdrant.tech/cloud-inference/"
@@ -65,7 +67,7 @@ faq:
     a: "No. XERJ is single-node with no data-plane replication, and filtered kNN falls back to an exact scan rather than the graph index."
 ---
 
-**TL;DR** — Call the search API you already run. XERJ serves agent memory at `_memory/{namespace}` from the same single-node process that serves `_search`, so no second data service starts. On 20 labeled documents and 8 judged queries, hybrid linear fusion scored the best precision@3 at 0.4583. Choose Qdrant instead for filtered vector search at scale.
+**TL;DR**: Call the search API you already run. XERJ serves agent memory at `_memory/{namespace}` from the same single-node process that serves `_search`, so no second data service starts. On 20 labeled documents and 8 judged queries, hybrid linear fusion scored the best precision@3 at 0.4583. Choose Qdrant instead for filtered vector search at scale.
 
 ## Memory without a second data service
 

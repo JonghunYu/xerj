@@ -7,7 +7,7 @@ cluster: "Files and formats"
 question: "I indexed a folder of email and PDFs. How do I actually read what it found?"
 intent: "how-to"
 published: "2026-09-18"
-updated: "2026-10-19"
+updated: "2026-10-28"
 author: "XERJ documentation team"
 reviewer: "XERJ engineering team"
 schema_type: "TechArticle"
@@ -33,6 +33,9 @@ links_out:
   - "how-xerj-autoindexes-a-folder"
   - "knowledge-graphs-for-agent-memory"
   - "/docs/security"
+  - "/answers/search-word-documents-in-a-folder"
+  - "/answers/share-folder-read-only-search-without-uploading"
+  - "/compare/xerj-vs-localsynapse"
 evidence:
   - claim: "In the recorded run xerj brain turned 10 files into 81 records in one dataset, ax-docs, and wrote 33 links into the brain casefile."
     source: "docs/usecases/console-reader/live-e2e.json"
@@ -63,7 +66,7 @@ faq:
     a: "The console has a read-only guest mode driven by a share record that names one key, the shared indices, an optional brain and an expiry. It can only search and read those indices, and it logs out on expiry."
 ---
 
-**TL;DR** — Run `xerj brain <folder>`, then open the console it prints. The Corpus page lists what was indexed, and the Reader opens any record: an email with its headers, body and attachments, or one PDF page, beside the files it links to. The Reader shows extracted text only. It renders no email HTML and no PDF pages.
+**TL;DR**: Run `xerj brain <folder>`, then open the console it prints. The Corpus page lists what was indexed, and the Reader opens any record: an email with its headers, body and attachments, or one PDF page, beside the files it links to. The Reader shows extracted text only. It renders no email HTML and no PDF pages.
 
 ## Index the folder, then open the console
 

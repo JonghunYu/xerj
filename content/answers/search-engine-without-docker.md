@@ -7,7 +7,7 @@ cluster: "Operations: installation"
 question: "Is there a single-binary local search engine I can just run?"
 intent: "cost"
 published: "2026-08-21"
-updated: "2026-10-23"
+updated: "2026-10-28"
 author: "XERJ documentation team"
 reviewer: "XERJ engineering team"
 schema_type: "TechArticle"
@@ -35,6 +35,8 @@ links_out:
   - "local-embeddings-without-openai-api"
   - "/compare/xerj-vs-elasticsearch-local"
   - "/compare/xerj-vs-meilisearch"
+  - "/benchmarks/elasticsearch"
+  - "/answers/search-kubernetes-pod-logs-on-disk"
 faq:
   - q: "Is there a single-binary local search engine I can just run?"
     a: "XERJ is one native executable. The captured binary links only libgcc_s.so.1, libm.so.6 and libc.so.6, and answered its first HTTP 200 in 1.071 s from process start."
@@ -52,7 +54,7 @@ faq:
     a: "No. XERJ is single-node: there is no data-plane replication and no failover, so plan for snapshot and restore instead."
 ---
 
-**TL;DR** — XERJ runs a search engine from one native binary, with no container and no JVM. A first-party capture on Linux x86-64 shows 3 dynamically linked libraries and a 67,174,440-byte executable. Cold start measured 1.071 s to the first HTTP 200 on an empty data directory.
+**TL;DR**: XERJ runs a search engine from one native binary, with no container and no JVM. A first-party capture on Linux x86-64 shows 3 dynamically linked libraries and a 67,174,440-byte executable. Cold start measured 1.071 s to the first HTTP 200 on an empty data directory.
 
 ## One executable, no container
 

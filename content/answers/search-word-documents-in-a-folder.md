@@ -1,13 +1,13 @@
 ---
-title: "How do I search a folder of Word contracts?"
+title: "Search inside Word documents (.docx) in a folder"
 h1: "How do I search through a folder of contracts in .docx?"
-description: "Index a folder of DOCX contracts with one xerj autoindex command and search their paragraphs. A captured run also shows the decompression guard refusing a file."
+description: "Index a folder of Word .docx files with one xerj autoindex command, then search their paragraphs. A captured run also shows the decompression guard."
 slug: "search-word-documents-in-a-folder"
 cluster: "Files and formats"
 question: "How do I search through a folder of contracts in .docx?"
 intent: "how-to"
 published: "2026-08-21"
-updated: "2026-10-19"
+updated: "2026-10-28"
 author: "XERJ documentation team"
 reviewer: "XERJ engineering team"
 schema_type: "TechArticle"
@@ -49,7 +49,7 @@ faq:
     a: "A small DOCX can expand to hundreds of megabytes when unzipped. The captured 245,109-byte file expands to about 96 MiB and the guard refused it."
 ---
 
-**TL;DR** — `xerj autoindex` indexes a folder of Word documents in one command, and a `match_phrase` query then searches their paragraphs. In a captured run, 1 DOCX file produced 2 documents, and a query for `second reviewer` returned the paragraph and the title. A second, deliberately expanded file produced 0 documents.
+**TL;DR**: `xerj autoindex` indexes a folder of Word documents in one command, and a `match_phrase` query then searches their paragraphs. In a captured run, 1 DOCX file produced 2 documents, and a query for `second reviewer` returned the paragraph and the title. A second, deliberately expanded file produced 0 documents.
 
 ## Index the folder in one command
 

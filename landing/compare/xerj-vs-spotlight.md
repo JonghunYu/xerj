@@ -2,17 +2,17 @@
 ---
 title: "Spotlight compared with XERJ for folder content"
 canonical: "https://xerj.org/compare/xerj-vs-spotlight"
-updated: "2026-10-23"
+updated: "2026-10-28"
 source: "content/compare/xerj-vs-spotlight.md"
 ---
 
 # XERJ vs macOS Spotlight for folder content an agent can query
 
-**Short answer** (updated 2026-10-23): Spotlight can't find text inside my project files; what else is there? XERJ indexes a project folder, code and data files included, for an agent to query over HTTP or MCP. Spotlight remains the Mac's zero-setup system index with whole-disk reach and wide metadata. No head-to-head was run, and nothing here was tested on macOS.
+**Short answer** (updated 2026-10-28): Spotlight can't find text inside my project files; what else is there? XERJ indexes a project folder, code and data files included, for an agent to query over HTTP or MCP. Spotlight remains the Mac's zero-setup system index with whole-disk reach and wide metadata. No head-to-head was run, and nothing here was tested on macOS.
 
 **Key number:** XERJ's tree-sitter registry extracts definitions in 36 languages, pinned by a unit test. (as of 2026-10-19; source: [engine/crates/xerj-autoindex/src/extract/code.rs](https://github.com/xerj-org/xerj/blob/main/engine/crates/xerj-autoindex/src/extract/code.rs))
 
-**TL;DR** — Spotlight is the Mac's system-wide index: zero setup, whole-disk reach and wide file metadata. XERJ is a folder index an agent calls over HTTP or MCP. No head-to-head was run for this page and nothing here was tested on macOS.
+**TL;DR**: Spotlight is the Mac's system-wide index: zero setup, whole-disk reach and wide file metadata. XERJ is a folder index an agent calls over HTTP or MCP. No head-to-head was run for this page and nothing here was tested on macOS.
 
 ## Agent prompt
 
@@ -78,7 +78,7 @@ The streaming extractors cover JSON and JSONL, CSV with dialect sniffing, struct
 
 The node answers the Elasticsearch REST API. A `match_phrase` query and a filter on a keyword field work over plain HTTP. The `xerj autoindex map` command prints a data map of what the folder became, and an agent reads it before naming an index and a field.
 
-`xerj mcp` is a stdio MCP server in the same binary and serves 22 tools against a node you already started. Agent memory lives in the engine under `/_memory/{namespace}`.
+`xerj mcp` is a stdio MCP server in the same binary and serves 23 tools against a node you already started. Agent memory lives in the engine under `/_memory/{namespace}`.
 
 XERJ is single-node. There is no replication and no failover. The default embedder is lexical feature hashing rather than a neural model, and neural retrieval is opt-in through `--embed-mode neural`. There is no OCR.
 
@@ -97,7 +97,7 @@ Every row is a documented capability of each tool. **No row is a measured result
 | live updates as files change | yes, and `mdfind -live` reports them | rerun `xerj autoindex` |
 | query language | metadata query expressions | Elasticsearch query DSL over HTTP |
 | HTTP query API | not documented for the system store | yes, Elasticsearch REST API |
-| MCP server for an agent | none | yes, `xerj mcp`, 22 tools |
+| MCP server for an agent | none | yes, `xerj mcp`, 23 tools |
 | typed columns from a CSV or a `sqldump` file | not described in the documentation | yes, a dataset per file shape |
 | per-file refusal reason | not described in the documentation | `autoindex-catalog`, one reason per file |
 | agent memory in the engine | none | yes, `/_memory/{namespace}` |
@@ -151,7 +151,7 @@ Index the folder yourself. `xerj autoindex` sniffs each file by content and inde
 
 ### How do I full-text search a folder on a Mac from an agent?
 
-Give the agent an index it can call. `xerj autoindex` builds one from the folder and `xerj mcp` serves 22 tools against the running node over stdio, so no subprocess wrapper is needed.
+Give the agent an index it can call. `xerj autoindex` builds one from the folder and `xerj mcp` serves 23 tools against the running node over stdio, so no subprocess wrapper is needed.
 
 ### Is Spotlight enough for searching PDFs and code?
 
@@ -186,7 +186,7 @@ Yes, and on a Mac that is the sensible answer. Spotlight for finding the file, X
 
 ## Related
 
-- [XERJ vs HoudahSpot — Spotlight GUI vs an agent index](/compare/xerj-vs-houdahspot)
+- [XERJ vs HoudahSpot: Spotlight GUI vs an agent index](/compare/xerj-vs-houdahspot)
 - [What's the best local desktop search for a folder of PDFs and docs?](/compare/xerj-vs-recoll)
 - [How do I grep PDFs and Word docs from the command line?](/compare/xerj-vs-ripgrep-all)
 - [I have a folder of PDFs, Word docs, and markdown. How do I search all of them at once?](/answers/search-file-contents-in-a-folder)

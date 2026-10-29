@@ -14,8 +14,8 @@
 <!-- ga4:end -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>XERJ.ai — WordPress security audit case study</title>
-<meta name="description" content="An AI agent audited WordPress core — 1,492 files, roughly 619k lines — for about 26,000 tokens instead of 5,200,000, with per-phase costs measured.">
+<title>WordPress security audit with selective source retrieval</title>
+<meta name="description" content="A documented WordPress audit used XERJ to select source files for review. The report publishes token accounting, missed cases and its negative result.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;700;800;900&family=Inter:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -36,8 +36,8 @@
 <link rel="canonical" href="https://xerj.org/case-studies/wordpress-security-audit">
 <meta property="og:site_name" content="XERJ.ai">
 <meta property="og:type" content="article">
-<meta property="og:title" content="XERJ.ai — WordPress security audit case study">
-<meta property="og:description" content="An AI agent audited WordPress core — 1,492 files, roughly 619k lines — for about 26,000 tokens instead of 5,200,000, with per-phase costs measured.">
+<meta property="og:title" content="WordPress security audit with selective source retrieval">
+<meta property="og:description" content="A documented WordPress audit used XERJ to select source files for review. The report publishes token accounting, missed cases and its negative result.">
 <meta property="og:url" content="https://xerj.org/case-studies/wordpress-security-audit">
 <meta property="og:image" content="https://xerj.org/og/xerj-card.png">
 <meta property="og:image:width" content="1200">
@@ -45,8 +45,8 @@
 <meta property="og:image:alt" content="XERJ.ai: the search engine built for AI agents">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="XERJ.ai — WordPress security audit case study">
-<meta name="twitter:description" content="An AI agent audited WordPress core — 1,492 files, roughly 619k lines — for about 26,000 tokens instead of 5,200,000, with per-phase costs measured.">
+<meta name="twitter:title" content="WordPress security audit with selective source retrieval">
+<meta name="twitter:description" content="A documented WordPress audit used XERJ to select source files for review. The report publishes token accounting, missed cases and its negative result.">
 <meta name="twitter:image" content="https://xerj.org/og/xerj-card.png">
 <script type="application/ld+json">
 {
@@ -81,8 +81,8 @@
 {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "XERJ.ai — WordPress security audit case study",
-  "description": "An AI agent audited WordPress core — 1,492 files, roughly 619k lines — for about 26,000 tokens instead of 5,200,000, with per-phase costs measured.",
+  "headline": "WordPress security audit with selective source retrieval",
+  "description": "A documented WordPress audit used XERJ to select source files for review. The report publishes token accounting, missed cases and its negative result.",
   "url": "https://xerj.org/case-studies/wordpress-security-audit",
   "image": "https://xerj.org/og/xerj-card.png",
   "inLanguage": "en",
@@ -167,7 +167,7 @@
 <div class="uc-hero">
   <div class="uc-eyebrow">CASE STUDY · WORDPRESS SECURITY AUDIT</div>
   <h1>619K LINES AUDITED.<br><span class="accent">~26K TOKENS SPENT.</span></h1>
-  <p class="uc-lead">An AI agent security-audited real WordPress core — 1,492 PHP files, ~619k lines — for ~26,000 tokens instead of the ~5,200,000 it costs just to load the code once. A queryable code graph in XERJ decided what deserved reading; the agent read only candidates. Per-phase measured costs, published end to end.</p>
+  <p class="uc-lead">An AI agent security-audited real WordPress core (1,492 PHP files, ~619k lines) for ~26,000 tokens instead of the ~5,200,000 it costs just to load the code once. A queryable code graph in XERJ decided what deserved reading; the agent read only candidates. Per-phase measured costs, published end to end.</p>
   <div class="kicker"><span>FOR</span><span class="dash">·</span><span>SECURITY ENGINEERS</span><span class="dash">·</span><span>AI-AGENT BUILDERS</span><span class="dash">·</span><span>PLATFORM TEAMS</span></div>
 </div>
 
@@ -200,11 +200,11 @@
 <div class="pain-solve">
   <div class="pain">
     <h3>THE CONTEXT-WINDOW WALL</h3>
-    <ul><li><strong>The code does not fit.</strong> ~619k lines is ~26× a 200k-token window — "read everything" is not an option.</li><li><strong>Chunking kills the reach.</strong> Security bugs are interprocedural: source in one file, sink in another.</li><li><strong>grep cannot say the shape.</strong> "Source and SQL sink in one function, no sanitizer between" is not a literal string.</li></ul>
+    <ul><li><strong>The code does not fit.</strong> ~619k lines is ~26× a 200k-token window: "read everything" is not an option.</li><li><strong>Chunking kills the reach.</strong> Security bugs are interprocedural: source in one file, sink in another.</li><li><strong>grep cannot say the shape.</strong> "Source and SQL sink in one function, no sanitizer between" is not a literal string.</li></ul>
   </div>
   <div class="solve">
     <h3>THE XERJ ANSWER</h3>
-    <ul><li><strong>Index once as facts.</strong> 11,990 functions, 1,343 hooks, call edges, capability checks, sanitizer fingerprints — built in ~3.6 s.</li><li><strong>Query the bug shape.</strong> One bool filter narrows 11,990 functions to 4 candidates worth reading.</li><li><strong>Scope before reading.</strong> One request returns the whole unauthenticated entry surface: 2 of 1,343 hooks.</li></ul>
+    <ul><li><strong>Index once as facts.</strong> 11,990 functions, 1,343 hooks, call edges, capability checks, sanitizer fingerprints: built in ~3.6 s.</li><li><strong>Query the bug shape.</strong> One bool filter narrows 11,990 functions to 4 candidates worth reading.</li><li><strong>Scope before reading.</strong> One request returns the whole unauthenticated entry surface: 2 of 1,343 hooks.</li></ul>
   </div>
 </div>
 
@@ -287,15 +287,15 @@ $ python3 wp_compose_index.py ./wordpress   <span class="comment"># sanitizer-se
   <h2 class="scene" style="font-size:var(--fs-56);">WHAT THIS <span class="accent">DOES NOT SHOW.</span></h2>
   <div class="laws">
     <div class="n">01</div><div class="law"><div class="t">XERJ DOES NOT <span class="accent">FIND BUGS.</span></div><div class="b">The AST taint/authz model produces the candidates; XERJ stores and queries them. Pointed at raw file chunks instead of facts, the security value largely evaporates.</div></div>
-    <div class="n">02</div><div class="law"><div class="t">RECALL IS <span class="accent">MODEL-BOUNDED.</span></div><div class="b">A source at file scope, or laundered through $GLOBALS, is invisible to the graph. The trade is recall for precision and tokens — grep counter-examples are published in the walkthrough.</div></div>
-    <div class="n">03</div><div class="law"><div class="t">EVERY CANDIDATE STILL <span class="accent">NEEDS A READ.</span></div><div class="b">The detectors have known false-positive drivers — receiver-typed sinks, self-scoped writes, polymorphic capabilities. The value is that survivors are few enough to read them all.</div></div>
-    <div class="n">04</div><div class="law"><div class="t">THE AUDIT AUDITED <span class="accent">XERJ TOO.</span></div><div class="b">Two real engine bugs surfaced mid-run — term over keyword arrays, boolean term matching. Conclusions were recomputed over pulled _source, so they hold; both are published, and the keyword-array fix landed as a PR.</div></div>
+    <div class="n">02</div><div class="law"><div class="t">RECALL IS <span class="accent">MODEL-BOUNDED.</span></div><div class="b">A source at file scope, or laundered through $GLOBALS, is invisible to the graph. The trade is recall for precision and tokens: grep counter-examples are published in the walkthrough.</div></div>
+    <div class="n">03</div><div class="law"><div class="t">EVERY CANDIDATE STILL <span class="accent">NEEDS A READ.</span></div><div class="b">The detectors have known false-positive drivers: receiver-typed sinks, self-scoped writes, polymorphic capabilities. The value is that survivors are few enough to read them all.</div></div>
+    <div class="n">04</div><div class="law"><div class="t">THE AUDIT AUDITED <span class="accent">XERJ TOO.</span></div><div class="b">Two real engine bugs surfaced mid-run: term over keyword arrays, boolean term matching. Conclusions were recomputed over pulled _source, so they hold; both are published, and the keyword-array fix landed as a PR.</div></div>
   </div>
 </section>
 
 <section class="scene-section">
   <h2 class="scene" style="font-size:var(--fs-56);">READ THE <span class="accent">WALKTHROUGH.</span></h2>
-  <p class="wide">The research journals, reproduction scripts, and verification harness are all published. The method ships as a copyable Claude Code skill — the taint model is data, not code, so it retargets to your stack.</p>
+  <p class="wide">The research journals, reproduction scripts, and verification harness are all published. The method ships as a copyable Claude Code skill: the taint model is data, not code, so it retargets to your stack.</p>
   <div style="display:flex; gap:var(--sp-6); margin-top:var(--sp-6); flex-wrap:wrap;">
     <a href="https://github.com/xerj-org/xerj/tree/main/docs/case-studies/wordpress-security-audit" rel="external" class="cta" style="font-size:var(--fs-20); padding:var(--sp-4) 0; border-bottom:0; flex:1; min-width:280px;">
       <span>OPEN THE WALKTHROUGH</span>
@@ -311,7 +311,7 @@ $ python3 wp_compose_index.py ./wordpress   <span class="comment"># sanitizer-se
 <section class="lead-capture" id="demo">
   <div class="kicker"><span>READY?</span><span class="dash">·</span><span>REQUEST ACCESS</span></div>
   <h3>AUDIT YOUR<br><span class="accent">OWN CODE.</span></h3>
-  <p>The skill runs the same audit — index, triage queries, verification prompts — on your codebase. Want a walkthrough with your team? Leave an email.</p>
+  <p>The skill runs the same audit (index, triage queries, verification prompts) on your codebase. Want a walkthrough with your team? Leave an email.</p>
   <form class="lead-form" id="leadForm" action="#" method="post" novalidate>
     <div class="lead-form-input">
       <input type="email" name="email" placeholder="you@company.com" required aria-label="Work email" autocomplete="email" />

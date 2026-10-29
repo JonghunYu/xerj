@@ -1,13 +1,13 @@
 ---
-title: "Let an agent look up endpoints in an API spec"
+title: "Search an OpenAPI spec so an agent can find endpoints"
 h1: "My agent needs to look up endpoints in a big OpenAPI spec and the SDK markdown. What's the right way?"
-description: "Index the spec file itself. A captured run found route names, operation descriptions and operationIds in both the JSON and the YAML serialization."
+description: "Index the OpenAPI file with xerj autoindex. In a captured run a route name, a description and an operationId each returned 1 hit per serialization."
 slug: "search-openapi-spec-for-agent"
 cluster: "Files and formats"
 question: "My agent needs to look up endpoints in a big OpenAPI spec. What's the right way?"
 intent: "how-to"
 published: "2026-08-21"
-updated: "2026-10-19"
+updated: "2026-10-28"
 author: "XERJ documentation team"
 reviewer: "XERJ engineering team"
 schema_type: "TechArticle"
@@ -50,7 +50,7 @@ faq:
     a: "Read the hits, not only the buckets. A captured matrix shows `match_phrase` matching 11 documents while its terms aggregation returned 0 buckets."
 ---
 
-**TL;DR** — XERJ makes an OpenAPI document queryable when `xerj autoindex` reads the file from disk. In a captured run, a route name, a description and an `operationId` each returned 2 hits, 1 per serialization. Extraction is format-based: the whole spec produced only `body` and `title`.
+**TL;DR**: XERJ makes an OpenAPI document queryable when `xerj autoindex` reads the file from disk. In a captured run, a route name, a description and an `operationId` each returned 2 hits, 1 per serialization. Extraction is format-based: the whole spec produced only `body` and `title`.
 
 ## Index the spec file itself
 

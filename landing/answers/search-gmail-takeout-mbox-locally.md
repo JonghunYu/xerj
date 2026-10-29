@@ -211,6 +211,6 @@ No. The mbox splitter and the message extractor are tested against a generated m
 - [The indexer died overnight. Do I have to start over?](/answers/resume-interrupted-autoindex-run)
 - [Why would a folder search miss files that I can see on disk?](/answers/why-autoindex-skipped-files)
 - [Zero-config autoindex](/docs/recipes/zero-config-autoindex)
-- [How do I search gzipped logs without decompressing the whole file — including when JSONL sits next to them?](/answers/search-gzip-logs-without-zgrep) (same intent: logs and docs)
+- [How do I search gzipped logs without decompressing the whole file, including when JSONL sits next to them?](/answers/search-gzip-logs-without-zgrep) (same intent: logs and docs)
 - [What can I use for low-volume log search?](/answers/cheap-low-volume-log-search) (same intent: logs and docs)
 - [I downloaded a bunch of papers as PDFs. How do I search across them?](/answers/search-all-pdfs-in-a-folder) (same intent: logs and docs)

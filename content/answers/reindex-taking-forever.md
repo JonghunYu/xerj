@@ -7,7 +7,7 @@ cluster: "Operations: reindex"
 question: "Reindexing my files is taking forever. What usually causes that?"
 intent: "troubleshooting"
 published: "2026-08-21"
-updated: "2026-10-19"
+updated: "2026-10-28"
 author: "XERJ documentation team"
 reviewer: "XERJ engineering team"
 schema_type: "TechArticle"
@@ -30,6 +30,8 @@ links_out:
   - "/docs/migration-from-es"
   - "cheap-low-volume-log-search"
   - "resume-interrupted-autoindex-run"
+  - "/answers/estimate-autoindex-time-before-running"
+  - "/answers/autoindex-exit-codes"
 faq:
   - q: "Reindexing my files is taking forever. What usually causes that?"
     a: "Corpus size, document size, host load and mapping complexity set the wall time. A _reindex call blocks and answers only at the end, so read a _count of the destination before you call it stuck."
@@ -47,7 +49,7 @@ faq:
     a: "Yes. XERJ has an open defect that retains heap per indexed document, so a large reindex grows resident memory. Do not plan corpora beyond a few million documents."
 ---
 
-**TL;DR** — A XERJ `_reindex` of a fixed 100,000-document corpus reported `"took": 20836` milliseconds, 100 batches and 0 failures on one node. Read `created` against a `_count` of the destination index to separate slow progress from a stalled call. XERJ is single-node, so `_reindex` is a local copy.
+**TL;DR**: A XERJ `_reindex` of a fixed 100,000-document corpus reported `"took": 20836` milliseconds, 100 batches and 0 failures on one node. Read `created` against a `_count` of the destination index to separate slow progress from a stalled call. XERJ is single-node, so `_reindex` is a local copy.
 
 ## Two different jobs are called reindexing
 
