@@ -1,0 +1,23 @@
+{
+  "corpus": "vanguard-context-burn",
+  "repos": [
+    {
+      "repo": "vanguard-frontier-agentic",
+      "url": "https://github.com/VincentChuWaiChow/vanguard-frontier-agentic",
+      "licence": "Apache-2.0",
+      "sha": "e0759ae02bd132957d954691a0a83d3f5d0b22d6",
+      "files": 17,
+      "bytes": 35339,
+      "paths": [
+        "mods/context-burn"
+      ],
+      "review": {
+        "spdx": "Apache-2.0",
+        "use": "adapt-with-attribution",
+        "by": "VincentChuWaiChow",
+        "at": "2026-10-27",
+        "note": "LICENSE at the pinned commit is Apache-2.0. The source owner explicitly approves public inclusion and indexing in xerj-org/xerj#2503; the selected mods/context-burn subtree contains 17 files (35,339 bytes), independently checked against the pinned Git tree."
+      }
+    }
+  ]
+}

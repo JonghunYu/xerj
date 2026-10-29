@@ -13626,6 +13626,28 @@
      "data-contracts"
     ]
    }
+  },
+  {
+   "cat": "AI",
+   "domain": "an agent implementing coding-agent context tracking queries this for cross-harness context-budget hooks, usage accounting and regression tests",
+   "lane": "A",
+   "refresh": "pinned",
+   "slug": "vanguard-context-burn",
+   "sources": [
+    {
+     "licence_hint": "Apache-2.0 — LICENSE verified at e0759ae02bd132957d954691a0a83d3f5d0b22d6; owner approval in xerj-org/xerj#2503",
+     "url": "https://github.com/VincentChuWaiChow/vanguard-frontier-agentic"
+    }
+   ],
+   "status": "live",
+   "tags": {
+    "region": "GLOBAL",
+    "topics": [
+     "agents",
+     "context-management",
+     "developer-tools"
+    ]
+   }
   }
  ],
  "lanes": [
