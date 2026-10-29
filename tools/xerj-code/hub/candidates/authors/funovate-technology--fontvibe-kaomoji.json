@@ -1,9 +1,9 @@
 {
- "corpus": "funovate--fontvibe-kaomoji",
+ "corpus": "funovate-technology--fontvibe-kaomoji",
  "cloned_at": null,
  "status": "draft",
  "shelf": "API",
- "domain": "an agent working on ascii-art, dataset, emoji queries this for how Funovate/fontvibe-kaomoji implements it: 82,109 kaomoji with semantic labels in 6 languages \u2014 the most complete public collection, verifiably (selected work: pypi, npm)",
+ "domain": "an agent working on ascii-art, dataset, emoji queries this for how Funovate-Technology/fontvibe-kaomoji implements it: 82,109 kaomoji with semantic labels in 6 languages \u2014 the most complete public collection, verifiably (selected work: pypi, npm)",
  "repos": [
   {
    "repo": "fontvibe-kaomoji",
